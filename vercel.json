@@ -1,0 +1,7 @@
+{
+  "buildCommand": "",
+  "outputDirectory": "dist",
+  "headers": [
+    { "source": "/frailtydb.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  ]
+}

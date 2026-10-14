@@ -1,0 +1,1121 @@
+<title>FrailDB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Wishart-lab database pattern — brand bar + dropdown navbar, browse tables, two-column "Card" records with banded section headers. */
+:root{
+  --bg:#f4f6f4; --surface:#ffffff; --band:#e7ece8; --band-ink:#1d3a33;
+  --ink:#16201c; --ink-2:#47534e; --muted:#76817b; --line:#d8dfda; --line-2:#c4cdc7;
+  --brand:#1d4f45; --brand-2:#163e36; --brand-ink:#f3f7f5; --link:#1b6b5b; --accent:#a35f14;
+  --chip:#e3ece8; --hover:#eef3f0; --focus:#2a78d6;
+  --frail:#c43a3a; --prefrail:#c98500; --nonfrail:#2f8a3a;
+  --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#eda100; --c5:#e87ba4; --c6:#008300; --c7:#6250d6;
+  --seq0:#f1f5fb; --seq1:#cde2fb; --seq2:#86b6ef; --seq3:#3987e5; --seq4:#1c5cab; --seq5:#0d366b;
+  --sq0:#16201c; --sq1:#16201c; --sq2:#16201c; --sq3:#ffffff; --sq4:#ffffff; --sq5:#ffffff;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1311; --surface:#151c19; --band:#1f2a26; --band-ink:#cfe3dc;
+  --ink:#e7ece9; --ink-2:#b3bfb9; --muted:#87938d; --line:#28322e; --line-2:#35413c;
+  --brand:#173b34; --brand-2:#10302a; --brand-ink:#e9f2ee; --link:#6cc3ae; --accent:#e3a25a;
+  --chip:#22302b; --hover:#1b2521; --focus:#6da7ec;
+  --frail:#e66767; --prefrail:#e0a326; --nonfrail:#4dbb5a;
+  --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#2f9a2f; --c7:#9085e9;
+  --seq0:#18202a; --seq1:#173252; --seq2:#1c5cab; --seq3:#2a78d6; --seq4:#6da7ec; --seq5:#b7d3f6;
+  --sq0:#e7ece9; --sq1:#e7ece9; --sq2:#ffffff; --sq3:#ffffff; --sq4:#0b1626; --sq5:#0b1626;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1311; --surface:#151c19; --band:#1f2a26; --band-ink:#cfe3dc;
+  --ink:#e7ece9; --ink-2:#b3bfb9; --muted:#87938d; --line:#28322e; --line-2:#35413c;
+  --brand:#173b34; --brand-2:#10302a; --brand-ink:#e9f2ee; --link:#6cc3ae; --accent:#e3a25a;
+  --chip:#22302b; --hover:#1b2521; --focus:#6da7ec;
+  --frail:#e66767; --prefrail:#e0a326; --nonfrail:#4dbb5a;
+  --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#2f9a2f; --c7:#9085e9;
+  --seq0:#18202a; --seq1:#173252; --seq2:#1c5cab; --seq3:#2a78d6; --seq4:#6da7ec; --seq5:#b7d3f6;
+  --sq0:#e7ece9; --sq1:#e7ece9; --sq2:#ffffff; --sq3:#ffffff; --sq4:#0b1626; --sq5:#0b1626;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.5}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+h1,h2,h3{text-wrap:balance;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
+
+/* brand + nav */
+.brandbar{background:var(--brand-2);color:var(--brand-ink)}
+.brandbar .wrap{display:flex;align-items:center;gap:14px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:baseline;gap:10px;color:var(--brand-ink)}
+.logo:hover{text-decoration:none}
+.logo b{font-family:var(--f-display);font-size:26px;letter-spacing:.2px}
+.logo b i{font-style:normal;color:#e9b46a}
+.logo span{font-size:13.5px;opacity:.82}
+.brandbar .ver{margin-left:auto;font-size:12.5px;opacity:.75;font-family:var(--f-mono)}
+nav.main{background:var(--brand);color:var(--brand-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;box-shadow:0 1px 0 rgba(0,0,0,.15)}
+nav.main .wrap{display:flex;align-items:stretch;gap:2px;flex-wrap:wrap}
+.nav-item{position:relative}
+.nav-item>button,.nav-item>a{display:flex;align-items:center;gap:6px;height:44px;padding:0 12px;color:var(--brand-ink);background:none;border:0;font:inherit;font-weight:600;font-size:14.5px;cursor:pointer}
+.nav-item>button:hover,.nav-item>a:hover,.nav-item.open>button{background:rgba(255,255,255,.1);text-decoration:none}
+.nav-item>button::after{content:"";border:4px solid transparent;border-top-color:currentColor;margin-top:4px;opacity:.7}
+.menu{position:absolute;left:0;top:100%;min-width:250px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:0 0 6px 6px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:6px 0;display:none}
+.nav-item.open .menu{display:block}
+.menu a{display:block;padding:7px 16px;color:var(--ink)}
+.menu a small{display:block;color:var(--muted);font-size:12.5px}
+.menu a:hover{background:var(--hover);text-decoration:none}
+.menu hr{border:0;border-top:1px solid var(--line);margin:6px 0}
+.navsearch{margin-left:auto;display:flex;align-items:center;gap:6px;padding:6px 0}
+.navsearch input{width:230px;max-width:46vw;height:32px;border-radius:4px;border:1px solid transparent;padding:0 10px;font:inherit;font-size:14px;background:rgba(255,255,255,.95);color:#16201c}
+.navsearch button{height:32px;border:0;border-radius:4px;padding:0 12px;font:inherit;font-weight:600;font-size:14px;background:#e9b46a;color:#2a1a05;cursor:pointer}
+.menu-toggle{display:none}
+@media (max-width:820px){
+  .menu-toggle{display:flex}
+  nav.main .nav-item:not(.keep){display:none}
+  nav.main.expanded .nav-item{display:block;width:100%}
+  nav.main.expanded .menu{position:static;box-shadow:none;border-radius:0}
+  .navsearch{width:100%;margin-left:0}
+  .navsearch input{flex:1;max-width:none;width:auto;min-width:0}
+  .brandbar .ver{display:none}
+}
+
+main{padding-block:22px 48px}
+.crumbs{font-size:13.5px;color:var(--muted);margin-bottom:10px}
+.crumbs a{color:var(--muted)}
+.pagehead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.pagehead h1{font-family:var(--f-display);font-size:30px;line-height:1.15}
+.pagehead p{margin:6px 0 0;color:var(--ink-2);max-width:72ch}
+.idchip{display:inline-block;font-family:var(--f-mono);font-size:13px;background:var(--chip);color:var(--band-ink);padding:2px 8px;border-radius:4px;vertical-align:middle}
+.btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:5px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.btn:hover{background:var(--hover)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.btn.primary:hover{background:var(--brand-2)}
+
+/* home */
+.hero{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px 28px 24px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px}
+.hero h1{font-family:var(--f-display);font-size:34px;line-height:1.12}
+.hero p{color:var(--ink-2);max-width:62ch}
+.bigsearch{display:flex;gap:8px;margin-top:14px}
+.bigsearch input{flex:1;min-width:0;height:44px;font:inherit;font-size:16px;padding:0 14px;border:1px solid var(--line-2);border-radius:6px;background:var(--bg);color:var(--ink)}
+.bigsearch button{height:44px}
+.examples{font-size:13.5px;color:var(--muted);margin-top:8px}
+.examples a{margin-right:10px}
+.statgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;align-self:start}
+.stat{background:var(--surface);padding:12px 14px}
+.stat b{display:block;font-size:24px;font-weight:700;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:820px){.hero{grid-template-columns:1fr;padding:20px}}
+.sectiontitle{font-family:var(--f-display);font-size:21px;margin:30px 0 12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.tile{display:block;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:14px 16px;color:var(--ink)}
+.tile:hover{border-color:var(--link);text-decoration:none}
+.tile h3{font-size:16px;margin-bottom:3px;color:var(--link)}
+.tile p{margin:0;font-size:14px;color:var(--ink-2)}
+.tile .count{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.cohortstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.cohortpill{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;color:var(--ink)}
+.cohortpill:hover{border-color:var(--link);text-decoration:none}
+.cohortpill b{display:flex;align-items:center;gap:8px}
+.cohortpill span{font-size:13px;color:var(--muted)}
+.swatch{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
+
+/* tables */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:7px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.data{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+table.data th,table.data td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.data thead th{background:var(--band);color:var(--band-ink);font-weight:700;font-size:13px;letter-spacing:.02em;white-space:nowrap;position:sticky;top:0}
+table.data thead th.sortable{cursor:pointer;user-select:none}
+table.data thead th.sortable::after{content:" ↕";opacity:.4}
+table.data thead th.asc::after{content:" ↑";opacity:1}
+table.data thead th.desc::after{content:" ↓";opacity:1}
+table.data tbody tr:hover{background:var(--hover)}
+table.data td.num,table.data th.num{text-align:right}
+table.data td.id{font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px;border-bottom:1px solid var(--line)}
+.filters input[type=search],.filters select,.ctrl select,.ctrl input{height:34px;font:inherit;font-size:14px;padding:0 10px;border:1px solid var(--line-2);border-radius:5px;background:var(--bg);color:var(--ink)}
+.filters input[type=search]{flex:1;min-width:180px}
+.filters .count{font-size:13px;color:var(--muted);margin-left:auto}
+
+/* card */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.card table.kv{width:100%;border-collapse:collapse;font-size:14.5px}
+.card table.kv>tbody>tr>th,.card table.kv>tbody>tr>td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.card table.kv>tbody>tr>th{width:230px;color:var(--ink-2);font-weight:600;background:color-mix(in srgb,var(--band) 35%,var(--surface))}
+.card table.kv tr.band td{background:var(--band);color:var(--band-ink);font-family:var(--f-display);font-weight:700;font-size:16px;padding:8px 14px}
+.card table.kv>tbody>tr>td{min-width:0;max-width:0;width:100%}
+@media (max-width:640px){.card table.kv>tbody>tr>th{width:auto;display:block;border-bottom:0;padding-bottom:2px;background:none}.card table.kv>tbody>tr>td{display:block;max-width:none;width:auto}.card table.kv,.card table.kv>tbody,.card table.kv>tbody>tr{display:block}}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.toc a{font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--ink-2)}
+.toc a:hover{border-color:var(--link);color:var(--link);text-decoration:none}
+.metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.metric b{display:block;font-size:20px;line-height:1.15}
+.metric span{font-size:12.5px;color:var(--muted)}
+.flags{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.flags li{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+.flags li::before{content:"!";flex:none;width:18px;height:18px;border-radius:50%;background:var(--accent);color:var(--surface);font-weight:700;font-size:12px;display:grid;place-items:center;margin-top:2px}
+.note{color:var(--muted);font-size:13px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--band-ink);margin:1px 3px 1px 0;white-space:nowrap}
+.tag.meas{background:color-mix(in srgb,var(--nonfrail) 18%,var(--surface));color:var(--ink)}
+.tag.self{background:color-mix(in srgb,var(--prefrail) 22%,var(--surface));color:var(--ink)}
+.status{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:13px}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.status.frail{color:var(--frail)} .status.prefrail{color:var(--prefrail)} .status.nonfrail{color:var(--nonfrail)}
+
+/* charts */
+.chartbox{position:relative;height:300px;margin:6px 0}
+.chartbox.tall{height:380px}
+.chartbox.short{height:220px}
+.chartgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.chartgrid>div{min-width:0}
+.charttitle{font-weight:700;font-size:14.5px;margin:4px 0 2px}
+.chartsub{font-size:12.5px;color:var(--muted);margin:0 0 4px}
+.bars{display:flex;flex-direction:column;gap:5px}
+.barrow{display:grid;grid-template-columns:minmax(120px,240px) minmax(0,1fr) 58px;gap:10px;align-items:center;font-size:13.5px}
+.barrow .track{height:12px;background:var(--band);border-radius:3px;overflow:hidden}
+.barrow .fill{height:100%;background:var(--c1);border-radius:0 3px 3px 0}
+.barrow .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.flow .step{flex:1;min-width:120px;padding:10px 12px;border:1px solid var(--line);background:var(--surface);position:relative}
+.flow .step+.step{border-left:0}
+.flow .step b{display:block;font-size:19px}
+.flow .step span{font-size:12.5px;color:var(--muted)}
+
+/* tools */
+.toolbar{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;padding:14px;border-bottom:1px solid var(--line)}
+.ctrl{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.checks{display:flex;gap:6px;flex-wrap:wrap}
+.checks label{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink);font-weight:600;border:1px solid var(--line-2);border-radius:999px;padding:4px 10px;cursor:pointer;background:var(--bg)}
+.checks input{margin:0}
+.pad{padding:14px 16px}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:6px;overflow:hidden}
+.seg button{height:32px;padding:0 12px;border:0;background:var(--bg);color:var(--ink-2);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line-2)}
+.seg button.on{background:var(--brand);color:var(--brand-ink)}
+.matrix td.cell{text-align:center;font-variant-numeric:tabular-nums;font-size:13px;min-width:72px;cursor:pointer}
+.matrix td.cell.na{color:var(--muted);cursor:default}
+.matrix td.cell span{display:block;border-radius:3px;padding:3px 4px}
+.matrix tr.dom td{background:var(--band);color:var(--band-ink);font-weight:700;font-size:13px}
+.tmatrix td,.tmatrix th{text-align:center}
+.tmatrix td.heat{font-variant-numeric:tabular-nums}
+.calc-items{columns:2 260px;column-gap:24px}
+.calc-items fieldset{break-inside:avoid;border:0;margin:0 0 12px;padding:0}
+.calc-items legend{font-weight:700;font-size:13px;color:var(--band-ink);background:var(--band);padding:2px 8px;border-radius:3px;margin-bottom:4px}
+.calc-items label{display:flex;gap:8px;align-items:flex-start;font-size:14px;padding:2px 0;cursor:pointer}
+.result{display:flex;gap:18px;flex-wrap:wrap;align-items:baseline}
+.result .big{font-size:40px;font-weight:700;line-height:1}
+.prose{max-width:75ch}
+.prose p,.prose li{color:var(--ink-2)}
+.prose h2{font-family:var(--f-display);font-size:21px;margin:22px 0 8px}
+.callout{border-left:3px solid var(--accent);background:var(--surface);padding:10px 14px;border-radius:0 6px 6px 0;font-size:14.5px;color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:6px;font-size:14px;font-weight:600;z-index:50}
+footer{border-top:1px solid var(--line);background:var(--surface);font-size:13.5px;color:var(--muted)}
+footer .wrap{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;padding-block:18px}
+.searchhit{padding:10px 14px;border-bottom:1px solid var(--line)}
+.searchhit:last-child{border-bottom:0}
+.searchhit .kind{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.searchhit p{margin:2px 0 0;font-size:13.5px;color:var(--ink-2)}
+mark{background:color-mix(in srgb,#e9b46a 55%,transparent);color:inherit;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="brandbar">
+  <div class="wrap">
+    <a class="logo" href="#home"><b>Frail<i>DB</i></b><span>The Multi-Cohort Frailty Database</span></a>
+    <span class="ver" id="ver"></span>
+  </div>
+</header>
+<nav class="main" id="nav">
+  <div class="wrap">
+    <div class="nav-item keep menu-toggle"><button type="button" id="menuToggle" aria-expanded="false">Menu</button></div>
+    <div class="nav-item"><a href="#home">Home</a></div>
+    <div class="nav-item"><button type="button">Browse</button>
+      <div class="menu">
+        <a href="#browse-cohorts">Cohorts<small>Ageing studies and their designs</small></a>
+        <a href="#browse-waves">Waves<small>One record per cohort survey wave</small></a>
+        <a href="#browse-deficits">Deficits<small>Frailty index items and their crosswalk</small></a>
+        <a href="#browse-criteria">Fried criteria<small>FQ1–FQ5 and how each cohort measures them</small></a>
+        <a href="#browse-instruments">Instruments<small>Fried phenotype, Rockwood index</small></a>
+        <a href="#browse-countries">Countries<small>SHARE results by country</small></a>
+        <hr><a href="#browse-references">References</a>
+      </div></div>
+    <div class="nav-item"><button type="button">Search</button>
+      <div class="menu">
+        <a href="#search">Text search<small>Every record, by name, ID or keyword</small></a>
+        <a href="#lookup">Variable lookup<small>From a survey variable name to its deficit</small></a>
+      </div></div>
+    <div class="nav-item"><button type="button">Tools</button>
+      <div class="menu">
+        <a href="#tool-compare">Compare cohorts<small>Prevalence over time and by age</small></a>
+        <a href="#tool-matrix">Harmonisation matrix<small>Deficit × cohort coverage</small></a>
+        <a href="#tool-norms">FI reference norms<small>Percentile for an age, sex and FI</small></a>
+        <a href="#tool-agewindow">Pre-frailty age window<small>The age after which pre-frail people mostly progress</small></a>
+        <a href="#tool-transitions">Transitions<small>Frailty state change between waves</small></a>
+        <a href="#tool-volatility">Volatility<small>Within-person FI variability</small></a>
+        <a href="#tool-concordance">Fried vs FI<small>Agreement between the two instruments</small></a>
+        <hr><a href="#tool-calculator">Frailty calculator<small>Score one person with either instrument</small></a>
+      </div></div>
+    <div class="nav-item"><a href="#downloads">Downloads</a></div>
+    <div class="nav-item"><a href="#statistics">Statistics</a></div>
+    <div class="nav-item"><button type="button">About</button>
+      <div class="menu">
+        <a href="#about">About FrailDB</a>
+        <a href="#methods">Methods and data policy</a>
+        <a href="#cite">How to cite</a>
+      </div></div>
+    <form class="navsearch nav-item keep" id="navsearch" role="search">
+      <input id="navq" type="search" placeholder="Search FrailDB" aria-label="Search FrailDB">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main><div class="wrap" id="app"></div></main>
+
+<footer><div class="wrap">
+  <div><b style="color:var(--ink)">FrailDB</b> · <span id="footver"></span> · Aggregated results only. Cells describing fewer than <span id="footmin"></span> people are suppressed.</div>
+  <div>Frailty_Volatility Project · Department of Biological Sciences and Bioengineering, IIT Kanpur</div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script type="application/json" id="fdb-data">/*__FRAILDB_DATA__*/</script>
+<script>
+"use strict";
+const DB = JSON.parse(document.getElementById("fdb-data").textContent);
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const app = $("#app");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (v, d = 0) => v == null || Number.isNaN(v) ? "—" : Number(v).toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d });
+const pc = (v, d = 1) => v == null ? "—" : fmt(v, d) + "%";
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+// ------------------------------------------------------------------ indexes
+const COH = Object.fromEntries(DB.cohorts.map(c => [c.key, c]));
+const COHORT_ORDER = DB.cohorts.map(c => c.key);
+const COLOR_VAR = { SHARE: "--c1", HRS: "--c2", ELSA: "--c3", MHAS: "--c4", CLHLS: "--c5", LASI: "--c6", KLoSA: "--c7" };
+const cColor = k => css(COLOR_VAR[k] || "--muted");
+const BYID = {};
+DB.cohorts.forEach(x => BYID[x.id] = ["cohort", x]);
+DB.waves.forEach(x => BYID[x.id] = ["wave", x]);
+DB.deficits.forEach(x => BYID[x.id] = ["deficit", x]);
+DB.criteria.forEach(x => BYID[x.id] = ["criterion", x]);
+DB.instruments.forEach(x => BYID[x.id] = ["instrument", x]);
+DB.countries.forEach(x => BYID[x.id] = ["country", x]);
+DB.references.forEach(x => BYID[x.id] = ["reference", x]);
+const DEF = Object.fromEntries(DB.deficits.map(d => [d.key, d]));
+const wavesOf = k => DB.waves.filter(w => w.cohort === k).sort((a, b) => a.wave - b.wave);
+const waveLabel = w => `${w.cohort} wave ${w.wave} (${w.year ?? "—"})`;
+const coLink = k => COH[k] ? `<a href="#${COH[k].id}">${esc(k)}</a>` : esc(k);
+const idLink = (id, text) => `<a href="#${id}">${esc(text ?? id)}</a>`;
+const swatch = k => `<span class="swatch" style="background:var(${COLOR_VAR[k]})"></span>`;
+const ANALYSED = DB.cohorts.filter(c => c.waves.length).map(c => c.key);
+const FI_COHORTS = ANALYSED.filter(k => DB.waves.some(w => w.cohort === k && w.rock));
+const FRIED_COHORTS = ANALYSED.filter(k => DB.waves.some(w => w.cohort === k && w.fried));
+
+$("#ver").textContent = `v${DB.meta.version} · built ${DB.meta.built}`;
+$("#footver").textContent = `Version ${DB.meta.version}, built ${DB.meta.built}`;
+$("#footmin").textContent = DB.meta.min_cell;
+
+// ------------------------------------------------------------------ charts
+let charts = [], chartRetry = false;
+function killCharts() { charts.forEach(c => c.destroy()); charts = []; }
+function baseOpts(extra = {}) {
+  const ink = css("--ink-2"), grid = css("--line"), muted = css("--muted");
+  return Object.assign({
+    responsive: true, maintainAspectRatio: false, animation: false,
+    interaction: { mode: "nearest", intersect: false },
+    plugins: {
+      legend: { position: "bottom", labels: { color: ink, boxWidth: 12, boxHeight: 12, usePointStyle: true, font: { family: css("--f-body"), size: 12.5 } } },
+      tooltip: { backgroundColor: css("--surface"), titleColor: css("--ink"), bodyColor: css("--ink-2"), borderColor: css("--line-2"), borderWidth: 1, padding: 10, titleFont: { weight: "700" } }
+    },
+    scales: {
+      x: { grid: { color: grid, drawTicks: false }, border: { color: css("--line-2") }, ticks: { color: muted, padding: 6 } },
+      y: { grid: { color: grid, drawTicks: false }, border: { display: false }, ticks: { color: muted, padding: 6 } }
+    }
+  }, extra);
+}
+function mkChart(canvas, cfg) {
+  if (!window.Chart && !chartRetry) { chartRetry = true; addEventListener("load", () => window.Chart && render(), { once: true }); }
+  if (!window.Chart) { canvas.parentElement.innerHTML = '<p class="note pad">Charts need the Chart.js library, which did not load. The tables on this page show the same numbers.</p>'; return; }
+  Chart.defaults.font.family = css("--f-body");
+  const c = new Chart(canvas, cfg); charts.push(c); return c;
+}
+function lineDS(label, data, key, extra = {}) {
+  const col = cColor(key);
+  return Object.assign({ label, data, borderColor: col, backgroundColor: col, borderWidth: 2, pointRadius: 3.5, pointHoverRadius: 6, pointBorderColor: css("--surface"), pointBorderWidth: 1.5, tension: 0, spanGaps: false }, extra);
+}
+const pctAxis = (max) => ({ ticks: { color: css("--muted"), callback: v => v + "%" }, grid: { color: css("--line") }, border: { display: false }, min: 0, ...(max ? { max } : {}) });
+
+// ------------------------------------------------------------------ downloads
+let downloadsCap = null;
+(async () => { try { downloadsCap = window.claude?.use ? await window.claude.use("downloads") : null; } catch { downloadsCap = null; } })();
+function toast(msg) { const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.append(t); setTimeout(() => t.remove(), 2600); }
+async function saveFile(filename, text) {
+  if (downloadsCap) {
+    try { await downloadsCap.save({ filename, data: text }); toast(`Saved ${filename}`); }
+    catch (e) { if (e?.code !== "declined") toast(`Could not save ${filename}. ${e?.message || ""}`); }
+    return;
+  }
+  try {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([text], { type: filename.endsWith(".json") ? "application/json" : "text/csv" }));
+    a.download = filename; document.body.append(a); a.click(); a.remove();
+  } catch { toast("Downloads are not available in this view."); }
+}
+function toCSV(rows, cols) {
+  cols = cols || Object.keys(rows[0] || {});
+  const q = v => v == null ? "" : /[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v);
+  return [cols.join(","), ...rows.map(r => cols.map(c => q(r[c])).join(","))].join("\n");
+}
+
+// ------------------------------------------------------------------ shared builders
+function sortableTable(el, cols, rows, opts = {}) {
+  // cols: [{key,label,num,render,sortVal}]
+  let sortKey = opts.sortKey || null, dir = 1;
+  function draw() {
+    let r = rows.slice();
+    if (sortKey) {
+      const c = cols.find(c => c.key === sortKey);
+      const sv = c.sortVal || (x => x[c.key]);
+      r.sort((a, b) => { const A = sv(a), B = sv(b); if (A == null) return 1; if (B == null) return -1; return (A > B ? 1 : A < B ? -1 : 0) * dir; });
+    }
+    el.innerHTML = `<div class="tablewrap"><table class="data"><thead><tr>${cols.map(c => `<th class="sortable ${c.num ? "num" : ""} ${sortKey === c.key ? (dir > 0 ? "asc" : "desc") : ""}" data-k="${c.key}" scope="col">${c.label}</th>`).join("")}</tr></thead><tbody>${r.map(x => `<tr>${cols.map(c => `<td class="${c.num ? "num" : ""} ${c.cls || ""}">${c.render ? c.render(x) : esc(x[c.key])}</td>`).join("")}</tr>`).join("") || `<tr><td colspan="${cols.length}" class="note">No records match these filters.</td></tr>`}</tbody></table></div>`;
+    $$("th.sortable", el).forEach(th => th.onclick = () => { const k = th.dataset.k; if (sortKey === k) dir = -dir; else { sortKey = k; dir = 1; } draw(); });
+  }
+  draw();
+  return { update(newRows) { rows = newRows; draw(); } };
+}
+function kv(sections) {
+  // sections: [[title, [[label, html], ...]], ...]
+  return `<div class="card"><table class="kv"><tbody>${sections.map(([t, rows]) =>
+    `<tr class="band" id="sec-${t.toLowerCase().replace(/[^a-z]+/g, "-")}"><td colspan="2">${esc(t)}</td></tr>` +
+    rows.filter(Boolean).map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${v ?? "—"}</td></tr>`).join("")).join("")}</tbody></table></div>`;
+}
+function toc(titles) { return `<div class="toc">${titles.map(t => `<a href="javascript:void 0" data-sec="sec-${t.toLowerCase().replace(/[^a-z]+/g, "-")}">${esc(t)}</a>`).join("")}</div>`; }
+function wireToc() { $$(".toc a").forEach(a => a.onclick = () => document.getElementById(a.dataset.sec)?.scrollIntoView({ behavior: "smooth", block: "start" })); }
+function head(title, id, sub, actions = "") {
+  return `<div class="pagehead"><div><h1>${esc(title)} ${id ? `<span class="idchip">${esc(id)}</span>` : ""}</h1>${sub ? `<p>${sub}</p>` : ""}</div><div>${actions}</div></div>`;
+}
+function crumbs(parts) { return `<div class="crumbs">${parts.map(([h, t]) => h ? `<a href="${h}">${esc(t)}</a>` : esc(t)).join(" › ")}</div>`; }
+function barsHTML(items, max, colorVar = "--c1") {
+  max = max || Math.max(...items.map(i => i.v ?? 0), 1);
+  return `<div class="bars">${items.map(i => `<div class="barrow"><div>${i.label}</div><div class="track"><div class="fill" style="width:${Math.max(0, (i.v ?? 0) / max * 100)}%;background:var(${i.color || colorVar})"></div></div><div class="v">${i.text ?? pc(i.v)}</div></div>`).join("")}</div>`;
+}
+function cardJSONButton(obj, name) {
+  const id = "dl" + Math.random().toString(36).slice(2, 8);
+  setTimeout(() => { const b = document.getElementById(id); if (b) b.onclick = () => saveFile(name, JSON.stringify(obj, null, 2)); });
+  return `<button class="btn" id="${id}" type="button">Download record (JSON)</button>`;
+}
+
+// ------------------------------------------------------------------ pages
+const ROUTES = {};
+
+ROUTES.home = () => {
+  const m = DB.meta.counts;
+  app.innerHTML = `
+  <section class="hero">
+    <div>
+      <h1>Frailty across ${m.countries} countries, ${m.waves} survey waves and two instruments</h1>
+      <p>FrailDB is a freely searchable database of frailty in older adults. It brings together the Fried frailty phenotype and the Rockwood frailty index, scored the same way across the major harmonised ageing cohorts: SHARE, HRS, ELSA, MHAS and CLHLS. Every deficit links to the survey variable it came from in each cohort, and every wave lists its sample flow, cut-offs and known caveats.</p>
+      <form class="bigsearch" id="homesearch" role="search"><input id="homeq" type="search" placeholder="Try a deficit, cohort, country or variable name" aria-label="Search FrailDB"><button class="btn primary" type="submit">Search</button></form>
+      <div class="examples">Examples: <a href="javascript:void 0" data-q="dressing">dressing</a><a href="javascript:void 0" data-q="ph049d1">ph049d1</a><a href="javascript:void 0" data-q="grip">grip</a><a href="javascript:void 0" data-q="Spain">Spain</a><a href="javascript:void 0" data-q="CES-D">CES-D</a></div>
+    </div>
+    <div class="statgrid">
+      <div class="stat"><b>${fmt(m.rock_assessments)}</b><span>Frailty index assessments</span></div>
+      <div class="stat"><b>${fmt(m.fried_assessments)}</b><span>Fried phenotype assessments</span></div>
+      <div class="stat"><b>${fmt(m.persons)}</b><span>People with an FI score</span></div>
+      <div class="stat"><b>${m.cohorts_analysed} <small style="font-size:14px;color:var(--muted)">of ${m.cohorts}</small></b><span>Cohorts analysed</span></div>
+      <div class="stat"><b>${m.deficits}</b><span>Deficits in the crosswalk</span></div>
+      <div class="stat"><b>${m.countries}</b><span>Countries</span></div>
+    </div>
+  </section>
+  <h2 class="sectiontitle">Cohorts</h2>
+  <div class="cohortstrip">${DB.cohorts.map(c => `<a class="cohortpill" href="#${c.id}"><b>${swatch(c.key)}${esc(c.key)}</b><span>${esc(c.region)} · ${esc(c.period)}</span><span>${c.waves.length ? `${c.waves.length} waves` : esc(c.status)}</span></a>`).join("")}</div>
+  <h2 class="sectiontitle">Frail prevalence by survey year</h2>
+  <div class="panel pad"><div class="chartgrid">
+    <div><p class="charttitle">Rockwood frailty index ≥ 0.25</p><p class="chartsub">Share of complete-case respondents, each wave</p><div class="chartbox"><canvas id="hc1"></canvas></div></div>
+    <div><p class="charttitle">Fried phenotype, 3 or more criteria</p><p class="chartsub">Share of scored respondents, each wave</p><div class="chartbox"><canvas id="hc2"></canvas></div></div>
+  </div><p class="note">The cohorts differ in age range and in how Fried criteria were measured, so the levels are not directly comparable. Open <a href="#tool-compare">Compare cohorts</a> to compare by age band.</p></div>
+  <h2 class="sectiontitle">Browse and tools</h2>
+  <div class="tiles">
+    <a class="tile" href="#browse-deficits"><h3>Deficits</h3><p>Each frailty index item with its source variable in every cohort, its prevalence and its age gradient.</p><span class="count">${DB.deficits.length} records</span></a>
+    <a class="tile" href="#browse-waves"><h3>Waves</h3><p>Sample flow, results, cut-off tables and quality flags for each survey wave.</p><span class="count">${DB.waves.length} records</span></a>
+    <a class="tile" href="#tool-matrix"><h3>Harmonisation matrix</h3><p>Which deficits each cohort can measure, and how common they are.</p><span class="count">${DB.deficits.length} × ${FI_COHORTS.length}</span></a>
+    <a class="tile" href="#tool-norms"><h3>FI reference norms</h3><p>Where a frailty index score sits for a given age, sex and population.</p><span class="count">${FI_COHORTS.length} cohorts</span></a>
+    ${DB.agewindow ? `<a class="tile" href="#tool-agewindow"><h3>Pre-frailty age window</h3><p>The age at which a pre-frail person becomes more likely to progress to frailty than to recover.</p><span class="count">${["Fried", "Rockwood"].map(m => { const c = DB.agewindow.results[m]?.Pooled?.curves?.crossover?.age; return c ? `${m === "Rockwood" ? "FI" : m}: age ${Math.round(c)}` : null; }).filter(Boolean).join(" · ") || "Longitudinal"}</span></a>` : ""}
+    <a class="tile" href="#tool-volatility"><h3>Volatility</h3><p>How much a person's frailty index moves between waves, the focus of the Frailty Volatility study.</p><span class="count">${fmt(Object.values(DB.longitudinal).reduce((s, v) => s + (v.rock?.volatility?.n || 0), 0))} people with 3+ waves</span></a>
+    <a class="tile" href="#tool-calculator"><h3>Frailty calculator</h3><p>Score one person with the 32-item index or the five Fried criteria.</p><span class="count">Runs in your browser</span></a>
+  </div>`;
+  $("#homesearch").onsubmit = e => { e.preventDefault(); go("search", $("#homeq").value); };
+  $$(".examples a").forEach(a => a.onclick = () => go("search", a.dataset.q));
+  const years = [...new Set(DB.waves.map(w => w.year))].sort();
+  mkChart($("#hc1"), { type: "line", data: { datasets: FI_COHORTS.map(k => lineDS(k, wavesOf(k).filter(w => w.rock).map(w => ({ x: w.year, y: w.rock.frail_pct })), k)) }, options: baseOpts({ scales: { x: { type: "linear", min: 2000, max: 2024, ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+  mkChart($("#hc2"), { type: "line", data: { datasets: FRIED_COHORTS.map(k => lineDS(k, wavesOf(k).filter(w => w.fried).map(w => ({ x: w.year, y: w.fried.frail_pct })), k)) }, options: baseOpts({ scales: { x: { type: "linear", min: 2000, max: 2024, ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+};
+
+// ---------------- browse pages
+function browsePage(title, sub, cols, rows, filterDefs = [], textOf = r => JSON.stringify(r)) {
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Browse"], [null, title]]) + head(title, null, sub) +
+    `<div class="panel"><div class="filters"><input type="search" id="bf" placeholder="Filter ${title.toLowerCase()}" aria-label="Filter">${filterDefs.map((f, i) => `<select id="bs${i}" aria-label="${esc(f.label)}"><option value="">${esc(f.label)}: all</option>${f.options.map(o => `<option>${esc(o)}</option>`).join("")}</select>`).join("")}<span class="count" id="bcount"></span><button class="btn" id="bdl" type="button">Download CSV</button></div><div id="btable"></div></div>`;
+  const t = sortableTable($("#btable"), cols, rows);
+  const apply = () => {
+    const q = $("#bf").value.trim().toLowerCase();
+    const r = rows.filter(x => (!q || textOf(x).toLowerCase().includes(q)) && filterDefs.every((f, i) => { const v = $("#bs" + i).value; return !v || f.test(x, v); }));
+    t.update(r); $("#bcount").textContent = `${r.length} of ${rows.length}`;
+  };
+  $("#bf").oninput = apply; filterDefs.forEach((_, i) => $("#bs" + i).onchange = apply); apply();
+  $("#bdl").onclick = () => saveFile(`fraildb_${title.toLowerCase().replace(/\W+/g, "_")}.csv`, toCSV(rows.map(r => Object.fromEntries(cols.map(c => [c.label.replace(/<[^>]+>/g, ""), c.sortVal ? c.sortVal(r) : r[c.key]])))));
+}
+
+ROUTES["browse-cohorts"] = () => browsePage("Cohorts", "Longitudinal ageing studies in FrailDB. KLoSA data are held and will be added in a later release.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "key", label: "Cohort", render: r => `${swatch(r.key)} <a href="#${r.id}"><b>${esc(r.key)}</b></a><br><span class="note">${esc(r.name)}</span>` },
+  { key: "region", label: "Region" }, { key: "period", label: "Period" },
+  { key: "nw", label: "Waves", num: true, sortVal: r => r.waves.length, render: r => r.waves.length || "—" },
+  { key: "fi", label: "FI assessments", num: true, sortVal: r => wavesOf(r.key).reduce((s, w) => s + (w.rock?.n || 0), 0), render: r => fmt(wavesOf(r.key).reduce((s, w) => s + (w.rock?.n || 0), 0)) || "—" },
+  { key: "fr", label: "Fried assessments", num: true, sortVal: r => wavesOf(r.key).reduce((s, w) => s + (w.fried?.n || 0), 0), render: r => fmt(wavesOf(r.key).reduce((s, w) => s + (w.fried?.n || 0), 0)) },
+  { key: "status", label: "Status" }
+], DB.cohorts, [{ label: "Status", options: [...new Set(DB.cohorts.map(c => c.status))], test: (r, v) => r.status === v }]);
+
+ROUTES["browse-waves"] = () => browsePage("Waves", "One record per cohort survey wave. FI = Rockwood frailty index (frail at 0.25 or more). Fried = phenotype (frail at 3 or more criteria).", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "cohort", label: "Cohort", render: r => `${swatch(r.cohort)} ${coLink(r.cohort)}` },
+  { key: "wave", label: "Wave", num: true, render: r => `<a href="#${r.id}">${r.wave}</a>` }, { key: "year", label: "Year", num: true },
+  { key: "fin", label: "FI n", num: true, sortVal: r => r.rock?.n, render: r => fmt(r.rock?.n) },
+  { key: "fim", label: "Mean FI", num: true, sortVal: r => r.rock?.mean_fi, render: r => fmt(r.rock?.mean_fi, 3) },
+  { key: "fip", label: "FI frail", num: true, sortVal: r => r.rock?.frail_pct, render: r => pc(r.rock?.frail_pct) },
+  { key: "frn", label: "Fried n", num: true, sortVal: r => r.fried?.n, render: r => fmt(r.fried?.n) },
+  { key: "frp", label: "Fried frail", num: true, sortVal: r => r.fried?.frail_pct, render: r => pc(r.fried?.frail_pct) },
+  { key: "frpp", label: "Pre-frail", num: true, sortVal: r => r.fried?.prefrail_pct, render: r => pc(r.fried?.prefrail_pct) },
+  { key: "flags", label: "Flags", num: true, sortVal: r => r.flags.length, render: r => r.flags.length ? `<span class="tag self">${r.flags.length}</span>` : "" }
+], DB.waves, [
+  { label: "Cohort", options: ANALYSED, test: (r, v) => r.cohort === v },
+  { label: "Instrument", options: ["Has frailty index", "Has Fried phenotype", "Both"], test: (r, v) => v === "Both" ? r.rock && r.fried : v.includes("index") ? !!r.rock : !!r.fried }
+], r => `${r.id} ${r.cohort} wave ${r.wave} ${r.year}`);
+
+ROUTES["browse-deficits"] = () => browsePage("Deficits", "Health deficits used in the Rockwood frailty index. The 32-item core list is shared by SHARE, HRS, ELSA and MHAS; CLHLS uses its own list, linked here where items measure the same thing.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "label", label: "Deficit", render: r => `<a href="#${r.id}"><b>${esc(r.label)}</b></a><br><code>${esc(r.key)}</code>` },
+  { key: "domain", label: "Domain" }, { key: "rule", label: "Deficit when" },
+  { key: "sets", label: "Cohorts", sortVal: r => r.sets.length, render: r => r.sets.map(k => `<span class="tag">${esc(k)}</span>`).join("") },
+  { key: "prev", label: "Prevalence (pooled)", num: true, sortVal: r => poolPrev(r), render: r => pc(poolPrev(r)) }
+], DB.deficits, [
+  { label: "Domain", options: [...new Set(DB.deficits.map(d => d.domain))], test: (r, v) => r.domain === v },
+  { label: "Cohort", options: FI_COHORTS, test: (r, v) => r.sets.includes(v) }
+], r => `${r.id} ${r.label} ${r.key} ${r.domain} ${Object.values(r.vars).map(v => v.var).join(" ")}`);
+function poolPrev(d, only) {
+  const vals = Object.entries(d.prev).filter(([k]) => !only || k === only).flatMap(([, w]) => Object.values(w)).filter(v => v != null);
+  return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+}
+
+ROUTES["browse-criteria"] = () => browsePage("Fried criteria", "The five criteria of the Fried phenotype. A person scoring 3 or more is frail and 1–2 is pre-frail.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "key", label: "Code", render: r => `<code>${r.key}</code>` },
+  { key: "name", label: "Criterion", render: r => `<a href="#${r.id}"><b>${esc(r.name)}</b></a>` }, { key: "desc", label: "Definition" },
+  { key: "m", label: "Measured in", render: r => Object.entries(r.measure || {}).map(([k, v]) => `<span class="tag ${v === "measured" ? "meas" : "self"}">${k}: ${v}</span>`).join("") || '<span class="note">Self-report in all cohorts</span>' }
+], DB.criteria);
+
+ROUTES["browse-instruments"] = () => browsePage("Instruments", "The two frailty instruments scored in every analysed wave.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "name", label: "Instrument", render: r => `<a href="#${r.id}"><b>${esc(r.name)}</b></a>` },
+  { key: "summary", label: "Summary" }, { key: "cutoff", label: "Frail when" }
+], DB.instruments);
+
+ROUTES["browse-countries"] = () => browsePage("Countries", "SHARE participating countries. Values are pooled over the waves each country took part in.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "name", label: "Country", render: r => `<a href="#${r.id}"><b>${esc(r.name)}</b></a>` },
+  { key: "nw", label: "Waves", num: true, sortVal: r => r.waves.length, render: r => r.waves.length },
+  { key: "fi", label: "FI frail (mean of waves)", num: true, sortVal: r => avg(r.waves.map(w => w.rock_frail_pct)), render: r => pc(avg(r.waves.map(w => w.rock_frail_pct))) },
+  { key: "fr", label: "Fried frail (mean of waves)", num: true, sortVal: r => avg(r.waves.map(w => w.fried_frail_pct)), render: r => pc(avg(r.waves.map(w => w.fried_frail_pct))) }
+], DB.countries);
+const avg = a => { a = a.filter(v => v != null); return a.length ? a.reduce((x, y) => x + y, 0) / a.length : null; };
+
+ROUTES["browse-references"] = () => browsePage("References", "Papers that define the instruments and the operationalisation used for each cohort.", [
+  { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
+  { key: "cite", label: "Citation", render: r => `${esc(r.cite)}<br><a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi:${esc(r.doi)}</a>` },
+  { key: "used_for", label: "Used for" }
+], DB.references);
+
+// ---------------- record cards
+function cohortCard(c) {
+  const ws = wavesOf(c.key);
+  const refs = [...new Set([...(c.fried_ref || []), ...(c.rock_ref || [])])];
+  const fi = ws.filter(w => w.rock), fr = ws.filter(w => w.fried);
+  const sections = ["Identification", "Data source", "Frailty measures", "Results by wave", "Charts", "Notes and caveats", "References"];
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-cohorts", "Cohorts"], [null, c.key]]) +
+    head(`${c.key}: ${c.name}`, c.id, `${esc(c.region)} · ${esc(c.period)} · ${esc(c.status)}`, cardJSONButton({ ...c, wave_records: ws }, `${c.id}_${c.key}.json`)) + toc(sections) +
+    kv([
+      ["Identification", [["FrailDB ID", `<code>${c.id}</code>`], ["Abbreviation", esc(c.key)], ["Full name", esc(c.name)], ["Region", esc(c.region)], ["Countries", c.countries > 1 ? `${c.countries} · <a href="#browse-countries">see country records</a>` : esc(c.countries)], ["Study period", esc(c.period)], ["Design", esc(c.design)]]],
+      ["Data source", [["Source files", esc(c.source)], ["Access", esc(c.access)], ["Website", `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>`], ["Mortality ascertainment", esc(c.mortality)]]],
+      ["Frailty measures", [["Rockwood frailty index", fi.length ? `${fi.length} waves · ${fmt(fi.reduce((s, w) => s + (w.rock.n || 0), 0))} assessments · ${fi[0].rock.items || 32} items · ${idLink("FDBI02", "instrument record")}` : "Not computed"],
+        ["Fried phenotype", fr.length ? `${fr.length} waves · ${fmt(fr.reduce((s, w) => s + (w.fried.n || 0), 0))} assessments · ${idLink("FDBI01", "instrument record")}` : "Not computed"],
+        ["Fried method", esc(DB.fried_methods?.[c.key] || "—")],
+        ["Age criterion", c.key === "CLHLS" ? "50+ (survey samples 65+)" : c.key === "LASI" ? "60+" : c.key === "ELSA" ? "50+ for the FI; 60+ for Fried" : "50+"]]],
+      ["Results by wave", [["Waves", ws.length ? `<div class="tablewrap"><table class="data"><thead><tr><th>Record</th><th class="num">Year</th><th class="num">FI n</th><th class="num">Mean FI</th><th class="num">FI frail</th><th class="num">Fried n</th><th class="num">Fried frail</th><th class="num">Pre-frail</th></tr></thead><tbody>${ws.map(w => `<tr><td class="id"><a href="#${w.id}">${w.id}</a> · wave ${w.wave}</td><td class="num">${w.year}</td><td class="num">${fmt(w.rock?.n)}</td><td class="num">${fmt(w.rock?.mean_fi, 3)}</td><td class="num">${pc(w.rock?.frail_pct)}</td><td class="num">${fmt(w.fried?.n)}</td><td class="num">${pc(w.fried?.frail_pct)}</td><td class="num">${pc(w.fried?.prefrail_pct)}</td></tr>`).join("")}</tbody></table></div>` : `<span class="note">${esc(c.status)}</span>`]]],
+      ["Charts", [["Prevalence and age gradient", ws.length ? `<div class="chartgrid"><div><p class="charttitle">Frail prevalence by wave</p><div class="chartbox short"><canvas id="cc1"></canvas></div></div><div><p class="charttitle">Frail prevalence by age (all waves pooled)</p><div class="chartbox short"><canvas id="cc2"></canvas></div></div></div>` : "—"],
+        ["Longitudinal", DB.longitudinal[c.key] ? `<a href="#tool-transitions" data-co="${c.key}">Transitions</a> · <a href="#tool-volatility" data-co="${c.key}">Volatility</a>${DB.concordance.some(x => x.cohort === c.key) ? ` · <a href="#tool-concordance" data-co="${c.key}">Fried vs FI agreement</a>` : ""}` : "—"]]],
+      ["Notes and caveats", [["Notes", `<ul class="flags">${(c.notes || []).map(n => `<li>${esc(n)}</li>`).join("")}</ul>`]]],
+      ["References", [["Cited", refs.map(r => BYID[r] ? `${idLink(r)} ${esc(BYID[r][1].cite)}` : r).join("<br><br>") || "—"]]]
+    ]);
+  wireToc(); wireCoLinks();
+  if (!ws.length) return;
+  mkChart($("#cc1"), { type: "line", data: { datasets: [
+    fi.length && { label: "FI ≥ 0.25", data: fi.map(w => ({ x: w.year, y: w.rock.frail_pct })), borderColor: css("--c1"), backgroundColor: css("--c1"), borderWidth: 2, pointRadius: 3.5 },
+    fr.length && { label: "Fried frail", data: fr.map(w => ({ x: w.year, y: w.fried.frail_pct })), borderColor: css("--c2"), backgroundColor: css("--c2"), borderWidth: 2, pointRadius: 3.5 },
+    fr.length && { label: "Fried pre-frail", data: fr.map(w => ({ x: w.year, y: w.fried.prefrail_pct })), borderColor: css("--c2"), backgroundColor: css("--c2"), borderDash: [5, 4], borderWidth: 2, pointRadius: 3 }
+  ].filter(Boolean) }, options: baseOpts({ scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v, stepSize: 2 }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+  const ac = DB.agecurves[c.key] || {};
+  mkChart($("#cc2"), { type: "line", data: { datasets: [
+    ac.rock && { label: "FI ≥ 0.25", data: ac.rock.filter(r => r.sex === "All").map(r => ({ x: r.age, y: r.frail_pct })), borderColor: css("--c1"), backgroundColor: css("--c1"), borderWidth: 2, pointRadius: 3 },
+    ac.fried && { label: "Fried frail", data: ac.fried.filter(r => r.sex === "All").map(r => ({ x: r.age, y: r.frail_pct })), borderColor: css("--c2"), backgroundColor: css("--c2"), borderWidth: 2, pointRadius: 3 }
+  ].filter(Boolean) }, options: baseOpts({ scales: { x: { type: "linear", min: 50, max: 95, ticks: { color: css("--muted"), stepSize: 5, callback: v => v === 95 ? "95+" : v }, title: { display: true, text: "Age band (start)", color: css("--muted") } }, y: pctAxis() } }) });
+}
+
+function waveCard(w) {
+  const c = COH[w.cohort], R = w.rock, F = w.fried;
+  const conc = DB.concordance.find(x => x.cohort === w.cohort)?.waves.find(x => x.wave === w.wave);
+  const cut = DB.cutoffs.filter(x => x.cohort === w.cohort && x.wave === w.wave);
+  const sib = wavesOf(w.cohort), i = sib.indexOf(w);
+  const nav = `${i > 0 ? `<a class="btn" href="#${sib[i - 1].id}">← Wave ${sib[i - 1].wave}</a>` : ""} ${i < sib.length - 1 ? `<a class="btn" href="#${sib[i + 1].id}">Wave ${sib[i + 1].wave} →</a>` : ""} ${cardJSONButton(w, `${w.id}_${w.cohort}_w${w.wave}.json`)}`;
+  const sections = ["Identification", "Sample flow", R && "Rockwood frailty index", F && "Fried phenotype", conc && "Agreement between instruments", cut.length && "Cut-off tables", "Quality flags"].filter(Boolean);
+  const flow = `<div class="flow">${[["Interviewed", w.raw], [w.cohort === "LASI" ? "Aged 60+" : "Aged 50+", w.age_n], ["FI complete cases", R?.n], ["Fried scored", F?.n]].filter(x => x[1] != null).map(([l, v]) => `<div class="step"><b>${fmt(v)}</b><span>${l}</span></div>`).join("")}</div>`;
+  const bandTable = (rows, kind) => !rows?.length ? "" : `<div class="tablewrap"><table class="data"><thead><tr><th>Age</th><th>Sex</th><th class="num">n</th>${kind === "rock" ? '<th class="num">Mean FI</th><th class="num">Frail</th><th class="num">Median FI</th><th class="num">P90 FI</th>' : '<th class="num">Mean score</th><th class="num">Frail</th><th class="num">Pre-frail</th>'}</tr></thead><tbody>${rows.map(r => `<tr><td>${r.band}</td><td>${r.sex}</td><td class="num">${r.n == null ? "<10" : fmt(r.n)}</td>${kind === "rock" ? `<td class="num">${fmt(r.mean_fi, 3)}</td><td class="num">${pc(r.frail_pct)}</td><td class="num">${fmt(r.p?.[2], 3)}</td><td class="num">${fmt(r.p?.[4], 3)}</td>` : `<td class="num">${fmt(r.mean_score, 2)}</td><td class="num">${pc(r.frail_pct)}</td><td class="num">${pc(r.prefrail_pct)}</td>`}</tr>`).join("")}</tbody></table></div>`;
+  const defBars = R?.deficits ? barsHTML(Object.entries(R.deficits).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ label: DEF[k] ? idLink(DEF[k].id, DEF[k].label) : esc(k), v })), 100) : "";
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-waves", "Waves"], [`#${c.id}`, w.cohort], [null, `Wave ${w.wave}`]]) +
+    head(waveLabel(w), w.id, esc(c.name), nav) + toc(sections) +
+    kv([
+      ["Identification", [["FrailDB ID", `<code>${w.id}</code>`], ["Cohort", `${swatch(w.cohort)} ${coLink(w.cohort)} · ${esc(c.name)}`], ["Wave", w.wave], ["Survey year", w.year], ["Source", esc(w.steps_source || c.source)]]],
+      ["Sample flow", [["Flow", flow], ["Missing data", "Complete case: anyone missing any item needed by an instrument is excluded from that instrument. The two instruments therefore have different samples."]]],
+      R && ["Rockwood frailty index", [
+        ["Summary", `<div class="metrics"><div class="metric"><b>${fmt(R.n)}</b><span>Complete cases</span></div><div class="metric"><b>${fmt(R.mean_fi, 3)}</b><span>Mean FI (SD ${fmt(R.sd_fi, 3)})</span></div><div class="metric"><b>${pc(R.frail_pct)}</b><span>Frail, FI ≥ 0.25</span></div><div class="metric"><b>${fmt(R.mean_age, 1)}</b><span>Mean age</span></div>${R.retention ? `<div class="metric"><b>${fmt(R.retention, 1)}%</b><span>Retention of age-eligible</span></div>` : ""}${R.female_pct ? `<div class="metric"><b>${pc(R.female_pct)}</b><span>Women</span></div>` : ""}</div>`],
+        ["Scoring", `frailty_index_score = total_deficits / ${R.items || 32} · ${idLink("FDBI02", "instrument record")}`],
+        R.hist && ["FI distribution", `<div class="chartbox short"><canvas id="wh1"></canvas></div><p class="note">Bars are 1/32 wide. Bars covering fewer than ${DB.meta.min_cell} people are left blank.</p>`],
+        R.bands && ["By age and sex", bandTable(R.bands, "rock")],
+        R.deficits && ["Deficit prevalence", `<p class="note" style="margin-top:0">Share of respondents with each deficit (graded CLHLS items show the mean score).</p>${defBars}`],
+        !R.has_detail && ["Detail", '<span class="note">Only wave-level results are available for this wave.</span>']
+      ]],
+      F && ["Fried phenotype", [
+        ["Summary", `<div class="metrics"><div class="metric"><b>${fmt(F.n)}</b><span>Scored (age ${esc(F.age_rule || "50+")})</span></div><div class="metric"><b class="status frail">${pc(F.frail_pct)}</b><span>Frail</span></div><div class="metric"><b class="status prefrail">${pc(F.prefrail_pct)}</b><span>Pre-frail</span></div><div class="metric"><b class="status nonfrail">${pc(F.nonfrail_pct ?? (F.frail_pct != null && F.prefrail_pct != null ? 100 - F.frail_pct - F.prefrail_pct : null))}</b><span>Non-frail</span></div><div class="metric"><b>${fmt(F.mean_score, 2)}</b><span>Mean score (0–5)</span></div></div>`],
+        ["Method", esc(w.method_fried || DB.fried_methods?.[w.cohort] || "—")],
+        F.criteria && ["Criteria met", barsHTML(DB.criteria.map(cr => ({ label: idLink(cr.id, `${cr.key} ${cr.name}`), v: F.criteria[cr.key], color: "--c2" })), 100)],
+        F.score_dist && ["Score distribution", `<div class="chartbox short"><canvas id="wh2"></canvas></div>`],
+        F.bands && ["By age and sex", bandTable(F.bands, "fried")],
+        !F.has_detail && ["Detail", '<span class="note">Only wave-level results are available for this wave.</span>']
+      ]],
+      conc && ["Agreement between instruments", [["People scored by both", fmt(conc.n)], ["Cohen's κ (frail vs frail)", fmt(conc.kappa, 3)], ["Cross-table", concTable(conc.matrix)]]],
+      cut.length && ["Cut-off tables", cut.map(t => [t.kind === "grip" ? "Grip strength (kg), lowest 20%" : "Walk time (s), slowest 20%", cutTable(t)])],
+      ["Quality flags", [["Flags", w.flags.length ? `<ul class="flags">${w.flags.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : '<span class="note">No flags raised for this wave.</span>']]]
+    ].filter(Boolean));
+  wireToc();
+  if (R?.hist) mkChart($("#wh1"), { type: "bar", data: { labels: R.hist.map((_, i) => (i / 32).toFixed(3)), datasets: [{ label: "People", data: R.hist, backgroundColor: R.hist.map((_, i) => i / 32 >= 0.25 ? css("--frail") : css("--c1")), borderRadius: 2, barPercentage: 0.92, categoryPercentage: 1 }] }, options: baseOpts({ plugins: { legend: { display: false }, tooltip: baseOpts().plugins.tooltip }, scales: { x: { ticks: { color: css("--muted"), maxRotation: 0, autoSkip: true, maxTicksLimit: 9 }, grid: { display: false }, title: { display: true, text: "Frailty index (red = frail, ≥ 0.25)", color: css("--muted") } }, y: { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
+  if (F?.score_dist) mkChart($("#wh2"), { type: "bar", data: { labels: ["0", "1", "2", "3", "4", "5"], datasets: [{ label: "People", data: F.score_dist, backgroundColor: [css("--nonfrail"), css("--prefrail"), css("--prefrail"), css("--frail"), css("--frail"), css("--frail")], borderRadius: 3, barPercentage: 0.8 }] }, options: baseOpts({ plugins: { legend: { display: false }, tooltip: baseOpts().plugins.tooltip }, scales: { x: { title: { display: true, text: "Criteria met (green non-frail · amber pre-frail · red frail)", color: css("--muted") }, ticks: { color: css("--muted") }, grid: { display: false } }, y: { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
+}
+function concTable(m) {
+  const S = ["non-frail", "pre-frail", "frail"], cls = ["nonfrail", "prefrail", "frail"];
+  return `<div class="tablewrap"><table class="data tmatrix"><thead><tr><th>Fried ↓ · FI →</th><th class="num">FI &lt; 0.25</th><th class="num">FI ≥ 0.25</th><th class="num">% FI-frail</th></tr></thead><tbody>${m.map((r, i) => `<tr><th><span class="status ${cls[i]}">${S[i]}</span></th><td class="num">${r[0] == null ? "<10" : fmt(r[0])}</td><td class="num">${r[1] == null ? "<10" : fmt(r[1])}</td><td class="num">${r[0] != null && r[1] != null ? pc(100 * r[1] / (r[0] + r[1])) : "—"}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function cutTable(t) {
+  const cols = Object.keys(t.rows[0] || {});
+  return `<div class="tablewrap"><table class="data"><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${t.rows.sort((a, b) => String(a[cols[0]]).localeCompare(String(b[cols[0]]))).map(r => `<tr>${cols.map(c => `<td>${typeof r[c] === "number" ? fmt(r[c], Number.isInteger(r[c]) ? 0 : 2) : esc(r[c])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+
+function deficitCard(d) {
+  const sections = ["Identification", "Cohort crosswalk", "Prevalence", "Related deficits"];
+  const related = DB.deficits.filter(x => x.domain === d.domain && x.key !== d.key);
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-deficits", "Deficits"], [null, d.label]]) +
+    head(d.label, d.id, `${esc(d.domain)} · deficit when: ${esc(d.rule)}`, cardJSONButton(d, `${d.id}_${d.key}.json`)) + toc(sections) +
+    kv([
+      ["Identification", [["FrailDB ID", `<code>${d.id}</code>`], ["Variable name", `<code>${esc(d.key)}</code>`], ["Name", esc(d.label)], ["Domain", esc(d.domain)], ["Deficit when", esc(d.rule)], ["Item set", d.core ? "Core 32-item frailty index (SHARE, HRS, ELSA, MHAS)" : d.sets.length === 1 ? `${esc(d.sets[0])}-specific item` : "Cohort-specific"], ["Used by", d.sets.map(k => `${swatch(k)} ${coLink(k)}`).join(" &nbsp; ")], ["Instrument", idLink("FDBI02", "Rockwood frailty index")]]],
+      ["Cohort crosswalk", [["Source variables", `<div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th>Source variable</th><th>Coded as a deficit when</th><th>Item label in cohort</th><th>Waves</th></tr></thead><tbody>${d.sets.map(k => { const v = d.vars[k] || {}; return `<tr><td>${swatch(k)} ${coLink(k)}</td><td><code>${esc(v.var || "—")}</code></td><td>${esc((v.rule || d.rule).replace(/^deficit = 1 when /, ""))}</td><td>${esc(v.label || d.label)}</td><td>${Object.keys(d.prev[k] || {}).join(", ")}</td></tr>`; }).join("")}</tbody></table></div>`]]],
+      ["Prevalence", [
+        ["By wave", `<div class="chartbox short"><canvas id="dc1"></canvas></div>`],
+        ["Frail vs non-frail", `<p class="note" style="margin-top:0">Pooled over waves. Frail = FI ≥ 0.25.</p>${barsHTML(d.sets.flatMap(k => [{ label: `${coLink(k)} · frail`, v: d.by_status[k]?.frail, color: "--frail" }, { label: `${coLink(k)} · non-frail`, v: d.by_status[k]?.nonfrail, color: "--nonfrail" }]), 100)}`],
+        ["By age band", `<div class="chartbox short"><canvas id="dc2"></canvas></div>`]
+      ]],
+      ["Related deficits", [[`Same domain (${esc(d.domain)})`, related.map(x => idLink(x.id, x.label)).join(" · ") || "—"]]]
+    ]);
+  wireToc();
+  mkChart($("#dc1"), { type: "line", data: { datasets: d.sets.map(k => lineDS(k, Object.entries(d.prev[k]).map(([wv, v]) => ({ x: DB.waves.find(w => w.cohort === k && w.wave == wv)?.year, y: v })).sort((a, b) => a.x - b.x), k)) }, options: baseOpts({ scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+  const bands = ["50–59", "60–69", "70–79", "80–89", "90+"];
+  mkChart($("#dc2"), { type: "line", data: { labels: bands, datasets: d.sets.map(k => lineDS(k, bands.map(b => d.by_age[k]?.[b] ?? null), k)) }, options: baseOpts({ scales: { x: { ticks: { color: css("--muted") }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+}
+
+function criterionCard(cr) {
+  const cos = Object.keys(cr.ops).filter(k => cr.ops[k]);
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-criteria", "Fried criteria"], [null, cr.name]]) +
+    head(`${cr.key} · ${cr.name}`, cr.id, esc(cr.desc), cardJSONButton(cr, `${cr.id}_${cr.key}.json`)) +
+    kv([
+      ["Identification", [["FrailDB ID", `<code>${cr.id}</code>`], ["Code", `<code>${cr.key}</code>`], ["Definition", esc(cr.desc)], ["Instrument", idLink("FDBI01", "Fried frailty phenotype")]]],
+      ["How each cohort measures it", [["Operationalisation", `<div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th>Measurement</th><th>Definition used</th></tr></thead><tbody>${cos.map(k => `<tr><td>${swatch(k)} ${coLink(k)}</td><td>${cr.measure?.[k] ? `<span class="tag ${cr.measure[k] === "measured" ? "meas" : "self"}">${cr.measure[k]}</span>` : '<span class="tag self">self-report</span>'}</td><td>${esc(cr.ops[k])}</td></tr>`).join("")}</tbody></table></div>`]]],
+      ["Prevalence", [["By wave", `<div class="chartbox short"><canvas id="fc1"></canvas></div>`], ["By age band (pooled)", `<div class="chartbox short"><canvas id="fc2"></canvas></div>`]]]
+    ]);
+  const ks = Object.keys(cr.prev);
+  mkChart($("#fc1"), { type: "line", data: { datasets: ks.map(k => lineDS(k, Object.entries(cr.prev[k]).map(([wv, v]) => ({ x: DB.waves.find(w => w.cohort === k && w.wave == wv)?.year, y: v })).sort((a, b) => a.x - b.x), k)) }, options: baseOpts({ scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+  const bands = ["50–59", "60–69", "70–79", "80–89", "90+"];
+  mkChart($("#fc2"), { type: "line", data: { labels: bands, datasets: ks.map(k => lineDS(k, bands.map(b => cr.by_age[k]?.[b] ?? null), k)) }, options: baseOpts({ scales: { x: { ticks: { color: css("--muted") }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+}
+
+function instrumentCard(ins) {
+  const isFI = ins.key === "rockwood";
+  const domains = [...new Set(DB.deficits.filter(d => d.core).map(d => d.domain))];
+  const items = isFI ? domains.map(dm => `<b>${esc(dm)}</b>: ${DB.deficits.filter(d => d.core && d.domain === dm).map(d => idLink(d.id, d.label)).join(", ")}`).join("<br>")
+    : DB.criteria.map(c => `${idLink(c.id, c.key)} ${esc(c.name)}: ${esc(c.desc)}`).join("<br>");
+  const cos = isFI ? FI_COHORTS : FRIED_COHORTS;
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-instruments", "Instruments"], [null, ins.name]]) + head(ins.name, ins.id, esc(ins.summary), cardJSONButton(ins, `${ins.id}.json`)) +
+    kv([
+      ["Definition", [["FrailDB ID", `<code>${ins.id}</code>`], ["Summary", esc(ins.summary)], ["Scoring", `<code>${esc(ins.scoring)}</code>`], ["Frail when", esc(ins.cutoff)]]],
+      ["Items", [[isFI ? "Core 32 deficits" : "Criteria", items], isFI && ["CLHLS variant", `CLHLS uses its own 32 items, including ${DB.deficits.filter(d => d.sets.length === 1 && d.sets[0] === "CLHLS").map(d => idLink(d.id, d.label)).join(", ")}.`], isFI && ["MHAS variant", `Dementia is replaced by ${DEF.d_equip_walkroom ? idLink(DEF.d_equip_walkroom.id, DEF.d_equip_walkroom.label) : "equipment use"}.`]]],
+      ["Use in FrailDB", [["Cohorts", cos.map(k => `${swatch(k)} ${coLink(k)} (${wavesOf(k).filter(w => isFI ? w.rock : w.fried).length} waves)`).join("<br>")]]],
+      ["References", [["Cited", ins.refs.map(r => `${idLink(r)} ${esc(BYID[r]?.[1].cite || "")}`).join("<br><br>")]]]
+    ]);
+}
+
+function countryCard(n) {
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-countries", "Countries"], [null, n.name]]) + head(n.name, n.id, `SHARE country code ${n.code}`, cardJSONButton(n, `${n.id}_${n.name}.json`)) +
+    kv([
+      ["Identification", [["FrailDB ID", `<code>${n.id}</code>`], ["Cohort", coLink("SHARE")], ["SHARE country code", n.code], ["Waves", n.waves.map(w => w.wave).join(", ")]]],
+      ["Results by wave", [["Table", `<div class="tablewrap"><table class="data"><thead><tr><th>Wave</th><th class="num">Year</th><th class="num">FI n</th><th class="num">Mean FI</th><th class="num">FI frail</th><th class="num">Fried n</th><th class="num">Fried frail</th><th class="num">Pre-frail</th></tr></thead><tbody>${n.waves.map(w => { const W = DB.waves.find(x => x.cohort === "SHARE" && x.wave === w.wave); return `<tr><td>${W ? idLink(W.id, "Wave " + w.wave) : w.wave}</td><td class="num">${W?.year ?? "—"}</td><td class="num">${w.rock_n == null && w.rock_frail_pct === undefined ? "—" : w.rock_n == null ? "<10" : fmt(w.rock_n)}</td><td class="num">${fmt(w.rock_mean, 3)}</td><td class="num">${pc(w.rock_frail_pct)}</td><td class="num">${w.fried_n == null && w.fried_frail_pct === undefined ? "—" : fmt(w.fried_n)}</td><td class="num">${pc(w.fried_frail_pct)}</td><td class="num">${pc(w.fried_prefrail_pct)}</td></tr>`; }).join("")}</tbody></table></div>`],
+        ["Chart", `<div class="chartbox short"><canvas id="nc1"></canvas></div>`]]],
+    ]);
+  const yr = wv => DB.waves.find(x => x.cohort === "SHARE" && x.wave === wv)?.year;
+  mkChart($("#nc1"), { type: "line", data: { datasets: [
+    { label: "FI ≥ 0.25", data: n.waves.filter(w => w.rock_frail_pct != null).map(w => ({ x: yr(w.wave), y: w.rock_frail_pct })), borderColor: css("--c1"), backgroundColor: css("--c1"), borderWidth: 2, pointRadius: 3.5 },
+    { label: "Fried frail", data: n.waves.filter(w => w.fried_frail_pct != null).map(w => ({ x: yr(w.wave), y: w.fried_frail_pct })), borderColor: css("--c2"), backgroundColor: css("--c2"), borderWidth: 2, pointRadius: 3.5 }
+  ] }, options: baseOpts({ scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+}
+
+function referenceCard(r) {
+  const users = DB.cohorts.filter(c => (c.fried_ref || []).includes(r.id) || (c.rock_ref || []).includes(r.id));
+  const ins = DB.instruments.filter(i => i.refs.includes(r.id));
+  app.innerHTML = crumbs([["#home", "Home"], ["#browse-references", "References"], [null, r.id]]) + head("Reference", r.id, "") +
+    kv([["Citation", [["Citation", esc(r.cite)], ["DOI", `<a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">${esc(r.doi)}</a>`], ["Used for", esc(r.used_for)]]],
+      ["Linked records", [["Cohorts", users.map(c => coLink(c.key)).join(", ") || "—"], ["Instruments", ins.map(i => idLink(i.id, i.name)).join(", ") || "—"]]]]);
+}
+
+// ---------------- search
+function searchIndex() {
+  const idx = [];
+  DB.cohorts.forEach(c => idx.push({ id: c.id, kind: "Cohort", title: `${c.key}: ${c.name}`, text: [c.region, c.design, c.source, ...(c.notes || [])].join(" ") }));
+  DB.waves.forEach(w => idx.push({ id: w.id, kind: "Wave", title: waveLabel(w), text: [w.steps_source, w.method_fried, ...w.flags].join(" ") }));
+  DB.deficits.forEach(d => idx.push({ id: d.id, kind: "Deficit", title: d.label, text: [d.key, d.domain, d.rule, ...Object.entries(d.vars).map(([k, v]) => `${k} ${v.var || ""} ${v.rule || ""} ${v.label || ""}`)].join(" ") }));
+  DB.criteria.forEach(c => idx.push({ id: c.id, kind: "Fried criterion", title: `${c.key} ${c.name}`, text: [c.desc, ...Object.values(c.ops)].join(" ") }));
+  DB.instruments.forEach(i => idx.push({ id: i.id, kind: "Instrument", title: i.name, text: [i.summary, i.scoring, i.cutoff].join(" ") }));
+  DB.countries.forEach(n => idx.push({ id: n.id, kind: "Country", title: n.name, text: "SHARE country " + n.code }));
+  DB.references.forEach(r => idx.push({ id: r.id, kind: "Reference", title: r.cite.split(".")[0], text: r.cite + " " + r.used_for }));
+  return idx;
+}
+const IDX = searchIndex();
+let lastQuery = "";
+function hl(text, q) { if (!q) return esc(text); const i = text.toLowerCase().indexOf(q.toLowerCase()); if (i < 0) return esc(text); return esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" + esc(text.slice(i + q.length)); }
+function snippet(text, q) { const i = text.toLowerCase().indexOf(q.toLowerCase()); if (i < 0) return text.slice(0, 140); const s = Math.max(0, i - 60); return (s ? "…" : "") + text.slice(s, i + q.length + 80) + "…"; }
+ROUTES.search = () => {
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Search"]]) + head("Text search", null, "Search every record by name, FrailDB ID, survey variable or keyword.") +
+    `<div class="panel"><div class="filters"><input type="search" id="sq" placeholder="e.g. stairs, hemobcs, Gale, wave 7" aria-label="Search text" value="${esc(lastQuery)}"><select id="sk" aria-label="Record type"><option value="">All record types</option>${[...new Set(IDX.map(x => x.kind))].map(k => `<option>${k}</option>`).join("")}</select><span class="count" id="scount"></span></div><div id="sres"></div></div>`;
+  const run = () => {
+    const q = $("#sq").value.trim(); lastQuery = q; const k = $("#sk").value;
+    if (!q) { $("#sres").innerHTML = '<p class="pad note">Type a word to search. Matches in names rank above matches in descriptions.</p>'; $("#scount").textContent = ""; return; }
+    const ql = q.toLowerCase();
+    const hits = IDX.filter(x => (!k || x.kind === k) && (x.id.toLowerCase() === ql || x.title.toLowerCase().includes(ql) || x.text.toLowerCase().includes(ql)))
+      .map(x => ({ ...x, score: x.id.toLowerCase() === ql ? 3 : x.title.toLowerCase().includes(ql) ? 2 : 1 })).sort((a, b) => b.score - a.score);
+    $("#scount").textContent = `${hits.length} result${hits.length === 1 ? "" : "s"}`;
+    $("#sres").innerHTML = hits.slice(0, 200).map(h => `<div class="searchhit"><div class="kind">${h.kind} · <span class="mono">${h.id}</span></div><a href="#${h.id}"><b>${hl(h.title, q)}</b></a>${h.score === 1 ? `<p>${hl(snippet(h.text, q), q)}</p>` : ""}</div>`).join("") || '<p class="pad note">No records match. Try a shorter word, or use <a href="#lookup">Variable lookup</a> for survey variable names.</p>';
+  };
+  $("#sq").oninput = run; $("#sk").onchange = run; run(); $("#sq").focus();
+};
+ROUTES.lookup = () => {
+  const rows = [];
+  DB.deficits.forEach(d => Object.entries(d.vars).forEach(([k, v]) => v.var && rows.push({ var: v.var, cohort: k, deficit: d, rule: (v.rule || d.rule).replace(/^deficit = 1 when /, "") })));
+  DB.criteria.forEach(c => Object.entries(c.ops).forEach(([k, v]) => { if (!v) return; (v.match(/\(([^)]+)\)/g) || []).forEach(m => rows.push({ var: m.slice(1, -1), cohort: k, crit: c, rule: v })); }));
+  app.innerHTML = crumbs([["#home", "Home"], ["#search", "Search"], [null, "Variable lookup"]]) + head("Variable lookup", null, "Enter a variable name from a survey file (for example <code>ph049d1</code>, <code>hemobcs</code>, <code>walk1a</code>, <code>E7</code>) to find the frailty item it feeds.") +
+    `<div class="panel"><div class="filters"><input type="search" id="lq" placeholder="Variable name" aria-label="Variable name"><select id="lc" aria-label="Cohort"><option value="">All cohorts</option>${ANALYSED.map(k => `<option>${k}</option>`).join("")}</select><span class="count" id="lcount"></span></div><div id="lres"></div></div>`;
+  const t = sortableTable($("#lres"), [
+    { key: "var", label: "Source variable", render: r => `<code>${esc(r.var)}</code>` },
+    { key: "cohort", label: "Cohort", render: r => `${swatch(r.cohort)} ${coLink(r.cohort)}` },
+    { key: "item", label: "FrailDB item", sortVal: r => r.deficit?.label || r.crit?.name, render: r => r.deficit ? `${idLink(r.deficit.id, r.deficit.label)} <span class="note">FI deficit</span>` : `${idLink(r.crit.id, r.crit.key + " " + r.crit.name)} <span class="note">Fried criterion</span>` },
+    { key: "rule", label: "Coding" }
+  ], rows);
+  const run = () => { const q = $("#lq").value.trim().toLowerCase(), c = $("#lc").value; const r = rows.filter(x => (!q || x.var.toLowerCase().includes(q)) && (!c || x.cohort === c)); t.update(r); $("#lcount").textContent = `${r.length} of ${rows.length} mappings`; };
+  $("#lq").oninput = run; $("#lc").onchange = run; run();
+};
+
+// ---------------- tools
+const toolState = { cohort: null };
+function wireCoLinks() { $$("a[data-co]").forEach(a => a.addEventListener("click", () => toolState.cohort = a.dataset.co)); }
+function seg(id, options, val) { return `<div class="seg" id="${id}" role="group">${options.map(([v, l]) => `<button type="button" data-v="${v}" class="${v === val ? "on" : ""}">${l}</button>`).join("")}</div>`; }
+function wireSeg(id, cb) { $$(`#${id} button`).forEach(b => b.onclick = () => { $$(`#${id} button`).forEach(x => x.classList.toggle("on", x === b)); cb(b.dataset.v); }); }
+function cohortSelect(id, list, val) { return `<select id="${id}">${list.map(k => `<option ${k === val ? "selected" : ""}>${k}</option>`).join("")}</select>`; }
+
+ROUTES["tool-compare"] = () => {
+  const st = { metric: "rock_frail", x: "year", sex: "All", cos: new Set(ANALYSED) };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Compare cohorts"]]) + head("Compare cohorts", null, "Plot one measure for several cohorts, by survey year or by age band. Age curves pool every wave, so each person can count more than once.") +
+    `<div class="panel"><div class="toolbar">
+      <label class="ctrl">Measure<select id="cm"><option value="rock_frail">FI frail (≥ 0.25), %</option><option value="rock_mean">Mean frailty index</option><option value="fried_frail">Fried frail, %</option><option value="fried_prefrail">Fried pre-frail, %</option></select></label>
+      <div class="ctrl">Across${seg("cx", [["year", "Survey year"], ["age", "Age"]], "year")}</div>
+      <label class="ctrl" id="csexw" hidden>Sex<select id="csex"><option>All</option><option>Female</option><option>Male</option></select></label>
+      <div class="ctrl">Cohorts<div class="checks">${ANALYSED.map(k => `<label>${swatch(k)}<input type="checkbox" value="${k}" checked> ${k}</label>`).join("")}</div></div>
+    </div><div class="pad"><div class="chartbox tall"><canvas id="cmp"></canvas></div><div id="cmpt"></div></div></div>`;
+  let chart;
+  const draw = () => {
+    if (chart) { chart.destroy(); charts = charts.filter(c => c !== chart); }
+    const [inst, kind] = st.metric.split("_");
+    const isPct = kind !== "mean";
+    let ds = [], rows = [];
+    for (const k of ANALYSED.filter(k => st.cos.has(k))) {
+      let pts = [];
+      if (st.x === "year") pts = wavesOf(k).filter(w => w[inst === "rock" ? "rock" : "fried"]).map(w => { const o = inst === "rock" ? w.rock : w.fried; return { x: w.year, y: kind === "frail" ? o.frail_pct : kind === "prefrail" ? o.prefrail_pct : o.mean_fi }; }).filter(p => p.y != null);
+      else if (kind !== "prefrail") pts = (DB.agecurves[k]?.[inst] || []).filter(r => r.sex === st.sex).map(r => ({ x: r.age, y: kind === "frail" ? r.frail_pct : r.mean }));
+      if (!pts.length) continue;
+      ds.push(lineDS(k, pts, k)); pts.forEach(p => rows.push({ cohort: k, [st.x === "year" ? "year" : "age band"]: st.x === "age" && p.x === 95 ? "95+" : st.x === "age" ? `${p.x}–${p.x + 4}` : p.x, value: p.y }));
+    }
+    chart = mkChart($("#cmp"), { type: "line", data: { datasets: ds }, options: baseOpts({ scales: { x: { type: "linear", ...(st.x === "age" ? { min: 50, max: 95 } : {}), ticks: { color: css("--muted"), stepSize: st.x === "age" ? 5 : 2, callback: v => st.x === "age" && v === 95 ? "95+" : v }, grid: { color: css("--line") }, title: { display: true, text: st.x === "age" ? "Age band (start of 5-year band)" : "Survey year", color: css("--muted") } }, y: isPct ? pctAxis() : { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, min: 0 } } }) });
+    $("#cmpt").innerHTML = ds.length ? `<details><summary class="note" style="cursor:pointer">Show the numbers as a table</summary><div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th>${st.x === "year" ? "Year" : "Age band"}</th><th class="num">Value</th></tr></thead><tbody>${rows.map(r => `<tr><td>${r.cohort}</td><td>${r.year ?? r["age band"]}</td><td class="num">${isPct ? pc(r.value) : fmt(r.value, 3)}</td></tr>`).join("")}</tbody></table></div></details>` : `<p class="note">No data for this choice. ${kind === "prefrail" && st.x === "age" ? "Pre-frail age curves are not in this build; switch to survey year." : ""}</p>`;
+  };
+  $("#cm").onchange = e => { st.metric = e.target.value; draw(); };
+  wireSeg("cx", v => { st.x = v; $("#csexw").hidden = v !== "age"; draw(); });
+  $("#csex").onchange = e => { st.sex = e.target.value; draw(); };
+  $$(".checks input").forEach(i => i.onchange = () => { i.checked ? st.cos.add(i.value) : st.cos.delete(i.value); draw(); });
+  draw();
+};
+
+ROUTES["tool-matrix"] = () => {
+  let mode = "prev";
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Harmonisation matrix"]]) + head("Harmonisation matrix", null, "Every frailty index deficit against every cohort. Cells show the mean prevalence across waves, or the source variable. Select a cell to open the deficit record.") +
+    `<div class="panel"><div class="toolbar"><div class="ctrl">Show${seg("mm", [["prev", "Prevalence"], ["var", "Source variable"]], "prev")}</div><span class="note">Blank cell: the cohort does not use this deficit.</span></div><div class="tablewrap" id="mx"></div></div>
+    <h2 class="sectiontitle">Fried criteria: measured or self-reported</h2><div class="panel tablewrap" id="mx2"></div>`;
+  const shade = v => { if (v == null) return ""; const t = Math.min(1, v / 60); const steps = ["--seq0", "--seq1", "--seq2", "--seq3", "--seq4", "--seq5"]; const i = Math.min(5, Math.floor(t * 6)); return `background:var(${steps[i]});color:var(--sq${i})`; };
+  const draw = () => {
+    const domains = [...new Set(DB.deficits.map(d => d.domain))];
+    $("#mx").innerHTML = `<table class="data matrix"><thead><tr><th>Deficit</th>${FI_COHORTS.map(k => `<th class="num">${swatch(k)} ${k}</th>`).join("")}</tr></thead><tbody>${domains.map(dm => `<tr class="dom"><td colspan="${FI_COHORTS.length + 1}">${esc(dm)}</td></tr>` + DB.deficits.filter(d => d.domain === dm).map(d => `<tr><td><a href="#${d.id}">${esc(d.label)}</a></td>${FI_COHORTS.map(k => { if (!d.sets.includes(k)) return `<td class="cell na" aria-label="not used"></td>`; const v = poolPrev(d, k); return `<td class="cell" data-id="${d.id}" title="${esc(d.label)} · ${k}">${mode === "prev" ? `<span style="${shade(v)}">${pc(v)}</span>` : `<code>${esc(d.vars[k]?.var || "—")}</code>`}</td>`; }).join("")}</tr>`).join("")).join("")}</tbody></table>`;
+    $$("#mx td.cell[data-id]").forEach(td => td.onclick = () => go(td.dataset.id));
+  };
+  wireSeg("mm", v => { mode = v; draw(); }); draw();
+  $("#mx2").innerHTML = `<table class="data"><thead><tr><th>Criterion</th>${FRIED_COHORTS.map(k => `<th>${swatch(k)} ${k}</th>`).join("")}</tr></thead><tbody>${DB.criteria.map(c => `<tr><td>${idLink(c.id, c.key + " " + c.name)}</td>${FRIED_COHORTS.map(k => `<td>${c.ops[k] ? `<span class="tag ${(c.measure?.[k] || "self-report") === "measured" ? "meas" : "self"}">${c.measure?.[k] || "self-report"}</span><br><span class="note">${esc(c.ops[k])}</span>` : "—"}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+};
+
+function normPercentile(co, sex, age, fi) {
+  const rows = DB.norms?.cohorts?.[co] || []; const a5 = Math.min(95, Math.floor(age / 5) * 5);
+  const r = rows.find(x => x.age === a5 && x.sex === sex) || rows.find(x => x.age === a5 && x.sex === "All");
+  if (!r) return null;
+  const q = DB.norms.q, v = r.v;
+  if (fi <= v[0]) return { p: fi < v[0] ? "< 5" : "5", row: r };
+  if (fi >= v[v.length - 1]) return { p: "> 95", row: r };
+  for (let i = 0; i < v.length - 1; i++) if (fi >= v[i] && fi <= v[i + 1]) { const t = v[i + 1] === v[i] ? 1 : (fi - v[i]) / (v[i + 1] - v[i]); return { p: Math.round(100 * (q[i] + t * (q[i + 1] - q[i]))), row: r }; }
+  return null;
+}
+ROUTES["tool-norms"] = () => {
+  const cos = Object.keys(DB.norms?.cohorts || {});
+  const st = { co: toolState.cohort && cos.includes(toolState.cohort) ? toolState.cohort : cos[0], sex: "All", age: 72, fi: 0.19 };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "FI reference norms"]]) + head("FI reference norms", null, "Frailty index percentiles by 5-year age band and sex, pooled over every wave of a cohort. Enter a person's age, sex and FI to see where they sit. Example values are filled in.") +
+    `<div class="panel"><div class="toolbar">
+      <label class="ctrl">Reference cohort${cohortSelect("nc", cos, st.co)}</label>
+      <label class="ctrl">Sex<select id="ns"><option>All</option><option>Female</option><option>Male</option></select></label>
+      <label class="ctrl">Age<input id="na" type="number" min="50" max="110" value="${st.age}" style="width:90px"></label>
+      <label class="ctrl">Frailty index<input id="nf" type="number" min="0" max="1" step="0.01" value="${st.fi}" style="width:100px"></label>
+    </div><div class="pad"><div class="result" id="nres"></div><p class="charttitle" style="margin-top:14px">Percentile bands of the frailty index by age</p><p class="chartsub">Shaded bands: 10th–90th and 25th–75th percentiles. Line: median. Dot: the person entered.</p><div class="chartbox tall"><canvas id="nch"></canvas></div><div id="ntab"></div></div></div>`;
+  let chart;
+  const draw = () => {
+    st.co = $("#nc").value; st.sex = $("#ns").value; st.age = +$("#na").value; st.fi = +$("#nf").value;
+    const res = normPercentile(st.co, st.sex, st.age, st.fi);
+    $("#nres").innerHTML = res ? `<div><div class="big">${res.p}${typeof res.p === "number" ? '<span style="font-size:20px">th</span>' : ""}</div><span class="note">percentile</span></div><div style="max-width:60ch">An FI of <b>${fmt(st.fi, 3)}</b> in a ${st.sex === "All" ? "person" : st.sex.toLowerCase()} aged ${st.age} is at about the ${res.p}${typeof res.p === "number" ? "th" : ""} percentile of ${st.co} respondents aged ${res.row.age === 95 ? "95+" : `${res.row.age}–${res.row.age + 4}`} (${fmt(res.row.n)} person-waves). ${st.fi >= 0.25 ? '<span class="status frail">Frail (FI ≥ 0.25)</span>' : '<span class="status nonfrail">Not frail (FI &lt; 0.25)</span>'}</div>` : `<p class="note">No reference group for this age in ${st.co}. ${st.co === "CLHLS" ? "CLHLS samples people aged 65+." : ""}</p>`;
+    const rows = (DB.norms.cohorts[st.co] || []).filter(r => r.sex === st.sex);
+    const q = DB.norms.q, qi = p => q.findIndex(x => Math.abs(x - p) < 1e-6);
+    const line = p => rows.map(r => ({ x: r.age + 2, y: r.v[qi(p)] }));
+    if (chart) { chart.destroy(); charts = charts.filter(c => c !== chart); }
+    const band = css("--c1");
+    chart = mkChart($("#nch"), { type: "line", data: { datasets: [
+      { label: "90th", data: line(0.9), borderColor: "transparent", backgroundColor: band + "22", fill: "+3", pointRadius: 0 },
+      { label: "75th", data: line(0.75), borderColor: "transparent", backgroundColor: band + "44", fill: "+1", pointRadius: 0 },
+      { label: "Median", data: line(0.5), borderColor: band, borderWidth: 2, pointRadius: 0 },
+      { label: "25th", data: line(0.25), borderColor: "transparent", pointRadius: 0 },
+      { label: "10th", data: line(0.1), borderColor: "transparent", pointRadius: 0 },
+      { label: "Person entered", data: [{ x: st.age, y: st.fi }], type: "scatter", backgroundColor: css("--accent"), borderColor: css("--surface"), borderWidth: 2, pointRadius: 8 },
+      { label: "Frail threshold", data: [{ x: 50, y: 0.25 }, { x: 100, y: 0.25 }], borderColor: css("--frail"), borderDash: [6, 5], borderWidth: 1.5, pointRadius: 0 }
+    ] }, options: baseOpts({ plugins: { ...baseOpts().plugins, legend: { ...baseOpts().plugins.legend, labels: { ...baseOpts().plugins.legend.labels, filter: i => ["Median", "Person entered", "Frail threshold"].includes(i.text) } } }, scales: { x: { type: "linear", min: 50, max: 100, ticks: { color: css("--muted"), stepSize: 5 }, grid: { color: css("--line") }, title: { display: true, text: "Age", color: css("--muted") } }, y: { min: 0, ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, title: { display: true, text: "Frailty index", color: css("--muted") } } } }) });
+    $("#ntab").innerHTML = `<details><summary class="note" style="cursor:pointer">Show the percentile table</summary><div class="tablewrap"><table class="data"><thead><tr><th>Age</th><th class="num">n</th>${[0.1, 0.25, 0.5, 0.75, 0.9].map(p => `<th class="num">P${p * 100}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr><td>${r.age === 95 ? "95+" : `${r.age}–${r.age + 4}`}</td><td class="num">${fmt(r.n)}</td>${[0.1, 0.25, 0.5, 0.75, 0.9].map(p => `<td class="num">${fmt(r.v[qi(p)], 3)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>`;
+  };
+  ["nc", "ns", "na", "nf"].forEach(id => $("#" + id).oninput = draw); draw();
+};
+
+ROUTES["tool-agewindow"] = () => {
+  const AW = DB.agewindow;
+  if (!AW) { app.innerHTML = head("Pre-frailty age window", null, "This analysis is not in this build."); return; }
+  const st = { m: "Fried", co: "Pooled", sex: "All" };
+  const label = m => m === "Rockwood" ? "Frailty index" : "Fried phenotype";
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Pre-frailty age window"]]) +
+    head("Pre-frailty age window", null, "Frailty becomes more common with every year of age, but pre-frailty does not carry the same risk at every age. For people who are pre-frail at one wave, this page follows what happens at their next assessment 2–4 years later, by age. The crossover age is when progression to frailty overtakes recovery to non-frail. The years before it are the window in which a pre-frail person still has a good chance of recovering.") +
+    `<div class="panel pad" id="awsum"></div>
+    <div class="panel" style="margin-top:14px"><div class="toolbar">
+      <div class="ctrl">Instrument${seg("awm", [["Fried", "Fried phenotype"], ["Rockwood", "Frailty index"]], "Fried")}</div>
+      <label class="ctrl">Cohort<select id="awc"></select></label>
+      <label class="ctrl">Sex<select id="aws"><option>All</option><option>Female</option><option>Male</option></select></label>
+    </div><div class="pad">
+      <p class="charttitle" id="awt"></p><p class="chartsub" id="aws2"></p>
+      <div class="chartbox tall"><canvas id="awch"></canvas></div>
+      <div class="chartgrid" style="margin-top:10px">
+        <div><p class="charttitle">Observed outcomes of pre-frail people, by age band</p><p class="chartsub">Among people re-assessed 2–4 years later. Brackets: 95% CI.</p><div id="awtab"></div></div>
+        <div><p class="charttitle">Risk of becoming frail: pre-frail vs non-frail</p><p class="chartsub">Same follow-up. The gap is the excess risk that comes with pre-frailty at each age.</p><div class="chartbox"><canvas id="awex"></canvas></div><div id="awext"></div></div>
+      </div>
+      <div class="callout" style="margin-top:14px" id="awnote"></div>
+    </div></div>
+    <h2 class="sectiontitle">Crossover age by cohort</h2><div class="panel pad"><p class="chartsub">Point: age at which progression overtakes recovery. Bar: 95% bootstrap interval (people resampled, ${AW.meta.n_boot} replicates). &lt; 50 means progression already exceeds recovery at the youngest age modelled.</p><div class="chartbox short"><canvas id="awfor"></canvas></div><div id="awfort"></div></div>`;
+  const fmtAge = a => a == null ? "—" : Math.round(a);
+  $("#awsum").innerHTML = `<div class="metrics">${["Fried", "Rockwood"].filter(m => AW.results[m]).map(m => { const P = AW.results[m].Pooled; return `<div class="metric"><b>Age ${fmtAge(P.curves.crossover.age)}</b><span>${label(m)} crossover, all cohorts pooled</span></div><div class="metric"><b>${fmt(P.n_reassessed)}</b><span>${label(m)} transitions followed</span></div>`; }).join("")}</div>
+    <p class="note" style="margin-bottom:0">Pre-frail means Fried score 1–2, or FI 0.10–0.24 (the index's intermediate range). ${esc(AW.meta.design)}</p>`;
+  let ch = [];
+  const mid = b => b === "90+" ? 92 : +b.split("–")[0] + 2;
+  const xoTxt = x => !x ? "—" : x.crossover?.age != null ? fmt(x.crossover.age, 1) : /already/.test(x.crossover?.note || "") ? `< ${x.ages[0]}` : /every age/.test(x.crossover?.note || "") ? `> ${x.ages[x.ages.length - 1]}` : "—";
+  const draw = () => {
+    ch.forEach(c => { if (c) { c.destroy(); charts = charts.filter(x => x !== c); } }); ch = [];
+    const R = AW.results[st.m], cos = Object.keys(R);
+    if (!cos.includes(st.co)) st.co = "Pooled";
+    $("#awc").innerHTML = cos.map(k => `<option ${k === st.co ? "selected" : ""}>${k}</option>`).join("");
+    const E = R[st.co];
+    $("#aws").disabled = st.co === "Pooled";
+    if (st.co === "Pooled") { st.sex = "All"; $("#aws").value = "All"; }
+    const sexOk = st.sex !== "All" && E.by_sex?.[st.sex];
+    const C = sexOk ? { ages: E.by_sex[st.sex].ages, y_frail: { p: E.by_sex[st.sex].frail }, y_rec: { p: E.by_sex[st.sex].recover }, crossover: E.by_sex[st.sex].crossover } : E.curves;
+    const xa = C.crossover?.age;
+    $("#awt").textContent = `${label(st.m)} · ${st.co}${sexOk ? " · " + st.sex : ""}: what happens to pre-frail people, by age`;
+    $("#aws2").textContent = xa ? `Crossover at about age ${xa.toFixed(1)}${!sexOk && E.curves.crossover_ci ? ` (95% CI ${E.curves.crossover_ci[0]}–${E.curves.crossover_ci[1]})` : ""}. Shaded: the window before it.` : (C.crossover?.note || "");
+    const frailC = css("--frail"), recC = css("--nonfrail");
+    const pts = arr => C.ages.map((a, i) => ({ x: a, y: arr?.[i] ?? null }));
+    const ds = [];
+    if (!sexOk && C.y_frail.hi) {
+      ds.push({ label: "frail-hi", data: pts(C.y_frail.hi), borderColor: "transparent", backgroundColor: frailC + "26", fill: "+1", pointRadius: 0 });
+      ds.push({ label: "frail-lo", data: pts(C.y_frail.lo), borderColor: "transparent", pointRadius: 0 });
+      ds.push({ label: "rec-hi", data: pts(C.y_rec.hi), borderColor: "transparent", backgroundColor: recC + "26", fill: "+1", pointRadius: 0 });
+      ds.push({ label: "rec-lo", data: pts(C.y_rec.lo), borderColor: "transparent", pointRadius: 0 });
+    }
+    ds.push({ label: "Progress to frail", data: pts(C.y_frail.p), borderColor: frailC, backgroundColor: frailC, borderWidth: 2.5, pointRadius: 0 });
+    ds.push({ label: "Recover to non-frail", data: pts(C.y_rec.p), borderColor: recC, backgroundColor: recC, borderWidth: 2.5, pointRadius: 0 });
+    const obs = E.bands.filter(b => b.base === "pre-frail" && b.frail != null && mid(b.band) <= 90);
+    if (!sexOk) {
+      ds.push({ label: "Observed (5-year bands)", type: "scatter", data: obs.map(b => ({ x: mid(b.band), y: b.frail })), backgroundColor: frailC, borderColor: css("--surface"), borderWidth: 1.5, pointRadius: 5, pointStyle: "rectRot" });
+      ds.push({ label: "obs-rec", type: "scatter", data: obs.map(b => ({ x: mid(b.band), y: b.recover })), backgroundColor: recC, borderColor: css("--surface"), borderWidth: 1.5, pointRadius: 5, pointStyle: "rectRot" });
+    }
+    const windowPlugin = { id: "win", beforeDatasetsDraw(c) {
+      if (!xa) return;
+      const { ctx, chartArea: a, scales: { x } } = c; const px = x.getPixelForValue(xa), p0 = a.left;
+      ctx.save(); ctx.fillStyle = css("--nonfrail") + "14"; ctx.fillRect(p0, a.top, px - p0, a.bottom - a.top);
+      ctx.strokeStyle = css("--ink-2"); ctx.setLineDash([5, 4]); ctx.beginPath(); ctx.moveTo(px, a.top); ctx.lineTo(px, a.bottom); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = css("--ink"); ctx.font = `600 12.5px ${css("--f-body")}`; const right = px > a.right - 150; ctx.textAlign = right ? "right" : "left";
+      ctx.fillText(`Crossover ≈ ${xa.toFixed(1)}`, px + (right ? -6 : 6), a.top + 14);
+      if (px - p0 > 190) { ctx.fillStyle = css("--muted"); ctx.textAlign = "left"; ctx.fillText("Window: recovery more likely", p0 + 8, a.top + 14); }
+      ctx.restore(); } };
+    const keep = ["Progress to frail", "Recover to non-frail", "Observed (5-year bands)"];
+    ch.push(mkChart($("#awch"), { type: "line", data: { datasets: ds }, plugins: [windowPlugin], options: baseOpts({
+      plugins: { ...baseOpts().plugins, legend: { ...baseOpts().plugins.legend, labels: { ...baseOpts().plugins.legend.labels, filter: i => keep.includes(i.text) } },
+        tooltip: { ...baseOpts().plugins.tooltip, filter: i => keep.includes(i.dataset.label) || i.dataset.label === "obs-rec",
+          callbacks: { title: it => "Age " + it[0].parsed.x, label: c => `${c.dataset.label === "obs-rec" ? "Observed recovery" : c.dataset.label}: ${c.parsed.y?.toFixed(1)}%` } } },
+      scales: { x: { type: "linear", min: 50, max: 90, ticks: { color: css("--muted"), stepSize: 5 }, grid: { color: css("--line") }, title: { display: true, text: "Age at the pre-frail assessment", color: css("--muted") } },
+        y: { ...pctAxis(), title: { display: true, text: "% of pre-frail people, 2–4 years later", color: css("--muted") } } } }) }));
+    const pre = E.bands.filter(b => b.base === "pre-frail");
+    const ci = c => c ? ` <span class="note">[${c[0]}–${c[1]}]</span>` : "";
+    $("#awtab").innerHTML = `<div class="tablewrap"><table class="data"><thead><tr><th>Age</th><th class="num">Pre-frail</th><th class="num">Not re-assessed</th><th class="num">→ Frail</th><th class="num">Recovered</th><th class="num">Still pre-frail</th></tr></thead><tbody>${pre.map(b => `<tr><td style="white-space:nowrap">${b.band}</td><td class="num">${fmt(b.n)}</td><td class="num">${pc(b.lost_pct)}</td><td class="num"><span style="color:var(--frail);font-weight:600">${pc(b.frail)}</span>${ci(b.frail_ci)}</td><td class="num"><span style="color:var(--nonfrail);font-weight:600">${pc(b.recover)}</span>${ci(b.recover_ci)}</td><td class="num">${pc(b.prefrail)}</td></tr>`).join("")}</tbody></table></div>`;
+    const ex = E.excess || [];
+    ch.push(mkChart($("#awex"), { type: "bar", data: { labels: ex.map(r => r.band), datasets: [
+      { label: "Pre-frail", data: ex.map(r => r.pre), backgroundColor: css("--prefrail"), borderRadius: 3, borderColor: css("--surface"), borderWidth: 1 },
+      { label: "Non-frail", data: ex.map(r => r.non), backgroundColor: css("--nonfrail"), borderRadius: 3, borderColor: css("--surface"), borderWidth: 1 }
+    ] }, options: baseOpts({ plugins: { ...baseOpts().plugins, tooltip: { ...baseOpts().plugins.tooltip, callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(1)}% became frail` } } },
+      scales: { x: { ticks: { color: css("--muted") }, grid: { display: false } }, y: { ...pctAxis(), title: { display: true, text: "% frail 2–4 years later", color: css("--muted") } } } }) }));
+    $("#awext").innerHTML = `<p class="note">Excess risk (percentage points): ${ex.map(r => `${r.band} <b>${r.rd > 0 ? "+" : ""}${fmt(r.rd, 1)}</b>`).join(" · ")}</p>`;
+    const peak = ex.reduce((a, r) => !a || r.rd > a.rd ? r : a, null);
+    const lost = pre.filter(b => b.lost_pct != null);
+    $("#awnote").innerHTML = `<b>Reading this result.</b> ${xa ? `In ${st.co === "Pooled" ? "the pooled cohorts" : st.co}, a pre-frail person younger than about ${Math.round(xa)} is more likely to be non-frail than frail at the next assessment. From about ${Math.round(xa)} the balance tips towards progression.` : esc(C.crossover?.note || "")} ${peak ? `Compared with a non-frail person of the same age, pre-frailty adds the most risk at ${peak.band} (+${fmt(peak.rd, 1)} points).` : ""}
+      ${lost.length ? ` Follow-up gets less complete with age: ${pc(lost[0].lost_pct, 0)} of pre-frail people aged ${lost[0].band} and ${pc(lost[lost.length - 1].lost_pct, 0)} of those aged ${lost[lost.length - 1].band} were not re-assessed. Deaths are among them, so progression at older ages is likely underestimated.` : ""}`;
+    const rows = Object.entries(R).map(([k, v]) => ({ k, a: v.curves?.crossover?.age, ci: v.curves?.crossover_ci })).filter(r => r.a != null);
+    ch.push(mkChart($("#awfor"), { type: "bar", data: { labels: rows.map(r => r.k), datasets: [
+      { label: "95% interval", data: rows.map(r => r.ci ? [r.ci[0], r.ci[1]] : [r.a - 0.2, r.a + 0.2]), backgroundColor: rows.map(r => (r.k === "Pooled" ? css("--ink-2") : cColor(r.k)) + "55"), borderRadius: 3, barPercentage: 0.4, grouped: false },
+      { label: "Crossover age", type: "scatter", data: rows.map(r => ({ x: r.a, y: r.k })), backgroundColor: rows.map(r => r.k === "Pooled" ? css("--ink") : cColor(r.k)), borderColor: css("--surface"), borderWidth: 2, pointRadius: 7 }
+    ] }, options: baseOpts({ indexAxis: "y", plugins: { ...baseOpts().plugins, legend: { display: false }, tooltip: { ...baseOpts().plugins.tooltip, callbacks: { label: c => c.dataset.type === "scatter" ? `Crossover ${c.parsed.x.toFixed(1)}` : `95% interval ${c.raw[0]}–${c.raw[1]}` } } },
+      scales: { x: { min: 50, max: 90, ticks: { color: css("--muted"), stepSize: 5 }, grid: { color: css("--line") }, title: { display: true, text: "Age", color: css("--muted") } }, y: { type: "category", labels: rows.map(r => r.k), ticks: { color: css("--ink-2") }, grid: { display: false } } } }) }));
+    $("#awfort").innerHTML = `<div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th class="num">Crossover age</th><th class="num">95% interval</th><th class="num">Pre-frail transitions</th><th class="num">Women</th><th class="num">Men</th></tr></thead><tbody>${Object.entries(R).map(([k, v]) => `<tr><td>${k === "Pooled" ? "<b>Pooled</b>" : swatch(k) + " " + coLink(k)}</td><td class="num">${v.curves?.crossover?.age != null ? fmt(v.curves.crossover.age, 1) : `<span class="note">${esc(v.curves?.crossover?.note || "—")}</span>`}</td><td class="num">${v.curves?.crossover_ci ? `${v.curves.crossover_ci[0]}–${v.curves.crossover_ci[1]}` : "—"}</td><td class="num">${fmt(v.curves?.n)}</td><td class="num">${xoTxt(v.by_sex?.Female)}</td><td class="num">${xoTxt(v.by_sex?.Male)}</td></tr>`).join("")}</tbody></table></div>`;
+  };
+  wireSeg("awm", v => { st.m = v; st.co = "Pooled"; draw(); });
+  $("#awc").onchange = e => { st.co = e.target.value; draw(); };
+  $("#aws").onchange = e => { st.sex = e.target.value; draw(); };
+  draw();
+};
+
+ROUTES["tool-transitions"] = () => {
+  const cos = Object.keys(DB.longitudinal);
+  const st = { co: toolState.cohort && cos.includes(toolState.cohort) ? toolState.cohort : cos[0], m: "rock", pair: "pooled" };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Transitions"]]) + head("Transitions", null, "Where people in each frailty state are at their next assessment, within the next two analysed waves. Rows add up to 100%. The last column counts people with no score at the next assessment: deaths, drop-outs and incomplete data are not separated in this build.") +
+    `<div class="panel"><div class="toolbar"><label class="ctrl">Cohort${cohortSelect("tc", cos, st.co)}</label><div class="ctrl">Instrument<span id="tmw"></span></div><label class="ctrl">Waves<select id="tp"></select></label></div><div class="pad"><div id="tout"></div><div class="chartbox"><canvas id="tch"></canvas></div></div></div>`;
+  let chart;
+  const draw = () => {
+    const L = DB.longitudinal[st.co]; const ms = Object.keys(L);
+    if (!ms.includes(st.m)) st.m = ms[0];
+    $("#tmw").innerHTML = seg("tm", ms.map(m => [m, m === "rock" ? "Frailty index" : "Fried"]), st.m);
+    wireSeg("tm", v => { st.m = v; st.pair = "pooled"; draw(); });
+    const O = L[st.m];
+    $("#tp").innerHTML = `<option value="pooled">All wave pairs pooled</option>` + O.transitions.map((t, i) => `<option value="${i}" ${String(i) === st.pair ? "selected" : ""}>From wave ${t.frm}</option>`).join("");
+    const M = st.pair === "pooled" ? O.pooled : O.transitions[+st.pair].matrix;
+    const states = O.states, sc = st.m === "rock" ? ["--nonfrail", "--prefrail", "--frail", "--muted"] : ["--nonfrail", "--prefrail", "--frail", "--muted"];
+    $("#tout").innerHTML = `<div class="tablewrap"><table class="data tmatrix"><thead><tr><th>From ↓ · To →</th>${states.map(s => `<th class="num">${esc(s)}</th>`).join("")}<th class="num">People</th></tr></thead><tbody>${M.map((r, i) => { const n = r.reduce((a, b) => a + (b || 0), 0); return `<tr><th style="text-align:left"><span class="status" style="color:var(${sc[i]})">${esc(states[i])}</span></th>${r.map((v, j) => `<td class="num heat" style="${i === j ? "font-weight:700" : ""}">${v == null ? "<10" : pc(100 * v / n)}<br><span class="note">${v == null ? "" : fmt(v)}</span></td>`).join("")}<td class="num">${fmt(n)}</td></tr>`; }).join("")}</tbody></table></div>`;
+    if (chart) { chart.destroy(); charts = charts.filter(c => c !== chart); }
+    chart = mkChart($("#tch"), { type: "bar", data: { labels: states.slice(0, 3).map(s => "From " + s), datasets: states.map((s, j) => ({ label: s, data: M.map(r => { const n = r.reduce((a, b) => a + (b || 0), 0); return r[j] == null ? 0 : 100 * r[j] / n; }), backgroundColor: css(sc[j]), borderColor: css("--surface"), borderWidth: 1 })) }, options: baseOpts({ indexAxis: "y", scales: { x: { stacked: true, max: 100, ticks: { color: css("--muted"), callback: v => v + "%" }, grid: { color: css("--line") } }, y: { stacked: true, ticks: { color: css("--ink-2") }, grid: { display: false } } }, plugins: { ...baseOpts().plugins, tooltip: { ...baseOpts().plugins.tooltip, callbacks: { label: c => `${c.dataset.label}: ${c.parsed.x.toFixed(1)}%` } } } }) });
+  };
+  $("#tc").onchange = e => { st.co = e.target.value; st.pair = "pooled"; draw(); };
+  $("#tp").onchange = e => { st.pair = e.target.value; draw(); };
+  draw();
+};
+
+ROUTES["tool-volatility"] = () => {
+  const cos = Object.keys(DB.longitudinal).filter(k => DB.longitudinal[k].rock?.volatility);
+  const st = { co: toolState.cohort && cos.includes(toolState.cohort) ? toolState.cohort : cos[0] };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Volatility"]]) + head("Frailty index volatility", null, "Within-person variability of the frailty index across waves, for people with three or more scored waves. This is the exposure studied by the Frailty Volatility project: whether instability of frailty predicts mortality beyond its average level.") +
+    `<div class="callout">Two people can share the same mean FI over a decade. One stays close to it; the other swings above and below it. The project tests whether the second person has higher mortality. The numbers below describe how large those swings are in each cohort. They are descriptive, and the mortality models are reported separately.</div>
+    <div class="panel" style="margin-top:14px"><div class="toolbar"><label class="ctrl">Cohort${cohortSelect("vc", cos, st.co)}</label></div><div class="pad" id="vout"></div></div>
+    <h2 class="sectiontitle">Across cohorts</h2><div class="panel pad"><p class="charttitle">Median within-person SD of the FI, by mean FI level</p><p class="chartsub">Higher-level frailty carries larger swings, which is why the project uses a location-scale model that separates level from variability.</p><div class="chartbox"><canvas id="vall"></canvas></div></div>`;
+  let ch;
+  const draw = () => {
+    st.co = $("#vc").value; const V = DB.longitudinal[st.co].rock.volatility, T = DB.longitudinal[st.co].rock.trajectory;
+    $("#vout").innerHTML = `<div class="metrics"><div class="metric"><b>${fmt(V.n)}</b><span>People with 3+ waves</span></div><div class="metric"><b>${fmt(V.sd_p[2], 3)}</b><span>Median within-person SD</span></div><div class="metric"><b>${fmt(V.sd_p[1], 3)}–${fmt(V.sd_p[3], 3)}</b><span>SD interquartile range</span></div><div class="metric"><b>${fmt(V.rmssd_p[2], 3)}</b><span>Median RMSSD</span></div><div class="metric"><b>${fmt(V.corr_mean_sd, 2)}</b><span>Correlation of mean FI with SD</span></div></div>
+      <div class="chartgrid" style="margin-top:12px"><div><p class="charttitle">Distribution of within-person SD</p><div class="chartbox short"><canvas id="vh"></canvas></div></div><div><p class="charttitle">FI by wave: median and 10th–90th percentiles</p><div class="chartbox short"><canvas id="vt"></canvas></div></div></div>
+      <div class="tablewrap"><table class="data"><thead><tr><th>Mean FI level</th><th class="num">People</th><th class="num">SD P25</th><th class="num">SD median</th><th class="num">SD P75</th><th class="num">RMSSD median</th></tr></thead><tbody>${V.by_level.map(b => `<tr><td>${esc(b.label)}</td><td class="num">${fmt(b.n)}</td><td class="num">${fmt(b.sd_p[1], 3)}</td><td class="num">${fmt(b.sd_p[2], 3)}</td><td class="num">${fmt(b.sd_p[3], 3)}</td><td class="num">${fmt(b.rmssd_med, 3)}</td></tr>`).join("")}</tbody></table></div>
+      <p class="note">SD = standard deviation of a person's FI across their scored waves. RMSSD = root mean square of successive differences, which is sensitive to wave-to-wave jumps rather than slow drift.</p>`;
+    charts.filter(c => c.canvas.id === "vh" || c.canvas.id === "vt").forEach(c => c.destroy());
+    mkChart($("#vh"), { type: "bar", data: { labels: V.sd_hist.map((_, i) => (i * V.sd_bin).toFixed(2)), datasets: [{ label: "People", data: V.sd_hist, backgroundColor: cColor(st.co), borderRadius: 2, barPercentage: 0.92, categoryPercentage: 1 }] }, options: baseOpts({ plugins: { legend: { display: false }, tooltip: baseOpts().plugins.tooltip }, scales: { x: { ticks: { color: css("--muted"), maxTicksLimit: 7, maxRotation: 0 }, grid: { display: false }, title: { display: true, text: "Within-person SD of FI", color: css("--muted") } }, y: { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
+    const yr = wv => DB.waves.find(x => x.cohort === st.co && x.wave === wv)?.year;
+    const col = cColor(st.co);
+    mkChart($("#vt"), { type: "line", data: { datasets: [
+      { label: "P90", data: T.map(t => ({ x: yr(t.wave), y: t.p[4] })), borderColor: "transparent", backgroundColor: col + "30", fill: "+2", pointRadius: 0 },
+      { label: "Median", data: T.map(t => ({ x: yr(t.wave), y: t.p[2] })), borderColor: col, borderWidth: 2, pointRadius: 3 },
+      { label: "P10", data: T.map(t => ({ x: yr(t.wave), y: t.p[0] })), borderColor: "transparent", pointRadius: 0 }
+    ] }, options: baseOpts({ plugins: { ...baseOpts().plugins, legend: { display: false } }, scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: { min: 0, ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
+  };
+  $("#vc").onchange = draw; draw();
+  const levels = ["Mean FI < 0.10", "Mean FI 0.10–0.24", "Mean FI ≥ 0.25"];
+  mkChart($("#vall"), { type: "bar", data: { labels: levels, datasets: cos.map(k => ({ label: k, data: levels.map(l => DB.longitudinal[k].rock.volatility.by_level.find(b => b.label === l)?.sd_p[2] ?? null), backgroundColor: cColor(k), borderRadius: 3, borderColor: css("--surface"), borderWidth: 1 })) }, options: baseOpts({ scales: { x: { ticks: { color: css("--ink-2") }, grid: { display: false } }, y: { min: 0, ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, title: { display: true, text: "Median within-person SD", color: css("--muted") } } } }) });
+};
+
+ROUTES["tool-concordance"] = () => {
+  const cos = DB.concordance.map(c => c.cohort);
+  const st = { co: toolState.cohort && cos.includes(toolState.cohort) ? toolState.cohort : cos[0] };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Fried vs FI"]]) + head("Fried phenotype vs frailty index", null, "Agreement between the two instruments for people scored by both in the same wave. κ compares Fried frail (3+ criteria) with FI frail (≥ 0.25).") +
+    `<div class="panel"><div class="toolbar"><label class="ctrl">Cohort${cohortSelect("kc", cos, st.co)}</label></div><div class="pad" id="kout"></div></div>
+    <h2 class="sectiontitle">Across cohorts</h2><div class="panel pad"><p class="charttitle">Mean frailty index within each Fried category</p><div class="chartbox"><canvas id="kall"></canvas></div></div>`;
+  const draw = () => {
+    const C = DB.concordance.find(c => c.cohort === $("#kc").value);
+    $("#kout").innerHTML = `<div class="chartgrid"><div><p class="charttitle">All waves pooled</p>${concTable(C.matrix)}</div><div><p class="charttitle">By wave</p><div class="tablewrap"><table class="data"><thead><tr><th>Wave</th><th class="num">Both scored</th><th class="num">κ</th></tr></thead><tbody>${C.waves.map(w => { const W = DB.waves.find(x => x.cohort === C.cohort && x.wave === w.wave); return `<tr><td>${W ? idLink(W.id, "Wave " + w.wave + " (" + W.year + ")") : w.wave}</td><td class="num">${fmt(w.n)}</td><td class="num">${fmt(w.kappa, 3)}</td></tr>`; }).join("")}</tbody></table></div></div></div>`;
+  };
+  $("#kc").onchange = draw; draw();
+  const S = ["non-frail", "pre-frail", "frail"];
+  mkChart($("#kall"), { type: "bar", data: { labels: S.map(s => "Fried " + s), datasets: DB.concordance.map(c => ({ label: c.cohort, data: S.map(s => c.mean_fi_by_fried[s]), backgroundColor: cColor(c.cohort), borderRadius: 3, borderColor: css("--surface"), borderWidth: 1 })) }, options: baseOpts({ scales: { x: { ticks: { color: css("--ink-2") }, grid: { display: false } }, y: { min: 0, ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, title: { display: true, text: "Mean FI", color: css("--muted") } } } }) });
+};
+
+ROUTES["tool-calculator"] = () => {
+  const core = DB.deficits.filter(d => d.core);
+  const domains = [...new Set(core.map(d => d.domain))];
+  const example = new Set(["d_hypertension", "d_arthritis", "d_mob_stoop", "d_mob_stairs_several", "d_mob_lift", "d_srh"]);
+  const cos = Object.keys(DB.norms?.cohorts || {}).filter(k => k !== "CLHLS");
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Frailty calculator"]]) + head("Frailty calculator", null, "Score one person with the core 32-item frailty index or the five Fried criteria. Nothing you enter leaves this page. An example person is filled in.") +
+    `<div class="chartgrid">
+      <div class="panel"><div class="pad"><h2 class="sectiontitle" style="margin-top:0">Rockwood frailty index (32 items)</h2>
+        <div class="toolbar" style="padding:0 0 12px;border:0"><label class="ctrl">Compare with${cohortSelect("cc", cos, "ELSA")}</label><label class="ctrl">Age<input id="cage" type="number" min="50" max="110" value="74" style="width:80px"></label><label class="ctrl">Sex<select id="csx"><option>Female</option><option>Male</option><option>All</option></select></label><button class="btn" type="button" id="cclr">Clear all</button></div>
+        <div class="result" id="cres"></div>
+        <div class="calc-items" style="margin-top:14px">${domains.map(dm => `<fieldset><legend>${esc(dm)}</legend>${core.filter(d => d.domain === dm).map(d => `<label><input type="checkbox" value="${d.key}" ${example.has(d.key) ? "checked" : ""}> <span>${esc(d.label)} <span class="note">· ${esc(d.rule.toLowerCase())}</span></span></label>`).join("")}</fieldset>`).join("")}</div>
+      </div></div>
+      <div class="panel" style="align-self:start"><div class="pad"><h2 class="sectiontitle" style="margin-top:0">Fried phenotype (5 criteria)</h2>
+        <div class="calc-items" style="columns:1">${DB.criteria.map(c => `<label><input type="checkbox" class="fq" value="${c.key}" ${c.key === "FQ4" ? "checked" : ""}> <span><b>${c.key} ${esc(c.name)}</b><br><span class="note">${esc(c.desc)}</span></span></label>`).join("")}</div>
+        <div class="result" id="fres" style="margin-top:12px"></div>
+        <p class="note">Weakness and slowness should use the measured grip and gait cut-offs of the reference cohort where available. See the cut-off tables on each wave record.</p>
+      </div></div>
+    </div>`;
+  const run = () => {
+    const ticked = $$(".calc-items input[type=checkbox]:not(.fq)").filter(i => i.checked).length;
+    const fi = ticked / 32; const res = normPercentile($("#cc").value, $("#csx").value, +$("#cage").value, fi);
+    $("#cres").innerHTML = `<div><div class="big">${fi.toFixed(3)}</div><span class="note">${ticked} of 32 deficits</span></div><div>${fi >= 0.25 ? '<span class="status frail">Frail (FI ≥ 0.25)</span>' : '<span class="status nonfrail">Not frail</span>'}<br>${res ? `About the <b>${res.p}${typeof res.p === "number" ? "th" : ""}</b> percentile for ${$("#cc").value}, age ${res.row.age === 95 ? "95+" : `${res.row.age}–${res.row.age + 4}`}` : '<span class="note">No reference group for this age.</span>'}</div>`;
+    const s = $$(".fq").filter(i => i.checked).length;
+    $("#fres").innerHTML = `<div><div class="big">${s}</div><span class="note">of 5 criteria</span></div><div><span class="status ${s >= 3 ? "frail" : s >= 1 ? "prefrail" : "nonfrail"}">${s >= 3 ? "Frail" : s >= 1 ? "Pre-frail" : "Non-frail"}</span></div>`;
+  };
+  $$("#app input, #app select").forEach(i => i.oninput = run);
+  $("#cclr").onclick = () => { $$(".calc-items input:not(.fq)").forEach(i => i.checked = false); run(); };
+  run();
+};
+
+// ---------------- downloads / stats / about
+function datasets() {
+  return [
+    { name: "fraildb_waves.csv", title: "Wave summary", desc: "One row per cohort wave: sample sizes, FI mean and SD, frail and pre-frail prevalence, mean age, flags.", rows: () => DB.waves.map(w => ({ id: w.id, cohort: w.cohort, wave: w.wave, year: w.year, interviewed: w.raw, age_eligible: w.age_n, fi_n: w.rock?.n, fi_mean: w.rock?.mean_fi, fi_sd: w.rock?.sd_fi, fi_frail_pct: w.rock?.frail_pct, fi_retention_pct: w.rock?.retention, fi_mean_age: w.rock?.mean_age, fried_n: w.fried?.n, fried_frail_pct: w.fried?.frail_pct, fried_prefrail_pct: w.fried?.prefrail_pct, fried_mean_score: w.fried?.mean_score, flags: w.flags.join(" | ") })) },
+    { name: "fraildb_deficit_crosswalk.csv", title: "Deficit crosswalk", desc: "Each deficit's source variable and coding rule in each cohort.", rows: () => DB.deficits.flatMap(d => d.sets.map(k => ({ deficit_id: d.id, deficit_key: d.key, deficit: d.label, domain: d.domain, cohort: k, source_variable: d.vars[k]?.var, coding: d.vars[k]?.rule || d.rule }))) },
+    { name: "fraildb_deficit_prevalence.csv", title: "Deficit prevalence by wave", desc: "Percentage of complete-case respondents with each deficit, by cohort and wave.", rows: () => DB.deficits.flatMap(d => Object.entries(d.prev).flatMap(([k, ws]) => Object.entries(ws).map(([w, v]) => ({ deficit_id: d.id, deficit_key: d.key, cohort: k, wave: +w, prevalence_pct: v })))) },
+    { name: "fraildb_fried_criteria.csv", title: "Fried criteria prevalence", desc: "Percentage meeting each Fried criterion, by cohort and wave.", rows: () => DB.criteria.flatMap(c => Object.entries(c.prev).flatMap(([k, ws]) => Object.entries(ws).map(([w, v]) => ({ criterion: c.key, name: c.name, cohort: k, wave: +w, prevalence_pct: v })))) },
+    { name: "fraildb_age_curves.csv", title: "Age curves", desc: "Frail prevalence and mean score by 5-year age band and sex, pooled over waves.", rows: () => Object.entries(DB.agecurves).flatMap(([k, ms]) => Object.entries(ms).flatMap(([m, rs]) => rs.map(r => ({ cohort: k, instrument: m === "rock" ? "frailty_index" : "fried", age_band_start: r.age, sex: r.sex, n: r.n, frail_pct: r.frail_pct, mean_score: r.mean })))) },
+    { name: "fraildb_fi_norms.csv", title: "FI reference norms", desc: "FI percentiles (5th to 95th) by cohort, 5-year age band and sex.", rows: () => Object.entries(DB.norms?.cohorts || {}).flatMap(([k, rs]) => rs.map(r => Object.assign({ cohort: k, age_band_start: r.age, sex: r.sex, n: r.n }, Object.fromEntries(DB.norms.q.map((q, i) => ["p" + Math.round(q * 100), r.v[i]]))))) },
+    { name: "fraildb_transitions.csv", title: "Transitions", desc: "Counts moving between frailty states between successive assessments.", rows: () => Object.entries(DB.longitudinal).flatMap(([k, ms]) => Object.entries(ms).flatMap(([m, O]) => O.transitions.flatMap(t => t.matrix.flatMap((r, i) => r.map((v, j) => ({ cohort: k, instrument: m, from_wave: t.frm, from_state: O.states[i], to_state: O.states[j], n: v })))))) },
+    DB.agewindow && { name: "fraildb_prefrailty_age_window.csv", title: "Pre-frailty age window", desc: "Outcomes 2–4 years after a pre-frail or non-frail assessment, by cohort, instrument and 5-year age band, with 95% CIs.", rows: () => Object.entries(DB.agewindow.results).flatMap(([m, cs]) => Object.entries(cs).flatMap(([k, v]) => v.bands.map(b => ({ instrument: m === "Rockwood" ? "frailty_index" : "fried", cohort: k, baseline_state: b.base, age_band: b.band, n: b.n, reassessed: b.reassessed, not_reassessed_pct: b.lost_pct, to_frail_pct: b.frail, to_frail_lo: b.frail_ci?.[0], to_frail_hi: b.frail_ci?.[1], recovered_pct: b.recover, recovered_lo: b.recover_ci?.[0], recovered_hi: b.recover_ci?.[1], stayed_prefrail_pct: b.prefrail, crossover_age: v.curves?.crossover?.age, crossover_lo: v.curves?.crossover_ci?.[0], crossover_hi: v.curves?.crossover_ci?.[1] })))) },
+    { name: "fraildb_cutoffs.csv", title: "Grip and walk cut-offs", desc: "Lowest-20% cut-offs by sex and BMI (grip) or height (walk), by cohort and wave.", rows: () => DB.cutoffs.flatMap(t => t.rows.map(r => ({ cohort: t.cohort, wave: t.wave, measure: t.kind, ...r }))) },
+    { name: "fraildb_share_countries.csv", title: "SHARE countries", desc: "FI and Fried prevalence by SHARE country and wave.", rows: () => DB.countries.flatMap(n => n.waves.map(w => ({ country: n.name, code: n.code, ...w }))) },
+    { name: "fraildb_full.json", title: "Full database (JSON)", desc: "Every record in this release, in one file.", json: true }
+  ].filter(Boolean);
+}
+ROUTES.downloads = () => {
+  const D = datasets();
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Downloads"]]) + head("Downloads", null, `Release ${esc(DB.meta.version)}, built ${esc(DB.meta.built)}. All files contain aggregated results only. Counts below ${DB.meta.min_cell} are left blank.`) +
+    `<div class="panel tablewrap"><table class="data"><thead><tr><th>File</th><th>Contents</th><th class="num">Rows</th><th></th></tr></thead><tbody>${D.map((d, i) => `<tr><td><b>${esc(d.title)}</b><br><code>${esc(d.name)}</code></td><td>${esc(d.desc)}</td><td class="num">${d.json ? "—" : fmt(d.rows().length)}</td><td><button class="btn" type="button" data-i="${i}">Download</button></td></tr>`).join("")}</tbody></table></div>
+    <div class="callout" style="margin-top:16px">Participant-level frailty scores cannot be redistributed under the cohorts' data-use agreements. Researchers with approved access to a cohort can regenerate them with the project's analysis scripts.</div>`;
+  $$("button[data-i]").forEach(b => b.onclick = () => { const d = D[+b.dataset.i]; saveFile(d.name, d.json ? JSON.stringify(DB) : toCSV(d.rows())); });
+};
+ROUTES.statistics = () => {
+  const m = DB.meta.counts;
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Statistics"]]) + head("Database statistics", null, `Release ${esc(DB.meta.version)}, built ${esc(DB.meta.built)}.`) +
+    `<div class="chartgrid"><div class="panel tablewrap"><table class="data"><thead><tr><th>Record type</th><th class="num">Records</th></tr></thead><tbody>${[["Cohorts", DB.cohorts.length], ["Waves", DB.waves.length], ["Deficits", DB.deficits.length], ["Fried criteria", DB.criteria.length], ["Instruments", DB.instruments.length], ["Countries (SHARE)", DB.countries.length], ["References", DB.references.length], ["Cut-off tables", DB.cutoffs.length], ["Source-variable mappings", DB.deficits.reduce((s, d) => s + d.sets.length, 0)]].map(([a, b]) => `<tr><td>${a}</td><td class="num">${fmt(b)}</td></tr>`).join("")}</tbody></table></div>
+    <div class="panel tablewrap"><table class="data"><thead><tr><th>Measure</th><th class="num">Count</th></tr></thead><tbody>${[["Frailty index assessments", m.rock_assessments], ["Fried phenotype assessments", m.fried_assessments], ["People with an FI score", m.persons], ["People with 3+ FI waves", Object.values(DB.longitudinal).reduce((s, v) => s + (v.rock?.volatility?.n || 0), 0)], ["Countries", m.countries]].map(([a, b]) => `<tr><td>${a}</td><td class="num">${fmt(b)}</td></tr>`).join("")}</tbody></table></div></div>
+    <h2 class="sectiontitle">By cohort</h2><div class="panel tablewrap"><table class="data"><thead><tr><th>Cohort</th><th class="num">Waves</th><th class="num">FI waves</th><th class="num">FI assessments</th><th class="num">Fried waves</th><th class="num">Fried assessments</th><th class="num">Deficits used</th><th class="num">Flags</th></tr></thead><tbody>${DB.cohorts.map(c => { const ws = wavesOf(c.key); return `<tr><td>${swatch(c.key)} ${coLink(c.key)}</td><td class="num">${ws.length}</td><td class="num">${ws.filter(w => w.rock).length}</td><td class="num">${fmt(ws.reduce((s, w) => s + (w.rock?.n || 0), 0))}</td><td class="num">${ws.filter(w => w.fried).length}</td><td class="num">${fmt(ws.reduce((s, w) => s + (w.fried?.n || 0), 0))}</td><td class="num">${DB.deficits.filter(d => d.sets.includes(c.key)).length}</td><td class="num">${ws.reduce((s, w) => s + w.flags.length, 0)}</td></tr>`; }).join("")}</tbody></table></div>`;
+};
+ROUTES.about = () => {
+  app.innerHTML = crumbs([["#home", "Home"], [null, "About"]]) + head("About FrailDB", null, "") + `<div class="prose">
+    <p>FrailDB is a database of frailty in older adults, built by the Frailty_Volatility Project at the Department of Biological Sciences and Bioengineering, IIT Kanpur (principal investigator: Prof. Robert Sonowal). It scores two standard instruments, the Fried frailty phenotype and the Rockwood frailty index, in every available wave of the major harmonised ageing cohorts, using one set of rules.</p>
+    <h2>What is in a release</h2>
+    <ul><li><b>Cohort records</b>: design, data source, access route and how deaths are recorded.</li><li><b>Wave records</b>: sample flow, results for each instrument, age and sex breakdowns, grip and walk cut-offs, and quality flags.</li><li><b>Deficit records</b>: the definition of each frailty index item, the survey variable behind it in each cohort, and its prevalence.</li><li><b>Fried criterion records</b>: how each cohort measures exhaustion, weight loss, weakness, slowness and low activity, and whether the measure is objective or self-reported.</li><li><b>Tools</b>: cohort comparison, a harmonisation matrix, FI reference norms, transitions between frailty states, frailty volatility, instrument agreement and a calculator.</li></ul>
+    <h2>Why it exists</h2>
+    <p>Frailty prevalence estimates vary several-fold between studies, and much of that variation comes from how the instruments are put into practice. FrailDB makes those choices visible and comparable: the same deficit can be checked across five cohorts in one place, and every number links back to the wave and the rule that produced it.</p>
+    <h2>Record identifiers</h2>
+    <p>Every record has a stable FrailDB ID: <code>FDBC</code> cohorts, <code>FDBW</code> waves, <code>FDBD</code> deficits, <code>FDBF</code> Fried criteria, <code>FDBI</code> instruments, <code>FDBN</code> countries and <code>FDBR</code> references. Enter an ID in the search box to open its record.</p>
+    <h2>Status</h2><p>This is a sample release (version ${esc(DB.meta.version)}). KLoSA is held but not yet scored. Waves whose participant-level output is missing show wave-level results only and are flagged.</p></div>`;
+};
+ROUTES.methods = () => {
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Methods"]]) + head("Methods and data policy", null, "") + `<div class="prose">
+    <h2>Sample</h2><p>Each wave keeps respondents aged 50 and over who were interviewed in that wave (60 and over for the ELSA Fried phenotype, following Gale et al. 2015). Survey non-response codes are set to missing.</p>
+    <h2>Missing data</h2><p>Complete case. A respondent missing any item needed by an instrument is excluded from that instrument in that wave. The two instruments therefore have different samples, and retention is reported for every wave.</p>
+    <h2>Rockwood frailty index</h2><p>32 deficits across disease, self-rated health, ADL, IADL, mobility, senses, depressive symptoms and cognition, each coded 0 or 1 (CLHLS has four graded items). FI = deficits present ÷ 32. Frail when FI ≥ 0.25. See ${idLink("FDBI02", "the instrument record")}.</p>
+    <h2>Fried phenotype</h2><p>Five criteria, each 0 or 1. Score 0 = non-frail, 1–2 = pre-frail, 3–5 = frail. Measured grip is classed weak when it is in the lowest 20% within sex × BMI group, and measured walk time is classed slow when it is in the slowest 20% within sex × height group. The cut-off tables are on each wave record. See ${idLink("FDBI01", "the instrument record")}.</p>
+    <h2>Longitudinal measures</h2><p>Transitions compare a person's state with their state at the next assessment within the next two analysed waves. Volatility uses people with three or more scored FI waves: the standard deviation of their FI and the root mean square of successive differences.</p>
+    <h2>Data policy</h2><p>FrailDB publishes aggregated results only. Every count below ${DB.meta.min_cell} is suppressed, and percentiles are reported only for groups of 30 or more. No participant identifiers or individual records are included. The source cohorts' data-use agreements do not allow redistribution of participant-level data; to obtain them, apply to each cohort through the access routes listed on its record.</p></div>`;
+};
+ROUTES.cite = () => {
+  const cite = `FrailDB: the Multi-Cohort Frailty Database, version ${DB.meta.version}. Frailty_Volatility Project, Department of Biological Sciences and Bioengineering, Indian Institute of Technology Kanpur; ${DB.meta.built.slice(0, 4)}.`;
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Cite"]]) + head("How to cite", null, "") + `<div class="prose"><p>Please cite FrailDB and the source cohorts you use.</p><div class="callout" id="citetext">${esc(cite)}</div><p><button class="btn" id="copycite" type="button">Copy citation</button></p><h2>Source cohorts</h2><ul>${DB.cohorts.map(c => `<li>${coLink(c.key)}: ${esc(c.name)}. ${esc(c.source)}.</li>`).join("")}</ul></div>`;
+  $("#copycite").onclick = async () => { try { await navigator.clipboard.writeText(cite); toast("Citation copied"); } catch { const r = document.createRange(); r.selectNodeContents($("#citetext")); getSelection().removeAllRanges(); getSelection().addRange(r); toast("Press Ctrl+C to copy"); } };
+};
+
+// ------------------------------------------------------------------ router
+function go(route, q) { if (q != null) lastQuery = q; if (location.hash === "#" + route) render(); else location.hash = route; }
+function render() {
+  killCharts();
+  const h = decodeURIComponent(location.hash.slice(1)) || "home";
+  const rec = BYID[h.toUpperCase()];
+  $$(".nav-item.open").forEach(n => n.classList.remove("open"));
+  $("#nav").classList.remove("expanded");
+  if (rec) {
+    const [kind, obj] = rec;
+    ({ cohort: cohortCard, wave: waveCard, deficit: deficitCard, criterion: criterionCard, instrument: instrumentCard, country: countryCard, reference: referenceCard })[kind](obj);
+  } else (ROUTES[h] || ROUTES.home)();
+  scrollTo(0, 0);
+}
+addEventListener("hashchange", render);
+$$(".nav-item>button").forEach(b => b.onclick = e => { e.stopPropagation(); const it = b.parentElement, was = it.classList.contains("open"); $$(".nav-item.open").forEach(n => n.classList.remove("open")); if (!was) it.classList.add("open"); });
+document.addEventListener("click", e => { if (!e.target.closest(".nav-item")) $$(".nav-item.open").forEach(n => n.classList.remove("open")); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") $$(".nav-item.open").forEach(n => n.classList.remove("open")); });
+$("#menuToggle").onclick = () => { const n = $("#nav"); n.classList.toggle("expanded"); $("#menuToggle").setAttribute("aria-expanded", n.classList.contains("expanded")); };
+$("#navsearch").onsubmit = e => { e.preventDefault(); const q = $("#navq").value.trim(); if (BYID[q.toUpperCase()]) go(q.toUpperCase()); else go("search", q); $("#navq").value = ""; };
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+render();
+</script>

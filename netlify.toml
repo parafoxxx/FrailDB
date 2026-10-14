@@ -1,0 +1,10 @@
+# Netlify: deploys the prebuilt static site. The build runs locally (it needs the raw cohort data).
+[build]
+  publish = "dist"
+  command = ""
+
+[[headers]]
+  for = "/frailtydb.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"

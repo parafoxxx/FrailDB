@@ -1,0 +1,11 @@
+# local caches (may hold participant-level extracts) — never commit
+.cache/
+__pycache__/
+*.pyc
+
+# raw cohort data must never be committed; it lives outside this folder in ../Data Sources
+*.dta
+*.rds
+*.rda
+*.sav
+*.xlsx
