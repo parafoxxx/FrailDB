@@ -1,0 +1,510 @@
+dataset,key,label,theme,mean_importance_pct
+SHARE · Rockwood,ph082_,At least taking 5 different drugs a typical day,Medication and health care,4.065
+SHARE · Rockwood,ph085_,Level of pain,Pain,3.496
+SHARE · Rockwood,ph011dno,Drugs for: none,Medication and health care,3.402
+SHARE · Rockwood,ph011d7,Drugs for: joint pain,Pain,3.073
+SHARE · Rockwood,ac014_,Age prevents from doing things,Self-rated health and outlook,2.879
+SHARE · Rockwood,cs004_,Single cs test results,Performance tests,2.296
+SHARE · Rockwood,ac015_,Out of control,Self-rated health and outlook,1.925
+SHARE · Rockwood,cf103_,Memory,Mood and cognition,1.87
+SHARE · Rockwood,ac025_,Future looks good,Self-rated health and outlook,1.823
+SHARE · Rockwood,hc127dno,Received professional services: none of these,Medication and health care,1.608
+SHARE · Rockwood,ac017_,Do the things you want to do,Function and limitation,1.471
+SHARE · Rockwood,ph087d1,Pain location: back,Pain,1.284
+SHARE · Rockwood,ph087d2,Pain location: hips,Pain,1.246
+SHARE · Rockwood,ph087d3,Pain location: knees,Pain,1.229
+SHARE · Rockwood,ac012_,How satisfied with life,Self-rated health and outlook,1.225
+SHARE · Rockwood,symptomsw2,Number of symptoms (w2 version),Symptoms and conditions,1.111
+SHARE · Rockwood,symptoms2w2,2+ symptoms (w2 version),Symptoms and conditions,1.082
+SHARE · Rockwood,ac024_,Full of opportunities,Other,1.058
+SHARE · Rockwood,mh027_,Felt faint,Symptoms and conditions,1.012
+SHARE · Rockwood,ep097_,Pension claims,"Work, money and social life",1.011
+SHARE · Rockwood,symptoms2w4,2+ symptoms (w4 version),Symptoms and conditions,0.964
+SHARE · Rockwood,symptomsw4,Number of symptoms (w4 version),Symptoms and conditions,0.962
+SHARE · Rockwood,it004_,Use of internet in past 7 days,"Work, money and social life",0.917
+SHARE · Rockwood,ph011d1,Drugs for: high blood cholesterol,Symptoms and conditions,0.881
+SHARE · Rockwood,q1d,Health: pain/discomfort,Pain,0.866
+SHARE · Rockwood,ph010dno,Bothered by: no symptoms,Symptoms and conditions,0.79
+SHARE · Rockwood,ph087d4,Pain location: other joints,Pain,0.778
+SHARE · Rockwood,ph010d8,Bothered by: fear of falling down,Symptoms and conditions,0.761
+SHARE · Rockwood,ph010d3,Bothered by: breathlessness,Symptoms and conditions,0.694
+SHARE · Rockwood,cf002_,Self-rated writing skills,Self-rated health and outlook,0.637
+SHARE · Rockwood,ph010d5,Bothered by: swollen legs,Symptoms and conditions,0.609
+SHARE · Rockwood,casp,CASP index for quality of life and well-being,Self-rated health and outlook,0.59
+SHARE · Rockwood,hc889_,Health literacy: how often help needed,Function and limitation,0.57
+SHARE · Rockwood,ex009age,Life expectancy target age,Age and background,0.569
+SHARE · Rockwood,ac018_,Family responsibilities prevent,"Work, money and social life",0.569
+SHARE · Rockwood,age_int,Age of respondent at the time of interview,Age and background,0.453
+SHARE · Rockwood,te005_,Hours spent on chores,Other,0.453
+SHARE · Rockwood,yrbirth_do,Year of birth,Age and background,0.452
+SHARE · Rockwood,hc089e,Amount payed overall for drugs,Medication and health care,0.44
+SHARE · Rockwood,mh025_,Hands trembling,Other,0.427
+SHARE · Rockwood,ph084_,Troubled with pain,Pain,0.409
+SHARE · Rockwood,hc049e,Paid out-of-pocket for prescribed drugs,Function and limitation,0.403
+SHARE · Rockwood,hc689e,Amount payed yourself for medication last 12 months,Medication and health care,0.385
+SHARE · Rockwood,yrbirth,Year of birth,Age and background,0.353
+SHARE · Rockwood,hc602_,Times talked to medical doctor/nurse about your health last 12 months,Medication and health care,0.35
+SHARE · Rockwood,hc051e,"Paid out-of-pocket for nursing home, day-care and home-care",Function and limitation,0.305
+SHARE · Rockwood,ex009_,Life expectancy,Other,0.283
+SHARE · Rockwood,ph064_,Health worse last wave,Other,0.27
+SHARE · Rockwood,ph025_,Bite on hard foods,Other,0.255
+SHARE · Rockwood,br010_,Days a week consumed alcohol last 3 months,Other,0.245
+SHARE · Rockwood,ph062_,Compare health last wave,Other,0.231
+SHARE · Rockwood,hc140d1,Payed anything yourself for aids/appliances last 12 months,Function and limitation,0.181
+SHARE · Fried,ph082_,At least taking 5 different drugs a typical day,Medication and health care,2.911
+SHARE · Fried,ac014_,Age prevents from doing things,Self-rated health and outlook,2.828
+SHARE · Fried,ph085_,Level of pain,Pain,2.53
+SHARE · Fried,ep097_,Pension claims,"Work, money and social life",2.286
+SHARE · Fried,ac017_,Do the things you want to do,Function and limitation,2.01
+SHARE · Fried,ac015_,Out of control,Self-rated health and outlook,1.758
+SHARE · Fried,cs004_,Single cs test results,Performance tests,1.729
+SHARE · Fried,ac025_,Future looks good,Self-rated health and outlook,1.467
+SHARE · Fried,mh027_,Felt faint,Symptoms and conditions,1.451
+SHARE · Fried,ph011d7,Drugs for: joint pain,Pain,1.44
+SHARE · Fried,ex009age,Life expectancy target age,Age and background,1.403
+SHARE · Fried,ac024_,Full of opportunities,Other,1.325
+SHARE · Fried,hc127dno,Received professional services: none of these,Medication and health care,1.302
+SHARE · Fried,ac012_,How satisfied with life,Self-rated health and outlook,1.088
+SHARE · Fried,it004_,Use of internet in past 7 days,"Work, money and social life",1.053
+SHARE · Fried,age_int,Age of respondent at the time of interview,Age and background,0.893
+SHARE · Fried,hc013_,Times being patient in hospital,Medication and health care,0.844
+SHARE · Fried,ph011dno,Drugs for: none,Medication and health care,0.755
+SHARE · Fried,symptomsw2,Number of symptoms (w2 version),Symptoms and conditions,0.71
+SHARE · Fried,casp,CASP index for quality of life and well-being,Self-rated health and outlook,0.7
+SHARE · Fried,symptoms2w2,2+ symptoms (w2 version),Symptoms and conditions,0.687
+SHARE · Fried,numeracy2,Numeracy score 2: mathematical performance (subtraction),Other,0.678
+SHARE · Fried,ac037_,Satisfied with activities,Physical activity,0.647
+SHARE · Fried,cf008tot,Ten words list learning first trial total,Other,0.645
+SHARE · Fried,symptomsw1,Number of symptoms (w1 version),Symptoms and conditions,0.642
+SHARE · Fried,yrbirth_do,Year of birth,Age and background,0.637
+SHARE · Fried,co010_,Consume home produced food,"Work, money and social life",0.624
+SHARE · Fried,symptoms2w4,2+ symptoms (w4 version),Symptoms and conditions,0.567
+SHARE · Fried,mh037_,Feels lonely,Mood and cognition,0.553
+SHARE · Fried,cf103_,Memory,Mood and cognition,0.543
+SHARE · Fried,br039_,At least one alcoholic beverage the last 7 days,Other,0.537
+SHARE · Fried,ph087d3,Pain location: knees,Pain,0.534
+SHARE · Fried,mh036_,Feels isolated from others,Other,0.533
+SHARE · Fried,ph087d1,Pain location: back,Pain,0.529
+SHARE · Fried,symptomsw4,Number of symptoms (w4 version),Symptoms and conditions,0.52
+SHARE · Fried,mh021_,Ever admitted to mental hospital or psychiatric ward,Medication and health care,0.513
+SHARE · Fried,ph010d8,Bothered by: fear of falling down,Symptoms and conditions,0.509
+SHARE · Fried,yrbirth,Year of birth,Age and background,0.506
+SHARE · Fried,cf016tot,Ten words list learning delayed recall total,Mood and cognition,0.504
+SHARE · Fried,cf002_,Self-rated writing skills,Self-rated health and outlook,0.503
+SHARE · Fried,ph010d3,Bothered by: breathlessness,Symptoms and conditions,0.476
+SHARE · Fried,loneliness,Loneliness (short version of R-UCLA Loneliness Scale) - high is lonely,Mood and cognition,0.473
+SHARE · Fried,ac021_,Life has meaning,Other,0.465
+SHARE · Fried,ac002dno,Activities last month: none of these,Physical activity,0.463
+SHARE · Fried,dn003_,Year of birth,Age and background,0.454
+SHARE · Fried,ph084_,Troubled with pain,Pain,0.441
+SHARE · Fried,ac020_,Look forward to each day,Other,0.404
+SHARE · Fried,ph010dno,Bothered by: no symptoms,Symptoms and conditions,0.401
+SHARE · Fried,mh025_,Hands trembling,Other,0.392
+SHARE · Fried,ac703_,I see myself as someone who tends to be lazy,Other,0.389
+SHARE · Fried,symptoms2w1,2+ symptoms (w1 version),Symptoms and conditions,0.384
+SHARE · Fried,q1d,Health: pain/discomfort,Pain,0.366
+SHARE · Fried,ph087d4,Pain location: other joints,Pain,0.362
+SHARE · Fried,hc049e,Paid out-of-pocket for prescribed drugs,Function and limitation,0.354
+SHARE · Fried,hc051e,"Paid out-of-pocket for nursing home, day-care and home-care",Function and limitation,0.354
+SHARE · Fried,hc889_,Health literacy: how often help needed,Function and limitation,0.348
+SHARE · Fried,te005_,Hours spent on chores,Other,0.346
+SHARE · Fried,cf010_,Verbal fluency score: number of animals,Mood and cognition,0.315
+SHARE · Fried,q2_a,My age prevents me from doing things I would like to,Self-rated health and outlook,0.306
+SHARE · Fried,hc689e,Amount payed yourself for medication last 12 months,Medication and health care,0.299
+SHARE · Fried,te047_,Hours spent on napping and resting during daytime,Symptoms and conditions,0.283
+SHARE · Fried,age2020,Age in 2020,Age and background,0.282
+SHARE · Fried,ph025_,Bite on hard foods,Other,0.278
+SHARE · Fried,q4_n,I felt really rested when I woke up in the morning,Energy and fatigue,0.273
+SHARE · Fried,ph064_,Health worse last wave,Other,0.255
+SHARE · Fried,age2004,Age in 2004,Age and background,0.251
+SHARE · Fried,hc128_,Payed anything out of pocket for home care,Function and limitation,0.239
+SHARE · Fried,mh024_,Nervous,Other,0.239
+SHARE · Fried,hc628_,Payed anything yourself for homecare last 12 months,Function and limitation,0.225
+SHARE · Fried,ph062_,Compare health last wave,Other,0.224
+SHARE · Fried,hc602_,Times talked to medical doctor/nurse about your health last 12 months,Medication and health care,0.217
+SHARE · Fried,br023_,How often six or more drinks last 3 months,Other,0.202
+SHARE · Fried,q2_d,I can do the things I want to,Function and limitation,0.185
+SHARE · Fried,hc089e,Amount payed overall for drugs,Medication and health care,0.172
+SHARE · Fried,mh023_,Fear of the worst happening,Other,0.153
+SHARE · Fried,q24,Joint pain on most days,Pain,0.152
+SHARE · Fried,hc014_,Total nights stayed in hospital,Medication and health care,0.146
+SHARE · Fried,q2_l,I feel that the future looks good for me,Self-rated health and outlook,0.135
+HRS · Rockwood,paina,r pain interferes with normal activities,Pain,8.065
+HRS · Rockwood,painlv,r usual level of pain,Pain,3.778
+HRS · Rockwood,jrsleft,r reason for stopping working (if not working),"Work, money and social life",3.498
+HRS · Rockwood,painfr,r frequent problems with pain,Pain,3.059
+HRS · Rockwood,drive,whether r is able to drive,"Work, money and social life",2.971
+HRS · Rockwood,rxpain,r takes meds for pain,Pain,2.93
+HRS · Rockwood,email,whether r regularly uses web for emails,"Work, money and social life",2.498
+HRS · Rockwood,breath,r short of breath while awake,Symptoms and conditions,2.306
+HRS · Rockwood,swell,r persistent swelling in feet/ankles,Symptoms and conditions,2.256
+HRS · Rockwood,rested,r feels rested when wakes up,Energy and fatigue,2.044
+HRS · Rockwood,balanc,frequency r difficulty with balance,Function and limitation,1.732
+HRS · Rockwood,rxhchol,r takes meds for high cholesterol,Symptoms and conditions,1.544
+HRS · Rockwood,backp,r back pain,Pain,1.522
+HRS · Rockwood,raeducl,raeducl: r harmonized education level,Age and background,1.258
+HRS · Rockwood,looknwk,r looking for new job (if working),"Work, money and social life",1.193
+HRS · Rockwood,sg002,DIFFICULTY- JOGGING 1 MILE,Function and limitation,1.04
+HRS · Rockwood,satlifez,R Satisfied with life z-score,Self-rated health and outlook,1.012
+HRS · Rockwood,rg002,DIFFICULTY- JOGGING 1 MILE,Function and limitation,0.978
+HRS · Rockwood,dizzy,r persistent dizziness,Symptoms and conditions,0.974
+HRS · Rockwood,jenjwrka,r really enjoys going to work,Mood and cognition,0.945
+HRS · Rockwood,sbreath,frequency r short of breath,Symptoms and conditions,0.917
+HRS · Rockwood,rachshlt,rachshlt:R childhood health status,Age and background,0.889
+HRS · Rockwood,fallnum,r number of falls,Symptoms and conditions,0.87
+HRS · Rockwood,radadeduc8,radadeduc8:r father attained 8+ years of education,Age and background,0.859
+HRS · Rockwood,lifeinv,r value life insurance policies,"Work, money and social life",0.855
+HRS · Rockwood,rxstom,r takes meds for stomach,Symptoms and conditions,0.818
+HRS · Rockwood,fall,r fallen down last 2 years,Symptoms and conditions,0.812
+HRS · Rockwood,catrcte,r ever had cataract surgery,Symptoms and conditions,0.806
+HRS · Rockwood,jcomputb,r freq cur job computers,"Work, money and social life",0.793
+HRS · Rockwood,urinaf,r number days urinary incontinence last month,Symptoms and conditions,0.773
+HRS · Rockwood,rxbldthn,r takes blood thinning meds to prevent clots,Medication and health care,0.765
+HRS · Rockwood,ramomeducl,ramomeducl:r mother harmonized education level,Age and background,0.737
+HRS · Rockwood,rxpsych,r takes meds for psych condition,Symptoms and conditions,0.699
+HRS · Rockwood,jdealpplb,r freq cur job dealing with people,"Work, money and social life",0.692
+HRS · Rockwood,orient,r orientation to date,Other,0.661
+HRS · Rockwood,wheeze,r persistent wheezing,Other,0.653
+HRS · Rockwood,fallinj,r injured from fall,Symptoms and conditions,0.624
+HRS · Rockwood,witwill,r has a witnessed will,Other,0.599
+HRS · Rockwood,hometyp,type of home r lives in,"Work, money and social life",0.584
+HRS · Rockwood,jgrredhra,r prefer gradually reduce hours,Other,0.573
+HRS · Rockwood,wakeup,r wakes up too early,Other,0.569
+HRS · Rockwood,fallslp,r trouble falling asleep,Energy and fatigue,0.55
+HRS · Rockwood,jdiffa,r cur job more difficult than used to be,Function and limitation,0.55
+HRS · Rockwood,wakent,r wakes up during night,Symptoms and conditions,0.54
+HRS · Rockwood,pneushte,r pneumonia vaccine ever,Other,0.529
+HRS · Rockwood,sg097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,Function and limitation,0.508
+HRS · Rockwood,numer,r numeracy score,Other,0.499
+HRS · Rockwood,sathlth,r satisfaction with health 5-point,Self-rated health and outlook,0.486
+HRS · Rockwood,pcnt,any weekly contact with parents in person/phone/email,"Work, money and social life",0.481
+HRS · Rockwood,satlife_h,R Satisfied with life,Self-rated health and outlook,0.48
+HRS · Rockwood,urinurg,r urge to urinate,Symptoms and conditions,0.471
+HRS · Rockwood,jconcntrb,r freq cur job concentration,"Work, money and social life",0.469
+HRS · Rockwood,urinamt,r amount of urine leaked,Symptoms and conditions,0.463
+HRS · Rockwood,rg097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,Function and limitation,0.426
+HRS · Rockwood,noteeth,r whether lost all their teeth,Symptoms and conditions,0.418
+HRS · Rockwood,rn175,TAKE RX DRUGS REGULARLY,Medication and health care,0.385
+HRS · Rockwood,sn175,TAKE RX DRUGS REGULARLY,Medication and health care,0.375
+HRS · Rockwood,sg058,HOUSE\YARD WORK HELP,Function and limitation,0.356
+HRS · Rockwood,urinpad,r uses pads for incontinence,Symptoms and conditions,0.324
+HRS · Rockwood,mwaist,r waist measurement (cm),Other,0.299
+HRS · Rockwood,sc104,TROUBLED WITH PAIN,Pain,0.288
+HRS · Rockwood,sc105,DEGREE PAIN MOST OF TIME,Pain,0.287
+HRS · Rockwood,rc105,DEGREE PAIN MOST OF TIME,Pain,0.26
+HRS · Rockwood,hchole,r ever had high cholesterol,Symptoms and conditions,0.258
+HRS · Rockwood,rg058,HOUSE\YARD WORK HELP,Function and limitation,0.252
+HRS · Rockwood,rd101,RATE MEMORY,Mood and cognition,0.239
+HRS · Rockwood,sd101,RATE MEMORY,Mood and cognition,0.231
+HRS · Rockwood,rn361,RX DRUGS REGULARLY PAIN,Pain,0.216
+HRS · Rockwood,rc104,TROUBLED WITH PAIN,Pain,0.192
+HRS · Rockwood,sn361,RX DRUGS REGULARLY PAIN,Pain,0.179
+HRS · Rockwood,rc143,SWELLING FEET/ANKLES,Symptoms and conditions,0.162
+HRS · Rockwood,rw303,REGULAR USE OF WEB FOR EMAIL,"Work, money and social life",0.155
+HRS · Rockwood,rc146,BACK PAIN OR PROBLEMS,Pain,0.152
+HRS · Rockwood,sg098m1,HELP W/ FUTURE NEEDS- RELATIONSHIP- 1,Function and limitation,0.141
+HRS · Rockwood,sb000,LIFE SATISFACTION,Self-rated health and outlook,0.137
+HRS · Rockwood,sc002,COMPARE HEALTH TO PREVIOUS WAVE,Other,0.127
+HRS · Rockwood,rc002,COMPARE HEALTH TO PREVIOUS WAVE,Other,0.124
+HRS · Rockwood,rg040,DIFFICULTY- USING MAPS,Function and limitation,0.121
+HRS · Rockwood,rc144,SHORTNESS OF BREATH,Symptoms and conditions,0.119
+HRS · Rockwood,sc086,FEEL RESTED IN MORNING,Energy and fatigue,0.114
+HRS · Rockwood,sw303,REGULAR USE OF WEB FOR EMAIL,"Work, money and social life",0.112
+HRS · Rockwood,rj005m1,CURRENT JOB STATUS- 1,"Work, money and social life",0.105
+HRS · Rockwood,rb000,LIFE SATISFACTION,Self-rated health and outlook,0.101
+HRS · Rockwood,sj3584,HOW SATISFIED W/ RETIREMENT,Self-rated health and outlook,0.098
+HRS · Rockwood,sj005m1,CURRENT JOB STATUS- 1,"Work, money and social life",0.096
+HRS · Rockwood,sg037,R ABILITY TO DRIVE,"Work, money and social life",0.093
+HRS · Rockwood,rg098m1,HELP W/ FUTURE NEEDS- RELATIONSHIP- 1,Function and limitation,0.092
+HRS · Rockwood,rc086,FEEL RESTED IN MORNING,Energy and fatigue,0.083
+HRS · Rockwood,rc229,DAYS IN BED,Function and limitation,0.074
+HRS · Rockwood,rc145,EVER BEEN DIZZY,Symptoms and conditions,0.07
+HRS · Rockwood,sg210,DIFFICULTY WITH BALANCE,Function and limitation,0.065
+HRS · Rockwood,sn283,RX DRUGS REGULARLY - ASPIRIN OR BLOOD THINNERS,Medication and health care,0.063
+HRS · Rockwood,sj963,WORKED FOR PAY IN LAST 12 MONTHS,"Work, money and social life",0.062
+HRS · Rockwood,sp007,WILL R LEAVE ANY INHERITANCE,Other,0.059
+HRS · Fried,paina,r pain interferes with normal activities,Pain,5.127
+HRS · Fried,balanc,frequency r difficulty with balance,Function and limitation,3.689
+HRS · Fried,fulltan,r full-tandem test result(sec),Performance tests,3.46
+HRS · Fried,email,whether r regularly uses web for emails,"Work, money and social life",3.459
+HRS · Fried,sbreath,frequency r short of breath,Symptoms and conditions,2.849
+HRS · Fried,rxpain,r takes meds for pain,Pain,2.221
+HRS · Fried,active,PANAS-X: degree r felt active,Physical activity,2.126
+HRS · Fried,balance,r balance test summary score,Performance tests,1.781
+HRS · Fried,breath,r short of breath while awake,Symptoms and conditions,1.565
+HRS · Fried,fulldone,whether r completed 30/60 seconds full-tandem,Performance tests,1.56
+HRS · Fried,sathlth,r satisfaction with health 5-point,Self-rated health and outlook,1.549
+HRS · Fried,rested,r feels rested when wakes up,Energy and fatigue,1.541
+HRS · Fried,drive,whether r is able to drive,"Work, money and social life",1.428
+HRS · Fried,swell,r persistent swelling in feet/ankles,Symptoms and conditions,1.386
+HRS · Fried,painfr,r frequent problems with pain,Pain,1.347
+HRS · Fried,raeducl,raeducl: r harmonized education level,Age and background,1.3
+HRS · Fried,ramomeducl,ramomeducl:r mother harmonized education level,Age and background,1.249
+HRS · Fried,lfprps,r Ryff Purpose of Life Index,Mood and cognition,1.201
+HRS · Fried,lifeinv,r value life insurance policies,"Work, money and social life",1.2
+HRS · Fried,hometyp,type of home r lives in,"Work, money and social life",1.182
+HRS · Fried,painlv,r usual level of pain,Pain,1.133
+HRS · Fried,diasto,r average blood pressure measure (diastolic) 2 & 3,Performance tests,1.124
+HRS · Fried,drhlthyes,Day Reconstruction: r health yesterday,Other,1.047
+HRS · Fried,semitanc,r compensatory movements during semi-tandem test,Performance tests,0.945
+HRS · Fried,fulltanc,r compensatory movements during full-tandem test,Performance tests,0.868
+HRS · Fried,panasp13,r PANAS-X average positive affect score,Mood and cognition,0.854
+HRS · Fried,pulse,r average pulse measure 2 & 3,Performance tests,0.82
+HRS · Fried,catrcte,r ever had cataract surgery,Symptoms and conditions,0.812
+HRS · Fried,jrsleft,r reason for stopping working (if not working),"Work, money and social life",0.757
+HRS · Fried,puffpos,r position for lung function peak flow test,Performance tests,0.752
+HRS · Fried,fall,r fallen down last 2 years,Symptoms and conditions,0.653
+HRS · Fried,fallnum,r number of falls,Symptoms and conditions,0.647
+HRS · Fried,gksit,looked after grandchildren 100+ hrs,Other,0.604
+HRS · Fried,noteeth,r whether lost all their teeth,Symptoms and conditions,0.588
+HRS · Fried,fallslp,r trouble falling asleep,Energy and fatigue,0.562
+HRS · Fried,semitan,r semi-tandem test result(sec),Performance tests,0.526
+HRS · Fried,hystere,r ever had hysterectomy,Other,0.521
+HRS · Fried,numer,r numeracy score,Other,0.52
+HRS · Fried,radadeduc8,radadeduc8:r father attained 8+ years of education,Age and background,0.514
+HRS · Fried,satlifez,R Satisfied with life z-score,Self-rated health and outlook,0.503
+HRS · Fried,mdn10,r MIDUS Index of Negative Affect,Other,0.492
+HRS · Fried,witwill,r has a witnessed will,Other,0.491
+HRS · Fried,panasn12,r PANAS-X average negative affect score,Mood and cognition,0.48
+HRS · Fried,rxstom,r takes meds for stomach,Symptoms and conditions,0.463
+HRS · Fried,wheeze,r persistent wheezing,Other,0.417
+HRS · Fried,urinai,r any urinary incontinence past year,Symptoms and conditions,0.388
+HRS · Fried,satlife_h,R Satisfied with life,Self-rated health and outlook,0.381
+HRS · Fried,wakeup,r wakes up too early,Other,0.368
+HRS · Fried,backp,r back pain,Pain,0.367
+HRS · Fried,rxpsych,r takes meds for psych condition,Symptoms and conditions,0.327
+HRS · Fried,dcreas,r number reasons for discrimination,Other,0.252
+HRS · Fried,mdflf,MIDUS: how much time did r feel full of life,Other,0.139
+ELSA · Rockwood,hepaa,Severity of pain most of the time,Pain,4.145
+ELSA · Rockwood,breths,"(D) Breathlessness, MRC respiratory questionnaire",Symptoms and conditions,2.965
+ELSA · Rockwood,hepain,Whether often troubled with pain,Pain,2.277
+ELSA · Rockwood,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,Self-rated health and outlook,2.134
+ELSA · Rockwood,scypa,Whether respondent felt any pain yesterday,Pain,1.755
+ELSA · Rockwood,hepawkn,Whether feel pain in knees,Pain,1.578
+ELSA · Rockwood,hepawba,Whether feel pain in back,Pain,1.172
+ELSA · Rockwood,hepag,Pain: how long been bothering you (if moderate or severe),Pain,1.146
+ELSA · Rockwood,hepawhi,Whether feel pain in hips,Pain,1.118
+ELSA · Rockwood,iahdn96,Health or disability benefits receiving now: None of these,"Work, money and social life",1.077
+ELSA · Rockwood,psagf,Self-perceived age (in years),Self-rated health and outlook,1.031
+ELSA · Rockwood,heflb,Number times have fallen down,Symptoms and conditions,0.935
+ELSA · Rockwood,iahdbc,Whether receiving any state benefits at the moment,"Work, money and social life",0.887
+ELSA · Rockwood,exlo80,Expectation (%) that will live to [age] [depends on current age],Age and background,0.84
+ELSA · Rockwood,hecdb, Does this pain ever begin when you are standing still or sitting? (QInd.QHe.QHE,Pain,0.77
+ELSA · Rockwood,hepawfe,Whether feel pain in feet,Pain,0.766
+ELSA · Rockwood,spcara,Whether respondent drives this car or van themselves,"Work, money and social life",0.764
+ELSA · Rockwood,wpact96,Activities during last month: none of these,Physical activity,0.676
+ELSA · Rockwood,hepawmo,Whether feel pain in mouth or teeth,Pain,0.67
+ELSA · Rockwood,hecda, Do you get pain or discomfort in either of your legs which comes on when you wa,Pain,0.661
+ELSA · Rockwood,cfmetm,Self-rated memory,Self-rated health and outlook,0.632
+ELSA · Rockwood,hepac,Knee or hip pain: whether been bothering respondent for more than 6 months,Pain,0.61
+ELSA · Rockwood,hedasch,Whether still has high cholesterol,Symptoms and conditions,0.608
+ELSA · Rockwood,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),Performance tests,0.598
+ELSA · Rockwood,scqole,CASP19 scale: How often can do the things they want to do,Function and limitation,0.598
+ELSA · Rockwood,hepawal,Whether feel pain all over,Pain,0.576
+ELSA · Rockwood,iahdnwd,Health or disability benefits receiving now: War Disablement/War Widow's Pension,"Work, money and social life",0.571
+ELSA · Rockwood,iahdnm96,Health or disability benefits receiving now: none of these (merged),"Work, money and social life",0.569
+ELSA · Rockwood,iahdnib,Health or disability benefits receiving now: Incapacity Benefit,"Work, money and social life",0.543
+ELSA · Rockwood,sclifeb,How much agrees with the statement: the conditions of my life are excellent,Symptoms and conditions,0.54
+ELSA · Rockwood,scdeac,How well 'active' describes respondent (self-reported),Other,0.532
+ELSA · Rockwood,sptraa,How often respondent uses public transport,Physical activity,0.52
+ELSA · Rockwood,heinct,"During the last 12 months, have you lost any amount of urine beyond your control",Symptoms and conditions,0.506
+ELSA · Rockwood,exlo90,Expectation (%) that they will live to be 85 years old or more,Other,0.498
+ELSA · Rockwood,indobyr,(D) Definitive year of birth collapsed at 90+,Age and background,0.492
+ELSA · Rockwood,spcarb,Whether respondent drove a car or van themself in the past,Other,0.469
+ELSA · Rockwood,scfeac,During the past 30 days to what degree the respondent feels active?,Symptoms and conditions,0.435
+ELSA · Rockwood,heincta,Incontinence: whether problem lasted more than one month,Symptoms and conditions,0.396
+ELSA · Rockwood,caspaut,(D) Autonomy (CASP),Self-rated health and outlook,0.37
+ELSA · Rockwood,hegpnhs,GP: whether consultation NHS or private,Other,0.369
+ELSA · Rockwood,iahdrsp,Health/disability benefits rec in the last year: Statutory Sick Pay,"Work, money and social life",0.366
+ELSA · Rockwood,scqols,CASP-19 scale: how often feels the future looks good for them,Self-rated health and outlook,0.358
+ELSA · Rockwood,cfmap,Self-rated mental abilities,Self-rated health and outlook,0.357
+ELSA · Rockwood,iahdnsp,Health or disability benefits receiving now: Statutory sick pay,"Work, money and social life",0.35
+ELSA · Rockwood,iahdb,Have you (or spouse) received any of these hlth/disability benefits in last yr,"Work, money and social life",0.342
+ELSA · Rockwood,sptrab7,Reasons for not using public transport: they do not need to,Physical activity,0.32
+ELSA · Rockwood,iahdnmwd,Health or disability benefits receiving now: War Disablement/War Widows Pension,"Work, money and social life",0.319
+ELSA · Rockwood,scghqg,Whether recently been able to enjoy normal day~to~day activities,Physical activity,0.317
+ELSA · Rockwood,heslpf,Sleep: rating sleep quality overall,Energy and fatigue,0.304
+ELSA · Rockwood,casp19,(D) CASP 19,Self-rated health and outlook,0.297
+ELSA · Rockwood,caspsr,(D) Self realisation (CASP),Self-rated health and outlook,0.278
+ELSA · Rockwood,medcnjd,"Drug: whether taking or using any medicines, pills, syrups, ointments, puffers o",Medication and health care,0.277
+ELSA · Rockwood,hecde,Claudication: whether gets pain when standing still,Pain,0.267
+ELSA · Rockwood,hespch,Whether has difficulty having conversation in group,Function and limitation,0.254
+ELSA · Rockwood,nurse_medbia5,DRUG: Have they taken/used MedBI in the last 7 days?,Medication and health care,0.251
+ELSA · Rockwood,caspctl,(D) Control (CASP),Self-rated health and outlook,0.25
+ELSA · Rockwood,schrtm,Time spent doing health related activities yesterday (MINUTES),Physical activity,0.248
+ELSA · Rockwood,heslpx,Sleep: frequency doze off/nap in morning or afternoon,Energy and fatigue,0.234
+ELSA · Rockwood,hekne,(How would you rate the pain) in your knees? {prompt if necessary: 0 is no pain,Pain,0.232
+ELSA · Rockwood,hebck,(How would you rate the pain) in your back? {prompt if necessary: 0 is no pain a,Pain,0.21
+ELSA · Rockwood,hemdb,"Are you currently taking any tablets, pills or other medicines that you swallow",Medication and health care,0.205
+ELSA · Rockwood,iahdnmsp,Health or disability benefits receiving now: Statutory sick pay (merged),"Work, money and social life",0.201
+ELSA · Rockwood,diagr,Age from individual demographics collapsed at 90 plus (use INDAGER instead),Age and background,0.193
+ELSA · Rockwood,nurse_nummeds,DRUG: NumMeds,Medication and health care,0.187
+ELSA · Rockwood,heslpb,Sleep: frequency wake up several times at night,Energy and fatigue,0.183
+ELSA · Rockwood,wpact1,Did you do any of these activities during the last month? (1st mention),Physical activity,0.177
+ELSA · Rockwood,hehip,(How would you rate the pain) in your hips? {prompt if necessary: 0 is no pain a,Pain,0.174
+ELSA · Rockwood,iahdrwd,Hlth/disability benefits rec in the last yr: War Disablement/War Widows Pension,"Work, money and social life",0.172
+ELSA · Rockwood,iahrm01,merged variable: Which of these health or disability benefits have you received,"Work, money and social life",0.16
+ELSA · Rockwood,hoadp02,Does your  home have any of the features on this card (2nd mention)?,"Work, money and social life",0.158
+ELSA · Rockwood,nurse_medbia3,DRUG: Have they taken/used MedBI in the last 7 days?,Medication and health care,0.151
+ELSA · Rockwood,sptrm01,MERGED VARIABLE INCLUDING BACKCODING - CODE FRAME 5 @/Why don t you use public t,Other,0.148
+ELSA · Rockwood,expfc96,None of these (spontaneous) would pay for care and support (not curr receiving c,Function and limitation,0.148
+ELSA · Rockwood,nurse_medbia7,DRUG: Have they taken/used MedBI in the last 7 days?,Medication and health care,0.146
+ELSA · Rockwood,iahdnm86,Health or disability benefits receiving now: irrelevant answer - not codeable (m,"Work, money and social life",0.146
+ELSA · Rockwood,scofeel,How old the respondent feels they are,Self-rated health and outlook,0.14
+ELSA · Rockwood,hecdfth,Claudication: pain in thigh or buttocks,Pain,0.136
+ELSA · Rockwood,nurse_medbia6,DRUG: Have they taken/used MedBI in the last 7 days?,Medication and health care,0.117
+ELSA · Rockwood,hepaf,Knee or hip pain: whether doctor recommend that respondent should have surgery o,Pain,0.112
+ELSA · Rockwood,swmob1,Problem with moving around in last 30 days,Other,0.101
+ELSA · Fried,psagf,Self-perceived age (in years),Self-rated health and outlook,2.817
+ELSA · Fried,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),Performance tests,2.728
+ELSA · Fried,nurse_mmrrtti,CHAIRRAISE: Time to complete 10 rises (seconds) - only eligible if under 70 yrs,Performance tests,1.552
+ELSA · Fried,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,Self-rated health and outlook,1.541
+ELSA · Fried,scypa,Whether respondent felt any pain yesterday,Pain,1.519
+ELSA · Fried,breths,"(D) Breathlessness, MRC respiratory questionnaire",Symptoms and conditions,1.492
+ELSA · Fried,hepaa,Severity of pain most of the time,Pain,1.332
+ELSA · Fried,iahdn96,Health or disability benefits receiving now: none of these,"Work, money and social life",1.176
+ELSA · Fried,spcarb,Whether respondent drove a car or van themself in the past,Other,1.145
+ELSA · Fried,exlo80,Expectation (%) that will live to [age] [depends on current age],Age and background,1.122
+ELSA · Fried,indager,Definitive age variable collapsed at 90+ to avoid disclosure,Age and background,1.008
+ELSA · Fried,indobyr,Definitive year of birth collapsed at 90 plus,Age and background,0.922
+ELSA · Fried,wpact96,Activities during last month: none of these,Physical activity,0.9
+ELSA · Fried,hepag,Pain: how long been bothering you (if moderate or severe),Pain,0.734
+ELSA · Fried,spcara,Whether respondent drives this car or van themselves,"Work, money and social life",0.708
+ELSA · Fried,scptrhb,Whether has a hobby or pastime,Other,0.698
+ELSA · Fried,cflisd,Number of words recalled after delay,Mood and cognition,0.645
+ELSA · Fried,scovan,How anxious respondent felt overall yesterday,Mood and cognition,0.629
+ELSA · Fried,diagr,Age from individual demographics collapsed at 90 plus (use INDAGER instead),Age and background,0.6
+ELSA · Fried,scqole,CASP-19 scale: how often can do the things they want to do,Function and limitation,0.6
+ELSA · Fried,scqolb,CASP-19 scale: how often feels what happens to them is out of their control,Self-rated health and outlook,0.573
+ELSA · Fried,hepawba,Whether feel pain in back,Pain,0.559
+ELSA · Fried,caspsr,(D) Self realisation (CASP),Self-rated health and outlook,0.505
+ELSA · Fried,excfv,Expectation (%) of needing long term care not provided by family or friends in t,Function and limitation,0.504
+ELSA · Fried,iahdnm96,Health or disability benefits receiving now: none of these (merged),"Work, money and social life",0.489
+ELSA · Fried,scywr,Whether respondent felt well-rested yesterday morning,Energy and fatigue,0.486
+ELSA · Fried,cflisen,Number of words recalled immediately,Mood and cognition,0.485
+ELSA · Fried,gor,Government Office Region based on final W6 postcode,Other,0.474
+ELSA · Fried,scsitth,Time spent sitting yesterday (HOURS),Other,0.427
+ELSA · Fried,heslpf,Sleep: rating sleep quality overall,Energy and fatigue,0.416
+ELSA · Fried,caspctl,(D) Control (CASP),Self-rated health and outlook,0.397
+ELSA · Fried,cfani,Number of animals mentioned (fluency),Mood and cognition,0.396
+ELSA · Fried,schrtm,Time spent doing health related activities yesterday (MINUTES),Physical activity,0.395
+ELSA · Fried,nurse_medbia5,DRUG: Have they taken/used MedBI in the last 7 days?,Medication and health care,0.382
+ELSA · Fried,nurse_dobyear,"Year of birth, collapsed for those aged 90 or over",Age and background,0.334
+ELSA · Fried,nurse_mmftre,BALANCE: Outcome of full tandem stand,Performance tests,0.292
+ELSA · Fried,nurse_prfev,LUNG: Predicted value for FEV,Other,0.282
+ELSA · Fried,nurse_htpef,LUNG: Highest technically satisfactory value for PEF,Self-rated health and outlook,0.278
+ELSA · Fried,casp19,(D) CASP 19,Self-rated health and outlook,0.26
+ELSA · Fried,nurse_pf2,Lung function: 2nd PF reading (litres per minute),Performance tests,0.234
+ELSA · Fried,nurse_fev2,Lung function: 2nd FEV reading (litres),Performance tests,0.216
+ELSA · Fried,ncorrect,Letter Cancellation: number of letters correctly marked (0-65),Other,0.215
+MHAS · Rockwood,jog,R Difficulty-Run/Jogging one km,Function and limitation,18.514
+MHAS · Rockwood,paina,R Pain interferes with normal activities,Pain,5.84
+MHAS · Rockwood,hltc,R Self-report of health change,Self-rated health and outlook,4.609
+MHAS · Rockwood,swell,R Persistent swelling in feet/ankles,Symptoms and conditions,4.601
+MHAS · Rockwood,painfr,R Frequent problems with pain,Pain,2.948
+MHAS · Rockwood,breath_m,R Difficulty breathing or coughing,Function and limitation,2.893
+MHAS · Rockwood,painlv,R Usual level of pain,Pain,2.309
+MHAS · Rockwood,lbrf_m,R Labor force status,"Work, money and social life",2.239
+MHAS · Rockwood,doctor1y,"R Doctor visits, previous 12 months",Medication and health care,1.893
+MHAS · Rockwood,rachchlt,rachchlt: R Health compared to other children before age 10,Age and background,1.457
+MHAS · Rockwood,urinurg2y,R Urge to urinate (last 2 yrs),Symptoms and conditions,1.381
+MHAS · Rockwood,slfmem,R Self-Rated Memory,Self-rated health and outlook,1.298
+MHAS · Rockwood,unemp,R Unemployed,"Work, money and social life",1.266
+MHAS · Rockwood,hosp1y,"R Hospital stay, previous 12 months",Medication and health care,1.251
+MHAS · Rockwood,raeducel,raeducel: R Harmonized Early Education,Age and background,1.208
+MHAS · Rockwood,imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),Mood and cognition,1.159
+MHAS · Rockwood,fallnum,R Number of falls,Symptoms and conditions,1.111
+MHAS · Rockwood,gapcare,R+S provided personal care to parents 1hr+/wk,Function and limitation,1.015
+MHAS · Rockwood,itot,Incm:H Total Income,"Work, money and social life",1.012
+MHAS · Rockwood,wheeze,R Persistent wheezing,Other,0.954
+MHAS · Rockwood,fallslp,R Trouble falling asleep,Energy and fatigue,0.908
+MHAS · Rockwood,inlbrf,R In the Labor Force,"Work, money and social life",0.875
+MHAS · Rockwood,urinai2y,R Any urinary incontinence (last 2 yrs),Symptoms and conditions,0.859
+MHAS · Rockwood,nopencil,R Problem Holding a Pencil,Function and limitation,0.851
+MHAS · Rockwood,pstmem,R Memory Compared to the Past,Mood and cognition,0.842
+MHAS · Rockwood,jlocc_m,R Longest job occupation code,"Work, money and social life",0.799
+MHAS · Rockwood,hip50e,R Ever fractured a bone (including hip) since age 50,Age and background,0.779
+MHAS · Rockwood,rested,R Feels rested when wakes up,Energy and fatigue,0.738
+MHAS · Rockwood,fvscan,Cognition Flag R Visual Scanning,Symptoms and conditions,0.734
+MHAS · Rockwood,wakeup,R Wakes up too early,Other,0.717
+MHAS · Rockwood,oopdrug1m,"R Out of pocket medications, per month",Medication and health care,0.642
+MHAS · Rockwood,wakent,R Wakes up during night,Symptoms and conditions,0.524
+MHAS · Rockwood,drink,R Drinks any alcohol,Other,0.435
+MHAS · Rockwood,orient_m,R Date Naming Correctness,Other,0.389
+MHAS · Rockwood,idraw2,R Picture Drawing immediate 2 fig,Other,0.313
+MHAS · Rockwood,ssupport4_m,R's spouse support summary mean score,Other,0.274
+MHAS · Fried,jog,R Difficulty-Run/Jogging one km,Function and limitation,21.077
+MHAS · Fried,paina,R Pain interferes with normal activities,Pain,4.155
+MHAS · Fried,hltc,R Self-report of health change,Self-rated health and outlook,3.839
+MHAS · Fried,swell,R Persistent swelling in feet/ankles,Symptoms and conditions,2.869
+MHAS · Fried,painfr,R Frequent problems with pain,Pain,2.366
+MHAS · Fried,painlv,R Usual level of pain,Pain,2.142
+MHAS · Fried,imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),Mood and cognition,1.942
+MHAS · Fried,unemp,R Unemployed,"Work, money and social life",1.939
+MHAS · Fried,rachchlt,rachchlt: R Health compared to other children before age 10,Age and background,1.639
+MHAS · Fried,rested,R Feels rested when wakes up,Energy and fatigue,1.605
+MHAS · Fried,breath_m,R Difficulty breathing while lying down,Function and limitation,1.281
+MHAS · Fried,arms,R Difficulty-Reach/extending arms up,Function and limitation,1.253
+MHAS · Fried,inlbrf,R In the Labor Force,"Work, money and social life",1.186
+MHAS · Fried,atran,assets: vehicles,Other,1.153
+MHAS · Fried,lbrf_m,R Labor force status,"Work, money and social life",1.141
+MHAS · Fried,drink,R Drinks any alcohol,Other,1.115
+MHAS · Fried,prost,R Prev Care: Prostate last 2y,Function and limitation,1.047
+MHAS · Fried,itot,Incm:H Total Income,"Work, money and social life",1.034
+MHAS · Fried,jlocc_m,R Longest job occupation code,"Work, money and social life",1.025
+MHAS · Fried,papsm,R Prev Care: Pap Smear last 2y,Function and limitation,0.989
+MHAS · Fried,fallslp,R Trouble falling asleep,Energy and fatigue,0.967
+MHAS · Fried,mammog,R Prev Care: Mammogram last 2y,Function and limitation,0.934
+MHAS · Fried,breast,R Prev Care: Monthly Breast Check,Function and limitation,0.922
+MHAS · Fried,fallnum,R Number of falls,Symptoms and conditions,0.892
+MHAS · Fried,hosp1y,"R Hospital stay, previous 12 months",Medication and health care,0.814
+MHAS · Fried,wheeze,R Persistent wheezing,Other,0.803
+MHAS · Fried,wakeup,R Wakes up too early,Other,0.802
+MHAS · Fried,igxfr,Income:R Other Government Transfers,"Work, money and social life",0.749
+MHAS · Fried,atotb,total all assets inc. 2nd hm,Other,0.747
+MHAS · Fried,gccare_m,R+S provide informal care to children/grandchildren 1hr+/wk,Function and limitation,0.731
+MHAS · Fried,socact_m,R Freq social activities,Physical activity,0.671
+MHAS · Fried,urinurg2y,R Urge to urinate (last 2 yrs),Symptoms and conditions,0.648
+MHAS · Fried,jhoursd,R Hours/day worked at main job,"Work, money and social life",0.552
+MHAS · Fried,lsatsc3,R Satisfaction with life scale score,Self-rated health and outlook,0.532
+MHAS · Fried,oopdoc1y,"R Out of pocket doctor exp, previous 12 months",Medication and health care,0.515
+MHAS · Fried,lifein_m,R Covered by life insurance,"Work, money and social life",0.499
+MHAS · Fried,ddraw2,R Picture Drawing delayed 2 fig,Other,0.47
+CLHLS · Rockwood,g11,able to pick up a book from the floor?,Performance tests,10.418
+CLHLS · Rockwood,g12,steps used to turn around 360 with help?,Performance tests,5.364
+CLHLS · Rockwood,d11b,do you grow vegetables & do other field work at present?,Physical activity,4.174
+CLHLS · Rockwood,g1,visual function: can you see the break in the circle?,Symptoms and conditions,1.95
+CLHLS · Rockwood,f340,your power in decision-making on financial spending in the household,"Work, money and social life",1.825
+CLHLS · Rockwood,d11e,do you raise domestic animals/pets at present?,"Work, money and social life",1.82
+CLHLS · Rockwood,h5,confirm the age and copy to the 1st page,Age and background,1.75
+CLHLS · Rockwood,trueage,validated age,Age and background,1.722
+CLHLS · Rockwood,v_bthyr,validated birth year,Age and background,1.711
+CLHLS · Rockwood,f651a1,(F651A1) how much money did you spend on outpatient costs last year?,"Work, money and social life",1.369
+CLHLS · Rockwood,g14a1,(G14A1) name of disease suffered at 1st hospital visit,Symptoms and conditions,1.217
+CLHLS · Rockwood,c32,draw the figure following the example,Performance tests,1.198
+CLHLS · Rockwood,d112c,"series, interact with friends","Work, money and social life",1.196
+CLHLS · Rockwood,c53c,put paper on the floor,Performance tests,1.195
+CLHLS · Rockwood,d103,age when stopped doing physical labor,"Work, money and social life",1.173
+CLHLS · Rockwood,a41,(A41) which province were you born in?,Age and background,1.163
+CLHLS · Rockwood,g130,feel not-well within the past two weeks?,Symptoms and conditions,1.131
+CLHLS · Rockwood,b24,feel lonely and isolated,Mood and cognition,1.066
+CLHLS · Rockwood,b27,(B27) be happy as younger,Mood and cognition,0.968
+CLHLS · Rockwood,g14a2,"1st time, number of days in hospital or bedridden",Medication and health care,0.879
+CLHLS · Rockwood,b21,(B21) look on the bright side of things,Mood and cognition,0.865
+CLHLS · Rockwood,d1,(D1) staple food,Other,0.857
+CLHLS · Rockwood,g82,(G82) hand behind lower back,Performance tests,0.827
+CLHLS · Rockwood,g131,(G131) # of times suffering from serious illness within the past two years,Symptoms and conditions,0.782
+CLHLS · Rockwood,d2,(D2) amount of staple food per day (liang),Other,0.775
+CLHLS · Rockwood,g83,hold-up arms,Other,0.77
+CLHLS · Rockwood,c16,(C16) # of kinds of food named in one minute,Mood and cognition,0.765
+CLHLS · Rockwood,d11g,(D11G) do you watch tv or listen to radio at present ?,Mood and cognition,0.723
+CLHLS · Rockwood,f651b1,(F651B1) how much money did your family pay for outpatient costs last year?,"Work, money and social life",0.666
+CLHLS · Rockwood,g181,did you take in the past 24 hours?,Other,0.606
+CLHLS · Rockwood,g102,is the participant hunchbacked?,Other,0.575
+CLHLS · Rockwood,g183,how many hours have you taken the drug recently?,Medication and health care,0.542
+CLHLS · Rockwood,g6,(G6) rhythm of heart,Symptoms and conditions,0.422
+CLHLS · Rockwood,b32,is it difficult to concentrate when you are doing things now,Function and limitation,0.382
+CLHLS · Rockwood,f103c4,"the 3rd child's age at present if alive, or age the child would be if s/he alive",Age and background,0.344
+CLHLS · Rockwood,b39,do you feel unable to continue your life?,Self-rated health and outlook,0.295
+CLHLS · Rockwood,a_merge,A_MERGE,Other,0.261
+CLHLS · Rockwood,c521,number of words correctly repeated,Other,0.247

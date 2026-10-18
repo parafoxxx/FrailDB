@@ -1,0 +1,60 @@
+cohort,instrument,wave,predictor_source,n_people,variables_in_files,excluded,used,heldout_R2,trees,seconds
+SHARE,Rockwood,2,raw modules (all person-level),34841,1070,329,741,0.74,277,75
+SHARE,Rockwood,4,raw modules (all person-level),54662,1512,277,1235,0.716,452,185
+SHARE,Rockwood,5,raw modules (all person-level),62461,929,292,637,0.71,556,1700
+SHARE,Rockwood,6,raw modules (all person-level),63530,1410,316,1094,0.689,593,103
+SHARE,Rockwood,8,raw modules (all person-level),51167,1677,391,1286,0.69,600,103
+SHARE,Rockwood,9,raw modules (all person-level),66176,1499,345,1154,0.716,592,25417
+SHARE,Fried,1,raw modules (all person-level),26268,1144,367,777,0.461,286,33
+SHARE,Fried,2,raw modules (all person-level),31505,1067,322,745,0.496,239,35
+SHARE,Fried,4,raw modules (all person-level),49017,1528,270,1258,0.51,501,74
+SHARE,Fried,5,raw modules (all person-level),57338,920,285,635,0.522,364,70
+SHARE,Fried,6,raw modules (all person-level),59449,1417,315,1102,0.473,450,82
+SHARE,Fried,7,raw modules (all person-level),12259,1013,255,758,0.497,188,59
+SHARE,Fried,8,raw modules (all person-level),47108,1673,385,1288,0.48,574,92
+SHARE,Fried,9,raw modules (all person-level),59935,1508,316,1192,0.489,429,58
+HRS,Rockwood,4,harmonised H_HRS (raw core not available),13702,247,160,87,0.586,182,14
+HRS,Rockwood,5,harmonised H_HRS (raw core not available),12488,259,170,89,0.625,155,13
+HRS,Rockwood,6,harmonised H_HRS (raw core not available),11679,269,172,97,0.61,173,13
+HRS,Rockwood,7,harmonised H_HRS (raw core not available),13356,361,198,163,0.65,202,17
+HRS,Rockwood,8,harmonised H_HRS (raw core not available),13191,566,267,299,0.639,156,18
+HRS,Rockwood,9,harmonised H_HRS (raw core not available),12527,588,270,318,0.701,240,19
+HRS,Rockwood,10,harmonised H_HRS (raw core not available),17026,603,274,329,0.693,241,22
+HRS,Rockwood,11,harmonised H_HRS (raw core not available),16184,729,304,425,0.729,209,22
+HRS,Rockwood,12,harmonised H_HRS (raw core not available),15219,660,288,372,0.702,203,20
+HRS,Rockwood,13,harmonised H_HRS (raw core not available),17053,687,301,386,0.718,261,24
+HRS,Rockwood,14,harmonised H_HRS (raw core not available),14791,674,306,368,0.689,177,21
+HRS,Rockwood,15,raw core files,13069,1520,329,1191,0.818,208,37
+HRS,Rockwood,16,raw core files,13339,1548,402,1146,0.811,186,34
+HRS,Fried,7,harmonised H_HRS (raw core not available),2514,400,240,160,0.346,94,16
+HRS,Fried,8,harmonised H_HRS (raw core not available),6761,539,239,300,0.419,125,17
+HRS,Fried,9,harmonised H_HRS (raw core not available),6108,596,272,324,0.409,78,23
+HRS,Fried,10,harmonised H_HRS (raw core not available),5688,600,276,324,0.423,101,28
+HRS,Fried,11,harmonised H_HRS (raw core not available),7322,748,316,432,0.453,198,33
+HRS,Fried,12,harmonised H_HRS (raw core not available),6996,679,300,379,0.415,81,32
+HRS,Fried,13,harmonised H_HRS (raw core not available),5699,689,306,383,0.403,90,32
+HRS,Fried,14,harmonised H_HRS (raw core not available),6306,687,311,376,0.438,112,32
+ELSA,Rockwood,1,raw core,11004,847,182,665,0.734,236,28
+ELSA,Rockwood,3,raw core,8967,1833,381,1452,0.752,332,36
+ELSA,Rockwood,4,raw core + nurse visit,10132,2121,451,1670,0.766,207,47
+ELSA,Rockwood,5,raw core,9257,1756,410,1346,0.759,246,31
+ELSA,Rockwood,6,raw core + nurse visit,9459,2160,611,1549,0.738,163,36
+ELSA,Rockwood,7,raw core,8616,1938,575,1363,0.744,216,33
+ELSA,Rockwood,8,raw core,7657,1834,654,1180,0.746,320,32
+ELSA,Rockwood,9,raw core,7832,1887,614,1273,0.708,281,30
+ELSA,Rockwood,10,raw core,6827,3552,666,2886,0.735,243,40
+ELSA,Fried,4,raw core + nurse visit,5183,1937,440,1497,0.508,158,42
+ELSA,Fried,6,raw core + nurse visit,5230,1921,516,1405,0.439,135,30
+ELSA,Fried,9,raw core,1681,1540,499,1041,0.489,133,23
+MHAS,Rockwood,1,harmonised H_MHAS (raw questionnaire files not available),9310,391,199,192,0.622,167,10
+MHAS,Rockwood,2,harmonised H_MHAS (raw questionnaire files not available),9200,427,204,223,0.612,170,10
+MHAS,Rockwood,4,harmonised H_MHAS (raw questionnaire files not available),10930,458,236,222,0.661,218,12
+MHAS,Rockwood,5,harmonised H_MHAS (raw questionnaire files not available),13167,461,247,214,0.673,205,10
+MHAS,Fried,1,harmonised H_MHAS (raw questionnaire files not available),9214,400,209,191,0.404,171,8
+MHAS,Fried,2,harmonised H_MHAS (raw questionnaire files not available),7946,441,219,222,0.44,112,10
+MHAS,Fried,5,harmonised H_MHAS (raw questionnaire files not available),13180,470,256,214,0.45,148,10
+MHAS,Fried,6,harmonised H_MHAS (raw questionnaire files not available),12750,471,250,221,0.494,160,10
+CLHLS,Rockwood,3,raw ICPSR DS0003,12641,846,458,388,0.756,284,6
+CLHLS,Rockwood,6,raw ICPSR DS0006,5469,1083,527,556,0.743,307,5
+CLHLS,Rockwood,7,raw ICPSR DS0007,4990,918,436,482,0.767,250,5
+CLHLS,Rockwood,8,raw ICPSR DS0008,10147,631,134,497,0.771,335,7

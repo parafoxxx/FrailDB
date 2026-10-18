@@ -756,13 +756,20 @@ if os.path.exists(AW):
 
 # predictor analysis (FrailDB/predictors: run_predictors.py -> aggregate.py -> report_figures.py) is merged in when
 # present. Only variable names, labels and importances: no participant data.
-PRED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "predictors", "output")
-if os.path.exists(os.path.join(PRED, "predictors.json")) and os.path.exists(os.path.join(PRED, "report_figures.json")):
+def load_predictors(folder):
+    PRED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "predictors", folder)
+    if not (os.path.exists(os.path.join(PRED, "predictors.json")) and os.path.exists(os.path.join(PRED, "report_figures.json"))):
+        return None
     pr = json.load(open(os.path.join(PRED, "predictors.json"), encoding="utf-8"))
     fig = json.load(open(os.path.join(PRED, "report_figures.json"), encoding="utf-8"))
     parts = glob.glob(os.path.join(PRED, "parts", "*.json"))
-    sha = json.load(open(parts[0], encoding="utf-8")).get("script_sha256", "") if parts else ""
-    db["predictors"] = dict(
+    # use a set only when it is complete and its summaries were built after its last model finished
+    if len(parts) < 59 or os.path.getmtime(os.path.join(PRED, "predictors.json")) < max(os.path.getmtime(f) for f in parts):
+        print(f"predictor results in {folder}: incomplete or not yet aggregated; left out")
+        return None
+    first = json.load(open(parts[0], encoding="utf-8")) if parts else {}
+    sha, mode = first.get("script_sha256", ""), first.get("exclude_mode", "own")
+    return dict(exclude_mode=mode,
         models=[{k: m[k] for k in ("cohort", "instrument", "wave", "predictor_source", "n_people", "variables_in_files",
                                    "excluded", "used", "heldout_R2")} for m in pr["models"]],
         top5=[{k: t[k] for k in ("cohort", "instrument", "overall_rank", "key", "example_variable", "label",
@@ -770,6 +777,17 @@ if os.path.exists(os.path.join(PRED, "predictors.json")) and os.path.exists(os.p
         per_wave=[{k: t[k] for k in ("cohort", "instrument", "wave", "rank", "variable", "label", "file_or_module",
                                      "importance_pct")} for t in pr["per_wave"]],
         themes=fig["themes"], pipeline=fig["pipeline"], stability=fig["stability"], script_sha256=sha)
+
+
+# primary = both instruments excluded (output_both); secondary = own instrument only (output)
+_pb, _po = load_predictors("output_both"), load_predictors("output")
+if _pb and _po and _pb["script_sha256"] != _po["script_sha256"]:
+    print("own-instrument predictor results come from a different script version; left out until re-run")
+    _po = None
+if _pb or _po:
+    db["predictors"] = _pb or _po
+    if _pb and _po:
+        db["predictors_own"] = _po
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(nan_to_none(json.loads(json.dumps(db, default=jdefault))), fh, ensure_ascii=False, separators=(",", ":"))

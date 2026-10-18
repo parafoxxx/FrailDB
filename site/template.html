@@ -944,7 +944,9 @@ ROUTES["tool-agewindow"] = () => {
 };
 
 ROUTES["tool-predictors"] = () => {
-  const P = DB.predictors;
+  const SETS = { primary: DB.predictors, own: DB.predictors_own };
+  const setKey = SETS[toolState.predSet] ? toolState.predSet : "primary";
+  const P = SETS[setKey];
   if (!P) { app.innerHTML = head("Frailty predictors", null, "This analysis is not in this build."); return; }
   const INST = { Rockwood: "Frailty index", Fried: "Fried phenotype" };
   const lab = s => String(s || "").replace(/^[rR]\s+/, "").replace(/^\w/, c => c.toUpperCase());   // harmonised labels start "r "/"R "
@@ -954,7 +956,8 @@ ROUTES["tool-predictors"] = () => {
   const pl = P.pipeline, pw = P.models.reduce((s, x) => s + x.n_people, 0);
   const r2 = m => { const v = P.models.filter(x => x.instrument === m).map(x => x.heldout_R2); return `${fmt(Math.min(...v), 2)}–${fmt(Math.max(...v), 2)}`; };
   app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Frailty predictors"]]) +
-    head("Frailty predictors", null, "Which measured characteristics of older adults are most strongly associated with frailty, beyond the items that define it. One gradient-boosted model per cohort, instrument and wave ranks every variable in that wave's survey files by its mean |SHAP| value, after the instrument's own items, scores built from them, follow-up questions, near-copies and future information are excluded.") +
+    head("Frailty predictors", null, "Which measured characteristics of older adults are most strongly associated with frailty, beyond the items that define it. One gradient-boosted model per cohort, instrument and wave ranks every variable in that wave's survey files by its mean |SHAP| value, after excluded variables are removed.") +
+    (DB.predictors_own ? `<div class="panel"><div class="toolbar"><div class="ctrl">Exclusion set${seg("pdset", [["primary", "Both instruments excluded (primary)"], ["own", "Own instrument only"]], setKey)}</div><span class="note" style="max-width:62ch">${P.exclude_mode === "both" ? "Each track excludes the items of both the frailty index and the Fried phenotype, with their scores, follow-ups and near-copies. Both tracks draw on the same predictors: what is associated with frailty beyond how either instrument defines it." : "Each track excludes only its own instrument's items (the original specification). The rankings show how much each score is explained by the other instrument's content, e.g. physical activity for the frailty index."}</span></div></div>` : "") +
     `<div class="panel pad"><div class="metrics">
       <div class="metric"><b>${P.models.length}</b><span>Wave models</span></div>
       <div class="metric"><b>${fmt(pw)}</b><span>Person-waves</span></div>
@@ -962,7 +965,7 @@ ROUTES["tool-predictors"] = () => {
       <div class="metric"><b>${fmt(pl.excluded)}</b><span>Excluded before modelling</span></div>
       <div class="metric"><b>${r2("Rockwood")}</b><span>Held-out R², frailty index</span></div>
       <div class="metric"><b>${r2("Fried")}</b><span>Held-out R², Fried phenotype</span></div>
-    </div><p class="note" style="margin-bottom:0">Rankings are associations within a wave, not causes. Some predictors (care received, stopping work) may be consequences of frailty.</p></div>
+    </div><p class="note" style="margin-bottom:0">${P.exclude_mode === "both" ? "<b>Exclusion set:</b> the items of both instruments (frailty index and Fried phenotype), with their scores, follow-ups and near-copies, are removed from both tracks. " : "<b>Exclusion set:</b> each track removes only its own instrument's items. "}Rankings are associations within a wave, not causes. Some predictors (care received, stopping work) may be consequences of frailty.</p></div>
 
     <h2 class="sectiontitle">Top 5 predictors by dataset</h2>
     <div class="panel"><div class="toolbar"><div class="ctrl">Instrument${seg("pdt", [["Rockwood", "Frailty index"], ["Fried", "Fried phenotype"]], "Rockwood")}</div><span class="note">Mean share of model importance across the dataset's waves · waves where it is in the top 10</span></div><div id="pdtop"></div></div>
@@ -976,14 +979,14 @@ ROUTES["tool-predictors"] = () => {
     </div><div class="pad"><p class="charttitle" id="pdtitle"></p><p class="chartsub" id="pdsub"></p><div class="chartbox" id="pdbox"><canvas id="pdch"></canvas></div><div id="pdtab"></div></div></div>
 
     <h2 class="sectiontitle">Predictor themes</h2>
-    <div class="panel pad"><p class="charttitle">Pain dominates the frailty index in three cohorts, limitation the Fried score</p><p class="chartsub">Share of model importance (%) by theme, from variables reaching any wave's top 20. Themes are assigned from variable labels.</p><div class="tablewrap" id="pdheat"></div></div>
+    <div class="panel pad"><p class="charttitle">Share of importance by predictor theme</p><p class="chartsub">Share of model importance (%) by theme, from variables reaching any wave's top 20. Themes are assigned from variable labels.</p><div class="tablewrap" id="pdheat"></div></div>
 
     <h2 class="sectiontitle">Model fit by wave</h2>
     <div class="panel pad"><p class="charttitle">Held-out R² for every wave model</p><p class="chartsub">Share of variance in the score explained for the 20% of people the model did not see</p><div class="chartbox"><canvas id="pdfit"></canvas></div></div>
 
     <h2 class="sectiontitle">How variables were excluded</h2>
     <div class="panel pad"><p class="chartsub" style="margin-top:0">${fmt(pl.excluded)} of ${fmt(pl.candidates)} candidate variables were removed before any model was fitted, summed over all ${pl.models} models. ${fmt(pl.kept)} remained as predictors.</p>
-      ${barsHTML([["constituent", "1 · Constituent items (the instrument's own variables)"], ["derived", "2 · Derived scores built from the items"], ["follow-up", "2 · Follow-up questions about the same activity or disease"], ["near-copy", "3 · Near-copies found by correlation"], ["admin", "4 · Admin, paradata and future information"]].map(([k, l]) => ({ label: esc(l), v: pl.by_layer[k] || 0, text: fmt(pl.by_layer[k] || 0) })), Math.max(...Object.values(pl.by_layer)))}
+      ${barsHTML([["constituent", "1 · Constituent items (the instrument's own variables)"], ["derived", "2 · Derived scores built from the items"], ["follow-up", "2 · Follow-up questions about the same activity or disease"], ["near-copy", "3 · Near-copies found by correlation"], ["admin", "4 · Admin, paradata and future information"], ["other instrument", "5 · The other instrument's items, scores and follow-ups"]].filter(([k]) => pl.by_layer[k]).map(([k, l]) => ({ label: esc(l), v: pl.by_layer[k] || 0, text: fmt(pl.by_layer[k] || 0) })), Math.max(...Object.values(pl.by_layer)))}
       <p class="note">Rules are tested by a regression suite, and every excluded variable is listed with its reason in the project workbook. Script fingerprint <span class="mono">${esc((P.script_sha256 || "").slice(0, 16))}</span>. See <a href="#methods">Methods</a>.</p></div>`;
 
   const drawTop = () => {
@@ -1026,6 +1029,7 @@ ROUTES["tool-predictors"] = () => {
   wireSeg("pdn", v => { st.n = +v; drawWave(); });
   $("#pdc").onchange = e => { st.co = e.target.value; st.w = null; drawWave(); };
   $("#pdw").onchange = e => { st.w = +e.target.value; drawWave(); };
+  if (DB.predictors_own) wireSeg("pdset", v => { toolState.predSet = v; ROUTES["tool-predictors"](); });
   drawTop(); drawWave(); drawHeat(); drawFit();
 };
 
@@ -1138,7 +1142,8 @@ function datasets() {
     { name: "fraildb_fi_norms.csv", title: "FI reference norms", desc: "FI percentiles (5th to 95th) by cohort, 5-year age band and sex.", rows: () => Object.entries(DB.norms?.cohorts || {}).flatMap(([k, rs]) => rs.map(r => Object.assign({ cohort: k, age_band_start: r.age, sex: r.sex, n: r.n }, Object.fromEntries(DB.norms.q.map((q, i) => ["p" + Math.round(q * 100), r.v[i]]))))) },
     { name: "fraildb_transitions.csv", title: "Transitions", desc: "Counts moving between frailty states between successive assessments.", rows: () => Object.entries(DB.longitudinal).flatMap(([k, ms]) => Object.entries(ms).flatMap(([m, O]) => O.transitions.flatMap(t => t.matrix.flatMap((r, i) => r.map((v, j) => ({ cohort: k, instrument: m, from_wave: t.frm, from_state: O.states[i], to_state: O.states[j], n: v })))))) },
     DB.agewindow && { name: "fraildb_prefrailty_age_window.csv", title: "Pre-frailty age window", desc: "Outcomes 2–4 years after a pre-frail or non-frail assessment, by cohort, instrument and 5-year age band, with 95% CIs.", rows: () => Object.entries(DB.agewindow.results).flatMap(([m, cs]) => Object.entries(cs).flatMap(([k, v]) => v.bands.map(b => ({ instrument: m === "Rockwood" ? "frailty_index" : "fried", cohort: k, baseline_state: b.base, age_band: b.band, n: b.n, reassessed: b.reassessed, not_reassessed_pct: b.lost_pct, to_frail_pct: b.frail, to_frail_lo: b.frail_ci?.[0], to_frail_hi: b.frail_ci?.[1], recovered_pct: b.recover, recovered_lo: b.recover_ci?.[0], recovered_hi: b.recover_ci?.[1], stayed_prefrail_pct: b.prefrail, crossover_age: v.curves?.crossover?.age, crossover_lo: v.curves?.crossover_ci?.[0], crossover_hi: v.curves?.crossover_ci?.[1] })))) },
-    DB.predictors && { name: "fraildb_predictors_top5.csv", title: "Frailty predictors: top 5 per dataset", desc: "Overall top 5 predictors per cohort and instrument: mean share of importance across waves and how often each is in a wave's top 10.", rows: () => DB.predictors.top5 },
+    DB.predictors && { name: "fraildb_predictors_top5.csv", title: "Frailty predictors: top 5 per dataset", desc: "Overall top 5 predictors per cohort and instrument (primary analysis: both instruments' items excluded): mean share of importance across waves and how often each is in a wave's top 10.", rows: () => DB.predictors.top5 },
+    DB.predictors_own && { name: "fraildb_predictors_top5_own_instrument.csv", title: "Frailty predictors: top 5, own instrument only", desc: "Secondary analysis: the same, with only each instrument's own items excluded.", rows: () => DB.predictors_own.top5 },
     DB.predictors && { name: "fraildb_predictors_per_wave.csv", title: "Frailty predictors: top 20 per wave", desc: "Top 20 predictors of every wave model, with variable name, label, source file and share of importance.", rows: () => DB.predictors.per_wave },
     DB.predictors && { name: "fraildb_predictor_models.csv", title: "Frailty predictors: model fit", desc: "Sample size, variables, exclusions and held-out R² for each of the wave models.", rows: () => DB.predictors.models },
     { name: "fraildb_cutoffs.csv", title: "Grip and walk cut-offs", desc: "Lowest-20% cut-offs by sex and BMI (grip) or height (walk), by cohort and wave.", rows: () => DB.cutoffs.flatMap(t => t.rows.map(r => ({ cohort: t.cohort, wave: t.wave, measure: t.kind, ...r }))) },

@@ -33,7 +33,12 @@ import lightgbm as lgb
 warnings.filterwarnings("ignore")
 HERE = os.path.dirname(os.path.abspath(__file__))
 DS = os.path.join(HERE, "..", "..", "Data Sources")
-OUT = os.path.join(HERE, "output"); PARTS = os.path.join(OUT, "parts")
+# Exclusion mode (env FRAIL_EXCLUDE): "own"  = each instrument's own items only (the study specification)
+#                                    "both" = both instruments' items excluded from both tracks (primary analysis)
+MODE = os.environ.get("FRAIL_EXCLUDE", "own")
+assert MODE in ("own", "both"), MODE
+OTHER = {"Rockwood": "Fried", "Fried": "Rockwood"}
+OUT = os.path.join(HERE, "output" if MODE == "own" else "output_both"); PARTS = os.path.join(OUT, "parts")
 os.makedirs(PARTS, exist_ok=True)
 RNG = 20261018
 MAX_MISSING = 0.95
@@ -351,7 +356,7 @@ CONSTITUENTS = {
 GENERIC = {
     "Rockwood": re.compile(
         r"(\badls?\b|\biadls?\b|activities of daily living|mobility|\bnagi\b|gross motor|fine motor|large muscle|"
-        r"receiv\w* (any )?(formal |informal )?care|"
+        r"receiv\w* (any )?(home |formal |informal )?(home )?care|"
         r"\bgali\b|limitation|\blimit(s|ed|ing)?\b|long-standing illness|usual activities|health: ?mobility|health: ?self-care|"
         r"eurod|euro-d|ces-?d|frailty|number of (chronic )?(conditions|diseases)|chronic (diseases|conditions)|"
         r"help (with|moving)|received help|help received|help (you )?receive|meets needs|care (patterns|provider|arranged|package)|"
@@ -359,7 +364,7 @@ GENERIC = {
         r"\baids?\b ?:|aids used|use of aids|use any of the following|\bcane\b|walking stick|zimmer|wheelchair|crutch|"
         r"feedforward|feed forward|"
         r"health (stops|prevents|limits)|prevents? (you|them|r) from walk|preventing walking|able to walk alone|walk alone \(with aid|"
-        r"adaptation|bed (lever|rail)|commode|stair ?lift|chair ?lift|stair glide|bathroom modif|grab rail|"
+        r"adaptation|special features in accommodation|bed (lever|rail)|commode|stair ?lift|chair ?lift|stair glide|bathroom modif|grab rail|"
         r"walk\w* (what )?equipment|aid used|(bathroom|toilet)\W+(\w+\W+)?modif|\bthe lift\b|lift adaptation|"
         r"health: ?to walk|walk about|walking symptom|can.?t walk|cannot walk|help needed: ?medic|person who helps|paying for care)", re.I),
     "Fried": re.compile(
@@ -427,12 +432,12 @@ ROCK_CONCEPTS = {
 }
 FRIED_CONCEPTS = {  # criterion -> (pattern, cohorts where the criterion is measured this way; None = all)
     "FQ1": (r"effort|get going|could ?n.?t get going|tired|fatigue|exhaust|\benergy\b|unmotivated|worn out", None),
-    "FQ2": (r"weight|appetite|eat(ing)? (less|more)|\bbmi\b|body mass|height", None),
+    "FQ2": (r"weight|appetite|eat(ing)? (less|more)|\bbmi\b|body mass|height|obes", None),
     "FQ3": (r"grip|dynamometer|hand strength|muscle strength|\bstrength\b|\bweak(ness)?\b", None),
     "FQ3_lift": (r"\blifting\b|\blift(ing)? (or carry|5|10|heavy)", {"MHAS"}),
     "FQ4": (r"\bwalk|gait", None),
     "FQ4_stairs": (r"\bstairs\b|flights? of", {"SHARE", "HRS"}),
-    "FQ5": (r"physical(ly)? activ|exercise|vigorous|moderate(ly)? (energetic|activ)|\bsports?\b|energetic", None),
+    "FQ5": (r"physical(ly)? (in)?activ|inactivity|exercise|vigorous|moderate(ly)? (energetic|activ)|\bsports?\b|energetic", None),
 }
 
 
@@ -449,32 +454,85 @@ def stem(name):
     return re.sub(r"^(nurse_)?(r|h|ra|s)\d{0,2}(?=[a-z])", "", name.lower()) if re.match(r"^(r|h|s)\d", name.lower()) else name.lower()
 
 
+import functools
+
+
+@functools.lru_cache(maxsize=None)
+def _cons(cohort, m):
+    return tuple(re.compile(rf"^{p}$", re.I) for p in CONSTITUENTS.get((cohort, m), []))
+
+
+@functools.lru_cache(maxsize=None)
+def _fu(cohort, m, items):
+    return follow_up_rule(cohort, m, set(items))
+
+
+_ROCK_ITEMS = {}
+
+
+def rockwood_items(cohort):
+    """The cohort's frailty-index item columns (fixed per cohort); used when Rockwood rules apply in the Fried track."""
+    if cohort not in _ROCK_ITEMS:
+        cols = frozenset()
+        for w in WAVES.get((cohort, "Rockwood"), []):
+            Y = load_outcome(cohort, "Rockwood", w)
+            if Y is not None:
+                cols = frozenset(c for c in Y.columns if c.startswith("item__")); break
+        _ROCK_ITEMS[cohort] = cols
+    return _ROCK_ITEMS[cohort]
+
+
+def admin_rule(cohort, name, label):
+    """Identifiers, design and paradata, death or other information from outside the wave."""
+    lab_text = re.sub(r"^\[[^\]]*\]\s*", "", label)
+    base = name.lower().replace("nurse_", "")
+    if FUTURE_NAME.match(base) or DEATH_LABEL.search(lab_text):
+        return "admin (death / future information)"
+    if cohort in ("HRS", "MHAS") and re.match(r"^ra[a-z]", base) and not RA_FIXED.match(base):
+        return "admin (cross-wave summary, may use later waves)"
+    if ADMIN_NAME.match(base) or ADMIN_LABEL.search(lab_text):
+        return "admin"
+    if cohort == "HRS" and re.match(r"^\[H\d\dPR", label):
+        return "admin (preloaded from the previous wave)"
+    return None
+
+
+def instrument_rule(cohort, m, name, label, item_cols):
+    """Why a variable belongs to instrument m: one of its items, a score built from them, or a follow-up of one."""
+    lab_text = re.sub(r"^\[[^\]]*\]\s*", "", label)
+    base = name.lower().replace("nurse_", "")
+    if any(p.match(base) or p.match(stem(name)) for p in _cons(cohort, m)):
+        return "constituent"
+    if m == "Rockwood" and cohort == "HRS" and re.match(r"^\[H\d\dM", label):
+        return "derived (disability section: asked only with a work-limiting health problem)"
+    if GENERIC[m].search(lab_text) or GENERIC_NAME[m].search(stem(name)):
+        return "derived"
+    if m == "Rockwood" and (cohort, m) in HELP_MODULES and re.match(HELP_MODULES[(cohort, m)], base):
+        return "follow-up of a constituent item (help or care received module)"
+    fu = _fu(cohort, m, frozenset(c for c in item_cols if c.startswith("item__") and ":" not in c))
+    if fu and fu.search(lab_text):
+        return "follow-up of a constituent item"
+    return None
+
+
+def label_reason(cohort, method, name, label, item_cols, mode=None):
+    """The exclusion reason from names and labels (None = keep). In "both" mode the other instrument's rules apply too."""
+    mode = mode or MODE
+    r = admin_rule(cohort, name, label) or instrument_rule(cohort, method, name, label, item_cols)
+    if r or mode != "both":
+        return r
+    other = OTHER[method]
+    r = instrument_rule(cohort, other, name, label, rockwood_items(cohort) if other == "Rockwood" else frozenset())
+    return f"{r} [{other} item]" if r else None
+
+
 def exclusions(cohort, method, X, labels, Y):
+    items = frozenset(Y.columns)
     reasons = {}
-    cons = [re.compile(rf"^{p}$", re.I) for p in CONSTITUENTS.get((cohort, method), [])]
-    fu = follow_up_rule(cohort, method, set(Y.columns))
     for c in X.columns:
-        lab = labels.get(c, "")
-        lab_text = re.sub(r"^\[[^\]]*\]\s*", "", lab)
-        base = c.lower().replace("nurse_", "")
-        if FUTURE_NAME.match(base) or DEATH_LABEL.search(lab_text):
-            reasons[c] = "admin (death / future information)"
-        elif cohort in ("HRS", "MHAS") and re.match(r"^ra[a-z]", base) and not RA_FIXED.match(base):
-            reasons[c] = "admin (cross-wave summary, may use later waves)"
-        elif ADMIN_NAME.match(base) or ADMIN_LABEL.search(lab_text):
-            reasons[c] = "admin"
-        elif any(p.match(base) or p.match(stem(c)) for p in cons):
-            reasons[c] = "constituent"
-        elif cohort == "HRS" and re.match(r"^\[H\d\dPR", lab):
-            reasons[c] = "admin (preloaded from the previous wave)"
-        elif method == "Rockwood" and cohort == "HRS" and re.match(r"^\[H\d\dM", lab):
-            reasons[c] = "derived (disability section: asked only with a work-limiting health problem)"
-        elif GENERIC[method].search(lab_text) or GENERIC_NAME[method].search(stem(c)):
-            reasons[c] = "derived"
-        elif method == "Rockwood" and (cohort, method) in HELP_MODULES and re.match(HELP_MODULES[(cohort, method)], base):
-            reasons[c] = "follow-up of a constituent item (help or care received module)"
-        elif fu and fu.search(lab_text):
-            reasons[c] = "follow-up of a constituent item"
+        r = label_reason(cohort, method, c, labels.get(c, ""), items)
+        if r:
+            reasons[c] = r
     # data-driven near-copy screen on a subsample (rank correlations)
     keep = [c for c in X.columns if c not in reasons]
     sub = X[keep]
@@ -540,6 +598,12 @@ def run_one(cohort, method, w):
     X, labels = SOURCES[cohort](w, set(Y.index))
     common = X.index.intersection(Y.index)
     X, Y = X.loc[common], Y.loc[common]
+    if MODE == "both":
+        Yo = load_outcome(cohort, OTHER[method], w)
+        if Yo is not None:
+            Yo = Yo.set_index("id")
+            oc = [c for c in Yo.columns if c.startswith("item__")]
+            Y = Y.join(Yo[oc].rename(columns={c: f"item__{OTHER[method]}:{c[6:]}" for c in oc}), how="left")
     n_vars_raw = X.shape[1]
     reasons = exclusions(cohort, method, X, labels, Y)
     Xk = X.drop(columns=list(reasons))
@@ -553,7 +617,7 @@ def run_one(cohort, method, w):
            for i, j in enumerate(order[:20])]
     allimp = {stem(Xk.columns[j]): float(res["share"][j]) for j in order if res["share"][j] > 0}
     json.dump(dict(cohort=cohort, method=method, wave=int(w), source=source_label(cohort, w), n=int(len(Xk)),
-                   script_sha256=SCRIPT_SHA, lightgbm=lgb.__version__,
+                   script_sha256=SCRIPT_SHA, lightgbm=lgb.__version__, exclude_mode=MODE,
                    n_vars_raw=int(n_vars_raw), n_excluded=len(reasons), n_used=int(Xk.shape[1]),
                    r2=res["r2"], n_train=res["n_train"], n_test=res["n_test"], trees=res["best_iter"], top20=top,
                    share_all=allimp,

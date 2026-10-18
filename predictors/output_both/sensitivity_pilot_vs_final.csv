@@ -1,0 +1,2 @@
+cohort,instrument,top5_final,top5_pilot,top5_overlap,spearman_shared_variables,mean_R2_final,mean_R2_pilot
+MHAS,Rockwood,"jog, joga, paina, hltc, swell","jog, joga, fatigue, hltc, paina",4,0.852,0.642,0.631

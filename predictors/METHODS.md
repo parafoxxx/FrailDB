@@ -62,7 +62,7 @@ death entered the top 20). Variables were therefore excluded in four layers, eac
    "address" matched "dress", measured heart rate matched "heart"). Every variable whose classification
    changed between the pilot and final rules was reviewed by hand (`audit_rule_change.py`; 573 variables
    restored as legitimate predictors, e.g. diet, finances, measured blood pressure, cancer screening, gait
-   timings). The final rules are checked by 111 regression tests (`test_exclusions.py`) covering known leaks
+   timings). The final rules are checked by 142 regression tests (including both-mode cross-instrument cases) (`test_exclusions.py`) covering known leaks
    that must be excluded and legitimate predictors that must be kept.
 3. **Data-driven near-copies:** any remaining variable with |Spearman ρ| ≥ 0.75 with a constituent item, or
    ≥ 0.80 with the outcome score, in a random subsample of up to 5,000 people. This catches copies under
@@ -72,9 +72,25 @@ death entered the top 20). Variables were therefore excluded in four layers, eac
    values fed forward from the previous wave, and harmonised cross-wave summaries (only fixed
    characteristics such as sex, ethnicity, birth year, education and childhood circumstances were kept).
 
-Following the specification, the other instrument's items are **not** excluded: Rockwood deficits may
-predict the Fried score and vice versa. Every excluded variable is listed with its reason in
-`output/exclusions.csv` (supplementary table).
+**Two exclusion sets.** The analysis is run twice, with identical code (one script version, switch
+`FRAIL_EXCLUDE`):
+
+- **Primary: both instruments excluded (`both`).** Each track excludes the items of *both* instruments,
+  together with the scores, follow-ups and near-copies of each. The Rockwood track therefore also drops
+  the Fried criteria (exhaustion, weight loss and BMI, grip and strength, walking and gait, physical
+  activity). The Fried track also drops the frailty-index deficits (diseases, ADL/IADL, mobility, senses,
+  depression, self-rated health). The near-copy screen uses both instruments' items wherever both were
+  scored in that wave. Both tracks then draw on the same pool of candidate predictors, so they answer one
+  question: what is associated with frailty beyond how either instrument defines it? This choice was made
+  after inspecting the secondary results, which showed that the Fried rankings were dominated by
+  frailty-index items, and before any primary results were seen.
+- **Secondary: own instrument only (`own`, the original specification).** Each track excludes only its
+  own items. Its rankings show how much each score is explained by the other instrument's content. For
+  example, physical activity, a Fried criterion, ranks in the frailty-index top 5 in SHARE and ELSA.
+
+Every excluded variable is listed with its reason in `output_both/exclusions.csv` and
+`output/exclusions.csv`; exclusions due to the other instrument are marked `[Fried item]` or
+`[Rockwood item]`.
 
 ### 3.4 Model
 For each cohort × instrument × wave, a gradient-boosted regression tree model (LightGBM 4.7.0; Ke et

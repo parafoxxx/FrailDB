@@ -14,7 +14,10 @@ import os, re, json, glob
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "output")
+MODE = os.environ.get("FRAIL_EXCLUDE", "own")          # same switch as run_predictors.py
+OUT = os.path.join(HERE, "output" if MODE == "own" else "output_both")
+# comparison set for the sensitivity table: the previous rule version (own mode) or the own-mode results (both mode)
+COMPARE_DIR = os.path.join(HERE, "output", "pilot_parts" if MODE == "own" else "parts")
 parts = [json.load(open(f, encoding="utf-8")) for f in sorted(glob.glob(os.path.join(OUT, "parts", "*.json")))]
 if not parts:
     raise SystemExit("No results in output/parts yet.")
@@ -104,7 +107,7 @@ def mean_shares(ps):
     return acc
 
 
-pilot = [json.load(open(f, encoding="utf-8")) for f in sorted(glob.glob(os.path.join(OUT, "pilot_parts", "*.json")))]
+pilot = [json.load(open(f, encoding="utf-8")) for f in sorted(glob.glob(os.path.join(COMPARE_DIR, "*.json")))]
 sens_rows = []
 for (co, m), _ in models.groupby(["cohort", "instrument"], sort=False):
     fin = mean_shares([p for p in parts if p["cohort"] == co and p["method"] == m])

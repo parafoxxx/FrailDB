@@ -11,7 +11,8 @@ import os, re, json, glob
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "output")
+MODE = os.environ.get("FRAIL_EXCLUDE", "own")
+OUT = os.path.join(HERE, "output" if MODE == "own" else "output_both")
 rank = pd.read_csv(os.path.join(OUT, "dataset_ranking_full.csv"))
 models = pd.read_csv(os.path.join(OUT, "models.csv"))
 exc = pd.read_csv(os.path.join(OUT, "exclusions.csv"))
@@ -54,6 +55,7 @@ piv = rank.pivot_table(index="theme", columns="dataset", values="mean_importance
 themes = [dict(theme=t, dataset=d, pct=round(float(piv.at[t, d]), 1)) for t in piv.index for d in order]
 
 layers = exc.reason.str.replace(r" \(.*", "", regex=True).str.replace(r" of .*", "", regex=True)
+layers = layers.where(~exc.reason.str.contains(r"\[(?:Fried|Rockwood) item\]", regex=True), "other instrument")
 pipeline = dict(candidates=int(models.variables_in_files.sum()), kept=int(models.used.sum()), models=int(len(models)),
                 excluded=int(len(exc)), by_layer={k: int(v) for k, v in layers.value_counts().items()},
                 r2_fi=[float(models[models.instrument == "Rockwood"].heldout_R2.min()), float(models[models.instrument == "Rockwood"].heldout_R2.max())],

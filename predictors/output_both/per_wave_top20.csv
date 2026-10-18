@@ -1,0 +1,1181 @@
+cohort,instrument,wave,rank,in_top10,variable,label,file_or_module,importance_pct,mean_abs_shap,direction,missing_pct
+SHARE,Rockwood,2,1,True,symptomsw2,Number of symptoms (w2 version),gv_health,6.67,0.01550750735886138,higher value → higher score,0.0
+SHARE,Rockwood,2,2,True,symptoms2w2,2+ symptoms (w2 version),gv_health,6.49,0.015107987155924735,higher value → lower score,0.0
+SHARE,Rockwood,2,3,True,cs004_,Single cs test results,cs,6.38,0.014844510169131533,higher value → higher score,31.6
+SHARE,Rockwood,2,4,True,ph011dno,Drugs for: none,ph,4.19,0.009752613821400568,higher value → lower score,0.0
+SHARE,Rockwood,2,5,True,ph011d7,Drugs for: joint pain,ph,4.01,0.00932693059284257,higher value → higher score,0.0
+SHARE,Rockwood,2,6,True,ph010dno,Bothered by: no symptoms,ph,2.7,0.006292754214050358,higher value → lower score,0.0
+SHARE,Rockwood,2,7,True,hc049e,Paid out-of-pocket for prescribed drugs,hc,2.42,0.005631035818814593,higher value → higher score,5.4
+SHARE,Rockwood,2,8,True,ph010d8,Bothered by: fear of falling down,ph,2.33,0.005425508101689876,higher value → higher score,0.0
+SHARE,Rockwood,2,9,True,ac025_,Future looks good,ac,2.28,0.005298828059561265,higher value → lower score,0.1
+SHARE,Rockwood,2,10,True,ac012_,How satisfied with life,ac,1.96,0.004557060643267006,higher value → higher score,0.1
+SHARE,Rockwood,2,11,False,ph010d3,Bothered by: breathlessness,ph,1.94,0.0045185689453156735,higher value → lower score,0.0
+SHARE,Rockwood,2,12,False,ac015_,Out of control,ac,1.86,0.004331921378722973,higher value → lower score,0.1
+SHARE,Rockwood,2,13,False,hc051e,"Paid out-of-pocket for nursing home, day-care and home-care",hc,1.83,0.004258574495804861,higher value → higher score,93.5
+SHARE,Rockwood,2,14,False,ac014_,Age prevents from doing things,ac,1.76,0.004087309042830661,higher value → higher score,0.1
+SHARE,Rockwood,2,15,False,ph064_,Health worse last wave,ph,1.62,0.003773288996891237,higher value → lower score,84.3
+SHARE,Rockwood,2,16,False,ph010d5,Bothered by: swollen legs,ph,1.54,0.0035797143161999546,higher value → higher score,0.0
+SHARE,Rockwood,2,17,False,ph025_,Bite on hard foods,ph,1.53,0.0035642730607190437,higher value → higher score,0.0
+SHARE,Rockwood,2,18,False,ac024_,Full of opportunities,ac,1.43,0.0033212675557941318,higher value → lower score,0.1
+SHARE,Rockwood,2,19,False,ph062_,Compare health last wave,ph,1.38,0.00321944066218453,higher value → lower score,43.1
+SHARE,Rockwood,2,20,False,br010_,Days a week consumed alcohol last 3 months,br,1.27,0.0029451767178225704,higher value → lower score,0.6
+SHARE,Rockwood,4,1,True,symptoms2w4,2+ symptoms (w4 version),gv_health,5.79,0.0145354180341394,higher value → higher score,0.0
+SHARE,Rockwood,4,2,True,symptomsw4,Number of symptoms (w4 version),gv_health,5.77,0.014507428561038805,higher value → higher score,0.0
+SHARE,Rockwood,4,3,True,q1d,Health: pain/discomfort,dropoff,5.2,0.013055902805311406,higher value → higher score,18.1
+SHARE,Rockwood,4,4,True,ph011dno,Drugs for: none,ph,4.6,0.011567582391817207,higher value → lower score,0.0
+SHARE,Rockwood,4,5,True,ph011d7,Drugs for: joint pain,ph,3.81,0.009571349890383217,higher value → higher score,0.0
+SHARE,Rockwood,4,6,True,cf103_,Memory,cf,3.16,0.007932528721219759,higher value → higher score,0.0
+SHARE,Rockwood,4,7,True,mh027_,Felt faint,mh,3.12,0.007837340411133317,higher value → higher score,0.0
+SHARE,Rockwood,4,8,True,ac025_,Future looks good,ac,2.36,0.0059327324962054106,higher value → higher score,0.1
+SHARE,Rockwood,4,9,True,ph010d8,Bothered by: fear of falling down,ph,2.23,0.0056056780775863724,higher value → higher score,0.0
+SHARE,Rockwood,4,10,True,ph010d3,Bothered by: breathlessness,ph,2.22,0.005579545712008271,higher value → higher score,0.0
+SHARE,Rockwood,4,11,False,ac014_,Age prevents from doing things,ac,2.21,0.005560585199028908,higher value → higher score,0.1
+SHARE,Rockwood,4,12,False,ph010d5,Bothered by: swollen legs,ph,2.12,0.00531870374207293,higher value → higher score,0.0
+SHARE,Rockwood,4,13,False,ph010dno,Bothered by: no symptoms,ph,2.04,0.0051184252923418905,higher value → lower score,0.0
+SHARE,Rockwood,4,14,False,ac017_,Do the things you want to do,ac,1.92,0.004813203581981837,higher value → higher score,0.1
+SHARE,Rockwood,4,15,False,ep097_,Pension claims,ep,1.85,0.004644293920241393,higher value → lower score,18.8
+SHARE,Rockwood,4,16,False,ac015_,Out of control,ac,1.78,0.0044792927903779195,higher value → higher score,0.1
+SHARE,Rockwood,4,17,False,ac024_,Full of opportunities,ac,1.65,0.004140376293030716,higher value → higher score,0.1
+SHARE,Rockwood,4,18,False,cf002_,Self-rated writing skills,cf,1.45,0.0036505622208720073,higher value → higher score,36.4
+SHARE,Rockwood,4,19,False,yrbirth_do,Year of birth,dropoff,1.28,0.003217486135283109,higher value → lower score,18.1
+SHARE,Rockwood,4,20,False,ph011d1,Drugs for: high blood cholesterol,ph,1.16,0.002923171935272914,higher value → higher score,0.0
+SHARE,Rockwood,5,1,True,cs004_,Single cs test results,cs,7.4,0.01896870213715148,higher value → higher score,16.9
+SHARE,Rockwood,5,2,True,ph085_,Level of pain,ph,5.81,0.014892117739584664,higher value → lower score,57.5
+SHARE,Rockwood,5,3,True,ac014_,Age prevents from doing things,ac,4.16,0.01067429089849546,higher value → higher score,0.3
+SHARE,Rockwood,5,4,True,ph011dno,Drugs for: none,ph,4.02,0.010304096348201895,higher value → lower score,0.0
+SHARE,Rockwood,5,5,True,mh027_,Felt faint,mh,2.95,0.007571486428718443,higher value → higher score,0.1
+SHARE,Rockwood,5,6,True,hc127dno,Received professional services: none of these,hc,2.93,0.007515552719703537,higher value → higher score,0.0
+SHARE,Rockwood,5,7,True,cf103_,Memory,cf,2.76,0.0070727260990099995,higher value → higher score,0.1
+SHARE,Rockwood,5,8,True,hc089e,Amount payed overall for drugs,hc,2.64,0.006773211450568118,higher value → higher score,39.8
+SHARE,Rockwood,5,9,True,ph011d7,Drugs for: joint pain,ph,2.51,0.0064437983760099555,higher value → higher score,0.0
+SHARE,Rockwood,5,10,True,ph011d1,Drugs for: high blood cholesterol,ph,1.83,0.004684500202829009,higher value → higher score,0.0
+SHARE,Rockwood,5,11,False,ph087d2,Pain location: hips,ph,1.78,0.004575052995655221,higher value → higher score,57.5
+SHARE,Rockwood,5,12,False,ac017_,Do the things you want to do,ac,1.6,0.004102235917906907,higher value → higher score,0.4
+SHARE,Rockwood,5,13,False,ac025_,Future looks good,ac,1.58,0.004059888788993432,higher value → higher score,0.7
+SHARE,Rockwood,5,14,False,ph087d3,Pain location: knees,ph,1.57,0.004032119461784376,higher value → higher score,57.5
+SHARE,Rockwood,5,15,False,mh025_,Hands trembling,mh,1.42,0.0036365057462497213,higher value → higher score,0.1
+SHARE,Rockwood,5,16,False,ep097_,Pension claims,ep,1.38,0.0035377179724300715,higher value → higher score,20.3
+SHARE,Rockwood,5,17,False,ac015_,Out of control,ac,1.28,0.003286670674991018,higher value → higher score,0.6
+SHARE,Rockwood,5,18,False,ac024_,Full of opportunities,ac,1.27,0.003257326050001454,higher value → higher score,0.6
+SHARE,Rockwood,5,19,False,ex009age,Life expectancy target age,ex,1.24,0.00319073748525039,higher value → higher score,0.1
+SHARE,Rockwood,5,20,False,it004_,Use of internet in past 7 days,it,1.1,0.002821137878858474,higher value → higher score,0.0
+SHARE,Rockwood,6,1,True,ph082_,At least taking 5 different drugs a typical day,ph,8.1,0.020741040425599964,higher value → lower score,23.1
+SHARE,Rockwood,6,2,True,ph085_,Level of pain,ph,5.11,0.013082676876860265,higher value → lower score,54.3
+SHARE,Rockwood,6,3,True,ac015_,Out of control,ac,3.0,0.007683568584502181,higher value → higher score,0.3
+SHARE,Rockwood,6,4,True,ac014_,Age prevents from doing things,ac,2.99,0.007662201221029112,higher value → higher score,0.3
+SHARE,Rockwood,6,5,True,ph011d7,Drugs for: joint pain,ph,2.61,0.006670895802699715,higher value → lower score,0.0
+SHARE,Rockwood,6,6,True,ph011dno,Drugs for: none,ph,2.56,0.006550990912891668,higher value → lower score,0.0
+SHARE,Rockwood,6,7,True,ph087d2,Pain location: hips,ph,2.49,0.0063881182888095535,higher value → lower score,54.3
+SHARE,Rockwood,6,8,True,hc127dno,Received professional services: none of these,hc,2.37,0.006070980486524252,higher value → higher score,0.8
+SHARE,Rockwood,6,9,True,hc689e,Amount payed yourself for medication last 12 months,hc,2.31,0.005920017553734092,higher value → higher score,36.1
+SHARE,Rockwood,6,10,True,ph087d1,Pain location: back,ph,2.25,0.00576086935800827,higher value → lower score,54.3
+SHARE,Rockwood,6,11,False,ph087d3,Pain location: knees,ph,2.09,0.005343969752511331,higher value → higher score,54.3
+SHARE,Rockwood,6,12,False,it004_,Use of internet in past 7 days,it,2.08,0.0053141096901117065,higher value → higher score,0.0
+SHARE,Rockwood,6,13,False,ep097_,Pension claims,ep,1.93,0.00493693732033493,higher value → higher score,21.6
+SHARE,Rockwood,6,14,False,ac017_,Do the things you want to do,ac,1.92,0.004919818343061371,higher value → higher score,0.3
+SHARE,Rockwood,6,15,False,ac012_,How satisfied with life,ac,1.91,0.004883349877181044,higher value → higher score,0.3
+SHARE,Rockwood,6,16,False,ph087d4,Pain location: other joints,ph,1.32,0.003381327450664332,higher value → lower score,54.3
+SHARE,Rockwood,6,17,False,ph084_,Troubled with pain,ph,1.32,0.0033735357144550715,higher value → lower score,0.0
+SHARE,Rockwood,6,18,False,ac025_,Future looks good,ac,1.27,0.003246413925133753,higher value → higher score,0.3
+SHARE,Rockwood,6,19,False,ex009age,Life expectancy target age,ex,1.09,0.0027845692220216448,higher value → higher score,0.4
+SHARE,Rockwood,6,20,False,hc140d1,Payed anything yourself for aids/appliances last 12 months,hc,1.08,0.0027729410582872766,higher value → higher score,0.0
+SHARE,Rockwood,8,1,True,ph082_,At least taking 5 different drugs a typical day,ph,7.96,0.022065016990821307,higher value → lower score,21.9
+SHARE,Rockwood,8,2,True,ph085_,Level of pain,ph,4.46,0.012347367762897089,higher value → lower score,55.4
+SHARE,Rockwood,8,3,True,ph011d7,Drugs for: joint pain,ph,3.07,0.008503695690117193,higher value → lower score,0.0
+SHARE,Rockwood,8,4,True,hc127dno,Received professional services: none of these,hc,2.87,0.007965073561915456,higher value → higher score,0.8
+SHARE,Rockwood,8,5,True,ph011dno,Drugs for: none,ph,2.87,0.007940193524202447,higher value → lower score,0.0
+SHARE,Rockwood,8,6,True,ac014_,Age prevents from doing things,ac,2.67,0.007411388426870722,higher value → higher score,0.1
+SHARE,Rockwood,8,7,True,ph087d1,Pain location: back,ph,2.58,0.007152715179742249,higher value → lower score,55.4
+SHARE,Rockwood,8,8,True,ac015_,Out of control,ac,2.57,0.007119308519756034,higher value → higher score,0.1
+SHARE,Rockwood,8,9,True,cf103_,Memory,cf,2.14,0.005927716909876247,higher value → higher score,0.0
+SHARE,Rockwood,8,10,True,ph087d3,Pain location: knees,ph,2.11,0.005836149084220849,higher value → higher score,55.4
+SHARE,Rockwood,8,11,False,ac025_,Future looks good,ac,1.89,0.00524545507076818,higher value → lower score,0.1
+SHARE,Rockwood,8,12,False,ph087d2,Pain location: hips,ph,1.77,0.004911828571389449,higher value → lower score,55.4
+SHARE,Rockwood,8,13,False,hc889_,Health literacy: how often help needed,hc,1.59,0.00441552461681608,higher value → higher score,0.0
+SHARE,Rockwood,8,14,False,ac012_,How satisfied with life,ac,1.39,0.0038561083324620397,higher value → higher score,0.1
+SHARE,Rockwood,8,15,False,te005_,Hours spent on chores,te,1.34,0.0037162542213820754,higher value → lower score,32.1
+SHARE,Rockwood,8,16,False,yrbirth,Year of birth,cv_r,1.32,0.0036712004631192056,higher value → lower score,0.0
+SHARE,Rockwood,8,17,False,age_int,Age of respondent at the time of interview,cv_r,1.23,0.0034073855229578313,higher value → higher score,0.0
+SHARE,Rockwood,8,18,False,ph087d4,Pain location: other joints,ph,1.17,0.0032284239716090183,higher value → higher score,55.4
+SHARE,Rockwood,8,19,False,ac017_,Do the things you want to do,ac,1.12,0.003116442956422991,higher value → higher score,0.1
+SHARE,Rockwood,8,20,False,it004_,Use of internet in past 7 days,it,1.03,0.0028437935881574223,higher value → lower score,0.0
+SHARE,Rockwood,9,1,True,ph082_,At least taking 5 different drugs a typical day,ph,8.33,0.02291530515329463,higher value → lower score,21.1
+SHARE,Rockwood,9,2,True,ph085_,Level of pain,ph,5.61,0.01542981087425187,higher value → higher score,54.3
+SHARE,Rockwood,9,3,True,casp,CASP index for quality of life and well-being,gv_health,3.54,0.009738873621684867,higher value → lower score,2.7
+SHARE,Rockwood,9,4,True,ac014_,Age prevents from doing things,ac,3.48,0.009567517451976952,higher value → lower score,0.3
+SHARE,Rockwood,9,5,True,cf103_,Memory,cf,3.08,0.008468301490103367,higher value → higher score,0.2
+SHARE,Rockwood,9,6,True,ph011d7,Drugs for: joint pain,ph,2.43,0.00669079887737126,higher value → higher score,0.1
+SHARE,Rockwood,9,7,True,ph011dno,Drugs for: none,ph,2.18,0.005990925914779519,higher value → lower score,0.1
+SHARE,Rockwood,9,8,True,hc602_,Times talked to medical doctor/nurse about your health last 12 months,hc,2.1,0.005786619436064924,higher value → higher score,1.1
+SHARE,Rockwood,9,9,True,ph087d1,Pain location: back,ph,1.87,0.005138185113509934,higher value → higher score,54.3
+SHARE,Rockwood,9,10,True,hc889_,Health literacy: how often help needed,hc,1.83,0.005025447739607073,higher value → lower score,0.1
+SHARE,Rockwood,9,11,False,ex009_,Life expectancy,ex,1.7,0.004678087400721364,higher value → lower score,6.7
+SHARE,Rockwood,9,12,False,ph087d3,Pain location: knees,ph,1.61,0.004425072735120503,higher value → higher score,54.3
+SHARE,Rockwood,9,13,False,ac025_,Future looks good,ac,1.56,0.004286497655632332,higher value → higher score,1.0
+SHARE,Rockwood,9,14,False,hc127dno,Received professional services: none of these,hc,1.47,0.0040529025230336795,higher value → lower score,0.8
+SHARE,Rockwood,9,15,False,ph087d2,Pain location: hips,ph,1.43,0.003927781453525901,higher value → higher score,54.3
+SHARE,Rockwood,9,16,False,te005_,Hours spent on chores,te,1.38,0.0037939204176097086,higher value → lower score,23.2
+SHARE,Rockwood,9,17,False,it004_,Use of internet in past 7 days,it,1.3,0.003578695306648319,higher value → higher score,0.0
+SHARE,Rockwood,9,18,False,ph087d4,Pain location: other joints,ph,1.17,0.0032073931321499436,higher value → higher score,54.3
+SHARE,Rockwood,9,19,False,ac018_,Family responsibilities prevent,ac,1.15,0.0031683540445120464,higher value → higher score,0.4
+SHARE,Rockwood,9,20,False,ac015_,Out of control,ac,1.05,0.002901061313700241,higher value → lower score,0.6
+SHARE,Fried,1,1,True,symptomsw1,Number of symptoms (w1 version),gv_health,5.14,0.09601002848078667,higher value → higher score,0.0
+SHARE,Fried,1,2,True,symptoms2w1,2+ symptoms (w1 version),gv_health,3.07,0.057446361761866016,higher value → higher score,0.0
+SHARE,Fried,1,3,True,age_int,Age of respondent at the time of interview,cv_r,2.54,0.04747490229609827,higher value → higher score,0.0
+SHARE,Fried,1,4,True,q2_a,My age prevents me from doing things I would like to,dropoff,2.45,0.04578907846929247,higher value → lower score,32.6
+SHARE,Fried,1,5,True,q4_n,I felt really rested when I woke up in the morning,dropoff,2.19,0.04089699251854909,higher value → higher score,32.7
+SHARE,Fried,1,6,True,mh021_,Ever admitted to mental hospital or psychiatric ward,mh,2.01,0.037507259110820715,higher value → higher score,73.6
+SHARE,Fried,1,7,True,age2004,Age in 2004,cv_r,2.0,0.037477310628580784,higher value → higher score,0.0
+SHARE,Fried,1,8,True,ac002dno,Activities last month: none of these,ac,1.98,0.037112144217621594,higher value → lower score,0.0
+SHARE,Fried,1,9,True,ph010d8,Bothered by: fear of falling down,ph,1.83,0.034188808440370304,higher value → higher score,0.0
+SHARE,Fried,1,10,True,hc049e,Paid out-of-pocket for prescribed drugs,hc,1.59,0.02964643782663493,higher value → higher score,6.9
+SHARE,Fried,1,11,False,yrbirth,Year of birth,cv_r,1.52,0.02848772323255498,higher value → lower score,0.0
+SHARE,Fried,1,12,False,hc051e,"Paid out-of-pocket for nursing home, day-care and home-care",hc,1.5,0.02808754238382577,higher value → higher score,81.6
+SHARE,Fried,1,13,False,q2_d,I can do the things I want to,dropoff,1.48,0.027636027248314644,higher value → higher score,33.2
+SHARE,Fried,1,14,False,ph011dno,Drugs for: none,ph,1.47,0.027404392187881425,higher value → higher score,0.0
+SHARE,Fried,1,15,False,ph025_,Bite on hard foods,ph,1.34,0.02512900054825409,higher value → higher score,0.0
+SHARE,Fried,1,16,False,ph010d3,Bothered by: breathlessness,ph,1.33,0.024923316114633897,higher value → higher score,0.0
+SHARE,Fried,1,17,False,ph010dno,Bothered by: no symptoms,ph,1.3,0.024376479932284104,higher value → higher score,0.0
+SHARE,Fried,1,18,False,q24,Joint pain on most days,dropoff,1.21,0.022673672807750605,higher value → lower score,67.6
+SHARE,Fried,1,19,False,cf002_,Self-rated writing skills,cf,1.17,0.021953307756031097,higher value → higher score,0.0
+SHARE,Fried,1,20,False,q2_l,I feel that the future looks good for me,dropoff,1.08,0.020162441168150864,higher value → higher score,33.0
+SHARE,Fried,2,1,True,cs004_,Single cs test results,cs,7.24,0.12569986849103393,higher value → higher score,27.3
+SHARE,Fried,2,2,True,symptomsw2,Number of symptoms (w2 version),gv_health,5.68,0.09863116699095402,higher value → higher score,0.0
+SHARE,Fried,2,3,True,symptoms2w2,2+ symptoms (w2 version),gv_health,5.5,0.09546586662215788,higher value → lower score,0.0
+SHARE,Fried,2,4,True,ac014_,Age prevents from doing things,ac,2.65,0.04607585928579875,higher value → higher score,0.1
+SHARE,Fried,2,5,True,ac012_,How satisfied with life,ac,2.6,0.04512295864144073,higher value → higher score,0.1
+SHARE,Fried,2,6,True,ph064_,Health worse last wave,ph,2.04,0.03540599149376567,higher value → lower score,85.5
+SHARE,Fried,2,7,True,ac017_,Do the things you want to do,ac,1.99,0.03462442857168593,higher value → lower score,0.1
+SHARE,Fried,2,8,True,ac015_,Out of control,ac,1.94,0.03371842977909024,higher value → lower score,0.1
+SHARE,Fried,2,9,True,dn003_,Year of birth,dn,1.79,0.031096687234883756,higher value → lower score,0.0
+SHARE,Fried,2,10,True,ph062_,Compare health last wave,ph,1.79,0.031095224105432737,higher value → lower score,43.6
+SHARE,Fried,2,11,False,age_int,Age of respondent at the time of interview,cv_r,1.73,0.030099147501269758,higher value → higher score,0.0
+SHARE,Fried,2,12,False,ac002dno,Activities last month: none of these,ac,1.72,0.029919762106346663,higher value → lower score,0.1
+SHARE,Fried,2,13,False,ph011d7,Drugs for: joint pain,ph,1.7,0.029458631804222816,higher value → higher score,0.0
+SHARE,Fried,2,14,False,ac024_,Full of opportunities,ac,1.67,0.028990346768660042,higher value → lower score,0.1
+SHARE,Fried,2,15,False,mh021_,Ever admitted to mental hospital or psychiatric ward,mh,1.66,0.028867791054076095,higher value → higher score,83.0
+SHARE,Fried,2,16,False,ac025_,Future looks good,ac,1.62,0.02804368741936898,higher value → lower score,0.1
+SHARE,Fried,2,17,False,ph010d3,Bothered by: breathlessness,ph,1.4,0.024258794183816976,higher value → lower score,0.0
+SHARE,Fried,2,18,False,hc051e,"Paid out-of-pocket for nursing home, day-care and home-care",hc,1.33,0.023084238915112656,higher value → higher score,94.4
+SHARE,Fried,2,19,False,hc049e,Paid out-of-pocket for prescribed drugs,hc,1.24,0.021579146040971154,higher value → higher score,4.7
+SHARE,Fried,2,20,False,ex009age,Life expectancy target age,ex,1.17,0.020253821727183176,higher value → higher score,0.0
+SHARE,Fried,4,1,True,mh027_,Felt faint,mh,5.34,0.10980614008117984,higher value → higher score,0.0
+SHARE,Fried,4,2,True,symptoms2w4,2+ symptoms (w4 version),gv_health,4.54,0.09330930671472532,higher value → lower score,0.0
+SHARE,Fried,4,3,True,symptomsw4,Number of symptoms (w4 version),gv_health,4.16,0.08558482787902523,higher value → higher score,0.0
+SHARE,Fried,4,4,True,ep097_,Pension claims,ep,3.76,0.07739288535812518,higher value → lower score,17.0
+SHARE,Fried,4,5,True,yrbirth_do,Year of birth,dropoff,3.06,0.06295246060520616,higher value → lower score,17.8
+SHARE,Fried,4,6,True,q1d,Health: pain/discomfort,dropoff,2.93,0.06026306024081978,higher value → higher score,17.8
+SHARE,Fried,4,7,True,ac014_,Age prevents from doing things,ac,2.76,0.056818710692078465,higher value → higher score,0.0
+SHARE,Fried,4,8,True,ac017_,Do the things you want to do,ac,2.41,0.04956945229339242,higher value → higher score,0.0
+SHARE,Fried,4,9,True,ac024_,Full of opportunities,ac,2.04,0.04200141711635591,higher value → higher score,0.0
+SHARE,Fried,4,10,True,mh025_,Hands trembling,mh,1.69,0.034692046484278996,higher value → higher score,0.0
+SHARE,Fried,4,11,False,ph011d7,Drugs for: joint pain,ph,1.63,0.033555376190429774,higher value → higher score,0.0
+SHARE,Fried,4,12,False,ac025_,Future looks good,ac,1.52,0.03135827600356154,higher value → higher score,0.0
+SHARE,Fried,4,13,False,ph010d8,Bothered by: fear of falling down,ph,1.52,0.03117197264087206,higher value → higher score,0.0
+SHARE,Fried,4,14,False,cf103_,Memory,cf,1.28,0.02630027106723659,higher value → higher score,0.0
+SHARE,Fried,4,15,False,numeracy2,Numeracy score 2: mathematical performance (subtraction),gv_health,1.19,0.02441777499182038,higher value → higher score,0.0
+SHARE,Fried,4,16,False,hc013_,Times being patient in hospital,hc,1.15,0.023741294309964998,higher value → higher score,85.2
+SHARE,Fried,4,17,False,ph010d3,Bothered by: breathlessness,ph,1.08,0.02216401589719063,higher value → higher score,0.0
+SHARE,Fried,4,18,False,br023_,How often six or more drinks last 3 months,br,1.03,0.02117396748394475,higher value → lower score,29.9
+SHARE,Fried,4,19,False,ac015_,Out of control,ac,1.01,0.02070535746946263,higher value → higher score,0.0
+SHARE,Fried,4,20,False,mh023_,Fear of the worst happening,mh,0.88,0.018176399469713434,higher value → higher score,0.0
+SHARE,Fried,5,1,True,cs004_,Single cs test results,cs,6.59,0.1190556717119228,higher value → higher score,12.4
+SHARE,Fried,5,2,True,mh027_,Felt faint,mh,6.27,0.11316396516429328,higher value → higher score,0.0
+SHARE,Fried,5,3,True,ac014_,Age prevents from doing things,ac,4.53,0.0817634568957226,higher value → higher score,0.1
+SHARE,Fried,5,4,True,ep097_,Pension claims,ep,4.47,0.0806705148263348,higher value → lower score,18.2
+SHARE,Fried,5,5,True,ph085_,Level of pain,ph,4.18,0.0754051066098106,higher value → lower score,59.4
+SHARE,Fried,5,6,True,ac025_,Future looks good,ac,1.91,0.0345168673853409,higher value → higher score,0.5
+SHARE,Fried,5,7,True,hc128_,Payed anything out of pocket for home care,hc,1.91,0.03446947401272268,higher value → lower score,91.5
+SHARE,Fried,5,8,True,hc127dno,Received professional services: none of these,hc,1.72,0.030982456802376438,higher value → higher score,0.0
+SHARE,Fried,5,9,True,ac017_,Do the things you want to do,ac,1.69,0.030557562270247467,higher value → higher score,0.2
+SHARE,Fried,5,10,True,ex009age,Life expectancy target age,ex,1.59,0.028731653608891662,higher value → higher score,0.1
+SHARE,Fried,5,11,False,mh024_,Nervous,mh,1.56,0.028211990934552966,higher value → higher score,0.1
+SHARE,Fried,5,12,False,ac015_,Out of control,ac,1.55,0.027901081310148054,higher value → higher score,0.4
+SHARE,Fried,5,13,False,it004_,Use of internet in past 7 days,it,1.46,0.026334284636567343,higher value → lower score,0.0
+SHARE,Fried,5,14,False,mh025_,Hands trembling,mh,1.45,0.026231119787665833,higher value → higher score,0.1
+SHARE,Fried,5,15,False,ac024_,Full of opportunities,ac,1.42,0.025653320762600667,higher value → higher score,0.5
+SHARE,Fried,5,16,False,hc089e,Amount payed overall for drugs,hc,1.37,0.024784879044449034,higher value → higher score,39.3
+SHARE,Fried,5,17,False,ph011dno,Drugs for: none,ph,1.35,0.02435847923590817,higher value → lower score,0.0
+SHARE,Fried,5,18,False,ph011d7,Drugs for: joint pain,ph,1.33,0.02407543848564063,higher value → higher score,0.0
+SHARE,Fried,5,19,False,ph087d3,Pain location: knees,ph,1.17,0.021146520199201848,higher value → higher score,59.4
+SHARE,Fried,5,20,False,cf008tot,Ten words list learning first trial total,gv_health,1.17,0.021053111608417073,higher value → higher score,0.5
+SHARE,Fried,6,1,True,ph082_,At least taking 5 different drugs a typical day,ph,6.14,0.11802137432236293,higher value → lower score,23.7
+SHARE,Fried,6,2,True,ep097_,Pension claims,ep,4.83,0.09292259811920142,higher value → higher score,20.4
+SHARE,Fried,6,3,True,ph085_,Level of pain,ph,3.66,0.07032683174693356,higher value → lower score,55.3
+SHARE,Fried,6,4,True,ac015_,Out of control,ac,3.32,0.0638584309774647,higher value → higher score,0.1
+SHARE,Fried,6,5,True,ac014_,Age prevents from doing things,ac,3.24,0.06220634607405887,higher value → higher score,0.1
+SHARE,Fried,6,6,True,ac017_,Do the things you want to do,ac,3.06,0.058913078174822366,higher value → higher score,0.1
+SHARE,Fried,6,7,True,it004_,Use of internet in past 7 days,it,2.7,0.05183615573710867,higher value → higher score,0.0
+SHARE,Fried,6,8,True,ex009age,Life expectancy target age,ex,2.34,0.044928663390886615,higher value → higher score,0.2
+SHARE,Fried,6,9,True,ph011d7,Drugs for: joint pain,ph,1.86,0.03573792692838412,higher value → lower score,0.0
+SHARE,Fried,6,10,True,hc127dno,Received professional services: none of these,hc,1.6,0.030833550603753753,higher value → higher score,0.6
+SHARE,Fried,6,11,False,ac012_,How satisfied with life,ac,1.37,0.026396036480847367,higher value → higher score,0.1
+SHARE,Fried,6,12,False,ac020_,Look forward to each day,ac,1.29,0.02483108869522682,higher value → higher score,0.1
+SHARE,Fried,6,13,False,numeracy2,Numeracy score 2: mathematical performance (subtraction),gv_health,1.27,0.02443668128533041,higher value → higher score,0.2
+SHARE,Fried,6,14,False,br039_,At least one alcoholic beverage the last 7 days,br,1.27,0.02442790436876081,higher value → higher score,0.0
+SHARE,Fried,6,15,False,mh036_,Feels isolated from others,mh,1.26,0.024248143530070494,higher value → higher score,0.0
+SHARE,Fried,6,16,False,ac021_,Life has meaning,ac,1.26,0.024230261027632156,higher value → higher score,0.1
+SHARE,Fried,6,17,False,ac025_,Future looks good,ac,1.21,0.023331835995391216,higher value → higher score,0.1
+SHARE,Fried,6,18,False,ph087d4,Pain location: other joints,ph,1.21,0.023250863626164228,higher value → lower score,55.3
+SHARE,Fried,6,19,False,hc628_,Payed anything yourself for homecare last 12 months,hc,1.21,0.023243262537786715,higher value → higher score,92.6
+SHARE,Fried,6,20,False,ph087d1,Pain location: back,ph,1.09,0.021030819351976038,higher value → higher score,55.3
+SHARE,Fried,7,1,True,ph082_,At least taking 5 different drugs a typical day,ph,6.39,0.1309046654019761,higher value → lower score,16.7
+SHARE,Fried,7,2,True,ex009age,Life expectancy target age,ex,3.87,0.0791226735565752,higher value → higher score,0.0
+SHARE,Fried,7,3,True,ep097_,Pension claims,ep,3.69,0.07558911430449977,higher value → higher score,30.9
+SHARE,Fried,7,4,True,ph085_,Level of pain,ph,3.58,0.07320796749030545,higher value → higher score,54.6
+SHARE,Fried,7,5,True,ac017_,Do the things you want to do,ac,3.39,0.06941109220881024,higher value → higher score,0.0
+SHARE,Fried,7,6,True,ac025_,Future looks good,ac,3.16,0.06459717247529281,higher value → higher score,0.0
+SHARE,Fried,7,7,True,hc127dno,Received professional services: none of these,hc,3.05,0.06247300639805202,higher value → higher score,1.1
+SHARE,Fried,7,8,True,ac703_,I see myself as someone who tends to be lazy,ac,2.54,0.05199549241690838,higher value → higher score,0.0
+SHARE,Fried,7,9,True,ac014_,Age prevents from doing things,ac,2.47,0.05063617121901647,higher value → lower score,0.0
+SHARE,Fried,7,10,True,ac015_,Out of control,ac,2.42,0.04949557981847574,higher value → higher score,0.0
+SHARE,Fried,7,11,False,ac037_,Satisfied with activities,ac,1.65,0.03368475598157247,higher value → higher score,17.0
+SHARE,Fried,7,12,False,ac024_,Full of opportunities,ac,1.65,0.033680797815007164,higher value → higher score,0.0
+SHARE,Fried,7,13,False,ph084_,Troubled with pain,ph,1.56,0.03189435289927687,higher value → higher score,0.0
+SHARE,Fried,7,14,False,cf016tot,Ten words list learning delayed recall total,gv_health,1.49,0.030483152362790915,higher value → higher score,0.4
+SHARE,Fried,7,15,False,it004_,Use of internet in past 7 days,it,1.45,0.029722040125955692,higher value → lower score,0.0
+SHARE,Fried,7,16,False,br039_,At least one alcoholic beverage the last 7 days,br,1.38,0.028190443672933208,higher value → lower score,0.0
+SHARE,Fried,7,17,False,cf002_,Self-rated writing skills,cf,1.37,0.027978602133827496,higher value → higher score,0.0
+SHARE,Fried,7,18,False,hc689e,Amount payed yourself for medication last 12 months,hc,1.31,0.02676426869394383,higher value → higher score,34.5
+SHARE,Fried,7,19,False,numeracy2,Numeracy score 2: mathematical performance (subtraction),gv_health,1.22,0.024950500567238746,higher value → higher score,0.0
+SHARE,Fried,7,20,False,mh037_,Feels lonely,mh,1.2,0.024587612979826826,higher value → higher score,0.0
+SHARE,Fried,8,1,True,ph082_,At least taking 5 different drugs a typical day,ph,5.75,0.1256734932948045,higher value → lower score,22.7
+SHARE,Fried,8,2,True,ph085_,Level of pain,ph,4.71,0.10284660338484256,higher value → lower score,56.9
+SHARE,Fried,8,3,True,ac015_,Out of control,ac,2.82,0.061602689874949226,higher value → higher score,0.0
+SHARE,Fried,8,4,True,ac014_,Age prevents from doing things,ac,2.58,0.05647226718116581,higher value → higher score,0.0
+SHARE,Fried,8,5,True,hc127dno,Received professional services: none of these,hc,2.45,0.05354873413944132,higher value → higher score,0.6
+SHARE,Fried,8,6,True,age2020,Age in 2020,cv_r,2.26,0.049316729770235115,higher value → higher score,0.0
+SHARE,Fried,8,7,True,ac017_,Do the things you want to do,ac,2.25,0.04918209383691947,higher value → higher score,0.0
+SHARE,Fried,8,8,True,it004_,Use of internet in past 7 days,it,1.88,0.041057233706201304,higher value → lower score,0.0
+SHARE,Fried,8,9,True,ac012_,How satisfied with life,ac,1.83,0.039965598643826344,higher value → higher score,0.0
+SHARE,Fried,8,10,True,ph011d7,Drugs for: joint pain,ph,1.49,0.03264424774667508,higher value → lower score,0.0
+SHARE,Fried,8,11,False,hc889_,Health literacy: how often help needed,hc,1.48,0.032422784130929416,higher value → higher score,0.0
+SHARE,Fried,8,12,False,yrbirth,Year of birth,cv_r,1.42,0.031117004801740813,higher value → lower score,0.0
+SHARE,Fried,8,13,False,ac024_,Full of opportunities,ac,1.37,0.029927157906722925,higher value → higher score,0.0
+SHARE,Fried,8,14,False,hc013_,Times being patient in hospital,hc,1.34,0.029203508587725545,higher value → higher score,85.4
+SHARE,Fried,8,15,False,te005_,Hours spent on chores,te,1.24,0.0271681340526799,higher value → lower score,31.8
+SHARE,Fried,8,16,False,ac025_,Future looks good,ac,1.2,0.026269566108970018,higher value → lower score,0.0
+SHARE,Fried,8,17,False,loneliness,Loneliness (short version of R-UCLA Loneliness Scale) - high is lonely,gv_health,1.18,0.025858110025513224,higher value → higher score,0.3
+SHARE,Fried,8,18,False,br039_,At least one alcoholic beverage the last 7 days,br,1.14,0.02492507080909841,higher value → lower score,0.0
+SHARE,Fried,8,19,False,ac037_,Satisfied with activities,ac,1.11,0.024199139611661254,higher value → higher score,16.6
+SHARE,Fried,8,20,False,age_int,Age of respondent at the time of interview,cv_r,0.99,0.021568746848937746,higher value → higher score,0.0
+SHARE,Fried,9,1,True,casp,CASP index for quality of life and well-being,gv_health,5.6,0.11104850681397861,higher value → lower score,2.5
+SHARE,Fried,9,2,True,ph082_,At least taking 5 different drugs a typical day,ph,5.0,0.0991367011937058,higher value → lower score,21.7
+SHARE,Fried,9,3,True,ac014_,Age prevents from doing things,ac,4.39,0.08701882471314622,higher value → lower score,0.2
+SHARE,Fried,9,4,True,ph085_,Level of pain,ph,4.12,0.0816939072297643,higher value → higher score,55.7
+SHARE,Fried,9,5,True,cf010_,Verbal fluency score: number of animals,cf,2.52,0.04990840547888847,higher value → lower score,0.3
+SHARE,Fried,9,6,True,age_int,Age of respondent at the time of interview,cv_r,1.89,0.03740346836663459,higher value → higher score,0.0
+SHARE,Fried,9,7,True,hc602_,Times talked to medical doctor/nurse about your health last 12 months,hc,1.74,0.034390501556701494,higher value → higher score,0.7
+SHARE,Fried,9,8,True,hc127dno,Received professional services: none of these,hc,1.59,0.03158000505224322,higher value → lower score,0.7
+SHARE,Fried,9,9,True,te005_,Hours spent on chores,te,1.52,0.030175159266427637,higher value → lower score,23.0
+SHARE,Fried,9,10,True,ac024_,Full of opportunities,ac,1.45,0.028691709387774902,higher value → higher score,0.6
+SHARE,Fried,9,11,False,te047_,Hours spent on napping and resting during daytime,te,1.41,0.02802481689862153,higher value → higher score,22.9
+SHARE,Fried,9,12,False,ph011d7,Drugs for: joint pain,ph,1.4,0.02777148519878734,higher value → higher score,0.1
+SHARE,Fried,9,13,False,hc889_,Health literacy: how often help needed,hc,1.3,0.025719090395753052,higher value → lower score,0.1
+SHARE,Fried,9,14,False,ac017_,Do the things you want to do,ac,1.28,0.025332343795811244,higher value → higher score,0.3
+SHARE,Fried,9,15,False,cf103_,Memory,cf,1.24,0.024621650232897127,higher value → higher score,0.1
+SHARE,Fried,9,16,False,hc014_,Total nights stayed in hospital,hc,1.17,0.023138263975317503,higher value → higher score,87.7
+SHARE,Fried,9,17,False,ac025_,Future looks good,ac,1.11,0.022084586411357708,higher value → higher score,0.9
+SHARE,Fried,9,18,False,yrbirth,Year of birth,cv_r,1.1,0.02178090327463159,higher value → lower score,0.0
+SHARE,Fried,9,19,False,co010_,Consume home produced food,co,1.07,0.021271989234178598,higher value → higher score,30.4
+SHARE,Fried,9,20,False,ac015_,Out of control,ac,1.01,0.02007613804338889,higher value → lower score,0.5
+HRS,Rockwood,4,1,True,r4paina,r pain interferes with normal activities,harmonised,14.45,0.029111478548646815,higher value → lower score,74.4
+HRS,Rockwood,4,2,True,r4jrsleft,r reason for stopping working (if not working),harmonised,6.3,0.012692436977323442,higher value → higher score,23.9
+HRS,Rockwood,4,3,True,r4painlv,r usual level of pain,harmonised,5.89,0.011862727406124844,higher value → higher score,0.1
+HRS,Rockwood,4,4,True,r4painfr,r frequent problems with pain,harmonised,5.63,0.011353422409360842,higher value → higher score,0.0
+HRS,Rockwood,4,5,True,r4drive,whether r is able to drive,harmonised,4.95,0.00998325575874026,higher value → higher score,54.6
+HRS,Rockwood,4,6,True,raeducl,raeducl: r harmonized education level,harmonised,3.95,0.007956878747584694,higher value → lower score,0.0
+HRS,Rockwood,4,7,True,r4looknwk,r looking for new job (if working),harmonised,3.08,0.00620791137873351,higher value → higher score,55.8
+HRS,Rockwood,4,8,True,rachshlt,rachshlt:R childhood health status,harmonised,2.89,0.005821242456856888,higher value → lower score,0.0
+HRS,Rockwood,4,9,True,radadeduc8,radadeduc8:r father attained 8+ years of education,harmonised,2.74,0.005514299010399818,higher value → lower score,13.3
+HRS,Rockwood,4,10,True,r4jenjwrka,r really enjoys going to work,harmonised,2.26,0.0045553860572773875,higher value → higher score,56.0
+HRS,Rockwood,4,11,False,r4rxpsych,r takes meds for psych condition,harmonised,2.19,0.0044075766254588825,higher value → lower score,0.0
+HRS,Rockwood,4,12,False,h4pcnt,any weekly contact with parents in person/phone/email,harmonised,1.94,0.003911435746116096,higher value → lower score,60.9
+HRS,Rockwood,4,13,False,r4urinaf,r number days urinary incontinence last month,harmonised,1.92,0.0038782756216928296,higher value → higher score,0.7
+HRS,Rockwood,4,14,False,r4fallnum,r number of falls,harmonised,1.89,0.0038091057579848677,higher value → higher score,53.6
+HRS,Rockwood,4,15,False,r4urinpad,r uses pads for incontinence,harmonised,1.8,0.0036192196466667786,higher value → higher score,85.0
+HRS,Rockwood,4,16,False,r4lifeinv,r value life insurance policies,harmonised,1.79,0.003606898536261813,higher value → lower score,12.0
+HRS,Rockwood,4,17,False,r4jdiffa,r cur job more difficult than used to be,harmonised,1.77,0.003560302408859213,higher value → higher score,56.1
+HRS,Rockwood,4,18,False,r4witwill,r has a witnessed will,harmonised,1.58,0.003179401497916363,higher value → lower score,0.5
+HRS,Rockwood,4,19,False,r4orient,r orientation to date,harmonised,1.41,0.002846688020454282,higher value → higher score,40.1
+HRS,Rockwood,4,20,False,r4fallinj,r injured from fall,harmonised,1.39,0.0028106596767445797,higher value → higher score,88.0
+HRS,Rockwood,5,1,True,r5paina,r pain interferes with normal activities,harmonised,10.48,0.021860977056244502,higher value → higher score,73.6
+HRS,Rockwood,5,2,True,r5breath,r short of breath while awake,harmonised,8.95,0.01868145472260772,higher value → lower score,0.0
+HRS,Rockwood,5,3,True,r5swell,r persistent swelling in feet/ankles,harmonised,7.94,0.01656295210891515,higher value → higher score,0.0
+HRS,Rockwood,5,4,True,r5painlv,r usual level of pain,harmonised,7.22,0.015067035415239571,higher value → higher score,0.1
+HRS,Rockwood,5,5,True,r5backp,r back pain,harmonised,5.34,0.011136196302114773,higher value → higher score,0.0
+HRS,Rockwood,5,6,True,r5jrsleft,r reason for stopping working (if not working),harmonised,5.18,0.010815295566645405,higher value → lower score,18.8
+HRS,Rockwood,5,7,True,r5drive,whether r is able to drive,harmonised,4.51,0.009400242119731849,higher value → higher score,52.2
+HRS,Rockwood,5,8,True,r5dizzy,r persistent dizziness,harmonised,3.79,0.007916420819856523,higher value → higher score,0.0
+HRS,Rockwood,5,9,True,r5painfr,r frequent problems with pain,harmonised,3.16,0.0066006807823019925,higher value → higher score,0.0
+HRS,Rockwood,5,10,True,raeducl,raeducl: r harmonized education level,harmonised,2.33,0.004867942182273678,higher value → lower score,0.0
+HRS,Rockwood,5,11,False,r5wheeze,r persistent wheezing,harmonised,2.09,0.0043658131701891974,higher value → lower score,0.0
+HRS,Rockwood,5,12,False,r5fall,r fallen down last 2 years,harmonised,1.94,0.004054329395376117,higher value → higher score,50.9
+HRS,Rockwood,5,13,False,r5lifeinv,r value life insurance policies,harmonised,1.69,0.003526239960802606,higher value → lower score,11.6
+HRS,Rockwood,5,14,False,r5looknwk,r looking for new job (if working),harmonised,1.59,0.0033152086850504183,higher value → higher score,58.3
+HRS,Rockwood,5,15,False,r5urinpad,r uses pads for incontinence,harmonised,1.5,0.0031340160626811835,higher value → higher score,83.6
+HRS,Rockwood,5,16,False,rachshlt,rachshlt:R childhood health status,harmonised,1.42,0.0029669529221020394,higher value → lower score,0.0
+HRS,Rockwood,5,17,False,r5catrcte,r ever had cataract surgery,harmonised,1.33,0.002768872680609557,higher value → higher score,50.9
+HRS,Rockwood,5,18,False,r5rxpsych,r takes meds for psych condition,harmonised,1.3,0.002714900137246061,higher value → lower score,0.1
+HRS,Rockwood,5,19,False,ramomeducl,ramomeducl:r mother harmonized education level,harmonised,1.27,0.002656593650401,higher value → lower score,26.0
+HRS,Rockwood,5,20,False,h5pcnt,any weekly contact with parents in person/phone/email,harmonised,1.26,0.002636596690699336,higher value → higher score,64.8
+HRS,Rockwood,6,1,True,r6paina,r pain interferes with normal activities,harmonised,10.45,0.02235247253370487,higher value → higher score,72.3
+HRS,Rockwood,6,2,True,r6painlv,r usual level of pain,harmonised,7.36,0.015734676135881982,higher value → higher score,0.1
+HRS,Rockwood,6,3,True,r6painfr,r frequent problems with pain,harmonised,5.97,0.012774110900432355,higher value → higher score,0.0
+HRS,Rockwood,6,4,True,r6rested,r feels rested when wakes up,harmonised,5.86,0.012528173349638985,higher value → higher score,0.1
+HRS,Rockwood,6,5,True,r6drive,whether r is able to drive,harmonised,5.58,0.011947251221476586,higher value → higher score,50.9
+HRS,Rockwood,6,6,True,r6jrsleft,r reason for stopping working (if not working),harmonised,4.8,0.010276715901849288,higher value → lower score,14.1
+HRS,Rockwood,6,7,True,r6email,whether r regularly uses web for emails,harmonised,3.59,0.007670670633959051,higher value → higher score,0.1
+HRS,Rockwood,6,8,True,raeducl,raeducl: r harmonized education level,harmonised,2.36,0.0050535656519620185,higher value → higher score,0.0
+HRS,Rockwood,6,9,True,r6wakeup,r wakes up too early,harmonised,2.15,0.004593902404937501,higher value → higher score,0.0
+HRS,Rockwood,6,10,True,r6fallslp,r trouble falling asleep,harmonised,2.1,0.004493039087576993,higher value → higher score,0.0
+HRS,Rockwood,6,11,False,r6urinurg,r urge to urinate,harmonised,2.1,0.0044852736876500755,higher value → higher score,85.6
+HRS,Rockwood,6,12,False,r6orient,r orientation to date,harmonised,2.02,0.00431513091303992,higher value → higher score,44.6
+HRS,Rockwood,6,13,False,r6jgrredhra,r prefer gradually reduce hours,harmonised,1.95,0.0041731634987952505,higher value → higher score,62.7
+HRS,Rockwood,6,14,False,r6numer,r numeracy score,harmonised,1.83,0.003920165284429784,higher value → higher score,18.5
+HRS,Rockwood,6,15,False,r6rxpsych,r takes meds for psych condition,harmonised,1.82,0.0038892243981965445,higher value → higher score,0.2
+HRS,Rockwood,6,16,False,r6hometyp,type of home r lives in,harmonised,1.77,0.0037874573268403076,higher value → higher score,0.3
+HRS,Rockwood,6,17,False,r6jcomputb,r freq cur job computers,harmonised,1.75,0.0037433563417517118,higher value → lower score,62.2
+HRS,Rockwood,6,18,False,r6wakent,r wakes up during night,harmonised,1.57,0.003348938457278521,higher value → higher score,0.1
+HRS,Rockwood,6,19,False,r6catrcte,r ever had cataract surgery,harmonised,1.56,0.0033426432781978113,higher value → higher score,45.3
+HRS,Rockwood,6,20,False,r6fallnum,r number of falls,harmonised,1.53,0.003278994978981905,higher value → higher score,45.7
+HRS,Rockwood,7,1,True,r7paina,r pain interferes with normal activities,harmonised,10.36,0.02606122036625321,higher value → higher score,68.8
+HRS,Rockwood,7,2,True,r7swell,r persistent swelling in feet/ankles,harmonised,6.13,0.015413543029173164,higher value → higher score,0.0
+HRS,Rockwood,7,3,True,r7breath,r short of breath while awake,harmonised,5.79,0.014560886701268445,higher value → higher score,0.0
+HRS,Rockwood,7,4,True,r7drive,whether r is able to drive,harmonised,4.44,0.0111796395959214,higher value → higher score,50.6
+HRS,Rockwood,7,5,True,r7backp,r back pain,harmonised,4.25,0.010682605691771199,higher value → higher score,0.0
+HRS,Rockwood,7,6,True,r7painlv,r usual level of pain,harmonised,4.09,0.010281631653718901,higher value → higher score,0.2
+HRS,Rockwood,7,7,True,r7jrsleft,r reason for stopping working (if not working),harmonised,4.05,0.010174637015011041,higher value → lower score,22.6
+HRS,Rockwood,7,8,True,r7rested,r feels rested when wakes up,harmonised,3.96,0.00995397210272647,higher value → higher score,0.0
+HRS,Rockwood,7,9,True,r7email,whether r regularly uses web for emails,harmonised,3.06,0.007699847253845347,higher value → higher score,0.1
+HRS,Rockwood,7,10,True,r7painfr,r frequent problems with pain,harmonised,2.83,0.00710971163239443,higher value → higher score,0.1
+HRS,Rockwood,7,11,False,r7dizzy,r persistent dizziness,harmonised,2.56,0.006450973484191749,higher value → higher score,0.0
+HRS,Rockwood,7,12,False,r7jdealpplb,r freq cur job dealing with people,harmonised,2.08,0.005220246636910415,higher value → higher score,57.4
+HRS,Rockwood,7,13,False,r7wheeze,r persistent wheezing,harmonised,1.63,0.004099145587584878,higher value → lower score,0.0
+HRS,Rockwood,7,14,False,r7looknwk,r looking for new job (if working),harmonised,1.63,0.004096176281339259,higher value → lower score,57.0
+HRS,Rockwood,7,15,False,r7jenjwrka,r really enjoys going to work,harmonised,1.31,0.0032933855022510327,higher value → higher score,57.1
+HRS,Rockwood,7,16,False,r7fallinj,r injured from fall,harmonised,1.27,0.003195927641185097,higher value → lower score,85.3
+HRS,Rockwood,7,17,False,r7rxpsych,r takes meds for psych condition,harmonised,1.25,0.0031459711397576542,higher value → higher score,0.4
+HRS,Rockwood,7,18,False,raeducl,raeducl: r harmonized education level,harmonised,1.14,0.002862912678493431,higher value → higher score,0.0
+HRS,Rockwood,7,19,False,r7jcomputb,r freq cur job computers,harmonised,1.13,0.0028301236674746623,higher value → higher score,57.0
+HRS,Rockwood,7,20,False,r7wakeup,r wakes up too early,harmonised,1.1,0.0027688933682458706,higher value → higher score,0.0
+HRS,Rockwood,8,1,True,r8paina,r pain interferes with normal activities,harmonised,9.56,0.025600894704622647,higher value → lower score,67.2
+HRS,Rockwood,8,2,True,r8rxpain,r takes meds for pain,harmonised,5.6,0.014996946339392875,higher value → higher score,0.2
+HRS,Rockwood,8,3,True,r8painlv,r usual level of pain,harmonised,4.47,0.011973199681391107,higher value → higher score,0.1
+HRS,Rockwood,8,4,True,r8email,whether r regularly uses web for emails,harmonised,3.95,0.010575316427869201,higher value → lower score,0.2
+HRS,Rockwood,8,5,True,r8rxhchol,r takes meds for high cholesterol,harmonised,3.87,0.010371067226212463,higher value → lower score,0.3
+HRS,Rockwood,8,6,True,r8balanc,frequency r difficulty with balance,harmonised,3.7,0.00990628054625992,higher value → higher score,48.3
+HRS,Rockwood,8,7,True,r8drive,whether r is able to drive,harmonised,3.68,0.009844148848896011,higher value → higher score,44.0
+HRS,Rockwood,8,8,True,r8jrsleft,r reason for stopping working (if not working),harmonised,3.36,0.00899974802756278,higher value → higher score,18.0
+HRS,Rockwood,8,9,True,r8rested,r feels rested when wakes up,harmonised,3.22,0.008617013749286813,higher value → higher score,0.1
+HRS,Rockwood,8,10,True,r8painfr,r frequent problems with pain,harmonised,3.07,0.008231505407544562,higher value → higher score,0.0
+HRS,Rockwood,8,11,False,r8sbreath,frequency r short of breath,harmonised,2.93,0.007852392361481855,higher value → higher score,48.3
+HRS,Rockwood,8,12,False,r8jcomputb,r freq cur job computers,harmonised,1.9,0.005093588646275018,higher value → lower score,60.8
+HRS,Rockwood,8,13,False,r8rxstom,r takes meds for stomach,harmonised,1.9,0.0050862125107013195,higher value → higher score,0.1
+HRS,Rockwood,8,14,False,r8fallnum,r number of falls,harmonised,1.84,0.004923047096447249,higher value → higher score,43.4
+HRS,Rockwood,8,15,False,r8looknwk,r looking for new job (if working),harmonised,1.5,0.004007923179007502,higher value → lower score,60.8
+HRS,Rockwood,8,16,False,r8mwaist,r waist measurement (cm),harmonised,1.43,0.0038266682568511854,higher value → higher score,56.8
+HRS,Rockwood,8,17,False,r8numer,r numeracy score,harmonised,1.32,0.0035240407978584707,higher value → higher score,6.3
+HRS,Rockwood,8,18,False,radadeduc8,radadeduc8:r father attained 8+ years of education,harmonised,1.18,0.0031550881923995445,higher value → higher score,13.9
+HRS,Rockwood,8,19,False,r8noteeth,r whether lost all their teeth,harmonised,1.14,0.0030626408006264203,higher value → higher score,0.0
+HRS,Rockwood,8,20,False,r8urinamt,r amount of urine leaked,harmonised,1.11,0.0029802508834215024,higher value → higher score,84.4
+HRS,Rockwood,9,1,True,r9rxpain,r takes meds for pain,harmonised,5.76,0.017089170653809316,higher value → higher score,0.2
+HRS,Rockwood,9,2,True,r9paina,r pain interferes with normal activities,harmonised,5.44,0.016136158164529894,higher value → lower score,66.7
+HRS,Rockwood,9,3,True,r9breath,r short of breath while awake,harmonised,4.85,0.014386683974204418,higher value → higher score,0.0
+HRS,Rockwood,9,4,True,r9swell,r persistent swelling in feet/ankles,harmonised,4.15,0.012324731931840034,higher value → higher score,0.0
+HRS,Rockwood,9,5,True,r9drive,whether r is able to drive,harmonised,3.45,0.010253744860666617,higher value → higher score,39.2
+HRS,Rockwood,9,6,True,r9painlv,r usual level of pain,harmonised,3.42,0.010148915902726353,higher value → higher score,0.1
+HRS,Rockwood,9,7,True,r9email,whether r regularly uses web for emails,harmonised,3.24,0.009623819609099213,higher value → higher score,0.2
+HRS,Rockwood,9,8,True,r9painfr,r frequent problems with pain,harmonised,3.08,0.009147725242443868,higher value → higher score,0.0
+HRS,Rockwood,9,9,True,r9rxhchol,r takes meds for high cholesterol,harmonised,2.99,0.008873112267533352,higher value → lower score,0.3
+HRS,Rockwood,9,10,True,r9backp,r back pain,harmonised,2.97,0.008808319516603623,higher value → lower score,0.0
+HRS,Rockwood,9,11,False,r9balanc,frequency r difficulty with balance,harmonised,2.56,0.007608261531456851,higher value → higher score,52.1
+HRS,Rockwood,9,12,False,r9rested,r feels rested when wakes up,harmonised,2.3,0.006827397787533842,higher value → higher score,0.1
+HRS,Rockwood,9,13,False,r9dizzy,r persistent dizziness,harmonised,1.99,0.005909686401105085,higher value → higher score,0.0
+HRS,Rockwood,9,14,False,r9jrsleft,r reason for stopping working (if not working),harmonised,1.89,0.005612037546858109,higher value → lower score,15.5
+HRS,Rockwood,9,15,False,r9wheeze,r persistent wheezing,harmonised,1.79,0.005301397480107875,higher value → lower score,0.0
+HRS,Rockwood,9,16,False,r9satlife_h,R Satisfied with life,harmonised,1.39,0.004126727623485898,higher value → higher score,0.1
+HRS,Rockwood,9,17,False,r9satlifez,R Satisfied with life z-score,harmonised,1.38,0.004102960925564162,higher value → lower score,0.1
+HRS,Rockwood,9,18,False,r9sathlth,r satisfaction with health 5-point,harmonised,1.37,0.004061141231106875,higher value → higher score,58.1
+HRS,Rockwood,9,19,False,r9rxstom,r takes meds for stomach,harmonised,1.32,0.003911067897323635,higher value → higher score,0.1
+HRS,Rockwood,9,20,False,r9looknwk,r looking for new job (if working),harmonised,1.19,0.0035441115312535923,higher value → lower score,62.3
+HRS,Rockwood,10,1,True,r10paina,r pain interferes with normal activities,harmonised,8.38,0.024184900034184175,higher value → lower score,63.9
+HRS,Rockwood,10,2,True,r10rxpain,r takes meds for pain,harmonised,5.67,0.01637093623776764,higher value → lower score,0.7
+HRS,Rockwood,10,3,True,r10painlv,r usual level of pain,harmonised,4.19,0.012102011734751316,higher value → higher score,0.2
+HRS,Rockwood,10,4,True,r10painfr,r frequent problems with pain,harmonised,4.17,0.012031760815798417,higher value → higher score,0.1
+HRS,Rockwood,10,5,True,r10email,whether r regularly uses web for emails,harmonised,3.96,0.011436851881906554,higher value → lower score,0.8
+HRS,Rockwood,10,6,True,r10jrsleft,r reason for stopping working (if not working),harmonised,3.57,0.01032247575020237,higher value → higher score,28.4
+HRS,Rockwood,10,7,True,r10rxhchol,r takes meds for high cholesterol,harmonised,3.57,0.010295466818760987,higher value → lower score,0.8
+HRS,Rockwood,10,8,True,r10balanc,frequency r difficulty with balance,harmonised,2.93,0.008445942823804392,higher value → higher score,48.9
+HRS,Rockwood,10,9,True,r10drive,whether r is able to drive,harmonised,2.92,0.008429983088332454,higher value → higher score,53.7
+HRS,Rockwood,10,10,True,r10rested,r feels rested when wakes up,harmonised,2.43,0.007019492285297015,higher value → higher score,0.1
+HRS,Rockwood,10,11,False,r10satlife_h,R Satisfied with life,harmonised,2.35,0.0067840992053121415,higher value → higher score,0.4
+HRS,Rockwood,10,12,False,r10jenjwrka,r really enjoys going to work,harmonised,2.1,0.006067538511743301,higher value → higher score,57.5
+HRS,Rockwood,10,13,False,r10sbreath,frequency r short of breath,harmonised,2.01,0.005791836169523216,higher value → higher score,48.8
+HRS,Rockwood,10,14,False,r10looknwk,r looking for new job (if working),harmonised,1.69,0.004869162074280552,higher value → lower score,57.3
+HRS,Rockwood,10,15,False,r10rxstom,r takes meds for stomach,harmonised,1.66,0.004792979916179323,higher value → higher score,0.7
+HRS,Rockwood,10,16,False,r10sathlth,r satisfaction with health 5-point,harmonised,1.63,0.0047049381444799745,higher value → lower score,60.8
+HRS,Rockwood,10,17,False,r10mwaist,r waist measurement (cm),harmonised,1.48,0.004267339449096221,higher value → higher score,57.0
+HRS,Rockwood,10,18,False,r10fallslp,r trouble falling asleep,harmonised,1.36,0.003935786766084208,higher value → higher score,0.1
+HRS,Rockwood,10,19,False,r10fall,r fallen down last 2 years,harmonised,1.19,0.0034254493877279896,higher value → higher score,53.4
+HRS,Rockwood,10,20,False,raeducl,raeducl: r harmonized education level,harmonised,1.1,0.0031674222085619646,higher value → higher score,0.0
+HRS,Rockwood,11,1,True,r11paina,r pain interferes with normal activities,harmonised,9.34,0.028121917873569827,higher value → lower score,65.2
+HRS,Rockwood,11,2,True,r11rxpain,r takes meds for pain,harmonised,5.4,0.016262649339282176,higher value → lower score,0.3
+HRS,Rockwood,11,3,True,r11swell,r persistent swelling in feet/ankles,harmonised,4.72,0.014207170654862987,higher value → higher score,0.1
+HRS,Rockwood,11,4,True,r11breath,r short of breath while awake,harmonised,4.39,0.013217904082534683,higher value → lower score,0.1
+HRS,Rockwood,11,5,True,r11email,whether r regularly uses web for emails,harmonised,3.73,0.011235326247478573,higher value → lower score,0.3
+HRS,Rockwood,11,6,True,r11balanc,frequency r difficulty with balance,harmonised,3.2,0.00964603947132452,higher value → higher score,51.0
+HRS,Rockwood,11,7,True,r11satlifez,R Satisfied with life z-score,harmonised,2.94,0.008860207429468811,higher value → lower score,0.6
+HRS,Rockwood,11,8,True,r11backp,r back pain,harmonised,2.88,0.008665221036101088,higher value → lower score,0.1
+HRS,Rockwood,11,9,True,r11drive,whether r is able to drive,harmonised,2.84,0.008545435498940922,higher value → higher score,52.1
+HRS,Rockwood,11,10,True,r11jrsleft,r reason for stopping working (if not working),harmonised,2.81,0.008449769899115153,higher value → higher score,23.7
+HRS,Rockwood,11,11,False,r11rxhchol,r takes meds for high cholesterol,harmonised,2.54,0.00764734423288184,higher value → lower score,0.4
+HRS,Rockwood,11,12,False,r11rxbldthn,r takes blood thinning meds to prevent clots,harmonised,2.45,0.007364992314096097,higher value → higher score,0.5
+HRS,Rockwood,11,13,False,r11looknwk,r looking for new job (if working),harmonised,2.28,0.006869650909027334,higher value → lower score,58.8
+HRS,Rockwood,11,14,False,r11rested,r feels rested when wakes up,harmonised,2.17,0.006523301231569086,higher value → higher score,0.3
+HRS,Rockwood,11,15,False,r11painfr,r frequent problems with pain,harmonised,2.17,0.006518409756342635,higher value → higher score,0.2
+HRS,Rockwood,11,16,False,r11pneushte,r pneumonia vaccine ever,harmonised,1.66,0.004992728322503401,higher value → lower score,1.2
+HRS,Rockwood,11,17,False,r11dizzy,r persistent dizziness,harmonised,1.64,0.004943057755479492,higher value → lower score,0.1
+HRS,Rockwood,11,18,False,r11painlv,r usual level of pain,harmonised,1.62,0.0048707735966899935,higher value → higher score,0.4
+HRS,Rockwood,11,19,False,r11jenjwrka,r really enjoys going to work,harmonised,1.36,0.004090030840354566,higher value → higher score,58.9
+HRS,Rockwood,11,20,False,r11sbreath,frequency r short of breath,harmonised,1.29,0.00386932422788844,higher value → higher score,51.1
+HRS,Rockwood,12,1,True,r12paina,r pain interferes with normal activities,harmonised,8.41,0.025930063000313384,higher value → lower score,61.3
+HRS,Rockwood,12,2,True,r12rxpain,r takes meds for pain,harmonised,5.62,0.01731895460241217,higher value → lower score,0.3
+HRS,Rockwood,12,3,True,r12jrsleft,r reason for stopping working (if not working),harmonised,4.84,0.014917154710042246,higher value → lower score,20.0
+HRS,Rockwood,12,4,True,r12painlv,r usual level of pain,harmonised,3.81,0.01174392245529467,higher value → higher score,0.5
+HRS,Rockwood,12,5,True,r12email,whether r regularly uses web for emails,harmonised,3.69,0.011368855191811605,higher value → higher score,0.4
+HRS,Rockwood,12,6,True,r12balanc,frequency r difficulty with balance,harmonised,3.4,0.010487232967771916,higher value → higher score,49.0
+HRS,Rockwood,12,7,True,r12satlifez,R Satisfied with life z-score,harmonised,3.13,0.00963948584554882,higher value → lower score,0.9
+HRS,Rockwood,12,8,True,r12rxbldthn,r takes blood thinning meds to prevent clots,harmonised,2.95,0.009107005169208295,higher value → lower score,0.5
+HRS,Rockwood,12,9,True,r12drive,whether r is able to drive,harmonised,2.93,0.00902727418374661,higher value → higher score,48.2
+HRS,Rockwood,12,10,True,r12rested,r feels rested when wakes up,harmonised,2.67,0.008241522460699929,higher value → higher score,0.2
+HRS,Rockwood,12,11,False,r12painfr,r frequent problems with pain,harmonised,2.64,0.008128421711690828,higher value → lower score,0.2
+HRS,Rockwood,12,12,False,r12rxhchol,r takes meds for high cholesterol,harmonised,2.29,0.007059165657217099,higher value → higher score,0.4
+HRS,Rockwood,12,13,False,r12jcomputb,r freq cur job computers,harmonised,2.13,0.00658180786791601,higher value → higher score,61.3
+HRS,Rockwood,12,14,False,r12sbreath,frequency r short of breath,harmonised,2.04,0.006291773343933734,higher value → higher score,49.0
+HRS,Rockwood,12,15,False,r12rxstom,r takes meds for stomach,harmonised,1.99,0.006150914713710582,higher value → lower score,0.2
+HRS,Rockwood,12,16,False,r12urinaf,r number days urinary incontinence last month,harmonised,1.8,0.00553732606763165,higher value → higher score,1.5
+HRS,Rockwood,12,17,False,r12pneushte,r pneumonia vaccine ever,harmonised,1.46,0.004489492360065185,higher value → lower score,57.0
+HRS,Rockwood,12,18,False,r12jenjwrka,r really enjoys going to work,harmonised,1.31,0.004053667890758824,higher value → higher score,60.9
+HRS,Rockwood,12,19,False,raeducl,raeducl: r harmonized education level,harmonised,1.16,0.0035738725162178316,higher value → higher score,0.0
+HRS,Rockwood,12,20,False,r12fallnum,r number of falls,harmonised,1.13,0.0034877251616304817,higher value → higher score,48.1
+HRS,Rockwood,13,1,True,r13paina,r pain interferes with normal activities,harmonised,8.07,0.026386443787856997,higher value → higher score,59.8
+HRS,Rockwood,13,2,True,r13rxpain,r takes meds for pain,harmonised,5.08,0.01663034855885275,higher value → higher score,0.0
+HRS,Rockwood,13,3,True,r13painlv,r usual level of pain,harmonised,4.65,0.015209796636530323,higher value → higher score,0.4
+HRS,Rockwood,13,4,True,r13swell,r persistent swelling in feet/ankles,harmonised,4.29,0.014019639313399439,higher value → higher score,0.1
+HRS,Rockwood,13,5,True,r13email,whether r regularly uses web for emails,harmonised,3.82,0.01249000345832813,higher value → higher score,0.6
+HRS,Rockwood,13,6,True,r13breath,r short of breath while awake,harmonised,3.76,0.01230373164167903,higher value → higher score,0.1
+HRS,Rockwood,13,7,True,r13balanc,frequency r difficulty with balance,harmonised,3.4,0.011130119503819627,higher value → higher score,51.2
+HRS,Rockwood,13,8,True,r13jrsleft,r reason for stopping working (if not working),harmonised,3.32,0.010856625581835045,higher value → higher score,28.4
+HRS,Rockwood,13,9,True,r13rxhchol,r takes meds for high cholesterol,harmonised,2.68,0.008755600815318412,higher value → higher score,0.6
+HRS,Rockwood,13,10,True,r13backp,r back pain,harmonised,2.38,0.007783247519319923,higher value → higher score,0.1
+HRS,Rockwood,13,11,False,r13satlifez,R Satisfied with life z-score,harmonised,2.25,0.007365061258288275,higher value → lower score,1.0
+HRS,Rockwood,13,12,False,r13rxbldthn,r takes blood thinning meds to prevent clots,harmonised,1.97,0.006446474621350263,higher value → higher score,0.6
+HRS,Rockwood,13,13,False,r13rested,r feels rested when wakes up,harmonised,1.93,0.006304403719375192,higher value → higher score,0.2
+HRS,Rockwood,13,14,False,r13pneushte,r pneumonia vaccine ever,harmonised,1.67,0.005470199633132063,higher value → lower score,0.9
+HRS,Rockwood,13,15,False,r13painfr,r frequent problems with pain,harmonised,1.62,0.005290066736264907,higher value → higher score,0.2
+HRS,Rockwood,13,16,False,r13dizzy,r persistent dizziness,harmonised,1.56,0.005097060248897581,higher value → higher score,0.1
+HRS,Rockwood,13,17,False,r13jenjwrka,r really enjoys going to work,harmonised,1.34,0.004392756737679587,higher value → higher score,55.9
+HRS,Rockwood,13,18,False,r13rxstom,r takes meds for stomach,harmonised,1.17,0.0038115449477127885,higher value → higher score,0.5
+HRS,Rockwood,13,19,False,r13jconcntrb,r freq cur job concentration,harmonised,1.11,0.0036402413414648844,higher value → lower score,55.9
+HRS,Rockwood,13,20,False,r13looknwk,r looking for new job (if working),harmonised,1.08,0.003533461618427743,higher value → lower score,55.9
+HRS,Rockwood,14,1,True,r14paina,r pain interferes with normal activities,harmonised,9.93,0.030506678537448872,higher value → lower score,59.1
+HRS,Rockwood,14,2,True,r14painfr,r frequent problems with pain,harmonised,5.43,0.01668931044875896,higher value → lower score,0.2
+HRS,Rockwood,14,3,True,r14jrsleft,r reason for stopping working (if not working),harmonised,5.36,0.0164570581272639,higher value → lower score,21.8
+HRS,Rockwood,14,4,True,r14rxpain,r takes meds for pain,harmonised,4.97,0.015266030230584697,higher value → higher score,0.0
+HRS,Rockwood,14,5,True,r14email,whether r regularly uses web for emails,harmonised,3.44,0.010572354621613368,higher value → lower score,0.8
+HRS,Rockwood,14,6,True,r14drive,whether r is able to drive,harmonised,3.32,0.010199472328778837,higher value → higher score,49.7
+HRS,Rockwood,14,7,True,r14balanc,frequency r difficulty with balance,harmonised,3.32,0.01019384802232123,higher value → lower score,48.4
+HRS,Rockwood,14,8,True,r14satlifez,R Satisfied with life z-score,harmonised,2.83,0.008686613838484607,higher value → lower score,0.8
+HRS,Rockwood,14,9,True,r14rxbldthn,r takes blood thinning meds to prevent clots,harmonised,2.57,0.007893515772363772,higher value → higher score,0.6
+HRS,Rockwood,14,10,True,r14painlv,r usual level of pain,harmonised,2.4,0.007379200522401602,higher value → lower score,0.3
+HRS,Rockwood,14,11,False,r14rxhchol,r takes meds for high cholesterol,harmonised,2.13,0.0065595024402940886,higher value → lower score,0.7
+HRS,Rockwood,14,12,False,r14pneushte,r pneumonia vaccine ever,harmonised,2.09,0.006427564672300958,higher value → lower score,51.2
+HRS,Rockwood,14,13,False,r14rested,r feels rested when wakes up,harmonised,2.04,0.006268437433816943,higher value → higher score,0.2
+HRS,Rockwood,14,14,False,r14sbreath,frequency r short of breath,harmonised,1.79,0.005505407255759809,higher value → higher score,48.4
+HRS,Rockwood,14,15,False,r14hchole,r ever had high cholesterol,harmonised,1.67,0.005123910923365257,higher value → lower score,0.1
+HRS,Rockwood,14,16,False,r14urinaf,r number days urinary incontinence last month,harmonised,1.58,0.0048558259677544905,higher value → higher score,1.1
+HRS,Rockwood,14,17,False,r14rxstom,r takes meds for stomach,harmonised,1.46,0.004495925928188086,higher value → higher score,0.6
+HRS,Rockwood,14,18,False,r14jdealpplb,r freq cur job dealing with people,harmonised,1.35,0.0041338976154601265,higher value → lower score,60.5
+HRS,Rockwood,14,19,False,r14numer,r numeracy score,harmonised,1.33,0.004083992475954468,higher value → lower score,4.5
+HRS,Rockwood,14,20,False,r14jcomputb,r freq cur job computers,harmonised,1.12,0.0034430326560052657,higher value → lower score,60.8
+HRS,Rockwood,15,1,True,RG002,DIFFICULTY- JOGGING 1 MILE,H20G_R,12.71,0.040861564914595014,higher value → higher score,27.9
+HRS,Rockwood,15,2,True,RG097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,H20G_R,5.54,0.01781831693286691,higher value → lower score,11.7
+HRS,Rockwood,15,3,True,RN175,TAKE RX DRUGS REGULARLY,H20N_R,5.0,0.016080797831303725,higher value → lower score,0.1
+HRS,Rockwood,15,4,True,RC105,DEGREE PAIN MOST OF TIME,H20C_R,3.38,0.010872887281318954,higher value → lower score,60.2
+HRS,Rockwood,15,5,True,RG058,HOUSE\YARD WORK HELP,H20G_R,3.28,0.010549915522016,higher value → lower score,0.5
+HRS,Rockwood,15,6,True,RD101,RATE MEMORY,H20D_R,3.1,0.009979313217496913,higher value → higher score,0.0
+HRS,Rockwood,15,7,True,RN361,RX DRUGS REGULARLY PAIN,H20N_R,2.81,0.00902724127832353,higher value → higher score,18.2
+HRS,Rockwood,15,8,True,RC104,TROUBLED WITH PAIN,H20C_R,2.5,0.008033938068971035,higher value → lower score,0.0
+HRS,Rockwood,15,9,True,RC143,SWELLING FEET/ANKLES,H20C_R,2.1,0.006749589028826954,higher value → lower score,0.0
+HRS,Rockwood,15,10,True,RW303,REGULAR USE OF WEB FOR EMAIL,H20W_R,2.02,0.006485051256608103,higher value → lower score,0.6
+HRS,Rockwood,15,11,False,RC146,BACK PAIN OR PROBLEMS,H20C_R,1.97,0.006344887914977394,higher value → lower score,0.0
+HRS,Rockwood,15,12,False,RC002,COMPARE HEALTH TO PREVIOUS WAVE,H20C_R,1.61,0.005173106201601155,higher value → higher score,1.1
+HRS,Rockwood,15,13,False,RG040,DIFFICULTY- USING MAPS,H20G_R,1.57,0.005054142862557317,higher value → higher score,0.0
+HRS,Rockwood,15,14,False,RC144,SHORTNESS OF BREATH,H20C_R,1.55,0.004989907416908786,higher value → lower score,0.0
+HRS,Rockwood,15,15,False,RJ005M1,CURRENT JOB STATUS- 1,H20J_R,1.37,0.004398314792796798,higher value → higher score,0.1
+HRS,Rockwood,15,16,False,RB000,LIFE SATISFACTION,H20B_R,1.32,0.0042342721372136075,higher value → higher score,0.0
+HRS,Rockwood,15,17,False,RG098M1,HELP W/ FUTURE NEEDS- RELATIONSHIP- 1,H20G_R,1.2,0.0038619291645040697,higher value → higher score,40.7
+HRS,Rockwood,15,18,False,RC086,FEEL RESTED IN MORNING,H20C_R,1.08,0.0034723665638655248,higher value → higher score,0.0
+HRS,Rockwood,15,19,False,RC229,DAYS IN BED,H20C_R,0.96,0.0030880316661777187,higher value → higher score,0.2
+HRS,Rockwood,15,20,False,RC145,EVER BEEN DIZZY,H20C_R,0.92,0.0029452581150587083,higher value → lower score,0.0
+HRS,Rockwood,16,1,True,SG002,DIFFICULTY- JOGGING 1 MILE,H22G_R,13.52,0.04357157086960982,higher value → higher score,30.4
+HRS,Rockwood,16,2,True,SG097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,H22G_R,6.6,0.021290836156697728,higher value → higher score,13.0
+HRS,Rockwood,16,3,True,SN175,TAKE RX DRUGS REGULARLY,H22N_R,4.87,0.015707496200084693,higher value → lower score,0.3
+HRS,Rockwood,16,4,True,SG058,HOUSE\YARD WORK HELP,H22G_R,4.63,0.0149188447083581,higher value → higher score,0.7
+HRS,Rockwood,16,5,True,SC104,TROUBLED WITH PAIN,H22C_R,3.75,0.01207354190821355,higher value → higher score,0.0
+HRS,Rockwood,16,6,True,SC105,DEGREE PAIN MOST OF TIME,H22C_R,3.73,0.012020159983344504,higher value → higher score,57.5
+HRS,Rockwood,16,7,True,SD101,RATE MEMORY,H22D_R,3.0,0.009661843480001297,higher value → higher score,0.0
+HRS,Rockwood,16,8,True,SN361,RX DRUGS REGULARLY PAIN,H22N_R,2.32,0.007492446347875396,higher value → higher score,17.7
+HRS,Rockwood,16,9,True,SG098M1,HELP W/ FUTURE NEEDS- RELATIONSHIP- 1,H22G_R,1.83,0.005891882844213044,higher value → higher score,41.4
+HRS,Rockwood,16,10,True,SB000,LIFE SATISFACTION,H22B_R,1.78,0.0057335678768949535,higher value → higher score,0.0
+HRS,Rockwood,16,11,False,SC002,COMPARE HEALTH TO PREVIOUS WAVE,H22C_R,1.65,0.005332790996856431,higher value → higher score,17.5
+HRS,Rockwood,16,12,False,SC086,FEEL RESTED IN MORNING,H22C_R,1.48,0.004776499205627608,higher value → higher score,0.0
+HRS,Rockwood,16,13,False,SW303,REGULAR USE OF WEB FOR EMAIL,H22W_R,1.46,0.004706760057499933,higher value → lower score,8.2
+HRS,Rockwood,16,14,False,SJ3584,HOW SATISFIED W/ RETIREMENT,H22J3_R,1.27,0.004105320916309081,higher value → higher score,52.0
+HRS,Rockwood,16,15,False,SJ005M1,CURRENT JOB STATUS- 1,H22J_R,1.25,0.004030506001419061,higher value → higher score,0.2
+HRS,Rockwood,16,16,False,SG037,R ABILITY TO DRIVE,H22G_R,1.21,0.0038990390560978915,higher value → lower score,13.5
+HRS,Rockwood,16,17,False,SG210,DIFFICULTY WITH BALANCE,H22G_R,0.84,0.002721407285933143,higher value → lower score,48.7
+HRS,Rockwood,16,18,False,SN283,RX DRUGS REGULARLY - ASPIRIN OR BLOOD THINNERS,H22N_R,0.82,0.0026357175490889563,higher value → higher score,17.6
+HRS,Rockwood,16,19,False,SJ963,WORKED FOR PAY IN LAST 12 MONTHS,H22J_R,0.8,0.002580230438990554,higher value → lower score,38.8
+HRS,Rockwood,16,20,False,SP007,WILL R LEAVE ANY INHERITANCE,H22P_R,0.77,0.0024806641353680783,higher value → lower score,84.2
+HRS,Fried,7,1,True,r7paina,r pain interferes with normal activities,harmonised,6.67,0.1185805001480913,higher value → lower score,69.5
+HRS,Fried,7,2,True,r7drive,whether r is able to drive,harmonised,5.61,0.09981080312259227,higher value → higher score,28.4
+HRS,Fried,7,3,True,r7swell,r persistent swelling in feet/ankles,harmonised,4.53,0.08050237305576485,higher value → higher score,0.0
+HRS,Fried,7,4,True,r7rested,r feels rested when wakes up,harmonised,4.05,0.07205450576831227,higher value → higher score,0.0
+HRS,Fried,7,5,True,ramomeducl,ramomeducl:r mother harmonized education level,harmonised,3.74,0.0664893612848196,higher value → higher score,36.6
+HRS,Fried,7,6,True,r7hometyp,type of home r lives in,harmonised,3.74,0.0664350883497765,higher value → lower score,0.1
+HRS,Fried,7,7,True,r7puffpos,r position for lung function peak flow test,harmonised,3.56,0.0632435450833508,higher value → higher score,2.0
+HRS,Fried,7,8,True,r7breath,r short of breath while awake,harmonised,3.35,0.059606239892164625,higher value → higher score,0.0
+HRS,Fried,7,9,True,raeducl,raeducl: r harmonized education level,harmonised,2.97,0.05285937957885111,higher value → higher score,0.0
+HRS,Fried,7,10,True,r7email,whether r regularly uses web for emails,harmonised,2.78,0.049441705655064415,higher value → higher score,0.0
+HRS,Fried,7,11,False,r7painlv,r usual level of pain,harmonised,2.51,0.04466588357231807,higher value → higher score,0.0
+HRS,Fried,7,12,False,r7fall,r fallen down last 2 years,harmonised,2.17,0.03861811949451785,higher value → higher score,27.0
+HRS,Fried,7,13,False,r7painfr,r frequent problems with pain,harmonised,2.03,0.036066893278280214,higher value → higher score,0.0
+HRS,Fried,7,14,False,r7fallslp,r trouble falling asleep,harmonised,2.03,0.03602844382641961,higher value → higher score,0.0
+HRS,Fried,7,15,False,r7catrcte,r ever had cataract surgery,harmonised,1.92,0.0340791500736507,higher value → higher score,26.8
+HRS,Fried,7,16,False,r7wakeup,r wakes up too early,harmonised,1.82,0.032325471775866,higher value → higher score,0.1
+HRS,Fried,7,17,False,r7backp,r back pain,harmonised,1.82,0.03230078528638251,higher value → higher score,0.0
+HRS,Fried,7,18,False,r7wheeze,r persistent wheezing,harmonised,1.6,0.028430697361946502,higher value → higher score,0.0
+HRS,Fried,7,19,False,r7fallnum,r number of falls,harmonised,1.57,0.027951282137898253,higher value → higher score,27.4
+HRS,Fried,7,20,False,r7lifeinv,r value life insurance policies,harmonised,1.57,0.02792493110110298,higher value → higher score,11.1
+HRS,Fried,8,1,True,r8balanc,frequency r difficulty with balance,harmonised,6.07,0.1311100395028443,higher value → higher score,0.1
+HRS,Fried,8,2,True,r8sbreath,frequency r short of breath,harmonised,5.66,0.12215920784254389,higher value → higher score,0.0
+HRS,Fried,8,3,True,r8paina,r pain interferes with normal activities,harmonised,5.03,0.10853508672890731,higher value → lower score,67.1
+HRS,Fried,8,4,True,r8fulltan,r full-tandem test result(sec),harmonised,4.37,0.09427240331142636,higher value → lower score,17.3
+HRS,Fried,8,5,True,r8mdn10,r MIDUS Index of Negative Affect,harmonised,3.94,0.08495979796420956,higher value → higher score,9.1
+HRS,Fried,8,6,True,r8rxpain,r takes meds for pain,harmonised,2.37,0.051055903226360694,higher value → higher score,0.1
+HRS,Fried,8,7,True,r8email,whether r regularly uses web for emails,harmonised,2.3,0.04964943212859201,higher value → lower score,0.0
+HRS,Fried,8,8,True,r8balance,r balance test summary score,harmonised,2.08,0.04495426576054548,higher value → higher score,14.1
+HRS,Fried,8,9,True,r8painlv,r usual level of pain,harmonised,2.01,0.04346157695380562,higher value → higher score,0.1
+HRS,Fried,8,10,True,r8lfprps,r Ryff Purpose of Life Index,harmonised,1.94,0.04185996815284508,higher value → lower score,10.0
+HRS,Fried,8,11,False,r8diasto,r average blood pressure measure (diastolic) 2 & 3,harmonised,1.52,0.03271150679953123,higher value → lower score,3.6
+HRS,Fried,8,12,False,r8lifeinv,r value life insurance policies,harmonised,1.47,0.0317711083239739,higher value → lower score,10.3
+HRS,Fried,8,13,False,r8hometyp,type of home r lives in,harmonised,1.44,0.031033534786287426,higher value → higher score,0.0
+HRS,Fried,8,14,False,r8noteeth,r whether lost all their teeth,harmonised,1.24,0.026818343636855233,higher value → higher score,0.0
+HRS,Fried,8,15,False,ramomeducl,ramomeducl:r mother harmonized education level,harmonised,1.14,0.0246002939394515,higher value → lower score,20.3
+HRS,Fried,8,16,False,r8mdflf,MIDUS: how much time did r feel full of life,harmonised,1.11,0.02402421303534546,higher value → higher score,9.4
+HRS,Fried,8,17,False,r8dcreas,r number reasons for discrimination,harmonised,1.09,0.02362486300789926,higher value → higher score,35.6
+HRS,Fried,8,18,False,r8drive,whether r is able to drive,harmonised,1.08,0.02329739727561686,higher value → higher score,40.2
+HRS,Fried,8,19,False,r8rested,r feels rested when wakes up,harmonised,1.08,0.02329530642797038,higher value → higher score,0.1
+HRS,Fried,8,20,False,raeducl,raeducl: r harmonized education level,harmonised,1.07,0.023107562076140613,higher value → higher score,0.0
+HRS,Fried,9,1,True,r9balanc,frequency r difficulty with balance,harmonised,7.03,0.13052378212285962,higher value → higher score,0.1
+HRS,Fried,9,2,True,r9paina,r pain interferes with normal activities,harmonised,5.04,0.0936102526417355,higher value → higher score,67.0
+HRS,Fried,9,3,True,r9breath,r short of breath while awake,harmonised,4.8,0.08911416924080419,higher value → higher score,0.0
+HRS,Fried,9,4,True,r9email,whether r regularly uses web for emails,harmonised,4.51,0.08377814650181431,higher value → lower score,0.0
+HRS,Fried,9,5,True,r9rxpain,r takes meds for pain,harmonised,3.1,0.05751143183610755,higher value → lower score,0.1
+HRS,Fried,9,6,True,r9sbreath,frequency r short of breath,harmonised,2.99,0.05562117111073788,higher value → higher score,0.0
+HRS,Fried,9,7,True,r9balance,r balance test summary score,harmonised,2.9,0.0539696667716143,higher value → higher score,11.1
+HRS,Fried,9,8,True,r9swell,r persistent swelling in feet/ankles,harmonised,2.85,0.053001463730681854,higher value → higher score,0.0
+HRS,Fried,9,9,True,r9fulltan,r full-tandem test result(sec),harmonised,2.84,0.052715068718788526,higher value → lower score,15.5
+HRS,Fried,9,10,True,r9panasp13,r PANAS-X average positive affect score,harmonised,2.75,0.051033142764755485,higher value → lower score,10.5
+HRS,Fried,9,11,False,r9sathlth,r satisfaction with health 5-point,harmonised,2.73,0.05081431822637062,higher value → lower score,10.5
+HRS,Fried,9,12,False,r9active,PANAS-X: degree r felt active,harmonised,2.35,0.04372042981886419,higher value → lower score,11.0
+HRS,Fried,9,13,False,r9fulltanc,r compensatory movements during full-tandem test,harmonised,2.04,0.03796886681739134,higher value → higher score,15.5
+HRS,Fried,9,14,False,r9diasto,r average blood pressure measure (diastolic) 2 & 3,harmonised,1.94,0.03598917800491308,higher value → lower score,3.7
+HRS,Fried,9,15,False,ramomeducl,ramomeducl:r mother harmonized education level,harmonised,1.89,0.03509958412231722,higher value → lower score,18.5
+HRS,Fried,9,16,False,r9panasn12,r PANAS-X average negative affect score,harmonised,1.42,0.026345324227658413,higher value → higher score,10.4
+HRS,Fried,9,17,False,r9pulse,r average pulse measure 2 & 3,harmonised,1.34,0.02483871072192419,higher value → higher score,3.7
+HRS,Fried,9,18,False,r9fulldone,whether r completed 30/60 seconds full-tandem,harmonised,1.28,0.023763535940988723,higher value → higher score,15.5
+HRS,Fried,9,19,False,r9semitan,r semi-tandem test result(sec),harmonised,1.22,0.022574501497253735,higher value → lower score,6.6
+HRS,Fried,9,20,False,r9rested,r feels rested when wakes up,harmonised,1.09,0.020258429184850546,higher value → higher score,0.1
+HRS,Fried,10,1,True,r10paina,r pain interferes with normal activities,harmonised,4.61,0.09344627668690332,higher value → lower score,64.0
+HRS,Fried,10,2,True,r10email,whether r regularly uses web for emails,harmonised,3.74,0.07569724058730858,higher value → lower score,0.1
+HRS,Fried,10,3,True,r10fulldone,whether r completed 30/60 seconds full-tandem,harmonised,3.63,0.0734194220035457,higher value → higher score,15.7
+HRS,Fried,10,4,True,r10active,PANAS-X: degree r felt active,harmonised,3.57,0.07234912788051753,higher value → higher score,14.1
+HRS,Fried,10,5,True,r10rxpain,r takes meds for pain,harmonised,3.07,0.06221094038142565,higher value → lower score,0.1
+HRS,Fried,10,6,True,r10sathlth,r satisfaction with health 5-point,harmonised,2.94,0.05949263012582133,higher value → lower score,13.4
+HRS,Fried,10,7,True,r10painfr,r frequent problems with pain,harmonised,2.84,0.05750116270241564,higher value → higher score,0.1
+HRS,Fried,10,8,True,r10balanc,frequency r difficulty with balance,harmonised,2.48,0.05012162019485316,higher value → higher score,0.2
+HRS,Fried,10,9,True,r10semitanc,r compensatory movements during semi-tandem test,harmonised,2.14,0.04343730291660637,higher value → higher score,6.3
+HRS,Fried,10,10,True,r10fulltan,r full-tandem test result(sec),harmonised,1.93,0.039050018785137953,higher value → lower score,15.7
+HRS,Fried,10,11,False,r10lfprps,r Ryff Purpose of Life Index,harmonised,1.86,0.03774723451553644,higher value → lower score,13.9
+HRS,Fried,10,12,False,r10rested,r feels rested when wakes up,harmonised,1.84,0.03720730926438382,higher value → higher score,0.1
+HRS,Fried,10,13,False,r10sbreath,frequency r short of breath,harmonised,1.81,0.03655817251455297,higher value → higher score,0.0
+HRS,Fried,10,14,False,r10pulse,r average pulse measure 2 & 3,harmonised,1.54,0.031155554423809278,higher value → higher score,4.4
+HRS,Fried,10,15,False,r10lifeinv,r value life insurance policies,harmonised,1.41,0.02856660180464718,higher value → lower score,8.8
+HRS,Fried,10,16,False,r10diasto,r average blood pressure measure (diastolic) 2 & 3,harmonised,1.41,0.02850502866271492,higher value → lower score,4.4
+HRS,Fried,10,17,False,r10balance,r balance test summary score,harmonised,1.39,0.02819606431823316,higher value → higher score,11.0
+HRS,Fried,10,18,False,r10painlv,r usual level of pain,harmonised,1.3,0.026240290485755595,higher value → higher score,0.1
+HRS,Fried,10,19,False,r10drive,whether r is able to drive,harmonised,1.26,0.025513744086929576,higher value → higher score,32.5
+HRS,Fried,10,20,False,r10satlife_h,R Satisfied with life,harmonised,1.2,0.024296960958129474,higher value → higher score,0.4
+HRS,Fried,11,1,True,r11paina,r pain interferes with normal activities,harmonised,3.84,0.0968393827221939,higher value → higher score,65.7
+HRS,Fried,11,2,True,r11balanc,frequency r difficulty with balance,harmonised,3.41,0.0859451969375557,higher value → higher score,0.1
+HRS,Fried,11,3,True,r11fulltan,r full-tandem test result(sec),harmonised,3.14,0.07911887637469747,higher value → lower score,14.7
+HRS,Fried,11,4,True,r11email,whether r regularly uses web for emails,harmonised,2.94,0.07416443673759023,higher value → lower score,0.1
+HRS,Fried,11,5,True,r11breath,r short of breath while awake,harmonised,2.83,0.07137743085853952,higher value → higher score,0.2
+HRS,Fried,11,6,True,r11sbreath,frequency r short of breath,harmonised,2.71,0.06836715186087133,higher value → higher score,0.1
+HRS,Fried,11,7,True,r11active,PANAS-X: degree r felt active,harmonised,2.52,0.06342517191050613,higher value → higher score,22.7
+HRS,Fried,11,8,True,r11fulldone,whether r completed 30/60 seconds full-tandem,harmonised,2.37,0.059810932887974025,higher value → lower score,14.7
+HRS,Fried,11,9,True,r11drhlthyes,Day Reconstruction: r health yesterday,harmonised,2.32,0.058488877870112546,higher value → lower score,21.5
+HRS,Fried,11,10,True,r11rxpain,r takes meds for pain,harmonised,1.6,0.04026970190925025,higher value → higher score,0.2
+HRS,Fried,11,11,False,r11pulse,r average pulse measure 2 & 3,harmonised,1.5,0.03789400829904216,higher value → higher score,3.8
+HRS,Fried,11,12,False,r11noteeth,r whether lost all their teeth,harmonised,1.31,0.033103717045074164,higher value → higher score,0.0
+HRS,Fried,11,13,False,r11swell,r persistent swelling in feet/ankles,harmonised,1.28,0.03233001019719068,higher value → higher score,0.2
+HRS,Fried,11,14,False,r11diasto,r average blood pressure measure (diastolic) 2 & 3,harmonised,1.1,0.02769914800817956,higher value → lower score,3.8
+HRS,Fried,11,15,False,radadeduc8,radadeduc8:r father attained 8+ years of education,harmonised,1.07,0.02685146350597808,higher value → higher score,15.5
+HRS,Fried,11,16,False,r11satlifez,R Satisfied with life z-score,harmonised,1.01,0.025467071962980373,higher value → lower score,0.6
+HRS,Fried,11,17,False,r11lifeinv,r value life insurance policies,harmonised,0.98,0.02473852915248952,higher value → lower score,9.0
+HRS,Fried,11,18,False,r11rxpsych,r takes meds for psych condition,harmonised,0.97,0.024521965996819408,higher value → higher score,0.7
+HRS,Fried,11,19,False,r11lfprps,r Ryff Purpose of Life Index,harmonised,0.96,0.024090194938634873,higher value → lower score,22.8
+HRS,Fried,11,20,False,r11painlv,r usual level of pain,harmonised,0.95,0.024043301159359782,higher value → higher score,0.5
+HRS,Fried,12,1,True,r12paina,r pain interferes with normal activities,harmonised,5.79,0.10822911613327765,higher value → lower score,62.0
+HRS,Fried,12,2,True,r12balance,r balance test summary score,harmonised,5.0,0.09343308220278304,higher value → higher score,9.9
+HRS,Fried,12,3,True,r12email,whether r regularly uses web for emails,harmonised,4.51,0.0843307044378753,higher value → higher score,0.2
+HRS,Fried,12,4,True,r12fulltan,r full-tandem test result(sec),harmonised,3.8,0.07103806865869673,higher value → lower score,14.2
+HRS,Fried,12,5,True,r12active,PANAS-X: degree r felt active,harmonised,3.63,0.06780071724568179,higher value → higher score,17.2
+HRS,Fried,12,6,True,r12sbreath,frequency r short of breath,harmonised,3.47,0.06492527436470744,higher value → higher score,0.0
+HRS,Fried,12,7,True,r12rxpain,r takes meds for pain,harmonised,3.32,0.061981379176452515,higher value → lower score,0.2
+HRS,Fried,12,8,True,r12balanc,frequency r difficulty with balance,harmonised,2.3,0.043060888353579595,higher value → higher score,0.0
+HRS,Fried,12,9,True,r12rested,r feels rested when wakes up,harmonised,2.06,0.03856771396079571,higher value → higher score,0.2
+HRS,Fried,12,10,True,r12drhlthyes,Day Reconstruction: r health yesterday,harmonised,2.03,0.038018561578898935,higher value → lower score,16.9
+HRS,Fried,12,11,False,r12sathlth,r satisfaction with health 5-point,harmonised,1.88,0.035209900490683316,higher value → higher score,17.3
+HRS,Fried,12,12,False,r12lfprps,r Ryff Purpose of Life Index,harmonised,1.88,0.03507066432888253,higher value → lower score,17.3
+HRS,Fried,12,13,False,r12semitanc,r compensatory movements during semi-tandem test,harmonised,1.76,0.032851072048117325,higher value → lower score,7.1
+HRS,Fried,12,14,False,raeducl,raeducl: r harmonized education level,harmonised,1.59,0.029637191099708922,higher value → higher score,0.0
+HRS,Fried,12,15,False,r12panasp13,r PANAS-X average positive affect score,harmonised,1.49,0.027825008109927832,higher value → lower score,16.9
+HRS,Fried,12,16,False,r12painfr,r frequent problems with pain,harmonised,1.35,0.025181002262733346,higher value → lower score,0.3
+HRS,Fried,12,17,False,r12jrsleft,r reason for stopping working (if not working),harmonised,1.26,0.023482857855267016,higher value → lower score,18.4
+HRS,Fried,12,18,False,r12fulldone,whether r completed 30/60 seconds full-tandem,harmonised,1.18,0.022037514186366493,higher value → higher score,14.2
+HRS,Fried,12,19,False,r12hometyp,type of home r lives in,harmonised,1.17,0.021921960590702397,higher value → higher score,0.2
+HRS,Fried,12,20,False,r12noteeth,r whether lost all their teeth,harmonised,1.06,0.019781545299064056,mixed,83.7
+HRS,Fried,13,1,True,r13fulltan,r full-tandem test result(sec),harmonised,7.24,0.15214913752415493,higher value → lower score,15.5
+HRS,Fried,13,2,True,r13paina,r pain interferes with normal activities,harmonised,4.25,0.08939120001367602,higher value → higher score,60.7
+HRS,Fried,13,3,True,r13balanc,frequency r difficulty with balance,harmonised,4.14,0.08703359039129915,higher value → higher score,0.2
+HRS,Fried,13,4,True,r13email,whether r regularly uses web for emails,harmonised,3.83,0.0805048195521762,higher value → lower score,0.2
+HRS,Fried,13,5,True,r13sbreath,frequency r short of breath,harmonised,3.82,0.08019800687265674,higher value → higher score,0.2
+HRS,Fried,13,6,True,r13rxpain,r takes meds for pain,harmonised,3.23,0.06784031247335748,higher value → lower score,0.0
+HRS,Fried,13,7,True,r13active,PANAS-X: degree r felt active,harmonised,2.48,0.05206847791103909,higher value → higher score,21.6
+HRS,Fried,13,8,True,r13swell,r persistent swelling in feet/ankles,harmonised,2.42,0.05091288221585942,higher value → higher score,0.1
+HRS,Fried,13,9,True,r13hystere,r ever had hysterectomy,harmonised,2.19,0.04612067699269971,higher value → higher score,42.6
+HRS,Fried,13,10,True,r13drhlthyes,Day Reconstruction: r health yesterday,harmonised,2.18,0.04576873859819212,higher value → higher score,20.6
+HRS,Fried,13,11,False,r13sathlth,r satisfaction with health 5-point,harmonised,1.63,0.034289281247796524,higher value → higher score,21.4
+HRS,Fried,13,12,False,r13breath,r short of breath while awake,harmonised,1.54,0.03241874300069353,higher value → higher score,0.1
+HRS,Fried,13,13,False,r13diasto,r average blood pressure measure (diastolic) 2 & 3,harmonised,1.35,0.028441074498473738,higher value → lower score,2.2
+HRS,Fried,13,14,False,r13balance,r balance test summary score,harmonised,1.34,0.028154542995797165,higher value → higher score,10.4
+HRS,Fried,13,15,False,r13fulltanc,r compensatory movements during full-tandem test,harmonised,1.23,0.025800467105598694,higher value → lower score,15.5
+HRS,Fried,13,16,False,r13lfprps,r Ryff Purpose of Life Index,harmonised,1.2,0.0251446488606008,higher value → lower score,21.1
+HRS,Fried,13,17,False,raeducl,raeducl: r harmonized education level,harmonised,1.13,0.02377566866944244,higher value → lower score,0.1
+HRS,Fried,13,18,False,h13gksit,looked after grandchildren 100+ hrs,harmonised,1.06,0.022346838909108137,higher value → higher score,20.8
+HRS,Fried,13,19,False,r13panasp13,r PANAS-X average positive affect score,harmonised,0.99,0.020813635288762768,higher value → lower score,21.2
+HRS,Fried,13,20,False,r13painlv,r usual level of pain,harmonised,0.97,0.020318198554270528,higher value → lower score,0.4
+HRS,Fried,14,1,True,r14paina,r pain interferes with normal activities,harmonised,5.78,0.12084566842956156,higher value → lower score,60.2
+HRS,Fried,14,2,True,r14fulltan,r full-tandem test result(sec),harmonised,4.37,0.09138093846692041,higher value → lower score,14.8
+HRS,Fried,14,3,True,r14balanc,frequency r difficulty with balance,harmonised,4.08,0.0853702770257625,higher value → higher score,0.0
+HRS,Fried,14,4,True,r14email,whether r regularly uses web for emails,harmonised,3.06,0.06400066708193804,higher value → lower score,0.3
+HRS,Fried,14,5,True,r14numer,r numeracy score,harmonised,2.77,0.0579012695835693,higher value → lower score,3.8
+HRS,Fried,14,6,True,r14fulldone,whether r completed 30/60 seconds full-tandem,harmonised,2.67,0.055747078037734286,higher value → higher score,14.8
+HRS,Fried,14,7,True,r14active,PANAS-X: degree r felt active,harmonised,2.46,0.05145887892643251,higher value → higher score,26.0
+HRS,Fried,14,8,True,r14sbreath,frequency r short of breath,harmonised,2.33,0.04867758883526692,higher value → higher score,0.0
+HRS,Fried,14,9,True,r14sathlth,r satisfaction with health 5-point,harmonised,2.29,0.047836397447903495,higher value → higher score,25.4
+HRS,Fried,14,10,True,r14painfr,r frequent problems with pain,harmonised,1.87,0.039049196271468,higher value → lower score,0.1
+HRS,Fried,14,11,False,r14drhlthyes,Day Reconstruction: r health yesterday,harmonised,1.85,0.03858519373363574,higher value → higher score,25.2
+HRS,Fried,14,12,False,r14jrsleft,r reason for stopping working (if not working),harmonised,1.65,0.03453764542049413,higher value → lower score,21.1
+HRS,Fried,14,13,False,r14drive,whether r is able to drive,harmonised,1.51,0.03154418478625556,higher value → higher score,47.1
+HRS,Fried,14,14,False,r14lifeinv,r value life insurance policies,harmonised,1.42,0.02964485143652278,higher value → lower score,8.2
+HRS,Fried,14,15,False,raeducl,raeducl: r harmonized education level,harmonised,1.37,0.028747126786956876,higher value → higher score,0.0
+HRS,Fried,14,16,False,r14rxstom,r takes meds for stomach,harmonised,1.3,0.027190393812089875,higher value → higher score,0.3
+HRS,Fried,14,17,False,r14balance,r balance test summary score,harmonised,1.3,0.027102988079256884,higher value → higher score,10.2
+HRS,Fried,14,18,False,r14urinai,r any urinary incontinence past year,harmonised,1.1,0.023010724318154013,higher value → higher score,0.1
+HRS,Fried,14,19,False,r14rxpain,r takes meds for pain,harmonised,1.1,0.022917419607837948,higher value → higher score,0.0
+HRS,Fried,14,20,False,r14witwill,r has a witnessed will,harmonised,1.06,0.022213349782138046,higher value → higher score,0.7
+ELSA,Rockwood,1,1,True,hepaa,How bad is the pain most of the time? Is it …  ?,core,7.35,0.021100833362079522,higher value → higher score,61.9
+ELSA,Rockwood,1,2,True,scqola,My age prevents me from doing the things I would like to,core,4.36,0.01252873985434104,higher value → lower score,8.3
+ELSA,Rockwood,1,3,True,hepain,Are you often troubled with pain?,core,3.06,0.008786678565652763,higher value → lower score,0.0
+ELSA,Rockwood,1,4,True,hecdb,Does this pain ever begin when you are standing still or sitting? {in legs},core,2.63,0.0075413239637825875,higher value → lower score,70.0
+ELSA,Rockwood,1,5,True,hecda,Do you get pain or discomfort in either of your legs which comes on when you wal,core,2.33,0.006689647817935999,higher value → lower score,0.0
+ELSA,Rockwood,1,6,True,hekne,(How would you rate the pain) in your knees? {prompt if necessary: 0 is no pain,core,2.09,0.005996140956358304,higher value → higher score,63.2
+ELSA,Rockwood,1,7,True,hebck,(How would you rate the pain) in your back? {prompt if necessary: 0 is no pain a,core,1.89,0.0054210670954610764,higher value → higher score,63.2
+ELSA,Rockwood,1,8,True,heinct,"During the last 12 months, have you lost any amount of urine beyond your control",core,1.85,0.005317825676088759,higher value → lower score,0.1
+ELSA,Rockwood,1,9,True,hemdb,"Are you currently taking any tablets, pills or other medicines that you swallow",core,1.85,0.0052996780392184206,higher value → higher score,92.8
+ELSA,Rockwood,1,10,True,iahdb,Have you (or your spouse) received any of these health or disability benefits in,core,1.65,0.0047419100604069305,higher value → lower score,1.0
+ELSA,Rockwood,1,11,False,scghqg,Have you recently been able to enjoy your normal  day-to-day activities,core,1.6,0.004599186588586747,higher value → higher score,8.1
+ELSA,Rockwood,1,12,False,wpact1,Did you do any of these activities during the last month? (1st mention),core,1.6,0.004583217256200173,higher value → higher score,0.0
+ELSA,Rockwood,1,13,False,hehip,(How would you rate the pain) in your hips? {prompt if necessary: 0 is no pain a,core,1.57,0.004498941643669,higher value → higher score,63.1
+ELSA,Rockwood,1,14,False,cfmetm,How would you rate your memory at the present time. Would you say it is…?,core,1.53,0.004401121535702523,higher value → higher score,0.1
+ELSA,Rockwood,1,15,False,scqole,I can do the things I want to do,core,1.53,0.004389892852626423,higher value → higher score,8.8
+ELSA,Rockwood,1,16,False,iahrm01,merged variable: Which of these health or disability benefits have you received,core,1.44,0.004123447476550824,higher value → lower score,77.2
+ELSA,Rockwood,1,17,False,hoadp02,Does your  home have any of the features on this card (2nd mention)?,core,1.42,0.004088674566437766,higher value → lower score,88.1
+ELSA,Rockwood,1,18,False,hecde,If you stand still does the pain usually .....?  {in legs},core,1.38,0.003968758844184958,higher value → lower score,70.5
+ELSA,Rockwood,1,19,False,exlo80,What are the chances that you will live to be [75/80/85/90/95/100/105/110/120] o,core,1.38,0.003963373646762061,higher value → lower score,1.8
+ELSA,Rockwood,1,20,False,sptrm01,MERGED VARIABLE INCLUDING BACKCODING - CODE FRAME 5 @/Why don t you use public t,core,1.33,0.0038288924909085404,higher value → lower score,43.7
+ELSA,Rockwood,3,1,True,breths,"(D) Breathlessness, MRC respiratory questionnaire",core,9.43,0.02950432194585505,higher value → higher score,6.4
+ELSA,Rockwood,3,2,True,hepaa,Severity of pain most of the time,core,3.33,0.010436855289013974,higher value → higher score,62.1
+ELSA,Rockwood,3,3,True,hecdb,Claudication: whether pain begins when standing still or sitting,core,2.4,0.007506809265714807,higher value → lower score,72.9
+ELSA,Rockwood,3,4,True,hepain,Whether often troubled with pain,core,2.03,0.00636903176223026,higher value → lower score,0.0
+ELSA,Rockwood,3,5,True,hepawba,Whether feel pain in back,core,1.87,0.00584720700857548,higher value → higher score,62.0
+ELSA,Rockwood,3,6,True,iahdrsp,Health/disability benefits rec in the last year: Statutory Sick Pay,core,1.51,0.00471766774101995,higher value → lower score,77.3
+ELSA,Rockwood,3,7,True,scghqg,Whether recently been able to enjoy normal day~to~day activities,core,1.25,0.003906057131170597,higher value → higher score,13.4
+ELSA,Rockwood,3,8,True,hepawfe,Whether feel pain in feet,core,1.25,0.003905977102007812,higher value → higher score,62.0
+ELSA,Rockwood,3,9,True,wpact96,Activities during last month: none of these,core,1.23,0.0038638852086031413,higher value → higher score,0.0
+ELSA,Rockwood,3,10,True,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,1.19,0.003737237385886926,higher value → lower score,13.6
+ELSA,Rockwood,3,11,False,cfmetm,Self-rated memory,core,1.16,0.0036210001369392235,higher value → higher score,0.1
+ELSA,Rockwood,3,12,False,hepac,Hip or knee pain: whether been bothered by it for more than 6 months,core,1.13,0.003524506086500977,higher value → lower score,94.4
+ELSA,Rockwood,3,13,False,hepawkn,Whether feel pain in knees,core,1.03,0.003215573714517455,higher value → higher score,62.0
+ELSA,Rockwood,3,14,False,hecde,Claudication: whether gets pain when standing still,core,1.02,0.003188797025847019,higher value → lower score,77.8
+ELSA,Rockwood,3,15,False,hecdfth,Claudication: pain in thigh or buttocks,core,0.92,0.0028927028808749134,higher value → higher score,72.9
+ELSA,Rockwood,3,16,False,heincta,Incontinence: whether problem lasted more than one month,core,0.91,0.0028503869069320823,higher value → lower score,86.1
+ELSA,Rockwood,3,17,False,swmob1,Problem with moving around in last 30 days,core,0.91,0.0028405203934172797,higher value → higher score,73.4
+ELSA,Rockwood,3,18,False,CASPSR,(D) Self realisation (CASP),core,0.87,0.0027312698207528764,higher value → lower score,15.1
+ELSA,Rockwood,3,19,False,diagr,Age from individual demographics collapsed at 90 plus (use INDAGER instead),core,0.86,0.0026910588451876717,higher value → higher score,0.0
+ELSA,Rockwood,3,20,False,CASP19,(D) CASP 19,core,0.85,0.0026459583528270587,higher value → lower score,18.0
+ELSA,Rockwood,4,1,True,breths,"(D) Breathlessness, MRC respiratory questionnaire",core,8.75,0.024089418045722715,higher value → higher score,5.8
+ELSA,Rockwood,4,2,True,hepaa,Severity of pain most of the time,core,3.54,0.009750738344302422,higher value → higher score,60.6
+ELSA,Rockwood,4,3,True,hepag,Pain: how long been bothering you (if moderate or severe),core,2.95,0.00810835416584462,higher value → higher score,72.3
+ELSA,Rockwood,4,4,True,nurse_mmrrfti,Chair rise: Time to complete 5 rises (seconds),nurse,2.48,0.006826241097271785,higher value → higher score,31.1
+ELSA,Rockwood,4,5,True,hepain,Whether often troubled with pain,core,2.35,0.006460478521337255,higher value → lower score,0.0
+ELSA,Rockwood,4,6,True,hepawkn,Whether feel pain in knees,core,2.12,0.005829264865173802,higher value → higher score,60.5
+ELSA,Rockwood,4,7,True,psagf,How old respondent feels they are (in years),core,2.02,0.005564655579269147,higher value → higher score,2.4
+ELSA,Rockwood,4,8,True,iahdrsp,Health/disability benefits rec in the last year: Statutory Sick Pay,core,1.79,0.004930237691293347,higher value → lower score,76.6
+ELSA,Rockwood,4,9,True,hepawhi,Whether feel pain in hips,core,1.7,0.004676056683295007,higher value → higher score,60.5
+ELSA,Rockwood,4,10,True,CASPAUT,(D) Autonomy (CASP),core,1.6,0.0044047344997873135,higher value → lower score,13.8
+ELSA,Rockwood,4,11,False,iahdn96,Health or disability benefits receiving now: None of these,core,1.51,0.004152892762785543,higher value → lower score,83.3
+ELSA,Rockwood,4,12,False,iahdrwd,Hlth/disability benefits rec in the last yr: War Disablement/War Widows Pension,core,1.5,0.004116566284908998,higher value → lower score,76.6
+ELSA,Rockwood,4,13,False,heslpf,Sleep: rating sleep quality overall,core,1.35,0.0037108966131738645,higher value → higher score,0.1
+ELSA,Rockwood,4,14,False,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,1.14,0.0031370169610510394,higher value → lower score,12.5
+ELSA,Rockwood,4,15,False,cfmetm,Self-rated memory,core,1.11,0.0030465371774276587,higher value → higher score,0.1
+ELSA,Rockwood,4,16,False,CASP19,(D) CASP 19,core,1.09,0.0029894835014445766,higher value → lower score,16.1
+ELSA,Rockwood,4,17,False,hepawmo,Whether feel pain in mouth or teeth,core,1.08,0.0029637439634341467,higher value → lower score,60.5
+ELSA,Rockwood,4,18,False,CASPSR,(D) Self realisation (CASP),core,1.05,0.0028808225260032547,higher value → lower score,13.7
+ELSA,Rockwood,4,19,False,iahdb,Have you (or spouse) received any of these hlth/disability benefits in last yr,core,1.03,0.0028236842282760113,higher value → lower score,1.1
+ELSA,Rockwood,4,20,False,heslpb,Sleep: frequency wake up several times at night,core,1.0,0.0027505397958875943,higher value → higher score,0.0
+ELSA,Rockwood,5,1,True,breths,"(D) Breathlessness, MRC respiratory questionnaire",core,8.51,0.025460300482488263,higher value → higher score,6.0
+ELSA,Rockwood,5,2,True,scfeac,During the past 30 days to what degree the respondent feels active?,core,3.92,0.011718652207081124,higher value → higher score,8.5
+ELSA,Rockwood,5,3,True,HeCda, Do you get pain or discomfort in either of your legs which comes on when you wa,core,3.62,0.010835259568742418,higher value → lower score,1.4
+ELSA,Rockwood,5,4,True,hepag,Pain: how long been bothering you (if moderate or severe),core,2.31,0.006911588443520598,higher value → higher score,72.6
+ELSA,Rockwood,5,5,True,hepain,Whether often troubled with pain,core,2.21,0.006603591401737499,higher value → lower score,0.0
+ELSA,Rockwood,5,6,True,hepaa,Severity of pain most of the time,core,2.2,0.006577341285262467,higher value → higher score,60.4
+ELSA,Rockwood,5,7,True,hepawkn,Whether feel pain in knees,core,1.91,0.005706073353567045,higher value → higher score,60.3
+ELSA,Rockwood,5,8,True,HeCdb, Does this pain ever begin when you are standing still or sitting? (QInd.QHe.QHE,core,1.91,0.005703731216215702,higher value → lower score,74.0
+ELSA,Rockwood,5,9,True,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,1.68,0.005020553197180212,higher value → lower score,7.6
+ELSA,Rockwood,5,10,True,hepawba,Whether feel pain in back,core,1.62,0.004846996598297111,higher value → higher score,60.3
+ELSA,Rockwood,5,11,False,iahdbc,Receiving any of these health or disability benefits at the moment ?,core,1.4,0.004195577454101869,higher value → lower score,0.9
+ELSA,Rockwood,5,12,False,hedasch,Whether still has high cholesterol,core,1.29,0.0038713254639192968,higher value → lower score,73.0
+ELSA,Rockwood,5,13,False,iahdnmwd,Health or disability benefits receiving now: War Disablement/War Widows Pension,core,1.04,0.0030983087490562707,higher value → lower score,78.5
+ELSA,Rockwood,5,14,False,scdeac,How well the following describes the respondent: active,core,1.02,0.0030462734603108445,higher value → higher score,8.5
+ELSA,Rockwood,5,15,False,exlo80,Expectation (%) that they will live to [age] [depends on current age],core,0.97,0.002897394273774569,higher value → lower score,1.2
+ELSA,Rockwood,5,16,False,CASPCTL,(D) Control (CASP),core,0.97,0.0028971547356307025,higher value → lower score,9.0
+ELSA,Rockwood,5,17,False,iahdnwd,Health or disability benefits receiving now: War Disablement/War Widows Pension,core,0.96,0.0028765732662410096,higher value → lower score,78.5
+ELSA,Rockwood,5,18,False,heflb,Number times have fallen down,core,0.92,0.0027460350101455775,higher value → higher score,79.3
+ELSA,Rockwood,5,19,False,CASPAUT,(D) Autonomy (CASP),core,0.89,0.00266135496631383,higher value → lower score,8.6
+ELSA,Rockwood,5,20,False,iahdnib,Health or disability benefits receiving now: Incapacity Benefit,core,0.85,0.002545726149950357,higher value → lower score,78.5
+ELSA,Rockwood,6,1,True,HePag,Pain: how long been bothering you (if moderate or severe),core,5.06,0.013666564938424164,higher value → higher score,70.9
+ELSA,Rockwood,6,2,True,scypa,Whether respondent felt any pain yesterday,core,3.21,0.008660348841420097,higher value → higher score,10.2
+ELSA,Rockwood,6,3,True,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),nurse,2.9,0.007834179427247076,higher value → higher score,31.0
+ELSA,Rockwood,6,4,True,HePaa,Severity of pain most of the time,core,2.57,0.006951172739385963,higher value → higher score,58.0
+ELSA,Rockwood,6,5,True,hepawhi,Whether feel pain in hips,core,2.32,0.006278162656547724,higher value → higher score,58.0
+ELSA,Rockwood,6,6,True,nurse_MedBIA5,DRUG: Have they taken/used MedBI in the last 7 days?,nurse,2.26,0.006090535620182499,higher value → lower score,76.0
+ELSA,Rockwood,6,7,True,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,2.05,0.005531375568517517,higher value → lower score,9.9
+ELSA,Rockwood,6,8,True,iahdnwd,Health or disability benefits receiving now: War Disablement/War Widows Pension,core,1.94,0.005237356751670024,higher value → lower score,80.0
+ELSA,Rockwood,6,9,True,PSAgF,Self-perceived age,core,1.83,0.004933010793316568,higher value → higher score,1.9
+ELSA,Rockwood,6,10,True,HePain,Whether often troubled with pain,core,1.7,0.004598089441884759,higher value → lower score,0.0
+ELSA,Rockwood,6,11,False,nurse_NumMeds,DRUG: NumMeds,nurse,1.68,0.004543949603702178,higher value → higher score,38.2
+ELSA,Rockwood,6,12,False,iahdnm96,Health or disability benefits receiving now: none of these (merged var),core,1.4,0.003790716991749177,higher value → lower score,80.0
+ELSA,Rockwood,6,13,False,nurse_MedBIA3,DRUG: Have they taken/used MedBI in the last 7 days?,nurse,1.36,0.003670687150919658,higher value → lower score,59.6
+ELSA,Rockwood,6,14,False,iahdn96,Health or disability benefits receiving now: None of these,core,1.31,0.0035438982223827235,higher value → lower score,80.0
+ELSA,Rockwood,6,15,False,nurse_MedBIA7,DRUG: Have they taken/used MedBI in the last 7 days?,nurse,1.31,0.0035365063547242955,higher value → higher score,86.6
+ELSA,Rockwood,6,16,False,hepawkn,Whether feel pain in knees,core,1.29,0.0034939183172591256,higher value → higher score,58.0
+ELSA,Rockwood,6,17,False,hepawfe,Whether feel pain in feet,core,1.24,0.0033393925128053356,higher value → higher score,58.0
+ELSA,Rockwood,6,18,False,Iahdbc,receiving any of these health or disability benefits at the moment?,core,1.18,0.003184883405978726,higher value → lower score,0.9
+ELSA,Rockwood,6,19,False,nurse_MedBIA6,DRUG: Have they taken/used MedBI in the last 7 days?,nurse,1.05,0.002846783705381716,higher value → lower score,81.7
+ELSA,Rockwood,6,20,False,hepawba,Whether feel pain in back,core,0.98,0.002655790552266689,higher value → higher score,58.0
+ELSA,Rockwood,7,1,True,scypa,"Yesterday, did you feel any pain?",core,4.3,0.013013491368234079,higher value → higher score,9.4
+ELSA,Rockwood,7,2,True,HePaa,Severity of pain most of the time,core,4.25,0.01286009989016307,higher value → higher score,59.3
+ELSA,Rockwood,7,3,True,hepawkn,Whether feel pain in knees,core,2.49,0.0075548743174946335,higher value → higher score,59.3
+ELSA,Rockwood,7,4,True,HeSpch,Whether has difficulty having conversation in group,core,2.29,0.006934207822267096,higher value → higher score,0.1
+ELSA,Rockwood,7,5,True,hepawmo,Whether feel pain in mouth or teeth,core,2.15,0.006501343955283491,higher value → higher score,59.3
+ELSA,Rockwood,7,6,True,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,2.06,0.0062461112340264306,higher value → lower score,9.9
+ELSA,Rockwood,7,7,True,HePain,Whether often troubled with pain,core,2.06,0.006233067743240797,higher value → lower score,0.0
+ELSA,Rockwood,7,8,True,hepawba,Whether feel pain in back,core,1.74,0.005280730589822429,higher value → higher score,59.3
+ELSA,Rockwood,7,9,True,PSAgF,Self-perceived age,core,1.63,0.004926906630776826,higher value → higher score,1.3
+ELSA,Rockwood,7,10,True,hepawhi,Whether feel pain in hips,core,1.54,0.004653396272549916,higher value → higher score,59.3
+ELSA,Rockwood,7,11,False,iahdnib,Health or disability benefits receiving now: Incapacity Benefit,core,1.4,0.00424398956351703,higher value → higher score,81.9
+ELSA,Rockwood,7,12,False,iahdn96,Health or disability benefits receiving now: None of these,core,1.38,0.004189312278339003,higher value → lower score,81.9
+ELSA,Rockwood,7,13,False,hedasch,Whether still has high cholesterol,core,1.35,0.004101482642889195,higher value → lower score,70.3
+ELSA,Rockwood,7,14,False,expfc96,None of these (spontaneous) would pay for care and support (not curr receiving c,core,1.33,0.004022747953728424,higher value → higher score,7.5
+ELSA,Rockwood,7,15,False,SPCarA,Whether respondent drives this car or van themselves,core,1.26,0.0038032220738881445,higher value → higher score,13.3
+ELSA,Rockwood,7,16,False,HeFlb,Number times have fallen down,core,1.16,0.0035172430606223914,higher value → higher score,79.8
+ELSA,Rockwood,7,17,False,Iahdbc,Are you receiving any of these health or disability benefits at the moment?,core,1.08,0.0032606598107108704,higher value → lower score,0.9
+ELSA,Rockwood,7,18,False,ExLo90,Expectation (%) that they will live to be 85 years old or more,core,1.03,0.003114555586914853,higher value → lower score,40.1
+ELSA,Rockwood,7,19,False,hegpnhs,GP:whether consultation NHS or private,core,0.98,0.0029631779375556217,higher value → lower score,70.9
+ELSA,Rockwood,7,20,False,scqole,CASP19 scale: How often can do the things they want to do,core,0.92,0.0027822890728464392,higher value → higher score,10.1
+ELSA,Rockwood,8,1,True,hepac,Knee or hip pain: whether been bothering respondent for more than 6 months,core,4.36,0.015391809328173524,higher value → lower score,76.9
+ELSA,Rockwood,8,2,True,hepaa,Severity of pain most of the time,core,3.49,0.012294797882156332,higher value → higher score,58.7
+ELSA,Rockwood,8,3,True,hepain,Whether often troubled with pain,core,2.94,0.010353949157690496,higher value → lower score,0.1
+ELSA,Rockwood,8,4,True,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,core,2.22,0.007816492648932456,higher value → lower score,9.9
+ELSA,Rockwood,8,5,True,iahdnwd,Health or disability benefits receiving now: War Disablement/War Widow's Pension,core,1.85,0.006508579381410678,higher value → lower score,81.7
+ELSA,Rockwood,8,6,True,iahdbc,Whether receiving any state benefits at the moment,core,1.6,0.005655198218388037,higher value → lower score,0.7
+ELSA,Rockwood,8,7,True,hepawba,Whether feel pain in back,core,1.56,0.0055081050335503605,higher value → higher score,58.6
+ELSA,Rockwood,8,8,True,sptraa,How often respondent uses public transport,core,1.29,0.0045494895902695185,higher value → higher score,0.0
+ELSA,Rockwood,8,9,True,scofeel,How old the respondent feels they are,core,1.26,0.00444168898154945,higher value → higher score,11.7
+ELSA,Rockwood,8,10,True,heflb,Number times have fallen down,core,1.21,0.00427931621862084,higher value → higher score,77.1
+ELSA,Rockwood,8,11,False,heslpx,Sleep: frequency doze off/nap in morning or afternoon,core,1.21,0.00425165558799677,higher value → higher score,0.0
+ELSA,Rockwood,8,12,False,exlo80,Expectation (%) that will live to [age] [depends on current age],core,1.18,0.004145202210982653,higher value → lower score,1.2
+ELSA,Rockwood,8,13,False,iahdnmsp,Health or disability benefits receiving now: Statutory sick pay (merged),core,1.14,0.004030149352019736,higher value → lower score,81.7
+ELSA,Rockwood,8,14,False,spcara,Whether respondent drives this car or van themselves,core,1.13,0.003980709840579774,higher value → higher score,12.8
+ELSA,Rockwood,8,15,False,hepawkn,Whether feel pain in knees,core,1.12,0.00396143168888862,higher value → higher score,58.6
+ELSA,Rockwood,8,16,False,sclifeb,How much agrees with the statement: the conditions of my life are excellent,core,1.09,0.0038486278848377,higher value → higher score,11.6
+ELSA,Rockwood,8,17,False,iahdnsp,Health or disability benefits receiving now: Statutory sick pay,core,1.01,0.00356989606868197,higher value → lower score,81.7
+ELSA,Rockwood,8,18,False,hepaf,Knee or hip pain: whether doctor recommend that respondent should have surgery o,core,1.0,0.0035407412887957786,higher value → lower score,76.9
+ELSA,Rockwood,8,19,False,spcarb,Whether respondent drove a car or van themself in the past,core,0.97,0.003423857340632203,higher value → lower score,74.7
+ELSA,Rockwood,8,20,False,wpact96,Activities during last month: none of these,core,0.94,0.00331728180704239,higher value → higher score,0.0
+ELSA,Rockwood,9,1,True,hepaa,Severity of pain most of the time,core,5.24,0.016597610718671708,higher value → higher score,59.0
+ELSA,Rockwood,9,2,True,scypa,Whether respondent felt any pain yesterday,core,5.14,0.016278650096733648,higher value → higher score,8.8
+ELSA,Rockwood,9,3,True,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,core,2.42,0.007669973364379083,higher value → lower score,9.0
+ELSA,Rockwood,9,4,True,hepain,Whether often troubled with pain,core,2.35,0.007448121945209817,higher value → lower score,0.0
+ELSA,Rockwood,9,5,True,iahdbc,Whether receiving any state benefits at the moment,core,2.22,0.007025146697602724,higher value → lower score,0.6
+ELSA,Rockwood,9,6,True,hepawkn,Whether feel pain in knees,core,2.15,0.006791715452737891,higher value → higher score,59.0
+ELSA,Rockwood,9,7,True,psagf,Self-perceived age (in years),core,1.93,0.006113414012638101,higher value → higher score,1.5
+ELSA,Rockwood,9,8,True,hepawhi,Whether feel pain in hips,core,1.68,0.005320447735278516,higher value → higher score,59.0
+ELSA,Rockwood,9,9,True,iahdn96,Health or disability benefits receiving now: none of these,core,1.59,0.0050397616119195595,higher value → lower score,82.7
+ELSA,Rockwood,9,10,True,heflb,Number times have fallen down,core,1.45,0.00458771525519215,higher value → higher score,79.1
+ELSA,Rockwood,9,11,False,schrtm,Time spent doing health related activities yesterday (MINUTES),core,1.39,0.004407435182816107,higher value → higher score,71.0
+ELSA,Rockwood,9,12,False,iahdnm86,Health or disability benefits receiving now: irrelevant answer - not codeable (m,core,1.32,0.0041628593368478115,mixed,82.7
+ELSA,Rockwood,9,13,False,spcara,Whether respondent drives this car or van themselves,core,1.25,0.003962713700837598,higher value → higher score,11.5
+ELSA,Rockwood,9,14,False,wpact96,Activities during last month: none of these,core,1.13,0.0035757900532207123,higher value → higher score,0.0
+ELSA,Rockwood,9,15,False,indobyr,(D) Definitive year of birth collapsed at 90+,core,1.04,0.0032860849162790148,higher value → lower score,0.0
+ELSA,Rockwood,9,16,False,hepawba,Whether feel pain in back,core,1.01,0.003186212462335847,higher value → higher score,59.0
+ELSA,Rockwood,9,17,False,hepawfe,Whether feel pain in feet,core,0.99,0.003136353790695468,higher value → higher score,59.0
+ELSA,Rockwood,9,18,False,hegpnhs,GP: whether consultation NHS or private,core,0.93,0.0029344520707639365,higher value → lower score,73.1
+ELSA,Rockwood,9,19,False,scqols,CASP-19 scale: how often feels the future looks good for them,core,0.92,0.0028998315473963087,higher value → higher score,9.1
+ELSA,Rockwood,9,20,False,sptrab7,Reasons for not using public transport: they do not need to,core,0.89,0.0028234223777615034,higher value → lower score,25.8
+ELSA,Rockwood,10,1,True,hepaa,Severity of pain most of the time,core,5.33,0.01783570321583798,higher value → higher score,57.3
+ELSA,Rockwood,10,2,True,scdeac,How well 'active' describes respondent (self-reported),core,3.77,0.012613646083958624,higher value → higher score,10.7
+ELSA,Rockwood,10,3,True,scypa,Whether respondent felt any pain yesterday,core,3.15,0.010527328470502825,higher value → higher score,9.6
+ELSA,Rockwood,10,4,True,iahdn96,Health or disability benefits receiving now: None of these,core,2.49,0.008328498989320308,higher value → higher score,1.0
+ELSA,Rockwood,10,5,True,medcnjd,"Drug: whether taking or using any medicines, pills, syrups, ointments, puffers o",core,2.49,0.008323102762143415,higher value → lower score,0.0
+ELSA,Rockwood,10,6,True,hepawkn,Whether feel pain in knees,core,2.09,0.006985877501916777,higher value → higher score,57.2
+ELSA,Rockwood,10,7,True,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,core,2.08,0.00697100488989788,higher value → lower score,10.0
+ELSA,Rockwood,10,8,True,iahdnm96,Health or disability benefits receiving now: none of these (merged),core,1.91,0.0063719125701034275,higher value → higher score,1.0
+ELSA,Rockwood,10,9,True,psagf,Self-perceived age (in years),core,1.88,0.006273963366175358,higher value → higher score,1.4
+ELSA,Rockwood,10,10,True,hepain,Whether often troubled with pain,core,1.8,0.006009089165166254,higher value → lower score,0.0
+ELSA,Rockwood,10,11,False,iahdnib,Health or disability benefits receiving now: Incapacity Benefit,core,1.72,0.005762279693580164,higher value → higher score,1.0
+ELSA,Rockwood,10,12,False,hepawfe,Whether feel pain in feet,core,1.36,0.0045413451100114665,higher value → higher score,57.2
+ELSA,Rockwood,10,13,False,cfmap,Self-rated mental abilities,core,1.26,0.004223214544091676,higher value → higher score,0.2
+ELSA,Rockwood,10,14,False,spcara,Whether respondent drives this car or van themselves,core,1.16,0.0038701116070357,higher value → higher score,10.2
+ELSA,Rockwood,10,15,False,hepawhi,Whether feel pain in hips,core,1.14,0.003811993626496898,higher value → higher score,57.2
+ELSA,Rockwood,10,16,False,heflb,Number times have fallen down,core,1.06,0.0035599376824991115,higher value → higher score,79.8
+ELSA,Rockwood,10,17,False,wpact96,Activities during last month: none of these,core,1.03,0.003453686619418794,higher value → higher score,0.0
+ELSA,Rockwood,10,18,False,hepawal,Whether feel pain all over,core,1.03,0.003438580096614302,higher value → higher score,57.2
+ELSA,Rockwood,10,19,False,hepawmo,Whether feel pain in mouth or teeth,core,0.96,0.0032039240302090943,higher value → higher score,57.2
+ELSA,Rockwood,10,20,False,hepawba,Whether feel pain in back,core,0.91,0.003035962631382711,higher value → higher score,57.2
+ELSA,Fried,4,1,True,breths,"(D) Breathlessness, MRC respiratory questionnaire",core,4.48,0.10771216584540379,higher value → higher score,4.3
+ELSA,Fried,4,2,True,nurse_mmrrfti,Chair rise: Time to complete 5 rises (seconds),nurse,4.35,0.10465120888835215,higher value → higher score,13.8
+ELSA,Fried,4,3,True,psagf,How old respondent feels they are (in years),core,2.88,0.06918393101284068,higher value → higher score,2.4
+ELSA,Fried,4,4,True,nurse_mmrrtti,Chair rise: Time to complete ten rises (seconds) - only eligible if under 70 yrs,nurse,2.04,0.049086350593067055,higher value → higher score,51.8
+ELSA,Fried,4,5,True,diagr,Age from individual demographics collapsed at 90 plus (use INDAGER instead),core,1.8,0.043285501247382625,higher value → higher score,0.0
+ELSA,Fried,4,6,True,hepaa,Severity of pain most of the time,core,1.55,0.03727826554531651,higher value → higher score,61.2
+ELSA,Fried,4,7,True,CASPSR,(D) Self realisation (CASP),core,1.51,0.036436013756479535,higher value → lower score,9.6
+ELSA,Fried,4,8,True,exlo80,Expectation (%) that they will live to [age] [depends on current age],core,1.23,0.029491221746774238,higher value → lower score,0.9
+ELSA,Fried,4,9,True,hepag,Pain: how long been bothering you (if moderate or severe),core,1.2,0.02877405090649999,higher value → lower score,72.8
+ELSA,Fried,4,10,True,CASPCTL,(D) Control (CASP),core,1.19,0.028648283026501558,higher value → lower score,9.8
+ELSA,Fried,4,11,False,indobyr,"Definitive year of birth collapsed at 90 plus. Priority: Didbn, Dhdob",core,1.08,0.025917634517902223,higher value → lower score,0.9
+ELSA,Fried,4,12,False,indager,"Definitive age variable collapsed at 90 plus. Priority: Diag, Dhage",core,1.05,0.025342735928998418,higher value → higher score,0.0
+ELSA,Fried,4,13,False,nurse_dobyear,"Year of birth, collapsed for those aged 90 or over",nurse,1.0,0.02412467880948868,higher value → lower score,0.9
+ELSA,Fried,4,14,False,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,0.94,0.022693011156197266,higher value → lower score,8.2
+ELSA,Fried,4,15,False,heslpf,Sleep: rating sleep quality overall,core,0.79,0.019016404022376775,higher value → higher score,0.1
+ELSA,Fried,4,16,False,CASP19,(D) CASP 19,core,0.78,0.018753648238805473,higher value → lower score,12.1
+ELSA,Fried,4,17,False,cfani,Number of animals mentioned (fluency),core,0.75,0.01800317627421722,higher value → lower score,0.0
+ELSA,Fried,4,18,False,nurse_pf2,Lung function: 2nd PF reading (litres per minute),nurse,0.7,0.016907878239429158,higher value → lower score,8.0
+ELSA,Fried,4,19,False,nurse_fev2,Lung function: 2nd FEV reading (litres),nurse,0.65,0.015605694255024678,higher value → lower score,8.0
+ELSA,Fried,4,20,False,ncorrect,Letter Cancellation: number of letters correctly marked (0-65),core,0.65,0.01553183904447014,higher value → lower score,7.9
+ELSA,Fried,6,1,True,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),nurse,3.83,0.08995722721801633,higher value → higher score,12.1
+ELSA,Fried,6,2,True,nurse_mmrrtti,CHAIRRAISE: Time to complete 10 rises (seconds) - only eligible if under 70 yrs,nurse,2.62,0.06138658801891232,higher value → higher score,52.1
+ELSA,Fried,6,3,True,PSAgF,Self-perceived age,core,2.56,0.060029468091294065,higher value → higher score,1.8
+ELSA,Fried,6,4,True,scypa,Whether respondent felt any pain yesterday,core,1.45,0.03394069780437423,higher value → higher score,6.1
+ELSA,Fried,6,5,True,indager,Definitive age variable collapsed at 90+ to avoid disclosure,nurse,1.42,0.033260900356735235,higher value → higher score,0.0
+ELSA,Fried,6,6,True,HePaa,Severity of pain most of the time,core,1.3,0.03042617813342247,higher value → higher score,59.4
+ELSA,Fried,6,7,True,nurse_MedBIA5,DRUG: Have they taken/used MedBI in the last 7 days?,nurse,1.15,0.02688416553398201,higher value → lower score,69.0
+ELSA,Fried,6,8,True,Indobyr,Definitive year of birth collapsed at 90 plus,nurse,1.11,0.026133161057695576,higher value → lower score,0.0
+ELSA,Fried,6,9,True,GOR,Government Office Region based on final W6 postcode,core,1.08,0.02538739345229603,higher value → higher score,0.0
+ELSA,Fried,6,10,True,ExLo80,Expectation (%) that they will live to [age] [depends on current age],core,1.03,0.024200850243306725,higher value → lower score,1.1
+ELSA,Fried,6,11,False,HePag,Pain: how long been bothering you (if moderate or severe),core,1.01,0.023618190825616912,higher value → higher score,72.1
+ELSA,Fried,6,12,False,scqola,CASP19 scale: How often  feels age prevents them from doing things they like,core,0.92,0.02158228337710048,higher value → lower score,5.6
+ELSA,Fried,6,13,False,nurse_MmFTRe,BALANCE: Outcome of full tandem stand,nurse,0.88,0.02057008157849614,higher value → higher score,5.8
+ELSA,Fried,6,14,False,wpact96,Activities during last month: none of these,core,0.87,0.02040626096097749,higher value → higher score,0.0
+ELSA,Fried,6,15,False,scovan,"Overall, how anxious did you feel yesterday?",core,0.87,0.020394140094266572,higher value → higher score,7.2
+ELSA,Fried,6,16,False,SPCarA,Whether respondent drives this car or van themselves,core,0.85,0.01994035510533693,higher value → higher score,12.3
+ELSA,Fried,6,17,False,nurse_PRFEV,LUNG: Predicted value for FEV,nurse,0.85,0.019841684007034042,higher value → lower score,11.1
+ELSA,Fried,6,18,False,nurse_HTPEF,LUNG: Highest technically satisfactory value for PEF,nurse,0.83,0.019557283998741456,higher value → lower score,11.1
+ELSA,Fried,6,19,False,SPCarB,Whether respondent drove a car or van themself in the past?,core,0.81,0.019073896740650995,higher value → higher score,74.8
+ELSA,Fried,6,20,False,scywr,Whether respondent felt well-rested yesterday morning,core,0.81,0.01889803816379099,higher value → higher score,6.3
+ELSA,Fried,9,1,True,scypa,Whether respondent felt any pain yesterday,core,3.11,0.07444025983338308,higher value → higher score,5.2
+ELSA,Fried,9,2,True,psagf,Self-perceived age (in years),core,3.02,0.07222630278866098,higher value → higher score,2.1
+ELSA,Fried,9,3,True,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,core,2.76,0.06602795591171616,higher value → lower score,5.5
+ELSA,Fried,9,4,True,iahdn96,Health or disability benefits receiving now: none of these,core,2.61,0.06256986020274445,higher value → lower score,83.3
+ELSA,Fried,9,5,True,spcarb,Whether respondent drove a car or van themself in the past,core,2.36,0.056540091531469425,higher value → lower score,76.3
+ELSA,Fried,9,6,True,scptrhb,Whether has a hobby or pastime,core,2.09,0.050113563583387866,higher value → lower score,6.0
+ELSA,Fried,9,7,True,cflisd,Number of words recalled after delay,core,1.57,0.037688599111091396,higher value → lower score,0.0
+ELSA,Fried,9,8,True,excfv,Expectation (%) of needing long term care not provided by family or friends in t,core,1.51,0.036192083858324675,higher value → higher score,14.5
+ELSA,Fried,9,9,True,hepawba,Whether feel pain in back,core,1.3,0.03104714628930396,higher value → higher score,59.5
+ELSA,Fried,9,10,True,scsitth,Time spent sitting yesterday (HOURS),core,1.28,0.030678521803302345,higher value → higher score,8.1
+ELSA,Fried,9,11,False,wpact96,Activities during last month: none of these,core,1.24,0.029677295657165235,higher value → higher score,0.0
+ELSA,Fried,9,12,False,schrtm,Time spent doing health related activities yesterday (MINUTES),core,1.19,0.028384001445374327,higher value → higher score,67.1
+ELSA,Fried,9,13,False,scqole,CASP-19 scale: how often can do the things they want to do,core,1.18,0.02830535883887338,higher value → higher score,5.3
+ELSA,Fried,9,14,False,scqolb,CASP-19 scale: how often feels what happens to them is out of their control,core,1.17,0.028082435338558163,higher value → lower score,5.8
+ELSA,Fried,9,15,False,hepaa,Severity of pain most of the time,core,1.15,0.027523457826814788,higher value → higher score,59.5
+ELSA,Fried,9,16,False,exlo80,Expectation (%) that will live to [age] [depends on current age],core,1.11,0.02654101193611502,higher value → lower score,0.9
+ELSA,Fried,9,17,False,iahdnm96,Health or disability benefits receiving now: none of these (merged),core,1.04,0.024964428285868326,higher value → lower score,83.3
+ELSA,Fried,9,18,False,scovan,How anxious respondent felt overall yesterday,core,1.02,0.024355078047009836,higher value → higher score,5.2
+ELSA,Fried,9,19,False,cflisen,Number of words recalled immediately,core,0.94,0.022515368029718912,higher value → lower score,0.3
+ELSA,Fried,9,20,False,spcara,Whether respondent drives this car or van themselves,core,0.91,0.021695772519011523,higher value → higher score,11.1
+MHAS,Rockwood,1,1,True,r1jog,R Difficulty-Run/Jogging one km,harmonised,16.22,0.043678874208075716,higher value → higher score,0.5
+MHAS,Rockwood,1,2,True,r1hltc,R Self-report of health change,harmonised,5.71,0.01537663408543621,higher value → higher score,0.3
+MHAS,Rockwood,1,3,True,r1paina,R Pain interferes with normal activities,harmonised,5.68,0.015298431599317217,higher value → higher score,59.6
+MHAS,Rockwood,1,4,True,r1swell,R Persistent swelling in feet/ankles,harmonised,5.1,0.013727861520471896,higher value → higher score,0.1
+MHAS,Rockwood,1,5,True,r1joga,R Some difficulty-Run/Jogging one km,harmonised,3.78,0.010176408502393958,higher value → higher score,16.1
+MHAS,Rockwood,1,6,True,r1breath_m,R Difficulty breathing while lying down,harmonised,3.63,0.009775480529302504,higher value → higher score,0.1
+MHAS,Rockwood,1,7,True,r1painlv,R Usual level of pain,harmonised,3.13,0.008425849434802088,higher value → higher score,0.2
+MHAS,Rockwood,1,8,True,rachchlt,rachchlt: R Health compared to other children before age 10,harmonised,3.05,0.008209086276417121,higher value → higher score,41.6
+MHAS,Rockwood,1,9,True,r1painfr,R Frequent problems with pain,harmonised,2.18,0.005871864285005033,higher value → lower score,0.1
+MHAS,Rockwood,1,10,True,r1unemp,R Unemployed,harmonised,2.13,0.005741235570849653,higher value → higher score,55.6
+MHAS,Rockwood,1,11,False,r1wheeze,R Persistent wheezing,harmonised,1.87,0.005040555416308198,higher value → lower score,0.1
+MHAS,Rockwood,1,12,False,r1doctor1y,"R Doctor visits, previous 12 months",harmonised,1.8,0.0048398774777726195,higher value → lower score,0.3
+MHAS,Rockwood,1,13,False,r1urinai2y,R Any urinary incontinence (last 2 yrs),harmonised,1.75,0.004718167374769464,higher value → higher score,0.2
+MHAS,Rockwood,1,14,False,r1nopencil,R Problem Holding a Pencil,harmonised,1.5,0.004049009100095262,higher value → higher score,2.6
+MHAS,Rockwood,1,15,False,r1fallnum,R Number of falls,harmonised,1.49,0.004011192114036159,higher value → higher score,0.8
+MHAS,Rockwood,1,16,False,r1hosp1y,"R Hospital stay, previous 12 months",harmonised,1.46,0.003920177301903752,higher value → lower score,0.1
+MHAS,Rockwood,1,17,False,r1hip50e,R Ever fractured a bone (including hip) since age 50,harmonised,1.27,0.0034104675917204113,higher value → lower score,1.7
+MHAS,Rockwood,1,18,False,r1fvscan,Cognition Flag R Visual Scanning,harmonised,1.19,0.0032087347441051074,higher value → higher score,0.0
+MHAS,Rockwood,1,19,False,r1drink,R Drinks any alcohol,harmonised,1.16,0.003127553360914196,higher value → higher score,0.0
+MHAS,Rockwood,1,20,False,r1idraw2,R Picture Drawing immediate 2 fig,harmonised,1.06,0.002852258866673373,higher value → higher score,0.6
+MHAS,Rockwood,2,1,True,r2jog,R Difficulty-Run/Jogging one km,harmonised,12.65,0.0340567492189181,higher value → higher score,0.5
+MHAS,Rockwood,2,2,True,r2joga,R Some difficulty-Run/Jogging one km,harmonised,6.15,0.016567910987357323,higher value → higher score,15.5
+MHAS,Rockwood,2,3,True,r2hltc,R Self-report of health change,harmonised,5.4,0.014545776989892402,higher value → higher score,0.0
+MHAS,Rockwood,2,4,True,r2swell,R Persistent swelling in feet/ankles,harmonised,5.16,0.013906565843715161,higher value → higher score,0.1
+MHAS,Rockwood,2,5,True,r2paina,R Pain interferes with normal activities,harmonised,5.08,0.013682708157095365,higher value → higher score,61.2
+MHAS,Rockwood,2,6,True,r2painfr,R Frequent problems with pain,harmonised,3.65,0.009835195898044064,higher value → higher score,0.0
+MHAS,Rockwood,2,7,True,r2breath_m,R Difficulty breathing while lying down,harmonised,3.63,0.009781830197613979,higher value → higher score,0.0
+MHAS,Rockwood,2,8,True,r2painlv,R Usual level of pain,harmonised,3.41,0.00917100750413049,higher value → higher score,0.0
+MHAS,Rockwood,2,9,True,r2doctor1y,"R Doctor visits, previous 12 months",harmonised,2.73,0.007338762531385329,higher value → lower score,0.2
+MHAS,Rockwood,2,10,True,rachchlt,rachchlt: R Health compared to other children before age 10,harmonised,2.49,0.006693918462261666,higher value → higher score,35.9
+MHAS,Rockwood,2,11,False,r2lbrf_m,R Labor force status,harmonised,2.47,0.006656617005618106,higher value → higher score,0.1
+MHAS,Rockwood,2,12,False,r2inlbrf,R In the Labor Force,harmonised,2.0,0.005373458376221118,higher value → higher score,0.1
+MHAS,Rockwood,2,13,False,r2wheeze,R Persistent wheezing,harmonised,1.94,0.00523369633071808,higher value → higher score,0.0
+MHAS,Rockwood,2,14,False,r2urinai2y,R Any urinary incontinence (last 2 yrs),harmonised,1.68,0.004536720563817859,higher value → higher score,0.0
+MHAS,Rockwood,2,15,False,r2nopencil,R Problem Holding a Pencil,harmonised,1.47,0.0039464626728119255,higher value → lower score,2.9
+MHAS,Rockwood,2,16,False,h2itot,Incm:H Total Income,harmonised,1.15,0.0030839349424260135,higher value → lower score,1.0
+MHAS,Rockwood,2,17,False,r2ssupport4_m,R's spouse support summary mean score,harmonised,1.1,0.002949561254763127,higher value → higher score,30.9
+MHAS,Rockwood,2,18,False,r2fallnum,R Number of falls,harmonised,1.06,0.002861715738391855,higher value → higher score,0.6
+MHAS,Rockwood,2,19,False,r2orient_m,R Date Naming Correctness,harmonised,0.94,0.002537782752885195,higher value → higher score,0.1
+MHAS,Rockwood,2,20,False,r2hosp1y,"R Hospital stay, previous 12 months",harmonised,0.89,0.0024000845829759256,higher value → higher score,0.0
+MHAS,Rockwood,4,1,True,r4joga,R Some difficulty-Run/Jogging one km,harmonised,8.98,0.02930633659617031,higher value → higher score,12.1
+MHAS,Rockwood,4,2,True,r4jog,R Difficulty-Run/Jogging one km,harmonised,7.91,0.025837205702695175,higher value → higher score,0.1
+MHAS,Rockwood,4,3,True,r4paina,R Pain interferes with normal activities,harmonised,6.09,0.019888524307610143,higher value → higher score,62.2
+MHAS,Rockwood,4,4,True,r4swell,R Persistent swelling in feet/ankles,harmonised,4.1,0.013384393957445145,higher value → higher score,0.0
+MHAS,Rockwood,4,5,True,r4hltc,R Self-report of health change,harmonised,3.99,0.013012415759980678,higher value → higher score,0.0
+MHAS,Rockwood,4,6,True,r4painfr,R Frequent problems with pain,harmonised,3.9,0.012732532289333224,higher value → higher score,0.0
+MHAS,Rockwood,4,7,True,r4urinurg2y,R Urge to urinate (last 2 yrs),harmonised,3.25,0.010598870457449013,higher value → higher score,0.0
+MHAS,Rockwood,4,8,True,r4slfmem,R Self-Rated Memory,harmonised,2.65,0.008649571154932196,higher value → lower score,0.6
+MHAS,Rockwood,4,9,True,r4breath_m,R Difficulty breathing or coughing,harmonised,2.28,0.007436627186853806,higher value → higher score,0.0
+MHAS,Rockwood,4,10,True,r4lbrf_m,R Labor force status,harmonised,2.09,0.006814680749507316,higher value → higher score,0.2
+MHAS,Rockwood,4,11,False,r4fallslp,R Trouble falling asleep,harmonised,1.8,0.0058916482848429775,higher value → higher score,0.0
+MHAS,Rockwood,4,12,False,r4pstmem,R Memory Compared to the Past,harmonised,1.76,0.005742428966769127,higher value → higher score,0.5
+MHAS,Rockwood,4,13,False,r4wakeup,R Wakes up too early,harmonised,1.67,0.005441659442540296,higher value → higher score,0.0
+MHAS,Rockwood,4,14,False,raeducel,raeducel: R Harmonized Early Education,harmonised,1.65,0.005389749046424284,higher value → lower score,1.2
+MHAS,Rockwood,4,15,False,r4unemp,R Unemployed,harmonised,1.6,0.005225034588782127,higher value → lower score,58.1
+MHAS,Rockwood,4,16,False,r4doctor1y,"R Doctor visits, previous 12 months",harmonised,1.48,0.0048377800148353,higher value → higher score,0.0
+MHAS,Rockwood,4,17,False,r4imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,1.47,0.004802816511279295,higher value → lower score,0.0
+MHAS,Rockwood,4,18,False,r4hosp1y,"R Hospital stay, previous 12 months",harmonised,1.47,0.004796431122198165,higher value → higher score,0.0
+MHAS,Rockwood,4,19,False,r4oopdrug1m,"R Out of pocket medications, per month",harmonised,1.45,0.004747571956663517,higher value → higher score,0.0
+MHAS,Rockwood,4,20,False,r4wakent,R Wakes up during night,harmonised,1.28,0.004184687637960495,higher value → higher score,0.0
+MHAS,Rockwood,5,1,True,r5joga,R Some difficulty-Run/Jogging one km,harmonised,10.41,0.03195117477791128,higher value → higher score,5.7
+MHAS,Rockwood,5,2,True,r5jog,R Difficulty-Run/Jogging one km,harmonised,7.95,0.024395267613831286,higher value → higher score,0.2
+MHAS,Rockwood,5,3,True,r5paina,R Pain interferes with normal activities,harmonised,6.51,0.019963949789967232,higher value → higher score,60.7
+MHAS,Rockwood,5,4,True,r5swell,R Persistent swelling in feet/ankles,harmonised,4.04,0.012404772825433893,higher value → higher score,0.0
+MHAS,Rockwood,5,5,True,r5lbrf_m,R Labor force status,harmonised,3.48,0.010679512592578622,higher value → higher score,0.1
+MHAS,Rockwood,5,6,True,r5hltc,R Self-report of health change,harmonised,3.34,0.010247751242013438,higher value → higher score,0.1
+MHAS,Rockwood,5,7,True,r5slfmem,R Self-Rated Memory,harmonised,2.54,0.007806038524347997,higher value → higher score,0.5
+MHAS,Rockwood,5,8,True,r5urinurg2y,R Urge to urinate (last 2 yrs),harmonised,2.28,0.006982936211793619,higher value → higher score,0.0
+MHAS,Rockwood,5,9,True,h5gapcare,R+S provided personal care to parents 1hr+/wk,harmonised,2.11,0.006472762548691197,higher value → higher score,58.0
+MHAS,Rockwood,5,10,True,r5painfr,R Frequent problems with pain,harmonised,2.06,0.006312166729446465,higher value → higher score,0.0
+MHAS,Rockwood,5,11,False,r5breath_m,R Difficulty breathing or coughing,harmonised,2.03,0.006237536995026717,higher value → higher score,0.0
+MHAS,Rockwood,5,12,False,r5fallslp,R Trouble falling asleep,harmonised,1.83,0.0056067631971814655,higher value → higher score,0.0
+MHAS,Rockwood,5,13,False,raeducel,raeducel: R Harmonized Early Education,harmonised,1.76,0.005398065342192908,higher value → lower score,1.5
+MHAS,Rockwood,5,14,False,r5rested,R Feels rested when wakes up,harmonised,1.74,0.0053387881739694176,higher value → higher score,0.0
+MHAS,Rockwood,5,15,False,r5jlocc_m,R Longest job occupation code,harmonised,1.73,0.005323030268378442,higher value → lower score,52.3
+MHAS,Rockwood,5,16,False,r5painlv,R Usual level of pain,harmonised,1.65,0.00507564044327697,higher value → higher score,0.0
+MHAS,Rockwood,5,17,False,r5pstmem,R Memory Compared to the Past,harmonised,1.61,0.004932177059378145,higher value → higher score,0.5
+MHAS,Rockwood,5,18,False,r5doctor1y,"R Doctor visits, previous 12 months",harmonised,1.57,0.004809233670280173,higher value → lower score,0.4
+MHAS,Rockwood,5,19,False,r5imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,1.5,0.004594256930655912,higher value → lower score,0.0
+MHAS,Rockwood,5,20,False,r5wakeup,R Wakes up too early,harmonised,1.2,0.0036858837722940027,higher value → higher score,0.0
+MHAS,Fried,1,1,True,r1jog,R Difficulty-Run/Jogging one km,harmonised,11.46,0.20252340864151058,higher value → higher score,1.3
+MHAS,Fried,1,2,True,r1joga,R Some difficulty-Run/Jogging one km,harmonised,10.07,0.17802700678887717,higher value → higher score,20.0
+MHAS,Fried,1,3,True,r1hltc,R Self-report of health change,harmonised,4.64,0.08210615719764962,higher value → lower score,0.3
+MHAS,Fried,1,4,True,rachchlt,rachchlt: R Health compared to other children before age 10,harmonised,3.77,0.06659592366953716,higher value → lower score,41.8
+MHAS,Fried,1,5,True,r1painfr,R Frequent problems with pain,harmonised,3.34,0.05912228981831484,higher value → lower score,0.1
+MHAS,Fried,1,6,True,r1imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,2.52,0.044580370669994616,higher value → lower score,0.7
+MHAS,Fried,1,7,True,r1paina,R Pain interferes with normal activities,harmonised,2.46,0.04353102864214101,higher value → higher score,60.6
+MHAS,Fried,1,8,True,r1painlv,R Usual level of pain,harmonised,2.44,0.04310148987686712,higher value → higher score,0.1
+MHAS,Fried,1,9,True,r1unemp,R Unemployed,harmonised,2.39,0.04226881200303902,higher value → lower score,51.2
+MHAS,Fried,1,10,True,r1swell,R Persistent swelling in feet/ankles,harmonised,2.31,0.04079602970756891,higher value → higher score,0.1
+MHAS,Fried,1,11,False,r1jhoursd,R Hours/day worked at main job,harmonised,2.21,0.03900217710391191,higher value → higher score,52.2
+MHAS,Fried,1,12,False,r1breath_m,R Difficulty breathing while lying down,harmonised,2.13,0.03764262966029186,higher value → higher score,0.1
+MHAS,Fried,1,13,False,r1wheeze,R Persistent wheezing,harmonised,1.64,0.02896154512235045,higher value → lower score,0.2
+MHAS,Fried,1,14,False,r1drink,R Drinks any alcohol,harmonised,1.63,0.028763115432280408,higher value → higher score,0.0
+MHAS,Fried,1,15,False,r1prost,R Prev Care: Prostate last 2y,harmonised,1.29,0.022865643384143434,higher value → higher score,50.5
+MHAS,Fried,1,16,False,r1oopdoc1y,"R Out of pocket doctor exp, previous 12 months",harmonised,1.26,0.022226645833086638,higher value → higher score,0.0
+MHAS,Fried,1,17,False,h1atotb,total all assets inc. 2nd hm,harmonised,1.25,0.022037575947601543,higher value → lower score,0.1
+MHAS,Fried,1,18,False,r1papsm,R Prev Care: Pap Smear last 2y,harmonised,1.19,0.021077673719192024,higher value → lower score,51.5
+MHAS,Fried,1,19,False,r1lbrf_m,R Labor force status,harmonised,1.19,0.020987661798918388,higher value → higher score,0.3
+MHAS,Fried,1,20,False,r1mammog,R Prev Care: Mammogram last 2y,harmonised,1.15,0.020261809345368826,higher value → lower score,51.1
+MHAS,Fried,2,1,True,r2joga,R Some difficulty-Run/Jogging one km,harmonised,12.27,0.2099675202540341,higher value → higher score,19.9
+MHAS,Fried,2,2,True,r2jog,R Difficulty-Run/Jogging one km,harmonised,10.71,0.18315773287244178,higher value → higher score,0.4
+MHAS,Fried,2,3,True,r2paina,R Pain interferes with normal activities,harmonised,4.95,0.08467557664441729,higher value → lower score,63.0
+MHAS,Fried,2,4,True,r2hltc,R Self-report of health change,harmonised,3.98,0.06813889166562427,higher value → higher score,0.0
+MHAS,Fried,2,5,True,r2swell,R Persistent swelling in feet/ankles,harmonised,3.78,0.0646375731135027,higher value → higher score,0.0
+MHAS,Fried,2,6,True,r2painlv,R Usual level of pain,harmonised,3.22,0.055063112827740616,higher value → higher score,0.0
+MHAS,Fried,2,7,True,rachchlt,rachchlt: R Health compared to other children before age 10,harmonised,2.53,0.04331728681362622,higher value → higher score,35.6
+MHAS,Fried,2,8,True,r2unemp,R Unemployed,harmonised,1.99,0.03395947439519447,higher value → lower score,50.4
+MHAS,Fried,2,9,True,r2inlbrf,R In the Labor Force,harmonised,1.92,0.032803956366944054,higher value → lower score,0.1
+MHAS,Fried,2,10,True,h2atran,assets: vehicles,harmonised,1.65,0.02818772475176936,higher value → lower score,0.0
+MHAS,Fried,2,11,False,r2ddraw2,R Picture Drawing delayed 2 fig,harmonised,1.65,0.028161725585189857,higher value → higher score,0.0
+MHAS,Fried,2,12,False,r2painfr,R Frequent problems with pain,harmonised,1.58,0.027092291083260545,higher value → higher score,0.0
+MHAS,Fried,2,13,False,r2wheeze,R Persistent wheezing,harmonised,1.57,0.02689892840448445,higher value → higher score,0.0
+MHAS,Fried,2,14,False,r2breath_m,R Difficulty breathing while lying down,harmonised,1.5,0.02568522917148941,higher value → higher score,0.0
+MHAS,Fried,2,15,False,h2itot,Incm:H Total Income,harmonised,1.48,0.025260769855716833,higher value → lower score,1.1
+MHAS,Fried,2,16,False,r2lifein_m,R Covered by life insurance,harmonised,1.46,0.024939091276663074,higher value → higher score,52.9
+MHAS,Fried,2,17,False,r2fallnum,R Number of falls,harmonised,1.41,0.024044003981591115,higher value → higher score,0.3
+MHAS,Fried,2,18,False,r2imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,1.36,0.023242114121555957,higher value → lower score,0.0
+MHAS,Fried,2,19,False,r2hosp1y,"R Hospital stay, previous 12 months",harmonised,1.26,0.021640014793614944,higher value → higher score,0.0
+MHAS,Fried,2,20,False,r2breast,R Prev Care: Monthly Breast Check,harmonised,1.2,0.02055519652462228,higher value → higher score,50.7
+MHAS,Fried,5,1,True,r5joga,R Some difficulty-Run/Jogging one km,harmonised,11.2,0.21259073177911225,higher value → higher score,7.2
+MHAS,Fried,5,2,True,r5jog,R Difficulty-Run/Jogging one km,harmonised,9.09,0.17253208139002701,higher value → higher score,0.2
+MHAS,Fried,5,3,True,r5paina,R Pain interferes with normal activities,harmonised,5.19,0.09846717185752712,higher value → higher score,60.8
+MHAS,Fried,5,4,True,r5hltc,R Self-report of health change,harmonised,2.88,0.05464577777500405,higher value → higher score,0.0
+MHAS,Fried,5,5,True,r5jlocc_m,R Longest job occupation code,harmonised,2.77,0.05261674573660049,higher value → higher score,50.6
+MHAS,Fried,5,6,True,r5swell,R Persistent swelling in feet/ankles,harmonised,2.76,0.0523915873470233,higher value → lower score,0.0
+MHAS,Fried,5,7,True,r5rested,R Feels rested when wakes up,harmonised,2.58,0.04901107799649443,higher value → lower score,0.0
+MHAS,Fried,5,8,True,r5painfr,R Frequent problems with pain,harmonised,2.46,0.04662171362912962,higher value → higher score,0.0
+MHAS,Fried,5,9,True,r5fallslp,R Trouble falling asleep,harmonised,2.41,0.04578230954181149,higher value → lower score,0.0
+MHAS,Fried,5,10,True,r5inlbrf,R In the Labor Force,harmonised,2.22,0.042161720783945186,higher value → higher score,0.1
+MHAS,Fried,5,11,False,r5wakeup,R Wakes up too early,harmonised,2.17,0.04119568454125086,higher value → lower score,0.0
+MHAS,Fried,5,12,False,r5imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,2.05,0.038889314196982605,higher value → lower score,0.0
+MHAS,Fried,5,13,False,r5papsm,R Prev Care: Pap Smear last 2y,harmonised,1.81,0.034374183228057145,higher value → lower score,45.4
+MHAS,Fried,5,14,False,r5painlv,R Usual level of pain,harmonised,1.77,0.03355248177616493,higher value → higher score,0.0
+MHAS,Fried,5,15,False,r5lbrf_m,R Labor force status,harmonised,1.62,0.03077467428469458,higher value → lower score,0.1
+MHAS,Fried,5,16,False,r5urinurg2y,R Urge to urinate (last 2 yrs),harmonised,1.42,0.026913441745751138,higher value → higher score,0.0
+MHAS,Fried,5,17,False,r5unemp,R Unemployed,harmonised,1.37,0.0259417002378245,higher value → lower score,54.2
+MHAS,Fried,5,18,False,r5drink,R Drinks any alcohol,harmonised,1.31,0.02487463637430044,higher value → lower score,0.0
+MHAS,Fried,5,19,False,r5socact_m,R Freq social activities,harmonised,1.27,0.024184770750095647,higher value → lower score,0.0
+MHAS,Fried,5,20,False,r5mammog,R Prev Care: Mammogram last 2y,harmonised,1.27,0.024029128143300063,higher value → lower score,45.3
+MHAS,Fried,6,1,True,r6joga,R Some difficulty-Run/Jogging one km,harmonised,11.71,0.23862603720255854,higher value → lower score,9.6
+MHAS,Fried,6,2,True,r6jog,R Difficulty-Run/Jogging one km,harmonised,7.8,0.15901914678816054,higher value → lower score,0.2
+MHAS,Fried,6,3,True,r6arms,R Difficulty-Reach/extending arms up,harmonised,5.01,0.10208432183172039,higher value → higher score,0.0
+MHAS,Fried,6,4,True,r6paina,R Pain interferes with normal activities,harmonised,4.02,0.08188550083663908,higher value → higher score,62.7
+MHAS,Fried,6,5,True,r6hltc,R Self-report of health change,harmonised,3.85,0.0784187395765824,higher value → higher score,0.0
+MHAS,Fried,6,6,True,r6rested,R Feels rested when wakes up,harmonised,3.84,0.07820550703154851,higher value → higher score,0.0
+MHAS,Fried,6,7,True,r6swell,R Persistent swelling in feet/ankles,harmonised,2.63,0.05357683196664941,higher value → higher score,0.0
+MHAS,Fried,6,8,True,r6painfr,R Frequent problems with pain,harmonised,2.08,0.042390855002885544,higher value → lower score,0.0
+MHAS,Fried,6,9,True,r6igxfr,Income:R Other Government Transfers,harmonised,2.06,0.04202087081876505,higher value → higher score,0.1
+MHAS,Fried,6,10,True,r6unemp,R Unemployed,harmonised,2.01,0.04101946398472428,higher value → lower score,57.8
+MHAS,Fried,6,11,False,r6imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),harmonised,1.84,0.03748438559638135,higher value → lower score,0.0
+MHAS,Fried,6,12,False,h6gccare_m,R+S provide informal care to children/grandchildren 1hr+/wk,harmonised,1.5,0.030662980616896283,higher value → higher score,11.3
+MHAS,Fried,6,13,False,r6prost,R Prev Care: Prostate last 2y,harmonised,1.5,0.030640662878447973,higher value → higher score,57.1
+MHAS,Fried,6,14,False,r6lbrf_m,R Labor force status,harmonised,1.47,0.029894942070905435,higher value → higher score,0.0
+MHAS,Fried,6,15,False,r6fallslp,R Trouble falling asleep,harmonised,1.46,0.029679781656646604,higher value → higher score,0.0
+MHAS,Fried,6,16,False,r6socact_m,R Freq social activities,harmonised,1.41,0.028690201525853765,higher value → lower score,0.0
+MHAS,Fried,6,17,False,h6atran,assets: vehicles,harmonised,1.39,0.028407429846110235,higher value → lower score,0.1
+MHAS,Fried,6,18,False,r6lsatsc3,R Satisfaction with life scale score,harmonised,1.26,0.02575107952754229,higher value → lower score,0.1
+MHAS,Fried,6,19,False,h6itot,Incm:H Total Income,harmonised,1.24,0.025292797921877858,higher value → lower score,0.7
+MHAS,Fried,6,20,False,r6urinurg2y,R Urge to urinate (last 2 yrs),harmonised,1.18,0.02395101849389174,higher value → higher score,0.0
+CLHLS,Rockwood,3,1,True,G11,able to pick up a book from the floor,DS0003,12.5,0.04053953264576576,higher value → higher score,0.0
+CLHLS,Rockwood,3,2,True,D11B,do you do any personal outdoor activities at present?,DS0003,7.43,0.024091149129178688,higher value → higher score,0.0
+CLHLS,Rockwood,3,3,True,G12,steps used to turn around 360 degree without help,DS0003,5.91,0.01916335911897733,higher value → higher score,0.0
+CLHLS,Rockwood,3,4,True,G1,(G1) visual function,DS0003,3.43,0.011118961355498063,higher value → higher score,0.0
+CLHLS,Rockwood,3,5,True,V_BTHYR,(V_BTHYR) validated birth year,DS0003,3.43,0.011115157840314785,higher value → lower score,0.0
+CLHLS,Rockwood,3,6,True,TRUEAGE,age confirmed,DS0003,3.33,0.010804107680095168,higher value → higher score,0.0
+CLHLS,Rockwood,3,7,True,D11E,(D11E) do you raise domestic animals/pets at present?,DS0003,2.66,0.008622209061624534,higher value → higher score,0.0
+CLHLS,Rockwood,3,8,True,B24,(B24) feel lonely and isolated,DS0003,2.09,0.0067843916320233484,higher value → lower score,0.0
+CLHLS,Rockwood,3,9,True,D2,(D2) amount of staple food per day (liang),DS0003,1.56,0.005054273082205013,higher value → lower score,0.0
+CLHLS,Rockwood,3,10,True,B27,(B27) be happy as younger,DS0003,1.49,0.004848681134916261,higher value → higher score,0.0
+CLHLS,Rockwood,3,11,False,G14A1,(G14A1) name of disease suffering at the first time,DS0003,1.46,0.004737585119664783,higher value → lower score,83.0
+CLHLS,Rockwood,3,12,False,B21,(B21) look on the bright side of things,DS0003,1.42,0.0045931016543938,higher value → higher score,0.0
+CLHLS,Rockwood,3,13,False,G82,(G82) hand behind lower back,DS0003,1.38,0.004490366677498169,higher value → lower score,0.0
+CLHLS,Rockwood,3,14,False,G6,(G6) rhythm of heart,DS0003,1.31,0.004263212504525602,higher value → higher score,0.0
+CLHLS,Rockwood,3,15,False,D1,(D1) staple food,DS0003,1.27,0.004132315306766797,higher value → higher score,0.0
+CLHLS,Rockwood,3,16,False,G14A2,(G14A2) days lasted for the first time,DS0003,1.08,0.0035138277923446493,higher value → lower score,83.0
+CLHLS,Rockwood,3,17,False,G83,raise arms upright,DS0003,1.06,0.0034347129433836636,higher value → lower score,0.0
+CLHLS,Rockwood,3,18,False,C32,(C32) draw the figure following the sample,DS0003,1.05,0.0034140734693316557,higher value → higher score,0.0
+CLHLS,Rockwood,3,19,False,A41,(A41) which province were you born in?,DS0003,1.03,0.0033436075085257247,higher value → lower score,0.0
+CLHLS,Rockwood,3,20,False,C521,number of words correctly repeated,DS0003,0.99,0.003208695873123149,higher value → lower score,28.9
+CLHLS,Rockwood,6,1,True,G11,(G11) able to pick up a book from the floor?,DS0006,11.02,0.041751308428038134,higher value → higher score,0.9
+CLHLS,Rockwood,6,2,True,D11B,(D11B) do you grow vegetables & do other field work at present?,DS0006,4.61,0.017465866785672517,higher value → higher score,0.0
+CLHLS,Rockwood,6,3,True,G12,(G12) steps used to turn around 360 with help?,DS0006,4.13,0.01563799777961829,higher value → higher score,0.7
+CLHLS,Rockwood,6,4,True,F340,(F340) your power in decision-making on financial spending in the household,DS0006,3.36,0.012725486101541502,higher value → higher score,0.3
+CLHLS,Rockwood,6,5,True,F651A1,(F651A1) how much money did you spend on outpatient costs last year?,DS0006,2.22,0.008407373972537836,higher value → higher score,1.8
+CLHLS,Rockwood,6,6,True,G130,(G130) feel not-well within the past two weeks?,DS0006,2.12,0.00803656586599223,higher value → lower score,0.3
+CLHLS,Rockwood,6,7,True,H5,(H5) confirm the age and copy to the 1st page,DS0006,2.1,0.007954763131748959,higher value → higher score,0.2
+CLHLS,Rockwood,6,8,True,D11E,(D11E) do you raise domestic animals/pets at present?,DS0006,2.07,0.007857539926197652,higher value → higher score,0.1
+CLHLS,Rockwood,6,9,True,A41,(A41) which province were you born in?,DS0006,1.88,0.007105150005894713,higher value → lower score,0.1
+CLHLS,Rockwood,6,10,True,G1,(G1) visual function: can you see the break in the circle?,DS0006,1.36,0.0051531232960056505,higher value → higher score,0.3
+CLHLS,Rockwood,6,11,False,G131,(G131) # of times suffering from serious illness within the past two years,DS0006,1.32,0.00498958976762053,higher value → higher score,1.0
+CLHLS,Rockwood,6,12,False,B27,(B27) be happy as younger,DS0006,1.28,0.0048659896249036005,higher value → higher score,0.0
+CLHLS,Rockwood,6,13,False,C32,(C32) draw the figure following the example,DS0006,1.2,0.004560999916662503,higher value → higher score,0.3
+CLHLS,Rockwood,6,14,False,A_MERGE,A_MERGE,DS0006,1.04,0.003949828962331168,higher value → lower score,0.0
+CLHLS,Rockwood,6,15,False,TRUEAGE,(TRUEAGE) validated age,DS0006,1.01,0.003823570343713592,higher value → higher score,0.0
+CLHLS,Rockwood,6,16,False,B24,(B24) feel lonely and isolated,DS0006,1.0,0.003784117499058932,higher value → lower score,0.0
+CLHLS,Rockwood,6,17,False,C16,(C16) # of kinds of food named in one minute,DS0006,1.0,0.00376993774679665,higher value → lower score,0.4
+CLHLS,Rockwood,6,18,False,D11G,(D11G) do you watch tv or listen to radio at present ?,DS0006,0.95,0.0036082575551169725,higher value → higher score,0.1
+CLHLS,Rockwood,6,19,False,F651B1,(F651B1) how much money did your family pay for outpatient costs last year?,DS0006,0.94,0.0035548792513214857,higher value → higher score,3.9
+CLHLS,Rockwood,6,20,False,G14A1,(G14A1) name of disease suffered at 1st hospital visit,DS0006,0.93,0.0035094153054174267,higher value → lower score,74.8
+CLHLS,Rockwood,7,1,True,G11,(G11) able to pick up a book from the floor?,DS0007,8.43,0.02878907193938503,higher value → higher score,1.9
+CLHLS,Rockwood,7,2,True,G12,(G12) steps used to turn around 360 with help?,DS0007,6.5,0.022198887041081448,higher value → higher score,0.9
+CLHLS,Rockwood,7,3,True,D11B,do you grow vegetables & do other field work at present?,DS0007,4.66,0.015902176305775735,higher value → higher score,0.0
+CLHLS,Rockwood,7,4,True,F340,your power in decision-making on financial spending in the household,DS0007,3.94,0.013456177992945259,higher value → higher score,0.4
+CLHLS,Rockwood,7,5,True,F651A1,(F651A1) how much money did you spend on outpatient costs last year?,DS0007,2.43,0.008293107136491206,higher value → higher score,4.2
+CLHLS,Rockwood,7,6,True,G1,(G1) visual function: can you see the break in the circle?,DS0007,1.76,0.006003540867835112,higher value → higher score,1.3
+CLHLS,Rockwood,7,7,True,D103,(D103) age when stopped doing physical labor,DS0007,1.69,0.005762406671429894,higher value → lower score,18.8
+CLHLS,Rockwood,7,8,True,H5,(H5) confirm the age and copy to the 1st page,DS0007,1.65,0.005645637005260919,higher value → higher score,1.0
+CLHLS,Rockwood,7,9,True,G14A1,(G14A1) name of disease suffered at 1st hospital visit,DS0007,1.55,0.005280331037377552,higher value → lower score,73.7
+CLHLS,Rockwood,7,10,True,V_BTHYR,validated birth year,DS0007,1.47,0.005022945818679252,higher value → lower score,0.0
+CLHLS,Rockwood,7,11,False,C53C,(C53C) put paper on the floor,DS0007,1.33,0.004541079806120089,higher value → higher score,0.1
+CLHLS,Rockwood,7,12,False,C32,(C32) draw the figure following the example,DS0007,1.3,0.004449532473091107,higher value → higher score,1.5
+CLHLS,Rockwood,7,13,False,G131,(G131) # of times suffering from serious illness within the past two years,DS0007,1.23,0.004214090031918877,higher value → higher score,3.2
+CLHLS,Rockwood,7,14,False,G130,(G130) feel not-well within the past two weeks?,DS0007,1.23,0.004191347526987503,higher value → lower score,0.9
+CLHLS,Rockwood,7,15,False,F651B1,(F651B1) how much money did your family pay for outpatient costs last year?,DS0007,1.22,0.004178492441307319,higher value → higher score,8.6
+CLHLS,Rockwood,7,16,False,D11E,(D11E) do you raise domestic animals/pets at present?,DS0007,1.2,0.0040916856236684,higher value → higher score,0.0
+CLHLS,Rockwood,7,17,False,D11G,(D11G) do you watch tv or listen to radio at present ?,DS0007,1.12,0.0038280536524139047,higher value → higher score,0.0
+CLHLS,Rockwood,7,18,False,B24,feel lonely and isolated,DS0007,1.12,0.003810240893518505,higher value → lower score,0.0
+CLHLS,Rockwood,7,19,False,D1,(D1) staple food,DS0007,0.96,0.0032816982437766035,higher value → higher score,0.1
+CLHLS,Rockwood,7,20,False,G14A2,"(G14A2) 1st time, number of days in hospital or bedridden",DS0007,0.92,0.0031296604201278048,higher value → lower score,74.0
+CLHLS,Rockwood,8,1,True,G11,able to pick up a book from the floor?,DS0008,9.72,0.03500720290005361,higher value → higher score,0.5
+CLHLS,Rockwood,8,2,True,G12,steps used to turn around 360 with help?,DS0008,4.92,0.01771836737681626,higher value → higher score,1.7
+CLHLS,Rockwood,8,3,True,D112C,"series, interact with friends",DS0008,4.78,0.017224276913606826,higher value → higher score,0.1
+CLHLS,Rockwood,8,4,True,H5,confirm the age and copy to the 1st page,DS0008,3.25,0.011692019766954139,higher value → higher score,0.6
+CLHLS,Rockwood,8,5,True,G181,did you take in the past 24 hours?,DS0008,2.43,0.008736310659438784,higher value → lower score,1.7
+CLHLS,Rockwood,8,6,True,G183,how many hours have you taken the drug recently?,DS0008,2.17,0.007810613528192399,higher value → lower score,54.8
+CLHLS,Rockwood,8,7,True,TRUEAGE,validated age,DS0008,2.08,0.0074943887795708266,higher value → higher score,0.0
+CLHLS,Rockwood,8,8,True,C53C,put paper on the floor,DS0008,1.72,0.0061791640399094785,higher value → lower score,9.1
+CLHLS,Rockwood,8,9,True,B32,is it difficult to concentrate when you are doing things now,DS0008,1.53,0.005501611238674704,higher value → lower score,1.9
+CLHLS,Rockwood,8,10,True,D103,age when stopped doing physical labor,DS0008,1.41,0.005082365634009135,higher value → lower score,25.6
+CLHLS,Rockwood,8,11,False,D11E,do you raise domestic animals/pets at present?,DS0008,1.35,0.004857813573562775,higher value → higher score,0.1
+CLHLS,Rockwood,8,12,False,G1,visual function: can you see the break in the circle?,DS0008,1.26,0.0045220827485957125,higher value → higher score,0.7
+CLHLS,Rockwood,8,13,False,C32,draw the figure following the example,DS0008,1.23,0.004433585010116377,higher value → higher score,1.2
+CLHLS,Rockwood,8,14,False,G102,is the participant hunchbacked?,DS0008,1.21,0.004369540916483648,higher value → lower score,1.6
+CLHLS,Rockwood,8,15,False,B39,do you feel unable to continue your life?,DS0008,1.18,0.004246845595720718,higher value → lower score,1.7
+CLHLS,Rockwood,8,16,False,F103C4,"the 3rd child's age at present if alive, or age the child would be if s/he alive",DS0008,1.18,0.004242966764412782,higher value → higher score,27.3
+CLHLS,Rockwood,8,17,False,G130,feel not-well within the past two weeks?,DS0008,1.17,0.0042306382266179615,higher value → lower score,1.5
+CLHLS,Rockwood,8,18,False,V_BTHYR,validated birth year,DS0008,1.16,0.004178295498750395,higher value → lower score,0.0
+CLHLS,Rockwood,8,19,False,G14A2,"1st time, number of days in hospital or bedridden",DS0008,1.01,0.0036511987589137656,higher value → higher score,75.9
+CLHLS,Rockwood,8,20,False,G83,hold-up arms,DS0008,0.94,0.003375512606444188,higher value → lower score,3.9

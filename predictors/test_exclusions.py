@@ -11,10 +11,9 @@ CLHLS = {f"item__{k}" for k in ["d_srh", "d_hypertension", "d_diabetes", "d_hear
          "d_housework", "d_hand_behind_neck"]}
 
 
-def excluded(label, cohort="HRS", method="Rockwood", items=CORE):
-    fu = R.follow_up_rule(cohort, method, items)
-    return bool(R.GENERIC[method].search(label) or (fu and fu.search(label)) or R.ADMIN_LABEL.search(label)
-                or R.DEATH_LABEL.search(label))
+def excluded(label, cohort="HRS", method="Rockwood", items=CORE, mode="own"):
+    """The pipeline's own rule function (run_predictors.label_reason), applied to a label alone."""
+    return R.label_reason(cohort, method, "zz_test", label, frozenset(items), mode=mode) is not None
 
 
 cases = [
@@ -137,4 +136,46 @@ bad = 0
 for lab, co, m, items, want in cases:
     got = excluded(lab, co, m, items); bad += got != want
     print(f"{'OK   ' if got == want else 'WRONG'} {m[:4]} {co:5s} excl={got!s:5} want={want!s:5} {lab}")
-print("failures:", bad)
+
+# Cross-instrument rules: (label, cohort, track, excluded in "own" mode, excluded in "both" mode)
+cross = [
+    # Fried criteria in the Rockwood track
+    ("Sports or activities that are vigorous", "SHARE", "Rockwood", False, True),
+    ("Frequency does moderate sports or activities", "ELSA", "Rockwood", False, True),
+    ("Physical inactivity", "SHARE", "Rockwood", False, True),
+    ("r self-rated hand strength", "HRS", "Rockwood", False, True),
+    ("Body mass index", "SHARE", "Rockwood", False, True),
+    ("Time taken for first walk (seconds)", "ELSA", "Rockwood", False, True),
+    ("Feel full of energy", "SHARE", "Rockwood", False, True),
+    ("w1 R Severe fatigue", "MHAS", "Rockwood", False, True),
+    ("Difficulty-Lifting 5 kilos", "SHARE", "Rockwood", True, True),          # a Rockwood item anyway
+    # Rockwood items in the Fried track
+    ("Difficulties: dressing, including putting on shoes and socks", "SHARE", "Fried", False, True),
+    ("w1 R Difficulty-Bathing or showering", "MHAS", "Fried", False, True),
+    ("Self-reported general health", "ELSA", "Fried", False, True),
+    ("Limitations with activities - gali", "SHARE", "Fried", False, True),
+    ("r receives any informal care for adls/iadls", "HRS", "Fried", False, True),
+    ("Aids used: not use any of listed aids", "ELSA", "Fried", False, True),
+    ("Ever diagnosed: high blood pressure or hypertension", "SHARE", "Fried", False, True),
+    ("Irritability", "SHARE", "Fried", False, False),                           # EURO-D item, not an FI deficit itself
+    ("r whether obese", "HRS", "Rockwood", False, True),
+    ("Special features in accommodation: none of these", "SHARE", "Rockwood", True, True),
+    ("Received home care: none of these", "SHARE", "Rockwood", True, True),
+    ("Received home care: none of these", "SHARE", "Fried", False, True),
+    # legitimate predictors kept in both modes and both tracks
+    ("PANAS-X: degree r felt active", "HRS", "Rockwood", False, False),
+    ("Feels lonely", "SHARE", "Fried", False, False),
+    ("R Prev Care: Mammogram last 2y", "MHAS", "Fried", False, False),
+    ("frequency r short of breath", "HRS", "Rockwood", False, False),
+    ("Severity of pain most of the time", "ELSA", "Rockwood", False, False),
+    ("Severity of pain most of the time", "ELSA", "Fried", False, False),
+    ("At least taking 5 different drugs a typical day", "SHARE", "Rockwood", False, False),
+    ("Have you heard of telemedicine before?", "SHARE", "Fried", False, False),
+    ("r full-tandem test result(sec)", "HRS", "Fried", False, False),
+    ("whether r regularly uses web for emails", "HRS", "Rockwood", False, False),
+]
+for lab, co, m, want_own, want_both in cross:
+    g1, g2 = excluded(lab, co, m, CLHLS if co == "CLHLS" else CORE, "own"), excluded(lab, co, m, CLHLS if co == "CLHLS" else CORE, "both")
+    ok = (g1, g2) == (want_own, want_both); bad += not ok
+    print(f"{'OK   ' if ok else 'WRONG'} {m[:4]} {co:5s} own={g1!s:5} both={g2!s:5} (want {want_own}/{want_both}) {lab}")
+print("failures:", bad, "of", len(cases) + len(cross))
