@@ -1,2 +1,10 @@
 cohort,instrument,top5_final,top5_pilot,top5_overlap,spearman_shared_variables,mean_R2_final,mean_R2_pilot
-MHAS,Rockwood,"jog, joga, paina, hltc, swell","jog, joga, fatigue, hltc, paina",4,0.852,0.642,0.631
+SHARE,Rockwood,"ph082_, ph085_, ph011dno, ph011d7, ac014_","ac023_, ph082_, phactiv, ph085_, ph011dno",3,0.915,0.71,0.738
+SHARE,Fried,"ph082_, ac014_, ph085_, ep097_, ac017_","ph048dno, ph048d8, iadl, mh010_, ph061_",0,0.88,0.491,0.559
+HRS,Rockwood,"paina, painlv, jrsleft, painfr, drive","paina, painlv, jrsleft, painfr, drive",5,0.868,0.69,0.703
+HRS,Fried,"paina, balanc, fulltan, email, sbreath","limimpar, limhwrk, fulltan, email, sbreath",3,0.939,0.413,0.439
+ELSA,Rockwood,"hepaa, breths, hepain, scqola, scypa","heactb, hepaa, scqolo, hebal, hekne",1,0.896,0.742,0.773
+ELSA,Fried,"psagf, nurse_mmrrfti, nurse_mmrrtti, scqola, scypa","heaid96, nurse_mmrrfti, hehelf, psagf, scqolh",2,0.77,0.479,0.516
+MHAS,Rockwood,"jog, joga, paina, hltc, swell","joga, jog, paina, fatigue, hltc",4,0.973,0.642,0.648
+MHAS,Fried,"joga, jog, paina, hltc, swell","joga, push, pusha, bath, jog",2,0.917,0.447,0.537
+CLHLS,Rockwood,"g11, g12, d11b, g1, f340","g11, g12, d11b, g1, f340",5,0.952,0.759,0.763

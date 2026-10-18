@@ -111,7 +111,10 @@ SHARE,Rockwood,2,sphus,Self-perceived health - us version,derived
 SHARE,Rockwood,2,sphus2,Sphus-less than very good health,derived
 SHARE,Rockwood,2,hc005d1,"Consultation: specialist for heart disease, pulmonary, gastroenterology, diabete",follow-up of a constituent item
 SHARE,Rockwood,2,hc005d6,Consultation: rheumatologist or physiatrist,follow-up of a constituent item
-SHARE,Rockwood,2,hc032d3,Received home care: meals-on-wheels,follow-up of a constituent item
+SHARE,Rockwood,2,hc032d1,Received home care: nursing or personal care,derived
+SHARE,Rockwood,2,hc032d2,Received home care: domestic tasks,derived
+SHARE,Rockwood,2,hc032d3,Received home care: meals-on-wheels,derived
+SHARE,Rockwood,2,hc032dno,Received home care: none of these,derived
 SHARE,Rockwood,2,hc038_,Received care from private providers,derived
 SHARE,Rockwood,2,hc039d1,Received care: surgery,derived
 SHARE,Rockwood,2,hc039d2,Received care: care from general practitioner,derived
@@ -127,6 +130,7 @@ SHARE,Rockwood,2,hc039d11,Received care: paid home help,derived
 SHARE,Rockwood,2,hc039dot,Received care: other,derived
 SHARE,Rockwood,2,hc063_,Who answered the questions in hc,admin
 SHARE,Rockwood,2,hh014_,Who answered the question in hh,admin
+SHARE,Rockwood,2,ho033_,Special features in accommodation,derived
 SHARE,Rockwood,2,ho041_,Who answered the questions in ho,admin
 SHARE,Rockwood,2,ho050_,Indoor bath or shower,follow-up of a constituent item
 SHARE,Rockwood,2,mh002_,Sad or depressed last month,constituent
@@ -381,6 +385,7 @@ SHARE,Rockwood,4,sphus2,Sphus-less than very good health,derived
 SHARE,Rockwood,4,hc005d1,"Consultation: specialist for heart disease, pulmonary, gastroenterology, diabete",follow-up of a constituent item
 SHARE,Rockwood,4,hc005d6,Consultation: rheumatologist or physiatrist,follow-up of a constituent item
 SHARE,Rockwood,4,hh014_,Who answered the question in hh,admin
+SHARE,Rockwood,4,ho033_,Special features in accommodation,derived
 SHARE,Rockwood,4,ho041_,Who answered the questions in ho,admin
 SHARE,Rockwood,4,mh002_,Sad or depressed last month,constituent
 SHARE,Rockwood,4,mh003_,Hopes for the future,constituent
@@ -644,6 +649,7 @@ SHARE,Rockwood,5,hc127d2,Received professional services: help with domestic task
 SHARE,Rockwood,5,hc127d3,Received professional services: meals-on-wheels,follow-up of a constituent item
 SHARE,Rockwood,5,hc127d4,Received professional services: help with other activies,derived
 SHARE,Rockwood,5,hh014_,Who answered the question in hh,admin
+SHARE,Rockwood,5,ho033_,Special features in accommodation,derived
 SHARE,Rockwood,5,ho041_,Who answered the questions in ho,admin
 SHARE,Rockwood,5,mc012d3,Disease during childhood: asthma,follow-up of a constituent item
 SHARE,Rockwood,5,mc012d4,Disease during childhood: respiratory problems other than asthma,follow-up of a constituent item
@@ -920,8 +926,16 @@ SHARE,Rockwood,6,hc127d3,Received professional services: meals-on-wheels,follow-
 SHARE,Rockwood,6,hc127d4,Received professional services: help with other activies,derived
 SHARE,Rockwood,6,hh014_,Who answered the question in hh,admin
 SHARE,Rockwood,6,ho041_,Who answered the questions in ho,admin
+SHARE,Rockwood,6,ho633d1,Special features in accommodation: widened doors/corridors,derived
+SHARE,Rockwood,6,ho633d2,Special features in accommodation: ramps/street level entrance,derived
+SHARE,Rockwood,6,ho633d3,Special features in accommodation: hand rails,derived
+SHARE,Rockwood,6,ho633d4,Special features in accommodation: automatic/easy open doors,derived
 SHARE,Rockwood,6,ho633d5,Special features in accommodation: bathroom/toilet modifications,derived
+SHARE,Rockwood,6,ho633d6,Special features in accommodation: kitchen modifications,derived
 SHARE,Rockwood,6,ho633d7,Special features in accommodation: chair lifts/stair glides,derived
+SHARE,Rockwood,6,ho633d8,Special features in accommodation: alerting devices,derived
+SHARE,Rockwood,6,ho633dno,Special features in accommodation: none of these,derived
+SHARE,Rockwood,6,ho633dot,Special features in accommodation: other,derived
 SHARE,Rockwood,6,mh002_,Sad or depressed last month,constituent
 SHARE,Rockwood,6,mh003_,Hopes for the future,constituent
 SHARE,Rockwood,6,mh004_,Suicidal feelings or wish to be dead,constituent
@@ -1243,8 +1257,16 @@ SHARE,Rockwood,8,hc127d3,Received professional services: meals-on-wheels,follow-
 SHARE,Rockwood,8,hc127d4,Received professional services: help with other activies,derived
 SHARE,Rockwood,8,hh014_,Who answered the question in hh,admin
 SHARE,Rockwood,8,ho041_,Who answered the questions in ho,admin
+SHARE,Rockwood,8,ho633d1,Special features in accommodation: widened doors/corridors,derived
+SHARE,Rockwood,8,ho633d2,Special features in accommodation: ramps/street level entrance,derived
+SHARE,Rockwood,8,ho633d3,Special features in accommodation: hand rails,derived
+SHARE,Rockwood,8,ho633d4,Special features in accommodation: automatic/easy open doors,derived
 SHARE,Rockwood,8,ho633d5,Special features in accommodation: bathroom/toilet modifications,derived
+SHARE,Rockwood,8,ho633d6,Special features in accommodation: kitchen modifications,derived
 SHARE,Rockwood,8,ho633d7,Special features in accommodation: chair lifts/stair glides,derived
+SHARE,Rockwood,8,ho633d8,Special features in accommodation: alerting devices,derived
+SHARE,Rockwood,8,ho633dno,Special features in accommodation: none of these,derived
+SHARE,Rockwood,8,ho633dot,Special features in accommodation: other,derived
 SHARE,Rockwood,8,mh002_,Sad or depressed last month,constituent
 SHARE,Rockwood,8,mh003_,Hopes for the future,constituent
 SHARE,Rockwood,8,mh004_,Suicidal feelings or wish to be dead,constituent
@@ -1544,8 +1566,16 @@ SHARE,Rockwood,9,hc127d3,Received professional services: meals-on-wheels,follow-
 SHARE,Rockwood,9,hc127d4,Received professional services: help with other activies,derived
 SHARE,Rockwood,9,hh014_,Who answered the question in hh,admin
 SHARE,Rockwood,9,ho041_,Who answered the questions in ho,admin
+SHARE,Rockwood,9,ho633d1,Special features in accommodation: widened doors/corridors,derived
+SHARE,Rockwood,9,ho633d2,Special features in accommodation: ramps/street level entrance,derived
+SHARE,Rockwood,9,ho633d3,Special features in accommodation: hand rails,derived
+SHARE,Rockwood,9,ho633d4,Special features in accommodation: automatic/easy open doors,derived
 SHARE,Rockwood,9,ho633d5,Special features in accommodation: bathroom/toilet modifications,derived
+SHARE,Rockwood,9,ho633d6,Special features in accommodation: kitchen modifications,derived
 SHARE,Rockwood,9,ho633d7,Special features in accommodation: chair lifts/stair glides,derived
+SHARE,Rockwood,9,ho633d8,Special features in accommodation: alerting devices,derived
+SHARE,Rockwood,9,ho633dno,Special features in accommodation: none of these,derived
+SHARE,Rockwood,9,ho633dot,Special features in accommodation: other,derived
 SHARE,Rockwood,9,mh002_,Sad or depressed last month,constituent
 SHARE,Rockwood,9,mh003_,Hopes for the future,constituent
 SHARE,Rockwood,9,mh004_,Suicidal feelings or wish to be dead,constituent
@@ -1837,6 +1867,7 @@ SHARE,Fried,1,eurodcat,EURO-D caseness,derived
 SHARE,Fried,1,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,1,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,1,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,1,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,1,wspeed,Walking speed,derived
 SHARE,Fried,1,wspeed2,Walking speed: cut-off point,derived
 SHARE,Fried,1,isced1997_iv,Interviewer: ISCED-97 coding of education,admin
@@ -1902,7 +1933,6 @@ SHARE,Fried,1,ws013_,Time of second walking speed test,constituent
 SHARE,Fried,1,ws014_,Did the respondent have comment on pain,constituent
 SHARE,Fried,1,ws015_,Record type of floor surface,admin
 SHARE,Fried,1,ws017_,Type of aid used during test,constituent
-SHARE,Fried,1,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.90)
 SHARE,Fried,2,country,Country identifier,admin
 SHARE,Fried,2,language,Language of questionnaire,admin
 SHARE,Fried,2,ac002d5,"Activities last month: gone to sport, social or other kind of club",follow-up of a constituent item
@@ -2020,6 +2050,7 @@ SHARE,Fried,2,eurodcat,EURO-D caseness,derived
 SHARE,Fried,2,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,2,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,2,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,2,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,2,wspeed,Walking speed,derived
 SHARE,Fried,2,wspeed2,Walking speed: cut-off point,derived
 SHARE,Fried,2,hc063_,Who answered the questions in hc,admin
@@ -2065,7 +2096,6 @@ SHARE,Fried,2,ws013_,Time of second walking speed test,constituent
 SHARE,Fried,2,ws014_,Did the respondent have comment on pain,constituent
 SHARE,Fried,2,ws015_,Record type of floor surface,admin
 SHARE,Fried,2,ws017_,Type of aid used during test,constituent
-SHARE,Fried,2,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.94)
 SHARE,Fried,4,country,Country identifier,admin
 SHARE,Fried,4,language,Language of questionnaire,admin
 SHARE,Fried,4,ac023_,Feel full of energy,follow-up of a constituent item
@@ -2160,6 +2190,7 @@ SHARE,Fried,4,eurodcat,EURO-D caseness,derived
 SHARE,Fried,4,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,4,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,4,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,4,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,4,hh014_,Who answered the question in hh,admin
 SHARE,Fried,4,ho041_,Who answered the questions in ho,admin
 SHARE,Fried,4,mh002_,Sad or depressed last month,derived
@@ -2184,7 +2215,6 @@ SHARE,Fried,4,ph049d2,Difficulties: walking across a room,follow-up of a constit
 SHARE,Fried,4,ph054_,Who answered the questions in ph,admin
 SHARE,Fried,4,sp015d21,Looked after child of deceased child,admin (death / future information)
 SHARE,Fried,4,sp022_,Who answered the questions in sp,admin
-SHARE,Fried,4,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.96)
 SHARE,Fried,5,country,Country identifier,admin
 SHARE,Fried,5,language,Language of questionnaire,admin
 SHARE,Fried,5,ac023_,Feel full of energy,follow-up of a constituent item
@@ -2296,6 +2326,7 @@ SHARE,Fried,5,eurodcat,EURO-D caseness,derived
 SHARE,Fried,5,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,5,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,5,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,5,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,5,hh014_,Who answered the question in hh,admin
 SHARE,Fried,5,ho041_,Who answered the questions in ho,admin
 SHARE,Fried,5,mh002_,Sad or depressed last month,derived
@@ -2319,7 +2350,6 @@ SHARE,Fried,5,ph089d4,Bothered by frailty: fatigue,derived
 SHARE,Fried,5,ph089dno,Bothered by frailty: none,derived
 SHARE,Fried,5,sp015d21,Looked after child of deceased child,admin (death / future information)
 SHARE,Fried,5,sp022_,Who answered the questions in sp,admin
-SHARE,Fried,5,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.95)
 SHARE,Fried,6,country,Country identifier,admin
 SHARE,Fried,6,language,Language of questionnaire,admin
 SHARE,Fried,6,ac011_,Intro non-proxy section,admin
@@ -2420,6 +2450,7 @@ SHARE,Fried,6,eurodcat,EURO-D caseness,derived
 SHARE,Fried,6,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,6,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,6,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,6,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,6,hh014_,Who answered the question in hh,admin
 SHARE,Fried,6,ho041_,Who answered the questions in ho,admin
 SHARE,Fried,6,mh002_,Sad or depressed last month,derived
@@ -2447,7 +2478,6 @@ SHARE,Fried,6,ph089d4,Bothered by frailty: fatigue,derived
 SHARE,Fried,6,ph089dno,Bothered by frailty: none,derived
 SHARE,Fried,6,sp015d21,Looked after child of deceased child,admin (death / future information)
 SHARE,Fried,6,sp022_,Who answered the questions in sp,admin
-SHARE,Fried,6,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.93)
 SHARE,Fried,7,country,Country identifier,admin
 SHARE,Fried,7,language,Language of questionnaire,admin
 SHARE,Fried,7,ac023_,Feel full of energy,follow-up of a constituent item
@@ -2511,6 +2541,7 @@ SHARE,Fried,7,eurodcat,EURO-D caseness,derived
 SHARE,Fried,7,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,7,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,7,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,7,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,7,hh014_,Who answered the question in hh,admin
 SHARE,Fried,7,ho041_,Who answered the questions in ho,admin
 SHARE,Fried,7,mh002_,Sad or depressed last month,derived
@@ -2535,7 +2566,6 @@ SHARE,Fried,7,ph089d4,Bothered by frailty: fatigue,derived
 SHARE,Fried,7,ph089dno,Bothered by frailty: none,derived
 SHARE,Fried,7,sp015d21,Looked after child of deceased child,admin (death / future information)
 SHARE,Fried,7,sp022_,Who answered the questions in sp,admin
-SHARE,Fried,7,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.95)
 SHARE,Fried,8,country,Country identifier,admin
 SHARE,Fried,8,language,Language of questionnaire,admin
 SHARE,Fried,8,ac023_,Feel full of energy,follow-up of a constituent item
@@ -2661,6 +2691,7 @@ SHARE,Fried,8,eurodcat,EURO-D caseness,derived
 SHARE,Fried,8,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,8,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,8,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,8,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,8,hc063_,Who answered the questions in hc,admin
 SHARE,Fried,8,hh014_,Who answered the question in hh,admin
 SHARE,Fried,8,ho041_,Who answered the questions in ho,admin
@@ -2692,7 +2723,6 @@ SHARE,Fried,8,sr004d4,Negative Shock: Retired earlier than expected,follow-up of
 SHARE,Fried,8,sr004d9,Negative Shock: Death in the family,admin (death / future information)
 SHARE,Fried,8,sr013_,Who answered the questions sr,admin
 SHARE,Fried,8,te060_,Who answered the questions in te,admin
-SHARE,Fried,8,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.93)
 SHARE,Fried,9,country,Country identifier,admin
 SHARE,Fried,9,language,Language of questionnaire,admin
 SHARE,Fried,9,ac023_,Feel full of energy,follow-up of a constituent item
@@ -2789,6 +2819,7 @@ SHARE,Fried,9,maxgrip,Max. of grip strength measure,derived
 SHARE,Fried,9,mobilit2,"1+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,9,mobilit3,"3+ mobility, arm function and fine motor limitations",derived
 SHARE,Fried,9,mobility,"Mobility, arm function and fine motor limitations",derived
+SHARE,Fried,9,phactiv,Physical inactivity,follow-up of a constituent item
 SHARE,Fried,9,hc063_,Who answered the questions in hc,admin
 SHARE,Fried,9,hh014_,Who answered the question in hh,admin
 SHARE,Fried,9,ho041_,Who answered the questions in ho,admin
@@ -2818,7 +2849,6 @@ SHARE,Fried,9,ph095_,How much loss of weight (in kg),follow-up of a constituent 
 SHARE,Fried,9,sp015d21,Looked after child of deceased child,admin (death / future information)
 SHARE,Fried,9,sp022_,Who answered the questions in sp,admin
 SHARE,Fried,9,te060_,Who answered the questions in te,admin
-SHARE,Fried,9,phactiv,Physical inactivity,near-copy of FQ5 (rho 0.94)
 HRS,Rockwood,4,r4iwmode,r interview mode,admin
 HRS,Rockwood,4,r4lang_h,r language of interview,admin
 HRS,Rockwood,4,rafcitizen,rafcitizen: flag wave r reported citizenship status,"admin (cross-wave summary, may use later waves)"
@@ -5907,6 +5937,7 @@ HRS,Fried,7,r7nagi8,r some difficulty-NAGI score 0-8,derived
 HRS,Fried,7,r7nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,7,r7nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,7,r7bmicat,r bmi categorization,derived
+HRS,Fried,7,r7obese,r whether obese,follow-up of a constituent item
 HRS,Fried,7,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,7,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,7,r7pardslw,whether r parent died since last wave,admin (death / future information)
@@ -5939,6 +5970,7 @@ HRS,Fried,7,r7mheight,r height measurement in meters,follow-up of a constituent 
 HRS,Fried,7,r7mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,7,r7mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,7,r7mbmicat,r mbmi categorization,derived
+HRS,Fried,7,r7mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,7,r7htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,7,r7wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,7,r7htflr,floor surface r's height measurement,admin
@@ -5985,6 +6017,7 @@ HRS,Fried,8,r8nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,8,r8nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,8,r8rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,8,r8bmicat,r bmi categorization,derived
+HRS,Fried,8,r8obese,r whether obese,follow-up of a constituent item
 HRS,Fried,8,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,8,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,8,r8pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6025,6 +6058,7 @@ HRS,Fried,8,r8mheight,r height measurement in meters,follow-up of a constituent 
 HRS,Fried,8,r8mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,8,r8mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,8,r8mbmicat,r mbmi categorization,derived
+HRS,Fried,8,r8mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,8,r8htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,8,r8wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,8,r8watcomp,r willing and able to complete waist measurement,admin
@@ -6059,9 +6093,7 @@ HRS,Fried,8,r8wtrust,r has a trust,admin
 HRS,Fried,8,r8mddep,MIDUS: how much time did r feel so depressed that nothing could cheer,derived
 HRS,Fried,8,r8mdeft,MIDUS: how much time did r feel that everything was an effort,follow-up of a constituent item
 HRS,Fried,8,r8mdngo,MIDUS: how much time did r feel they could not get going,follow-up of a constituent item
-HRS,Fried,8,r8obese,r whether obese,near-copy of BMI (rho 0.80)
 HRS,Fried,8,r8mwaist,r waist measurement (cm),near-copy of BMI (rho 0.77)
-HRS,Fried,8,r8mobese,r whether measured obese,near-copy of BMI (rho 0.77)
 HRS,Fried,9,r9nwtresp,"r person-level weight, physical measures sample",follow-up of a constituent item
 HRS,Fried,9,r9scproxy,r completed self-completion ques by proxy,admin
 HRS,Fried,9,r9iwmode,r interview mode,admin
@@ -6085,6 +6117,7 @@ HRS,Fried,9,r9nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,9,r9nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,9,r9rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,9,r9bmicat,r bmi categorization,derived
+HRS,Fried,9,r9obese,r whether obese,follow-up of a constituent item
 HRS,Fried,9,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,9,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,9,r9pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6125,6 +6158,7 @@ HRS,Fried,9,r9mheight,r height measurement in meters,follow-up of a constituent 
 HRS,Fried,9,r9mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,9,r9mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,9,r9mbmicat,r mbmi categorization,derived
+HRS,Fried,9,r9mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,9,r9htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,9,r9wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,9,r9watcomp,r willing and able to complete waist measurement,admin
@@ -6162,7 +6196,6 @@ HRS,Fried,9,r9cididepm,r CIDI depression stem symptom missings,derived
 HRS,Fried,9,r9cidimde3,r CIDI probable major depressive episode (3+ symp),derived
 HRS,Fried,9,r9cidimde5,r CIDI probable major depressive episode (5+ symp),derived
 HRS,Fried,9,r9frustrat,PANAS-X: degree r felt frustrated,admin
-HRS,Fried,9,r9obese,r whether obese,near-copy of BMI (rho 0.80)
 HRS,Fried,9,r9mwaist,r waist measurement (cm),near-copy of BMI (rho 0.79)
 HRS,Fried,10,r10scwtresp,"r person-level weight, leave behind sample",follow-up of a constituent item
 HRS,Fried,10,r10scproxy,r completed self-completion ques by proxy,admin
@@ -6185,6 +6218,7 @@ HRS,Fried,10,r10nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,10,r10nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,10,r10rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,10,r10bmicat,r bmi categorization,derived
+HRS,Fried,10,r10obese,r whether obese,follow-up of a constituent item
 HRS,Fried,10,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,10,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,10,r10pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6225,6 +6259,7 @@ HRS,Fried,10,r10mheight,r height measurement in meters,follow-up of a constituen
 HRS,Fried,10,r10mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,10,r10mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,10,r10mbmicat,r mbmi categorization,derived
+HRS,Fried,10,r10mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,10,r10htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,10,r10wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,10,r10watcomp,r willing and able to complete waist measurement,admin
@@ -6262,9 +6297,7 @@ HRS,Fried,10,r10cididepm,r CIDI depression stem symptom missings,derived
 HRS,Fried,10,r10cidimde3,r CIDI probable major depressive episode (3+ symp),derived
 HRS,Fried,10,r10cidimde5,r CIDI probable major depressive episode (5+ symp),derived
 HRS,Fried,10,r10frustrat,PANAS-X: degree r felt frustrated,admin
-HRS,Fried,10,r10obese,r whether obese,near-copy of BMI (rho 0.82)
 HRS,Fried,10,r10mwaist,r waist measurement (cm),near-copy of BMI (rho 0.77)
-HRS,Fried,10,r10mobese,r whether measured obese,near-copy of BMI (rho 0.77)
 HRS,Fried,11,r11nwtresp,"r person-level weight, physical measures sample",follow-up of a constituent item
 HRS,Fried,11,r11scwtresp,"r person-level weight, leave behind sample",follow-up of a constituent item
 HRS,Fried,11,r11scproxy,r completed self-completion ques by proxy,admin
@@ -6288,6 +6321,7 @@ HRS,Fried,11,r11nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,11,r11nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,11,r11rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,11,r11bmicat,r bmi categorization,derived
+HRS,Fried,11,r11obese,r whether obese,follow-up of a constituent item
 HRS,Fried,11,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,11,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,11,r11pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6328,6 +6362,7 @@ HRS,Fried,11,r11mheight,r height measurement in meters,follow-up of a constituen
 HRS,Fried,11,r11mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,11,r11mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,11,r11mbmicat,r mbmi categorization,derived
+HRS,Fried,11,r11mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,11,r11htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,11,r11wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,11,r11watcomp,r willing and able to complete waist measurement,admin
@@ -6394,9 +6429,7 @@ HRS,Fried,11,r11exrpai,Affective Experience Pain: r walking or exercising,follow
 HRS,Fried,11,r11exrneg2,r walked/exercised: Neg Affect Index 2-item,follow-up of a constituent item
 HRS,Fried,11,r11exrneg3,r walked/exercised: Neg Affect Index 3-item,follow-up of a constituent item
 HRS,Fried,11,r11exrneg3m,r walked/exercised: missings Neg Affect Index 3-item,follow-up of a constituent item
-HRS,Fried,11,r11obese,r whether obese,near-copy of BMI (rho 0.83)
 HRS,Fried,11,r11mwaist,r waist measurement (cm),near-copy of BMI (rho 0.80)
-HRS,Fried,11,r11mobese,r whether measured obese,near-copy of BMI (rho 0.76)
 HRS,Fried,12,r12nwtresp,"r person-level weight, physical measures sample",follow-up of a constituent item
 HRS,Fried,12,r12scwtresp,"r person-level weight, leave behind sample",follow-up of a constituent item
 HRS,Fried,12,r12scproxy,r completed self-completion ques by proxy,admin
@@ -6420,6 +6453,7 @@ HRS,Fried,12,r12nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,12,r12nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,12,r12rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,12,r12bmicat,r bmi categorization,derived
+HRS,Fried,12,r12obese,r whether obese,follow-up of a constituent item
 HRS,Fried,12,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,12,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,12,r12pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6451,6 +6485,7 @@ HRS,Fried,12,r12mheight,r height measurement in meters,follow-up of a constituen
 HRS,Fried,12,r12mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,12,r12mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,12,r12mbmicat,r mbmi categorization,derived
+HRS,Fried,12,r12mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,12,r12htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,12,r12wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,12,r12watcomp,r willing and able to complete waist measurement,admin
@@ -6510,9 +6545,7 @@ HRS,Fried,12,r12exrpai,Affective Experience Pain: r walking or exercising,follow
 HRS,Fried,12,r12exrneg2,r walked/exercised: Neg Affect Index 2-item,follow-up of a constituent item
 HRS,Fried,12,r12exrneg3,r walked/exercised: Neg Affect Index 3-item,follow-up of a constituent item
 HRS,Fried,12,r12exrneg3m,r walked/exercised: missings Neg Affect Index 3-item,follow-up of a constituent item
-HRS,Fried,12,r12obese,r whether obese,near-copy of BMI (rho 0.83)
 HRS,Fried,12,r12mwaist,r waist measurement (cm),near-copy of BMI (rho 0.80)
-HRS,Fried,12,r12mobese,r whether measured obese,near-copy of BMI (rho 0.77)
 HRS,Fried,13,r13nwtresp,"r person-level weight, physical measures sample",follow-up of a constituent item
 HRS,Fried,13,r13scwtresp,"r person-level weight, leave behind sample",follow-up of a constituent item
 HRS,Fried,13,r13scproxy,r completed self-completion ques by proxy,admin
@@ -6537,6 +6570,7 @@ HRS,Fried,13,r13nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,13,r13nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,13,r13rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,13,r13bmicat,r bmi categorization,derived
+HRS,Fried,13,r13obese,r whether obese,follow-up of a constituent item
 HRS,Fried,13,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,13,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,13,r13pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6568,6 +6602,7 @@ HRS,Fried,13,r13mheight,r height measurement in meters,follow-up of a constituen
 HRS,Fried,13,r13mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,13,r13mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,13,r13mbmicat,r mbmi categorization,derived
+HRS,Fried,13,r13mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,13,r13htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,13,r13wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,13,r13watcomp,r willing and able to complete waist measurement,admin
@@ -6628,9 +6663,7 @@ HRS,Fried,13,r13exrpai,Affective Experience Pain: r walking or exercising,follow
 HRS,Fried,13,r13exrneg2,r walked/exercised: Neg Affect Index 2-item,follow-up of a constituent item
 HRS,Fried,13,r13exrneg3,r walked/exercised: Neg Affect Index 3-item,follow-up of a constituent item
 HRS,Fried,13,r13exrneg3m,r walked/exercised: missings Neg Affect Index 3-item,follow-up of a constituent item
-HRS,Fried,13,r13obese,r whether obese,near-copy of BMI (rho 0.83)
 HRS,Fried,13,r13mwaist,r waist measurement (cm),near-copy of BMI (rho 0.79)
-HRS,Fried,13,r13mobese,r whether measured obese,near-copy of BMI (rho 0.77)
 HRS,Fried,14,r14nwtresp,"r person-level weight, physical measures sample",follow-up of a constituent item
 HRS,Fried,14,r14scwtresp,"r person-level weight, leave behind sample",follow-up of a constituent item
 HRS,Fried,14,r14scproxy,r completed self-completion ques by proxy,admin
@@ -6654,6 +6687,7 @@ HRS,Fried,14,r14nagi8m,r some difficulty-missings in 8-item NAGI score,derived
 HRS,Fried,14,r14nagi8a,r whether any diff-8 item NAGI,derived
 HRS,Fried,14,r14rxdepres,r takes meds for depression or anxiety,derived
 HRS,Fried,14,r14bmicat,r bmi categorization,derived
+HRS,Fried,14,r14obese,r whether obese,follow-up of a constituent item
 HRS,Fried,14,radadeducl,radadeducl:r father harmonized education level,admin (death / future information)
 HRS,Fried,14,radadoccup,radadoccup:r father's occupation at age 16,admin (death / future information)
 HRS,Fried,14,r14pardslw,whether r parent died since last wave,admin (death / future information)
@@ -6685,6 +6719,7 @@ HRS,Fried,14,r14mheight,r height measurement in meters,follow-up of a constituen
 HRS,Fried,14,r14mweight,r weight measurement in kilograms,follow-up of a constituent item
 HRS,Fried,14,r14mbmi,r measured Body Mass Index=kg/m2,derived
 HRS,Fried,14,r14mbmicat,r mbmi categorization,derived
+HRS,Fried,14,r14mobese,r whether measured obese,follow-up of a constituent item
 HRS,Fried,14,r14htcomp,r willing and able to complete height measurement,admin
 HRS,Fried,14,r14wtcomp,r willing and able to complete weight measurement,admin
 HRS,Fried,14,r14watcomp,r willing and able to complete waist measurement,admin
@@ -6745,9 +6780,7 @@ HRS,Fried,14,r14exrpai,Affective Experience Pain: r walking or exercising,follow
 HRS,Fried,14,r14exrneg2,r walked/exercised: Neg Affect Index 2-item,follow-up of a constituent item
 HRS,Fried,14,r14exrneg3,r walked/exercised: Neg Affect Index 3-item,follow-up of a constituent item
 HRS,Fried,14,r14exrneg3m,r walked/exercised: missings Neg Affect Index 3-item,follow-up of a constituent item
-HRS,Fried,14,r14obese,r whether obese,near-copy of BMI (rho 0.84)
 HRS,Fried,14,r14mwaist,r waist measurement (cm),near-copy of BMI (rho 0.81)
-HRS,Fried,14,r14mobese,r whether measured obese,near-copy of BMI (rho 0.77)
 ELSA,Rockwood,1,idahhw1,Analytical wave-specific household serial number,admin
 ELSA,Rockwood,1,idauniq,Unique individual serial number,admin
 ELSA,Rockwood,1,perid,Person ID (same as person number in household grid),admin
@@ -12351,6 +12384,7 @@ MHAS,Fried,1,r1fatigue,R Severe fatigue,follow-up of a constituent item
 MHAS,Fried,1,r1bmi,R Body Mass Index=kg/m2,constituent
 MHAS,Fried,1,r1height,R Height in meters,constituent
 MHAS,Fried,1,r1bmicat,r BMI categorization,derived
+MHAS,Fried,1,r1obese,R whether obese,follow-up of a constituent item
 MHAS,Fried,1,h1dchild,Number of deceased children R/P,admin (death / future information)
 MHAS,Fried,1,raevbrn,raevbrn: R Number of children ever born,"admin (cross-wave summary, may use later waves)"
 MHAS,Fried,1,r1decsib,R Number of deceased siblings,admin (death / future information)
@@ -12429,6 +12463,7 @@ MHAS,Fried,2,r2fatigue,R Severe fatigue,follow-up of a constituent item
 MHAS,Fried,2,r2bmi,R Body Mass Index=kg/m2,constituent
 MHAS,Fried,2,r2height,R Height in meters,constituent
 MHAS,Fried,2,r2bmicat,r BMI categorization,derived
+MHAS,Fried,2,r2obese,R whether obese,follow-up of a constituent item
 MHAS,Fried,2,h2dchild,Number of deceased children R/P,admin (death / future information)
 MHAS,Fried,2,raevbrn,raevbrn: R Number of children ever born,"admin (cross-wave summary, may use later waves)"
 MHAS,Fried,2,r2decsib,R Number of deceased siblings,admin (death / future information)
@@ -12511,6 +12546,7 @@ MHAS,Fried,5,r5fatigue,R Severe fatigue,follow-up of a constituent item
 MHAS,Fried,5,r5bmi,R Body Mass Index=kg/m2,constituent
 MHAS,Fried,5,r5height,R Height in meters,constituent
 MHAS,Fried,5,r5bmicat,r BMI categorization,derived
+MHAS,Fried,5,r5obese,R whether obese,follow-up of a constituent item
 MHAS,Fried,5,h5dchild,Number of deceased children R/P,admin (death / future information)
 MHAS,Fried,5,raevbrn,raevbrn: R Number of children ever born,"admin (cross-wave summary, may use later waves)"
 MHAS,Fried,5,r5decsib,R Number of deceased siblings,admin (death / future information)
@@ -12584,6 +12620,7 @@ MHAS,Fried,6,r6fatigue,R Severe fatigue,follow-up of a constituent item
 MHAS,Fried,6,r6bmi,R Body Mass Index=kg/m2,constituent
 MHAS,Fried,6,r6height,R Height in meters,constituent
 MHAS,Fried,6,r6bmicat,r BMI categorization,derived
+MHAS,Fried,6,r6obese,R whether obese,follow-up of a constituent item
 MHAS,Fried,6,h6dchild,Number of deceased children R/P,admin (death / future information)
 MHAS,Fried,6,raevbrn,raevbrn: R Number of children ever born,"admin (cross-wave summary, may use later waves)"
 MHAS,Fried,6,r6decsib,R Number of deceased siblings,admin (death / future information)

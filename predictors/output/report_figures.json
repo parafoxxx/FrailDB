@@ -3,7 +3,7 @@
   {
    "theme": "Age and background",
    "dataset": "SHARE · Rockwood",
-   "pct": 0.8
+   "pct": 0.0
   },
   {
    "theme": "Age and background",
@@ -33,7 +33,7 @@
   {
    "theme": "Age and background",
    "dataset": "HRS · Fried",
-   "pct": 2.0
+   "pct": 2.1
   },
   {
    "theme": "Age and background",
@@ -43,12 +43,12 @@
   {
    "theme": "Age and background",
    "dataset": "MHAS · Fried",
-   "pct": 0.8
+   "pct": 1.0
   },
   {
    "theme": "Energy and fatigue",
    "dataset": "SHARE · Rockwood",
-   "pct": 6.3
+   "pct": 6.0
   },
   {
    "theme": "Energy and fatigue",
@@ -78,7 +78,7 @@
   {
    "theme": "Energy and fatigue",
    "dataset": "HRS · Fried",
-   "pct": 1.6
+   "pct": 1.5
   },
   {
    "theme": "Energy and fatigue",
@@ -123,7 +123,7 @@
   {
    "theme": "Function and limitation",
    "dataset": "HRS · Fried",
-   "pct": 18.3
+   "pct": 18.5
   },
   {
    "theme": "Function and limitation",
@@ -133,12 +133,12 @@
   {
    "theme": "Function and limitation",
    "dataset": "MHAS · Fried",
-   "pct": 44.5
+   "pct": 43.8
   },
   {
    "theme": "Medication and health care",
    "dataset": "SHARE · Rockwood",
-   "pct": 8.6
+   "pct": 8.9
   },
   {
    "theme": "Medication and health care",
@@ -168,7 +168,7 @@
   {
    "theme": "Medication and health care",
    "dataset": "HRS · Fried",
-   "pct": 2.0
+   "pct": 2.2
   },
   {
    "theme": "Medication and health care",
@@ -258,7 +258,7 @@
   {
    "theme": "Other",
    "dataset": "HRS · Fried",
-   "pct": 2.1
+   "pct": 2.3
   },
   {
    "theme": "Other",
@@ -268,12 +268,12 @@
   {
    "theme": "Other",
    "dataset": "MHAS · Fried",
-   "pct": 2.4
+   "pct": 2.5
   },
   {
    "theme": "Pain",
    "dataset": "SHARE · Rockwood",
-   "pct": 11.7
+   "pct": 11.6
   },
   {
    "theme": "Pain",
@@ -303,7 +303,7 @@
   {
    "theme": "Pain",
    "dataset": "HRS · Fried",
-   "pct": 3.8
+   "pct": 3.7
   },
   {
    "theme": "Pain",
@@ -313,12 +313,12 @@
   {
    "theme": "Pain",
    "dataset": "MHAS · Fried",
-   "pct": 3.0
+   "pct": 2.0
   },
   {
    "theme": "Performance tests",
    "dataset": "SHARE · Rockwood",
-   "pct": 1.7
+   "pct": 1.9
   },
   {
    "theme": "Performance tests",
@@ -363,7 +363,7 @@
   {
    "theme": "Physical activity",
    "dataset": "SHARE · Rockwood",
-   "pct": 5.7
+   "pct": 5.9
   },
   {
    "theme": "Physical activity",
@@ -393,7 +393,7 @@
   {
    "theme": "Physical activity",
    "dataset": "HRS · Fried",
-   "pct": 2.8
+   "pct": 2.9
   },
   {
    "theme": "Physical activity",
@@ -408,7 +408,7 @@
   {
    "theme": "Self-rated health and outlook",
    "dataset": "SHARE · Rockwood",
-   "pct": 5.2
+   "pct": 6.3
   },
   {
    "theme": "Self-rated health and outlook",
@@ -448,12 +448,12 @@
   {
    "theme": "Self-rated health and outlook",
    "dataset": "MHAS · Fried",
-   "pct": 3.8
+   "pct": 3.3
   },
   {
    "theme": "Symptoms and conditions",
    "dataset": "SHARE · Rockwood",
-   "pct": 9.0
+   "pct": 9.4
   },
   {
    "theme": "Symptoms and conditions",
@@ -483,7 +483,7 @@
   {
    "theme": "Symptoms and conditions",
    "dataset": "HRS · Fried",
-   "pct": 5.3
+   "pct": 4.5
   },
   {
    "theme": "Symptoms and conditions",
@@ -493,12 +493,12 @@
   {
    "theme": "Symptoms and conditions",
    "dataset": "MHAS · Fried",
-   "pct": 0.8
+   "pct": 0.7
   },
   {
    "theme": "Work, money and social life",
    "dataset": "SHARE · Rockwood",
-   "pct": 1.3
+   "pct": 1.2
   },
   {
    "theme": "Work, money and social life",
@@ -528,7 +528,7 @@
   {
    "theme": "Work, money and social life",
    "dataset": "HRS · Fried",
-   "pct": 5.0
+   "pct": 4.9
   },
   {
    "theme": "Work, money and social life",
@@ -538,28 +538,28 @@
   {
    "theme": "Work, money and social life",
    "dataset": "MHAS · Fried",
-   "pct": 1.5
+   "pct": 2.6
   }
  ],
  "pipeline": {
   "candidates": 62339,
-  "kept": 48206,
+  "kept": 48169,
   "models": 59,
-  "excluded": 14133,
+  "excluded": 14170,
   "by_layer": {
-   "derived": 4733,
+   "derived": 4764,
    "admin": 4441,
-   "follow-up": 2622,
+   "follow-up": 2649,
    "constituent": 2282,
-   "near-copy": 55
+   "near-copy": 34
   },
   "r2_fi": [
    0.597,
    0.82
   ],
   "r2_fried": [
-   0.392,
-   0.575
+   0.384,
+   0.574
   ]
  },
  "stability": [
