@@ -1,0 +1,595 @@
+15:18:34 MHAS Rockwood w1: n=9,310 vars=391 excluded=174 kept=217
+15:18:35    R²=0.638  top: r1jog, r1joga, r1fatigue, r1paina, r1hltc  (7s)
+15:18:41 MHAS Rockwood w2: n=9,200 vars=427 excluded=177 kept=250
+15:18:44    R²=0.622  top: r2jog, r2paina, r2joga, r2hltc, r2fatigue  (8s)
+15:18:50 MHAS Rockwood w4: n=10,930 vars=458 excluded=217 kept=241
+15:18:53    R²=0.671  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (9s)
+15:18:59 MHAS Rockwood w5: n=13,167 vars=461 excluded=227 kept=234
+15:19:01    R²=0.676  top: r5joga, r5jog, r5paina, r5fatigue, r5swell  (9s)
+15:19:07 MHAS Fried w1: n=9,214 vars=400 excluded=66 kept=334
+15:19:08    R²=0.505  top: r1jog, r1pusha, r1bath, r1push, r1joga  (7s)
+15:19:13 MHAS Fried w2: n=7,946 vars=441 excluded=69 kept=372
+15:19:15    R²=0.543  top: r2bath, r2pusha, r2jog, r2joga, r2push  (7s)
+15:19:22 MHAS Fried w5: n=13,180 vars=470 excluded=63 kept=407
+15:19:24    R²=0.536  top: r5pusha, r5joga, r5jog, r5push, r5bath  (9s)
+15:19:30 MHAS Fried w6: n=12,750 vars=471 excluded=62 kept=409
+15:19:32    R²=0.576  top: r6pusha, r6push, r6bede, r6joga, r6climsa  (9s)
+15:19:33 all done
+15:36:44 cached MHAS Rockwood 1
+15:36:44 cached MHAS Rockwood 2
+15:36:44 cached MHAS Rockwood 4
+15:36:44 cached MHAS Rockwood 5
+15:36:44 cached MHAS Fried 1
+15:36:44 cached MHAS Fried 2
+15:36:44 cached MHAS Fried 5
+15:36:44 cached MHAS Fried 6
+15:36:44 all done
+15:37:27 ELSA Rockwood w1: n=11,004 vars=847 excluded=122 kept=725
+15:37:38    R²=0.954  top: heada04, heada03, heada02, heada05, hehpa  (50s)
+15:38:14 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=331 kept=1,502
+15:38:22    R²=0.841  top: cvd7dbts, hehphsp, breths, hehpsch, totalpsc  (44s)
+15:39:25 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=387 kept=1,734
+15:39:38    R²=0.843  top: breths, heaid96, hehphso, CVD7DIEBP, hehphsp  (75s)
+15:41:39 cached MHAS Rockwood 1
+15:41:39 cached MHAS Rockwood 2
+15:41:39 cached MHAS Rockwood 4
+15:41:39 cached MHAS Rockwood 5
+15:41:39 cached MHAS Fried 1
+15:41:39 cached MHAS Fried 2
+15:41:39 cached MHAS Fried 5
+15:41:39 cached MHAS Fried 6
+15:41:39 all done
+15:42:00 ELSA Rockwood w1: n=11,004 vars=847 excluded=149 kept=698
+15:42:04    R²=0.759  top: scqolh, heactb, hepaa, heana, scqolo  (22s)
+15:42:29 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=410 kept=1,423
+15:42:39    R²=0.758  top: breths, hepaa, heactb, hepain, hecdfca  (35s)
+15:43:26 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=454 kept=1,667
+15:43:38    R²=0.773  top: breths, hepag, nurse_mmrrfti, hepain, psagf  (59s)
+15:44:09 ELSA Rockwood w5: n=9,257 vars=1,756 excluded=447 kept=1,309
+15:44:20    R²=0.782  top: breths, ffheaid96, hepag, heactb, hepaa  (42s)
+15:45:02 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=511 kept=1,649
+15:45:14    R²=0.811  top: CaTkH, CaHpC, CaTkL, CaFnd1, HeActb  (54s)
+15:45:43 ELSA Rockwood w7: n=8,616 vars=1,938 excluded=491 kept=1,447
+15:45:53    R²=0.822  top: CaTkH, CaTkL, CaHpF, HePaa, HeActb  (39s)
+15:46:29 cached MHAS Rockwood 1
+15:46:29 cached MHAS Rockwood 2
+15:46:29 cached MHAS Rockwood 4
+15:46:29 cached MHAS Rockwood 5
+15:46:29 cached MHAS Fried 1
+15:46:29 cached MHAS Fried 2
+15:46:29 cached MHAS Fried 5
+15:46:29 cached MHAS Fried 6
+15:46:29 all done
+15:46:54 ELSA Rockwood w1: n=11,004 vars=847 excluded=181 kept=666
+15:46:58    R²=0.762  top: scqolh, hepain, hepaa, heactb, scqolo  (26s)
+15:47:26 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=410 kept=1,423
+15:47:34    R²=0.758  top: breths, hepaa, heactb, hepain, hecdfca  (36s)
+15:48:16 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=457 kept=1,664
+15:48:26    R²=0.768  top: breths, hepaa, hepag, heactb, psagf  (52s)
+15:48:55 ELSA Rockwood w5: n=9,257 vars=1,756 excluded=462 kept=1,294
+15:49:04    R²=0.778  top: breths, HeCda, hepaa, scfeac, heactb  (37s)
+15:49:37 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=597 kept=1,563
+15:49:46    R²=0.776  top: CaRA, HeActb, HePaa, HePag, scypa  (42s)
+15:50:14 ELSA Rockwood w7: n=8,616 vars=1,938 excluded=575 kept=1,363
+15:50:21    R²=0.785  top: CaRA, HePaa, HeActb, HePain, scypa  (35s)
+15:50:41 ELSA Rockwood w8: n=7,657 vars=1,834 excluded=558 kept=1,276
+15:50:48    R²=0.803  top: cara, hepaa, heactb, cahrs1gp, hecach  (27s)
+15:51:13 ELSA Rockwood w9: n=7,832 vars=1,887 excluded=531 kept=1,356
+15:51:19    R²=0.797  top: xcaany_nonarch, cara, heactb, hepaa, cahrs1gp  (31s)
+15:51:50 ELSA Rockwood w10: n=6,827 vars=3,552 excluded=526 kept=3,026
+15:51:59    R²=0.796  top: cara, cahrs1gp, hepaa, scypa, hepain  (40s)
+15:52:48 ELSA Fried w4: n=5,183 vars=1,937 excluded=190 kept=1,747
+15:52:53    R²=0.532  top: nurse_mmrrfti, breths, heaid96, psagf, hehelf  (53s)
+15:53:23 ELSA Fried w6: n=5,230 vars=1,921 excluded=175 kept=1,746
+15:53:27    R²=0.461  top: CaTNo, heaid96, Hehelf, nurse_mmrrfti, headl96  (35s)
+15:53:49 ELSA Fried w9: n=1,681 vars=1,540 excluded=125 kept=1,415
+15:53:51    R²=0.552  top: heaid96, scqolh, cafnd1, psagf, wpactlo  (24s)
+15:53:51 all done
+15:54:06 HRS Rockwood w4: n=13,702 vars=247 excluded=139 kept=108
+15:54:08    R²=0.701  top: r4limimpar, r4jointr, r4paina, r4painlv, r4jrsleft  (15s)
+15:54:22 HRS Rockwood w5: n=12,488 vars=259 excluded=151 kept=108
+15:54:24    R²=0.707  top: r5limimpar, r5jointr, r5paina, r5swell, r5painfr  (16s)
+15:54:39 HRS Rockwood w6: n=11,679 vars=269 excluded=154 kept=115
+15:54:41    R²=0.717  top: r6limimpar, r6jointr, r6paina, r6drive, r6rested  (17s)
+15:55:28 MHAS Rockwood w1: n=9,310 vars=391 excluded=189 kept=202
+15:55:30    R²=0.631  top: r1jog, r1joga, r1fatigue, r1hltc, r1paina  (8s)
+15:55:37 MHAS Rockwood w2: n=9,200 vars=427 excluded=192 kept=235
+15:55:40    R²=0.618  top: r2jog, r2joga, r2paina, r2hltc, r2fatigue  (10s)
+15:55:47 MHAS Rockwood w4: n=10,930 vars=458 excluded=233 kept=225
+15:55:51    R²=0.668  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (11s)
+15:55:59 MHAS Rockwood w5: n=13,167 vars=461 excluded=243 kept=218
+15:56:03    R²=0.681  top: r5joga, r5jog, r5paina, r5swell, r5lbrf_m  (12s)
+15:56:10 MHAS Fried w1: n=9,214 vars=400 excluded=80 kept=320
+15:56:12    R²=0.502  top: r1jog, r1pusha, r1bath, r1push, r1bed  (9s)
+15:56:19 MHAS Fried w2: n=7,946 vars=441 excluded=83 kept=358
+15:56:21    R²=0.544  top: r2jog, r2eat, r2push, r2bed, r2bath  (9s)
+15:56:29 MHAS Fried w5: n=13,180 vars=470 excluded=77 kept=393
+15:56:32    R²=0.536  top: r5joga, r5push, r5pusha, r5bed, r5jog  (11s)
+15:56:40 MHAS Fried w6: n=12,750 vars=471 excluded=76 kept=395
+15:56:42    R²=0.573  top: r6pusha, r6joga, r6climsa, r6push, r6eat  (10s)
+15:56:42 all done
+15:56:59 HRS Rockwood w4: n=13,702 vars=247 excluded=158 kept=89
+15:57:02    R²=0.590  top: r4paina, r4painlv, r4painfr, r4jrsleft, r4drive  (16s)
+15:57:13 HRS Rockwood w5: n=12,488 vars=259 excluded=170 kept=89
+15:57:15    R²=0.637  top: r5paina, r5breath, r5swell, r5fatigue, r5painlv  (13s)
+15:57:28 HRS Rockwood w6: n=11,679 vars=269 excluded=173 kept=96
+15:57:30    R²=0.622  top: r6paina, r6painlv, r6rested, r6drive, r6painfr  (15s)
+15:57:43 HRS Rockwood w7: n=13,356 vars=361 excluded=205 kept=156
+15:57:46    R²=0.661  top: r7paina, r7fatigue, r7swell, r7breath, r7drive  (16s)
+15:58:02 HRS Rockwood w8: n=13,191 vars=566 excluded=233 kept=333
+15:58:06    R²=0.660  top: r8paina, r8rxpain, r8painlv, r8drive, r8email  (20s)
+15:58:22 HRS Rockwood w9: n=12,527 vars=588 excluded=233 kept=355
+15:58:27    R²=0.719  top: r9paina, r9rxpain, r9breath, r9fatigue, r9drive  (20s)
+15:58:44 HRS Rockwood w10: n=17,026 vars=603 excluded=238 kept=365
+15:58:53    R²=0.708  top: r10paina, r10rxpain, r10painfr, r10email, r10rxhchol  (26s)
+15:59:10 HRS Rockwood w11: n=16,184 vars=729 excluded=264 kept=465
+15:59:19    R²=0.737  top: r11paina, r11rxpain, r11breath, r11swell, r11email  (26s)
+15:59:39 HRS Rockwood w12: n=15,219 vars=660 excluded=255 kept=405
+15:59:45    R²=0.709  top: r12paina, r12rxpain, r12email, r12painfr, r12jrsleft  (26s)
+16:00:04 HRS Rockwood w13: n=17,053 vars=687 excluded=268 kept=419
+16:00:12    R²=0.731  top: r13paina, r13painlv, r13rxpain, r13email, r13swell  (27s)
+16:00:29 HRS Rockwood w14: n=14,791 vars=674 excluded=272 kept=402
+16:00:34    R²=0.707  top: r14paina, r14jrsleft, r14painfr, r14rxpain, r14email  (22s)
+16:01:04 HRS Rockwood w15: n=13,069 vars=1,520 excluded=156 kept=1,364
+16:01:17    R²=0.857  top: RG026, RG002, RN175, RG097, RY096  (42s)
+16:01:43 HRS Rockwood w16: n=13,339 vars=1,548 excluded=170 kept=1,378
+16:01:53    R²=0.861  top: SG026, SG002, SN175, SG097, SY096  (36s)
+16:02:05 HRS Fried w7: n=2,514 vars=400 excluded=77 kept=323
+16:02:06    R²=0.392  top: r7limimpar, r7limhwrk, r7hometyp, r7rxhibp, r7rcaany  (13s)
+16:02:22 HRS Fried w8: n=6,761 vars=539 excluded=88 kept=451
+16:02:25    R²=0.450  top: r8limhwrk, r8limimpar, r8sbreath, r8balanc, r8mdn10  (18s)
+16:02:42 HRS Fried w9: n=6,108 vars=596 excluded=91 kept=505
+16:02:44    R²=0.465  top: r9limimpar, r9rcany, r9limhwrk, r9email, r9balanc  (19s)
+16:03:00 HRS Fried w10: n=5,688 vars=600 excluded=90 kept=510
+16:03:03    R²=0.442  top: r10limhwrk, r10limimpar, r10active, r10email, r10fulltan  (18s)
+16:03:20 HRS Fried w11: n=7,322 vars=748 excluded=122 kept=626
+16:03:23    R²=0.473  top: r11limimpar, r11rcany, r11limhwrk, r11fulltan, r11email  (21s)
+16:03:39 HRS Fried w12: n=6,996 vars=679 excluded=110 kept=569
+16:03:42    R²=0.441  top: r12limimpar, r12limhwrk, r12email, r12active, r12fulltan  (18s)
+16:03:58 HRS Fried w13: n=5,699 vars=689 excluded=111 kept=578
+16:04:00    R²=0.424  top: r13limimpar, r13limhwrk, r13fulltan, r13rcany, r13email  (18s)
+16:04:15 HRS Fried w14: n=6,306 vars=687 excluded=109 kept=578
+16:04:19    R²=0.462  top: r14limimpar, r14limhwrk, r14rcany, r14email, r14paina  (19s)
+16:04:19 all done
+== SHARE + CLHLS with final rule set
+16:06:01 SHARE Rockwood w2: n=34,841 vars=1,070 excluded=197 kept=873
+16:06:21    R²=0.854  top: ph049dno, ph048dno, ph050_, symptoms2w2, ph006dno  (53s)
+16:07:35 SHARE Rockwood w4: n=54,662 vars=1,512 excluded=180 kept=1,332
+16:08:06    R²=0.839  top: ph048dno, ph049dno, symptomsw4, ph006dno, sp020_  (105s)
+16:09:25 SHARE Rockwood w5: n=62,461 vars=929 excluded=193 kept=736
+16:10:01    R²=0.830  top: ph048dno, ph049dno, ph006dno, ph004_, ac023_  (115s)
+16:11:23 SHARE Rockwood w6: n=63,530 vars=1,410 excluded=241 kept=1,169
+16:12:01    R²=0.825  top: ph048dno, ph049dno, ph050_, ph004_, ph006dno  (120s)
+16:13:31 SHARE Rockwood w8: n=51,167 vars=1,677 excluded=282 kept=1,395
+16:14:14    R²=0.821  top: ph048dno, ph049dno, ph050_, ph082_, ph004_  (133s)
+16:15:01 SHARE Rockwood w9: n=66,176 vars=1,499 excluded=274 kept=1,225
+16:15:43    R²=0.840  top: ph048dno, ph049dno, ph050_, ph082_, ph004_  (89s)
+16:16:12 SHARE Fried w1: n=26,268 vars=1,144 excluded=91 kept=1,053
+16:16:25    R²=0.570  top: ws001_, spheu2, ph048dno, ph048d4, mh010_  (41s)
+16:16:58 SHARE Fried w2: n=31,505 vars=1,067 excluded=89 kept=978
+16:17:13    R²=0.548  top: ph048d4, symptomsw2, sphus, ph049dno, ph049d12  (49s)
+== FINAL RUN, script sha256 d2696321f3541a5a, Sun Oct 18 16:20:36 IST 2026
+16:20:43 MHAS Rockwood w1: n=9,310 vars=391 excluded=189 kept=202
+16:20:44    R²=0.631  top: r1jog, r1joga, r1fatigue, r1hltc, r1paina  (7s)
+16:20:51 MHAS Rockwood w2: n=9,200 vars=427 excluded=192 kept=235
+16:20:53    R²=0.618  top: r2jog, r2joga, r2paina, r2hltc, r2fatigue  (9s)
+16:20:59 MHAS Rockwood w4: n=10,930 vars=458 excluded=233 kept=225
+16:21:01    R²=0.668  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (8s)
+16:21:08 MHAS Rockwood w5: n=13,167 vars=461 excluded=243 kept=218
+16:21:12    R²=0.681  top: r5joga, r5jog, r5paina, r5swell, r5lbrf_m  (10s)
+16:21:18 MHAS Fried w1: n=9,214 vars=400 excluded=80 kept=320
+16:21:20    R²=0.502  top: r1jog, r1pusha, r1bath, r1push, r1bed  (8s)
+16:21:26 MHAS Fried w2: n=7,946 vars=441 excluded=83 kept=358
+16:21:28    R²=0.544  top: r2jog, r2eat, r2push, r2bed, r2bath  (8s)
+16:21:34 MHAS Fried w5: n=13,180 vars=470 excluded=77 kept=393
+16:21:37    R²=0.536  top: r5joga, r5push, r5pusha, r5bed, r5jog  (9s)
+16:21:43 MHAS Fried w6: n=12,750 vars=471 excluded=76 kept=395
+16:21:45    R²=0.573  top: r6pusha, r6joga, r6climsa, r6push, r6eat  (8s)
+16:21:45 all done
+16:22:05 ELSA Rockwood w1: n=11,004 vars=847 excluded=186 kept=661
+16:22:09    R²=0.763  top: scqolh, hepaa, heactb, scqolo, hekne  (21s)
+16:22:30 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=427 kept=1,406
+16:22:35    R²=0.753  top: breths, hepaa, palevel, heactb, hepawkn  (26s)
+16:23:04 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=470 kept=1,651
+16:23:10    R²=0.769  top: breths, hepaa, hepag, heactb, nurse_mmrrfti  (35s)
+16:23:31 ELSA Rockwood w5: n=9,257 vars=1,756 excluded=472 kept=1,284
+16:23:39    R²=0.771  top: breths, heactb, HeCda, hepag, hepaa  (29s)
+16:24:05 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=613 kept=1,547
+16:24:13    R²=0.772  top: HeActb, HePag, CaFam, HePaa, scypa  (34s)
+16:24:35 ELSA Rockwood w7: n=8,616 vars=1,938 excluded=592 kept=1,346
+16:24:41    R²=0.771  top: HeActb, HePaa, CaFam, hepawba, scypa  (28s)
+16:25:00 ELSA Rockwood w8: n=7,657 vars=1,834 excluded=577 kept=1,257
+16:25:04    R²=0.799  top: cahrs1gp, hepaa, cahsa, heactb, hepac  (24s)
+16:25:23 ELSA Rockwood w9: n=7,832 vars=1,887 excluded=548 kept=1,339
+16:25:28    R²=0.788  top: xcaany_nonarch, cahrs1gp, heactb, hepaa, scypa  (23s)
+16:25:54 ELSA Rockwood w10: n=6,827 vars=3,552 excluded=580 kept=2,972
+16:26:00    R²=0.793  top: cahrs1gp, hepaa, scypa, hepain, heactb  (32s)
+16:26:27 ELSA Fried w4: n=5,183 vars=1,937 excluded=191 kept=1,746
+16:26:31    R²=0.529  top: nurse_mmrrfti, breths, headl96, psagf, nurse_mmrrtti  (31s)
+16:26:53 ELSA Fried w6: n=5,230 vars=1,921 excluded=178 kept=1,743
+16:26:57    R²=0.463  top: heaid96, CaTNo, nurse_mmrrfti, Hehelf, headl96  (26s)
+16:27:12 ELSA Fried w9: n=1,681 vars=1,540 excluded=126 kept=1,414
+16:27:15    R²=0.552  top: heaid96, scqolh, cafnd1, psagf, wpactlo  (18s)
+16:27:15 all done
+16:27:27 HRS Rockwood w4: n=13,702 vars=247 excluded=158 kept=89
+16:27:29    R²=0.590  top: r4paina, r4painlv, r4painfr, r4jrsleft, r4drive  (12s)
+16:27:38 HRS Rockwood w5: n=12,488 vars=259 excluded=170 kept=89
+16:27:40    R²=0.637  top: r5paina, r5breath, r5swell, r5fatigue, r5painlv  (11s)
+16:27:50 HRS Rockwood w6: n=11,679 vars=269 excluded=173 kept=96
+16:27:52    R²=0.622  top: r6paina, r6painlv, r6rested, r6drive, r6painfr  (12s)
+16:28:03 HRS Rockwood w7: n=13,356 vars=361 excluded=205 kept=156
+16:28:05    R²=0.661  top: r7paina, r7fatigue, r7swell, r7breath, r7drive  (13s)
+16:28:18 HRS Rockwood w8: n=13,191 vars=566 excluded=238 kept=328
+16:28:23    R²=0.658  top: r8paina, r8rxpain, r8painfr, r8painlv, r8rxhchol  (18s)
+16:28:36 HRS Rockwood w9: n=12,527 vars=588 excluded=237 kept=351
+16:28:41    R²=0.714  top: r9paina, r9rxpain, r9breath, r9fatigue, r9email  (18s)
+16:28:55 HRS Rockwood w10: n=17,026 vars=603 excluded=242 kept=361
+16:29:00    R²=0.710  top: r10rxpain, r10painfr, r10paina, r10painlv, r10email  (19s)
+16:29:15 HRS Rockwood w11: n=16,184 vars=729 excluded=269 kept=460
+16:29:21    R²=0.736  top: r11paina, r11rxpain, r11breath, r11email, r11swell  (21s)
+16:29:35 HRS Rockwood w12: n=15,219 vars=660 excluded=260 kept=400
+16:29:40    R²=0.712  top: r12paina, r12rxpain, r12jrsleft, r12email, r12painfr  (19s)
+16:29:55 HRS Rockwood w13: n=17,053 vars=687 excluded=273 kept=414
+16:30:00    R²=0.726  top: r13paina, r13rxpain, r13email, r13swell, r13jdealpplb  (19s)
+16:30:13 HRS Rockwood w14: n=14,791 vars=674 excluded=277 kept=397
+16:30:17    R²=0.700  top: r14paina, r14rxpain, r14jrsleft, r14painfr, r14painlv  (17s)
+16:30:40 HRS Rockwood w15: n=13,069 vars=1,520 excluded=196 kept=1,324
+16:30:46    R²=0.825  top: RG002, RG097, RN175, RM036, RC105  (29s)
+16:31:07 HRS Rockwood w16: n=13,339 vars=1,548 excluded=212 kept=1,336
+16:31:14    R²=0.818  top: SG002, SG097, SN175, SC105, SN361  (27s)
+16:31:24 HRS Fried w7: n=2,514 vars=400 excluded=77 kept=323
+16:31:25    R²=0.392  top: r7limimpar, r7limhwrk, r7hometyp, r7rxhibp, r7rcaany  (11s)
+16:31:37 HRS Fried w8: n=6,761 vars=539 excluded=89 kept=450
+16:31:39    R²=0.431  top: r8limimpar, r8sbreath, r8balanc, r8limhwrk, r8fulltan  (14s)
+16:31:53 HRS Fried w9: n=6,108 vars=596 excluded=92 kept=504
+16:31:54    R²=0.455  top: r9limimpar, r9limhwrk, r9email, r9balanc, r9breath  (15s)
+16:32:07 HRS Fried w10: n=5,688 vars=600 excluded=91 kept=509
+16:32:09    R²=0.442  top: r10limimpar, r10limhwrk, r10active, r10fulltan, r10email  (15s)
+16:32:23 HRS Fried w11: n=7,322 vars=748 excluded=123 kept=625
+16:32:25    R²=0.474  top: r11limimpar, r11email, r11fulltan, r11breath, r11rcaany  (17s)
+16:32:38 HRS Fried w12: n=6,996 vars=679 excluded=111 kept=568
+16:32:40    R²=0.440  top: r12limimpar, r12email, r12active, r12fulltan, r12rcaany  (15s)
+16:32:53 HRS Fried w13: n=5,699 vars=689 excluded=112 kept=577
+16:32:55    R²=0.424  top: r13limimpar, r13limhwrk, r13rcany, r13fulltan, r13sbreath  (15s)
+16:33:08 HRS Fried w14: n=6,306 vars=687 excluded=110 kept=577
+16:33:10    R²=0.459  top: r14limhwrk, r14limimpar, r14rcany, r14email, r14paina  (15s)
+16:33:10 all done
+16:33:40 SHARE Rockwood w2: n=34,841 vars=1,070 excluded=227 kept=843
+16:33:57    R²=0.766  top: symptomsw2, symptoms2w2, cs004_, phactiv, ph011dno  (44s)
+16:34:56 SHARE Rockwood w4: n=54,662 vars=1,512 excluded=204 kept=1,308
+16:35:23    R²=0.762  top: symptoms2w4, symptomsw4, ph011dno, q1c, q2  (86s)
+16:36:27 SHARE Rockwood w5: n=62,461 vars=929 excluded=216 kept=713
+16:36:52    R²=0.735  top: cs004_, ac023_, ph011dno, ph085_, ac014_  (89s)
+16:38:03 SHARE Rockwood w6: n=63,530 vars=1,410 excluded=265 kept=1,145
+16:38:33    R²=0.724  top: ph082_, ph085_, ac023_, ph011dno, br015_  (101s)
+16:39:49 SHARE Rockwood w8: n=51,167 vars=1,677 excluded=304 kept=1,373
+16:40:17    R²=0.726  top: ph082_, ph085_, ac023_, phactiv, br015_  (104s)
+16:40:53 SHARE Rockwood w9: n=66,176 vars=1,499 excluded=296 kept=1,203
+16:41:22    R²=0.750  top: ph082_, ac023_, ph085_, ac014_, cf103_  (64s)
+16:41:43 SHARE Fried w1: n=26,268 vars=1,144 excluded=100 kept=1,044
+16:41:53    R²=0.552  top: ph048d4, spheu2, ph048dno, ph050_, mh010_  (31s)
+16:42:19 SHARE Fried w2: n=31,505 vars=1,067 excluded=102 kept=965
+16:42:31    R²=0.544  top: ph048d4, ph048dno, cs004_, age_int, ph049dno  (38s)
+16:43:26 SHARE Fried w4: n=49,017 vars=1,528 excluded=61 kept=1,467
+16:43:47    R²=0.575  top: ph048d4, ph061_, ph048dno, mh027_, yrbirth_do  (77s)
+16:44:48 SHARE Fried w5: n=57,338 vars=920 excluded=63 kept=857
+16:45:03    R²=0.580  top: ph048d4, ph048dno, mh027_, ph061_, cs004_  (76s)
+16:46:07 SHARE Fried w6: n=59,449 vars=1,417 excluded=86 kept=1,331
+16:46:29    R²=0.558  top: ph048d4, ph061_, mh010_, ph005_, ph049dno  (86s)
+16:47:21    skip ra Unable to convert string to the requested encoding (invalid byte sequence)
+16:47:26 SHARE Fried w7: n=12,259 vars=1,013 excluded=66 kept=947
+16:47:30    R²=0.567  top: ph048dno, ph048d4, sphus, iadl, iadl2  (60s)
+16:48:42 SHARE Fried w8: n=47,108 vars=1,673 excluded=86 kept=1,587
+16:49:10    R²=0.562  top: ph048d4, ph048dno, ph059dno, iadl, ph048d8  (100s)
+16:49:46 SHARE Fried w9: n=59,935 vars=1,508 excluded=81 kept=1,427
+16:50:08    R²=0.562  top: ph048d4, ph003_, ph050_, ph048dno, casp  (58s)
+16:50:08 all done
+16:50:22 CLHLS Rockwood w3: n=12,641 vars=846 excluded=434 kept=412
+16:50:26    R²=0.759  top: G11, D11B, G12, V_BTHYR, G1  (15s)
+16:50:33 CLHLS Rockwood w6: n=5,469 vars=1,083 excluded=521 kept=562
+16:50:35    R²=0.739  top: G11, D11B, G12, F340, G130  (9s)
+16:50:40 CLHLS Rockwood w7: n=4,990 vars=918 excluded=434 kept=484
+16:50:43    R²=0.756  top: G11, D11B, G12, F340, H21  (7s)
+16:50:45 CLHLS Rockwood w8: n=10,147 vars=631 excluded=163 kept=468
+16:50:52    R²=0.767  top: G11, G12, D112C, H5, TRUEAGE  (9s)
+16:50:52 all done
+FINAL_DONE
+== FINAL RUN v2 (item-specific rules), script sha256 cea68362672cfc86, Sun Oct 18 16:53:58 IST 2026
+16:54:08 MHAS Rockwood w1: n=9,310 vars=391 excluded=146 kept=245
+16:54:11    R²=0.868  top: r1lowermob, r1jog, r1fatigue, r1hltc, r1rfaany  (10s)
+16:54:20 MHAS Rockwood w2: n=9,200 vars=427 excluded=147 kept=280
+16:54:22    R²=0.750  top: r2jog, r2joga, r2rcaany, r2fatigue, r2hltc  (11s)
+16:54:32 MHAS Rockwood w4: n=10,930 vars=458 excluded=157 kept=301
+16:54:37    R²=0.793  top: r4jog, r4joga, r4rcany, r4rfaany, r4fatigue  (15s)
+16:54:46 MHAS Rockwood w5: n=13,167 vars=461 excluded=153 kept=308
+== FINAL RUN v3 (audited rules, 94 tests), script sha256 58be2a179c214ea8, Sun Oct 18 16:59:55 IST 2026
+17:00:09 MHAS Rockwood w1: n=9,310 vars=391 excluded=188 kept=203
+17:00:11    R²=0.631  top: r1jog, r1joga, r1fatigue, r1hltc, r1paina  (8s)
+17:00:17 MHAS Rockwood w2: n=9,200 vars=427 excluded=190 kept=237
+17:00:20    R²=0.619  top: r2jog, r2joga, r2paina, r2hltc, r2fatigue  (10s)
+17:00:27 MHAS Rockwood w4: n=10,930 vars=458 excluded=230 kept=228
+17:00:31    R²=0.665  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (10s)
+17:00:38 MHAS Rockwood w5: n=13,167 vars=461 excluded=240 kept=221
+17:00:41    R²=0.677  top: r5joga, r5jog, r5paina, r5fatigue, r5swell  (9s)
+17:00:46 MHAS Fried w1: n=9,214 vars=400 excluded=78 kept=322
+17:00:50    R²=0.504  top: r1jog, r1pusha, r1bed, r1eat, r1push  (9s)
+17:00:56 MHAS Fried w2: n=7,946 vars=441 excluded=81 kept=360
+17:00:58    R²=0.545  top: r2bath, r2joga, r2eat, r2jog, r2pusha  (8s)
+17:01:05 MHAS Fried w5: n=13,180 vars=470 excluded=75 kept=395
+17:01:07    R²=0.534  top: r5joga, r5push, r5pusha, r5bath, r5jog  (8s)
+17:01:13 MHAS Fried w6: n=12,750 vars=471 excluded=74 kept=397
+17:01:17    R²=0.575  top: r6pusha, r6joga, r6push, r6climsa, r6rested  (11s)
+17:01:18 all done
+17:01:41 ELSA Rockwood w1: n=11,004 vars=847 excluded=162 kept=685
+17:01:47    R²=0.787  top: hebal, hepaa, scqolo, herpd, heactb  (26s)
+17:02:06 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=345 kept=1,488
+17:02:16    R²=0.760  top: breths, hepaa, scqolo, hepab, herpe  (29s)
+17:03:05 ELSA Rockwood w1: n=11,004 vars=847 excluded=164 kept=683
+17:03:08    R²=0.778  top: hebal, scqolo, hepaa, herpf, herpd  (19s)
+17:03:30 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=523 kept=1,637
+17:03:38    R²=0.782  top: HeActb, scqolo, CaFam, HePag, HeKne  (30s)
+17:04:01 HRS Rockwood w15: n=13,069 vars=1,520 excluded=294 kept=1,226
+17:04:08    R²=0.822  top: RG002, RG097, RN175, RC105, RG058  (30s)
+17:04:21 HRS Rockwood w10: n=17,026 vars=603 excluded=243 kept=360
+17:04:26    R²=0.709  top: r10paina, r10rxpain, r10painlv, r10jrsleft, r10email  (18s)
+17:04:28 CLHLS Rockwood w3: n=12,641 vars=846 excluded=446 kept=400
+17:04:34    R²=0.763  top: G11, D11B, G12, TRUEAGE, G1  (8s)
+17:05:31 SHARE Rockwood w4: n=54,662 vars=1,512 excluded=250 kept=1,262
+17:05:56    R²=0.743  top: symptomsw4, symptoms2w4, ac023_, ph011dno, q1d  (82s)
+17:06:49 SHARE Fried w4: n=49,017 vars=1,528 excluded=119 kept=1,409
+17:07:10    R²=0.571  top: ph048dno, mh027_, ph061_, ph049dno, yrbirth_do  (75s)
+17:07:36 ELSA Fried w4: n=5,183 vars=1,937 excluded=194 kept=1,743
+17:07:39    R²=0.521  top: nurse_mmrrfti, heaid96, breths, psagf, indobyr  (29s)
+PREVIEW_DONE
+== FINAL RUN v4 (107 tests), script sha256 64751b753a67c8bb, Sun Oct 18 17:08:27 IST 2026
+17:08:34 MHAS Rockwood w1: n=9,310 vars=391 excluded=188 kept=203
+17:08:35    R²=0.631  top: r1jog, r1joga, r1fatigue, r1hltc, r1paina  (7s)
+17:08:41 MHAS Rockwood w2: n=9,200 vars=427 excluded=190 kept=237
+17:08:42    R²=0.619  top: r2jog, r2joga, r2paina, r2hltc, r2fatigue  (7s)
+17:08:48 MHAS Rockwood w4: n=10,930 vars=458 excluded=230 kept=228
+17:08:51    R²=0.665  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (9s)
+17:08:57 MHAS Rockwood w5: n=13,167 vars=461 excluded=240 kept=221
+17:08:59    R²=0.677  top: r5joga, r5jog, r5paina, r5fatigue, r5swell  (8s)
+17:09:05 MHAS Fried w1: n=9,214 vars=400 excluded=78 kept=322
+17:09:07    R²=0.504  top: r1jog, r1pusha, r1bed, r1eat, r1push  (7s)
+17:09:12 MHAS Fried w2: n=7,946 vars=441 excluded=81 kept=360
+17:09:14    R²=0.545  top: r2bath, r2joga, r2eat, r2jog, r2pusha  (7s)
+17:09:20 MHAS Fried w5: n=13,180 vars=470 excluded=75 kept=395
+17:09:22    R²=0.534  top: r5joga, r5push, r5pusha, r5bath, r5jog  (8s)
+17:09:28 MHAS Fried w6: n=12,750 vars=471 excluded=74 kept=397
+17:09:31    R²=0.575  top: r6pusha, r6joga, r6push, r6climsa, r6rested  (8s)
+17:09:31 all done
+17:09:48 ELSA Rockwood w1: n=11,004 vars=847 excluded=165 kept=682
+17:09:51    R²=0.779  top: hebal, hepaa, scqolo, herpd, herpf  (18s)
+17:10:09 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=346 kept=1,487
+17:10:17    R²=0.762  top: herpe, breths, heactb, hepaa, scqolo  (25s)
+17:10:43 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=386 kept=1,735
+17:10:50    R²=0.785  top: breths, hebal, hepag, hekne, herpd  (33s)
+17:11:08 ELSA Rockwood w5: n=9,257 vars=1,756 excluded=382 kept=1,374
+17:11:15    R²=0.781  top: breths, heactb, scqolo, HeCda, scfeac  (25s)
+17:11:37 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=529 kept=1,631
+17:11:42    R²=0.777  top: HeActb, HePag, scqolo, HeKne, nurse_NumMeds  (27s)
+17:12:02 ELSA Rockwood w7: n=8,616 vars=1,938 excluded=509 kept=1,429
+17:12:09    R²=0.772  top: HeBal, HeActb, HePaa, scqolo, HeKne  (27s)
+17:12:27 ELSA Rockwood w8: n=7,657 vars=1,834 excluded=536 kept=1,298
+17:12:33    R²=0.808  top: cahsa, cahrs1gp, scqolo, heactb, hepaa  (23s)
+17:12:51 ELSA Rockwood w9: n=7,832 vars=1,887 excluded=482 kept=1,405
+17:12:54    R²=0.798  top: cahrs1gp, xcaany_nonarch, heactb, hepaa, hekne  (22s)
+17:13:19 ELSA Rockwood w10: n=6,827 vars=3,552 excluded=529 kept=3,023
+17:13:26    R²=0.793  top: hebal, cahrs1gp, hepaa, heactb, medcnjd  (31s)
+17:13:52 ELSA Fried w4: n=5,183 vars=1,937 excluded=194 kept=1,743
+17:13:55    R²=0.521  top: nurse_mmrrfti, heaid96, breths, psagf, indobyr  (29s)
+17:14:15 ELSA Fried w6: n=5,230 vars=1,921 excluded=179 kept=1,742
+17:14:17    R²=0.471  top: heaid96, Hehelf, nurse_mmrrfti, CaTNo, Indobyr  (22s)
+17:14:33 ELSA Fried w9: n=1,681 vars=1,540 excluded=124 kept=1,416
+17:14:34    R²=0.555  top: heaid96, scqolh, psagf, hehelf, cahrs1gp  (17s)
+17:14:34 all done
+17:14:44 HRS Rockwood w4: n=13,702 vars=247 excluded=157 kept=90
+17:14:46    R²=0.597  top: r4paina, r4painlv, r4jrsleft, r4drive, r4painfr  (10s)
+17:14:56 HRS Rockwood w5: n=12,488 vars=259 excluded=167 kept=92
+17:14:57    R²=0.646  top: r5paina, r5swell, r5fatigue, r5breath, r5painlv  (11s)
+17:15:06 HRS Rockwood w6: n=11,679 vars=269 excluded=170 kept=99
+17:15:07    R²=0.618  top: r6paina, r6painlv, r6rested, r6painfr, r6drive  (10s)
+17:15:17 HRS Rockwood w7: n=13,356 vars=361 excluded=178 kept=183
+17:15:20    R²=0.667  top: r7paina, r7painfr, r7breath, r7fatigue, r7swell  (13s)
+17:15:32 HRS Rockwood w8: n=13,191 vars=566 excluded=240 kept=326
+17:15:36    R²=0.658  top: r8paina, r8rxpain, r8painfr, r8rxhchol, r8email  (16s)
+17:15:48 HRS Rockwood w9: n=12,527 vars=588 excluded=240 kept=348
+17:15:52    R²=0.716  top: r9paina, r9rxpain, r9breath, r9painlv, r9swell  (16s)
+17:16:04 HRS Rockwood w10: n=17,026 vars=603 excluded=245 kept=358
+17:16:09    R²=0.710  top: r10paina, r10rxpain, r10painlv, r10email, r10jrsleft  (17s)
+17:16:23 HRS Rockwood w11: n=16,184 vars=729 excluded=258 kept=471
+17:16:28    R²=0.739  top: r11paina, r11rxpain, r11breath, r11swell, r11email  (18s)
+17:16:40 HRS Rockwood w12: n=15,219 vars=660 excluded=244 kept=416
+17:16:45    R²=0.715  top: r12paina, r12rxpain, r12jrsleft, r12email, r12painfr  (17s)
+17:16:59 HRS Rockwood w13: n=17,053 vars=687 excluded=257 kept=430
+17:17:03    R²=0.727  top: r13paina, r13rxpain, r13painlv, r13email, r13swell  (18s)
+17:17:16 HRS Rockwood w14: n=14,791 vars=674 excluded=262 kept=412
+17:17:22    R²=0.702  top: r14paina, r14jrsleft, r14rxpain, r14painlv, r14drive  (19s)
+17:17:43 HRS Rockwood w15: n=13,069 vars=1,520 excluded=297 kept=1,223
+17:17:51    R²=0.820  top: RG002, RG097, RN175, RC104, RD101  (28s)
+17:18:10 HRS Rockwood w16: n=13,339 vars=1,548 excluded=351 kept=1,197
+17:18:16    R²=0.817  top: SG002, SG097, SG058, SN175, SC105  (25s)
+17:18:25 HRS Fried w7: n=2,514 vars=400 excluded=78 kept=322
+17:18:26    R²=0.392  top: r7limimpar, r7limhwrk, r7hometyp, r7rxhibp, r7rcaany  (10s)
+17:18:37 HRS Fried w8: n=6,761 vars=539 excluded=99 kept=440
+17:18:39    R²=0.437  top: r8limhwrk, r8limimpar, r8fulltan, r8sbreath, r8balanc  (13s)
+17:18:51 HRS Fried w9: n=6,108 vars=596 excluded=102 kept=494
+17:18:52    R²=0.449  top: r9limimpar, r9fulltan, r9rcaany, r9balanc, r9email  (13s)
+17:19:03 HRS Fried w10: n=5,688 vars=600 excluded=101 kept=499
+17:19:04    R²=0.443  top: r10limhwrk, r10limimpar, r10fulltan, r10paina, r10email  (12s)
+17:19:16 HRS Fried w11: n=7,322 vars=748 excluded=132 kept=616
+17:19:19    R²=0.472  top: r11limimpar, r11email, r11fulltan, r11active, r11limhwrk  (15s)
+17:19:31 HRS Fried w12: n=6,996 vars=679 excluded=116 kept=563
+17:19:33    R²=0.437  top: r12limimpar, r12fulltan, r12email, r12active, r12rcany  (14s)
+17:19:44 HRS Fried w13: n=5,699 vars=689 excluded=118 kept=571
+17:19:46    R²=0.431  top: r13limhwrk, r13limimpar, r13fulltan, r13sbreath, r13hystere  (14s)
+17:19:58 HRS Fried w14: n=6,306 vars=687 excluded=117 kept=570
+17:20:01    R²=0.459  top: r14limhwrk, r14limimpar, r14paina, r14rcany, r14fulltan  (14s)
+17:20:01 all done
+17:20:29 SHARE Rockwood w2: n=34,841 vars=1,070 excluded=263 kept=807
+17:20:41    R²=0.767  top: symptomsw2, symptoms2w2, cs004_, ph011dno, ph011d7  (38s)
+17:21:41 SHARE Rockwood w4: n=54,662 vars=1,512 excluded=250 kept=1,262
+17:22:07    R²=0.743  top: symptomsw4, symptoms2w4, ac023_, ph011dno, q1d  (86s)
+17:23:11 SHARE Rockwood w5: n=62,461 vars=929 excluded=261 kept=668
+17:23:33    R²=0.736  top: cs004_, ac023_, ph011dno, ph085_, phactiv  (85s)
+17:24:40 SHARE Rockwood w6: n=63,530 vars=1,410 excluded=269 kept=1,141
+17:25:06    R²=0.724  top: ph082_, ac023_, ph085_, phactiv, ph011d7  (93s)
+17:26:18 SHARE Rockwood w8: n=51,167 vars=1,677 excluded=339 kept=1,338
+17:26:45    R²=0.725  top: ph082_, phactiv, ph085_, ac023_, ph011d7  (99s)
+17:27:22 SHARE Rockwood w9: n=66,176 vars=1,499 excluded=289 kept=1,210
+17:27:50    R²=0.748  top: ph082_, ac023_, ph085_, ac014_, br015_  (64s)
+17:28:12 SHARE Fried w1: n=26,268 vars=1,144 excluded=186 kept=958
+17:28:20    R²=0.548  top: spheu2, ph048dno, ph048d8, mh010_, mh008_  (30s)
+17:28:46 SHARE Fried w2: n=31,505 vars=1,067 excluded=163 kept=904
+17:28:59    R²=0.544  top: cs004_, ph049dno, symptomsw2, age_int, ph049d12  (39s)
+17:30:03 SHARE Fried w4: n=49,017 vars=1,528 excluded=119 kept=1,409
+17:30:29    R²=0.571  top: ph048dno, mh027_, ph061_, ph049dno, yrbirth_do  (90s)
+17:31:51 SHARE Fried w5: n=57,338 vars=920 excluded=135 kept=785
+17:32:11    R²=0.574  top: ph048dno, mh027_, ph061_, cs004_, iadl  (102s)
+17:33:48 SHARE Fried w6: n=59,449 vars=1,417 excluded=128 kept=1,289
+17:34:24    R²=0.556  top: ph061_, ph048dno, ph059dno, ph049dno, ph050_  (132s)
+17:36:32    skip ra Unable to convert string to the requested encoding (invalid byte sequence)
+17:36:43 SHARE Fried w7: n=12,259 vars=1,013 excluded=88 kept=925
+17:36:50    R²=0.562  top: iadl, ph049d12, sphus, ex009age, ph059dno  (146s)
+17:39:21 SHARE Fried w8: n=47,108 vars=1,673 excluded=157 kept=1,516
+17:39:59    R²=0.559  top: ph048dno, ph059dno, ph048d8, iadl, mh007_  (188s)
+17:40:49 SHARE Fried w9: n=59,935 vars=1,508 excluded=126 kept=1,382
+17:41:23    R²=0.560  top: ph048dno, casp, ph003_, iadl, ph050_  (85s)
+17:41:24 all done
+17:41:30 CLHLS Rockwood w3: n=12,641 vars=846 excluded=451 kept=395
+17:41:38    R²=0.761  top: G11, D11B, G12, V_BTHYR, G1  (10s)
+17:41:41 CLHLS Rockwood w6: n=5,469 vars=1,083 excluded=513 kept=570
+17:41:45    R²=0.753  top: G11, D11B, G12, F340, C55  (7s)
+17:41:47 CLHLS Rockwood w7: n=4,990 vars=918 excluded=423 kept=495
+17:41:51    R²=0.773  top: G11, G12, D11B, F340, H5  (6s)
+17:41:53 CLHLS Rockwood w8: n=10,147 vars=631 excluded=120 kept=511
+17:42:00    R²=0.773  top: G11, G12, D112C, V_BTHYR, G181  (9s)
+17:42:00 all done
+FINAL_DONE_V4
+== FINAL RUN v5 (111 tests), script sha256 2a7339500a6857fb, Sun Oct 18 18:47:37 IST 2026
+18:47:44 MHAS Rockwood w1: n=9,310 vars=391 excluded=188 kept=203
+18:47:45    R²=0.631  top: r1jog, r1joga, r1fatigue, r1hltc, r1paina  (6s)
+18:47:51 MHAS Rockwood w2: n=9,200 vars=427 excluded=190 kept=237
+18:47:53    R²=0.619  top: r2jog, r2joga, r2paina, r2hltc, r2fatigue  (8s)
+18:47:59 MHAS Rockwood w4: n=10,930 vars=458 excluded=230 kept=228
+18:48:02    R²=0.665  top: r4jog, r4joga, r4paina, r4fatigue, r4hltc  (9s)
+18:48:08 MHAS Rockwood w5: n=13,167 vars=461 excluded=240 kept=221
+18:48:10    R²=0.677  top: r5joga, r5jog, r5paina, r5fatigue, r5swell  (8s)
+18:48:16 MHAS Fried w1: n=9,214 vars=400 excluded=78 kept=322
+18:48:18    R²=0.504  top: r1jog, r1pusha, r1bed, r1eat, r1push  (8s)
+18:48:24 MHAS Fried w2: n=7,946 vars=441 excluded=81 kept=360
+18:48:26    R²=0.545  top: r2bath, r2joga, r2eat, r2jog, r2pusha  (7s)
+18:48:33 MHAS Fried w5: n=13,180 vars=470 excluded=75 kept=395
+18:48:36    R²=0.534  top: r5joga, r5push, r5pusha, r5bath, r5jog  (10s)
+18:48:42 MHAS Fried w6: n=12,750 vars=471 excluded=74 kept=397
+18:48:45    R²=0.575  top: r6pusha, r6joga, r6push, r6climsa, r6rested  (9s)
+18:48:45 all done
+18:49:10 ELSA Rockwood w1: n=11,004 vars=847 excluded=165 kept=682
+18:49:14    R²=0.779  top: hebal, hepaa, scqolo, herpd, herpf  (27s)
+18:49:43 ELSA Rockwood w3: n=8,967 vars=1,833 excluded=346 kept=1,487
+18:49:53    R²=0.762  top: herpe, breths, heactb, hepaa, scqolo  (39s)
+18:50:25 ELSA Rockwood w4: n=10,132 vars=2,121 excluded=386 kept=1,735
+18:50:33    R²=0.785  top: breths, hebal, hepag, hekne, herpd  (40s)
+18:50:53 ELSA Rockwood w5: n=9,257 vars=1,756 excluded=382 kept=1,374
+18:51:00    R²=0.781  top: breths, heactb, scqolo, HeCda, scfeac  (27s)
+18:51:23 ELSA Rockwood w6: n=9,459 vars=2,160 excluded=554 kept=1,606
+18:51:29    R²=0.774  top: HeActb, scqolo, HePaa, scypa, HeBck  (29s)
+18:51:49 ELSA Rockwood w7: n=8,616 vars=1,938 excluded=544 kept=1,394
+18:51:55    R²=0.769  top: HeBal, HePaa, HeActb, scqolo, HeKne  (25s)
+18:52:12 ELSA Rockwood w8: n=7,657 vars=1,834 excluded=620 kept=1,214
+18:52:17    R²=0.786  top: heactb, scqolo, hepaa, hebck, iahdbc  (22s)
+18:52:35 ELSA Rockwood w9: n=7,832 vars=1,887 excluded=582 kept=1,305
+18:52:39    R²=0.743  top: hepaa, heactb, scqolo, iahdbc, scypa  (22s)
+18:53:04 ELSA Rockwood w10: n=6,827 vars=3,552 excluded=634 kept=2,918
+18:53:09    R²=0.775  top: hebal, hepaa, heactb, scqolo, hepain  (31s)
+18:53:34 ELSA Fried w4: n=5,183 vars=1,937 excluded=194 kept=1,743
+18:53:37    R²=0.521  top: nurse_mmrrfti, heaid96, breths, psagf, indobyr  (28s)
+18:53:59 ELSA Fried w6: n=5,230 vars=1,921 excluded=179 kept=1,742
+18:54:01    R²=0.471  top: heaid96, Hehelf, nurse_mmrrfti, CaTNo, Indobyr  (24s)
+18:54:16 ELSA Fried w9: n=1,681 vars=1,540 excluded=124 kept=1,416
+18:54:18    R²=0.555  top: heaid96, scqolh, psagf, hehelf, cahrs1gp  (17s)
+18:54:18 all done
+18:54:29 HRS Rockwood w4: n=13,702 vars=247 excluded=157 kept=90
+18:54:30    R²=0.597  top: r4paina, r4painlv, r4jrsleft, r4drive, r4painfr  (11s)
+18:54:40 HRS Rockwood w5: n=12,488 vars=259 excluded=167 kept=92
+18:54:41    R²=0.646  top: r5paina, r5swell, r5fatigue, r5breath, r5painlv  (10s)
+18:54:50 HRS Rockwood w6: n=11,679 vars=269 excluded=170 kept=99
+18:54:52    R²=0.618  top: r6paina, r6painlv, r6rested, r6painfr, r6drive  (11s)
+18:55:02 HRS Rockwood w7: n=13,356 vars=361 excluded=178 kept=183
+18:55:04    R²=0.667  top: r7paina, r7painfr, r7breath, r7fatigue, r7swell  (12s)
+18:55:15 HRS Rockwood w8: n=13,191 vars=566 excluded=240 kept=326
+18:55:19    R²=0.658  top: r8paina, r8rxpain, r8painfr, r8rxhchol, r8email  (15s)
+18:55:31 HRS Rockwood w9: n=12,527 vars=588 excluded=240 kept=348
+18:55:34    R²=0.716  top: r9paina, r9rxpain, r9breath, r9painlv, r9swell  (15s)
+18:55:47 HRS Rockwood w10: n=17,026 vars=603 excluded=245 kept=358
+18:55:52    R²=0.710  top: r10paina, r10rxpain, r10painlv, r10email, r10jrsleft  (18s)
+18:56:06 HRS Rockwood w11: n=16,184 vars=729 excluded=258 kept=471
+18:56:10    R²=0.739  top: r11paina, r11rxpain, r11breath, r11swell, r11email  (17s)
+18:56:23 HRS Rockwood w12: n=15,219 vars=660 excluded=244 kept=416
+18:56:27    R²=0.715  top: r12paina, r12rxpain, r12jrsleft, r12email, r12painfr  (17s)
+18:56:40 HRS Rockwood w13: n=17,053 vars=687 excluded=257 kept=430
+18:56:45    R²=0.727  top: r13paina, r13rxpain, r13painlv, r13email, r13swell  (18s)
+18:57:00 HRS Rockwood w14: n=14,791 vars=674 excluded=262 kept=412
+18:57:05    R²=0.702  top: r14paina, r14jrsleft, r14rxpain, r14painlv, r14drive  (20s)
+18:57:28 HRS Rockwood w15: n=13,069 vars=1,520 excluded=297 kept=1,223
+18:57:35    R²=0.820  top: RG002, RG097, RN175, RC104, RD101  (30s)
+18:57:55 HRS Rockwood w16: n=13,339 vars=1,548 excluded=351 kept=1,197
+18:58:01    R²=0.817  top: SG002, SG097, SG058, SN175, SC105  (26s)
+18:58:11 HRS Fried w7: n=2,514 vars=400 excluded=78 kept=322
+18:58:11    R²=0.392  top: r7limimpar, r7limhwrk, r7hometyp, r7rxhibp, r7rcaany  (10s)
+18:58:23 HRS Fried w8: n=6,761 vars=539 excluded=99 kept=440
+18:58:25    R²=0.437  top: r8limhwrk, r8limimpar, r8fulltan, r8sbreath, r8balanc  (13s)
+18:58:36 HRS Fried w9: n=6,108 vars=596 excluded=102 kept=494
+18:58:38    R²=0.449  top: r9limimpar, r9fulltan, r9rcaany, r9balanc, r9email  (13s)
+18:58:51 HRS Fried w10: n=5,688 vars=600 excluded=101 kept=499
+18:58:52    R²=0.443  top: r10limhwrk, r10limimpar, r10fulltan, r10paina, r10email  (14s)
+18:59:07 HRS Fried w11: n=7,322 vars=748 excluded=132 kept=616
+18:59:10    R²=0.472  top: r11limimpar, r11email, r11fulltan, r11active, r11limhwrk  (18s)
+18:59:27 HRS Fried w12: n=6,996 vars=679 excluded=116 kept=563
+18:59:29    R²=0.437  top: r12limimpar, r12fulltan, r12email, r12active, r12rcany  (19s)
+18:59:44 HRS Fried w13: n=5,699 vars=689 excluded=118 kept=571
+18:59:46    R²=0.431  top: r13limhwrk, r13limimpar, r13fulltan, r13sbreath, r13hystere  (17s)
+19:00:01 HRS Fried w14: n=6,306 vars=687 excluded=117 kept=570
+19:00:03    R²=0.459  top: r14limhwrk, r14limimpar, r14paina, r14rcany, r14fulltan  (17s)
+19:00:03 all done
+19:00:41 SHARE Rockwood w2: n=34,841 vars=1,070 excluded=282 kept=788
+19:01:00    R²=0.762  top: symptoms2w2, cs004_, symptomsw2, ph011dno, ph011d7  (54s)
+19:02:06 SHARE Rockwood w4: n=54,662 vars=1,512 excluded=252 kept=1,260
+19:02:37    R²=0.743  top: symptoms2w4, symptomsw4, ac023_, ph011dno, q1d  (97s)
+19:03:52 SHARE Rockwood w5: n=62,461 vars=929 excluded=263 kept=666
+19:04:17    R²=0.734  top: cs004_, ac023_, ph085_, ph011dno, phactiv  (100s)
+19:05:37 SHARE Rockwood w6: n=63,530 vars=1,410 excluded=277 kept=1,133
+19:06:07    R²=0.719  top: ac023_, ph082_, ph085_, phactiv, ph011dno  (110s)
+19:07:31 SHARE Rockwood w8: n=51,167 vars=1,677 excluded=347 kept=1,330
+19:08:04    R²=0.722  top: ph082_, ph085_, ac023_, phactiv, br015_  (117s)
+19:08:48 SHARE Rockwood w9: n=66,176 vars=1,499 excluded=297 kept=1,202
+19:09:23    R²=0.745  top: ph082_, ac023_, ph085_, ac014_, cf103_  (79s)
+19:09:50 SHARE Fried w1: n=26,268 vars=1,144 excluded=186 kept=958
+19:09:59    R²=0.548  top: spheu2, ph048dno, ph048d8, mh010_, mh008_  (35s)
+19:10:30 SHARE Fried w2: n=31,505 vars=1,067 excluded=163 kept=904
+19:10:44    R²=0.544  top: cs004_, ph049dno, symptomsw2, age_int, ph049d12  (45s)
+19:11:51 SHARE Fried w4: n=49,017 vars=1,528 excluded=119 kept=1,409
+19:12:17    R²=0.571  top: ph048dno, mh027_, ph061_, ph049dno, yrbirth_do  (94s)
+19:13:29 SHARE Fried w5: n=57,338 vars=920 excluded=135 kept=785
+19:13:51    R²=0.574  top: ph048dno, mh027_, ph061_, cs004_, iadl  (94s)
+19:15:09 SHARE Fried w6: n=59,449 vars=1,417 excluded=128 kept=1,289
+19:15:40    R²=0.556  top: ph061_, ph048dno, ph059dno, ph049dno, ph050_  (108s)
+19:16:42    skip ra Unable to convert string to the requested encoding (invalid byte sequence)
+19:16:47 SHARE Fried w7: n=12,259 vars=1,013 excluded=88 kept=925
+19:16:52    R²=0.562  top: iadl, ph049d12, sphus, ex009age, ph059dno  (72s)
+19:18:12 SHARE Fried w8: n=47,108 vars=1,673 excluded=157 kept=1,516
+19:18:42    R²=0.559  top: ph048dno, ph059dno, ph048d8, iadl, mh007_  (110s)
+19:19:26 SHARE Fried w9: n=59,935 vars=1,508 excluded=126 kept=1,382
+19:19:55    R²=0.560  top: ph048dno, casp, ph003_, iadl, ph050_  (73s)
+19:19:55 all done
+19:20:01 CLHLS Rockwood w3: n=12,641 vars=846 excluded=453 kept=393
+19:20:05    R²=0.760  top: G11, D11B, G12, G1, V_BTHYR  (7s)
+19:20:08 CLHLS Rockwood w6: n=5,469 vars=1,083 excluded=516 kept=567
+19:20:11    R²=0.744  top: G11, G12, D11B, F340, G130  (5s)
+19:20:13 CLHLS Rockwood w7: n=4,990 vars=918 excluded=426 kept=492
+19:20:16    R²=0.775  top: G11, G12, D11B, F340, H5  (5s)
+19:20:18 CLHLS Rockwood w8: n=10,147 vars=631 excluded=123 kept=508
+19:20:24    R²=0.774  top: G11, G12, D112C, H5, G181  (8s)
+19:20:24 all done
+FINAL_DONE_V5

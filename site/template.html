@@ -252,6 +252,7 @@ mark{background:color-mix(in srgb,#e9b46a 55%,transparent);color:inherit;border-
         <a href="#tool-compare">Compare cohorts<small>Prevalence over time and by age</small></a>
         <a href="#tool-matrix">Harmonisation matrix<small>Deficit × cohort coverage</small></a>
         <a href="#tool-norms">FI reference norms<small>Percentile for an age, sex and FI</small></a>
+        <a href="#tool-predictors">Frailty predictors<small>What, beyond its own items, predicts frailty in each cohort</small></a>
         <a href="#tool-agewindow">Pre-frailty age window<small>The age after which pre-frail people mostly progress</small></a>
         <a href="#tool-transitions">Transitions<small>Frailty state change between waves</small></a>
         <a href="#tool-volatility">Volatility<small>Within-person FI variability</small></a>
@@ -447,6 +448,7 @@ ROUTES.home = () => {
     <a class="tile" href="#tool-matrix"><h3>Harmonisation matrix</h3><p>Which deficits each cohort can measure, and how common they are.</p><span class="count">${DB.deficits.length} × ${FI_COHORTS.length}</span></a>
     <a class="tile" href="#tool-norms"><h3>FI reference norms</h3><p>Where a frailty index score sits for a given age, sex and population.</p><span class="count">${FI_COHORTS.length} cohorts</span></a>
     ${DB.agewindow ? `<a class="tile" href="#tool-agewindow"><h3>Pre-frailty age window</h3><p>The age at which a pre-frail person becomes more likely to progress to frailty than to recover.</p><span class="count">${["Fried", "Rockwood"].map(m => { const c = DB.agewindow.results[m]?.Pooled?.curves?.crossover?.age; return c ? `${m === "Rockwood" ? "FI" : m}: age ${Math.round(c)}` : null; }).filter(Boolean).join(" · ") || "Longitudinal"}</span></a>` : ""}
+    ${DB.predictors ? `<a class="tile" href="#tool-predictors"><h3>Frailty predictors</h3><p>The characteristics most strongly associated with each frailty score, beyond the items that define it, ranked in every wave.</p><span class="count">${DB.predictors.models.length} wave models</span></a>` : ""}
     <a class="tile" href="#tool-volatility"><h3>Volatility</h3><p>How much a person's frailty index moves between waves, the focus of the Frailty Volatility study.</p><span class="count">${fmt(Object.values(DB.longitudinal).reduce((s, v) => s + (v.rock?.volatility?.n || 0), 0))} people with 3+ waves</span></a>
     <a class="tile" href="#tool-calculator"><h3>Frailty calculator</h3><p>Score one person with the 32-item index or the five Fried criteria.</p><span class="count">Runs in your browser</span></a>
   </div>`;
@@ -941,6 +943,92 @@ ROUTES["tool-agewindow"] = () => {
   draw();
 };
 
+ROUTES["tool-predictors"] = () => {
+  const P = DB.predictors;
+  if (!P) { app.innerHTML = head("Frailty predictors", null, "This analysis is not in this build."); return; }
+  const INST = { Rockwood: "Frailty index", Fried: "Fried phenotype" };
+  const lab = s => String(s || "").replace(/^[rR]\s+/, "").replace(/^\w/, c => c.toUpperCase());   // harmonised labels start "r "/"R "
+  const yearOf = (co, w) => DB.waves.find(x => x.cohort === co && x.wave === w)?.year;
+  const cohortsFor = m => [...new Set(P.models.filter(x => x.instrument === m).map(x => x.cohort))];
+  const st = { m: "Rockwood", co: "SHARE", w: null, n: 10, top: "Rockwood" };
+  const pl = P.pipeline, pw = P.models.reduce((s, x) => s + x.n_people, 0);
+  const r2 = m => { const v = P.models.filter(x => x.instrument === m).map(x => x.heldout_R2); return `${fmt(Math.min(...v), 2)}–${fmt(Math.max(...v), 2)}`; };
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Frailty predictors"]]) +
+    head("Frailty predictors", null, "Which measured characteristics of older adults are most strongly associated with frailty, beyond the items that define it. One gradient-boosted model per cohort, instrument and wave ranks every variable in that wave's survey files by its mean |SHAP| value, after the instrument's own items, scores built from them, follow-up questions, near-copies and future information are excluded.") +
+    `<div class="panel pad"><div class="metrics">
+      <div class="metric"><b>${P.models.length}</b><span>Wave models</span></div>
+      <div class="metric"><b>${fmt(pw)}</b><span>Person-waves</span></div>
+      <div class="metric"><b>${fmt(pl.candidates)}</b><span>Candidate variables</span></div>
+      <div class="metric"><b>${fmt(pl.excluded)}</b><span>Excluded before modelling</span></div>
+      <div class="metric"><b>${r2("Rockwood")}</b><span>Held-out R², frailty index</span></div>
+      <div class="metric"><b>${r2("Fried")}</b><span>Held-out R², Fried phenotype</span></div>
+    </div><p class="note" style="margin-bottom:0">Rankings are associations within a wave, not causes. Some predictors (care received, stopping work) may be consequences of frailty.</p></div>
+
+    <h2 class="sectiontitle">Top 5 predictors by dataset</h2>
+    <div class="panel"><div class="toolbar"><div class="ctrl">Instrument${seg("pdt", [["Rockwood", "Frailty index"], ["Fried", "Fried phenotype"]], "Rockwood")}</div><span class="note">Mean share of model importance across the dataset's waves · waves where it is in the top 10</span></div><div id="pdtop"></div></div>
+
+    <h2 class="sectiontitle">Explore a wave</h2>
+    <div class="panel"><div class="toolbar">
+      <div class="ctrl">Instrument${seg("pdm", [["Rockwood", "Frailty index"], ["Fried", "Fried phenotype"]], "Rockwood")}</div>
+      <label class="ctrl">Cohort<select id="pdc"></select></label>
+      <label class="ctrl">Wave<select id="pdw"></select></label>
+      <div class="ctrl">Show${seg("pdn", [["10", "Top 10"], ["20", "Top 20"]], "10")}</div>
+    </div><div class="pad"><p class="charttitle" id="pdtitle"></p><p class="chartsub" id="pdsub"></p><div class="chartbox" id="pdbox"><canvas id="pdch"></canvas></div><div id="pdtab"></div></div></div>
+
+    <h2 class="sectiontitle">Predictor themes</h2>
+    <div class="panel pad"><p class="charttitle">Pain dominates the frailty index in three cohorts, limitation the Fried score</p><p class="chartsub">Share of model importance (%) by theme, from variables reaching any wave's top 20. Themes are assigned from variable labels.</p><div class="tablewrap" id="pdheat"></div></div>
+
+    <h2 class="sectiontitle">Model fit by wave</h2>
+    <div class="panel pad"><p class="charttitle">Held-out R² for every wave model</p><p class="chartsub">Share of variance in the score explained for the 20% of people the model did not see</p><div class="chartbox"><canvas id="pdfit"></canvas></div></div>
+
+    <h2 class="sectiontitle">How variables were excluded</h2>
+    <div class="panel pad"><p class="chartsub" style="margin-top:0">${fmt(pl.excluded)} of ${fmt(pl.candidates)} candidate variables were removed before any model was fitted, summed over all ${pl.models} models. ${fmt(pl.kept)} remained as predictors.</p>
+      ${barsHTML([["constituent", "1 · Constituent items (the instrument's own variables)"], ["derived", "2 · Derived scores built from the items"], ["follow-up", "2 · Follow-up questions about the same activity or disease"], ["near-copy", "3 · Near-copies found by correlation"], ["admin", "4 · Admin, paradata and future information"]].map(([k, l]) => ({ label: esc(l), v: pl.by_layer[k] || 0, text: fmt(pl.by_layer[k] || 0) })), Math.max(...Object.values(pl.by_layer)))}
+      <p class="note">Rules are tested by a regression suite, and every excluded variable is listed with its reason in the project workbook. Script fingerprint <span class="mono">${esc((P.script_sha256 || "").slice(0, 16))}</span>. See <a href="#methods">Methods</a>.</p></div>`;
+
+  const drawTop = () => {
+    const cos = cohortsFor(st.top);
+    $("#pdtop").innerHTML = `<div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th class="num">Waves</th>${[1, 2, 3, 4, 5].map(i => `<th>${i}</th>`).join("")}</tr></thead><tbody>${cos.map(co => {
+      const t = P.top5.filter(x => x.cohort === co && x.instrument === st.top).sort((a, b) => a.overall_rank - b.overall_rank);
+      return `<tr><td>${swatch(co)} ${coLink(co)}</td><td class="num">${t[0]?.waves_analysed ?? "—"}</td>${t.map(x => `<td title="${esc(x.example_variable)}">${esc(lab(x.label))}<br><span class="note">${fmt(x.mean_importance_pct, 1)}% · top 10 in ${x.waves_in_top10}/${x.waves_analysed}</span></td>`).join("")}</tr>`;
+    }).join("")}</tbody></table></div>`;
+  };
+  let ch;
+  const drawWave = () => {
+    const cos = cohortsFor(st.m); if (!cos.includes(st.co)) st.co = cos[0];
+    $("#pdc").innerHTML = cos.map(c => `<option ${c === st.co ? "selected" : ""}>${c}</option>`).join("");
+    const ws = P.models.filter(x => x.instrument === st.m && x.cohort === st.co).map(x => x.wave).sort((a, b) => a - b);
+    if (!ws.includes(st.w)) st.w = ws.at(-1);
+    $("#pdw").innerHTML = ws.map(w => `<option value="${w}" ${w === st.w ? "selected" : ""}>Wave ${w}${yearOf(st.co, w) ? ` (${yearOf(st.co, w)})` : ""}</option>`).join("");
+    const mod = P.models.find(x => x.instrument === st.m && x.cohort === st.co && x.wave === st.w);
+    const rows = P.per_wave.filter(x => x.instrument === st.m && x.cohort === st.co && x.wave === st.w && x.rank <= st.n).sort((a, b) => a.rank - b.rank);
+    $("#pdtitle").textContent = `${st.co} wave ${st.w} · ${INST[st.m]}: top ${st.n} predictors`;
+    $("#pdsub").textContent = mod ? `${fmt(mod.n_people)} people · ${fmt(mod.variables_in_files)} variables, ${fmt(mod.excluded)} excluded, ${fmt(mod.used)} used · held-out R² ${fmt(mod.heldout_R2, 2)} · ${mod.predictor_source}` : "";
+    if (ch) { ch.destroy(); charts = charts.filter(c => c !== ch); }
+    $("#pdbox").style.height = `${rows.length * 24 + 50}px`;
+    const short = s => s.length > 58 ? s.slice(0, 56) + "…" : s;
+    ch = mkChart($("#pdch"), { type: "bar", data: { labels: rows.map(r => `${r.rank}. ${short(lab(r.label) || r.variable)}`), datasets: [{ label: "Share of importance (%)", data: rows.map(r => r.importance_pct), backgroundColor: rows.map(r => r.rank === 1 ? css("--c1") : css("--line-2")), borderRadius: 3, barPercentage: 0.8 }] }, options: baseOpts({ indexAxis: "y", plugins: { legend: { display: false }, tooltip: { ...baseOpts().plugins.tooltip, callbacks: { title: it => lab(rows.at(it[0].dataIndex).label), label: c => `${rows.at(c.dataIndex).variable}: ${c.parsed.x.toFixed(2)}% of importance` } } }, scales: { x: { min: 0, ticks: { color: css("--muted"), callback: v => v + "%" }, grid: { color: css("--line") } }, y: { ticks: { color: css("--ink-2"), font: { size: 12 } }, grid: { display: false } } } }) });
+    $("#pdtab").innerHTML = `<details><summary class="note" style="cursor:pointer">Show as a table with variable names</summary><div class="tablewrap"><table class="data"><thead><tr><th class="num">Rank</th><th>Variable</th><th>Label</th><th>File or module</th><th class="num">Importance</th></tr></thead><tbody>${rows.map(r => `<tr><td class="num">${r.rank}</td><td class="id">${esc(r.variable)}</td><td>${esc(lab(r.label))}</td><td class="note">${esc(r.file_or_module || "")}</td><td class="num">${fmt(r.importance_pct, 2)}%</td></tr>`).join("")}</tbody></table></div></details>`;
+  };
+  const drawHeat = () => {
+    const cols = [...new Set(P.themes.map(t => t.dataset))], themes = [...new Set(P.themes.map(t => t.theme))];
+    const order = ["Pain", "Energy and fatigue", "Physical activity", "Function and limitation", "Performance tests", "Symptoms and conditions", "Medication and health care", "Self-rated health and outlook", "Mood and cognition", "Work, money and social life", "Age and background", "Other"];
+    themes.sort((a, b) => (order.indexOf(a) + 99) % 99 - (order.indexOf(b) + 99) % 99);
+    const cell = (t, d) => P.themes.find(x => x.theme === t && x.dataset === d)?.pct ?? 0;
+    $("#pdheat").innerHTML = `<table class="data matrix"><thead><tr><th>Theme</th>${cols.map(d => `<th class="num">${esc(d.split(" · ")[0])}<br><span class="note">${d.endsWith("Fried") ? "Fried" : "FI"}</span></th>`).join("")}</tr></thead><tbody>${themes.map(t => `<tr><td>${esc(t)}</td>${cols.map(d => { const v = cell(t, d); return `<td class="cell" style="cursor:default"><span style="background:color-mix(in srgb, var(--c1) ${Math.round(4 + Math.min(v / 25, 1) * 56)}%, transparent);${v >= 10 ? "font-weight:700" : ""}">${v > 0 ? fmt(v, 1) : "–"}</span></td>`; }).join("")}</tr>`).join("")}</tbody></table>`;
+  };
+  const drawFit = () => {
+    const keys = [...new Set(P.models.map(x => `${x.cohort}|${x.instrument}`))];
+    mkChart($("#pdfit"), { type: "line", data: { datasets: keys.map(k => { const [co, m] = k.split("|"); const pts = P.models.filter(x => x.cohort === co && x.instrument === m).map(x => ({ x: yearOf(co, x.wave), y: x.heldout_R2 })).filter(p => p.x).sort((a, b) => a.x - b.x); return lineDS(`${co} · ${m === "Fried" ? "Fried" : "FI"}`, pts, co, m === "Fried" ? { borderDash: [5, 4], pointStyle: "rectRot" } : {}); }) }, options: baseOpts({ scales: { x: { type: "linear", ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: { min: 0.3, max: 0.9, ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, title: { display: true, text: "Held-out R²", color: css("--muted") } } } }) });
+  };
+  wireSeg("pdt", v => { st.top = v; drawTop(); });
+  wireSeg("pdm", v => { st.m = v; drawWave(); });
+  wireSeg("pdn", v => { st.n = +v; drawWave(); });
+  $("#pdc").onchange = e => { st.co = e.target.value; st.w = null; drawWave(); };
+  $("#pdw").onchange = e => { st.w = +e.target.value; drawWave(); };
+  drawTop(); drawWave(); drawHeat(); drawFit();
+};
+
 ROUTES["tool-transitions"] = () => {
   const cos = Object.keys(DB.longitudinal);
   const st = { co: toolState.cohort && cos.includes(toolState.cohort) ? toolState.cohort : cos[0], m: "rock", pair: "pooled" };
@@ -1050,6 +1138,9 @@ function datasets() {
     { name: "fraildb_fi_norms.csv", title: "FI reference norms", desc: "FI percentiles (5th to 95th) by cohort, 5-year age band and sex.", rows: () => Object.entries(DB.norms?.cohorts || {}).flatMap(([k, rs]) => rs.map(r => Object.assign({ cohort: k, age_band_start: r.age, sex: r.sex, n: r.n }, Object.fromEntries(DB.norms.q.map((q, i) => ["p" + Math.round(q * 100), r.v[i]]))))) },
     { name: "fraildb_transitions.csv", title: "Transitions", desc: "Counts moving between frailty states between successive assessments.", rows: () => Object.entries(DB.longitudinal).flatMap(([k, ms]) => Object.entries(ms).flatMap(([m, O]) => O.transitions.flatMap(t => t.matrix.flatMap((r, i) => r.map((v, j) => ({ cohort: k, instrument: m, from_wave: t.frm, from_state: O.states[i], to_state: O.states[j], n: v })))))) },
     DB.agewindow && { name: "fraildb_prefrailty_age_window.csv", title: "Pre-frailty age window", desc: "Outcomes 2–4 years after a pre-frail or non-frail assessment, by cohort, instrument and 5-year age band, with 95% CIs.", rows: () => Object.entries(DB.agewindow.results).flatMap(([m, cs]) => Object.entries(cs).flatMap(([k, v]) => v.bands.map(b => ({ instrument: m === "Rockwood" ? "frailty_index" : "fried", cohort: k, baseline_state: b.base, age_band: b.band, n: b.n, reassessed: b.reassessed, not_reassessed_pct: b.lost_pct, to_frail_pct: b.frail, to_frail_lo: b.frail_ci?.[0], to_frail_hi: b.frail_ci?.[1], recovered_pct: b.recover, recovered_lo: b.recover_ci?.[0], recovered_hi: b.recover_ci?.[1], stayed_prefrail_pct: b.prefrail, crossover_age: v.curves?.crossover?.age, crossover_lo: v.curves?.crossover_ci?.[0], crossover_hi: v.curves?.crossover_ci?.[1] })))) },
+    DB.predictors && { name: "fraildb_predictors_top5.csv", title: "Frailty predictors: top 5 per dataset", desc: "Overall top 5 predictors per cohort and instrument: mean share of importance across waves and how often each is in a wave's top 10.", rows: () => DB.predictors.top5 },
+    DB.predictors && { name: "fraildb_predictors_per_wave.csv", title: "Frailty predictors: top 20 per wave", desc: "Top 20 predictors of every wave model, with variable name, label, source file and share of importance.", rows: () => DB.predictors.per_wave },
+    DB.predictors && { name: "fraildb_predictor_models.csv", title: "Frailty predictors: model fit", desc: "Sample size, variables, exclusions and held-out R² for each of the wave models.", rows: () => DB.predictors.models },
     { name: "fraildb_cutoffs.csv", title: "Grip and walk cut-offs", desc: "Lowest-20% cut-offs by sex and BMI (grip) or height (walk), by cohort and wave.", rows: () => DB.cutoffs.flatMap(t => t.rows.map(r => ({ cohort: t.cohort, wave: t.wave, measure: t.kind, ...r }))) },
     { name: "fraildb_share_countries.csv", title: "SHARE countries", desc: "FI and Fried prevalence by SHARE country and wave.", rows: () => DB.countries.flatMap(n => n.waves.map(w => ({ country: n.name, code: n.code, ...w }))) },
     { name: "fraildb_full.json", title: "Full database (JSON)", desc: "Every record in this release, in one file.", json: true }
@@ -1086,6 +1177,7 @@ ROUTES.methods = () => {
     <h2>Missing data</h2><p>Complete case. A respondent missing any item needed by an instrument is excluded from that instrument in that wave. The two instruments therefore have different samples, and retention is reported for every wave.</p>
     <h2>Rockwood frailty index</h2><p>32 deficits across disease, self-rated health, ADL, IADL, mobility, senses, depressive symptoms and cognition, each coded 0 or 1 (CLHLS has four graded items). FI = deficits present ÷ 32. Frail when FI ≥ 0.25. See ${idLink("FDBI02", "the instrument record")}.</p>
     <h2>Fried phenotype</h2><p>Five criteria, each 0 or 1. Score 0 = non-frail, 1–2 = pre-frail, 3–5 = frail. Measured grip is classed weak when it is in the lowest 20% within sex × BMI group, and measured walk time is classed slow when it is in the slowest 20% within sex × height group. The cut-off tables are on each wave record. See ${idLink("FDBI01", "the instrument record")}.</p>
+    <h2>Frailty predictors</h2><p>For each cohort, instrument and wave, a LightGBM regression predicts the continuous score (frailty index 0–1, Fried 0–5) from every variable in that wave's survey files, trained on 80% of people with the other 20% held out. Influence is the mean absolute SHAP value on held-out people. Before modelling, four layers of variables are removed: the instrument's own items; scores built from them and follow-up questions about the same activity or disease; near-copies found by correlation; and identifiers, paradata, death and other information from after the wave. Dataset rankings average each variable's share over all waves. See ${idLink("tool-predictors", "Frailty predictors")}.</p>
     <h2>Longitudinal measures</h2><p>Transitions compare a person's state with their state at the next assessment within the next two analysed waves. Volatility uses people with three or more scored FI waves: the standard deviation of their FI and the root mean square of successive differences.</p>
     <h2>Data policy</h2><p>FrailDB publishes aggregated results only. Every count below ${DB.meta.min_cell} is suppressed, and percentiles are reported only for groups of 30 or more. No participant identifiers or individual records are included. The source cohorts' data-use agreements do not allow redistribution of participant-level data; to obtain them, apply to each cohort through the access routes listed on its record.</p></div>`;
 };

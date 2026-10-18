@@ -1,0 +1,462 @@
+cohort,instrument,overall_rank,key,example_variable,label,mean_importance_pct,waves_present,waves_in_top10,waves_in_top20,waves_analysed,best_rank,waves
+SHARE,Rockwood,1,ac023_,ac023_,Feel full of energy,4.393,6,6,6,6,1.0,"2,4,5,6,8,9"
+SHARE,Rockwood,2,ph082_,ph082_,At least taking 5 different drugs a typical day,3.685,3,3,3,6,1.0,"6,8,9"
+SHARE,Rockwood,3,phactiv,phactiv,Physical inactivity,3.124,6,6,6,6,4.0,"2,4,5,6,8,9"
+SHARE,Rockwood,4,ph011dno,ph011dno,Drugs for: none,2.977,6,5,6,6,4.0,"2,4,5,6,8,9"
+SHARE,Rockwood,5,ph085_,ph085_,Level of pain,2.845,4,4,4,6,2.0,"5,6,8,9"
+SHARE,Rockwood,6,ph011d7,ph011d7,Drugs for: joint pain,2.721,6,6,6,6,5.0,"2,4,5,6,8,9"
+SHARE,Rockwood,7,br015_,br015_,Sports or activities that are vigorous,2.54,6,5,6,6,5.0,"2,4,5,6,8,9"
+SHARE,Rockwood,8,ac014_,ac014_,Age prevents from doing things,2.121,6,4,5,6,4.0,"2,4,5,6,8,9"
+SHARE,Rockwood,9,br016_,br016_,Activities requiring a moderate level of energy,1.897,6,1,6,6,7.0,"2,4,5,6,8,9"
+SHARE,Rockwood,10,bmi,bmi,Body mass index,1.8,6,2,6,6,8.0,"2,4,5,6,8,9"
+SHARE,Rockwood,11,cs004_,cs004_,Single cs test results,1.724,2,2,2,6,1.0,"2,5"
+SHARE,Rockwood,12,cf103_,cf103_,Memory,1.615,5,3,4,6,5.0,"4,5,6,8,9"
+SHARE,Rockwood,13,ac015_,ac015_,Out of control,1.405,6,2,3,6,8.0,"2,4,5,6,8,9"
+SHARE,Rockwood,14,ph087d1,ph087d1,Pain location: back,1.189,4,1,4,6,7.0,"5,6,8,9"
+SHARE,Rockwood,15,symptoms2w2,symptoms2w2,2+ symptoms (w2 version),1.149,1,1,1,6,1.0,2
+SHARE,Rockwood,16,ph087d3,ph087d3,Pain location: knees,1.084,4,1,3,6,9.0,"5,6,8,9"
+SHARE,Rockwood,17,symptoms2w4,symptoms2w4,2+ symptoms (w4 version),1.005,1,1,1,6,1.0,4
+SHARE,Rockwood,18,symptomsw4,symptomsw4,Number of symptoms (w4 version),0.983,1,1,1,6,2.0,4
+SHARE,Rockwood,19,hc127dno,hc127dno,Received professional services: none of these,0.951,4,1,3,6,9.0,"5,6,8,9"
+SHARE,Rockwood,20,ph087d2,ph087d2,Pain location: hips,0.871,4,1,2,6,8.0,"5,6,8,9"
+SHARE,Rockwood,21,ac012_,ac012_,How satisfied with life,0.836,6,0,2,6,16.0,"2,4,5,6,8,9"
+SHARE,Rockwood,23,ph011d1,ph011d1,Drugs for: high blood cholesterol,0.784,6,0,1,6,16.0,"2,4,5,6,8,9"
+SHARE,Rockwood,24,ph087d4,ph087d4,Pain location: other joints,0.784,4,0,3,6,18.0,"5,6,8,9"
+SHARE,Rockwood,25,symptomsw2,symptomsw2,Number of symptoms (w2 version),0.715,1,1,1,6,3.0,2
+SHARE,Rockwood,26,ep097_,ep097_,Pension claims,0.707,6,0,1,6,14.0,"2,4,5,6,8,9"
+SHARE,Rockwood,27,q1d,q1d,Health: pain/discomfort,0.669,1,1,1,6,5.0,4
+SHARE,Rockwood,30,mh027_,mh027_,Felt faint,0.642,2,1,2,6,10.0,"4,5"
+SHARE,Rockwood,31,it004_,it004_,Use of internet in past 7 days,0.638,4,0,2,6,15.0,"5,6,8,9"
+SHARE,Rockwood,32,ph010dno,ph010dno,Bothered by: no symptoms,0.593,2,1,2,6,10.0,"2,4"
+SHARE,Rockwood,33,ph087d6,ph087d6,Pain location: other parts of the body but not joints,0.569,4,0,1,6,15.0,"5,6,8,9"
+SHARE,Rockwood,35,cf002_,cf002_,Self-rated writing skills,0.522,6,0,1,6,18.0,"2,4,5,6,8,9"
+SHARE,Rockwood,36,hc889_,hc889_,Health literacy: how often help needed,0.521,2,0,2,6,12.0,"8,9"
+SHARE,Rockwood,38,ph084_,ph084_,Troubled with pain,0.504,4,0,2,6,16.0,"5,6,8,9"
+SHARE,Rockwood,39,ph010d8,ph010d8,Bothered by: fear of falling down,0.487,2,0,2,6,13.0,"2,4"
+SHARE,Rockwood,40,ph010d3,ph010d3,Bothered by: breathlessness,0.471,2,0,2,6,12.0,"2,4"
+SHARE,Rockwood,41,ex009age,ex009age,Life expectancy target age,0.451,6,0,1,6,19.0,"2,4,5,6,8,9"
+SHARE,Rockwood,44,ph010d1,ph010d1,"Bothered by: pain in back, knees, hips or other joint",0.425,2,0,2,6,14.0,"2,4"
+SHARE,Rockwood,45,ph010d5,ph010d5,Bothered by: swollen legs,0.418,2,0,1,6,16.0,"2,4"
+SHARE,Rockwood,51,hc089e,hc089e,Amount payed overall for drugs,0.369,1,0,1,6,11.0,5
+SHARE,Rockwood,53,hc689e,hc689e,Amount payed yourself for medication last 12 months,0.344,1,0,1,6,11.0,6
+SHARE,Rockwood,54,mh025_,mh025_,Hands trembling,0.341,2,0,1,6,20.0,"4,5"
+SHARE,Rockwood,55,hc049e,hc049e,Paid out-of-pocket for prescribed drugs,0.333,1,0,1,6,11.0,2
+SHARE,Rockwood,56,age_int,age_int,Age of respondent at the time of interview,0.327,3,0,1,6,20.0,"2,8,9"
+SHARE,Rockwood,70,casp,casp,CASP index for quality of life and well-being,0.275,1,0,1,6,14.0,9
+SHARE,Rockwood,73,hc602_,hc602_,Times talked to medical doctor/nurse about your health last 12 months,0.266,1,0,1,6,16.0,9
+SHARE,Rockwood,83,ex009_,ex009_,Life expectancy,0.24,1,0,1,6,17.0,9
+SHARE,Rockwood,89,ac028_,ac028_,Feelings: everything effort,0.221,1,0,1,6,17.0,2
+SHARE,Rockwood,91,ph062_,ph062_,Compare health last wave,0.217,1,0,1,6,18.0,2
+SHARE,Rockwood,92,hc128_,hc128_,Payed anything out of pocket for home care,0.214,1,0,1,6,17.0,5
+SHARE,Rockwood,94,ph025_,ph025_,Bite on hard foods,0.21,1,0,1,6,19.0,2
+SHARE,Rockwood,96,gs009_,gs009_,2nd measurement: right hand,0.196,1,0,1,6,20.0,9
+SHARE,Fried,1,ph048dno,ph048dno,Difficulties: none of these,4.027,8,6,8,8,1.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,2,ph048d8,ph048d8,Difficulties: pulling or pushing large objects,2.17,8,6,8,8,3.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,3,iadl,iadl,Limitations with instrumental activities of daily living (iadl),2.074,8,5,6,8,1.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,4,mh010_,mh010_,Irritability,2.021,8,5,8,8,4.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,5,ph061_,ph061_,Health problem that limits paid work,2.019,7,5,6,8,1.0,"2,4,5,6,7,8,9"
+SHARE,Fried,6,ph049dno,ph049dno,Difficulties: none of these,1.987,8,4,6,8,2.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,7,sphus,sphus,Self-perceived health - us version,1.821,8,5,7,8,3.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,8,ph005_,ph005_,Limited in activities because of health,1.788,8,3,8,8,6.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,9,mh008_,mh008_,Less or same interest in things,1.733,8,1,8,8,5.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,10,gali,gali,Limitations with activities - gali,1.61,8,3,6,8,6.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,11,ph059dno,ph059dno,Use of aids: none of these,1.497,5,3,5,8,2.0,"2,6,7,8,9"
+SHARE,Fried,12,mh007_,mh007_,Trouble sleeping,1.486,8,1,6,8,5.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,13,ph050_,ph050_,Help activities,1.469,6,4,5,8,5.0,"1,2,6,7,8,9"
+SHARE,Fried,14,ph049d12,ph049d12,Difficulties: doing work around the house or garden,1.438,8,3,4,8,2.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,15,ph003_,ph003_,Health in general question 2,1.335,8,2,6,8,3.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,16,ph048d6,ph048d6,"Difficulties: stooping, kneeling, crouching",1.302,8,1,3,8,10.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,17,mh017_,mh017_,Tearfulness,1.271,8,0,5,8,13.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,18,ac014_,ac014_,Age prevents from doing things,1.173,7,1,4,8,9.0,"2,4,5,6,7,8,9"
+SHARE,Fried,19,mh027_,mh027_,Felt faint,0.97,2,2,2,8,2.0,"4,5"
+SHARE,Fried,20,ac017_,ac017_,Do the things you want to do,0.97,7,0,3,8,12.0,"2,4,5,6,7,8,9"
+SHARE,Fried,21,ph082_,ph082_,At least taking 5 different drugs a typical day,0.921,4,3,4,8,7.0,"6,7,8,9"
+SHARE,Fried,23,ex009age,ex009age,Life expectancy target age,0.891,8,2,3,8,4.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,24,ep097_,ep097_,Pension claims,0.86,8,1,2,8,8.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,25,mh016_,mh016_,Enjoyment,0.847,8,0,1,8,12.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,26,cs004_,cs004_,Single cs test results,0.837,2,2,2,8,1.0,"2,5"
+SHARE,Fried,27,spheu2,spheu2,Spheu-less than good health,0.757,1,1,1,8,1.0,1
+SHARE,Fried,28,age_int,age_int,Age of respondent at the time of interview,0.751,4,2,3,8,4.0,"1,2,8,9"
+SHARE,Fried,29,ph049d9,ph049d9,Difficulties: shopping for groceries,0.738,8,0,1,8,15.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,31,yrbirth_do,yrbirth_do,Year of birth,0.663,6,1,1,8,5.0,"4,5,6,7,8,9"
+SHARE,Fried,32,ac015_,ac015_,Out of control,0.647,7,0,2,8,18.0,"2,4,5,6,7,8,9"
+SHARE,Fried,33,sphus2,sphus2,Sphus-less than very good health,0.622,8,0,1,8,15.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,35,ph051_,ph051_,Help meets needs,0.555,6,1,1,8,10.0,"1,2,6,7,8,9"
+SHARE,Fried,36,iadl2,iadl2,1+ iadl limitations,0.554,8,0,1,8,15.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,38,ph048d3,ph048d3,Difficulties: getting up from chair,0.538,8,0,1,8,18.0,"1,2,4,5,6,7,8,9"
+SHARE,Fried,39,casp,casp,CASP index for quality of life and well-being,0.512,1,1,1,8,2.0,9
+SHARE,Fried,40,it004_,it004_,Use of internet in past 7 days,0.511,5,0,1,8,19.0,"5,6,7,8,9"
+SHARE,Fried,41,ph049d14,ph049d14,Difficulties: leaving the house independently/accessing transportation,0.486,4,0,1,8,15.0,"6,7,8,9"
+SHARE,Fried,42,yrbirth,yrbirth,Year of birth,0.466,3,0,2,8,16.0,"1,8,9"
+SHARE,Fried,44,dn003_,dn003_,Year of birth,0.429,4,0,1,8,11.0,"1,2,8,9"
+SHARE,Fried,49,ph059d4,ph059d4,Use of aids: an electric wheelchair,0.394,5,1,1,8,6.0,"2,6,7,8,9"
+SHARE,Fried,54,ph059d6,ph059d6,Use of aids: special eating utensils,0.373,3,1,2,8,7.0,"2,6,7"
+SHARE,Fried,63,q1c,q1c,Health: usual activities,0.316,1,1,1,8,6.0,4
+SHARE,Fried,65,symptomsw2,symptomsw2,Number of symptoms (w2 version),0.3,1,1,1,8,3.0,2
+SHARE,Fried,67,ac703_,ac703_,I see myself as someone who tends to be lazy,0.28,3,0,1,8,14.0,"7,8,9"
+SHARE,Fried,74,symptoms2w4,symptoms2w4,2+ symptoms (w4 version),0.234,1,1,1,8,10.0,4
+SHARE,Fried,75,cf010_,cf010_,Verbal fluency score: number of animals,0.233,1,0,1,8,12.0,9
+SHARE,Fried,89,q2,q2,Health thermometer,0.2,1,0,1,8,13.0,4
+SHARE,Fried,91,symptoms2w2,symptoms2w2,2+ symptoms (w2 version),0.197,1,1,1,8,10.0,2
+SHARE,Fried,95,symptomsw1,symptomsw1,Number of symptoms (w1 version),0.188,1,0,1,8,14.0,1
+SHARE,Fried,99,symptoms2w1,symptoms2w1,2+ symptoms (w1 version),0.179,1,0,1,8,17.0,1
+SHARE,Fried,110,hc057_,hc057_,Basic health insurance coverage,0.158,1,0,1,8,19.0,1
+SHARE,Fried,118,symptomsw4,symptomsw4,Number of symptoms (w4 version),0.151,1,0,1,8,20.0,4
+SHARE,Fried,126,spheu,spheu,Self-perceived health - european version,0.143,1,0,1,8,20.0,1
+SHARE,Fried,137,mh024_,mh024_,Nervous,0.13,2,0,1,8,20.0,"4,5"
+HRS,Rockwood,1,paina,r14paina,r pain interferes with normal activities,6.902,11,11,11,13,1.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,2,painlv,r14painlv,r usual level of pain,3.874,11,10,11,13,2.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,3,jrsleft,r14jrsleft,r reason for stopping working (if not working),3.223,11,10,11,13,2.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,4,painfr,r14painfr,r frequent problems with pain,2.887,11,8,11,13,2.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,5,drive,r14drive,whether r is able to drive,2.842,10,10,10,13,4.0,"4,5,6,7,8,9,10,11,12,14"
+HRS,Rockwood,6,rxpain,r14rxpain,r takes meds for pain,2.64,7,7,7,13,2.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,7,email,r14email,whether r regularly uses web for emails,2.387,9,8,9,13,4.0,"6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,8,breath,r13breath,r short of breath while awake,2.021,7,5,5,13,3.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,9,fatigue,r13fatigue,r severe fatigue,1.859,7,5,5,13,3.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,10,swell,r13swell,r persistent swelling in feet/ankles,1.846,7,5,5,13,2.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,11,rested,r14rested,r feels rested when wakes up,1.804,9,5,9,13,3.0,"6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,12,bmicat,r13bmicat,r bmi categorization,1.657,11,2,9,13,7.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,13,obese,r14obese,r whether obese,1.546,11,2,9,13,9.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,14,balanc,r14balanc,frequency r difficulty with balance,1.448,7,6,7,13,7.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,15,backp,r13backp,r back pain,1.368,7,3,5,13,8.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,16,rxhchol,r14rxhchol,r takes meds for high cholesterol,1.345,7,4,7,13,4.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,17,raeducl,raeducl,raeducl: r harmonized education level,1.168,11,2,3,13,6.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,18,looknwk,r14looknwk,r looking for new job (if working),1.132,11,1,7,13,8.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,19,jenjwrka,r13jenjwrka,r really enjoys going to work,1.058,11,1,5,13,8.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,20,satlifez,r14satlifez,R Satisfied with life z-score,1.011,6,2,5,13,6.0,"9,10,11,12,13,14"
+HRS,Rockwood,21,handrt,r14handrt,r self-rated hand strength,0.878,7,0,6,13,12.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,22,rg002,RG002,DIFFICULTY- JOGGING 1 MILE,0.869,1,1,1,13,1.0,15
+HRS,Rockwood,23,catrcte,r7catrcte,r ever had cataract surgery,0.867,11,0,2,13,16.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,24,rachshlt,rachshlt,rachshlt:R childhood health status,0.835,11,1,1,13,9.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,25,dizzy,r11dizzy,r persistent dizziness,0.828,7,1,4,13,9.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,26,urinai,r8urinai,r any urinary incontinence past year,0.818,11,0,3,13,14.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,27,sg002,SG002,DIFFICULTY- JOGGING 1 MILE,0.787,1,1,1,13,1.0,16
+HRS,Rockwood,28,jcomputb,r12jcomputb,r freq cur job computers,0.772,10,0,4,13,12.0,"5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,29,lifeinv,r5lifeinv,r value life insurance policies,0.765,11,0,1,13,18.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,30,ramomeducl,ramomeducl,ramomeducl:r mother harmonized education level,0.757,11,0,2,13,17.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,31,radadeduc8,radadeduc8,radadeduc8:r father attained 8+ years of education,0.754,11,0,1,13,11.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,32,fall,r9fall,r fallen down last 2 years,0.752,11,0,1,13,19.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,33,fallnum,r8fallnum,r number of falls,0.727,11,0,2,13,16.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,34,jconcntrb,r10jconcntrb,r freq cur job concentration,0.724,11,0,3,13,15.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,35,rxbldthn,r14rxbldthn,r takes blood thinning meds to prevent clots,0.714,4,1,4,13,9.0,"11,12,13,14"
+HRS,Rockwood,36,rxstom,r14rxstom,r takes meds for stomach,0.713,7,0,4,13,13.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,37,urinaf,r14urinaf,r number days urinary incontinence last month,0.701,11,0,3,13,18.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,38,sbreath,r14sbreath,frequency r short of breath,0.678,7,0,4,13,11.0,"8,9,10,11,12,13,14"
+HRS,Rockwood,40,rxpsych,r6rxpsych,r takes meds for psych condition,0.618,8,0,2,13,12.0,"4,5,6,7,8,9,10,11"
+HRS,Rockwood,41,orient,r6orient,r orientation to date,0.614,10,0,1,13,15.0,"4,5,6,7,8,9,10,11,12,13"
+HRS,Rockwood,44,wakeup,r7wakeup,r wakes up too early,0.543,7,0,2,13,12.0,"6,7,8,10,12,13,14"
+HRS,Rockwood,45,wheeze,r9wheeze,r persistent wheezing,0.54,7,0,3,13,14.0,"4,5,7,9,10,11,13"
+HRS,Rockwood,46,fallslp,r10fallslp,r trouble falling asleep,0.535,7,0,2,13,11.0,"6,7,8,10,12,13,14"
+HRS,Rockwood,47,hometyp,r6hometyp,type of home r lives in,0.5,11,0,1,13,20.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,48,wakent,r8wakent,r wakes up during night,0.494,7,0,1,13,19.0,"6,7,8,10,12,13,14"
+HRS,Rockwood,49,pneushte,r14pneushte,r pneumonia vaccine ever,0.485,4,0,4,13,14.0,"11,12,13,14"
+HRS,Rockwood,50,rg097,RG097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,0.453,1,1,1,13,2.0,15
+HRS,Rockwood,52,numer,r6numer,r numeracy score,0.429,7,0,1,13,17.0,"6,7,8,10,12,13,14"
+HRS,Rockwood,53,sg097,SG097,RELATIVES/FRIENDS HELP W/ FUTURE NEEDS,0.423,1,1,1,13,2.0,16
+HRS,Rockwood,55,pcnt,h5pcnt,any weekly contact with parents in person/phone/email,0.416,11,0,2,13,17.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,56,urinurg,r6urinurg,r urge to urinate,0.404,6,0,1,13,14.0,"6,7,8,9,10,11"
+HRS,Rockwood,59,sathlth,r10sathlth,r satisfaction with health 5-point,0.377,6,0,1,13,18.0,"9,10,11,12,13,14"
+HRS,Rockwood,61,jgrredhra,r4jgrredhra,r prefer gradually reduce hours,0.374,11,0,1,13,13.0,"4,5,6,7,8,9,10,11,12,13,14"
+HRS,Rockwood,62,satlife_h,r10satlife_h,R Satisfied with life,0.374,6,0,1,13,14.0,"9,10,11,12,13,14"
+HRS,Rockwood,64,rn175,RN175,TAKE RX DRUGS REGULARLY,0.358,1,1,1,13,3.0,15
+HRS,Rockwood,68,sg058,SG058,HOUSE\YARD WORK HELP,0.327,1,1,1,13,3.0,16
+HRS,Rockwood,69,sn175,SN175,TAKE RX DRUGS REGULARLY,0.319,1,1,1,13,4.0,16
+HRS,Rockwood,70,sc105,SC105,DEGREE PAIN MOST OF TIME,0.305,1,1,1,13,5.0,16
+HRS,Rockwood,76,rc104,RC104,TROUBLED WITH PAIN,0.26,1,1,1,13,4.0,15
+HRS,Rockwood,77,sn361,SN361,RX DRUGS REGULARLY PAIN,0.233,1,1,1,13,6.0,16
+HRS,Rockwood,80,hchole,r14hchole,r ever had high cholesterol,0.229,3,0,1,13,17.0,"12,13,14"
+HRS,Rockwood,83,rd101,RD101,RATE MEMORY,0.219,1,1,1,13,5.0,15
+HRS,Rockwood,84,sc104,SC104,TROUBLED WITH PAIN,0.219,1,1,1,13,7.0,16
+HRS,Rockwood,88,rg058,RG058,HOUSE\YARD WORK HELP,0.199,1,1,1,13,6.0,15
+HRS,Rockwood,90,rn361,RN361,RX DRUGS REGULARLY PAIN,0.197,1,1,1,13,7.0,15
+HRS,Rockwood,94,sg098m1,SG098M1,HELP W/ FUTURE NEEDS- RELATIONSHIP- 1,0.185,1,1,1,13,8.0,16
+HRS,Rockwood,95,sd101,SD101,RATE MEMORY,0.181,1,1,1,13,9.0,16
+HRS,Rockwood,96,sc224,SC224,HOW OFTEN MODERATE ACTIVITY,0.18,1,1,1,13,10.0,16
+HRS,Rockwood,104,rc148,RC148,SEVERE FATIGUE,0.145,1,1,1,13,8.0,15
+HRS,Rockwood,105,rc146,RC146,BACK PAIN OR PROBLEMS,0.144,1,1,1,13,9.0,15
+HRS,Rockwood,106,rc105,RC105,DEGREE PAIN MOST OF TIME,0.143,1,1,1,13,10.0,15
+HRS,Rockwood,115,sc338,SC338,TOO TIRED TO THINK CLEARLY,0.129,1,0,1,13,11.0,16
+HRS,Rockwood,116,rc143,RC143,SWELLING FEET/ANKLES,0.128,1,0,1,13,11.0,15
+HRS,Rockwood,121,sc336,SC336,HOW OFTEN OUT OF ENERGY,0.124,1,0,1,13,12.0,16
+HRS,Rockwood,125,sc335,SC335,EXPERERIENCED EXTREME EXHAUSTION,0.117,1,0,1,13,13.0,16
+HRS,Rockwood,127,sw303,SW303,REGULAR USE OF WEB FOR EMAIL,0.116,1,0,1,13,14.0,16
+HRS,Rockwood,129,rw303,RW303,REGULAR USE OF WEB FOR EMAIL,0.113,1,0,1,13,12.0,15
+HRS,Rockwood,134,rc002,RC002,COMPARE HEALTH TO PREVIOUS WAVE,0.109,1,0,1,13,13.0,15
+HRS,Rockwood,135,rg040,RG040,DIFFICULTY- USING MAPS,0.108,1,0,1,13,14.0,15
+HRS,Rockwood,139,sc002,SC002,COMPARE HEALTH TO PREVIOUS WAVE,0.103,1,0,1,13,15.0,16
+HRS,Rockwood,143,sb000,SB000,LIFE SATISFACTION,0.101,1,0,1,13,16.0,16
+HRS,Rockwood,149,rj005m1,RJ005M1,CURRENT JOB STATUS- 1,0.094,1,0,1,13,15.0,15
+HRS,Rockwood,150,sj3584,SJ3584,HOW SATISFIED W/ RETIREMENT,0.093,1,0,1,13,17.0,16
+HRS,Rockwood,151,sg037,SG037,R ABILITY TO DRIVE,0.093,1,0,1,13,18.0,16
+HRS,Rockwood,154,rc144,RC144,SHORTNESS OF BREATH,0.086,1,0,1,13,16.0,15
+HRS,Rockwood,155,rc223,RC223,HOW OFTEN VIGOROUS ACTIVITY,0.085,1,0,1,13,17.0,15
+HRS,Rockwood,158,sc334,SC334,FELT TIRED - PAST 7 DAYS,0.081,1,0,1,13,19.0,16
+HRS,Rockwood,161,rb000,RB000,LIFE SATISFACTION,0.075,1,0,1,13,18.0,15
+HRS,Rockwood,166,rc086,RC086,FEEL RESTED IN MORNING,0.07,1,0,1,13,19.0,15
+HRS,Rockwood,169,sj005m1,SJ005M1,CURRENT JOB STATUS- 1,0.068,1,0,1,13,20.0,16
+HRS,Rockwood,172,rg208,RG208,RATE HAND STRENGTH,0.067,1,0,1,13,20.0,15
+HRS,Fried,1,limimpar,r14limimpar,whether r limited in any way due to impairment,5.961,8,8,8,8,1.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,2,limhwrk,r14limhwrk,whether health limits r housework,4.09,8,8,8,8,1.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,3,fulltan,r14fulltan,r full-tandem test result(sec),3.002,7,7,7,8,2.0,"8,9,10,11,12,13,14"
+HRS,Fried,4,email,r14email,whether r regularly uses web for emails,2.539,8,6,7,8,2.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,5,rcaany,r14rcaany,r receives any informal care for adls/iadls,1.932,8,5,7,8,3.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,6,sbreath,r14sbreath,frequency r short of breath,1.839,7,5,6,8,4.0,"8,9,10,11,12,13,14"
+HRS,Fried,7,rcany,r14rcany,r receives any care for adls/iadls,1.822,8,6,7,8,4.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,8,paina,r14paina,r pain interferes with normal activities,1.769,8,4,7,8,3.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,9,active,r14active,PANAS-X: degree r felt active,1.693,6,6,6,8,4.0,"9,10,11,12,13,14"
+HRS,Fried,10,balanc,r14balanc,frequency r difficulty with balance,1.543,7,3,5,8,4.0,"8,9,10,11,12,13,14"
+HRS,Fried,11,rxhibp,r14rxhibp,r takes meds for high blood pressure,1.349,8,4,5,8,4.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,12,arthlmt,r11arthlmt,r whether arthritis limits activity,1.129,5,2,5,8,8.0,"7,8,9,10,11"
+HRS,Fried,13,rested,r13rested,r feels rested when wakes up,1.099,8,2,4,8,6.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,14,raeducl,raeducl,raeducl: r harmonized education level,1.032,8,0,5,8,11.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,15,rfaany,r13rfaany,r receives any formal care for adls/iadls,0.994,7,1,4,8,7.0,"7,8,10,11,12,13,14"
+HRS,Fried,16,hometyp,r12hometyp,type of home r lives in,0.98,8,1,3,8,3.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,17,ramomeducl,ramomeducl,ramomeducl:r mother harmonized education level,0.938,8,1,3,8,7.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,18,adltot6,r11adltot6,r some diff-total adls/0-6,0.938,8,0,1,8,13.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,19,diasto,r14diasto,r average blood pressure measure (diastolic) 2 & 3,0.935,7,1,5,8,10.0,"8,9,10,11,12,13,14"
+HRS,Fried,20,lifeinv,r14lifeinv,r value life insurance policies,0.912,8,0,4,8,13.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,21,fulldone,r14fulldone,whether r completed 30/60 seconds full-tandem,0.908,7,0,3,8,11.0,"8,9,10,11,12,13,14"
+HRS,Fried,22,breath,r11breath,r short of breath while awake,0.882,4,2,3,8,6.0,"7,9,11,13"
+HRS,Fried,23,lfprps,r12lfprps,r Ryff Purpose of Life Index,0.862,7,1,3,8,8.0,"8,9,10,11,12,13,14"
+HRS,Fried,24,rxpain,r13rxpain,r takes meds for pain,0.856,7,1,5,8,8.0,"8,9,10,11,12,13,14"
+HRS,Fried,25,jointr,r14jointr,r had joint replaced since last wave,0.848,8,0,3,8,15.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,26,pulse,r11pulse,r average pulse measure 2 & 3,0.799,7,1,2,8,10.0,"8,9,10,11,12,13,14"
+HRS,Fried,27,racany,r12racany,r receives any care for adls,0.705,8,0,2,8,16.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,28,rxdiab,r10rxdiab,r takes meds for diabetes,0.688,8,0,2,8,17.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,29,hystere,r13hystere,r ever had hysterectomy,0.664,5,1,1,8,5.0,"9,11,12,13,14"
+HRS,Fried,30,fulltanc,r13fulltanc,r compensatory movements during full-tandem test,0.647,7,0,2,8,16.0,"8,9,10,11,12,13,14"
+HRS,Fried,31,sathlth,r10sathlth,r satisfaction with health 5-point,0.638,6,0,2,8,12.0,"9,10,11,12,13,14"
+HRS,Fried,32,panasp13,r9panasp13,r PANAS-X average positive affect score,0.628,6,1,1,8,10.0,"9,10,11,12,13,14"
+HRS,Fried,33,semitanc,r12semitanc,r compensatory movements during semi-tandem test,0.621,7,0,2,8,11.0,"8,9,10,11,12,13,14"
+HRS,Fried,34,painfr,r7painfr,r frequent problems with pain,0.618,8,0,1,8,17.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,36,balance,r14balance,r balance test summary score,0.566,7,0,2,8,13.0,"8,9,10,11,12,13,14"
+HRS,Fried,37,drive,r14drive,whether r is able to drive,0.563,7,1,2,8,8.0,"7,8,9,10,11,12,14"
+HRS,Fried,38,swell,r13swell,r persistent swelling in feet/ankles,0.557,4,0,3,8,12.0,"7,9,11,13"
+HRS,Fried,39,painlv,r8painlv,r usual level of pain,0.552,8,0,2,8,13.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,40,noteeth,r11noteeth,r whether lost all their teeth,0.519,6,0,2,8,16.0,"8,10,11,12,13,14"
+HRS,Fried,42,drhlthyes,r14drhlthyes,Day Reconstruction: r health yesterday,0.509,4,0,3,8,15.0,"11,12,13,14"
+HRS,Fried,43,numer,r14numer,r numeracy score,0.5,4,1,1,8,7.0,"8,10,12,14"
+HRS,Fried,44,fallnum,r7fallnum,r number of falls,0.493,8,0,1,8,20.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,48,fallslp,r7fallslp,r trouble falling asleep,0.456,6,0,1,8,12.0,"7,8,10,12,13,14"
+HRS,Fried,53,mdn10,r8mdn10,r MIDUS Index of Negative Affect,0.379,1,1,1,8,6.0,8
+HRS,Fried,58,iadltot_h,r9iadltot_h,r any diff-total iadls/0-6,0.351,8,0,1,8,18.0,"7,8,9,10,11,12,13,14"
+HRS,Fried,64,puffpos,r7puffpos,r position for lung function peak flow test,0.313,7,0,1,8,18.0,"7,8,9,10,11,12,14"
+HRS,Fried,108,obese,r7obese,r whether obese,0.186,1,0,1,8,15.0,7
+ELSA,Rockwood,1,heactb,heactb,Frequency does moderate sports or activities,3.518,9,9,9,9,1.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,2,hepaa,hepaa,Severity of pain most of the time,3.464,9,9,9,9,1.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,3,scqolo,scqolo,CASP-19 scale: how often feels full of energy these days,3.227,9,9,9,9,2.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,4,hebal,hebal,How often respondent has problems with balance when walking on level surface,2.963,4,4,4,9,1.0,"1,4,7,10"
+ELSA,Rockwood,5,hekne,hekne,Knee pain rating walking on flat surface,2.097,9,8,9,9,4.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,6,breths,breths,"(D) Breathlessness, MRC respiratory questionnaire",1.748,3,3,3,9,1.0,"3,4,5"
+ELSA,Rockwood,7,hebck,hebck,Back pain rating walking on flat surface,1.715,9,5,7,9,4.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,8,hepain,hepain,Whether often troubled with pain,1.484,9,4,6,9,5.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,9,scqola,scqola,CASP-19 scale: how often feels age prevents them from doing things they like,1.284,9,3,7,9,8.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,10,hehip,hehip,Hip pain rating walking on flat surface,1.232,9,2,7,9,8.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,11,herpe,herpe,Shortness of breath: whether has it when walking with people of own age on level,1.163,4,3,4,9,1.0,"1,3,4,5"
+ELSA,Rockwood,12,iahdbc,iahdbc,Whether receiving any state benefits at the moment,1.051,6,3,4,9,4.0,"5,6,7,8,9,10"
+ELSA,Rockwood,13,scypa,scypa,Whether respondent felt any pain yesterday,1.027,4,4,4,9,4.0,"6,7,9,10"
+ELSA,Rockwood,14,herpd,herpd,Shortness of breath: whether has when hurrying on level/walking up slight hill,1.006,4,3,4,9,4.0,"1,3,4,5"
+ELSA,Rockwood,15,heacta,heacta,Frequency does vigorous sports or activities,0.976,9,1,4,9,7.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,16,hepawba,hepawba,Whether feel pain in back,0.86,8,2,4,9,10.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,17,psagf,psagf,Self-perceived age (in years),0.783,5,1,5,9,7.0,"4,6,7,9,10"
+ELSA,Rockwood,18,heactc,heactc,Frequency does mild sports or activities,0.732,9,0,4,9,12.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,19,hepag,HePag,Pain: how long been bothering you (if moderate or severe),0.689,3,2,3,9,3.0,"4,5,6"
+ELSA,Rockwood,20,hefet,hefet,Foot pain rating walking on flat surface,0.681,9,0,1,9,18.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,21,exlo80,exlo80,Expectation (%) that will live to [age] [depends on current age],0.66,9,0,1,9,20.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,22,heflb,heflb,Number times have fallen down,0.609,9,0,2,9,15.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,23,iahdn96,iahdn96,Health or disability benefits receiving now: None of these,0.587,8,1,2,9,10.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,24,herpf,herpf,Shortness of breath: whether has to stop when walking at own pace on level,0.585,4,1,2,9,5.0,"1,3,4,5"
+ELSA,Rockwood,25,cfmetm,cfmetm,Self-rated memory,0.565,7,0,3,9,16.0,"1,3,4,7,8,9,10"
+ELSA,Rockwood,26,hedasch,hedasch,Whether still has high cholesterol,0.562,7,0,2,9,12.0,"3,4,5,6,7,8,9"
+ELSA,Rockwood,27,mmpain,mmpain,Timed walk: whether had pain whilst walking,0.559,9,0,2,9,13.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,28,hepawkn,hepawkn,Whether feel pain in knees,0.555,8,0,1,9,18.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,29,hepawhi,hepawhi,Whether feel pain in hips,0.538,8,0,1,9,15.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,31,hecda,HeCda, Do you get pain or discomfort in either of your legs which comes on when you wa,0.532,3,1,3,9,4.0,"1,3,5"
+ELSA,Rockwood,32,heslpd,heslpd,Sleep: frequency wake up feeling tired & worn out,0.5,3,1,3,9,10.0,"4,6,8"
+ELSA,Rockwood,33,spcara,spcara,Whether respondent drives this car or van themselves,0.47,8,0,3,9,14.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,34,hepawfe,hepawfe,Whether feel pain in feet,0.439,8,0,2,9,16.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,35,nurse_mmrrfti,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),0.425,2,2,2,9,7.0,"4,6"
+ELSA,Rockwood,36,hecdb,hecdb,Claudication: whether pain begins when standing still or sitting,0.425,3,0,2,9,11.0,"1,3,5"
+ELSA,Rockwood,37,palevel,palevel,(D) Physical activity summary,0.418,3,1,2,9,7.0,"3,4,5"
+ELSA,Rockwood,38,iahdnsp,iahdnsp,Health or disability benefits receiving now: Statutory sick pay,0.398,8,0,2,9,12.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,39,iahdnmwd,iahdnmwd,Health or disability benefits receiving now: War Disablement/War Widows Pension,0.381,5,1,2,9,10.0,"5,6,7,8,9"
+ELSA,Rockwood,40,iahdnm96,iahdnm96,Health or disability benefits receiving now: none of these (merged),0.365,6,0,1,9,17.0,"5,6,7,8,9,10"
+ELSA,Rockwood,44,heincta,heincta,Incontinence: whether problem lasted more than one month,0.332,5,0,1,9,15.0,"3,4,5,6,7"
+ELSA,Rockwood,45,indager,indager,"(D) Definitive age variable collapsed at 90+: priority diag, dhage",0.331,9,0,1,9,16.0,"1,3,4,5,6,7,8,9,10"
+ELSA,Rockwood,46,hegpnhs,hegpnhs,GP:whether consultation NHS or private,0.326,5,0,1,9,18.0,"6,7,8,9,10"
+ELSA,Rockwood,49,caspaut,CASPAUT,(D) Autonomy (CASP),0.32,3,0,2,9,15.0,"3,4,5"
+ELSA,Rockwood,50,wpact96,wpact96,Activities during last month: none of these,0.312,8,0,1,9,18.0,"3,4,5,6,7,8,9,10"
+ELSA,Rockwood,51,hecdc,hecdc,Do you get it if you walk uphill or hurry? {in legs),0.311,3,0,1,9,11.0,"1,3,5"
+ELSA,Rockwood,53,scghqg,scghqg,Whether recently been able to enjoy normal day~to~day activities,0.3,2,0,2,9,14.0,"1,3"
+ELSA,Rockwood,55,estwt,estwt,(D) Weight: final measured or estimated weight (kg),0.296,3,0,1,9,16.0,"8,9,10"
+ELSA,Rockwood,57,weight,weight,Weight: weight (kg),0.292,3,0,2,9,17.0,"8,9,10"
+ELSA,Rockwood,61,cfmap,cfmap,Self-rated mental abilities,0.276,4,0,1,9,16.0,"7,8,9,10"
+ELSA,Rockwood,62,gtspd_mn,gtspd_mn,(D) Mean gait speed (m/s),0.275,2,1,2,9,9.0,"4,5"
+ELSA,Rockwood,67,spadyr,spadyr,(D) Year will reach/reached State Pension Age - suppressed cases 90+ as collapse,0.244,3,0,1,9,19.0,"8,9,10"
+ELSA,Rockwood,70,scdeac,scdeac,How well 'active' describes respondent (self-reported),0.239,2,0,1,9,14.0,"5,10"
+ELSA,Rockwood,72,medcnjd,medcnjd,"Drug: whether taking or using any medicines, pills, syrups, ointments, puffers o",0.237,1,1,1,9,7.0,10
+ELSA,Rockwood,74,hepac,hepac,Knee or hip pain: whether been bothering respondent for more than 6 months,0.217,2,1,1,9,9.0,"3,8"
+ELSA,Rockwood,75,fstgs_tm,fstgs_tm,(D) Fastest gait speed (m/s),0.215,2,0,1,9,17.0,"4,5"
+ELSA,Rockwood,77,hecdd,hecdd,Claudication: whether gets pain when walking at ordinary pace on level,0.208,3,0,1,9,13.0,"1,3,5"
+ELSA,Rockwood,78,hekneb,hekneb,Knee pain: whether doctor or nurse suggested physiotherapy or exercise (has oste,0.207,1,1,1,9,6.0,8
+ELSA,Rockwood,79,hemdb,hemdb,"Are you currently taking any tablets, pills or other medicines that you swallow",0.199,1,0,1,9,12.0,1
+ELSA,Rockwood,81,scfeac,scfeac,During the past 30 days to what degree the respondent feels active?,0.192,1,1,1,9,5.0,5
+ELSA,Rockwood,82,nurse_medbia5,nurse_MedBIA5,DRUG: Have they taken/used MedBI in the last 7 days?,0.189,1,1,1,9,9.0,6
+ELSA,Rockwood,86,hespch,HeSpch,Whether has difficulty having conversation in group,0.182,1,1,1,9,9.0,7
+ELSA,Rockwood,87,mmwlkb,mmwlkb,Time taken for second walk (seconds),0.178,2,0,1,9,17.0,"1,3"
+ELSA,Rockwood,90,heslpb,heslpb,Sleep: frequency wake up several times at night,0.178,3,0,1,9,19.0,"4,6,8"
+ELSA,Rockwood,111,scaothm,scaothm,How much time did you spend doing other health related activties? Minutes,0.142,2,0,1,9,19.0,"6,7"
+ELSA,Rockwood,113,iahdrsp,iahdrsp,Health/disability benefits rec in the last year: Statutory Sick Pay,0.14,2,0,1,9,14.0,"3,4"
+ELSA,Rockwood,120,nurse_nummeds,nurse_NumMeds,DRUG: NumMeds,0.135,1,0,1,9,15.0,6
+ELSA,Rockwood,137,iahrm01,iahrm01,merged variable: Which of these health or disability benefits have you received,0.117,1,0,1,9,20.0,1
+ELSA,Rockwood,145,nurse_medbia6,nurse_MedBIA6,DRUG: Have they taken/used MedBI in the last 7 days?,0.111,1,0,1,9,19.0,6
+ELSA,Rockwood,160,nurse_medbia3,nurse_MedBIA3,DRUG: Have they taken/used MedBI in the last 7 days?,0.097,1,0,1,9,20.0,6
+ELSA,Rockwood,163,fst_tm,fst_tm,(D) Fastest gait speed (m/s),0.096,1,0,1,9,20.0,3
+ELSA,Fried,1,heaid96,heaid96,Aids used: not use any of listed aids,4.4,3,3,3,3,1.0,"4,6,9"
+ELSA,Fried,2,nurse_mmrrfti,nurse_mmrrfti,CHAIRRAISE: Time to complete 5 rises (seconds),2.634,2,2,2,3,1.0,"4,6"
+ELSA,Fried,3,hehelf,hehelf,Self-reported general health,2.627,3,3,3,3,2.0,"4,6,9"
+ELSA,Fried,4,psagf,psagf,Self-perceived age (in years),2.052,3,3,3,3,3.0,"4,6,9"
+ELSA,Fried,5,scqolh,scqolh,CASP-19 scale: how often feels their health stops them doing what they want to d,1.829,3,2,3,3,2.0,"4,6,9"
+ELSA,Fried,6,indobyr,indobyr,(D) Definitive year of birth collapsed at 90+,1.679,3,2,3,3,5.0,"4,6,9"
+ELSA,Fried,7,headl96,headl96,ADL&IADL: whether said had none of listed difficulties,1.258,3,2,2,3,8.0,"4,6,9"
+ELSA,Fried,8,catno,catno,Computed: Number of activities respondent has received help with in the last mon,1.189,2,1,2,3,4.0,"6,9"
+ELSA,Fried,9,helwk,helwk,Whether has self-reported health problem/disability that limits paid work,1.01,3,1,2,3,7.0,"4,6,9"
+ELSA,Fried,10,breths,breths,"(D) Breathlessness, MRC respiratory questionnaire",0.99,1,1,1,3,3.0,4
+ELSA,Fried,11,pscedg,PScedG,Whether felt sad much of the time during past week,0.985,3,1,2,3,8.0,"4,6,9"
+ELSA,Fried,12,indager,indager,Definitive age variable collapsed at 90+ to avoid disclosure,0.92,3,0,2,3,11.0,"4,6,9"
+ELSA,Fried,13,pscedc,PScedC,Whether felt their sleep was restless during past week,0.899,3,1,2,3,9.0,"4,6,9"
+ELSA,Fried,14,hetemp,hetemp,Whether expects health problem/disability to last less than 3 months,0.873,3,1,1,3,9.0,"4,6,9"
+ELSA,Fried,15,cfani,cfani,Number of animals mentioned,0.747,2,0,2,3,12.0,"4,9"
+ELSA,Fried,16,nurse_mmrrtti,nurse_mmrrtti,CHAIRRAISE: Time to complete 10 rises (seconds) - only eligible if under 70 yrs,0.726,2,0,2,3,13.0,"4,6"
+ELSA,Fried,17,pscedf,PScedF,Whether enjoyed life much of the time during past week,0.704,3,0,2,3,14.0,"4,6,9"
+ELSA,Fried,18,helim,helim,Whether long-standing illness is limiting,0.702,3,0,1,3,11.0,"4,6,9"
+ELSA,Fried,20,catkj,catkj,Whether received help last month: shopping for groceries,0.637,2,0,1,3,11.0,"6,9"
+ELSA,Fried,21,wpactlo,wpactlo,Activities during last month: looked after home or family,0.589,3,1,1,3,9.0,"4,6,9"
+ELSA,Fried,22,cahrs1gp,cahrs1gp,Computed: grouped hours for provider referred to at cafnd1 and cahpF,0.584,1,1,1,3,5.0,9
+ELSA,Fried,23,wpact96,wpact96,Activities during last month: none of these,0.567,3,0,1,3,20.0,"4,6,9"
+ELSA,Fried,24,scovan,scovan,How anxious respondent felt overall yesterday,0.553,2,1,1,3,8.0,"6,9"
+ELSA,Fried,25,scptrhb,scptrhb,Whether has a hobby or pastime,0.543,1,1,1,3,6.0,9
+ELSA,Fried,26,exainh,ExAInh,Expectation (%) that they will receive inheritance during next 10 years,0.504,3,0,1,3,17.0,"4,6,9"
+ELSA,Fried,27,cafnd1,cafnd1,Type of provider for questions about care patterns (provider 1),0.501,1,1,1,3,7.0,9
+ELSA,Fried,28,excpin,excpin,"Expectation (%) that they [& partner] will leave inheritance of £150,000 or more",0.495,3,1,1,3,10.0,"4,6,9"
+ELSA,Fried,30,caspsr,CASPSR,(D) Self realisation (CASP),0.472,1,1,1,3,10.0,4
+ELSA,Fried,33,hotran,hotran,Amount given to relatives or other people outside of home (excluding ctf but inc,0.428,3,0,1,3,14.0,"4,6,9"
+ELSA,Fried,34,nurse_dobyear,nurse_dobyear,"Year of birth, collapsed for those aged 90 or over",0.42,1,0,1,3,14.0,4
+ELSA,Fried,35,cflisd,cflisd,Number of words recalled after delay,0.418,3,0,1,3,17.0,"4,6,9"
+ELSA,Fried,36,gor,GOR,Government Office Region based on final W6 postcode,0.412,3,0,1,3,16.0,"4,6,9"
+ELSA,Fried,42,cahpf,cahpf,How often provider 1 care patterns (cafnd1) helps,0.346,2,0,1,3,13.0,"6,9"
+ELSA,Fried,44,nurse_indobyr,nurse_Indobyr,Definitive year of birth collapsed at 90 plus,0.319,1,0,1,3,15.0,6
+ELSA,Fried,48,excnd,excnd,Whether thought about how to pay for future care and support needs,0.314,1,0,1,3,16.0,9
+ELSA,Fried,52,nurse_pf2,nurse_pf2,Lung function: 2nd PF reading (litres per minute),0.298,1,0,1,3,19.0,4
+ELSA,Fried,54,excfv,excfv,Expectation (%) of needing long term care not provided by family or friends in t,0.289,1,0,1,3,20.0,9
+ELSA,Fried,58,hebowty,hebowty,Screening: year of last bowel test,0.273,1,0,1,3,18.0,6
+ELSA,Fried,59,nurse_indager,nurse_indager,Definitive age variable collapsed at 90+ to avoid disclosure,0.271,1,0,1,3,19.0,6
+ELSA,Fried,60,nurse_mmftre,nurse_MmFTRe,BALANCE: Outcome of full tandem stand,0.265,1,0,1,3,20.0,6
+MHAS,Rockwood,1,jog,r5jog,R Difficulty-Run/Jogging one km,19.611,4,4,4,4,1.0,"1,2,4,5"
+MHAS,Rockwood,2,paina,r5paina,R Pain interferes with normal activities,5.307,4,4,4,4,3.0,"1,2,4,5"
+MHAS,Rockwood,3,fatigue,r5fatigue,R Severe fatigue,4.394,4,4,4,4,3.0,"1,2,4,5"
+MHAS,Rockwood,4,hltc,r5hltc,R Self-report of health change,4.091,4,4,4,4,4.0,"1,2,4,5"
+MHAS,Rockwood,5,swell,r5swell,R Persistent swelling in feet/ankles,3.815,4,4,4,4,5.0,"1,2,4,5"
+MHAS,Rockwood,6,painfr,r5painfr,R Frequent problems with pain,2.706,4,3,4,4,7.0,"1,2,4,5"
+MHAS,Rockwood,7,breath_m,r5breath_m,R Difficulty breathing or coughing,2.234,4,2,4,4,8.0,"1,2,4,5"
+MHAS,Rockwood,8,lbrf_m,r5lbrf_m,R Labor force status,2.187,4,3,3,4,6.0,"1,2,4,5"
+MHAS,Rockwood,9,painlv,r5painlv,R Usual level of pain,2.092,4,2,4,4,7.0,"1,2,4,5"
+MHAS,Rockwood,10,doctor1y,r5doctor1y,"R Doctor visits, previous 12 months",1.73,4,1,4,4,9.0,"1,2,4,5"
+MHAS,Rockwood,11,raeducel,raeducel,raeducel: R Harmonized Early Education,1.368,4,1,2,4,10.0,"1,2,4,5"
+MHAS,Rockwood,12,rachchlt,rachchlt,rachchlt: R Health compared to other children before age 10,1.28,4,1,2,4,9.0,"1,2,4,5"
+MHAS,Rockwood,13,slfmem,r5slfmem,R Self-Rated Memory,1.274,2,2,2,4,8.0,"4,5"
+MHAS,Rockwood,14,hosp1y,r4hosp1y,"R Hospital stay, previous 12 months",1.24,4,0,2,4,15.0,"1,2,4,5"
+MHAS,Rockwood,15,urinurg2y,r5urinurg2y,R Urge to urinate (last 2 yrs),1.175,2,1,2,4,8.0,"4,5"
+MHAS,Rockwood,16,fallnum,r2fallnum,R Number of falls,1.086,4,0,2,4,11.0,"1,2,4,5"
+MHAS,Rockwood,17,itot,h2itot,Incm:H Total Income,1.072,4,0,2,4,16.0,"1,2,4,5"
+MHAS,Rockwood,18,unemp,r5unemp,R Unemployed,1.013,4,0,1,4,17.0,"1,2,4,5"
+MHAS,Rockwood,19,imrc8_m,r5imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),0.979,4,0,2,4,19.0,"1,2,4,5"
+MHAS,Rockwood,20,vigact,r2vigact,R Wtr vigorus phys act 3+/wk,0.97,4,0,1,4,18.0,"1,2,4,5"
+MHAS,Rockwood,21,nopencil,r2nopencil,R Problem Holding a Pencil,0.877,4,0,2,4,13.0,"1,2,4,5"
+MHAS,Rockwood,23,fallslp,r5fallslp,R Trouble falling asleep,0.836,2,0,2,4,12.0,"4,5"
+MHAS,Rockwood,24,gapcare,h5gapcare,R+S provided personal care to parents 1hr+/wk,0.806,4,0,1,4,12.0,"1,2,4,5"
+MHAS,Rockwood,25,hip50e,r1hip50e,R Ever fractured a bone (including hip) since age 50,0.774,3,0,1,4,18.0,"1,2,4"
+MHAS,Rockwood,26,pstmem,r5pstmem,R Memory Compared to the Past,0.766,2,0,2,4,13.0,"4,5"
+MHAS,Rockwood,27,urinai2y,r2urinai2y,R Any urinary incontinence (last 2 yrs),0.76,2,0,2,4,14.0,"1,2"
+MHAS,Rockwood,31,wheeze,r2wheeze,R Persistent wheezing,0.682,2,0,2,4,14.0,"1,2"
+MHAS,Rockwood,32,work,r2work,R Currently working for pay,0.616,4,0,1,4,20.0,"1,2,4,5"
+MHAS,Rockwood,35,oopdrug1m,r4oopdrug1m,"R Out of pocket medications, per month",0.6,2,0,1,4,17.0,"4,5"
+MHAS,Rockwood,37,rested,r5rested,R Feels rested when wakes up,0.555,2,0,1,4,16.0,"4,5"
+MHAS,Rockwood,38,wakeup,r4wakeup,R Wakes up too early,0.552,2,0,1,4,20.0,"4,5"
+MHAS,Rockwood,39,lifein_m,r2lifein_m,R Covered by life insurance,0.528,4,0,1,4,17.0,"1,2,4,5"
+MHAS,Rockwood,45,jhoursd,r1jhoursd,R Hours/day worked at main job,0.401,1,0,1,4,13.0,1
+MHAS,Rockwood,46,idraw2,r1idraw2,R Picture Drawing immediate 2 fig,0.396,2,0,1,4,16.0,"1,2"
+MHAS,Fried,1,push,r6push,R Difficulty-Push/pulling large objects,10.496,4,4,4,4,1.0,"1,2,5,6"
+MHAS,Fried,2,jog,r6jog,R Difficulty-Run/Jogging one km,10.198,4,4,4,4,1.0,"1,2,5,6"
+MHAS,Fried,3,bath,r6bath,R Difficulty-Bathing or showering,3.646,4,4,4,4,1.0,"1,2,5,6"
+MHAS,Fried,4,clim1,r6clim1,R Difficulty-Climbing one flt stairs,3.336,4,3,4,4,7.0,"1,2,5,6"
+MHAS,Fried,5,eat,r6eat,R Difficulty-Eating,3.253,4,3,4,4,3.0,"1,2,5,6"
+MHAS,Fried,6,clims,r5clims,R Difficulty-Climbing sev flts stairs,2.925,4,1,4,4,4.0,"1,2,5,6"
+MHAS,Fried,7,bed,r6bed,R Difficulty-Getting in/out of bed,2.567,4,3,4,4,3.0,"1,2,5,6"
+MHAS,Fried,8,shlt,r5shlt,R Self-report of health,1.937,4,3,3,4,6.0,"1,2,5,6"
+MHAS,Fried,9,toilt,r6toilt,R Difficulty-Using the toilet,1.664,4,1,3,4,7.0,"1,2,5,6"
+MHAS,Fried,10,bede,r6bede,R uses equipment-Getting in/out of bed,1.499,4,2,4,4,9.0,"1,2,5,6"
+MHAS,Fried,11,hltc,r6hltc,R Self-report of health change,1.461,4,1,2,4,9.0,"1,2,5,6"
+MHAS,Fried,12,paina,r6paina,R Pain interferes with normal activities,1.249,4,0,3,4,13.0,"1,2,5,6"
+MHAS,Fried,13,rested,r6rested,R Feels rested when wakes up,1.182,2,1,2,4,5.0,"5,6"
+MHAS,Fried,14,imrc8_m,r6imrc8_m,R Immediate Word Recall 0-8 (avg 3 trials),1.141,4,0,2,4,11.0,"1,2,5,6"
+MHAS,Fried,15,painfr,r6painfr,R Frequent problems with pain,1.009,4,0,2,4,13.0,"1,2,5,6"
+MHAS,Fried,16,stoop,r5stoop,R Difficulty-Stoop/kneel/crouching,0.948,4,0,1,4,12.0,"1,2,5,6"
+MHAS,Fried,17,prost,r1prost,R Prev Care: Prostate last 2y,0.944,4,0,1,4,12.0,"1,2,5,6"
+MHAS,Fried,18,papsm,r1papsm,R Prev Care: Pap Smear last 2y,0.904,4,0,1,4,14.0,"1,2,5,6"
+MHAS,Fried,19,breast,r1breast,R Prev Care: Monthly Breast Check,0.874,4,0,1,4,17.0,"1,2,5,6"
+MHAS,Fried,20,rachchlt,rachchlt,rachchlt: R Health compared to other children before age 10,0.845,4,1,2,4,9.0,"1,2,5,6"
+MHAS,Fried,21,obese,r2obese,R whether obese,0.834,4,0,1,4,18.0,"1,2,5,6"
+MHAS,Fried,23,jlocc_m,r5jlocc_m,R Longest job occupation code,0.793,4,0,1,4,19.0,"1,2,5,6"
+MHAS,Fried,25,atran,h2atran,assets: vehicles,0.767,4,0,1,4,19.0,"1,2,5,6"
+MHAS,Fried,27,gccare_m,h6gccare_m,R+S provide informal care to children/grandchildren 1hr+/wk,0.761,4,0,2,4,14.0,"1,2,5,6"
+MHAS,Fried,28,painlv,r2painlv,R Usual level of pain,0.718,4,0,1,4,20.0,"1,2,5,6"
+MHAS,Fried,29,unemp,r2unemp,R Unemployed,0.69,4,0,1,4,17.0,"1,2,5,6"
+MHAS,Fried,33,wakeup,r5wakeup,R Wakes up too early,0.65,2,1,1,4,10.0,"5,6"
+MHAS,Fried,36,fallslp,r5fallslp,R Trouble falling asleep,0.591,2,0,1,4,16.0,"5,6"
+MHAS,Fried,37,atotb,h1atotb,total all assets inc. 2nd hm,0.558,4,0,1,4,19.0,"1,2,5,6"
+MHAS,Fried,40,socact_m,r6socact_m,R Freq social activities,0.507,2,0,1,4,14.0,"5,6"
+MHAS,Fried,43,rcany,r5rcany,R receives any care for ADLs/IADLs,0.459,4,0,1,4,15.0,"1,2,5,6"
+MHAS,Fried,47,lsatsc3,r6lsatsc3,R Satisfaction with life scale score,0.427,2,0,1,4,20.0,"5,6"
+MHAS,Fried,50,dau,h1dau,Number of living daughters R/P,0.387,4,0,1,4,20.0,"1,2,5,6"
+MHAS,Fried,55,oopdoc1y,r1oopdoc1y,"R Out of pocket doctor exp, previous 12 months",0.371,4,0,1,4,18.0,"1,2,5,6"
+CLHLS,Rockwood,1,g11,G11,able to pick up a book from the floor?,9.483,4,4,4,4,1.0,"3,6,7,8"
+CLHLS,Rockwood,2,g12,G12,steps used to turn around 360 with help?,5.65,4,4,4,4,2.0,"3,6,7,8"
+CLHLS,Rockwood,3,d11b,D11B,do you grow vegetables & do other field work at present?,4.135,3,3,3,4,2.0,"3,6,7"
+CLHLS,Rockwood,4,g1,G1,visual function: can you see the break in the circle?,2.367,4,3,4,4,4.0,"3,6,7,8"
+CLHLS,Rockwood,5,f340,F340,your power in decision-making on financial spending in the household,2.128,2,2,2,4,4.0,"6,7"
+CLHLS,Rockwood,6,h5,H5,confirm the age and copy to the 1st page,2.046,3,3,3,4,4.0,"6,7,8"
+CLHLS,Rockwood,7,trueage,TRUEAGE,validated age,1.872,4,3,3,4,6.0,"3,6,7,8"
+CLHLS,Rockwood,8,d11e,D11E,do you raise domestic animals/pets at present?,1.741,4,3,4,4,7.0,"3,6,7,8"
+CLHLS,Rockwood,9,v_bthyr,V_BTHYR,validated birth year,1.705,4,1,3,4,5.0,"3,6,7,8"
+CLHLS,Rockwood,10,d103,D103,age when stopped doing physical labor,1.231,4,1,2,4,8.0,"3,6,7,8"
+CLHLS,Rockwood,11,d112c,D112C,"series, interact with friends",1.188,1,1,1,4,3.0,8
+CLHLS,Rockwood,12,c32,C32,draw the figure following the example,1.182,4,0,4,4,12.0,"3,6,7,8"
+CLHLS,Rockwood,13,g130,G130,feel not-well within the past two weeks?,1.148,3,1,3,4,5.0,"6,7,8"
+CLHLS,Rockwood,14,f651a1,F651A1,(F651A1) how much money did you spend on outpatient costs last year?,1.146,3,2,2,4,6.0,"6,7,8"
+CLHLS,Rockwood,15,g14a1,G14A1,(G14A1) name of disease suffered at 1st hospital visit,1.115,4,1,2,4,9.0,"3,6,7,8"
+CLHLS,Rockwood,16,d91,D91,exercise or not at present?,1.11,4,1,3,4,8.0,"3,6,7,8"
+CLHLS,Rockwood,17,c53c,C53C,put paper on the floor,1.108,4,1,3,4,9.0,"3,6,7,8"
+CLHLS,Rockwood,18,a41,A41,(A41) which province were you born in?,1.078,4,1,3,4,9.0,"3,6,7,8"
+CLHLS,Rockwood,19,b24,B24,feel lonely and isolated,1.048,4,1,3,4,8.0,"3,6,7,8"
+CLHLS,Rockwood,20,b27,B27,(B27) be happy as younger,0.974,4,0,2,4,11.0,"3,6,7,8"
+CLHLS,Rockwood,21,g14a2,G14A2,"(G14A2) 1st time, number of days in hospital or bedridden",0.909,4,0,1,4,11.0,"3,6,7,8"
+CLHLS,Rockwood,22,f651b1,F651B1,(F651B1) how much money did your family pay for outpatient costs last year?,0.884,3,1,2,4,9.0,"6,7,8"
+CLHLS,Rockwood,23,g82,G82,(G82) hand behind lower back,0.879,4,0,1,4,12.0,"3,6,7,8"
+CLHLS,Rockwood,24,d1,D1,(D1) staple food,0.873,4,0,1,4,16.0,"3,6,7,8"
+CLHLS,Rockwood,25,d2,D2,(D2) amount of staple food per day (liang),0.783,4,1,1,4,10.0,"3,6,7,8"
+CLHLS,Rockwood,26,g83,G83,raise arms upright,0.754,4,0,1,4,18.0,"3,6,7,8"
+CLHLS,Rockwood,27,d11g,D11G,(D11G) do you watch tv or listen to radio at present ?,0.749,4,0,2,4,13.0,"3,6,7,8"
+CLHLS,Rockwood,28,b21,B21,(B21) look on the bright side of things,0.74,4,0,1,4,15.0,"3,6,7,8"
+CLHLS,Rockwood,29,c16,C16,(C16) # of kinds of food named in one minute,0.728,4,0,1,4,18.0,"3,6,7,8"
+CLHLS,Rockwood,30,g131,G131,(G131) # of times suffering from serious illness within the past two years,0.725,3,0,1,4,12.0,"6,7,8"
+CLHLS,Rockwood,32,g181,G181,did you take in the past 24 hours?,0.564,1,1,1,4,5.0,8
+CLHLS,Rockwood,33,g183,G183,how many hours have you taken the drug recently?,0.556,1,1,1,4,6.0,8
+CLHLS,Rockwood,34,g101,G101,(G101) weight (kilograms),0.549,4,0,1,4,14.0,"3,6,7,8"
+CLHLS,Rockwood,35,a53a3,A53A3,age of 1st person living with you currently,0.534,4,0,1,4,16.0,"3,6,7,8"
+CLHLS,Rockwood,36,g102,G102,is the participant hunchbacked?,0.518,3,0,1,4,17.0,"6,7,8"
+CLHLS,Rockwood,41,g6,G6,(G6) rhythm of heart,0.455,3,0,1,4,13.0,"3,6,7"
+CLHLS,Rockwood,45,a537,A537,which fuels are normally used for cooking in your home?,0.42,3,0,1,4,20.0,"6,7,8"
+CLHLS,Rockwood,54,b32,B32,is it difficult to concentrate when you are doing things now,0.338,1,0,1,4,11.0,8
+CLHLS,Rockwood,68,a_merge,A_MERGE,A_MERGE,0.268,1,0,1,4,19.0,6
+CLHLS,Rockwood,81,b39,B39,do you feel unable to continue your life?,0.233,1,0,1,4,19.0,8

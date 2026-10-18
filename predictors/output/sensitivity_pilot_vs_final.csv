@@ -1,0 +1,10 @@
+cohort,instrument,top5_final,top5_pilot,top5_overlap,spearman_shared_variables,mean_R2_final,mean_R2_pilot
+SHARE,Rockwood,"ac023_, ph082_, phactiv, ph011dno, ph085_","ac023_, ph082_, ph011dno, ph085_, phactiv",5,0.928,0.737,0.744
+SHARE,Fried,"ph048dno, ph048d8, iadl, mh010_, ph061_","ph048d4, ph048dno, ph061_, mh010_, ph048d8",4,0.918,0.559,0.562
+HRS,Rockwood,"paina, painlv, jrsleft, painfr, drive","paina, painlv, jrsleft, painfr, drive",5,0.856,0.702,0.701
+HRS,Fried,"limimpar, limhwrk, fulltan, email, rcaany","limimpar, limhwrk, email, fulltan, sbreath",4,0.97,0.44,0.44
+ELSA,Rockwood,"heactb, hepaa, scqolo, hebal, hekne","hepaa, heactb, breths, cahrs1gp, hepain",2,0.889,0.773,0.775
+ELSA,Fried,"heaid96, nurse_mmrrfti, hehelf, psagf, scqolh","heaid96, nurse_mmrrfti, hehelf, psagf, headl96",4,0.81,0.516,0.515
+MHAS,Rockwood,"joga, jog, paina, fatigue, hltc","jog, joga, paina, fatigue, hltc",5,0.97,0.648,0.649
+MHAS,Fried,"pusha, joga, push, jog, bath","pusha, jog, joga, push, bath",5,0.961,0.54,0.539
+CLHLS,Rockwood,"g11, g12, d11b, g1, f340","g11, g12, d11b, d11e, h71",3,0.939,0.763,0.755

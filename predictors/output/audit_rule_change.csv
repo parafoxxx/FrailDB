@@ -1,0 +1,574 @@
+cohort,instrument,variable,label
+CLHLS,Rockwood,a42,was the county (city) you born in the same as current address?
+CLHLS,Rockwood,d31,(D31) how often eat fresh fruit?
+CLHLS,Rockwood,d32,(D32) how often eat vegetables?
+CLHLS,Rockwood,d4meat2,(D4MEAT2) how often eat meat at present?
+CLHLS,Rockwood,d4fish2,(D4FISH2) how often eat fish at present?
+CLHLS,Rockwood,d4egg2,(D4EGG2) how often eat eggs at present?
+CLHLS,Rockwood,d4bean2,how often eat bean at present?
+CLHLS,Rockwood,d4veg2,how often eat salt-preserved vegetables at present?
+CLHLS,Rockwood,d4suga2,how often eat sugar at present?
+CLHLS,Rockwood,d4garl2,how often eat garlic at present?
+CLHLS,Rockwood,f66,(F66) often went to bed hungry as a child
+CLHLS,Rockwood,g3,(G3) able to use chopsticks to eat?
+CLHLS,Rockwood,g6,(G6) rhythm of heart
+CLHLS,Rockwood,g7,(G7) heart rate
+CLHLS,Rockwood,g102b,length from kneel to floor
+CLHLS,Rockwood,g15o1,(G15O1) suffering from dementia?
+CLHLS,Rockwood,d14d231,how much money paid by the family?
+CLHLS,Rockwood,d14d232,how much money paid as subsidy by the affiliation or community?
+CLHLS,Rockwood,d14d233,how much money paid as subsidy by the government?
+CLHLS,Rockwood,a537,(A537) which fuels are normally used for cooking in your home?
+CLHLS,Rockwood,b28,"(B28) have you felt sad, blue, or depressed for two weeks or more in last 12 months?"
+CLHLS,Rockwood,d33,(D33) what kind of grease do you mainly use for cooking?
+CLHLS,Rockwood,d4milk1,(D4MILK1) how often eat milk products at present
+CLHLS,Rockwood,d4nut1,(D4NUT1) how often eat nut products at present
+CLHLS,Rockwood,d4alga1,(D4ALGA1) how often eat mushroom or algae at present
+CLHLS,Rockwood,d4vit1,(D4VIT1) how often eat vitamins (a/c/e) at present
+CLHLS,Rockwood,d4drug1,(D4DRUG1) how often eat medicinal plants at present
+CLHLS,Rockwood,f651a1,(F651A1) how much money did you spend on outpatient costs last year?
+CLHLS,Rockwood,f651b1,(F651B1) how much money did your family pay for outpatient costs last year?
+CLHLS,Rockwood,f651a2,(F651A2) how much money did you spend on inpatient costs last year?
+CLHLS,Rockwood,f651b2,(F651B2) how much money did your family pay for inpatient costs last year?
+CLHLS,Rockwood,g1,(G1) visual function: can you see the break in the circle?
+CLHLS,Rockwood,g511,(G511) blood pressure test for the 1st time: systolic
+CLHLS,Rockwood,g512,(G512) blood pressure test for the 1st time: diastolic
+CLHLS,Rockwood,g521,(G521) blood pressure test for the 2nd time: systolic
+CLHLS,Rockwood,g522,(G522) blood pressure test for the 2nd time: diastolic
+CLHLS,Rockwood,g106,(G106) do you have any difficulty with your hearing?
+CLHLS,Rockwood,g1061,(G1061) in which ear(s) do you have a hearing difficulty?
+CLHLS,Rockwood,g1062,(G1062) at what age did you first notice a hearing difficulty?
+CLHLS,Rockwood,g1063,(G1063) how quickly did your hearing difficulty develop?
+CLHLS,Rockwood,a537n,ventilation of the kitchen when cooking at home
+CLHLS,Rockwood,a557,toilet cleaner
+CLHLS,Rockwood,b33,are you feeling sad or depressed?
+CLHLS,Rockwood,g15o3,G15O3 whether to take the medicine
+CLHLS,Rockwood,g15p3,G15P3 whether to take the medicine
+CLHLS,Rockwood,g15q3,G15Q3 whether to take the medicine
+CLHLS,Rockwood,g15r3,G15R3 whether to take the medicine
+CLHLS,Rockwood,g15s3,G15S3 whether to take the medicine
+CLHLS,Rockwood,g15t3,G15T3 whether to take the medicine
+CLHLS,Rockwood,g15u3,G15U3 whether to take the medicine
+CLHLS,Rockwood,g15v3,G15V3 whether to take the medicine
+CLHLS,Rockwood,g15w3,G15W3 whether to take the medicine
+CLHLS,Rockwood,g15x3,G15X3 whether to take the medicine
+CLHLS,Rockwood,g15y3,G15Y3 whether to take the medicine
+CLHLS,Rockwood,g182,"if you have taken the medicine in the past 24 hours, what kind of medicine have"
+CLHLS,Rockwood,g18t,specify the name of the other medicine
+CLHLS,Rockwood,g20,heart rhythm
+ELSA,Fried,heslfcb,Diabetes: how much knows about managing it (self-reported)
+ELSA,Fried,headlmo,"IADL: managing money, such as bills and expenses"
+ELSA,Fried,erlvolpe,Unpaid help: providing personal care for someone who is sick or frail
+ELSA,Fried,catkm,"Received help in last month: managing money, such as paying bills and keeping tr"
+ELSA,Rockwood,hemdb,"Are you currently taking any tablets, pills or other medicines that you swallow"
+ELSA,Rockwood,hepab,Whether asked questions re pain if walking on flat surface. Code 2 if can~t walk
+ELSA,Rockwood,hebal,How often do you have problems with keeping your balance when you are walking on
+ELSA,Rockwood,herpd,Are you troubled by shortness of breath when hurrying on level ground or walking
+ELSA,Rockwood,herpe,Do you get short of breath walking with other people of your own age on level gr
+ELSA,Rockwood,herpf,Do you have to stop for breath when walking at your own pace on level ground?
+ELSA,Rockwood,hecdb,Does this pain ever begin when you are standing still or sitting? {in legs}
+ELSA,Rockwood,hecdc,Do you get it if you walk uphill or hurry? {in legs)
+ELSA,Rockwood,hecdd,Do you get it when you walk at an ordinary pace on the level? {in legs}
+ELSA,Rockwood,sprest,"How often, if at all, do you eat out of the house for example, in a restaurant,"
+ELSA,Rockwood,sprestb,"Would you like to eat out of the house more often but feel that, for whatever re"
+ELSA,Rockwood,sptraa,Do you use public transport ... READ OUT ...
+ELSA,Rockwood,sptrab1,Why don~t you use public transport more often?
+ELSA,Rockwood,sptrab2,Why don~t you use public transport more often?
+ELSA,Rockwood,mmwlka,Time taken for first walk (seconds)
+ELSA,Rockwood,mmwlkb,Time taken for second walk (seconds)
+ELSA,Rockwood,mmpain,Had pain whilst walking?
+ELSA,Rockwood,wphjob,"How many hours a week do you usually work in this job, excluding meal breaks but"
+ELSA,Rockwood,wpmoj,Do you currently earn any money from any work apart from your main job or any wo
+ELSA,Rockwood,iaspen,Did you (or your spouse) receive any money from a state pension in the last year
+ELSA,Rockwood,iappen,Did you (or your spouse) receive any money from a personal or employer pension i
+ELSA,Rockwood,iadebt,Do  you (or your spouse) currently owe any money on credit or store cards?
+ELSA,Rockwood,iaowe,"Do you (or your spouse) currently owe any money to friends, relatives, or other"
+ELSA,Rockwood,ialoan1,"On which, if any, of these do you (or your spouse) currently owe money?"
+ELSA,Rockwood,iaean03,About how much money did person 3 (non eligible hh member) earn from all jobs in
+ELSA,Rockwood,iaea3e,earnings person 3 - Bracket Entry point (iaearn3):About how much money did perso
+ELSA,Rockwood,iaea3r,earnings person 3 - Bracket Result (iaearn3):About how much money did person 3 (
+ELSA,Rockwood,homeal,Cut size of meals in last 12 months: In the last 12 months did you (or anyone el
+ELSA,Rockwood,scqoli,Shortage of money stops me from doing the things I want to  do
+ELSA,Rockwood,scsce,People would be afraid to walk alone in this area after dark/People feel safe wa
+ELSA,Rockwood,dhiasep,Computed: whether respondent and their partner keep finances separate
+ELSA,Rockwood,dhsameh,Whether household is at same address as at the previous interview
+ELSA,Rockwood,hebowd,Screening: whether ever completed bowel cancer screening test using home test ki
+ELSA,Rockwood,hemamb,Screening (women): whether ever had breast cancer screening (mammogram or x-ray)
+ELSA,Rockwood,hepro,Screening (men): ever had prostate cancer screening (PSA test or other)
+ELSA,Rockwood,medcnjd,"Drug: whether taking or using any medicines, pills, syrups, ointments, puffers o"
+ELSA,Rockwood,hebck,Back pain rating walking on flat surface
+ELSA,Rockwood,hehip,Hip pain rating walking on flat surface
+ELSA,Rockwood,hekne,Knee pain rating walking on flat surface
+ELSA,Rockwood,hefet,Foot pain rating walking on flat surface
+ELSA,Rockwood,sptrab3,Reasons for not using public transport: it is too expensive
+ELSA,Rockwood,sptrab4,Reasons for not using public transport: it is unreliable
+ELSA,Rockwood,sptrab5,Reasons for not using public transport: it is infrequent
+ELSA,Rockwood,sptrab7,Reasons for not using public transport: they do not need to
+ELSA,Rockwood,sptrab8,Reasons for not using public transport: fear of crime
+ELSA,Rockwood,sptrab9,Reasons for not using public transport: it is too dirty
+ELSA,Rockwood,sptrab10,Reasons for not using public transport: it is not convenient
+ELSA,Rockwood,sptrab11,Reasons for not using public transport: they prefer to walk
+ELSA,Rockwood,sptrab88,Reasons not use public transport: lockdown and social distancing have reduced my
+ELSA,Rockwood,sptrab95,Reasons for not using public transport: other
+ELSA,Rockwood,sptram1,Reasons for not using public transport: none is available (merged)
+ELSA,Rockwood,sptram2,Reasons for not using public transport: does not go where they want to (merged)
+ELSA,Rockwood,sptram3,Reasons for not using public transport: it is too expensive (merged)
+ELSA,Rockwood,sptram4,Reasons for not using public transport: it is unreliable (merged)
+ELSA,Rockwood,sptram5,Reasons for not using public transport: it is infrequent (merged)
+ELSA,Rockwood,sptram7,Reasons for not using public transport: they do not need to (merged)
+ELSA,Rockwood,sptram8,Reasons for not using public transport: fear of crime (merged)
+ELSA,Rockwood,sptram9,Reasons for not using public transport: it is too dirty (merged)
+ELSA,Rockwood,sptram10,Reasons for not using public transport: it is not convenient (merged)
+ELSA,Rockwood,sptram11,Reasons for not using public transport: they prefer to walk (merged)
+ELSA,Rockwood,sptram13,Reasons for not using public transport: prefer to use car (merged)
+ELSA,Rockwood,sptram14,Reasons for not using public transport: prefer to use bicycle (merged)
+ELSA,Rockwood,sptram16,Reasons for not using public transport: rarely go out (merged)
+ELSA,Rockwood,sptram51,Reasons for not using public transport: COVID related (merged)
+ELSA,Rockwood,sptram52,Reasons for not using public transport: friends/family provide lifts (merged)
+ELSA,Rockwood,sptram85,Reason resp does not use public transport: other answer - not codeable (merged)
+ELSA,Rockwood,sptram86,Reason resp does not use public transport: irrelevant answer - not codeable (mer
+ELSA,Rockwood,sptram88,Reasons not use public transport: lockdown and social distancing have reduced my
+ELSA,Rockwood,sptro1,Whether respondent aged 65+ gets lifts from family/friends not living with them
+ELSA,Rockwood,splift,How often respondent gets lifts from family/friends not living with them
+ELSA,Rockwood,wpwyjmmo,Reason for taking this job: needed money/earn extra on retirement (merged)
+ELSA,Rockwood,wphjobl,"Hours worked per week in this job (exc meal breaks, inc paid overtime) EXCLUDE H"
+ELSA,Rockwood,wpowkif,Reasons work past state pension age: improve finances
+ELSA,Rockwood,iat10,Benefit block type-Current carers allowance (respondent)
+ELSA,Rockwood,iap10,Current carers allowance (respondent): period code
+ELSA,Rockwood,iat21,Benefit block type-Current carers allowance (partner)
+ELSA,Rockwood,iap21,Current carers allowance (partner): period code
+ELSA,Rockwood,iaa21,Current carers allowance (partner): amount received
+ELSA,Rockwood,ianpbpl,Prize money from Premium Bonds - bracket min value (ianpbp)
+ELSA,Rockwood,ianpbpu,Prize money from Premium Bonds - bracket max value (ianpbp)
+ELSA,Rockwood,ianpbpe,Prize money from Premium Bonds - bracket entry point (ianpbp)
+ELSA,Rockwood,ianpbpr,Prize money from Premium Bonds - bracket result (ianpbp)
+ELSA,Rockwood,iapropow,Assets held (respondent or spouse): money owed by others
+ELSA,Rockwood,ialoanml,Current loans (respondent or spouse): loan from a money lender or tally man
+ELSA,Rockwood,iaorgf,Method of organising finances
+ELSA,Rockwood,iahhinc,Introduction to questions on other HH members finances (refusal permitted)
+ELSA,Rockwood,hoiname,Services included in last rent payment: meals
+ELSA,Rockwood,hoinamme,Services included in last rent payment: meals (merged)
+ELSA,Rockwood,hohbme,Services included with accommodation: meals
+ELSA,Rockwood,hohbmme,Services included with accommodation: meals (merged)
+ELSA,Rockwood,homadd,Whether respondent increased the amount of money borrowed on their mortgage(s)
+ELSA,Rockwood,homa,How much additional money borrowed
+ELSA,Rockwood,homal,Additional money borrowed on mortgage - bracket min value (homa)
+ELSA,Rockwood,homau,Additional money borrowed on mortgage - bracket max value (homa)
+ELSA,Rockwood,homae,Additional money borrowed on mortgage - bracket entry point (homa)
+ELSA,Rockwood,homar,Additional money borrowed on mortgage - bracket result (homa)
+ELSA,Rockwood,homoft,How often were meals cut or skipped completely
+ELSA,Rockwood,hotrangc,Money given to grandchild(ren)
+ELSA,Rockwood,hotranoc,Money given to own child(ren)
+ELSA,Rockwood,hotranor,Money given to other relative
+ELSA,Rockwood,hotranch,Money given to charity
+ELSA,Rockwood,hotrannr,Money given to other non-relative
+ELSA,Rockwood,exrela,Whether find has too little money to spend on their needs
+ELSA,Rockwood,exrelefo,Activities stopped by having too little money: buying first choice of food items
+ELSA,Rockwood,exreleme,Activities stopped by having too little money: having friends/family round for f
+ELSA,Rockwood,exreleou,Activities stopped by having too little money: having outfit to wear for occasio
+ELSA,Rockwood,exrelede,Activities stopped by having too little money: keeping home reasonably decorated
+ELSA,Rockwood,exreleel,Activities stopped by having too little money: repairing/replacing broken elec g
+ELSA,Rockwood,exrelefa,Activities stopped by having too little money: paying fares or transport costs
+ELSA,Rockwood,exrelepr,Activities stopped by having too little money: buying presents for friends/famil
+ELSA,Rockwood,exreleho,Activities stopped by having too little money: taking the sorts of holidays they
+ELSA,Rockwood,exreletr,Activities stopped by having too little money: treating themselves from time to
+ELSA,Rockwood,exrele96,Activities stopped by having too little money: none of these
+ELSA,Rockwood,erfvolmo,Whether volunteered: raising money/taking part in sponsored events
+ELSA,Rockwood,erlvolco,"Unpaid help: cooking, cleaning, laundry, gardening, other household jobs"
+ELSA,Rockwood,erlvolba,Unpaid help: babysitting or caring for children
+ELSA,Rockwood,erlvolpe,Unpaid help: providing personal care for someone who is sick or frail
+ELSA,Rockwood,scinantt,Internet activities in last 3 months: buying public transport tickets online
+ELSA,Rockwood,scqola,CASP-19 scale: how often feels age prevents them from doing things they like
+ELSA,Rockwood,scqolb,CASP-19 scale: how often feels what happens to them is out of their control
+ELSA,Rockwood,scqolc,CASP-19 scale: how often feels free to plan for the future
+ELSA,Rockwood,scqold,CASP-19 scale: how often feels left out of things
+ELSA,Rockwood,scqole,CASP-19 scale: how often can do the things they want to do
+ELSA,Rockwood,scqolf,CASP-19 scale: how often family responsibilities prevents them from doing things
+ELSA,Rockwood,scqolg,CASP-19 scale: how often feels they can please themselves what they do
+ELSA,Rockwood,scqolj,CASP-19 scale: how often look forward to each day
+ELSA,Rockwood,scqolk,CASP-19 scale: how often feels that their life has meaning
+ELSA,Rockwood,scqoll,CASP-19 scale: how often enjoys the things they do
+ELSA,Rockwood,scqolm,CASP-19 scale: how often enjoys being in the company of others
+ELSA,Rockwood,scqoln,CASP-19 scale: how often looks back on their life with a sense of happiness
+ELSA,Rockwood,scqolo,CASP-19 scale: how often feels full of energy these days
+ELSA,Rockwood,scqolp,CASP-19 scale: how often chooses to do things they have never done before
+ELSA,Rockwood,scqolq,CASP-19 scale: how often feels satisfied with the way their life has turned out
+ELSA,Rockwood,scqolr,CASP-19 scale: how often feels that life is full of opportunities
+ELSA,Rockwood,scqols,CASP-19 scale: how often feels the future looks good for them
+ELSA,Rockwood,scaffdb,Respondent couldn't afford to eat balanced meals
+ELSA,Rockwood,scweth,Time spent walking or exercising yesterday (HOURS)
+ELSA,Rockwood,scwetm,Time spent walking or exercising yesterday (MINUTES)
+ELSA,Rockwood,scsitth,Time spent sitting yesterday (HOURS)
+ELSA,Rockwood,scsittm,Time spent sitting yesterday (MINUTES)
+ELSA,Rockwood,schelncta,Whether urinary incontinence problem lasted for more than one month
+ELSA,Rockwood,schebowa,Whether bowel incontinence problem lasted for more than one month
+ELSA,Rockwood,dhedimch,CVD: high cholesterol diagnosis newly reported (merged)
+ELSA,Rockwood,herpe1,Shortness of breath: reason for never walking uphill (or on level ground)
+ELSA,Rockwood,hecda,Claudication: whether gets pain or discomfort in legs when walking
+ELSA,Rockwood,heinct,Incontinence: whether lost urine beyond control in last 12 months
+ELSA,Rockwood,heincta,Incontinence: whether problem lasted more than one month
+ELSA,Rockwood,sptrbuna,Reason respondent does not use public transport: none is available
+ELSA,Rockwood,sptrbdes,Reason respondent does not use public transport: does not go where they want to
+ELSA,Rockwood,sptrbexp,Reason respondent does not use public transport: it is too expensive
+ELSA,Rockwood,sptrbunr,Reason respondent does not use public transport: it is unreliable
+ELSA,Rockwood,sptrbfre,Reason respondent does not use public transport: it is infrequent
+ELSA,Rockwood,sptrbnee,Reason respondent does not use public transport: they do not need to
+ELSA,Rockwood,sptrbfea,Reason respondent does not use public transport: fear of crime
+ELSA,Rockwood,sptrbdir,Reason respondent does not use public transport: it is too dirty
+ELSA,Rockwood,sptrbcon,Reason respondent does not use public transport: it is not convenient
+ELSA,Rockwood,sptrbwal,Reason respondent does not use public transport: they prefer to walk
+ELSA,Rockwood,sptrb95,Reason respondent does not use public transport: other
+ELSA,Rockwood,sptrmuna,Merged var - reason respondent does not use public transport: none is available
+ELSA,Rockwood,sptrmexp,Merged var - reason respondent does not use public transport: is too expensive
+ELSA,Rockwood,sptrmunr,Merged var - reason respondent does not use public transport: it is unreliable
+ELSA,Rockwood,sptrmfre,Merged var - reason respondent does not use public transport: it is infrequent
+ELSA,Rockwood,sptrmnee,Merged var - reason respondent does not use public transport: do not need to
+ELSA,Rockwood,sptrmfea,Merged var - reason respondent does not use public transport: fear of crime
+ELSA,Rockwood,sptrmdir,Merged var - reason respondent does not use public transport: it is too dirty
+ELSA,Rockwood,sptrmcon,Merged var - reason respondent does not use public transport: not convenient
+ELSA,Rockwood,sptrmwal,Merged var - reason respondent does not use public transport: prefer to walk
+ELSA,Rockwood,sptrm85,Merged var - reason resp does not use public transport: answer not codeable
+ELSA,Rockwood,sptrm86,Merged var - reason resp does not use public transport: irrelevant response
+ELSA,Rockwood,sptrfam,Whether respondent aged 65+ gets lifts from family/friends not living with them
+ELSA,Rockwood,wpnlkmfi,Reasons for staying in current job: financial security/good money (merged var)
+ELSA,Rockwood,exrel96,Whether they are NOT stopped from doing EXRELE1 - 9 by having too little money
+ELSA,Rockwood,ermocmo,Reasons for caring: To earn money
+ELSA,Rockwood,ermovmo,Reasons for doing voluntary work: To earn money
+ELSA,Rockwood,scmoreb,Whether respondent would like to eat out of the house more often
+ELSA,Rockwood,gtspd_id,(D) Walks used to derive speed
+ELSA,Rockwood,casp19,(D) CASP 19
+ELSA,Rockwood,caspctl,(D) Control (CASP)
+ELSA,Rockwood,caspaut,(D) Autonomy (CASP)
+ELSA,Rockwood,caspple,(D) Pleasure (CASP)
+ELSA,Rockwood,caspsr,(D) Self realisation (CASP)
+ELSA,Rockwood,heatt2,Walking symptom: fatigue
+ELSA,Rockwood,heatt3,Walking symptom: shortness of breath
+ELSA,Rockwood,heatt5,Walking symptom: pain in leg or foot
+ELSA,Rockwood,heatt6,Walking symptom: swelling in leg or foot
+ELSA,Rockwood,heatt7,Walking symptom: pain in back
+ELSA,Rockwood,heatt8,Walking symptom: seeing difficulty
+ELSA,Rockwood,heatt13,"Walking symptom: unsteady on feet, balance"
+ELSA,Rockwood,heatt14,Walking symptom: lightheaded or dizzy
+ELSA,Rockwood,heatt15,Walking symptom: fear of falling
+ELSA,Rockwood,heatt16,Walking symptom: anxiety or fear
+ELSA,Rockwood,heatt95,Walking symptom: other
+ELSA,Rockwood,heattm2,Walking symptom: fatigue
+ELSA,Rockwood,heattm3,Walking symptom: shortness of breath
+ELSA,Rockwood,heattm5,Walking symptom: pain in leg or foot
+ELSA,Rockwood,heattm6,Walking symptom: swelling in leg or foot
+ELSA,Rockwood,heattm7,Walking symptom: pain in back
+ELSA,Rockwood,heattm8,Walking symptom: seeing difficulty
+ELSA,Rockwood,heattm13,"Walking symptom: unsteady on feet, balance"
+ELSA,Rockwood,heattm14,Walking symptom: lightheaded or dizzy
+ELSA,Rockwood,heattm15,Walking symptom: fear of falling
+ELSA,Rockwood,heattm16,Walking symptom: anxiety or fear
+ELSA,Rockwood,heattm51,Walking symptom: other hip or leg or foot
+ELSA,Rockwood,heattm52,Walking symptom: brain disease affected legs
+ELSA,Rockwood,heattm85,Walking symptom: not codeable
+ELSA,Rockwood,heattm86,Walking symptom: irrelevant
+ELSA,Rockwood,heata,Walking symptom: main symptom if multiple
+ELSA,Rockwood,hefle,Fall: whether doctor or nurse tested balance or strength or watched resp walk
+ELSA,Rockwood,hoailihs,NHS paid for the lift
+ELSA,Rockwood,mmcomun,Reason fo non-completion of walk: unable to walk safely
+ELSA,Rockwood,sctvgar,Frequency of watching: cookery/decoration/gardening
+ELSA,Rockwood,gtspd_wk,(D) Walks used to derive mean gait speed
+ELSA,Rockwood,nurse_lighteat,Blood sample: What did repondent have to eat
+ELSA,Rockwood,nurse_sithtrs,Sitting height: Whether sitting height measurement was attempted or obtained
+ELSA,Rockwood,nurse_sithgt,Sitting height measurement (cm)
+ELSA,Rockwood,nurse_hastro,Lung function: Whether admitted to hospital for heart complaint in last 6 weeks
+ELSA,Rockwood,nurse_lfstand,Lung function: Measurements taken while standing or sitting?
+ELSA,Rockwood,heosteb,osteoporosis: whether doctor or nurse recommended medication
+ELSA,Rockwood,henictk,Taking any medication to help stop smoking?
+ELSA,Rockwood,iapspen,Receive any money from a state pension in the last year (From partner iaspen)
+ELSA,Rockwood,rimearn,Money earned minus initial fee
+ELSA,Rockwood,ritotmon,Money earned plus initial fee
+ELSA,Rockwood,riwhenm,When money from randomly selected experiment will be given (days)
+ELSA,Rockwood,hebow,Incontinence: whether problems controlling bowels in last 12 months
+ELSA,Rockwood,hebowa,Incontinence: whether bowel problem lasted more than one month
+ELSA,Rockwood,hoamlihs,NHS paid for the lift (merged var)
+ELSA,Rockwood,hoamliys,You or spouse paid for the lift (merged var)
+ELSA,Rockwood,hoamlial,Lift already in the property (merged var)
+ELSA,Rockwood,hoamlill,Landlord etc. paid for the lift (merged var)
+ELSA,Rockwood,hoamli85,Other not codeable source paid for the lift (merged var)
+ELSA,Rockwood,hoamli86,irrelevant response paid for the lift (merged var)
+ELSA,Rockwood,scina04,"Activities respondent used internet for in last 3 months: Finances (banking, pay"
+ELSA,Rockwood,scawe,"Yesterday, did you go for a walk or exercise?"
+ELSA,Rockwood,scaweh,How much time did you spend walking or exercising  yesterday? Hours?
+ELSA,Rockwood,scawem,How much time did you spend walking or exercising  yesterday? Minutes?
+ELSA,Rockwood,scawea,How did you feel when you were walking or exercising  yesterday? Happy
+ELSA,Rockwood,scaweb,How did you feel when you were walking or exercising  yesterday? Interested
+ELSA,Rockwood,scawec,How did you feel when you were walking or exercising  yesterday? Frustrated
+ELSA,Rockwood,scawed,How did you feel when you were walking or exercising  yesterday? Sad?
+ELSA,Rockwood,scaoth,"Yesterday, did you do any health-related activities other  than walking or exerc"
+ELSA,Rockwood,nurse_medcnjd,"DRUG: Are they taking or using any medicines, pills, syrups, ointments, puffers"
+ELSA,Rockwood,nurse_bptoday,DRUG: Whether taken any medication for blood pressure today
+ELSA,Rockwood,nurse_difbpcno,BPRESS: Problems taking BP readings: No problems taking blood pressure
+ELSA,Rockwood,nurse_lftb,LUNG: Whether currently taking any medications for the treatment of tuberculosis
+ELSA,Rockwood,scarea5,People would be afraid to walk alone in the dark
+ELSA,Rockwood,scawea_v1,How did you feel when walking/exercising yesterday? Happy(Orange Questionnaire)
+ELSA,Rockwood,scawea_v2,How did you feel when walking/exercising yesterday? Happy(Green Questionnaire)
+ELSA,Rockwood,scaweb_v1,How did you feel when walking/exercising yesterday? Interested(Orange Questionna
+ELSA,Rockwood,scaweb_v2,How did you feel when walking/exercising yesterday? Interested(Green Questionnai
+ELSA,Rockwood,scawec_v1,How did you feel when walking/exercising yesterday? Frustrated(Orange Questionna
+ELSA,Rockwood,scawec_v2,How did you feel when walking/exercising yesterday? Frustrated(Green Questionnai
+ELSA,Rockwood,scawed_v1,How did you feel when walking/exercising yesterday? Sad(Orange Questionnaire)
+ELSA,Rockwood,scawed_v2,How did you feel when walking/exercising yesterday? Sad(Green Questionnaire)
+ELSA,Rockwood,hepad,Knee or hip pain: whether taking or has taken any medication or exercises to con
+ELSA,Rockwood,hepae,Knee or hip pain: whether exercises and medicines control the pain
+ELSA,Rockwood,scfpati,"Regarding finances, spending and savings: degree to which assesses themselves to"
+ELSA,Rockwood,scfrisk,"Regarding finances, spending and savings: degree to which assesses themselves to"
+ELSA,Rockwood,scwey,Whether respondent went for a walk or exercised yesterday
+ELSA,Rockwood,schry,Whether respondent did any health related activites other than walking yesterday
+HRS,Fried,moneyhlp,r11moneyhlp:w11 whether anyone helps r with managing money
+HRS,Rockwood,urinai,r10urinai:w10 r any urinary incontinence past year
+HRS,Rockwood,urinaf,r10urinaf:w10 r number days urinary incontinence last month
+HRS,Rockwood,systo,r10systo:w10 r average blood pressure measure (systolic) 2 & 3
+HRS,Rockwood,diasto,r10diasto:w10 r average blood pressure measure (diastolic) 2 & 3
+HRS,Rockwood,bldpos,r10bldpos:w10 r position for blood pressure test
+HRS,Rockwood,bparm,r10bparm:w10 r arm used for blood pressure test
+HRS,Rockwood,wspeed1,r10wspeed1:w10 r time for walking speed test 1(sec)
+HRS,Rockwood,wspeed2,r10wspeed2:w10 r time for walking speed test 2(sec)
+HRS,Rockwood,wspeed,r10wspeed:w10 r average time for walking speed test(sec)
+HRS,Rockwood,afwalk,r10afwalk:w10 whether r feels safe/afraid walking alone in this area
+HRS,Rockwood,walkex,r11walkex:w11 Affective Experience: r walked or exercised
+HRS,Rockwood,exrhpy,r11exrhpy:w11 Affective Experience Happy: r walking or exercising
+HRS,Rockwood,exrint,r11exrint:w11 Affective Experience Interested: r walking or exercising
+HRS,Rockwood,exrcon,r11exrcon:w11 Affective Experience Content: r walking or exercising
+HRS,Rockwood,exrpos2,r11exrpos2:w11 r walked/exercised: Pos Affect Index 2-item
+HRS,Rockwood,exrpos3,r11exrpos3:w11 r walked/exercised: Pos Affect Index 3-item
+HRS,Rockwood,exrpos3m,r11exrpos3m:w11 r walked/exercised: missings Pos Affect Index 3-item
+HRS,Rockwood,exrfrs,r11exrfrs:w11 Affective Experience Frustrated: r walking or exercising
+HRS,Rockwood,exrsad,r11exrsad:w11 Affective Experience Sad: r walking or exercising
+HRS,Rockwood,exrbor,r11exrbor:w11 Affective Experience Bored: r walking or exercising
+HRS,Rockwood,exrpai,r11exrpai:w11 Affective Experience Pain: r walking or exercising
+HRS,Rockwood,exrneg2,r11exrneg2:w11 r walked/exercised: Neg Affect Index 2-item
+HRS,Rockwood,exrneg3,r11exrneg3:w11 r walked/exercised: Neg Affect Index 3-item
+HRS,Rockwood,exrneg3m,r11exrneg3m:w11 r walked/exercised: missings Neg Affect Index 3-item
+HRS,Rockwood,rc087,INCONTINENCE
+HRS,Rockwood,rc287,TAKEN PAIN MEDICATIONS PAST 3 MOS
+HRS,Rockwood,rc229,DAYS IN BED
+HRS,Rockwood,rg004,DIFFICULTY- SITTING 2 HOURS
+HRS,Rockwood,rg058,HOUSE\YARD WORK HELP
+HRS,Rockwood,rlb001p,Q01P. BAKE OR COOK
+HRS,Rockwood,rlb001t,Q01T. WALK FOR 20 MINES
+HRS,Rockwood,rlb020d,Q20D. AFRAID WALK ALONE AFTER DARK
+HRS,Rockwood,rlb027c,Q27C. TRY HARD CARRY OUT BELIEFS
+HRS,Rockwood,rlb033c,Q33C. ACTIVE CARRYING OUT OWN PLANS
+HRS,Rockwood,rlb048c,Q48C. GO FOR A WALK
+HRS,Rockwood,rlb049f,Q49F. CONCERNED THE MONEY
+HRS,Rockwood,rlb049a1,Q49A1. STRAIN ON FINANCES
+HRS,Rockwood,rlb049a2,Q49A2. HAVE MONEY LEFT OVER
+HRS,Rockwood,rlb049a3,Q49A3. BEHIND WITH FINANCES
+HRS,Rockwood,rlb049a4,Q49A4. FINANCES CONTROL LIFE
+HRS,Rockwood,rlb051a,Q51A. NEED THE MONEY
+HRS,Rockwood,rlb069h,Q69H. WALK OUTSIDE YOUR HOME FOR 20 MINUTES
+HRS,Rockwood,rtn06,FINANCES HELD SEPARATELY
+HRS,Rockwood,rv102,MONEY NEEDED RETIRE
+HRS,Rockwood,rv160,PROCRASTINATION SITTING DOWN
+HRS,Rockwood,rv167,PROCRASTINATION COST MONEY
+HRS,Rockwood,rv352,JOBS SITTING DOWN
+HRS,Rockwood,rv413,MAKING BED
+HRS,Rockwood,sc087,INCONTINENCE
+HRS,Rockwood,sc287,TAKEN PAIN MEDICATIONS PAST 3 MOS
+HRS,Rockwood,sc304,TIME SITTING HOURS
+HRS,Rockwood,sg004,DIFFICULTY- SITTING 2 HOURS
+HRS,Rockwood,sg058,HOUSE\YARD WORK HELP
+HRS,Rockwood,si854,BLOOD PRESSURE COMPLETE
+HRS,Rockwood,si823,WALKING TEST 1ST TRIAL TIME
+HRS,Rockwood,si824,WALKING TEST 2ND TRIAL TIME
+HRS,Rockwood,si914,SALIVA SAMPLE EAT DRINK ETC
+HRS,Rockwood,slb001p,Q01P. BAKE OR COOK
+HRS,Rockwood,slb001t,Q01T. WALK FOR 20 MINES
+HRS,Rockwood,slb020d,Q20D. AFRAID WALK ALONE AFTER DARK
+HRS,Rockwood,slb027c,Q27C. TRY HARD CARRY OUT BELIEFS
+HRS,Rockwood,slb033c,Q33C. ACTIVE CARRYING OUT OWN PLANS
+HRS,Rockwood,slb048c,Q48C. GO FOR A WALK
+HRS,Rockwood,slb049f,Q49F. CONCERNED THE MONEY
+HRS,Rockwood,slb049a1,Q49A1. STRAIN ON FINANCES
+HRS,Rockwood,slb049a2,Q49A2. HAVE MONEY LEFT OVER
+HRS,Rockwood,slb049a3,Q49A3. BEHIND WITH FINANCES
+HRS,Rockwood,slb049a4,Q49A4. FINANCES CONTROL LIFE
+HRS,Rockwood,slb051a,Q51A. NEED THE MONEY
+HRS,Rockwood,stn06,FINANCES HELD SEPARATELY
+HRS,Rockwood,sv203,MEDICATION FREQUENCY
+HRS,Rockwood,sv205,PRECAUTIONS OF MEDICATION
+HRS,Rockwood,sv308,CONTINENTS MOVING
+HRS,Rockwood,urinpad,r4urinpad:w4 r uses pads for incontinence
+HRS,Rockwood,ageprv,r7ageprv:w7 CASP: age prevents r from doing things they like
+HRS,Rockwood,outcon,r7outcon:w7 CASP: r what happens is out of my control
+HRS,Rockwood,freepln,r7freepln:w7 CASP: r feels free to plan for future
+HRS,Rockwood,flftout,r7flftout:w7 CASP: r feels left out of things
+HRS,Rockwood,cando,r7cando:w7 CASP: r can do things they want to do
+HRS,Rockwood,famprv,r7famprv:w7 CASP: family responsibility prevents r from doing things they want
+HRS,Rockwood,dowpls,r7dowpls:w7 CASP: r can do what they please
+HRS,Rockwood,mshtge,r7mshtge:w7 CASP: money shortage stops r from doing things they want
+HRS,Rockwood,lookfwd,r7lookfwd:w7 CASP: r looks forward to each day
+HRS,Rockwood,lfemean,r7lfemean:w7 CASP: r feels life has meaning
+HRS,Rockwood,enjdo,r7enjdo:w7 CASP: r enjoys things they do
+HRS,Rockwood,enjcmpny,r7enjcmpny:w7 CASP: r enjoys being in company of others
+HRS,Rockwood,snshappy,r7snshappy:w7 CASP: r looks back on life with sense of happiness
+HRS,Rockwood,fenerg,r7fenerg:w7 CASP: r feels full of energy
+HRS,Rockwood,chsnth,r7chsnth:w7 CASP: r chooses things never done before
+HRS,Rockwood,lftrnout,r7lftrnout:w7 CASP: r feels satisfied the way life turned out
+HRS,Rockwood,lifeopp,r7lifeopp:w7 CASP: r life is full of opportunities
+HRS,Rockwood,futregd,r7futregd:w7 CASP: r feels future looks good for them
+HRS,Rockwood,cntrlndx6,r7cntrlndx6:w7 CASP: r 6-item control index
+HRS,Rockwood,cntrlndx5,r7cntrlndx5:w7 CASP: r 5-item control index
+HRS,Rockwood,autondx5,r7autondx5:w7 CASP: r 5-item autonomy index
+HRS,Rockwood,autondx3,r7autondx3:w7 CASP: r 3-item autonomy index
+HRS,Rockwood,plsrndx4,r7plsrndx4:w7 CASP: r 4-item pleasure index
+HRS,Rockwood,plsrndx2,r7plsrndx2:w7 CASP: r 2-item pleasure index
+HRS,Rockwood,slfrlndx4,r7slfrlndx4:w7 CASP: r 4-item self-realization index
+HRS,Rockwood,slfrlndx2,r7slfrlndx2:w7 CASP: r 2-item self-realization index
+MHAS,Fried,money,r1money: w1 R Difficulty-Managing money
+MHAS,Fried,moneya,r1moneya: w1 R Some difficulty-Managing money
+MHAS,Rockwood,urinai2y,r1urinai2y: w1 R Any urinary incontinence (last 2 yrs)
+MHAS,Rockwood,sthtcomp,r2sthtcomp: w2 R willing & able to complete sitting height measurement
+MHAS,Rockwood,coloncr,r4coloncr: w4 R Prev Care: Colon cancer screening last 2y
+MHAS,Rockwood,oopdrug1m,"r4oopdrug1m: w4 R Out of pocket medications, per month"
+MHAS,Rockwood,oopdrugf1m,r4oopdrugf1m: w4 R Out of pocket medication exp imputed flag
+SHARE,Fried,as040_,How often spent time on managing savings
+SHARE,Fried,ph049d13,Difficulties: managing money
+SHARE,Fried,ch_q8cm,time use yesterday (m): caring for sick/disabled/frail person
+SHARE,Fried,ch_q8cs,time use yesterday (h): caring for sick/disabled/frail person
+SHARE,Fried,si_q1need_13,Need help: managing money
+SHARE,Fried,si_q1rcv_13,Receive help: managing money
+SHARE,Rockwood,ac004d5_1,Voluntary or charity work: to earn money
+SHARE,Rockwood,ac004d5_2,Cared for sick or disabled adult: to earn money
+SHARE,Rockwood,ac004d5_3,"Help to family, friends or neighbors: to earn money"
+SHARE,Rockwood,ac004d5_4,Educational or training course: to earn money
+SHARE,Rockwood,ac004d5_5,"Sport, social or other club: to earn money"
+SHARE,Rockwood,ac004d5_6,Religious organization: to earn money
+SHARE,Rockwood,ac019_,Shortage of money stops
+SHARE,Rockwood,as054d1,"Owe money: debt on cars and other vehicles (vans/motorcycles/boats, etc.)"
+SHARE,Rockwood,as054d2,Owe money: debt on credit cards/store cards
+SHARE,Rockwood,as054d3,"Owe money: loans (from bank, building society, other financial institution)"
+SHARE,Rockwood,as054d4,Owe money: debts to relatives or friends
+SHARE,Rockwood,as054d5,Owe money: student loans
+SHARE,Rockwood,as054d6,"Owe money: overdue bills (phone, electricity, heating, rent)"
+SHARE,Rockwood,as054dno,Owe money: none of these
+SHARE,Rockwood,as054dot,Owe money: other
+SHARE,Rockwood,as055e,Amount owing money in total
+SHARE,Rockwood,q11_b,Main responsibility for: earning money (q7)
+SHARE,Rockwood,q41_b,A doctor/ nurse checked blood pressure (q11)
+SHARE,Rockwood,wspeed,Walking speed
+SHARE,Rockwood,wspeed2,Walking speed: cut-off point
+SHARE,Rockwood,ho051_,Indoor flushing toilet
+SHARE,Rockwood,ho057_,Area public transportation
+SHARE,Rockwood,ph010d11,Bothered by: incontinence
+SHARE,Rockwood,ph011d1,Drugs for: high blood cholesterol
+SHARE,Rockwood,ws011_,Time of first walking speed test
+SHARE,Rockwood,ws013_,Time of second walking speed test
+SHARE,Rockwood,br025_,How many meals a day
+SHARE,Rockwood,br025a_,Three meals every day
+SHARE,Rockwood,q1a,Health: to walk about
+SHARE,Rockwood,co206_,Afford to pay an unexpected expense without borrowing money
+SHARE,Rockwood,cz_a_q15_3_nq,Source hh-money at disposal (% of total): savings and investment
+SHARE,Rockwood,cz_a_q15_4_nq,Source hh-money at disposal (% of total): social benefits
+SHARE,Rockwood,cz_a_q15_5_nq,Source hh-money at disposal (% of total): family support
+SHARE,Rockwood,cz_a_q15_6_nq,Source hh-money at disposal (% of total): other
+SHARE,Rockwood,cz_b_q9_1_nq,Source hh-money at disposal (% of total): state old-age pension
+SHARE,Rockwood,cz_b_q9_2_nq,Source hh-money at disposal (% of total): work
+SHARE,Rockwood,cz_b_q9_3_nq,Source hh-money at disposal (% of total): savings and investment
+SHARE,Rockwood,cz_b_q9_4_nq,Source hh-money at disposal (% of total): social benefits
+SHARE,Rockwood,cz_b_q9_5_nq,Source hh-money at disposal (% of total): family support
+SHARE,Rockwood,cz_b_q9_6_nq,Source hh-money at disposal (% of total): other
+SHARE,Rockwood,hc088_,Payed anything out of pocket for medication
+SHARE,Rockwood,hc114_,Could not see a doctor because of cost
+SHARE,Rockwood,hc115_,Could not see a doctor because of long waiting times
+SHARE,Rockwood,at_f7f,EVERYDAY ERRANDS: by public transport
+SHARE,Rockwood,at_f11i1,AUTO COOKER CONTROL: I do not know this
+SHARE,Rockwood,at_f11i2,AUTO COOKER CONTROL: I am already using this
+SHARE,Rockwood,at_f11i3,AUTO COOKER CONTROL: I am open to this
+SHARE,Rockwood,at_f11i4,AUTO COOKER CONTROL: Would be a great help
+SHARE,Rockwood,at_f11i5,AUTO COOKER CONTROL: I find this daunting
+SHARE,Rockwood,at_f11i6,AUTO COOKER CONTROL: I doubt it would be helpful
+SHARE,Rockwood,at_f11i7,AUTO COOKER CONTROL: I am not interested
+SHARE,Rockwood,at_f11i8,AUTO COOKER CONTROL: I don't feel comfortable with this
+SHARE,Rockwood,ch_q29_,Q29_ Support legality of assisted suicide association
+SHARE,Rockwood,cz_c1_d,Meaning of healthy: Not spending money on medication
+SHARE,Rockwood,cz_c2_b,Activities to stay healthy: I try to eat healthy
+SHARE,Rockwood,cz_c4_b,Not feeling well: I go to bed early
+SHARE,Rockwood,cz_c4_d,Not feeling well: I eat healthier than usual
+SHARE,Rockwood,cz_c4_e,Not feeling well: I see a doctor
+SHARE,Rockwood,cz_c4_f,"Not feeling well: I see a healer, I use homeopathic treatment"
+SHARE,Rockwood,cz_d5_c,Assistance to neigbours: Housework
+SHARE,Rockwood,cz_d6_c,Assistance by neigbours: Housework
+SHARE,Rockwood,cz_d8_a,Community activity prevented: Finances
+SHARE,Rockwood,cz_h3_a,Physical activity: Purposeful walking or strolls
+SHARE,Rockwood,pl_q14,How much money would invest in a lottery
+SHARE,Rockwood,hc688_,Payed anything yourself for medication last 12 months
+SHARE,Rockwood,hc689e,Amount payed yourself for medication last 12 months
+SHARE,Rockwood,ho633d5,Special features in accommodation: bathroom/toilet modifications
+SHARE,Rockwood,ac701_,I see myself as someone who is reserved
+SHARE,Rockwood,ac702_,I see myself as someone who is generally trusting
+SHARE,Rockwood,ac703_,I see myself as someone who tends to be lazy
+SHARE,Rockwood,ac704_,"I see myself as someone who is relaxed, handles stress well"
+SHARE,Rockwood,ac705_,I see myself as someone who has few artistic interests
+SHARE,Rockwood,ac706_,"I see myself as someone who is outgoing, sociable"
+SHARE,Rockwood,ac707_,I see myself as someone who tends to find fault with others
+SHARE,Rockwood,ac708_,I see myself as someone who does a thorough job
+SHARE,Rockwood,ac709_,I see myself as someone who gets nervous easily
+SHARE,Rockwood,ac710_,I see myself as someone who has an active imagination
+SHARE,Rockwood,ac711_,I see myself as someone who is considerate and kind to almost everyone
+SHARE,Rockwood,ch_q1_e,Comfortable dealing - medicine instruction
+SHARE,Rockwood,ch_q19,Support legality of assisted suicide as is currently the case in Switzerland
+SHARE,Rockwood,cz_d1,Nutrition full meals
+SHARE,Rockwood,cz_g3a,Execution money
+SHARE,Rockwood,cz_i3,Property ownership finances
+SHARE,Rockwood,cz_kp,Memory difficulty medication
+SHARE,Rockwood,ee_k16,Can you use public transportation?
+SHARE,Rockwood,pl_q6d9,If engages in walks
+SHARE,Rockwood,pl_q15a,If needed to see a doctor but could not because of cost
+SHARE,Rockwood,pl_q15b,If needed to see a doctor but could not because of waiting
+SHARE,Rockwood,si_q1need_5,Need help: getting in or out of bed
+SHARE,Rockwood,si_q1rcv_5,Receive help: getting in or out of bed
+SHARE,Rockwood,actipass_nowalk_total,ActiPASS Check: 1+ day with < 30 sec walking
+SHARE,Rockwood,hc887_,Colon cancer screening
+SHARE,Rockwood,te032_,Hours spent on administrative chores and own family finances
+SHARE,Rockwood,te033_,Minutes spent on administrative chores and own family finances
+SHARE,Rockwood,cz_g1a,Family health heart
+SHARE,Rockwood,cz_h7,Cervical cancer screening last
+SHARE,Rockwood,cz_h8,Cervical cancer screening regularly
+SHARE,Rockwood,ee_b03_13,"Other medication, specify"
+SHARE,Rockwood,ee_b05_12,Help needed: medicines
+SHARE,Rockwood,ee_b08_15,"Prevention: yes, medicine"
+SHARE,Rockwood,gr_fs15_1_a,Borrow money 2017-2019: not necessary
+SHARE,Rockwood,gr_fs15_1_b,Borrow money after 2019: not necessary
+SHARE,Rockwood,gr_fs15_2_a,Borrow money 2017-2019: close family circle
+SHARE,Rockwood,gr_fs15_2_b,Borrow money after 2019: close family circle
+SHARE,Rockwood,gr_fs15_3_a,Borrow money 2017-2019: other relatives
+SHARE,Rockwood,gr_fs15_3_b,Borrow money after 2019: other relatives
+SHARE,Rockwood,gr_fs15_4_a,Borrow money 2017-2019: friends
+SHARE,Rockwood,gr_fs15_4_b,Borrow money after 2019: friends
+SHARE,Rockwood,gr_fs15_5_a,Borrow money 2017-2019: banks or credit cards
+SHARE,Rockwood,gr_fs15_5_b,Borrow money after 2019: banks or credit cards
+SHARE,Rockwood,gr_fs15_6_a,Borrow money 2017-2019: pawn shop
+SHARE,Rockwood,gr_fs15_6_b,Borrow money after 2019: pawn shop
+SHARE,Rockwood,gr_fs15_7_a,Borrow money 2017-2019: money lenders
+SHARE,Rockwood,si_q14a,Have you heard of telemedicine before?
+SHARE,Rockwood,si_q14b_1,Reasons for using telemedicine: time saving
+SHARE,Rockwood,si_q14b_2,Reasons for using telemedicine: ease
+SHARE,Rockwood,si_q14b_3,Reasons for using telemedicine: faster access
+SHARE,Rockwood,si_q14b_4,Reasons for using telemedicine: security during infectious diseases
+SHARE,Rockwood,si_q14b_5,Reasons for using telemedicine: less workload for my relatives / friends
+SHARE,Rockwood,si_q14b_6,Reasons for using telemedicine: cost saving
+SHARE,Rockwood,si_q14b_7,Reasons for using telemedicine: other
+SHARE,Rockwood,si_q14b_8,Would never use telemedicine
+SHARE,Rockwood,si_q14c_1,Types of healthcare via telemedicine: laboratory test information
+SHARE,Rockwood,si_q14c_2,Types of healthcare via telemedicine: parameter exchange and reporting
+SHARE,Rockwood,si_q14c_3,Types of healthcare via telemedicine: consultations on treatment
+SHARE,Rockwood,si_q14c_4,Types of healthcare via telemedicine: non-pharmacological treatment education
+SHARE,Rockwood,si_q14c_5,Types of healthcare via telemedicine: support for disease management
+SHARE,Rockwood,si_q14c_6,Types of healthcare via telemedicine: other
+SHARE,Rockwood,si_q14c_7,Types of healthcare via telemedicine: none
+SHARE,Rockwood,si_q14d_1,Concerns regarding telemedicine: impersonal
+SHARE,Rockwood,si_q14d_2,Concerns regarding telemedicine: data security
+SHARE,Rockwood,si_q14d_3,Concerns regarding telemedicine: quality of care
+SHARE,Rockwood,si_q14d_4,Concerns regarding telemedicine: costs
+SHARE,Rockwood,si_q14d_5,"Concerns regarding telemedicine: technology issues, complicated use"
+SHARE,Rockwood,si_q14d_6,Concerns regarding telemedicine: other
+SHARE,Rockwood,si_q14d_7,Concerns regarding telemedicine: no concerns
+SHARE,Rockwood,si_q14e,Willingness to pay for telemedicine
+SHARE,Rockwood,casp,CASP index for quality of life and well-being
+SHARE,Rockwood,maxgrip,Max. of grip strength measure

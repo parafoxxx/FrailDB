@@ -1,0 +1,592 @@
+573 variables newly kept
+
+CLHLS Rockwood (57)
+   a42            was the county (city) you born in the same as current address?
+   d31            (D31) how often eat fresh fruit?
+   d32            (D32) how often eat vegetables?
+   d4meat2        (D4MEAT2) how often eat meat at present?
+   d4fish2        (D4FISH2) how often eat fish at present?
+   d4egg2         (D4EGG2) how often eat eggs at present?
+   d4bean2        how often eat bean at present?
+   d4veg2         how often eat salt-preserved vegetables at present?
+   d4suga2        how often eat sugar at present?
+   d4garl2        how often eat garlic at present?
+   f66            (F66) often went to bed hungry as a child
+   g3             (G3) able to use chopsticks to eat?
+   g6             (G6) rhythm of heart
+   g7             (G7) heart rate
+   g102b          length from kneel to floor
+   g15o1          (G15O1) suffering from dementia?
+   d14d231        how much money paid by the family?
+   d14d232        how much money paid as subsidy by the affiliation or community?
+   d14d233        how much money paid as subsidy by the government?
+   a537           (A537) which fuels are normally used for cooking in your home?
+   b28            (B28) have you felt sad, blue, or depressed for two weeks or more in last 12 months?
+   d33            (D33) what kind of grease do you mainly use for cooking?
+   d4milk1        (D4MILK1) how often eat milk products at present
+   d4nut1         (D4NUT1) how often eat nut products at present
+   d4alga1        (D4ALGA1) how often eat mushroom or algae at present
+   d4vit1         (D4VIT1) how often eat vitamins (a/c/e) at present
+   d4drug1        (D4DRUG1) how often eat medicinal plants at present
+   f651a1         (F651A1) how much money did you spend on outpatient costs last year?
+   f651b1         (F651B1) how much money did your family pay for outpatient costs last year?
+   f651a2         (F651A2) how much money did you spend on inpatient costs last year?
+   f651b2         (F651B2) how much money did your family pay for inpatient costs last year?
+   g1             (G1) visual function: can you see the break in the circle?
+   g511           (G511) blood pressure test for the 1st time: systolic
+   g512           (G512) blood pressure test for the 1st time: diastolic
+   g521           (G521) blood pressure test for the 2nd time: systolic
+   g522           (G522) blood pressure test for the 2nd time: diastolic
+   g106           (G106) do you have any difficulty with your hearing?
+   g1061          (G1061) in which ear(s) do you have a hearing difficulty?
+   g1062          (G1062) at what age did you first notice a hearing difficulty?
+   g1063          (G1063) how quickly did your hearing difficulty develop?
+   a537n          ventilation of the kitchen when cooking at home
+   a557           toilet cleaner
+   b33            are you feeling sad or depressed?
+   g15o3          G15O3 whether to take the medicine
+   g15p3          G15P3 whether to take the medicine
+   g15q3          G15Q3 whether to take the medicine
+   g15r3          G15R3 whether to take the medicine
+   g15s3          G15S3 whether to take the medicine
+   g15t3          G15T3 whether to take the medicine
+   g15u3          G15U3 whether to take the medicine
+   g15v3          G15V3 whether to take the medicine
+   g15w3          G15W3 whether to take the medicine
+   g15x3          G15X3 whether to take the medicine
+   g15y3          G15Y3 whether to take the medicine
+   g182           if you have taken the medicine in the past 24 hours, what kind of medicine have
+   g18t           specify the name of the other medicine
+   g20            heart rhythm
+
+ELSA Fried (4)
+   heslfcb        Diabetes: how much knows about managing it (self-reported)
+   headlmo        IADL: managing money, such as bills and expenses
+   erlvolpe       Unpaid help: providing personal care for someone who is sick or frail
+   catkm          Received help in last month: managing money, such as paying bills and keeping tr
+
+ELSA Rockwood (259)
+   hemdb          Are you currently taking any tablets, pills or other medicines that you swallow
+   hepab          Whether asked questions re pain if walking on flat surface. Code 2 if can~t walk
+   hebal          How often do you have problems with keeping your balance when you are walking on
+   herpd          Are you troubled by shortness of breath when hurrying on level ground or walking
+   herpe          Do you get short of breath walking with other people of your own age on level gr
+   herpf          Do you have to stop for breath when walking at your own pace on level ground?
+   hecdb          Does this pain ever begin when you are standing still or sitting? {in legs}
+   hecdc          Do you get it if you walk uphill or hurry? {in legs)
+   hecdd          Do you get it when you walk at an ordinary pace on the level? {in legs}
+   sprest         How often, if at all, do you eat out of the house for example, in a restaurant,
+   sprestb        Would you like to eat out of the house more often but feel that, for whatever re
+   sptraa         Do you use public transport ... READ OUT ...
+   sptrab1        Why don~t you use public transport more often?
+   sptrab2        Why don~t you use public transport more often?
+   mmwlka         Time taken for first walk (seconds)
+   mmwlkb         Time taken for second walk (seconds)
+   mmpain         Had pain whilst walking?
+   wphjob         How many hours a week do you usually work in this job, excluding meal breaks but
+   wpmoj          Do you currently earn any money from any work apart from your main job or any wo
+   iaspen         Did you (or your spouse) receive any money from a state pension in the last year
+   iappen         Did you (or your spouse) receive any money from a personal or employer pension i
+   iadebt         Do  you (or your spouse) currently owe any money on credit or store cards?
+   iaowe          Do you (or your spouse) currently owe any money to friends, relatives, or other
+   ialoan1        On which, if any, of these do you (or your spouse) currently owe money?
+   iaean03        About how much money did person 3 (non eligible hh member) earn from all jobs in
+   iaea3e         earnings person 3 - Bracket Entry point (iaearn3):About how much money did perso
+   iaea3r         earnings person 3 - Bracket Result (iaearn3):About how much money did person 3 (
+   homeal         Cut size of meals in last 12 months: In the last 12 months did you (or anyone el
+   scqoli         Shortage of money stops me from doing the things I want to  do
+   scsce          People would be afraid to walk alone in this area after dark/People feel safe wa
+   dhiasep        Computed: whether respondent and their partner keep finances separate
+   dhsameh        Whether household is at same address as at the previous interview
+   hebowd         Screening: whether ever completed bowel cancer screening test using home test ki
+   hemamb         Screening (women): whether ever had breast cancer screening (mammogram or x-ray)
+   hepro          Screening (men): ever had prostate cancer screening (PSA test or other)
+   medcnjd        Drug: whether taking or using any medicines, pills, syrups, ointments, puffers o
+   hebck          Back pain rating walking on flat surface
+   hehip          Hip pain rating walking on flat surface
+   hekne          Knee pain rating walking on flat surface
+   hefet          Foot pain rating walking on flat surface
+   sptrab3        Reasons for not using public transport: it is too expensive
+   sptrab4        Reasons for not using public transport: it is unreliable
+   sptrab5        Reasons for not using public transport: it is infrequent
+   sptrab7        Reasons for not using public transport: they do not need to
+   sptrab8        Reasons for not using public transport: fear of crime
+   sptrab9        Reasons for not using public transport: it is too dirty
+   sptrab10       Reasons for not using public transport: it is not convenient
+   sptrab11       Reasons for not using public transport: they prefer to walk
+   sptrab88       Reasons not use public transport: lockdown and social distancing have reduced my
+   sptrab95       Reasons for not using public transport: other
+   sptram1        Reasons for not using public transport: none is available (merged)
+   sptram2        Reasons for not using public transport: does not go where they want to (merged)
+   sptram3        Reasons for not using public transport: it is too expensive (merged)
+   sptram4        Reasons for not using public transport: it is unreliable (merged)
+   sptram5        Reasons for not using public transport: it is infrequent (merged)
+   sptram7        Reasons for not using public transport: they do not need to (merged)
+   sptram8        Reasons for not using public transport: fear of crime (merged)
+   sptram9        Reasons for not using public transport: it is too dirty (merged)
+   sptram10       Reasons for not using public transport: it is not convenient (merged)
+   sptram11       Reasons for not using public transport: they prefer to walk (merged)
+   sptram13       Reasons for not using public transport: prefer to use car (merged)
+   sptram14       Reasons for not using public transport: prefer to use bicycle (merged)
+   sptram16       Reasons for not using public transport: rarely go out (merged)
+   sptram51       Reasons for not using public transport: COVID related (merged)
+   sptram52       Reasons for not using public transport: friends/family provide lifts (merged)
+   sptram85       Reason resp does not use public transport: other answer - not codeable (merged)
+   sptram86       Reason resp does not use public transport: irrelevant answer - not codeable (mer
+   sptram88       Reasons not use public transport: lockdown and social distancing have reduced my
+   sptro1         Whether respondent aged 65+ gets lifts from family/friends not living with them
+   splift         How often respondent gets lifts from family/friends not living with them
+   wpwyjmmo       Reason for taking this job: needed money/earn extra on retirement (merged)
+   wphjobl        Hours worked per week in this job (exc meal breaks, inc paid overtime) EXCLUDE H
+   wpowkif        Reasons work past state pension age: improve finances
+   iat10          Benefit block type-Current carers allowance (respondent)
+   iap10          Current carers allowance (respondent): period code
+   iat21          Benefit block type-Current carers allowance (partner)
+   iap21          Current carers allowance (partner): period code
+   iaa21          Current carers allowance (partner): amount received
+   ianpbpl        Prize money from Premium Bonds - bracket min value (ianpbp)
+   ianpbpu        Prize money from Premium Bonds - bracket max value (ianpbp)
+   ianpbpe        Prize money from Premium Bonds - bracket entry point (ianpbp)
+   ianpbpr        Prize money from Premium Bonds - bracket result (ianpbp)
+   iapropow       Assets held (respondent or spouse): money owed by others
+   ialoanml       Current loans (respondent or spouse): loan from a money lender or tally man
+   iaorgf         Method of organising finances
+   iahhinc        Introduction to questions on other HH members finances (refusal permitted)
+   hoiname        Services included in last rent payment: meals
+   hoinamme       Services included in last rent payment: meals (merged)
+   hohbme         Services included with accommodation: meals
+   hohbmme        Services included with accommodation: meals (merged)
+   homadd         Whether respondent increased the amount of money borrowed on their mortgage(s)
+   homa           How much additional money borrowed
+   homal          Additional money borrowed on mortgage - bracket min value (homa)
+   homau          Additional money borrowed on mortgage - bracket max value (homa)
+   homae          Additional money borrowed on mortgage - bracket entry point (homa)
+   homar          Additional money borrowed on mortgage - bracket result (homa)
+   homoft         How often were meals cut or skipped completely
+   hotrangc       Money given to grandchild(ren)
+   hotranoc       Money given to own child(ren)
+   hotranor       Money given to other relative
+   hotranch       Money given to charity
+   hotrannr       Money given to other non-relative
+   exrela         Whether find has too little money to spend on their needs
+   exrelefo       Activities stopped by having too little money: buying first choice of food items
+   exreleme       Activities stopped by having too little money: having friends/family round for f
+   exreleou       Activities stopped by having too little money: having outfit to wear for occasio
+   exrelede       Activities stopped by having too little money: keeping home reasonably decorated
+   exreleel       Activities stopped by having too little money: repairing/replacing broken elec g
+   exrelefa       Activities stopped by having too little money: paying fares or transport costs
+   exrelepr       Activities stopped by having too little money: buying presents for friends/famil
+   exreleho       Activities stopped by having too little money: taking the sorts of holidays they
+   exreletr       Activities stopped by having too little money: treating themselves from time to
+   exrele96       Activities stopped by having too little money: none of these
+   erfvolmo       Whether volunteered: raising money/taking part in sponsored events
+   erlvolco       Unpaid help: cooking, cleaning, laundry, gardening, other household jobs
+   erlvolba       Unpaid help: babysitting or caring for children
+   erlvolpe       Unpaid help: providing personal care for someone who is sick or frail
+   scinantt       Internet activities in last 3 months: buying public transport tickets online
+   scqola         CASP-19 scale: how often feels age prevents them from doing things they like
+   scqolb         CASP-19 scale: how often feels what happens to them is out of their control
+   scqolc         CASP-19 scale: how often feels free to plan for the future
+   scqold         CASP-19 scale: how often feels left out of things
+   scqole         CASP-19 scale: how often can do the things they want to do
+   scqolf         CASP-19 scale: how often family responsibilities prevents them from doing things
+   scqolg         CASP-19 scale: how often feels they can please themselves what they do
+   scqolj         CASP-19 scale: how often look forward to each day
+   scqolk         CASP-19 scale: how often feels that their life has meaning
+   scqoll         CASP-19 scale: how often enjoys the things they do
+   scqolm         CASP-19 scale: how often enjoys being in the company of others
+   scqoln         CASP-19 scale: how often looks back on their life with a sense of happiness
+   scqolo         CASP-19 scale: how often feels full of energy these days
+   scqolp         CASP-19 scale: how often chooses to do things they have never done before
+   scqolq         CASP-19 scale: how often feels satisfied with the way their life has turned out
+   scqolr         CASP-19 scale: how often feels that life is full of opportunities
+   scqols         CASP-19 scale: how often feels the future looks good for them
+   scaffdb        Respondent couldn't afford to eat balanced meals
+   scweth         Time spent walking or exercising yesterday (HOURS)
+   scwetm         Time spent walking or exercising yesterday (MINUTES)
+   scsitth        Time spent sitting yesterday (HOURS)
+   scsittm        Time spent sitting yesterday (MINUTES)
+   schelncta      Whether urinary incontinence problem lasted for more than one month
+   schebowa       Whether bowel incontinence problem lasted for more than one month
+   dhedimch       CVD: high cholesterol diagnosis newly reported (merged)
+   herpe1         Shortness of breath: reason for never walking uphill (or on level ground)
+   hecda          Claudication: whether gets pain or discomfort in legs when walking
+   heinct         Incontinence: whether lost urine beyond control in last 12 months
+   heincta        Incontinence: whether problem lasted more than one month
+   sptrbuna       Reason respondent does not use public transport: none is available
+   sptrbdes       Reason respondent does not use public transport: does not go where they want to
+   sptrbexp       Reason respondent does not use public transport: it is too expensive
+   sptrbunr       Reason respondent does not use public transport: it is unreliable
+   sptrbfre       Reason respondent does not use public transport: it is infrequent
+   sptrbnee       Reason respondent does not use public transport: they do not need to
+   sptrbfea       Reason respondent does not use public transport: fear of crime
+   sptrbdir       Reason respondent does not use public transport: it is too dirty
+   sptrbcon       Reason respondent does not use public transport: it is not convenient
+   sptrbwal       Reason respondent does not use public transport: they prefer to walk
+   sptrb95        Reason respondent does not use public transport: other
+   sptrmuna       Merged var - reason respondent does not use public transport: none is available
+   sptrmexp       Merged var - reason respondent does not use public transport: is too expensive
+   sptrmunr       Merged var - reason respondent does not use public transport: it is unreliable
+   sptrmfre       Merged var - reason respondent does not use public transport: it is infrequent
+   sptrmnee       Merged var - reason respondent does not use public transport: do not need to
+   sptrmfea       Merged var - reason respondent does not use public transport: fear of crime
+   sptrmdir       Merged var - reason respondent does not use public transport: it is too dirty
+   sptrmcon       Merged var - reason respondent does not use public transport: not convenient
+   sptrmwal       Merged var - reason respondent does not use public transport: prefer to walk
+   sptrm85        Merged var - reason resp does not use public transport: answer not codeable
+   sptrm86        Merged var - reason resp does not use public transport: irrelevant response
+   sptrfam        Whether respondent aged 65+ gets lifts from family/friends not living with them
+   wpnlkmfi       Reasons for staying in current job: financial security/good money (merged var)
+   exrel96        Whether they are NOT stopped from doing EXRELE1 - 9 by having too little money
+   ermocmo        Reasons for caring: To earn money
+   ermovmo        Reasons for doing voluntary work: To earn money
+   scmoreb        Whether respondent would like to eat out of the house more often
+   gtspd_id       (D) Walks used to derive speed
+   casp19         (D) CASP 19
+   caspctl        (D) Control (CASP)
+   caspaut        (D) Autonomy (CASP)
+   caspple        (D) Pleasure (CASP)
+   caspsr         (D) Self realisation (CASP)
+   heatt2         Walking symptom: fatigue
+   heatt3         Walking symptom: shortness of breath
+   heatt5         Walking symptom: pain in leg or foot
+   heatt6         Walking symptom: swelling in leg or foot
+   heatt7         Walking symptom: pain in back
+   heatt8         Walking symptom: seeing difficulty
+   heatt13        Walking symptom: unsteady on feet, balance
+   heatt14        Walking symptom: lightheaded or dizzy
+   heatt15        Walking symptom: fear of falling
+   heatt16        Walking symptom: anxiety or fear
+   heatt95        Walking symptom: other
+   heattm2        Walking symptom: fatigue
+   heattm3        Walking symptom: shortness of breath
+   heattm5        Walking symptom: pain in leg or foot
+   heattm6        Walking symptom: swelling in leg or foot
+   heattm7        Walking symptom: pain in back
+   heattm8        Walking symptom: seeing difficulty
+   heattm13       Walking symptom: unsteady on feet, balance
+   heattm14       Walking symptom: lightheaded or dizzy
+   heattm15       Walking symptom: fear of falling
+   heattm16       Walking symptom: anxiety or fear
+   heattm51       Walking symptom: other hip or leg or foot
+   heattm52       Walking symptom: brain disease affected legs
+   heattm85       Walking symptom: not codeable
+   heattm86       Walking symptom: irrelevant
+   heata          Walking symptom: main symptom if multiple
+   hefle          Fall: whether doctor or nurse tested balance or strength or watched resp walk
+   hoailihs       NHS paid for the lift
+   mmcomun        Reason fo non-completion of walk: unable to walk safely
+   sctvgar        Frequency of watching: cookery/decoration/gardening
+   gtspd_wk       (D) Walks used to derive mean gait speed
+   nurse_lighteat Blood sample: What did repondent have to eat
+   nurse_sithtrs  Sitting height: Whether sitting height measurement was attempted or obtained
+   nurse_sithgt   Sitting height measurement (cm)
+   nurse_hastro   Lung function: Whether admitted to hospital for heart complaint in last 6 weeks
+   nurse_lfstand  Lung function: Measurements taken while standing or sitting?
+   heosteb        osteoporosis: whether doctor or nurse recommended medication
+   henictk        Taking any medication to help stop smoking?
+   iapspen        Receive any money from a state pension in the last year (From partner iaspen)
+   rimearn        Money earned minus initial fee
+   ritotmon       Money earned plus initial fee
+   riwhenm        When money from randomly selected experiment will be given (days)
+   hebow          Incontinence: whether problems controlling bowels in last 12 months
+   hebowa         Incontinence: whether bowel problem lasted more than one month
+   hoamlihs       NHS paid for the lift (merged var)
+   hoamliys       You or spouse paid for the lift (merged var)
+   hoamlial       Lift already in the property (merged var)
+   hoamlill       Landlord etc. paid for the lift (merged var)
+   hoamli85       Other not codeable source paid for the lift (merged var)
+   hoamli86       irrelevant response paid for the lift (merged var)
+   scina04        Activities respondent used internet for in last 3 months: Finances (banking, pay
+   scawe          Yesterday, did you go for a walk or exercise?
+   scaweh         How much time did you spend walking or exercising  yesterday? Hours?
+   scawem         How much time did you spend walking or exercising  yesterday? Minutes?
+   scawea         How did you feel when you were walking or exercising  yesterday? Happy
+   scaweb         How did you feel when you were walking or exercising  yesterday? Interested
+   scawec         How did you feel when you were walking or exercising  yesterday? Frustrated
+   scawed         How did you feel when you were walking or exercising  yesterday? Sad?
+   scaoth         Yesterday, did you do any health-related activities other  than walking or exerc
+   nurse_medcnjd  DRUG: Are they taking or using any medicines, pills, syrups, ointments, puffers
+   nurse_bptoday  DRUG: Whether taken any medication for blood pressure today
+   nurse_difbpcno BPRESS: Problems taking BP readings: No problems taking blood pressure
+   nurse_lftb     LUNG: Whether currently taking any medications for the treatment of tuberculosis
+   scarea5        People would be afraid to walk alone in the dark
+   scawea_v1      How did you feel when walking/exercising yesterday? Happy(Orange Questionnaire)
+   scawea_v2      How did you feel when walking/exercising yesterday? Happy(Green Questionnaire)
+   scaweb_v1      How did you feel when walking/exercising yesterday? Interested(Orange Questionna
+   scaweb_v2      How did you feel when walking/exercising yesterday? Interested(Green Questionnai
+   scawec_v1      How did you feel when walking/exercising yesterday? Frustrated(Orange Questionna
+   scawec_v2      How did you feel when walking/exercising yesterday? Frustrated(Green Questionnai
+   scawed_v1      How did you feel when walking/exercising yesterday? Sad(Orange Questionnaire)
+   scawed_v2      How did you feel when walking/exercising yesterday? Sad(Green Questionnaire)
+   hepad          Knee or hip pain: whether taking or has taken any medication or exercises to con
+   hepae          Knee or hip pain: whether exercises and medicines control the pain
+   scfpati        Regarding finances, spending and savings: degree to which assesses themselves to
+   scfrisk        Regarding finances, spending and savings: degree to which assesses themselves to
+   scwey          Whether respondent went for a walk or exercised yesterday
+   schry          Whether respondent did any health related activites other than walking yesterday
+
+HRS Fried (1)
+   moneyhlp       r11moneyhlp:w11 whether anyone helps r with managing money
+
+HRS Rockwood (100)
+   urinai         r10urinai:w10 r any urinary incontinence past year
+   urinaf         r10urinaf:w10 r number days urinary incontinence last month
+   systo          r10systo:w10 r average blood pressure measure (systolic) 2 & 3
+   diasto         r10diasto:w10 r average blood pressure measure (diastolic) 2 & 3
+   bldpos         r10bldpos:w10 r position for blood pressure test
+   bparm          r10bparm:w10 r arm used for blood pressure test
+   wspeed1        r10wspeed1:w10 r time for walking speed test 1(sec)
+   wspeed2        r10wspeed2:w10 r time for walking speed test 2(sec)
+   wspeed         r10wspeed:w10 r average time for walking speed test(sec)
+   afwalk         r10afwalk:w10 whether r feels safe/afraid walking alone in this area
+   walkex         r11walkex:w11 Affective Experience: r walked or exercised
+   exrhpy         r11exrhpy:w11 Affective Experience Happy: r walking or exercising
+   exrint         r11exrint:w11 Affective Experience Interested: r walking or exercising
+   exrcon         r11exrcon:w11 Affective Experience Content: r walking or exercising
+   exrpos2        r11exrpos2:w11 r walked/exercised: Pos Affect Index 2-item
+   exrpos3        r11exrpos3:w11 r walked/exercised: Pos Affect Index 3-item
+   exrpos3m       r11exrpos3m:w11 r walked/exercised: missings Pos Affect Index 3-item
+   exrfrs         r11exrfrs:w11 Affective Experience Frustrated: r walking or exercising
+   exrsad         r11exrsad:w11 Affective Experience Sad: r walking or exercising
+   exrbor         r11exrbor:w11 Affective Experience Bored: r walking or exercising
+   exrpai         r11exrpai:w11 Affective Experience Pain: r walking or exercising
+   exrneg2        r11exrneg2:w11 r walked/exercised: Neg Affect Index 2-item
+   exrneg3        r11exrneg3:w11 r walked/exercised: Neg Affect Index 3-item
+   exrneg3m       r11exrneg3m:w11 r walked/exercised: missings Neg Affect Index 3-item
+   rc087          INCONTINENCE
+   rc287          TAKEN PAIN MEDICATIONS PAST 3 MOS
+   rc229          DAYS IN BED
+   rg004          DIFFICULTY- SITTING 2 HOURS
+   rg058          HOUSE\YARD WORK HELP
+   rlb001p        Q01P. BAKE OR COOK
+   rlb001t        Q01T. WALK FOR 20 MINES
+   rlb020d        Q20D. AFRAID WALK ALONE AFTER DARK
+   rlb027c        Q27C. TRY HARD CARRY OUT BELIEFS
+   rlb033c        Q33C. ACTIVE CARRYING OUT OWN PLANS
+   rlb048c        Q48C. GO FOR A WALK
+   rlb049f        Q49F. CONCERNED THE MONEY
+   rlb049a1       Q49A1. STRAIN ON FINANCES
+   rlb049a2       Q49A2. HAVE MONEY LEFT OVER
+   rlb049a3       Q49A3. BEHIND WITH FINANCES
+   rlb049a4       Q49A4. FINANCES CONTROL LIFE
+   rlb051a        Q51A. NEED THE MONEY
+   rlb069h        Q69H. WALK OUTSIDE YOUR HOME FOR 20 MINUTES
+   rtn06          FINANCES HELD SEPARATELY
+   rv102          MONEY NEEDED RETIRE
+   rv160          PROCRASTINATION SITTING DOWN
+   rv167          PROCRASTINATION COST MONEY
+   rv352          JOBS SITTING DOWN
+   rv413          MAKING BED
+   sc087          INCONTINENCE
+   sc287          TAKEN PAIN MEDICATIONS PAST 3 MOS
+   sc304          TIME SITTING HOURS
+   sg004          DIFFICULTY- SITTING 2 HOURS
+   sg058          HOUSE\YARD WORK HELP
+   si854          BLOOD PRESSURE COMPLETE
+   si823          WALKING TEST 1ST TRIAL TIME
+   si824          WALKING TEST 2ND TRIAL TIME
+   si914          SALIVA SAMPLE EAT DRINK ETC
+   slb001p        Q01P. BAKE OR COOK
+   slb001t        Q01T. WALK FOR 20 MINES
+   slb020d        Q20D. AFRAID WALK ALONE AFTER DARK
+   slb027c        Q27C. TRY HARD CARRY OUT BELIEFS
+   slb033c        Q33C. ACTIVE CARRYING OUT OWN PLANS
+   slb048c        Q48C. GO FOR A WALK
+   slb049f        Q49F. CONCERNED THE MONEY
+   slb049a1       Q49A1. STRAIN ON FINANCES
+   slb049a2       Q49A2. HAVE MONEY LEFT OVER
+   slb049a3       Q49A3. BEHIND WITH FINANCES
+   slb049a4       Q49A4. FINANCES CONTROL LIFE
+   slb051a        Q51A. NEED THE MONEY
+   stn06          FINANCES HELD SEPARATELY
+   sv203          MEDICATION FREQUENCY
+   sv205          PRECAUTIONS OF MEDICATION
+   sv308          CONTINENTS MOVING
+   urinpad        r4urinpad:w4 r uses pads for incontinence
+   ageprv         r7ageprv:w7 CASP: age prevents r from doing things they like
+   outcon         r7outcon:w7 CASP: r what happens is out of my control
+   freepln        r7freepln:w7 CASP: r feels free to plan for future
+   flftout        r7flftout:w7 CASP: r feels left out of things
+   cando          r7cando:w7 CASP: r can do things they want to do
+   famprv         r7famprv:w7 CASP: family responsibility prevents r from doing things they want
+   dowpls         r7dowpls:w7 CASP: r can do what they please
+   mshtge         r7mshtge:w7 CASP: money shortage stops r from doing things they want
+   lookfwd        r7lookfwd:w7 CASP: r looks forward to each day
+   lfemean        r7lfemean:w7 CASP: r feels life has meaning
+   enjdo          r7enjdo:w7 CASP: r enjoys things they do
+   enjcmpny       r7enjcmpny:w7 CASP: r enjoys being in company of others
+   snshappy       r7snshappy:w7 CASP: r looks back on life with sense of happiness
+   fenerg         r7fenerg:w7 CASP: r feels full of energy
+   chsnth         r7chsnth:w7 CASP: r chooses things never done before
+   lftrnout       r7lftrnout:w7 CASP: r feels satisfied the way life turned out
+   lifeopp        r7lifeopp:w7 CASP: r life is full of opportunities
+   futregd        r7futregd:w7 CASP: r feels future looks good for them
+   cntrlndx6      r7cntrlndx6:w7 CASP: r 6-item control index
+   cntrlndx5      r7cntrlndx5:w7 CASP: r 5-item control index
+   autondx5       r7autondx5:w7 CASP: r 5-item autonomy index
+   autondx3       r7autondx3:w7 CASP: r 3-item autonomy index
+   plsrndx4       r7plsrndx4:w7 CASP: r 4-item pleasure index
+   plsrndx2       r7plsrndx2:w7 CASP: r 2-item pleasure index
+   slfrlndx4      r7slfrlndx4:w7 CASP: r 4-item self-realization index
+   slfrlndx2      r7slfrlndx2:w7 CASP: r 2-item self-realization index
+
+MHAS Fried (2)
+   money          r1money: w1 R Difficulty-Managing money
+   moneya         r1moneya: w1 R Some difficulty-Managing money
+
+MHAS Rockwood (5)
+   urinai2y       r1urinai2y: w1 R Any urinary incontinence (last 2 yrs)
+   sthtcomp       r2sthtcomp: w2 R willing & able to complete sitting height measurement
+   coloncr        r4coloncr: w4 R Prev Care: Colon cancer screening last 2y
+   oopdrug1m      r4oopdrug1m: w4 R Out of pocket medications, per month
+   oopdrugf1m     r4oopdrugf1m: w4 R Out of pocket medication exp imputed flag
+
+SHARE Fried (6)
+   as040_         How often spent time on managing savings
+   ph049d13       Difficulties: managing money
+   ch_q8cm        time use yesterday (m): caring for sick/disabled/frail person
+   ch_q8cs        time use yesterday (h): caring for sick/disabled/frail person
+   si_q1need_13   Need help: managing money
+   si_q1rcv_13    Receive help: managing money
+
+SHARE Rockwood (139)
+   ac004d5_1      Voluntary or charity work: to earn money
+   ac004d5_2      Cared for sick or disabled adult: to earn money
+   ac004d5_3      Help to family, friends or neighbors: to earn money
+   ac004d5_4      Educational or training course: to earn money
+   ac004d5_5      Sport, social or other club: to earn money
+   ac004d5_6      Religious organization: to earn money
+   ac019_         Shortage of money stops
+   as054d1        Owe money: debt on cars and other vehicles (vans/motorcycles/boats, etc.)
+   as054d2        Owe money: debt on credit cards/store cards
+   as054d3        Owe money: loans (from bank, building society, other financial institution)
+   as054d4        Owe money: debts to relatives or friends
+   as054d5        Owe money: student loans
+   as054d6        Owe money: overdue bills (phone, electricity, heating, rent)
+   as054dno       Owe money: none of these
+   as054dot       Owe money: other
+   as055e         Amount owing money in total
+   q11_b          Main responsibility for: earning money (q7)
+   q41_b          A doctor/ nurse checked blood pressure (q11)
+   wspeed         Walking speed
+   wspeed2        Walking speed: cut-off point
+   ho051_         Indoor flushing toilet
+   ho057_         Area public transportation
+   ph010d11       Bothered by: incontinence
+   ph011d1        Drugs for: high blood cholesterol
+   ws011_         Time of first walking speed test
+   ws013_         Time of second walking speed test
+   br025_         How many meals a day
+   br025a_        Three meals every day
+   q1a            Health: to walk about
+   co206_         Afford to pay an unexpected expense without borrowing money
+   cz_a_q15_3_nq  Source hh-money at disposal (% of total): savings and investment
+   cz_a_q15_4_nq  Source hh-money at disposal (% of total): social benefits
+   cz_a_q15_5_nq  Source hh-money at disposal (% of total): family support
+   cz_a_q15_6_nq  Source hh-money at disposal (% of total): other
+   cz_b_q9_1_nq   Source hh-money at disposal (% of total): state old-age pension
+   cz_b_q9_2_nq   Source hh-money at disposal (% of total): work
+   cz_b_q9_3_nq   Source hh-money at disposal (% of total): savings and investment
+   cz_b_q9_4_nq   Source hh-money at disposal (% of total): social benefits
+   cz_b_q9_5_nq   Source hh-money at disposal (% of total): family support
+   cz_b_q9_6_nq   Source hh-money at disposal (% of total): other
+   hc088_         Payed anything out of pocket for medication
+   hc114_         Could not see a doctor because of cost
+   hc115_         Could not see a doctor because of long waiting times
+   at_f7f         EVERYDAY ERRANDS: by public transport
+   at_f11i1       AUTO COOKER CONTROL: I do not know this
+   at_f11i2       AUTO COOKER CONTROL: I am already using this
+   at_f11i3       AUTO COOKER CONTROL: I am open to this
+   at_f11i4       AUTO COOKER CONTROL: Would be a great help
+   at_f11i5       AUTO COOKER CONTROL: I find this daunting
+   at_f11i6       AUTO COOKER CONTROL: I doubt it would be helpful
+   at_f11i7       AUTO COOKER CONTROL: I am not interested
+   at_f11i8       AUTO COOKER CONTROL: I don't feel comfortable with this
+   ch_q29_        Q29_ Support legality of assisted suicide association
+   cz_c1_d        Meaning of healthy: Not spending money on medication
+   cz_c2_b        Activities to stay healthy: I try to eat healthy
+   cz_c4_b        Not feeling well: I go to bed early
+   cz_c4_d        Not feeling well: I eat healthier than usual
+   cz_c4_e        Not feeling well: I see a doctor
+   cz_c4_f        Not feeling well: I see a healer, I use homeopathic treatment
+   cz_d5_c        Assistance to neigbours: Housework
+   cz_d6_c        Assistance by neigbours: Housework
+   cz_d8_a        Community activity prevented: Finances
+   cz_h3_a        Physical activity: Purposeful walking or strolls
+   pl_q14         How much money would invest in a lottery
+   hc688_         Payed anything yourself for medication last 12 months
+   hc689e         Amount payed yourself for medication last 12 months
+   ho633d5        Special features in accommodation: bathroom/toilet modifications
+   ac701_         I see myself as someone who is reserved
+   ac702_         I see myself as someone who is generally trusting
+   ac703_         I see myself as someone who tends to be lazy
+   ac704_         I see myself as someone who is relaxed, handles stress well
+   ac705_         I see myself as someone who has few artistic interests
+   ac706_         I see myself as someone who is outgoing, sociable
+   ac707_         I see myself as someone who tends to find fault with others
+   ac708_         I see myself as someone who does a thorough job
+   ac709_         I see myself as someone who gets nervous easily
+   ac710_         I see myself as someone who has an active imagination
+   ac711_         I see myself as someone who is considerate and kind to almost everyone
+   ch_q1_e        Comfortable dealing - medicine instruction
+   ch_q19         Support legality of assisted suicide as is currently the case in Switzerland
+   cz_d1          Nutrition full meals
+   cz_g3a         Execution money
+   cz_i3          Property ownership finances
+   cz_kp          Memory difficulty medication
+   ee_k16         Can you use public transportation?
+   pl_q6d9        If engages in walks
+   pl_q15a        If needed to see a doctor but could not because of cost
+   pl_q15b        If needed to see a doctor but could not because of waiting
+   si_q1need_5    Need help: getting in or out of bed
+   si_q1rcv_5     Receive help: getting in or out of bed
+   actipass_nowalk_total ActiPASS Check: 1+ day with < 30 sec walking
+   hc887_         Colon cancer screening
+   te032_         Hours spent on administrative chores and own family finances
+   te033_         Minutes spent on administrative chores and own family finances
+   cz_g1a         Family health heart
+   cz_h7          Cervical cancer screening last
+   cz_h8          Cervical cancer screening regularly
+   ee_b03_13      Other medication, specify
+   ee_b05_12      Help needed: medicines
+   ee_b08_15      Prevention: yes, medicine
+   gr_fs15_1_a    Borrow money 2017-2019: not necessary
+   gr_fs15_1_b    Borrow money after 2019: not necessary
+   gr_fs15_2_a    Borrow money 2017-2019: close family circle
+   gr_fs15_2_b    Borrow money after 2019: close family circle
+   gr_fs15_3_a    Borrow money 2017-2019: other relatives
+   gr_fs15_3_b    Borrow money after 2019: other relatives
+   gr_fs15_4_a    Borrow money 2017-2019: friends
+   gr_fs15_4_b    Borrow money after 2019: friends
+   gr_fs15_5_a    Borrow money 2017-2019: banks or credit cards
+   gr_fs15_5_b    Borrow money after 2019: banks or credit cards
+   gr_fs15_6_a    Borrow money 2017-2019: pawn shop
+   gr_fs15_6_b    Borrow money after 2019: pawn shop
+   gr_fs15_7_a    Borrow money 2017-2019: money lenders
+   si_q14a        Have you heard of telemedicine before?
+   si_q14b_1      Reasons for using telemedicine: time saving
+   si_q14b_2      Reasons for using telemedicine: ease
+   si_q14b_3      Reasons for using telemedicine: faster access
+   si_q14b_4      Reasons for using telemedicine: security during infectious diseases
+   si_q14b_5      Reasons for using telemedicine: less workload for my relatives / friends
+   si_q14b_6      Reasons for using telemedicine: cost saving
+   si_q14b_7      Reasons for using telemedicine: other
+   si_q14b_8      Would never use telemedicine
+   si_q14c_1      Types of healthcare via telemedicine: laboratory test information
+   si_q14c_2      Types of healthcare via telemedicine: parameter exchange and reporting
+   si_q14c_3      Types of healthcare via telemedicine: consultations on treatment
+   si_q14c_4      Types of healthcare via telemedicine: non-pharmacological treatment education
+   si_q14c_5      Types of healthcare via telemedicine: support for disease management
+   si_q14c_6      Types of healthcare via telemedicine: other
+   si_q14c_7      Types of healthcare via telemedicine: none
+   si_q14d_1      Concerns regarding telemedicine: impersonal
+   si_q14d_2      Concerns regarding telemedicine: data security
+   si_q14d_3      Concerns regarding telemedicine: quality of care
+   si_q14d_4      Concerns regarding telemedicine: costs
+   si_q14d_5      Concerns regarding telemedicine: technology issues, complicated use
+   si_q14d_6      Concerns regarding telemedicine: other
+   si_q14d_7      Concerns regarding telemedicine: no concerns
+   si_q14e        Willingness to pay for telemedicine
+   casp           CASP index for quality of life and well-being
+   maxgrip        Max. of grip strength measure

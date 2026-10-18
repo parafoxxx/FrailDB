@@ -1,0 +1,225 @@
+
+CLHLS Rockwood: 17 keyword matches of 57
+   a42           was the county (city) you born in the same as current address?
+   f66           (F66) often went to bed hungry as a child
+   g6            (G6) rhythm of heart
+   g7            (G7) heart rate
+   g102b         length from kneel to floor
+   g15o1         (G15O1) suffering from dementia?
+   d14d231       how much money paid by the family?
+   d14d232       how much money paid as subsidy by the affiliation or community?
+   d14d233       how much money paid as subsidy by the government?
+   b28           (B28) have you felt sad, blue, or depressed for two weeks or more in last 12 months?
+   g106          (G106) do you have any difficulty with your hearing?
+   g1061         (G1061) in which ear(s) do you have a hearing difficulty?
+   g1062         (G1062) at what age did you first notice a hearing difficulty?
+   g1063         (G1063) how quickly did your hearing difficulty develop?
+   a557          toilet cleaner
+   b33           are you feeling sad or depressed?
+   g20           heart rhythm
+
+ELSA Fried: 4 keyword matches of 4
+   heslfcb       Diabetes: how much knows about managing it (self-reported)
+   headlmo       IADL: managing money, such as bills and expenses
+   erlvolpe      Unpaid help: providing personal care for someone who is sick or frail
+   catkm         Received help in last month: managing money, such as paying bills and keeping tr
+
+ELSA Rockwood: 103 keyword matches of 259
+   hepab         Whether asked questions re pain if walking on flat surface. Code 2 if can~t walk
+   hebal         How often do you have problems with keeping your balance when you are walking on
+   herpd         Are you troubled by shortness of breath when hurrying on level ground or walking
+   herpe         Do you get short of breath walking with other people of your own age on level gr
+   herpf         Do you have to stop for breath when walking at your own pace on level ground?
+   hecdc         Do you get it if you walk uphill or hurry? {in legs)
+   hecdd         Do you get it when you walk at an ordinary pace on the level? {in legs}
+   mmwlka        Time taken for first walk (seconds)
+   mmwlkb        Time taken for second walk (seconds)
+   mmpain        Had pain whilst walking?
+   scsce         People would be afraid to walk alone in this area after dark/People feel safe wa
+   dhsameh       Whether household is at same address as at the previous interview
+   hebowd        Screening: whether ever completed bowel cancer screening test using home test ki
+   hemamb        Screening (women): whether ever had breast cancer screening (mammogram or x-ray)
+   hepro         Screening (men): ever had prostate cancer screening (PSA test or other)
+   hebck         Back pain rating walking on flat surface
+   hehip         Hip pain rating walking on flat surface
+   hekne         Knee pain rating walking on flat surface
+   hefet         Foot pain rating walking on flat surface
+   sptrab11      Reasons for not using public transport: they prefer to walk
+   sptram11      Reasons for not using public transport: they prefer to walk (merged)
+   sptram52      Reasons for not using public transport: friends/family provide lifts (merged)
+   sptro1        Whether respondent aged 65+ gets lifts from family/friends not living with them
+   splift        How often respondent gets lifts from family/friends not living with them
+   wphjobl       Hours worked per week in this job (exc meal breaks, inc paid overtime) EXCLUDE H
+   iat10         Benefit block type-Current carers allowance (respondent)
+   iap10         Current carers allowance (respondent): period code
+   iat21         Benefit block type-Current carers allowance (partner)
+   iap21         Current carers allowance (partner): period code
+   iaa21         Current carers allowance (partner): amount received
+   exreletr      Activities stopped by having too little money: treating themselves from time to
+   erlvolco      Unpaid help: cooking, cleaning, laundry, gardening, other household jobs
+   erlvolba      Unpaid help: babysitting or caring for children
+   erlvolpe      Unpaid help: providing personal care for someone who is sick or frail
+   scqola        CASP-19 scale: how often feels age prevents them from doing things they like
+   scqolf        CASP-19 scale: how often family responsibilities prevents them from doing things
+   scweth        Time spent walking or exercising yesterday (HOURS)
+   scwetm        Time spent walking or exercising yesterday (MINUTES)
+   herpe1        Shortness of breath: reason for never walking uphill (or on level ground)
+   hecda         Claudication: whether gets pain or discomfort in legs when walking
+   sptrbwal      Reason respondent does not use public transport: they prefer to walk
+   sptrmwal      Merged var - reason respondent does not use public transport: prefer to walk
+   sptrfam       Whether respondent aged 65+ gets lifts from family/friends not living with them
+   gtspd_id      (D) Walks used to derive speed
+   heatt2        Walking symptom: fatigue
+   heatt3        Walking symptom: shortness of breath
+   heatt5        Walking symptom: pain in leg or foot
+   heatt6        Walking symptom: swelling in leg or foot
+   heatt7        Walking symptom: pain in back
+   heatt8        Walking symptom: seeing difficulty
+   heatt13       Walking symptom: unsteady on feet, balance
+   heatt14       Walking symptom: lightheaded or dizzy
+   heatt15       Walking symptom: fear of falling
+   heatt16       Walking symptom: anxiety or fear
+   heatt95       Walking symptom: other
+   heattm2       Walking symptom: fatigue
+   heattm3       Walking symptom: shortness of breath
+   heattm5       Walking symptom: pain in leg or foot
+   heattm6       Walking symptom: swelling in leg or foot
+   heattm7       Walking symptom: pain in back
+   heattm8       Walking symptom: seeing difficulty
+   heattm13      Walking symptom: unsteady on feet, balance
+   heattm14      Walking symptom: lightheaded or dizzy
+   heattm15      Walking symptom: fear of falling
+   heattm16      Walking symptom: anxiety or fear
+   heattm51      Walking symptom: other hip or leg or foot
+   heattm52      Walking symptom: brain disease affected legs
+   heattm85      Walking symptom: not codeable
+   heattm86      Walking symptom: irrelevant
+   heata         Walking symptom: main symptom if multiple
+   hefle         Fall: whether doctor or nurse tested balance or strength or watched resp walk
+   hoailihs      NHS paid for the lift
+   mmcomun       Reason fo non-completion of walk: unable to walk safely
+   gtspd_wk      (D) Walks used to derive mean gait speed
+   nurse_hastro  Lung function: Whether admitted to hospital for heart complaint in last 6 weeks
+   nurse_lfstand Lung function: Measurements taken while standing or sitting?
+   henictk       Taking any medication to help stop smoking?
+   hoamlihs      NHS paid for the lift (merged var)
+   hoamliys      You or spouse paid for the lift (merged var)
+   hoamlial      Lift already in the property (merged var)
+   hoamlill      Landlord etc. paid for the lift (merged var)
+   hoamli85      Other not codeable source paid for the lift (merged var)
+   hoamli86      irrelevant response paid for the lift (merged var)
+   scawe         Yesterday, did you go for a walk or exercise?
+   scaweh        How much time did you spend walking or exercising  yesterday? Hours?
+   scawem        How much time did you spend walking or exercising  yesterday? Minutes?
+   scawea        How did you feel when you were walking or exercising  yesterday? Happy
+   scaweb        How did you feel when you were walking or exercising  yesterday? Interested
+   scawec        How did you feel when you were walking or exercising  yesterday? Frustrated
+   scawed        How did you feel when you were walking or exercising  yesterday? Sad?
+   scaoth        Yesterday, did you do any health-related activities other  than walking or exerc
+   nurse_lftb    LUNG: Whether currently taking any medications for the treatment of tuberculosis
+   scarea5       People would be afraid to walk alone in the dark
+   scawea_v1     How did you feel when walking/exercising yesterday? Happy(Orange Questionnaire)
+   scawea_v2     How did you feel when walking/exercising yesterday? Happy(Green Questionnaire)
+   scaweb_v1     How did you feel when walking/exercising yesterday? Interested(Orange Questionna
+   scaweb_v2     How did you feel when walking/exercising yesterday? Interested(Green Questionnai
+   scawec_v1     How did you feel when walking/exercising yesterday? Frustrated(Orange Questionna
+   scawec_v2     How did you feel when walking/exercising yesterday? Frustrated(Green Questionnai
+   scawed_v1     How did you feel when walking/exercising yesterday? Sad(Orange Questionnaire)
+   scawed_v2     How did you feel when walking/exercising yesterday? Sad(Green Questionnaire)
+   scwey         Whether respondent went for a walk or exercised yesterday
+   schry         Whether respondent did any health related activites other than walking yesterday
+
+HRS Fried: 1 keyword matches of 1
+   moneyhlp      r11moneyhlp:w11 whether anyone helps r with managing money
+
+HRS Rockwood: 38 keyword matches of 100
+   wspeed1       r10wspeed1:w10 r time for walking speed test 1(sec)
+   wspeed2       r10wspeed2:w10 r time for walking speed test 2(sec)
+   wspeed        r10wspeed:w10 r average time for walking speed test(sec)
+   afwalk        r10afwalk:w10 whether r feels safe/afraid walking alone in this area
+   walkex        r11walkex:w11 Affective Experience: r walked or exercised
+   exrhpy        r11exrhpy:w11 Affective Experience Happy: r walking or exercising
+   exrint        r11exrint:w11 Affective Experience Interested: r walking or exercising
+   exrcon        r11exrcon:w11 Affective Experience Content: r walking or exercising
+   exrpos2       r11exrpos2:w11 r walked/exercised: Pos Affect Index 2-item
+   exrpos3       r11exrpos3:w11 r walked/exercised: Pos Affect Index 3-item
+   exrpos3m      r11exrpos3m:w11 r walked/exercised: missings Pos Affect Index 3-item
+   exrfrs        r11exrfrs:w11 Affective Experience Frustrated: r walking or exercising
+   exrsad        r11exrsad:w11 Affective Experience Sad: r walking or exercising
+   exrbor        r11exrbor:w11 Affective Experience Bored: r walking or exercising
+   exrpai        r11exrpai:w11 Affective Experience Pain: r walking or exercising
+   exrneg2       r11exrneg2:w11 r walked/exercised: Neg Affect Index 2-item
+   exrneg3       r11exrneg3:w11 r walked/exercised: Neg Affect Index 3-item
+   exrneg3m      r11exrneg3m:w11 r walked/exercised: missings Neg Affect Index 3-item
+   rc229         DAYS IN BED
+   rg058         HOUSE\YARD WORK HELP
+   rlb001t       Q01T. WALK FOR 20 MINES
+   rlb020d       Q20D. AFRAID WALK ALONE AFTER DARK
+   rlb027c       Q27C. TRY HARD CARRY OUT BELIEFS
+   rlb033c       Q33C. ACTIVE CARRYING OUT OWN PLANS
+   rlb048c       Q48C. GO FOR A WALK
+   rlb069h       Q69H. WALK OUTSIDE YOUR HOME FOR 20 MINUTES
+   rv413         MAKING BED
+   sg058         HOUSE\YARD WORK HELP
+   si823         WALKING TEST 1ST TRIAL TIME
+   si824         WALKING TEST 2ND TRIAL TIME
+   slb001t       Q01T. WALK FOR 20 MINES
+   slb020d       Q20D. AFRAID WALK ALONE AFTER DARK
+   slb027c       Q27C. TRY HARD CARRY OUT BELIEFS
+   slb033c       Q33C. ACTIVE CARRYING OUT OWN PLANS
+   slb048c       Q48C. GO FOR A WALK
+   ageprv        r7ageprv:w7 CASP: age prevents r from doing things they like
+   famprv        r7famprv:w7 CASP: family responsibility prevents r from doing things they want
+   snshappy      r7snshappy:w7 CASP: r looks back on life with sense of happiness
+
+MHAS Fried: 2 keyword matches of 2
+   money         r1money: w1 R Difficulty-Managing money
+   moneya        r1moneya: w1 R Some difficulty-Managing money
+
+MHAS Rockwood: 1 keyword matches of 5
+   coloncr       r4coloncr: w4 R Prev Care: Colon cancer screening last 2y
+
+SHARE Fried: 4 keyword matches of 6
+   as040_        How often spent time on managing savings
+   ph049d13      Difficulties: managing money
+   si_q1need_13  Need help: managing money
+   si_q1rcv_13   Receive help: managing money
+
+SHARE Rockwood: 37 keyword matches of 139
+   ac004d5_2     Cared for sick or disabled adult: to earn money
+   ac004d5_3     Help to family, friends or neighbors: to earn money
+   as054d6       Owe money: overdue bills (phone, electricity, heating, rent)
+   wspeed        Walking speed
+   wspeed2       Walking speed: cut-off point
+   ho051_        Indoor flushing toilet
+   ws011_        Time of first walking speed test
+   ws013_        Time of second walking speed test
+   q1a           Health: to walk about
+   at_f11i4      AUTO COOKER CONTROL: Would be a great help
+   at_f11i6      AUTO COOKER CONTROL: I doubt it would be helpful
+   cz_c4_b       Not feeling well: I go to bed early
+   cz_d8_a       Community activity prevented: Finances
+   cz_h3_a       Physical activity: Purposeful walking or strolls
+   ho633d5       Special features in accommodation: bathroom/toilet modifications
+   cz_kp         Memory difficulty medication
+   pl_q6d9       If engages in walks
+   si_q1need_5   Need help: getting in or out of bed
+   si_q1rcv_5    Receive help: getting in or out of bed
+   actipass_nowalk_total ActiPASS Check: 1+ day with < 30 sec walking
+   hc887_        Colon cancer screening
+   cz_g1a        Family health heart
+   cz_h7         Cervical cancer screening last
+   cz_h8         Cervical cancer screening regularly
+   ee_b05_12     Help needed: medicines
+   ee_b08_15     Prevention: yes, medicine
+   gr_fs15_6_a   Borrow money 2017-2019: pawn shop
+   gr_fs15_6_b   Borrow money after 2019: pawn shop
+   si_q14a       Have you heard of telemedicine before?
+   si_q14c_1     Types of healthcare via telemedicine: laboratory test information
+   si_q14c_2     Types of healthcare via telemedicine: parameter exchange and reporting
+   si_q14c_3     Types of healthcare via telemedicine: consultations on treatment
+   si_q14c_4     Types of healthcare via telemedicine: non-pharmacological treatment education
+   si_q14c_5     Types of healthcare via telemedicine: support for disease management
+   si_q14c_6     Types of healthcare via telemedicine: other
+   si_q14c_7     Types of healthcare via telemedicine: none
+   si_q14d_3     Concerns regarding telemedicine: quality of care

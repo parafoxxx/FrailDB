@@ -753,6 +753,23 @@ def nan_to_none(o):
 AW = os.path.join(os.path.dirname(OUT), "age_window.json")
 if os.path.exists(AW):
     db["agewindow"] = json.load(open(AW, encoding="utf-8"))
+
+# predictor analysis (FrailDB/predictors: run_predictors.py -> aggregate.py -> report_figures.py) is merged in when
+# present. Only variable names, labels and importances: no participant data.
+PRED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "predictors", "output")
+if os.path.exists(os.path.join(PRED, "predictors.json")) and os.path.exists(os.path.join(PRED, "report_figures.json")):
+    pr = json.load(open(os.path.join(PRED, "predictors.json"), encoding="utf-8"))
+    fig = json.load(open(os.path.join(PRED, "report_figures.json"), encoding="utf-8"))
+    parts = glob.glob(os.path.join(PRED, "parts", "*.json"))
+    sha = json.load(open(parts[0], encoding="utf-8")).get("script_sha256", "") if parts else ""
+    db["predictors"] = dict(
+        models=[{k: m[k] for k in ("cohort", "instrument", "wave", "predictor_source", "n_people", "variables_in_files",
+                                   "excluded", "used", "heldout_R2")} for m in pr["models"]],
+        top5=[{k: t[k] for k in ("cohort", "instrument", "overall_rank", "key", "example_variable", "label",
+                                 "mean_importance_pct", "waves_in_top10", "waves_in_top20", "waves_analysed")} for t in pr["top5"]],
+        per_wave=[{k: t[k] for k in ("cohort", "instrument", "wave", "rank", "variable", "label", "file_or_module",
+                                     "importance_pct")} for t in pr["per_wave"]],
+        themes=fig["themes"], pipeline=fig["pipeline"], stability=fig["stability"], script_sha256=sha)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w", encoding="utf-8") as fh:
     json.dump(nan_to_none(json.loads(json.dumps(db, default=jdefault))), fh, ensure_ascii=False, separators=(",", ":"))

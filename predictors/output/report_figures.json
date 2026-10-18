@@ -1,0 +1,1007 @@
+{
+ "themes": [
+  {
+   "theme": "Age and background",
+   "dataset": "SHARE · Rockwood",
+   "pct": 0.8
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "HRS · Rockwood",
+   "pct": 3.5
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "ELSA · Rockwood",
+   "pct": 1.0
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "MHAS · Rockwood",
+   "pct": 3.4
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 7.2
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "SHARE · Fried",
+   "pct": 3.2
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "HRS · Fried",
+   "pct": 2.0
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "ELSA · Fried",
+   "pct": 3.6
+  },
+  {
+   "theme": "Age and background",
+   "dataset": "MHAS · Fried",
+   "pct": 0.8
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "SHARE · Rockwood",
+   "pct": 6.3
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "HRS · Rockwood",
+   "pct": 4.7
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "ELSA · Rockwood",
+   "pct": 3.9
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "MHAS · Rockwood",
+   "pct": 5.8
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 0.0
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "SHARE · Fried",
+   "pct": 1.5
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "HRS · Fried",
+   "pct": 1.6
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "ELSA · Fried",
+   "pct": 0.9
+  },
+  {
+   "theme": "Energy and fatigue",
+   "dataset": "MHAS · Fried",
+   "pct": 1.8
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "SHARE · Rockwood",
+   "pct": 1.1
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "HRS · Rockwood",
+   "pct": 4.8
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "ELSA · Rockwood",
+   "pct": 6.4
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "MHAS · Rockwood",
+   "pct": 23.5
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 0.3
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "SHARE · Fried",
+   "pct": 18.6
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "HRS · Fried",
+   "pct": 18.3
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "ELSA · Fried",
+   "pct": 11.3
+  },
+  {
+   "theme": "Function and limitation",
+   "dataset": "MHAS · Fried",
+   "pct": 44.5
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "SHARE · Rockwood",
+   "pct": 8.6
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "HRS · Rockwood",
+   "pct": 1.4
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "ELSA · Rockwood",
+   "pct": 1.0
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "MHAS · Rockwood",
+   "pct": 3.6
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 1.5
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "SHARE · Fried",
+   "pct": 0.9
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "HRS · Fried",
+   "pct": 2.0
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "ELSA · Fried",
+   "pct": 0.0
+  },
+  {
+   "theme": "Medication and health care",
+   "dataset": "MHAS · Fried",
+   "pct": 0.4
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "SHARE · Rockwood",
+   "pct": 1.6
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "HRS · Rockwood",
+   "pct": 1.5
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "ELSA · Rockwood",
+   "pct": 0.0
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "MHAS · Rockwood",
+   "pct": 1.7
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 4.2
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "SHARE · Fried",
+   "pct": 6.1
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "HRS · Fried",
+   "pct": 1.5
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "ELSA · Fried",
+   "pct": 1.7
+  },
+  {
+   "theme": "Mood and cognition",
+   "dataset": "MHAS · Fried",
+   "pct": 1.1
+  },
+  {
+   "theme": "Other",
+   "dataset": "SHARE · Rockwood",
+   "pct": 1.4
+  },
+  {
+   "theme": "Other",
+   "dataset": "HRS · Rockwood",
+   "pct": 3.4
+  },
+  {
+   "theme": "Other",
+   "dataset": "ELSA · Rockwood",
+   "pct": 0.7
+  },
+  {
+   "theme": "Other",
+   "dataset": "MHAS · Rockwood",
+   "pct": 1.6
+  },
+  {
+   "theme": "Other",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 3.0
+  },
+  {
+   "theme": "Other",
+   "dataset": "SHARE · Fried",
+   "pct": 0.4
+  },
+  {
+   "theme": "Other",
+   "dataset": "HRS · Fried",
+   "pct": 2.1
+  },
+  {
+   "theme": "Other",
+   "dataset": "ELSA · Fried",
+   "pct": 2.9
+  },
+  {
+   "theme": "Other",
+   "dataset": "MHAS · Fried",
+   "pct": 2.4
+  },
+  {
+   "theme": "Pain",
+   "dataset": "SHARE · Rockwood",
+   "pct": 11.7
+  },
+  {
+   "theme": "Pain",
+   "dataset": "HRS · Rockwood",
+   "pct": 19.2
+  },
+  {
+   "theme": "Pain",
+   "dataset": "ELSA · Rockwood",
+   "pct": 16.9
+  },
+  {
+   "theme": "Pain",
+   "dataset": "MHAS · Rockwood",
+   "pct": 10.1
+  },
+  {
+   "theme": "Pain",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 0.0
+  },
+  {
+   "theme": "Pain",
+   "dataset": "SHARE · Fried",
+   "pct": 0.0
+  },
+  {
+   "theme": "Pain",
+   "dataset": "HRS · Fried",
+   "pct": 3.8
+  },
+  {
+   "theme": "Pain",
+   "dataset": "ELSA · Fried",
+   "pct": 0.0
+  },
+  {
+   "theme": "Pain",
+   "dataset": "MHAS · Fried",
+   "pct": 3.0
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "SHARE · Rockwood",
+   "pct": 1.7
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "HRS · Rockwood",
+   "pct": 0.0
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "ELSA · Rockwood",
+   "pct": 1.0
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "MHAS · Rockwood",
+   "pct": 0.0
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 19.1
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "SHARE · Fried",
+   "pct": 0.8
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "HRS · Fried",
+   "pct": 7.8
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "ELSA · Fried",
+   "pct": 4.2
+  },
+  {
+   "theme": "Performance tests",
+   "dataset": "MHAS · Fried",
+   "pct": 0.0
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "SHARE · Rockwood",
+   "pct": 5.7
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "HRS · Rockwood",
+   "pct": 0.3
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "ELSA · Rockwood",
+   "pct": 6.3
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "MHAS · Rockwood",
+   "pct": 1.0
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 5.2
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "SHARE · Fried",
+   "pct": 7.7
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "HRS · Fried",
+   "pct": 2.8
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "ELSA · Fried",
+   "pct": 2.3
+  },
+  {
+   "theme": "Physical activity",
+   "dataset": "MHAS · Fried",
+   "pct": 0.5
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "SHARE · Rockwood",
+   "pct": 5.2
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "HRS · Rockwood",
+   "pct": 2.9
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "ELSA · Rockwood",
+   "pct": 3.2
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "MHAS · Rockwood",
+   "pct": 5.4
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 0.2
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "SHARE · Fried",
+   "pct": 7.2
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "HRS · Fried",
+   "pct": 0.6
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "ELSA · Fried",
+   "pct": 5.2
+  },
+  {
+   "theme": "Self-rated health and outlook",
+   "dataset": "MHAS · Fried",
+   "pct": 3.8
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "SHARE · Rockwood",
+   "pct": 9.0
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "HRS · Rockwood",
+   "pct": 16.5
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "ELSA · Rockwood",
+   "pct": 4.0
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "MHAS · Rockwood",
+   "pct": 6.8
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 6.4
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "SHARE · Fried",
+   "pct": 2.2
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "HRS · Fried",
+   "pct": 5.3
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "ELSA · Fried",
+   "pct": 3.2
+  },
+  {
+   "theme": "Symptoms and conditions",
+   "dataset": "MHAS · Fried",
+   "pct": 0.8
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "SHARE · Rockwood",
+   "pct": 1.3
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "HRS · Rockwood",
+   "pct": 13.2
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "ELSA · Rockwood",
+   "pct": 3.8
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "MHAS · Rockwood",
+   "pct": 5.8
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "CLHLS · Rockwood",
+   "pct": 8.7
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "SHARE · Fried",
+   "pct": 1.5
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "HRS · Fried",
+   "pct": 5.0
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "ELSA · Fried",
+   "pct": 0.4
+  },
+  {
+   "theme": "Work, money and social life",
+   "dataset": "MHAS · Fried",
+   "pct": 1.5
+  }
+ ],
+ "pipeline": {
+  "candidates": 62339,
+  "kept": 48206,
+  "models": 59,
+  "excluded": 14133,
+  "by_layer": {
+   "derived": 4733,
+   "admin": 4441,
+   "follow-up": 2622,
+   "constituent": 2282,
+   "near-copy": 55
+  },
+  "r2_fi": [
+   0.597,
+   0.82
+  ],
+  "r2_fried": [
+   0.392,
+   0.575
+  ]
+ },
+ "stability": [
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 4,
+   "year": 1998,
+   "pct": 11.13,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 4,
+   "year": 1998,
+   "pct": 8.54,
+   "rank": 2
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 4,
+   "year": 1998,
+   "pct": 5.96,
+   "rank": 3
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 4,
+   "year": 1998,
+   "pct": 4.79,
+   "rank": 5
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 4,
+   "year": 1998,
+   "pct": 4.85,
+   "rank": 4
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 5,
+   "year": 2000,
+   "pct": 11.07,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 5,
+   "year": 2000,
+   "pct": 5.86,
+   "rank": 5
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 5,
+   "year": 2000,
+   "pct": 4.78,
+   "rank": 6
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 5,
+   "year": 2000,
+   "pct": 2.78,
+   "rank": 10
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 5,
+   "year": 2000,
+   "pct": 4.65,
+   "rank": 7
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 6,
+   "year": 2002,
+   "pct": 9.93,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 6,
+   "year": 2002,
+   "pct": 7.29,
+   "rank": 2
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 6,
+   "year": 2002,
+   "pct": 4.54,
+   "rank": 6
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 6,
+   "year": 2002,
+   "pct": 5.48,
+   "rank": 4
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 6,
+   "year": 2002,
+   "pct": 5.21,
+   "rank": 5
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 7,
+   "year": 2004,
+   "pct": 6.96,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 7,
+   "year": 2004,
+   "pct": 4.15,
+   "rank": 7
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 7,
+   "year": 2004,
+   "pct": 3.61,
+   "rank": 9
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 7,
+   "year": 2004,
+   "pct": 6.01,
+   "rank": 2
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 7,
+   "year": 2004,
+   "pct": 4.35,
+   "rank": 6
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 8,
+   "year": 2006,
+   "pct": 8.16,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 8,
+   "year": 2006,
+   "pct": 3.22,
+   "rank": 7
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 8,
+   "year": 2006,
+   "pct": 2.98,
+   "rank": 9
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 8,
+   "year": 2006,
+   "pct": 3.52,
+   "rank": 3
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 8,
+   "year": 2006,
+   "pct": 3.3,
+   "rank": 6
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 9,
+   "year": 2008,
+   "pct": 5.45,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 9,
+   "year": 2008,
+   "pct": 4.05,
+   "rank": 4
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 9,
+   "year": 2008,
+   "pct": 2.03,
+   "rank": 12
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 9,
+   "year": 2008,
+   "pct": 1.59,
+   "rank": 16
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 9,
+   "year": 2008,
+   "pct": 3.61,
+   "rank": 6
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 10,
+   "year": 2010,
+   "pct": 6.89,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 10,
+   "year": 2010,
+   "pct": 4.27,
+   "rank": 3
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 10,
+   "year": 2010,
+   "pct": 3.39,
+   "rank": 5
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 10,
+   "year": 2010,
+   "pct": 3.2,
+   "rank": 7
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 10,
+   "year": 2010,
+   "pct": 2.45,
+   "rank": 8
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 11,
+   "year": 2012,
+   "pct": 6.94,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 11,
+   "year": 2012,
+   "pct": 3.11,
+   "rank": 7
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 11,
+   "year": 2012,
+   "pct": 2.84,
+   "rank": 9
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 11,
+   "year": 2012,
+   "pct": 2.04,
+   "rank": 15
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 11,
+   "year": 2012,
+   "pct": 2.98,
+   "rank": 8
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 12,
+   "year": 2014,
+   "pct": 8.4,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 12,
+   "year": 2014,
+   "pct": 2.09,
+   "rank": 11
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 12,
+   "year": 2014,
+   "pct": 4.34,
+   "rank": 3
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 12,
+   "year": 2014,
+   "pct": 3.15,
+   "rank": 5
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 12,
+   "year": 2014,
+   "pct": 2.66,
+   "rank": 8
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 13,
+   "year": 2016,
+   "pct": 6.5,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 13,
+   "year": 2016,
+   "pct": 4.33,
+   "rank": 3
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 13,
+   "year": 2016,
+   "pct": 3.03,
+   "rank": 8
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 13,
+   "year": 2016,
+   "pct": 2.13,
+   "rank": 13
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 13,
+   "year": 2016,
+   "pct": 0,
+   "rank": null
+  },
+  {
+   "key": "paina",
+   "label": "r pain interferes with normal activities",
+   "wave": 14,
+   "year": 2018,
+   "pct": 8.3,
+   "rank": 1
+  },
+  {
+   "key": "painlv",
+   "label": "r usual level of pain",
+   "wave": 14,
+   "year": 2018,
+   "pct": 3.44,
+   "rank": 4
+  },
+  {
+   "key": "jrsleft",
+   "label": "r reason for stopping working (if not working)",
+   "wave": 14,
+   "year": 2018,
+   "pct": 4.39,
+   "rank": 2
+  },
+  {
+   "key": "painfr",
+   "label": "r frequent problems with pain",
+   "wave": 14,
+   "year": 2018,
+   "pct": 2.83,
+   "rank": 6
+  },
+  {
+   "key": "drive",
+   "label": "whether r is able to drive",
+   "wave": 14,
+   "year": 2018,
+   "pct": 2.87,
+   "rank": 5
+  }
+ ]
+}
