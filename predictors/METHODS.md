@@ -1,7 +1,8 @@
 # Most influential predictors of frailty: methods
 
 Draft Methods text for the Frailty_Volatility manuscript and its supplement. Numbers are from the final
-run (59 wave models, one script version); tables are in `output/`. Code: `run_predictors.py` (models), `aggregate.py` (tables).
+run (59 wave models per exclusion set, one script version); primary tables are in `output_both/`,
+own-instrument tables in `output/`. Code: `run_predictors.py` (models), `aggregate.py` (tables).
 
 ## 1. What the analysis was asked to do (study specification)
 
@@ -121,8 +122,8 @@ r10shlt and r11shlt both become shlt). The Gateway harmonised files code each fu
 importance summed, so that one question does not occupy two ranks.
 
 ## 4. Reproducibility
-All 59 wave models were produced by a single version of `run_predictors.py`, identified by its SHA-256
-fingerprint (`2a7339500a6857fb45dc43c3686bf28aecf0845fe2737305829fab9436076b1f`), which is stored in every result file and verified by `aggregate.py`. Software: Python
+Both sets of 59 wave models (primary `both` and secondary `own`) were produced by a single version of `run_predictors.py`, identified by its SHA-256
+fingerprint (`3977ea4a26f9fd0d7b6d4a29026bb626fbc603aa0f70e6e084e55da5eced95d6`), which is stored in every result file and verified by `aggregate.py`. Software: Python
 3.12.8, LightGBM 4.7.0, pandas 2.3.3, NumPy 1.26.4, scikit-learn 1.9.1, pyreadstat 1.3.6, pyreadr 0.5.7,
 PyMuPDF 1.26.7. Random seed 20261018.
 
@@ -160,6 +161,8 @@ numerous), and mean held-out R² changed by at most 0.01. Leak types found, with
   the top 20.
 - Sensitivity: frail/not-frail outcome; near-copy thresholds 0.70 and 0.85; literal (constituents-only)
   exclusion, to show how much the extended exclusions change the rankings.
+- Done: own-instrument vs both-instruments exclusion (`output_both/sensitivity_pilot_vs_final.csv`):
+  top-5 overlap 0–5 of 5 (median 3), Spearman 0.77–0.97, mean R² lower by 0.004–0.09 under `both`.
 
 ## References
 - Ke G, et al. LightGBM: a highly efficient gradient boosting decision tree. NeurIPS 2017.
