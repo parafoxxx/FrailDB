@@ -5,7 +5,7 @@ rules, across the harmonised ageing cohorts SHARE, HRS, ELSA, MHAS and CLHLS. It
 the Wishart-lab databases (HMDB, MiMeDB): browse tables, record pages with stable IDs, text search,
 downloads and statistics, plus tools specific to frailty research.
 
-Frailty_Volatility Project · Department of Biological Sciences and Bioengineering, IIT Kanpur.
+Frailty_Volatility Project.
 
 ## What is in the portal
 

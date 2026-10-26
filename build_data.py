@@ -104,8 +104,9 @@ COHORTS = [
          fried_ref=["FDBR10"], rock_ref=[],
          notes=["Raw data for waves 1–9 acquired. Frailty scoring is in progress and will appear in a later release."]),
 ]
-# Cohorts withheld from this release (LASI held back on 2026-10-13; set to set() to restore it)
-EXCLUDE = {"LASI"}
+# Cohorts withheld from this release (LASI held back on 2026-10-13; KLoSA removed on 2026-10-26 as it is not part of
+# the analysis; set to set() to restore them)
+EXCLUDE = {"LASI", "KLoSA"}
 COHORTS = [c for c in COHORTS if c["key"] not in EXCLUDE]
 CK = {c["key"]: c for c in COHORTS}
 
@@ -795,7 +796,7 @@ db["references"] = [
     dict(id="FDBR07", cite="Gale CR, Cooper C, Sayer AA. Prevalence of frailty and disability: findings from the English Longitudinal Study of Ageing. Age Ageing. 2015;44(1):162–165.", doi="10.1093/ageing/afu148", used_for="ELSA Fried operationalisation (measured grip and gait, age 60+)"),
     dict(id="FDBR08", cite="Michaels-Obregon A, Wilkens J, Phillips D, Wong R, Lee J. Gateway Harmonized MHAS, Version D (2001–2022). Gateway to Global Aging Data, 2025.", doi="10.25553/ws6f-3a", used_for="MHAS harmonised variables"),
     dict(id="FDBR09", cite="Wang HY, Zhang M, Sun X. Sex-specific association between socioeconomic status, lifestyle, and the risk of frailty among the elderly in China. Front Med. 2021;8:775518.", doi="10.3389/fmed.2021.775518", used_for="CLHLS frailty index items"),
-    dict(id="FDBR10", cite="Bandeen-Roche K, et al. Self-report substitution for grip strength and slow walk in the Fried frailty phenotype. BMC Geriatr. 2023;23:451.", doi="10.1186/s12877-023-04105-8", used_for="Method for self-reported weakness and slowness (KLoSA, MHAS)"),
+    dict(id="FDBR10", cite="Bandeen-Roche K, et al. Self-report substitution for grip strength and slow walk in the Fried frailty phenotype. BMC Geriatr. 2023;23:451.", doi="10.1186/s12877-023-04105-8", used_for="Method for self-reported weakness and slowness (MHAS)"),
 ]
 
 # --------------------------------------------------------------------------- meta

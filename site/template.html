@@ -293,7 +293,7 @@ table.avail tr.gap th{padding-top:6px}
 
 <footer><div class="wrap">
   <div><b style="color:var(--ink)">FrailDB</b> · <span id="footver"></span> · Aggregated results only. Cells describing fewer than <span id="footmin"></span> people are suppressed.</div>
-  <div>Frailty_Volatility Project · Department of Biological Sciences and Bioengineering, IIT Kanpur</div>
+  <div>Frailty_Volatility Project</div>
 </div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -312,7 +312,7 @@ const css = name => getComputedStyle(document.documentElement).getPropertyValue(
 // ------------------------------------------------------------------ indexes
 const COH = Object.fromEntries(DB.cohorts.map(c => [c.key, c]));
 const COHORT_ORDER = DB.cohorts.map(c => c.key);
-const COLOR_VAR = { SHARE: "--c1", HRS: "--c2", ELSA: "--c3", MHAS: "--c4", CLHLS: "--c5", LASI: "--c6", KLoSA: "--c7" };
+const COLOR_VAR = { SHARE: "--c1", HRS: "--c2", ELSA: "--c3", MHAS: "--c4", CLHLS: "--c5", LASI: "--c6" };
 const cColor = k => css(COLOR_VAR[k] || "--muted");
 const BYID = {};
 DB.cohorts.forEach(x => BYID[x.id] = ["cohort", x]);
@@ -495,7 +495,7 @@ ROUTES.home = () => {
       <div class="stat"><b>${fmt(m.rock_assessments)}</b><span>Frailty index assessments</span></div>
       <div class="stat"><b>${fmt(m.fried_assessments)}</b><span>Fried phenotype assessments</span></div>
       <div class="stat"><b>${fmt(m.persons)}</b><span>People with an FI score</span></div>
-      <div class="stat"><b>${m.cohorts_analysed} <small style="font-size:14px;color:var(--muted)">of ${m.cohorts}</small></b><span>Cohorts analysed</span></div>
+      <div class="stat"><b>${m.cohorts_analysed}${m.cohorts !== m.cohorts_analysed ? ` <small style="font-size:14px;color:var(--muted)">of ${m.cohorts}</small>` : ""}</b><span>Cohorts analysed</span></div>
       <div class="stat"><b>${m.deficits}</b><span>Deficits in the crosswalk</span></div>
       <div class="stat"><b>${m.countries}</b><span>Countries</span></div>
     </div>
@@ -554,7 +554,7 @@ function browsePage(title, sub, cols, rows, filterDefs = [], textOf = r => JSON.
   $("#bdl").onclick = () => saveFile(`fraildb_${title.toLowerCase().replace(/\W+/g, "_")}.csv`, toCSV(rows.map(r => Object.fromEntries(cols.map(c => [c.label.replace(/<[^>]+>/g, ""), c.sortVal ? c.sortVal(r) : r[c.key]])))));
 }
 
-ROUTES["browse-cohorts"] = () => browsePage("Cohorts", "Longitudinal ageing studies in FrailDB. KLoSA data are held and will be added in a later release.", [
+ROUTES["browse-cohorts"] = () => browsePage("Cohorts", "Longitudinal ageing studies in FrailDB.", [
   { key: "id", label: "FrailDB ID", cls: "id", render: r => idLink(r.id) },
   { key: "key", label: "Cohort", render: r => `${swatch(r.key)} <a href="#${r.id}"><b>${esc(r.key)}</b></a><br><span class="note">${esc(r.name)}</span>` },
   { key: "region", label: "Region" }, { key: "period", label: "Period" },
@@ -1373,14 +1373,14 @@ ROUTES.statistics = () => {
 };
 ROUTES.about = () => {
   app.innerHTML = crumbs([["#home", "Home"], [null, "About"]]) + head("About FrailDB", null, "") + `<div class="prose">
-    <p>FrailDB is a database of frailty in older adults, built by the Frailty_Volatility Project at the Department of Biological Sciences and Bioengineering, IIT Kanpur (principal investigator: Prof. Robert Sonowal). It scores two standard instruments, the Fried frailty phenotype and the Rockwood frailty index, in every available wave of the major harmonised ageing cohorts, using one set of rules.</p>
+    <p>FrailDB is a database of frailty in older adults, built by the Frailty_Volatility Project. It scores two standard instruments, the Fried frailty phenotype and the Rockwood frailty index, in every available wave of the major harmonised ageing cohorts, using one set of rules.</p>
     <h2>What is in a release</h2>
     <ul><li><b>Cohort records</b>: design, data source, access route and how deaths are recorded.</li><li><b>Wave records</b>: sample flow, results for each instrument, age and sex breakdowns, grip and walk cut-offs, and quality flags.</li><li><b>Deficit records</b>: the definition of each frailty index item, the survey variable behind it in each cohort, and its prevalence.</li><li><b>Fried criterion records</b>: how each cohort measures exhaustion, weight loss, weakness, slowness and low activity, and whether the measure is objective or self-reported.</li><li><b>Tools</b>: cohort comparison, a harmonisation matrix, FI reference norms, transitions between frailty states, frailty volatility, instrument agreement and a calculator.</li></ul>
     <h2>Why it exists</h2>
     <p>Frailty prevalence estimates vary several-fold between studies, and much of that variation comes from how the instruments are put into practice. FrailDB makes those choices visible and comparable: the same deficit can be checked across five cohorts in one place, and every number links back to the wave and the rule that produced it.</p>
     <h2>Record identifiers</h2>
     <p>Every record has a stable FrailDB ID: <code>FDBC</code> cohorts, <code>FDBW</code> waves, <code>FDBD</code> deficits, <code>FDBF</code> Fried criteria, <code>FDBI</code> instruments, <code>FDBN</code> countries and <code>FDBR</code> references. Enter an ID in the search box to open its record.</p>
-    <h2>Status</h2><p>This is a sample release (version ${esc(DB.meta.version)}). KLoSA is held but not yet scored. Waves whose participant-level output is missing show wave-level results only and are flagged.</p></div>`;
+    <h2>Status</h2><p>This is a sample release (version ${esc(DB.meta.version)}). Waves whose participant-level output is missing show wave-level results only and are flagged.</p></div>`;
 };
 ROUTES.methods = () => {
   app.innerHTML = crumbs([["#home", "Home"], [null, "Methods"]]) + head("Methods and data policy", null, "") + `<div class="prose">
@@ -1397,7 +1397,7 @@ ROUTES.methods = () => {
     <h2>Data policy</h2><p>FrailDB publishes aggregated results only. Every count below ${DB.meta.min_cell} is suppressed, and percentiles are reported only for groups of 30 or more. No participant identifiers or individual records are included. The source cohorts' data-use agreements do not allow redistribution of participant-level data; to obtain them, apply to each cohort through the access routes listed on its record.</p></div>`;
 };
 ROUTES.cite = () => {
-  const cite = `FrailDB: the Multi-Cohort Frailty Database, version ${DB.meta.version}. Frailty_Volatility Project, Department of Biological Sciences and Bioengineering, Indian Institute of Technology Kanpur; ${DB.meta.built.slice(0, 4)}.`;
+  const cite = `FrailDB: the Multi-Cohort Frailty Database, version ${DB.meta.version}. Frailty_Volatility Project; ${DB.meta.built.slice(0, 4)}.`;
   app.innerHTML = crumbs([["#home", "Home"], [null, "Cite"]]) + head("How to cite", null, "") + `<div class="prose"><p>Please cite FrailDB and the source cohorts you use.</p><div class="callout" id="citetext">${esc(cite)}</div><p><button class="btn" id="copycite" type="button">Copy citation</button></p><h2>Source cohorts</h2><ul>${DB.cohorts.map(c => `<li>${coLink(c.key)}: ${esc(c.name)}. ${esc(c.source)}.</li>`).join("")}</ul></div>`;
   $("#copycite").onclick = async () => { try { await navigator.clipboard.writeText(cite); toast("Citation copied"); } catch { const r = document.createRange(); r.selectNodeContents($("#citetext")); getSelection().removeAllRanges(); getSelection().addRange(r); toast("Press Ctrl+C to copy"); } };
 };
