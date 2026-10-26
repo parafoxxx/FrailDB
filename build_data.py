@@ -21,10 +21,24 @@ MIN_PCTL = 30          # percentiles only for groups at least this large
 
 AGE_BANDS = [(50, 59, "50–59"), (60, 69, "60–69"), (70, 79, "70–79"), (80, 89, "80–89"), (90, 200, "90+")]
 AGE5 = list(range(50, 100, 5))   # 5-year bands for age curves; 95 = 95+
+# fine age scheme published alongside the standard 10-year bands (users can regroup it)
+AGE_BANDS5 = [(a, a + 4, f"{a}–{a + 4}") for a in range(50, 95, 5)] + [(95, 200, "95+")]
+
+# Alternative frailty definitions, for sensitivity (the standard ones are FI >= 0.25 and Fried >= 3)
+FI_CUTS = [0.20, 0.25, 0.30]
+FRIED_CUTS = [2, 3, 4]
+
+# Direct age-sex standardisation to the WHO World Standard Population 2000-2025 (Ahmad et al. 2001),
+# 5-year bands 50-54 ... 85-89; each sex takes half of every band's weight. Ages 90+ are left out of
+# standardised values for every cohort, because ELSA's analytic files hold nobody aged 90+ from wave 5.
+WHO_STD = {50: 5370, 55: 4550, 60: 3720, 65: 2960, 70: 2210, 75: 1520, 80: 910, 85: 440}
+STD_TOP = 89
+STD_RANGES = {"std50": 50, "std65": 65}
+MIN_STD = 20           # every age x sex stratum must hold at least this many people, else no standardised value
 
 # --------------------------------------------------------------------------- cohorts
 COHORTS = [
-    dict(key="SHARE", id="FDBC01", folder="2. SHARE data set_wave 1-9/SHARE Analysis", prefix="SHARE",
+    dict(key="SHARE", id="FDBC01", folder="2. SHARE data set_wave 1-9/SHARE Analysis", prefix="SHARE", data_type="raw",
          name="Survey of Health, Ageing and Retirement in Europe", region="Europe and Israel", flag="EU",
          countries=28, period="2004–2022", design="Biennial panel, community-dwelling adults 50+ and partners",
          source="SHARE release 9.0.0, per-wave Stata modules (ph, mh, br, gs, gv_health, cv_r)",
@@ -34,7 +48,7 @@ COHORTS = [
          notes=["Wave 3 (2008–09) was SHARELIFE, a retrospective life-history wave with no health module, so it has no frailty data.",
                 "Rockwood FI not computed for wave 1 (dementia not asked) or wave 7 (depression, vision and hearing asked of about 18% only).",
                 "Fried slowness is self-reported (no timed walk in SHARE), following Romero-Ortuno et al. 2010."]),
-    dict(key="HRS", id="FDBC02", folder="3. HRS_United States/HRS Analysis", prefix="HRS",
+    dict(key="HRS", id="FDBC02", folder="3. HRS_United States/HRS Analysis", prefix="HRS", data_type="harmonised (RAND HRS)",
          name="Health and Retirement Study", region="United States", flag="US", countries=1, period="1998–2022",
          design="Biennial panel of adults 50+ with steady-state refresh cohorts",
          source="RAND HRS Longitudinal File 1992–2022 v1; Harmonized HRS (H_HRS_d) for measured grip",
@@ -43,7 +57,7 @@ COHORTS = [
          fried_ref=["FDBR03"], rock_ref=["FDBR02", "FDBR06"],
          notes=["Physical measures (grip) are collected from a random half of the sample each wave, so Fried samples are about half the Rockwood samples.",
                 "Fried phenotype available for waves 7–14 (2004–2018), the waves with measured grip in the harmonised file."]),
-    dict(key="ELSA", id="FDBC03", folder="4. ELSA_England/ELSA Analysis", prefix="ELSA",
+    dict(key="ELSA", id="FDBC03", folder="4. ELSA_England/ELSA Analysis", prefix="ELSA", data_type="raw",
          name="English Longitudinal Study of Ageing", region="England", flag="GB", countries=1, period="2002–2023",
          design="Biennial panel of adults 50+ living in private households; nurse visits every other wave",
          source="ELSA core and nurse-visit files, UK Data Service SN 5050",
@@ -52,7 +66,7 @@ COHORTS = [
          fried_ref=["FDBR07"], rock_ref=["FDBR02", "FDBR05"],
          notes=["Fried phenotype uses measured grip and timed walk from the nurse visits (waves 2, 4, 6, 8, 9) and is restricted to age 60+, following Gale et al. 2015.",
                 "Wave 10 asks the chronic conditions as single 'ever diagnosed' items."]),
-    dict(key="MHAS", id="FDBC04", folder="6. MHAS_Mexico/MHAS Analysis", prefix="MHAS",
+    dict(key="MHAS", id="FDBC04", folder="6. MHAS_Mexico/MHAS Analysis", prefix="MHAS", data_type="harmonised (Gateway H_MHAS)",
          name="Mexican Health and Aging Study", region="Mexico", flag="MX", countries=1, period="2001–2021",
          design="Panel of adults 50+ with refresher samples in 2012 and 2018",
          source="Gateway Harmonized MHAS (H_MHAS_d, 2001–2022) and constructed-variable files",
@@ -62,7 +76,7 @@ COHORTS = [
          notes=["Fried weakness and slowness are self-reported (no grip or walk test).",
                 "Fried weight loss is operationalised as BMI below 22 and low activity as not exercising three times a week; both are lenient and raise pre-frail prevalence.",
                 "Item 32 of the FI is 'uses equipment to walk across a room' in place of dementia, which is not asked consistently."]),
-    dict(key="CLHLS", id="FDBC05", folder="6. CLHLS_China/CLHLS Analysis", prefix="CLHLS",
+    dict(key="CLHLS", id="FDBC05", folder="6. CLHLS_China/CLHLS Analysis", prefix="CLHLS", data_type="raw",
          name="Chinese Longitudinal Healthy Longevity Survey", region="China", flag="CN", countries=1, period="2002–2018",
          design="Panel oversampling the oldest old (65+, many centenarians) in 22 provinces",
          source="ICPSR 38899, CLHLS 1998–2018 cross-sections (DS0003–DS0008)",
@@ -72,7 +86,7 @@ COHORTS = [
          notes=["CLHLS interviews people aged 65 and over, so the mean age is about 84. Compare with other cohorts by age band, not overall.",
                 "Uses its own 32-item list: 13 diseases, CLHLS ADL/IADL items, a chair stand, and four CLHLS-specific graded items.",
                 "Fried phenotype not computed (no grip strength or gait speed in comparable form)."]),
-    dict(key="LASI", id="FDBC06", folder=None, prefix="LASI",
+    dict(key="LASI", id="FDBC06", folder=None, prefix="LASI", data_type="raw",
          name="Longitudinal Ageing Study in India", region="India", flag="IN", countries=1, period="2017–2019",
          design="Nationally representative survey of adults 45+ and spouses, all states and union territories",
          source="LASI Wave 1, analytic file of respondents 60+ (n = 26,275)",
@@ -81,7 +95,7 @@ COHORTS = [
          fried_ref=["FDBR01"], rock_ref=[],
          notes=["Reference implementation of the Fried phenotype for this project, with measured grip and timed gait.",
                 "Only wave 1 is released, so LASI contributes cross-sectional data only."]),
-    dict(key="KLoSA", id="FDBC07", folder=None, prefix="KLoSA",
+    dict(key="KLoSA", id="FDBC07", folder=None, prefix="KLoSA", data_type="raw",
          name="Korean Longitudinal Study of Aging", region="South Korea", flag="KR", countries=1, period="2006–2022",
          design="Biennial panel of adults 45+",
          source="KLoSA waves 1–9, Korea Employment Information Service",
@@ -249,11 +263,18 @@ def norm_rock(df):
     return df
 
 
-def group_table(df, flag_fn):
+def band_in(age, scheme):
+    for lo, hi, lab in scheme:
+        if lo <= age <= hi:
+            return lab
+    return None
+
+
+def group_table(df, flag_fn, scheme=AGE_BANDS):
     """Age band × sex table with suppression."""
     rows = []
-    df = df.assign(band=df.age.map(lambda a: band(a) if pd.notna(a) else None))
-    for lab in [b[2] for b in AGE_BANDS]:
+    df = df.assign(band=df.age.map(lambda a: band_in(a, scheme) if pd.notna(a) else None))
+    for lab in [b[2] for b in scheme]:
         for sx, sl in [(1, "Male"), (2, "Female"), (None, "All")]:
             g = df[(df.band == lab) & ((df.sex == sx) if sx else True)]
             if len(g) == 0:
@@ -275,6 +296,42 @@ def fried_stats(g):
     n = len(g)
     return dict(n=sup(n), frail_pct=pct((g.status == "frail").sum(), n), prefrail_pct=pct((g.status == "pre-frail").sum(), n),
                 mean_score=r4(g.score.mean()) if n >= MIN_CELL else None)
+
+
+def std_rate(age, sex, val, lo):
+    """Directly age-sex standardised mean of `val` (a 0/1 flag gives a proportion) for ages >= lo,
+    weighted to the WHO World Standard Population, ages lo..STD_TOP. None when any age x sex stratum has fewer
+    than MIN_STD people."""
+    age, sex, val = np.asarray(age, float), np.asarray(sex, float), np.asarray(val, float)
+    b = np.where(age > STD_TOP, -1, np.floor(age / 5) * 5)
+    tot = wsum = 0.0
+    for a, w in WHO_STD.items():
+        if a < lo:
+            continue
+        for s in (1, 2):
+            m = (b == a) & (sex == s) & ~np.isnan(val)
+            if m.sum() < MIN_STD:
+                return None
+            tot += (w / 2) * val[m].mean()
+        wsum += w
+    return tot / wsum if wsum else None
+
+
+def definitions(age, sex, flags):
+    """Crude and standardised prevalence (%) for each alternative definition. flags: {label: 0/1 array}."""
+    out = {}
+    for lab, f in flags.items():
+        f = np.asarray(f, float)
+        row = dict(crude=pct(f.sum(), len(f)))
+        for k, lo in STD_RANGES.items():
+            v = std_rate(age, sex, f, lo)
+            row[k] = None if v is None else round(100 * v, 2)
+        out[lab] = row
+    return out
+
+
+def mean_std(age, sex, val, d=4):
+    return {k: (None if (v := std_rate(age, sex, val, lo)) is None else round(v, d)) for k, lo in STD_RANGES.items()}
 
 
 # --------------------------------------------------------------------------- per-wave summaries from by_wave / sample flow files
@@ -377,7 +434,8 @@ for c in COHORTS:
             for b, g in f.groupby(f.age.map(band)):
                 crit_age[q][key][b][0] += g[q].sum(); crit_age[q][key][b][1] += len(g)
         for (a5, sx), g in f.groupby([(f.age.clip(upper=95) // 5 * 5), f.sex]):
-            agecurve_acc[key]["fried"][(int(a5), int(sx))].append(((g.status == "frail").sum(), len(g), g.score.sum()))
+            agecurve_acc[key]["fried"][(int(a5), int(sx))].append(
+                ((g.status == "frail").sum(), len(g), g.score.sum(), [int((g.score >= k).sum()) for k in FRIED_CUTS]))
         db["waves"].append(w); entry["waves"].append(wid)
         db["cohorts"].append(entry)
         continue
@@ -404,6 +462,9 @@ for c in COHORTS:
                                frail_pct=pct(r.frail.sum(), n), mean_age=r4(r.age.mean()), female_pct=pct((r.sex == 2).sum(), n),
                                items=len(dcols), retention=clean(meta.get("rock_retention")),
                                hist=[sup(h) for h in hist], bands=group_table(r, rock_stats),
+                               bands5=group_table(r, rock_stats, AGE_BANDS5),
+                               cuts=definitions(r.age, r.sex, {f"{c:.2f}": r.fi >= c - 1e-9 for c in FI_CUTS}),
+                               mean_std=mean_std(r.age, r.sex, r.fi), source_format=rsrc,
                                deficits={d: round(100 * r[d].mean(), 2) for d in dcols}, has_detail=True)
             # domain mean deficit share
             for d in dcols:
@@ -414,7 +475,8 @@ for c in COHORTS:
                 for b, g in r.groupby(r.age.map(band)):
                     deficit_age[d][key][b][0] += g[d].sum(); deficit_age[d][key][b][1] += len(g)
             for (a5, sx), g in r.groupby([(r.age.clip(upper=95) // 5 * 5), r.sex]):
-                agecurve_acc[key]["rock"][(int(a5), int(sx))].append((g.frail.sum(), len(g), g.fi.sum()))
+                agecurve_acc[key]["rock"][(int(a5), int(sx))].append(
+                    (g.frail.sum(), len(g), g.fi.sum(), [int((g.fi >= c - 1e-9).sum()) for c in FI_CUTS]))
             long_frames[(key, "rock")][wn] = r[["id", "fi", "frail", "age", "sex"]]
             if key == "SHARE":
                 for cc, g in r.groupby("country"):
@@ -435,6 +497,10 @@ for c in COHORTS:
                                 score_dist=[sup((f.score == k).sum()) for k in range(6)],
                                 criteria={q: pct(f[q].sum(), n) for q in ["FQ1", "FQ2", "FQ3", "FQ4", "FQ5"] if q in f},
                                 bands=group_table(f, fried_stats), has_detail=True,
+                                bands5=group_table(f, fried_stats, AGE_BANDS5),
+                                cuts=dict(definitions(f.age, f.sex, {str(k): f.score >= k for k in FRIED_CUTS}),
+                                          **definitions(f.age, f.sex, {"pre": f.status == "pre-frail"})),
+                                mean_std=mean_std(f.age, f.sex, f.score), source_format=fsrc,
                                 age_rule="60+" if key == "ELSA" else "50+")
             for q in ["FQ1", "FQ2", "FQ3", "FQ4", "FQ5"]:
                 if q in f:
@@ -442,13 +508,15 @@ for c in COHORTS:
                     for b, g in f.groupby(f.age.map(band)):
                         crit_age[q][key][b][0] += g[q].sum(); crit_age[q][key][b][1] += len(g)
             for (a5, sx), g in f.groupby([(f.age.clip(upper=95) // 5 * 5), f.sex]):
-                agecurve_acc[key]["fried"][(int(a5), int(sx))].append(((g.status == "frail").sum(), len(g), g.score.sum()))
+                agecurve_acc[key]["fried"][(int(a5), int(sx))].append(
+                    ((g.status == "frail").sum(), len(g), g.score.sum(), [int((g.score >= k).sum()) for k in FRIED_CUTS]))
             long_frames[(key, "fried")][wn] = f[["id", "score", "status", "age"]]
             if key == "SHARE":
                 for cc, g in f.groupby("country"):
                     country_acc[int(cc)][wn]["fried"] = [len(g), int((g.status == "frail").sum()), int((g.status == "pre-frail").sum())]
             # status label check against source file
             orig = fdf["frailty_status_fried"].astype(str).str.lower().value_counts().to_dict()
+            rec["fried"]["prefrail_rederived"] = "pre-frail" not in orig and key != "LASI"
             if "pre-frail" not in orig and key != "LASI":
                 rec["flags"].append("Fried: the source file has no 'pre-frail' labels although scores of 1–2 exist. "
                                     "Pre-frail shown here is re-derived from the 0–5 score.")
@@ -472,6 +540,16 @@ for c in COHORTS:
             rec["flags"].append(f"Fried: only {rec['fried']['n']:,} of {int(rec['age_n']):,} age-eligible respondents were scored. Check the merge for this wave.")
         if not rec["rock"] and not rec["fried"]:
             continue
+        for m, frame in (("Rockwood", rdf), ("Fried", fdf)):
+            if frame is not None and pd.to_numeric(frame["age"], errors="coerce").max() < 90:
+                rec["flags"].append(f"{m}: nobody aged 90 or over is in this wave's output (oldest {int(pd.to_numeric(frame['age'], errors='coerce').max())}). "
+                                    "Check whether top-coded ages were dropped.")
+        # availability grid: full = participant-level output, summary = wave-level results only,
+        # issue = a known quality problem (low complete-case retention, or a scoring/merge gap)
+        rock_issue = bool(rec["rock"] and rec["rock"].get("retention") and rec["rock"]["retention"] < 70)
+        fried_issue = any(f.startswith("Fried: only") for f in rec["flags"])
+        rec["avail"] = {m: (None if not o else "issue" if bad else "full" if o.get("has_detail") else "summary")
+                        for m, o, bad in (("rock", rec["rock"], rock_issue), ("fried", rec["fried"], fried_issue))}
         if key == "SHARE" and wn in (1, 7) and not rec["rock"]:
             rec["flags"].append("Rockwood not computed: " + ("dementia was not asked in wave 1." if wn == 1 else
                                 "depression, vision and hearing were asked of about 18% of respondents in wave 7."))
@@ -565,8 +643,10 @@ for co, meths in agecurve_acc.items():
                 n = sum(p[1] for p in parts)
                 if n < MIN_CELL:
                     continue
+                labs = [f"{c:.2f}" for c in FI_CUTS] if m == "rock" else [str(k) for k in FRIED_CUTS]
                 rows.append(dict(age=a5, sex=sl, n=n, frail_pct=round(100 * sum(p[0] for p in parts) / n, 2),
-                                 mean=round(sum(p[2] for p in parts) / n, 4)))
+                                 mean=round(sum(p[2] for p in parts) / n, 4),
+                                 cuts={lab: round(100 * sum(p[3][i] for p in parts) / n, 2) for i, lab in enumerate(labs)}))
         db["agecurves"][co][m] = rows
 
 # --------------------------------------------------------------------------- FI norms (pooled person-waves)
@@ -724,6 +804,13 @@ fried_waves = [w for w in db["waves"] if w.get("fried")]
 db["meta"] = dict(
     name="FrailDB", version="0.1 (sample build)", built=pd.Timestamp.now().strftime("%Y-%m-%d"),
     min_cell=MIN_CELL,
+    definitions=dict(fi_cuts=[f"{c:.2f}" for c in FI_CUTS], fi_standard="0.25",
+                     fried_cuts=[str(k) for k in FRIED_CUTS], fried_standard="3"),
+    standard=dict(name="WHO World Standard Population (2000–2025)", ref="Ahmad OB et al. Age standardization of rates: "
+                  "a new WHO standard. GPE Discussion Paper No. 31. Geneva: WHO; 2001.",
+                  weights={str(k): v for k, v in WHO_STD.items()}, ranges={k: f"{v}–{STD_TOP}" for k, v in STD_RANGES.items()},
+                  min_stratum=MIN_STD, sex_weights="equal (half of each age band's weight to each sex)"),
+    age_schemes=dict(standard=[b[2] for b in AGE_BANDS], fine=[b[2] for b in AGE_BANDS5]),
     counts=dict(cohorts=len([c for c in db["cohorts"]]), cohorts_analysed=len([c for c in db["cohorts"] if c["waves"]]),
                 waves=len(db["waves"]), deficits=len(db["deficits"]), criteria=len(db["criteria"]),
                 countries=len(db["countries"]) + len([c for c in db["cohorts"] if c["waves"] and c["key"] != "SHARE"]),

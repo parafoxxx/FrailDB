@@ -219,6 +219,20 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;
 .searchhit .kind{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .searchhit p{margin:2px 0 0;font-size:13.5px;color:var(--ink-2)}
 mark{background:color-mix(in srgb,#e9b46a 55%,transparent);color:inherit;border-radius:2px}
+/* data availability grid (cohort/instrument x survey year) */
+table.avail{border-collapse:separate;border-spacing:3px;font-size:13px}
+table.avail th{font-weight:600;text-align:left;white-space:nowrap;padding:0 8px 0 0;color:var(--ink)}
+table.avail thead th{vertical-align:bottom;padding:0 0 4px}
+table.avail thead th span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:11.5px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+table.avail td{width:18px;min-width:18px;height:18px;padding:0;background:color-mix(in srgb,var(--band) 45%,var(--surface));border-radius:3px}
+table.avail tr.gap th{padding-top:6px}
+.av{display:block;width:100%;height:18px;border-radius:3px}
+.av.full{background:var(--c1)} .av.summary{background:var(--prefrail)} .av.issue{background:var(--frail)}
+.av:hover{outline:2px solid var(--ink);outline-offset:1px}
+.avlegend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin-top:10px}
+.avlegend span{display:inline-flex;align-items:center;gap:6px}
+.avlegend i{display:inline-block;width:14px;height:14px;border-radius:3px}
+.deftable td.std,.deftable th.std{background:color-mix(in srgb,var(--band) 30%,var(--surface))}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -240,6 +254,7 @@ mark{background:color-mix(in srgb,#e9b46a 55%,transparent);color:inherit;border-
         <a href="#browse-criteria">Fried criteria<small>FQ1–FQ5 and how each cohort measures them</small></a>
         <a href="#browse-instruments">Instruments<small>Fried phenotype, Rockwood index</small></a>
         <a href="#browse-countries">Countries<small>SHARE results by country</small></a>
+        <a href="#dossiers">Metadata dossiers<small>Coverage, processing and known issues per cohort</small></a>
         <hr><a href="#browse-references">References</a>
       </div></div>
     <div class="nav-item"><button type="button">Search</button>
@@ -316,6 +331,57 @@ const swatch = k => `<span class="swatch" style="background:var(${COLOR_VAR[k]})
 const ANALYSED = DB.cohorts.filter(c => c.waves.length).map(c => c.key);
 const FI_COHORTS = ANALYSED.filter(k => DB.waves.some(w => w.cohort === k && w.rock));
 const FRIED_COHORTS = ANALYSED.filter(k => DB.waves.some(w => w.cohort === k && w.fried));
+
+// ------------------------------------------------------------------ frailty definitions and standardisation
+// One shared choice, kept while moving between pages: the frail cut-off of each instrument and whether values are
+// crude or directly age-sex standardised (WHO World Standard Population).
+const DEFS = DB.meta.definitions || { fi_cuts: ["0.25"], fi_standard: "0.25", fried_cuts: ["3"], fried_standard: "3" };
+const STDR = DB.meta.standard?.ranges || { std50: "50–89", std65: "65–89" };
+const STD_LABEL = { crude: "Crude", std50: `Age-sex standardised, ${STDR.std50}`, std65: `Age-sex standardised, ${STDR.std65}` };
+const defState = { fi: DEFS.fi_standard, fried: DEFS.fried_standard, std: "crude" };
+const cutName = (inst, c) => inst === "rock" ? `FI ≥ ${c}` : `${c}+ criteria`;
+// value of one measure for one wave under the current definition; kind = frail | prefrail | mean
+function waveValue(w, inst, kind, st = defState) {
+  const o = inst === "rock" ? w.rock : w.fried;
+  if (!o) return null;
+  if (kind === "mean") return st.std === "crude" ? (inst === "rock" ? o.mean_fi : o.mean_score) : o.mean_std?.[st.std] ?? null;
+  if (kind === "prefrail") return st.std === "crude" ? o.prefrail_pct : o.cuts?.pre?.[st.std] ?? null;
+  const cut = inst === "rock" ? st.fi : st.fried, standard = inst === "rock" ? DEFS.fi_standard : DEFS.fried_standard;
+  if (st.std === "crude" && cut === standard) return o.frail_pct;   // also covers waves with wave-level results only
+  return o.cuts?.[cut]?.[st.std] ?? null;
+}
+function defDesc(inst, kind, st = defState) {
+  const what = kind === "mean" ? (inst === "rock" ? "Mean frailty index" : "Mean Fried score")
+    : kind === "prefrail" ? "Fried pre-frail (1–2 criteria)"
+    : inst === "rock" ? `Frail, FI ≥ ${st.fi}${st.fi === DEFS.fi_standard ? " (standard)" : ""}` : `Fried frail, ${st.fried}+ criteria${st.fried === DEFS.fried_standard ? " (Fried 2001)" : ""}`;
+  return `${what} · ${STD_LABEL[st.std].toLowerCase()}`;
+}
+function defControls() {
+  return `<label class="ctrl" data-defw="fi">FI frail when<select data-def="fi">${DEFS.fi_cuts.map(c => `<option value="${c}" ${c === defState.fi ? "selected" : ""}>FI ≥ ${c}${c === DEFS.fi_standard ? " (standard)" : ""}</option>`).join("")}</select></label>
+    <label class="ctrl" data-defw="fried">Fried frail when<select data-def="fried">${DEFS.fried_cuts.map(c => `<option value="${c}" ${c === defState.fried ? "selected" : ""}>${c}+ criteria${c === DEFS.fried_standard ? " (Fried 2001)" : ""}</option>`).join("")}</select></label>
+    <label class="ctrl" data-defw="std">Standardisation<select data-def="std">${Object.entries(STD_LABEL).map(([k, l]) => `<option value="${k}" ${k === defState.std ? "selected" : ""}>${l}</option>`).join("")}</select></label>`;
+}
+function wireDef(cb) { $$("select[data-def]").forEach(s => s.onchange = () => { defState[s.dataset.def] = s.value; cb(); }); }
+function showDef(name, on) { const el = $(`[data-defw="${name}"]`); if (el) el.hidden = !on; }
+const STD_NOTE = `Standardised values reweight each wave to the ${esc(DB.meta.standard?.name || "WHO World Standard Population")}, with equal weight for women and men, so that differences in age and sex structure no longer drive the comparison. Ages 90+ are left out of standardised values for every cohort (ELSA's files hold nobody aged 90+ from wave 5). A value is blank when any 5-year age × sex group in the range holds fewer than ${DB.meta.standard?.min_stratum ?? 20} people.`;
+const CUT_NOTE = "The frailty index rises in steps of 1/32, so ≥ 0.20 means 7 or more of 32 deficits, ≥ 0.25 means 8 or more and ≥ 0.30 means 10 or more (CLHLS has some graded items).";
+
+// ------------------------------------------------------------------ data availability grid (cohort/instrument × survey year)
+const AV_LABEL = { full: "Participant-level results", summary: "Wave-level results only", issue: "Known quality issue" };
+function availGrid() {
+  const W = DB.waves.filter(w => w.avail);
+  const ys = W.map(w => w.year).filter(Boolean), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const Y = Array.from({ length: y1 - y0 + 1 }, (_, i) => y0 + i);
+  const rows = [];
+  ANALYSED.forEach(k => [["rock", "Frailty index"], ["fried", "Fried"]].forEach(([m, lab], j) => { if (wavesOf(k).some(w => w[m])) rows.push({ k, m, lab, first: j === 0 || !wavesOf(k).some(w => w.rock) }); }));
+  return `<div class="tablewrap"><table class="avail"><thead><tr><th></th>${Y.map(y => `<th scope="col"><span>${y}</span></th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr class="${r.first ? "gap" : ""}"><th scope="row">${r.first ? `${swatch(r.k)} ${coLink(r.k)}` : `<span style="visibility:hidden">${swatch(r.k)} ${esc(r.k)}</span>`} <span class="note">${r.lab}</span></th>${Y.map(y => {
+      const w = W.find(x => x.cohort === r.k && x.year === y && x.avail?.[r.m]);
+      if (!w) return "<td></td>";
+      const t = `${r.k} wave ${w.wave} (${y}), ${r.lab.toLowerCase()}: ${AV_LABEL[w.avail[r.m]].toLowerCase()}`;
+      return `<td><a class="av ${w.avail[r.m]}" href="#${w.id}" title="${esc(t)}" aria-label="${esc(t)}"></a></td>`;
+    }).join("")}</tr>`).join("")}</tbody></table></div>
+    <div class="avlegend"><span><i class="av full"></i>Participant-level results: every breakdown available</span><span><i class="av summary"></i>Wave-level results only (participant file missing)</span><span><i class="av issue"></i>Known quality issue: low complete-case retention or a scoring gap</span><span><i style="background:color-mix(in srgb,var(--band) 45%,var(--surface))"></i>Not scored</span></div>`;
+}
 
 $("#ver").textContent = `v${DB.meta.version} · built ${DB.meta.built}`;
 $("#footver").textContent = `Version ${DB.meta.version}, built ${DB.meta.built}`;
@@ -437,10 +503,12 @@ ROUTES.home = () => {
   <h2 class="sectiontitle">Cohorts</h2>
   <div class="cohortstrip">${DB.cohorts.map(c => `<a class="cohortpill" href="#${c.id}"><b>${swatch(c.key)}${esc(c.key)}</b><span>${esc(c.region)} · ${esc(c.period)}</span><span>${c.waves.length ? `${c.waves.length} waves` : esc(c.status)}</span></a>`).join("")}</div>
   <h2 class="sectiontitle">Frail prevalence by survey year</h2>
-  <div class="panel pad"><div class="chartgrid">
-    <div><p class="charttitle">Rockwood frailty index ≥ 0.25</p><p class="chartsub">Share of complete-case respondents, each wave</p><div class="chartbox"><canvas id="hc1"></canvas></div></div>
-    <div><p class="charttitle">Fried phenotype, 3 or more criteria</p><p class="chartsub">Share of scored respondents, each wave</p><div class="chartbox"><canvas id="hc2"></canvas></div></div>
-  </div><p class="note">The cohorts differ in age range and in how Fried criteria were measured, so the levels are not directly comparable. Open <a href="#tool-compare">Compare cohorts</a> to compare by age band.</p></div>
+  <div class="panel"><div class="toolbar">${defControls()}</div><div class="pad"><div class="chartgrid">
+    <div><p class="charttitle">Rockwood frailty index</p><p class="chartsub" id="hcs1"></p><div class="chartbox"><canvas id="hc1"></canvas></div></div>
+    <div><p class="charttitle">Fried phenotype</p><p class="chartsub" id="hcs2"></p><div class="chartbox"><canvas id="hc2"></canvas></div></div>
+  </div><p class="note" id="hcnote"></p></div></div>
+  <h2 class="sectiontitle">Data availability</h2>
+  <div class="panel pad"><p class="chartsub" style="margin-top:0">Each square is one survey wave scored with one instrument. Colour shows how much detail is available; select a square to open the wave record.</p>${availGrid()}</div>
   <h2 class="sectiontitle">Browse and tools</h2>
   <div class="tiles">
     <a class="tile" href="#browse-deficits"><h3>Deficits</h3><p>Each frailty index item with its source variable in every cohort, its prevalence and its age gradient.</p><span class="count">${DB.deficits.length} records</span></a>
@@ -454,9 +522,22 @@ ROUTES.home = () => {
   </div>`;
   $("#homesearch").onsubmit = e => { e.preventDefault(); go("search", $("#homeq").value); };
   $$(".examples a").forEach(a => a.onclick = () => go("search", a.dataset.q));
-  const years = [...new Set(DB.waves.map(w => w.year))].sort();
-  mkChart($("#hc1"), { type: "line", data: { datasets: FI_COHORTS.map(k => lineDS(k, wavesOf(k).filter(w => w.rock).map(w => ({ x: w.year, y: w.rock.frail_pct })), k)) }, options: baseOpts({ scales: { x: { type: "linear", min: 2000, max: 2024, ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
-  mkChart($("#hc2"), { type: "line", data: { datasets: FRIED_COHORTS.map(k => lineDS(k, wavesOf(k).filter(w => w.fried).map(w => ({ x: w.year, y: w.fried.frail_pct })), k)) }, options: baseOpts({ scales: { x: { type: "linear", min: 2000, max: 2024, ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } }, y: pctAxis() } }) });
+  let hc = [];
+  const draw = () => {
+    hc.forEach(c => { c.destroy(); charts = charts.filter(x => x !== c); }); hc = [];
+    const xs = { type: "linear", min: 1998, max: 2024, ticks: { color: css("--muted"), callback: v => v }, grid: { color: css("--line") } };
+    const missing = [];
+    [["hc1", "hcs1", "rock", FI_COHORTS], ["hc2", "hcs2", "fried", FRIED_COHORTS]].forEach(([cv, sub, inst, cos]) => {
+      const ds = cos.map(k => { const pts = wavesOf(k).filter(w => w[inst]).map(w => ({ x: w.year, y: waveValue(w, inst, "frail") })).filter(p => p.y != null); if (!pts.length) missing.push(`${k} ${inst === "rock" ? "FI" : "Fried"}`); return pts.length ? lineDS(k, pts, k) : null; }).filter(Boolean);
+      $("#" + sub).textContent = defDesc(inst, "frail") + ", each wave";
+      const c = mkChart($("#" + cv), { type: "line", data: { datasets: ds }, options: baseOpts({ scales: { x: xs, y: pctAxis() } }) });
+      if (c) hc.push(c);
+    });
+    $("#hcnote").innerHTML = (defState.std === "crude"
+      ? "Crude prevalence: the cohorts differ in age structure and in how Fried criteria were measured, so these levels are not directly comparable. Choose a standardised view above to remove the age and sex differences."
+      : `${STD_NOTE} Differences in how the criteria were measured remain.`) + (missing.length ? ` Not shown for this choice: ${esc(missing.join(", "))}.` : "") + ` <a href="#tool-compare">Compare cohorts</a> has more measures.`;
+  };
+  wireDef(draw); draw();
 };
 
 // ---------------- browse pages
@@ -549,10 +630,10 @@ function cohortCard(c) {
   const fi = ws.filter(w => w.rock), fr = ws.filter(w => w.fried);
   const sections = ["Identification", "Data source", "Frailty measures", "Results by wave", "Charts", "Notes and caveats", "References"];
   app.innerHTML = crumbs([["#home", "Home"], ["#browse-cohorts", "Cohorts"], [null, c.key]]) +
-    head(`${c.key}: ${c.name}`, c.id, `${esc(c.region)} · ${esc(c.period)} · ${esc(c.status)}`, cardJSONButton({ ...c, wave_records: ws }, `${c.id}_${c.key}.json`)) + toc(sections) +
+    head(`${c.key}: ${c.name}`, c.id, `${esc(c.region)} · ${esc(c.period)} · ${esc(c.status)}`, (ws.length ? `<a class="btn" href="#dossier-${c.key}">Metadata dossier</a> ` : "") + cardJSONButton({ ...c, wave_records: ws }, `${c.id}_${c.key}.json`)) + toc(sections) +
     kv([
       ["Identification", [["FrailDB ID", `<code>${c.id}</code>`], ["Abbreviation", esc(c.key)], ["Full name", esc(c.name)], ["Region", esc(c.region)], ["Countries", c.countries > 1 ? `${c.countries} · <a href="#browse-countries">see country records</a>` : esc(c.countries)], ["Study period", esc(c.period)], ["Design", esc(c.design)]]],
-      ["Data source", [["Source files", esc(c.source)], ["Access", esc(c.access)], ["Website", `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>`], ["Mortality ascertainment", esc(c.mortality)]]],
+      ["Data source", [["Source files", esc(c.source)], ["Data type", c.data_type === "raw" ? "Raw survey files" : esc(c.data_type)], ["Access", esc(c.access)], ["Website", `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>`], ["Mortality ascertainment", esc(c.mortality)]]],
       ["Frailty measures", [["Rockwood frailty index", fi.length ? `${fi.length} waves · ${fmt(fi.reduce((s, w) => s + (w.rock.n || 0), 0))} assessments · ${fi[0].rock.items || 32} items · ${idLink("FDBI02", "instrument record")}` : "Not computed"],
         ["Fried phenotype", fr.length ? `${fr.length} waves · ${fmt(fr.reduce((s, w) => s + (w.fried.n || 0), 0))} assessments · ${idLink("FDBI01", "instrument record")}` : "Not computed"],
         ["Fried method", esc(DB.fried_methods?.[c.key] || "—")],
@@ -596,7 +677,8 @@ function waveCard(w) {
         ["Summary", `<div class="metrics"><div class="metric"><b>${fmt(R.n)}</b><span>Complete cases</span></div><div class="metric"><b>${fmt(R.mean_fi, 3)}</b><span>Mean FI (SD ${fmt(R.sd_fi, 3)})</span></div><div class="metric"><b>${pc(R.frail_pct)}</b><span>Frail, FI ≥ 0.25</span></div><div class="metric"><b>${fmt(R.mean_age, 1)}</b><span>Mean age</span></div>${R.retention ? `<div class="metric"><b>${fmt(R.retention, 1)}%</b><span>Retention of age-eligible</span></div>` : ""}${R.female_pct ? `<div class="metric"><b>${pc(R.female_pct)}</b><span>Women</span></div>` : ""}</div>`],
         ["Scoring", `frailty_index_score = total_deficits / ${R.items || 32} · ${idLink("FDBI02", "instrument record")}`],
         R.hist && ["FI distribution", `<div class="chartbox short"><canvas id="wh1"></canvas></div><p class="note">Bars are 1/32 wide. Bars covering fewer than ${DB.meta.min_cell} people are left blank.</p>`],
-        R.bands && ["By age and sex", bandTable(R.bands, "rock")],
+        R.cuts && ["Other definitions", defTable(R, "rock")],
+        R.bands && ["By age and sex", bandSwitch("wbr", R.bands5) + `<div id="wbr">${bandTable(R.bands, "rock")}</div>`],
         R.deficits && ["Deficit prevalence", `<p class="note" style="margin-top:0">Share of respondents with each deficit (graded CLHLS items show the mean score).</p>${defBars}`],
         !R.has_detail && ["Detail", '<span class="note">Only wave-level results are available for this wave.</span>']
       ]],
@@ -605,7 +687,8 @@ function waveCard(w) {
         ["Method", esc(w.method_fried || DB.fried_methods?.[w.cohort] || "—")],
         F.criteria && ["Criteria met", barsHTML(DB.criteria.map(cr => ({ label: idLink(cr.id, `${cr.key} ${cr.name}`), v: F.criteria[cr.key], color: "--c2" })), 100)],
         F.score_dist && ["Score distribution", `<div class="chartbox short"><canvas id="wh2"></canvas></div>`],
-        F.bands && ["By age and sex", bandTable(F.bands, "fried")],
+        F.cuts && ["Other definitions", defTable(F, "fried")],
+        F.bands && ["By age and sex", bandSwitch("wbf", F.bands5) + `<div id="wbf">${bandTable(F.bands, "fried")}</div>`],
         !F.has_detail && ["Detail", '<span class="note">Only wave-level results are available for this wave.</span>']
       ]],
       conc && ["Agreement between instruments", [["People scored by both", fmt(conc.n)], ["Cohen's κ (frail vs frail)", fmt(conc.kappa, 3)], ["Cross-table", concTable(conc.matrix)]]],
@@ -613,8 +696,23 @@ function waveCard(w) {
       ["Quality flags", [["Flags", w.flags.length ? `<ul class="flags">${w.flags.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : '<span class="note">No flags raised for this wave.</span>']]]
     ].filter(Boolean));
   wireToc();
+  if (R?.bands5) wireSeg("wbrs", v => $("#wbr").innerHTML = bandTable(v === "fine" ? R.bands5 : R.bands, "rock"));
+  if (F?.bands5) wireSeg("wbfs", v => $("#wbf").innerHTML = bandTable(v === "fine" ? F.bands5 : F.bands, "fried"));
   if (R?.hist) mkChart($("#wh1"), { type: "bar", data: { labels: R.hist.map((_, i) => (i / 32).toFixed(3)), datasets: [{ label: "People", data: R.hist, backgroundColor: R.hist.map((_, i) => i / 32 >= 0.25 ? css("--frail") : css("--c1")), borderRadius: 2, barPercentage: 0.92, categoryPercentage: 1 }] }, options: baseOpts({ plugins: { legend: { display: false }, tooltip: baseOpts().plugins.tooltip }, scales: { x: { ticks: { color: css("--muted"), maxRotation: 0, autoSkip: true, maxTicksLimit: 9 }, grid: { display: false }, title: { display: true, text: "Frailty index (red = frail, ≥ 0.25)", color: css("--muted") } }, y: { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
   if (F?.score_dist) mkChart($("#wh2"), { type: "bar", data: { labels: ["0", "1", "2", "3", "4", "5"], datasets: [{ label: "People", data: F.score_dist, backgroundColor: [css("--nonfrail"), css("--prefrail"), css("--prefrail"), css("--frail"), css("--frail"), css("--frail")], borderRadius: 3, barPercentage: 0.8 }] }, options: baseOpts({ plugins: { legend: { display: false }, tooltip: baseOpts().plugins.tooltip }, scales: { x: { title: { display: true, text: "Criteria met (green non-frail · amber pre-frail · red frail)", color: css("--muted") }, ticks: { color: css("--muted") }, grid: { display: false } }, y: { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false } } } }) });
+}
+// age-band scheme switch: standard 10-year bands, or the finer 5-year bands people can regroup themselves
+function bandSwitch(id, fine) {
+  return fine?.length ? `<div style="margin-bottom:8px">${seg(id + "s", [["standard", "10-year bands (standard)"], ["fine", "5-year bands"]], "standard")}</div>` : "";
+}
+// prevalence under every alternative definition, crude and age-sex standardised
+function defTable(o, inst) {
+  const rows = inst === "rock"
+    ? [...DEFS.fi_cuts.map(c => [cutName("rock", c) + (c === DEFS.fi_standard ? " (standard)" : ""), o.cuts[c], c === DEFS.fi_standard, true]), ["Mean frailty index", { crude: o.mean_fi, ...o.mean_std }, false, false]]
+    : [...DEFS.fried_cuts.map(c => [`Frail, ${cutName("fried", c)}` + (c === DEFS.fried_standard ? " (Fried 2001)" : ""), o.cuts[c], c === DEFS.fried_standard, true]), ["Pre-frail, 1–2 criteria", o.cuts.pre, false, true], ["Mean score (0–5)", { crude: o.mean_score, ...o.mean_std }, false, false]];
+  const v = (x, isPct) => x == null ? "—" : isPct ? pc(x) : fmt(x, inst === "rock" ? 3 : 2);
+  return `<div class="tablewrap"><table class="data deftable"><thead><tr><th>Definition</th><th class="num">Crude</th><th class="num">Standardised, ${esc(STDR.std50)}</th><th class="num">Standardised, ${esc(STDR.std65)}</th></tr></thead><tbody>${rows.map(([lab, r, std, isPct]) => `<tr><td>${std ? `<b>${esc(lab)}</b>` : esc(lab)}</td><td class="num">${v(r?.crude, isPct)}</td><td class="num">${v(r?.std50, isPct)}</td><td class="num">${v(r?.std65, isPct)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">${inst === "rock" ? CUT_NOTE + " " : ""}${STD_NOTE} <a href="#tool-compare">Compare cohorts</a> plots any of these over time.</p>`;
 }
 function concTable(m) {
   const S = ["non-frail", "pre-frail", "frail"], cls = ["nonfrail", "prefrail", "frail"];
@@ -698,10 +796,83 @@ function referenceCard(r) {
       ["Linked records", [["Cohorts", users.map(c => coLink(c.key)).join(", ") || "—"], ["Instruments", ins.map(i => idLink(i.id, i.name)).join(", ") || "—"]]]]);
 }
 
+// ---------------- metadata dossiers: one per cohort, the same sections in the same order for every cohort
+const DOSSIER_SECTIONS = ["1. Coverage", "2. Time coverage", "3. Original data", "4. Processing applied", "5. Data source and provider", "6. Known issues", "7. References"];
+const strip = h => String(h ?? "").replace(/<br\s*\/?>/g, "; ").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+function mdTable(head, rows) { const c = v => String(v ?? "—").replace(/\|/g, "\\|"); return `| ${head.join(" | ")} |\n| ${head.map(() => "---").join(" | ")} |\n${rows.map(r => `| ${r.map(c).join(" | ")} |`).join("\n")}`; }
+function htmlTable(head, rows, num = []) { return `<div class="tablewrap"><table class="data"><thead><tr>${head.map((h, i) => `<th class="${num.includes(i) ? "num" : ""}">${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map((v, i) => `<td class="${num.includes(i) ? "num" : ""}">${v ?? "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`; }
+function dossier(c) {
+  const ws = wavesOf(c.key), fi = ws.filter(w => w.rock), fr = ws.filter(w => w.fried);
+  const sum = (a, f) => a.reduce((s, w) => s + (f(w) || 0), 0);
+  const fmts = m => [...new Set(ws.filter(w => w[m]).map(w => w[m].source_format ? `participant-level ${w[m].source_format.toUpperCase()}` : "wave-level summary CSV"))].join(", ") || "—";
+  const meas = q => DB.criteria.find(x => x.key === q)?.measure?.[c.key] || "self-report";
+  const refs = [...new Set([...(c.fried_ref || []), ...(c.rock_ref || [])])].filter(r => BYID[r]);
+  const items = d => DB.deficits.filter(x => x.sets.includes(c.key)).length;
+  // each row: [label, html, markdown]
+  const T = (label, html, md) => [label, html, md ?? strip(html)];
+  const timeHead = ["Wave", "Year", "Frailty index", "Fried phenotype"];
+  const st = (w, m) => !w[m] ? "not scored" : `${AV_LABEL[w.avail?.[m]] || "scored"} (n = ${fmt(w[m].n)})`;
+  const timeRows = ws.map(w => [w.wave, w.year, st(w, "rock"), st(w, "fried")]);
+  const issues = [...(c.notes || []).map(n => ["Cohort", n]), ...ws.flatMap(w => w.flags.map(f => [`Wave ${w.wave} (${w.year})`, f]))];
+  const critRows = DB.criteria.map(cr => [cr.key, cr.name, meas(cr.key), cr.ops?.[c.key] || "—"]);
+  const rederived = fr.filter(w => w.fried.prefrail_rederived).map(w => w.wave);
+  const cutWaves = DB.cutoffs.filter(t => t.cohort === c.key);
+  const S = [
+    ["1. Coverage", [
+      T("Population", esc(c.design)),
+      T("Geographic coverage", `${esc(c.region)}${c.countries > 1 ? ` (${c.countries} countries; <a href="#browse-countries">country records</a>)` : ""}`),
+      T("Age criterion", c.key === "CLHLS" ? "50+ (the survey samples people aged 65+)" : c.key === "ELSA" ? "50+ for the frailty index; 60+ for the Fried phenotype" : "50+"),
+      T("Assessments", `${fmt(sum(fi, w => w.rock.n))} frailty index in ${fi.length} waves · ${fmt(sum(fr, w => w.fried.n))} Fried phenotype in ${fr.length} waves`),
+      T("Sample", "Complete case within each wave and instrument: a respondent missing any item an instrument needs is not scored with it.")]],
+    ["2. Time coverage", [
+      T("Study period", esc(c.period)),
+      T("Waves", htmlTable(timeHead, ws.map(w => [idLink(w.id, w.wave), w.year, esc(st(w, "rock")), esc(st(w, "fried"))]), [1]), mdTable(timeHead, timeRows))]],
+    ["3. Original data", [
+      T("Source files", esc(c.source)),
+      T("Type", c.data_type === "raw" ? "Raw survey files" : `Harmonised file: ${esc(c.data_type.replace(/^harmonised \(|\)$/g, ""))}`),
+      T("Frailty outputs used", `Frailty index: ${esc(fmts("rock"))} · Fried: ${esc(fmts("fried"))}`),
+      T("Waves with wave-level results only", ws.filter(w => w.avail?.rock === "summary" || w.avail?.fried === "summary").map(w => `wave ${w.wave} (${[w.avail?.rock === "summary" && "FI", w.avail?.fried === "summary" && "Fried"].filter(Boolean).join(", ")})`).join("; ") || "None")]],
+    ["4. Processing applied", [
+      T("Frailty index", fi.length ? `${fi[0].rock.items || 32} deficits, each coded 0–1; FI = deficits present ÷ ${fi[0].rock.items || 32}; frail at FI ≥ 0.25. ${items()} deficits are mapped to their source variables in the <a href="#browse-deficits">deficit crosswalk</a>.` : "Not computed"),
+      T("Fried phenotype", fr.length ? esc(DB.fried_methods?.[c.key] || "Five criteria, frail at 3 or more, pre-frail at 1–2.") : "Not computed"),
+      fr.length && T("Fried criteria", htmlTable(["Code", "Criterion", "Measurement", "Definition used"], critRows.map(r => [`<code>${r[0]}</code>`, esc(r[1]), `<span class="tag ${r[2] === "measured" ? "meas" : "self"}">${r[2]}</span>`, esc(r[3])])), mdTable(["Code", "Criterion", "Measurement", "Definition used"], critRows)),
+      fr.length && T("Pre-frail status", rederived.length ? `Re-derived from the 0–5 score in waves ${rederived.join(", ")}, where the source file has no pre-frail label.` : "As labelled in the source files."),
+      fr.length && T("Grip and walk cut-offs", cutWaves.length ? `${cutWaves.length} tables (${[...new Set(cutWaves.map(t => t.kind))].join(" and ")}), on the wave records of waves ${[...new Set(cutWaves.map(t => t.wave))].join(", ")}.` : "No cut-off tables in this release."),
+      T("Applied by FrailDB", `Aggregation only: no imputation and no smoothing. Counts below ${DB.meta.min_cell} are suppressed. Alternative cut-offs (FI ${DEFS.fi_cuts.join(", ")}; Fried ${DEFS.fried_cuts.join(", ")}+) and age-sex standardisation to the WHO World Standard Population (${esc(STDR.std50)} and ${esc(STDR.std65)}) are computed from the participant-level outputs.`)].filter(Boolean)],
+    ["5. Data source and provider", [
+      T("Access", esc(c.access)), T("Website", `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url)}</a>`, c.url), T("Mortality ascertainment", esc(c.mortality))]],
+    ["6. Known issues", [
+      T("Issues", issues.length ? htmlTable(["Where", "Issue"], issues.map(([a, b]) => [esc(a), esc(b)])) : "None recorded.", issues.length ? mdTable(["Where", "Issue"], issues) : "None recorded.")]],
+    ["7. References", [
+      T("Cited", refs.map(r => `${idLink(r)} ${esc(BYID[r][1].cite)}`).join("<br><br>") || "—", refs.map(r => `- ${BYID[r][1].cite} doi:${BYID[r][1].doi}`).join("\n") || "—")]]
+  ];
+  const md = `# ${c.key}: ${c.name}, metadata dossier\n\nFrailDB ${DB.meta.version}, built ${DB.meta.built}. Record ${c.id}.\n\n` +
+    S.map(([t, rows]) => `## ${t}\n\n` + rows.map(([k, , m]) => m.includes("\n") ? `**${k}**\n\n${m}` : `**${k}:** ${m}`).join("\n\n")).join("\n\n") + "\n";
+  return { sections: S, md };
+}
+DB.cohorts.filter(c => c.waves.length).forEach(c => {
+  ROUTES["dossier-" + c.key] = () => {
+    const D = dossier(c);
+    app.innerHTML = crumbs([["#home", "Home"], ["#dossiers", "Metadata dossiers"], [null, c.key]]) +
+      head(`${c.key} metadata dossier`, c.id, `What the ${esc(c.key)} frailty data cover, where they came from, what was done to them and what to watch out for. Every cohort's dossier has the same seven sections.`,
+        `<a class="btn" href="#${c.id}">Cohort record</a> <button class="btn" id="dmd" type="button">Download dossier (Markdown)</button>`) +
+      toc(DOSSIER_SECTIONS) + kv(D.sections.map(([t, rows]) => [t, rows.map(([k, h]) => [k, h])]));
+    wireToc();
+    $("#dmd").onclick = () => saveFile(`fraildb_dossier_${c.key}.md`, D.md);
+  };
+});
+ROUTES.dossiers = () => {
+  const list = DB.cohorts.filter(c => c.waves.length);
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Metadata dossiers"]]) + head("Metadata dossiers", null, "One dossier per cohort, each with the same seven sections: coverage, time coverage, original data, processing applied, data source and provider, known issues and references.", `<button class="btn" id="dall" type="button">Download all (Markdown)</button>`) +
+    `<div class="tiles">${list.map(c => { const n = wavesOf(c.key).reduce((s, w) => s + w.flags.length, 0) + (c.notes || []).length; return `<a class="tile" href="#dossier-${c.key}"><h3>${swatch(c.key)} ${esc(c.key)}</h3><p>${esc(c.name)} · ${esc(c.period)}</p><span class="count">${wavesOf(c.key).length} waves · ${n} known issue${n === 1 ? "" : "s"}</span></a>`; }).join("")}</div>`;
+  $("#dall").onclick = () => saveFile("fraildb_dossiers.md", list.map(c => dossier(c).md).join("\n\n---\n\n"));
+};
+
 // ---------------- search
 function searchIndex() {
   const idx = [];
   DB.cohorts.forEach(c => idx.push({ id: c.id, kind: "Cohort", title: `${c.key}: ${c.name}`, text: [c.region, c.design, c.source, ...(c.notes || [])].join(" ") }));
+  DB.cohorts.filter(c => c.waves.length).forEach(c => idx.push({ id: "dossier-" + c.key, kind: "Metadata dossier", title: `${c.key} metadata dossier`, text: ["coverage processing known issues provenance", c.source, ...(c.notes || []), ...wavesOf(c.key).flatMap(w => w.flags)].join(" ") }));
   DB.waves.forEach(w => idx.push({ id: w.id, kind: "Wave", title: waveLabel(w), text: [w.steps_source, w.method_fried, ...w.flags].join(" ") }));
   DB.deficits.forEach(d => idx.push({ id: d.id, kind: "Deficit", title: d.label, text: [d.key, d.domain, d.rule, ...Object.entries(d.vars).map(([k, v]) => `${k} ${v.var || ""} ${v.rule || ""} ${v.label || ""}`)].join(" ") }));
   DB.criteria.forEach(c => idx.push({ id: c.id, kind: "Fried criterion", title: `${c.key} ${c.name}`, text: [c.desc, ...Object.values(c.ops)].join(" ") }));
@@ -753,30 +924,37 @@ function cohortSelect(id, list, val) { return `<select id="${id}">${list.map(k =
 
 ROUTES["tool-compare"] = () => {
   const st = { metric: "rock_frail", x: "year", sex: "All", cos: new Set(ANALYSED) };
-  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Compare cohorts"]]) + head("Compare cohorts", null, "Plot one measure for several cohorts, by survey year or by age band. Age curves pool every wave, so each person can count more than once.") +
+  app.innerHTML = crumbs([["#home", "Home"], [null, "Tools"], [null, "Compare cohorts"]]) + head("Compare cohorts", null, "Plot one measure for several cohorts, by survey year or by age band. Change the frail cut-off, or standardise for age and sex, to see how much a comparison depends on those choices. Age curves pool every wave, so each person can count more than once.") +
     `<div class="panel"><div class="toolbar">
-      <label class="ctrl">Measure<select id="cm"><option value="rock_frail">FI frail (≥ 0.25), %</option><option value="rock_mean">Mean frailty index</option><option value="fried_frail">Fried frail, %</option><option value="fried_prefrail">Fried pre-frail, %</option></select></label>
+      <label class="ctrl">Measure<select id="cm"><option value="rock_frail">FI frail, %</option><option value="rock_mean">Mean frailty index</option><option value="fried_frail">Fried frail, %</option><option value="fried_prefrail">Fried pre-frail, %</option><option value="fried_mean">Mean Fried score</option></select></label>
       <div class="ctrl">Across${seg("cx", [["year", "Survey year"], ["age", "Age"]], "year")}</div>
       <label class="ctrl" id="csexw" hidden>Sex<select id="csex"><option>All</option><option>Female</option><option>Male</option></select></label>
+      ${defControls()}
       <div class="ctrl">Cohorts<div class="checks">${ANALYSED.map(k => `<label>${swatch(k)}<input type="checkbox" value="${k}" checked> ${k}</label>`).join("")}</div></div>
-    </div><div class="pad"><div class="chartbox tall"><canvas id="cmp"></canvas></div><div id="cmpt"></div></div></div>`;
+    </div><div class="pad"><p class="chartsub" id="cmpdesc" style="margin-top:0"></p><div class="chartbox tall"><canvas id="cmp"></canvas></div><p class="note" id="cmpnote"></p><div id="cmpt"></div></div></div>`;
   let chart;
   const draw = () => {
     if (chart) { chart.destroy(); charts = charts.filter(c => c !== chart); }
     const [inst, kind] = st.metric.split("_");
     const isPct = kind !== "mean";
-    let ds = [], rows = [];
+    showDef("fi", inst === "rock" && kind === "frail"); showDef("fried", inst === "fried" && kind === "frail"); showDef("std", st.x === "year");
+    const cut = inst === "rock" ? defState.fi : defState.fried, standard = inst === "rock" ? DEFS.fi_standard : DEFS.fried_standard;
+    let ds = [], rows = [], missing = [];
     for (const k of ANALYSED.filter(k => st.cos.has(k))) {
       let pts = [];
-      if (st.x === "year") pts = wavesOf(k).filter(w => w[inst === "rock" ? "rock" : "fried"]).map(w => { const o = inst === "rock" ? w.rock : w.fried; return { x: w.year, y: kind === "frail" ? o.frail_pct : kind === "prefrail" ? o.prefrail_pct : o.mean_fi }; }).filter(p => p.y != null);
-      else if (kind !== "prefrail") pts = (DB.agecurves[k]?.[inst] || []).filter(r => r.sex === st.sex).map(r => ({ x: r.age, y: kind === "frail" ? r.frail_pct : r.mean }));
-      if (!pts.length) continue;
+      if (st.x === "year") pts = wavesOf(k).filter(w => w[inst]).map(w => ({ x: w.year, y: waveValue(w, inst, kind) })).filter(p => p.y != null);
+      else if (kind !== "prefrail") pts = (DB.agecurves[k]?.[inst] || []).filter(r => r.sex === st.sex).map(r => ({ x: r.age, y: kind === "frail" ? (cut === standard ? r.frail_pct : r.cuts?.[cut]) : r.mean })).filter(p => p.y != null);
+      if (!pts.length) { if (wavesOf(k).some(w => w[inst])) missing.push(k); continue; }
       ds.push(lineDS(k, pts, k)); pts.forEach(p => rows.push({ cohort: k, [st.x === "year" ? "year" : "age band"]: st.x === "age" && p.x === 95 ? "95+" : st.x === "age" ? `${p.x}–${p.x + 4}` : p.x, value: p.y }));
     }
+    $("#cmpdesc").textContent = st.x === "year" ? defDesc(inst, kind) : defDesc(inst, kind, { ...defState, std: "crude" }).replace(" · crude", " · by 5-year age band");
+    $("#cmpnote").innerHTML = [st.x === "year" && defState.std !== "crude" ? STD_NOTE : "", inst === "rock" && kind === "frail" && cut !== standard ? CUT_NOTE : "",
+      missing.length ? `No values for this choice: ${esc(missing.join(", "))}${defState.std !== "crude" && st.x === "year" ? " (an age × sex group in the standard's range is too small, or the instrument's age range starts later)" : ""}.` : ""].filter(Boolean).join(" ");
     chart = mkChart($("#cmp"), { type: "line", data: { datasets: ds }, options: baseOpts({ scales: { x: { type: "linear", ...(st.x === "age" ? { min: 50, max: 95 } : {}), ticks: { color: css("--muted"), stepSize: st.x === "age" ? 5 : 2, callback: v => st.x === "age" && v === 95 ? "95+" : v }, grid: { color: css("--line") }, title: { display: true, text: st.x === "age" ? "Age band (start of 5-year band)" : "Survey year", color: css("--muted") } }, y: isPct ? pctAxis() : { ticks: { color: css("--muted") }, grid: { color: css("--line") }, border: { display: false }, min: 0 } } }) });
     $("#cmpt").innerHTML = ds.length ? `<details><summary class="note" style="cursor:pointer">Show the numbers as a table</summary><div class="tablewrap"><table class="data"><thead><tr><th>Cohort</th><th>${st.x === "year" ? "Year" : "Age band"}</th><th class="num">Value</th></tr></thead><tbody>${rows.map(r => `<tr><td>${r.cohort}</td><td>${r.year ?? r["age band"]}</td><td class="num">${isPct ? pc(r.value) : fmt(r.value, 3)}</td></tr>`).join("")}</tbody></table></div></details>` : `<p class="note">No data for this choice. ${kind === "prefrail" && st.x === "age" ? "Pre-frail age curves are not in this build; switch to survey year." : ""}</p>`;
   };
   $("#cm").onchange = e => { st.metric = e.target.value; draw(); };
+  wireDef(draw);
   wireSeg("cx", v => { st.x = v; $("#csexw").hidden = v !== "age"; draw(); });
   $("#csex").onchange = e => { st.sex = e.target.value; draw(); };
   $$(".checks input").forEach(i => i.onchange = () => { i.checked ? st.cos.add(i.value) : st.cos.delete(i.value); draw(); });
@@ -1132,9 +1310,33 @@ ROUTES["tool-calculator"] = () => {
 };
 
 // ---------------- downloads / stats / about
+// indicator columns in the wave summary, documented on the Downloads page
+const FLAG_COLS = [
+  ["cohort_data_type", "raw / harmonised (RAND HRS) / harmonised (Gateway H_MHAS)", "Whether the frailty scores were built from the cohort's raw survey files or from a harmonised file."],
+  ["fi_detail, fried_detail", "participant / summary / (blank)", "participant: built from the participant-level output, so every breakdown is available. summary: only wave-level results exist (the participant file is missing). Blank: not scored in this wave."],
+  ["fi_source_format, fried_source_format", "csv / rds / (blank)", "Format of the participant-level output the results were computed from."],
+  ["fi_low_retention", "0 / 1", "1 when fewer than 70% of age-eligible respondents had every frailty index item (complete-case retention below 70%)."],
+  ["fried_age_rule", "50+ / 60+", "Age range of the Fried sample (ELSA uses 60+)."],
+  ["fried_weakness, fried_slowness", "measured / self-report", "Whether grip strength and walking speed were measured, or replaced by self-reported items."],
+  ["fried_prefrail_rederived", "0 / 1", "1 when the source file had no pre-frail label and FrailDB re-derived pre-frail from a score of 1–2."],
+  ["fried_low_coverage", "0 / 1", "1 when fewer than 25% of age-eligible respondents were scored with the Fried phenotype (a likely merge or scoring gap)."],
+  ["no_age_90_plus", "0 / 1", "1 when nobody aged 90 or over is in the wave's output, for either instrument (age may have been top-coded and dropped)."],
+  ["avail_fi, avail_fried", "full / summary / issue / (blank)", "The colour of the wave in the data availability grid on the home page."]
+];
+function waveFlags(w) {
+  const R = w.rock, F = w.fried, co = COH[w.cohort] || {};
+  const meas = q => !F ? null : DB.criteria.find(x => x.key === q)?.measure?.[w.cohort] || "self-report";
+  const det = o => !o ? null : o.has_detail ? "participant" : "summary";
+  return { cohort_data_type: co.data_type, fi_detail: det(R), fried_detail: det(F), fi_source_format: R?.source_format || null, fried_source_format: F?.source_format || null,
+    fi_low_retention: R ? (R.retention != null && R.retention < 70 ? 1 : 0) : null, fried_age_rule: F?.age_rule || null, fried_weakness: meas("FQ3"), fried_slowness: meas("FQ4"),
+    fried_prefrail_rederived: F ? (F.prefrail_rederived ? 1 : 0) : null, fried_low_coverage: F ? (w.flags.some(f => f.startsWith("Fried: only")) ? 1 : 0) : null,
+    no_age_90_plus: w.flags.some(f => f.includes("nobody aged 90")) ? 1 : 0, avail_fi: w.avail?.rock || null, avail_fried: w.avail?.fried || null };
+}
 function datasets() {
   return [
-    { name: "fraildb_waves.csv", title: "Wave summary", desc: "One row per cohort wave: sample sizes, FI mean and SD, frail and pre-frail prevalence, mean age, flags.", rows: () => DB.waves.map(w => ({ id: w.id, cohort: w.cohort, wave: w.wave, year: w.year, interviewed: w.raw, age_eligible: w.age_n, fi_n: w.rock?.n, fi_mean: w.rock?.mean_fi, fi_sd: w.rock?.sd_fi, fi_frail_pct: w.rock?.frail_pct, fi_retention_pct: w.rock?.retention, fi_mean_age: w.rock?.mean_age, fried_n: w.fried?.n, fried_frail_pct: w.fried?.frail_pct, fried_prefrail_pct: w.fried?.prefrail_pct, fried_mean_score: w.fried?.mean_score, flags: w.flags.join(" | ") })) },
+    { name: "fraildb_waves.csv", title: "Wave summary", desc: "One row per cohort wave: sample sizes, FI mean and SD, frail and pre-frail prevalence (crude and age-sex standardised), mean age, indicator flags (see the table below) and the text of every quality flag.", rows: () => DB.waves.map(w => { const R = w.rock, F = w.fried, std = DEFS.fi_standard, fstd = DEFS.fried_standard; return { id: w.id, cohort: w.cohort, wave: w.wave, year: w.year, interviewed: w.raw, age_eligible: w.age_n, fi_n: R?.n, fi_mean: R?.mean_fi, fi_sd: R?.sd_fi, fi_frail_pct: R?.frail_pct, fi_frail_pct_std50: R?.cuts?.[std]?.std50, fi_frail_pct_std65: R?.cuts?.[std]?.std65, fi_mean_std50: R?.mean_std?.std50, fi_mean_std65: R?.mean_std?.std65, fi_retention_pct: R?.retention, fi_mean_age: R?.mean_age, fried_n: F?.n, fried_frail_pct: F?.frail_pct, fried_frail_pct_std50: F?.cuts?.[fstd]?.std50, fried_frail_pct_std65: F?.cuts?.[fstd]?.std65, fried_prefrail_pct: F?.prefrail_pct, fried_prefrail_pct_std50: F?.cuts?.pre?.std50, fried_prefrail_pct_std65: F?.cuts?.pre?.std65, fried_mean_score: F?.mean_score, ...waveFlags(w), flags: w.flags.join(" | ") }; }) },
+    { name: "fraildb_prevalence_definitions.csv", title: "Prevalence under alternative definitions", desc: `Frail prevalence at FI ≥ ${DEFS.fi_cuts.join(", ")} and Fried ${DEFS.fried_cuts.join(", ")}+ criteria, plus Fried pre-frail, each crude and age-sex standardised to the WHO World Standard Population (${STDR.std50} and ${STDR.std65}).`, rows: () => DB.waves.flatMap(w => [["rock", w.rock], ["fried", w.fried]].filter(([, o]) => o?.cuts).flatMap(([m, o]) => Object.entries(o.cuts).map(([c, v]) => ({ id: w.id, cohort: w.cohort, wave: w.wave, year: w.year, instrument: m === "rock" ? "frailty_index" : "fried", definition: c === "pre" ? "pre-frail (1-2 criteria)" : m === "rock" ? `FI >= ${c}` : `frail (${c}+ criteria)`, standard_definition: (m === "rock" ? c === DEFS.fi_standard : c === DEFS.fried_standard) ? 1 : 0, crude_pct: v.crude, std50_pct: v.std50, std65_pct: v.std65 })))) },
+    { name: "fraildb_age_bands.csv", title: "Results by age band and sex", desc: "Each wave's results by sex in the standard 10-year bands and in the finer 5-year bands, so you can regroup them. The scheme column tells the two apart.", rows: () => DB.waves.flatMap(w => [["rock", w.rock], ["fried", w.fried]].filter(([, o]) => o?.bands).flatMap(([m, o]) => [["standard_10y", o.bands], ["fine_5y", o.bands5 || []]].flatMap(([sch, rs]) => rs.map(r => ({ id: w.id, cohort: w.cohort, wave: w.wave, year: w.year, instrument: m === "rock" ? "frailty_index" : "fried", scheme: sch, age_band: r.band, sex: r.sex, n: r.n, frail_pct: r.frail_pct, prefrail_pct: r.prefrail_pct, mean: m === "rock" ? r.mean_fi : r.mean_score, median_fi: r.p?.[2], p90_fi: r.p?.[4] }))))) },
     { name: "fraildb_deficit_crosswalk.csv", title: "Deficit crosswalk", desc: "Each deficit's source variable and coding rule in each cohort.", rows: () => DB.deficits.flatMap(d => d.sets.map(k => ({ deficit_id: d.id, deficit_key: d.key, deficit: d.label, domain: d.domain, cohort: k, source_variable: d.vars[k]?.var, coding: d.vars[k]?.rule || d.rule }))) },
     { name: "fraildb_deficit_prevalence.csv", title: "Deficit prevalence by wave", desc: "Percentage of complete-case respondents with each deficit, by cohort and wave.", rows: () => DB.deficits.flatMap(d => Object.entries(d.prev).flatMap(([k, ws]) => Object.entries(ws).map(([w, v]) => ({ deficit_id: d.id, deficit_key: d.key, cohort: k, wave: +w, prevalence_pct: v })))) },
     { name: "fraildb_fried_criteria.csv", title: "Fried criteria prevalence", desc: "Percentage meeting each Fried criterion, by cohort and wave.", rows: () => DB.criteria.flatMap(c => Object.entries(c.prev).flatMap(([k, ws]) => Object.entries(ws).map(([w, v]) => ({ criterion: c.key, name: c.name, cohort: k, wave: +w, prevalence_pct: v })))) },
@@ -1148,15 +1350,19 @@ function datasets() {
     DB.predictors && { name: "fraildb_predictor_models.csv", title: "Frailty predictors: model fit", desc: "Sample size, variables, exclusions and held-out R² for each of the wave models.", rows: () => DB.predictors.models },
     { name: "fraildb_cutoffs.csv", title: "Grip and walk cut-offs", desc: "Lowest-20% cut-offs by sex and BMI (grip) or height (walk), by cohort and wave.", rows: () => DB.cutoffs.flatMap(t => t.rows.map(r => ({ cohort: t.cohort, wave: t.wave, measure: t.kind, ...r }))) },
     { name: "fraildb_share_countries.csv", title: "SHARE countries", desc: "FI and Fried prevalence by SHARE country and wave.", rows: () => DB.countries.flatMap(n => n.waves.map(w => ({ country: n.name, code: n.code, ...w }))) },
+    { name: "fraildb_dossiers.md", title: "Metadata dossiers (Markdown)", desc: "One dossier per cohort with the same seven sections: coverage, time coverage, original data, processing applied, data source and provider, known issues, references.", md: () => DB.cohorts.filter(c => c.waves.length).map(c => dossier(c).md).join("\n\n---\n\n") },
     { name: "fraildb_full.json", title: "Full database (JSON)", desc: "Every record in this release, in one file.", json: true }
   ].filter(Boolean);
 }
 ROUTES.downloads = () => {
   const D = datasets();
   app.innerHTML = crumbs([["#home", "Home"], [null, "Downloads"]]) + head("Downloads", null, `Release ${esc(DB.meta.version)}, built ${esc(DB.meta.built)}. All files contain aggregated results only. Counts below ${DB.meta.min_cell} are left blank.`) +
-    `<div class="panel tablewrap"><table class="data"><thead><tr><th>File</th><th>Contents</th><th class="num">Rows</th><th></th></tr></thead><tbody>${D.map((d, i) => `<tr><td><b>${esc(d.title)}</b><br><code>${esc(d.name)}</code></td><td>${esc(d.desc)}</td><td class="num">${d.json ? "—" : fmt(d.rows().length)}</td><td><button class="btn" type="button" data-i="${i}">Download</button></td></tr>`).join("")}</tbody></table></div>
-    <div class="callout" style="margin-top:16px">Participant-level frailty scores cannot be redistributed under the cohorts' data-use agreements. Researchers with approved access to a cohort can regenerate them with the project's analysis scripts.</div>`;
-  $$("button[data-i]").forEach(b => b.onclick = () => { const d = D[+b.dataset.i]; saveFile(d.name, d.json ? JSON.stringify(DB) : toCSV(d.rows())); });
+    `<div class="panel tablewrap"><table class="data"><thead><tr><th>File</th><th>Contents</th><th class="num">Rows</th><th></th></tr></thead><tbody>${D.map((d, i) => `<tr><td><b>${esc(d.title)}</b><br><code>${esc(d.name)}</code></td><td>${esc(d.desc)}</td><td class="num">${d.json || d.md ? "—" : fmt(d.rows().length)}</td><td><button class="btn" type="button" data-i="${i}">Download</button></td></tr>`).join("")}</tbody></table></div>
+    <h2 class="sectiontitle">Indicator columns in the wave summary</h2>
+    <p class="chartsub" style="margin-top:-4px">These columns say how each wave's numbers were produced, so you can filter or weight waves without reading every flag.</p>
+    <div class="panel tablewrap"><table class="data"><thead><tr><th>Column</th><th>Values</th><th>Meaning</th></tr></thead><tbody>${FLAG_COLS.map(([c, v, m]) => `<tr><td><code>${esc(c)}</code></td><td>${esc(v)}</td><td>${esc(m)}</td></tr>`).join("")}</tbody></table></div>
+    <div class="callout" style="margin-top:16px">Participant-level frailty scores cannot be redistributed under the cohorts' data-use agreements. Researchers with approved access to a cohort can regenerate them with the project's analysis scripts. Each cohort's <a href="#dossiers">metadata dossier</a> describes its sources and processing.</div>`;
+  $$("button[data-i]").forEach(b => b.onclick = () => { const d = D[+b.dataset.i]; saveFile(d.name, d.json ? JSON.stringify(DB) : d.md ? d.md() : toCSV(d.rows())); });
 };
 ROUTES.statistics = () => {
   const m = DB.meta.counts;
@@ -1183,6 +1389,10 @@ ROUTES.methods = () => {
     <h2>Rockwood frailty index</h2><p>32 deficits across disease, self-rated health, ADL, IADL, mobility, senses, depressive symptoms and cognition, each coded 0 or 1 (CLHLS has four graded items). FI = deficits present ÷ 32. Frail when FI ≥ 0.25. See ${idLink("FDBI02", "the instrument record")}.</p>
     <h2>Fried phenotype</h2><p>Five criteria, each 0 or 1. Score 0 = non-frail, 1–2 = pre-frail, 3–5 = frail. Measured grip is classed weak when it is in the lowest 20% within sex × BMI group, and measured walk time is classed slow when it is in the slowest 20% within sex × height group. The cut-off tables are on each wave record. See ${idLink("FDBI01", "the instrument record")}.</p>
     <h2>Frailty predictors</h2><p>For each cohort, instrument and wave, a LightGBM regression predicts the continuous score (frailty index 0–1, Fried 0–5) from every variable in that wave's survey files, trained on 80% of people with the other 20% held out. Influence is the mean absolute SHAP value on held-out people. Before modelling, four layers of variables are removed: the instrument's own items; scores built from them and follow-up questions about the same activity or disease; near-copies found by correlation; and identifiers, paradata, death and other information from after the wave. Dataset rankings average each variable's share over all waves. See ${idLink("tool-predictors", "Frailty predictors")}.</p>
+    <h2>Alternative frailty definitions</h2><p>Every wave with participant-level results is also summarised under alternative cut-offs: frailty index ≥ ${DEFS.fi_cuts.join(", ")} (standard ${DEFS.fi_standard}) and Fried ${DEFS.fried_cuts.join(", ")}+ criteria (standard ${DEFS.fried_standard}, Fried et al. 2001). Prevalence estimates depend heavily on where the line is drawn, so the choice can be changed on the home page, in <a href="#tool-compare">Compare cohorts</a> and on each wave record. ${CUT_NOTE}</p>
+    <h2>Age-sex standardisation</h2><p>Cohorts differ in age structure (CLHLS samples mostly people over 80; SHARE and HRS mostly people in their 50s and 60s), so crude prevalence mixes frailty with age. Standardised values are directly age-sex standardised: the prevalence in each 5-year age band and sex is weighted by the ${esc(DB.meta.standard?.name || "WHO World Standard Population")} (${esc(DB.meta.standard?.ref || "")}), with each sex taking half of each band's weight. Two ranges are given, ${esc(STDR.std50)} and ${esc(STDR.std65)}; ${esc(STDR.std65)} is the range every cohort covers. Ages 90+ are left out of standardised values for every cohort, because ELSA's analytic files hold nobody aged 90 or over from wave 5. A value is left blank when any age × sex group in the range holds fewer than ${DB.meta.standard?.min_stratum ?? 20} people.</p>
+    <h2>Age bands</h2><p>Results by age and sex are given in standard 10-year bands (${esc((DB.meta.age_schemes?.standard || []).join(", "))}) and, so that users can build their own groupings, in 5-year bands (${esc((DB.meta.age_schemes?.fine || []).join(", "))}). Both are in <code>fraildb_age_bands.csv</code>.</p>
+    <h2>Data availability and indicator flags</h2><p>Each wave is classed for each instrument as having participant-level results, wave-level results only (the participant file is missing), or a known quality issue (complete-case retention below 70%, or fewer than 25% of age-eligible respondents scored). The home page shows this as a grid, and the wave summary download carries it as indicator columns. Each cohort's <a href="#dossiers">metadata dossier</a> lists its sources, processing and known issues in a fixed structure.</p>
     <h2>Longitudinal measures</h2><p>Transitions compare a person's state with their state at the next assessment within the next two analysed waves. Volatility uses people with three or more scored FI waves: the standard deviation of their FI and the root mean square of successive differences.</p>
     <h2>Data policy</h2><p>FrailDB publishes aggregated results only. Every count below ${DB.meta.min_cell} is suppressed, and percentiles are reported only for groups of 30 or more. No participant identifiers or individual records are included. The source cohorts' data-use agreements do not allow redistribution of participant-level data; to obtain them, apply to each cohort through the access routes listed on its record.</p></div>`;
 };
