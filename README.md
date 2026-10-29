@@ -18,7 +18,7 @@ Frailty_Volatility Project.
 | Instrument, country, reference | `FDBI`, `FDBN`, `FDBR` | |
 
 Tools: compare cohorts, harmonisation matrix, FI reference norms, **pre-frailty age window**,
-transitions, volatility, Fried vs FI agreement, frailty calculator, variable lookup.
+transitions, Fried vs FI agreement, frailty calculator, variable lookup.
 
 ## Rebuilding
 

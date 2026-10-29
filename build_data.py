@@ -686,7 +686,7 @@ for cc in sorted(country_acc, key=lambda x: SHARE_COUNTRY.get(x, str(x))):
         waves.append(row)
     db["countries"].append(dict(id=f"FDBN{nid:02d}", code=cc, name=SHARE_COUNTRY[cc], cohort="SHARE", waves=waves))
 
-# --------------------------------------------------------------------------- longitudinal: transitions, volatility, concordance
+# --------------------------------------------------------------------------- longitudinal: transitions, concordance
 ROCK_STATES = ["FI < 0.10", "FI 0.10–0.24", "FI ≥ 0.25"]
 FRIED_STATES = ["non-frail", "pre-frail", "frail"]
 
@@ -713,34 +713,8 @@ for (co, m), frames in long_frames.items():
         out["transitions"].append(dict(frm=a, to=nxt, matrix=[[sup(x) for x in row] for row in mat.tolist()]))
     out["pooled"] = [[sup(x) for x in row] for row in pooled.tolist()]
     out["states"] = states + ["not scored at next assessment"]
-    # trajectories of the panel (persons observed in every wave would be tiny; use all observed person-waves)
+    # FI distribution per wave
     if m == "rock":
-        long = pd.concat([f.assign(wave=w) for w, f in frames.items()])
-        per = long.groupby("id").agg(k=("fi", "size"), mean=("fi", "mean"), sd=("fi", "std"))
-        # RMSSD in wave order
-        def rmssd(s):
-            d = np.diff(s.values)
-            return float(np.sqrt(np.mean(d ** 2))) if len(d) else np.nan
-        ls = long.sort_values(["id", "wave"])
-        per["rmssd"] = ls.groupby("id")["fi"].apply(rmssd)
-        v = per[per.k >= 3]
-        if len(v) >= MIN_CELL:
-            h = np.histogram(v.sd.clip(upper=0.299), bins=np.linspace(0, 0.30, 31))[0]
-            bands_ = [(0, .1, "Mean FI < 0.10"), (.1, .25, "Mean FI 0.10–0.24"), (.25, 1.01, "Mean FI ≥ 0.25")]
-            byb = []
-            for lo, hi, lab in bands_:
-                g = v[(v["mean"] >= lo) & (v["mean"] < hi)]
-                if len(g) >= MIN_PCTL:
-                    byb.append(dict(label=lab, n=len(g), sd_p=g.sd.quantile([.1, .25, .5, .75, .9]).round(4).tolist(),
-                                    rmssd_med=round(float(g.rmssd.median()), 4)))
-            kdist = per.k.value_counts().sort_index()
-            out["volatility"] = dict(n=int(len(v)), min_waves=3, sd_hist=[sup(x) for x in h], sd_bin=0.01,
-                                     sd_p=v.sd.quantile([.1, .25, .5, .75, .9]).round(4).tolist(),
-                                     rmssd_p=v.rmssd.quantile([.1, .25, .5, .75, .9]).round(4).tolist(),
-                                     corr_mean_sd=round(float(v[["mean", "sd"]].corr().iloc[0, 1]), 3),
-                                     by_level=byb,
-                                     waves_per_person={int(k): sup(n) for k, n in kdist.items()},
-                                     persons=int(len(per)))
         traj = []
         for w in waves:
             fi = frames[w].fi
