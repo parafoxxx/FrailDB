@@ -1,0 +1,16 @@
+{
+ "n_train": 69561,
+ "n_test": 29813,
+ "deaths_train": 11039,
+ "deaths_test": 4731,
+ "cox_penalty_cv": {
+  "0.0": 0.814,
+  "0.001": 0.8141,
+  "0.01": 0.8151,
+  "0.05": 0.8155
+ },
+ "cox_penalty": 0.05,
+ "gbm_trees": 453,
+ "deepsurv_epochs": 25,
+ "deepsurv_val_C": 0.8174
+}

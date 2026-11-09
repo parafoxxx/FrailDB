@@ -1,0 +1,125 @@
+[  0.0 min] Loading SHARE cohort
+[  0.0 min] Split: 69,561 train / 29,813 test. Learning weights
+[  0.0 min]   Cox penalty 0.0: fold 1/5
+[  0.0 min]   Cox penalty 0.0: fold 2/5
+[  0.0 min]   Cox penalty 0.0: fold 3/5
+[  0.1 min]   Cox penalty 0.0: fold 4/5
+[  0.1 min]   Cox penalty 0.0: fold 5/5
+[  0.1 min]   Cox penalty 0.0: CV concordance 0.8140
+[  0.1 min]   Cox penalty 0.001: fold 1/5
+[  0.1 min]   Cox penalty 0.001: fold 2/5
+[  0.1 min]   Cox penalty 0.001: fold 3/5
+[  0.2 min]   Cox penalty 0.001: fold 4/5
+[  0.2 min]   Cox penalty 0.001: fold 5/5
+[  0.2 min]   Cox penalty 0.001: CV concordance 0.8141
+[  0.2 min]   Cox penalty 0.01: fold 1/5
+[  0.2 min]   Cox penalty 0.01: fold 2/5
+[  0.3 min]   Cox penalty 0.01: fold 3/5
+[  0.3 min]   Cox penalty 0.01: fold 4/5
+[  0.3 min]   Cox penalty 0.01: fold 5/5
+[  0.3 min]   Cox penalty 0.01: CV concordance 0.8151
+[  0.3 min]   Cox penalty 0.05: fold 1/5
+[  0.3 min]   Cox penalty 0.05: fold 2/5
+[  0.4 min]   Cox penalty 0.05: fold 3/5
+[  0.4 min]   Cox penalty 0.05: fold 4/5
+[  0.4 min]   Cox penalty 0.05: fold 5/5
+[  0.4 min]   Cox penalty 0.05: CV concordance 0.8155
+[  0.4 min] S1 Cox weights fitted (penalty 0.05). Fitting non-negative version
+[  0.5 min] Weights done. Training LightGBM
+[  0.5 min] LightGBM done (453 trees). Training neural network (MLP)
+[  0.6 min] MLP done. Training DeepSurv
+[  0.7 min]   DeepSurv epoch 1: validation C 0.7868
+[  0.7 min]   DeepSurv epoch 2: validation C 0.7931
+[  0.7 min]   DeepSurv epoch 3: validation C 0.8062
+[  0.7 min]   DeepSurv epoch 4: validation C 0.8111
+[  0.7 min]   DeepSurv epoch 5: validation C 0.8134
+[  0.7 min]   DeepSurv epoch 6: validation C 0.8150
+[  0.7 min]   DeepSurv epoch 7: validation C 0.8157
+[  0.7 min]   DeepSurv epoch 8: validation C 0.8162
+[  0.7 min]   DeepSurv epoch 9: validation C 0.8165
+[  0.7 min]   DeepSurv epoch 10: validation C 0.8168
+[  0.7 min]   DeepSurv epoch 11: validation C 0.8170
+[  0.7 min]   DeepSurv epoch 12: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 13: validation C 0.8171
+[  0.8 min]   DeepSurv epoch 14: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 15: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 16: validation C 0.8171
+[  0.8 min]   DeepSurv epoch 17: validation C 0.8173
+[  0.8 min]   DeepSurv epoch 18: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 19: validation C 0.8174
+[  0.8 min]   DeepSurv epoch 20: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 21: validation C 0.8174
+[  0.8 min]   DeepSurv epoch 22: validation C 0.8172
+[  0.8 min]   DeepSurv epoch 23: validation C 0.8174
+[  0.8 min]   DeepSurv epoch 24: validation C 0.8174
+[  0.8 min]   DeepSurv epoch 25: validation C 0.8172
+[  0.8 min] Evaluating all models on the 30% test set
+[  1.0 min] Bootstrap confidence intervals (300 resamples per comparison)
+[ 14.8 min] Done. Results written
+{
+ "n_train": 69561,
+ "n_test": 29813,
+ "deaths_train": 11039,
+ "deaths_test": 4731,
+ "cox_penalty_cv": {
+  "0.0": 0.814,
+  "0.001": 0.8141,
+  "0.01": 0.8151,
+  "0.05": 0.8155
+ },
+ "cox_penalty": 0.05,
+ "gbm_trees": 453,
+ "deepsurv_epochs": 25,
+ "deepsurv_val_C": 0.8174
+}
+                          model               kind  C_score_alone  C_with_age_sex  AUC5_score_alone  AUC5_with_age_sex  Brier5_with_age_sex  dC_with_age_sex  dC_with_age_sex_lo  dC_with_age_sex_hi  dAUC5_with_age_sex  dAUC5_with_age_sex_lo  dAUC5_with_age_sex_hi  dC_score_alone  dC_score_alone_lo  dC_score_alone_hi
+0           S0 equal (Rockwood)     weighted index         0.7146          0.8069            0.7343             0.8293               0.0732              NaN                 NaN                 NaN                 NaN                    NaN                    NaN             NaN                NaN                NaN
+1                S1 Cox weights     weighted index         0.7329          0.8168            0.7579             0.8416               0.0718           0.0099              0.0085              0.0113              0.0124                 0.0102                 0.0149          0.0182             0.0144             0.0220
+2  S1+ non-negative Cox weights     weighted index         0.7308          0.8156            0.7546             0.8401               0.0719           0.0088              0.0076              0.0100              0.0108                 0.0088                 0.0128          0.0161             0.0133             0.0191
+3           S2 cluster-balanced     weighted index         0.6978          0.8011            0.7121             0.8205               0.0744          -0.0057             -0.0068             -0.0045             -0.0088                -0.0110                -0.0067         -0.0168            -0.0200            -0.0136
+4     Cox, 32 free coefficients  linear, all items            NaN          0.8196               NaN             0.8440               0.0714           0.0127              0.0107              0.0149              0.0148                 0.0114                 0.0178             NaN                NaN                NaN
+5                   M1 LightGBM         ML ceiling            NaN             NaN               NaN             0.8441               0.0711              NaN                 NaN                 NaN              0.0149                 0.0112                 0.0183             NaN                NaN                NaN
+6       M2 neural network (MLP)       deep ceiling            NaN             NaN               NaN             0.8432               0.0713              NaN                 NaN                 NaN              0.0140                 0.0105                 0.0174             NaN                NaN                NaN
+7                   M3 DeepSurv       deep ceiling            NaN          0.8206               NaN             0.8426                  NaN           0.0137              0.0116              0.0159              0.0133                 0.0108                 0.0161             NaN                NaN                NaN
+8              Age and sex only          reference            NaN          0.7847               NaN             0.8026               0.0760          -0.0222                 NaN                 NaN             -0.0267                    NaN                    NaN             NaN                NaN                NaN
+                S0 equal (Rockwood)  S1 Cox weights  S1+ non-negative Cox weights  S2 cluster-balanced
+ADL                            18.8             9.1                           6.7                  4.3
+Disease                        25.0            39.3                          41.9                 57.1
+General health                  3.1             9.2                           9.5                  0.7
+IADL                           12.5            16.5                          17.6                  2.9
+Mobility                       31.2            21.3                          20.0                 13.6
+Mood                            3.1             2.5                           2.2                  7.1
+Senses                          6.2             2.2                           2.0                 14.3
+                                            label          domain  S0 equal (Rockwood)  S1 Cox weights  S1+ non-negative Cox weights  S2 cluster-balanced  cluster  share_of_total_S0_pct  S1+_share_pct  S2_share_pct
+d_cancer                                   Cancer         Disease                  1.0            2.24                          2.30                 2.29       14                   3.12          10.01          7.14
+d_srh                 Self-rated health fair/poor  General health                  1.0            2.21                          2.18                 0.23        6                   3.12           9.50          0.71
+d_diabetes                               Diabetes         Disease                  1.0            1.67                          1.71                 2.29        2                   3.12           7.43          7.14
+d_dementia                               Dementia         Disease                  1.0            1.63                          1.70                 2.29       12                   3.12           7.37          7.14
+d_adl_bath                           ADL: bathing             ADL                  1.0            1.41                          1.31                 0.23        8                   3.12           5.70          0.71
+d_mob_stairs_several    Several flights of stairs        Mobility                  1.0            1.39                          1.35                 0.23        6                   3.12           5.87          0.71
+d_lung                       Chronic lung disease         Disease                  1.0            1.37                          1.33                 2.29       13                   3.12           5.80          7.14
+d_stroke                                   Stroke         Disease                  1.0            1.30                          1.37                 2.29       11                   3.12           5.94          7.14
+d_heart                             Heart disease         Disease                  1.0            1.22                          1.23                 2.29        3                   3.12           5.34          7.14
+d_mob_walk                          Walking 100 m        Mobility                  1.0            1.21                          1.13                 0.23        6                   3.12           4.91          0.71
+d_iadl_money                          IADL: money            IADL                  1.0            1.15                          1.17                 0.23        8                   3.12           5.09          0.71
+d_iadl_meal                        IADL: hot meal            IADL                  1.0            1.01                          1.04                 0.23        8                   3.12           4.53          0.71
+d_iadl_meds                     IADL: medications            IADL                  1.0            0.98                          1.00                 0.23        8                   3.12           4.33          0.71
+d_iadl_shop                        IADL: shopping            IADL                  1.0            0.82                          0.84                 0.23        8                   3.12           3.65          0.71
+d_mob_stairs_one             One flight of stairs        Mobility                  1.0            0.80                          0.76                 0.23        6                   3.12           3.31          0.71
+d_mob_lift                           Lifting 5 kg        Mobility                  1.0            0.77                          0.70                 0.23        6                   3.12           3.06          0.71
+d_mob_push                Pushing/pulling objects        Mobility                  1.0            0.70                          0.63                 0.23        6                   3.12           2.73          0.71
+d_depression                  Depressive symptoms            Mood                  1.0            0.59                          0.52                 2.29        7                   3.12           2.24          7.14
+d_vision                                   Vision          Senses                  1.0            0.35                          0.32                 2.29        5                   3.12           1.38          7.14
+d_adl_walkroom           ADL: walking across room             ADL                  1.0            0.35                          0.18                 0.23        8                   3.12           0.80          0.71
+d_mob_stoop                     Stooping/kneeling        Mobility                  1.0            0.24                          0.04                 0.23        6                   3.12           0.17          0.71
+d_adl_toilet                          ADL: toilet             ADL                  1.0            0.22                          0.00                 0.23        8                   3.12           0.00          0.71
+d_adl_eat                             ADL: eating             ADL                  1.0            0.20                          0.05                 0.23        8                   3.12           0.24          0.71
+d_hearing                                 Hearing          Senses                  1.0            0.19                          0.14                 2.29        4                   3.12           0.62          7.14
+d_hypertension                       Hypertension         Disease                  1.0           -0.08                          0.00                 2.29        1                   3.12           0.00          7.14
+d_adl_dress                         ADL: dressing             ADL                  1.0           -0.14                          0.00                 0.23        8                   3.12           0.00          0.71
+d_mob_chair                 Getting up from chair        Mobility                  1.0           -0.17                          0.00                 0.23        6                   3.12           0.00          0.71
+d_mob_coin                        Picking up coin        Mobility                  1.0           -0.25                          0.00                 2.29        9                   3.12           0.00          7.14
+d_mob_arms                Reaching above shoulder        Mobility                  1.0           -0.26                          0.00                 0.23        6                   3.12           0.00          0.71
+d_mob_sit2h                       Sitting 2 hours        Mobility                  1.0           -0.38                          0.00                 0.23        6                   3.12           0.00          0.71
+d_adl_bed                      ADL: in/out of bed             ADL                  1.0           -0.40                          0.00                 0.23        8                   3.12           0.00          0.71
+d_arthritis                             Arthritis         Disease                  1.0           -0.89                          0.00                 2.29       10                   3.12           0.00          7.14

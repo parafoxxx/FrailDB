@@ -1,0 +1,33 @@
+covariate,label,women,men,age <70,age 70+,overall
+d_srh,Self-rated health fair/poor,0.2807,0.3567,0.3605,0.2675,0.3256
+d_hypertension,Hypertension,0.0393,-0.021,0.0551,-0.0735,0.0046
+d_diabetes,Diabetes,0.249,0.238,0.2524,0.2316,0.2451
+d_cancer,Cancer,0.3612,0.3784,0.5504,0.2444,0.3701
+d_lung,Chronic lung disease,0.0932,0.2493,0.3179,0.1346,0.1994
+d_heart,Heart disease,0.1389,0.1805,0.2218,0.1175,0.178
+d_stroke,Stroke,0.1533,0.1551,0.1729,0.1433,0.1652
+d_arthritis,Arthritis,-0.1214,-0.1257,-0.1136,-0.1668,-0.1387
+d_adl_dress,ADL: dressing,-0.0436,-0.0029,0.1281,-0.0576,-0.0102
+d_adl_bath,ADL: bathing,0.2118,0.1473,0.2828,0.1778,0.1868
+d_adl_eat,ADL: eating,-0.0228,0.1274,0.1018,0.0157,0.0352
+d_adl_toilet,ADL: toilet,0.0481,-0.1059,-0.162,0.0264,-0.02
+d_iadl_meal,IADL: hot meal,0.171,0.0898,0.1772,0.1842,0.1639
+d_iadl_shop,IADL: shopping,0.1385,0.1292,0.2324,0.09,0.1155
+d_hearing,Hearing,-0.013,0.0169,0.0021,-0.0244,0.0175
+d_depression,Depressive symptoms,0.0639,0.1406,0.0819,0.1018,0.0815
+d_mob_walk,Walking 100 m,0.2053,0.1887,0.2923,0.1613,0.1982
+d_mob_chair,Getting up from chair,-0.0363,0.0269,-0.052,-0.0051,-0.0166
+d_mob_stoop,Stooping/kneeling,0.0719,0.0214,0.0223,0.0086,0.0441
+d_mob_lift,Lifting 5 kg,0.1359,0.1075,0.1312,0.0538,0.0987
+d_adl_bed,ADL: in/out of bed,-0.0249,-0.069,-0.1138,-0.0124,-0.0433
+d_vision,Vision,0.0515,0.0622,0.0175,0.0429,0.0517
+d_adl_walkroom,ADL: walking across room,0.158,-0.0431,0.0956,0.0931,0.077
+d_mob_sit2h,Sitting 2 hours,-0.0741,-0.055,-0.1084,-0.0298,-0.0689
+d_mob_stairs_several,Several flights of stairs,0.2109,0.255,0.2101,0.1964,0.2286
+d_mob_stairs_one,One flight of stairs,0.1378,0.1513,0.2023,0.1012,0.1407
+d_mob_arms,Reaching above shoulder,-0.0126,-0.0584,-0.0649,-0.0205,-0.0391
+d_mob_push,Pushing/pulling objects,0.0829,0.1307,0.1096,0.0776,0.0921
+d_mob_coin,Picking up coin,-0.052,-0.0247,-0.0498,-0.0365,-0.0398
+d_iadl_meds,IADL: medications,0.0902,0.0954,0.1594,0.1116,0.1067
+d_iadl_money,IADL: money,0.1637,0.2168,0.2215,0.1903,0.1837
+d_dementia,Dementia,0.2778,0.1989,0.1657,0.2369,0.2413

@@ -1,0 +1,27 @@
+{
+ "n": 99374,
+ "deaths": 15770,
+ "person_years": 725478,
+ "fi_HR_per_0_1": 1.314,
+ "fi_C": 0.8051,
+ "full32_C": 0.8155,
+ "eigen_top5": [
+  7.94,
+  2.42,
+  1.29,
+  1.12,
+  1.03
+ ],
+ "var_explained_pc1": 0.248,
+ "effective_independent_deficits_LiJi": 25.0,
+ "n_clusters": 14,
+ "domain_items": {
+  "Mobility": 10,
+  "Disease": 8,
+  "ADL": 6,
+  "IADL": 4,
+  "Senses": 2,
+  "General health": 1,
+  "Mood": 1
+ }
+}

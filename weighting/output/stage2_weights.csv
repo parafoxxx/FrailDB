@@ -1,0 +1,33 @@
+,label,domain,S0 equal (Rockwood),S1 Cox weights,S1+ non-negative Cox weights,S2 cluster-balanced,cluster,share_of_total_S0_pct,S1+_share_pct,S2_share_pct
+d_srh,Self-rated health fair/poor,General health,1.0,2.2066,2.1848,0.2286,6,3.125,9.4993,0.7143
+d_hypertension,Hypertension,Disease,1.0,-0.0809,0.0,2.2857,1,3.125,0.0,7.1429
+d_diabetes,Diabetes,Disease,1.0,1.674,1.7095,2.2857,2,3.125,7.4327,7.1429
+d_cancer,Cancer,Disease,1.0,2.2377,2.3022,2.2857,14,3.125,10.0096,7.1429
+d_lung,Chronic lung disease,Disease,1.0,1.3685,1.3342,2.2857,13,3.125,5.8007,7.1429
+d_heart,Heart disease,Disease,1.0,1.2215,1.2272,2.2857,3,3.125,5.3355,7.1429
+d_stroke,Stroke,Disease,1.0,1.2996,1.3655,2.2857,11,3.125,5.9368,7.1429
+d_arthritis,Arthritis,Disease,1.0,-0.8921,0.0,2.2857,10,3.125,0.0,7.1429
+d_adl_dress,ADL: dressing,ADL,1.0,-0.1392,0.0,0.2286,8,3.125,0.0,0.7143
+d_adl_bath,ADL: bathing,ADL,1.0,1.4134,1.3118,0.2286,8,3.125,5.7037,0.7143
+d_adl_eat,ADL: eating,ADL,1.0,0.1955,0.0541,0.2286,8,3.125,0.235,0.7143
+d_adl_toilet,ADL: toilet,ADL,1.0,0.2169,0.0,0.2286,8,3.125,0.0,0.7143
+d_iadl_meal,IADL: hot meal,IADL,1.0,1.0064,1.0417,0.2286,8,3.125,4.5293,0.7143
+d_iadl_shop,IADL: shopping,IADL,1.0,0.8165,0.8392,0.2286,8,3.125,3.6485,0.7143
+d_hearing,Hearing,Senses,1.0,0.1851,0.1418,2.2857,4,3.125,0.6166,7.1429
+d_depression,Depressive symptoms,Mood,1.0,0.5909,0.5163,2.2857,7,3.125,2.2449,7.1429
+d_mob_walk,Walking 100 m,Mobility,1.0,1.2092,1.1288,0.2286,6,3.125,4.9079,0.7143
+d_mob_chair,Getting up from chair,Mobility,1.0,-0.1742,0.0,0.2286,6,3.125,0.0,0.7143
+d_mob_stoop,Stooping/kneeling,Mobility,1.0,0.2396,0.039,0.2286,6,3.125,0.1698,0.7143
+d_mob_lift,Lifting 5 kg,Mobility,1.0,0.7666,0.7029,0.2286,6,3.125,3.056,0.7143
+d_adl_bed,ADL: in/out of bed,ADL,1.0,-0.4012,0.0,0.2286,8,3.125,0.0,0.7143
+d_vision,Vision,Senses,1.0,0.353,0.318,2.2857,5,3.125,1.3824,7.1429
+d_adl_walkroom,ADL: walking across room,ADL,1.0,0.3524,0.1836,0.2286,8,3.125,0.7984,0.7143
+d_mob_sit2h,Sitting 2 hours,Mobility,1.0,-0.377,0.0,0.2286,6,3.125,0.0,0.7143
+d_mob_stairs_several,Several flights of stairs,Mobility,1.0,1.3908,1.3491,0.2286,6,3.125,5.8655,0.7143
+d_mob_stairs_one,One flight of stairs,Mobility,1.0,0.7959,0.7608,0.2286,6,3.125,3.308,0.7143
+d_mob_arms,Reaching above shoulder,Mobility,1.0,-0.2572,0.0,0.2286,6,3.125,0.0,0.7143
+d_mob_push,Pushing/pulling objects,Mobility,1.0,0.7033,0.6272,0.2286,6,3.125,2.7267,0.7143
+d_mob_coin,Picking up coin,Mobility,1.0,-0.2478,0.0,2.2857,9,3.125,0.0,7.1429
+d_iadl_meds,IADL: medications,IADL,1.0,0.9806,0.9965,0.2286,8,3.125,4.3324,0.7143
+d_iadl_money,IADL: money,IADL,1.0,1.1479,1.1698,0.2286,8,3.125,5.0859,0.7143
+d_dementia,Dementia,Disease,1.0,1.6284,1.6961,2.2857,12,3.125,7.3743,7.1429

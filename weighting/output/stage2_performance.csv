@@ -1,0 +1,10 @@
+model,kind,C_score_alone,C_with_age_sex,AUC5_score_alone,AUC5_with_age_sex,Brier5_with_age_sex,dC_with_age_sex,dC_with_age_sex_lo,dC_with_age_sex_hi,dAUC5_with_age_sex,dAUC5_with_age_sex_lo,dAUC5_with_age_sex_hi,dC_score_alone,dC_score_alone_lo,dC_score_alone_hi
+S0 equal (Rockwood),weighted index,0.7146,0.8069,0.7343,0.8293,0.0732,,,,,,,,,
+S1 Cox weights,weighted index,0.7329,0.8168,0.7579,0.8416,0.0718,0.0099,0.0085,0.0113,0.0124,0.0102,0.0149,0.0182,0.0144,0.022
+S1+ non-negative Cox weights,weighted index,0.7308,0.8156,0.7546,0.8401,0.0719,0.0088,0.0076,0.01,0.0108,0.0088,0.0128,0.0161,0.0133,0.0191
+S2 cluster-balanced,weighted index,0.6978,0.8011,0.7121,0.8205,0.0744,-0.0057,-0.0068,-0.0045,-0.0088,-0.011,-0.0067,-0.0168,-0.02,-0.0136
+"Cox, 32 free coefficients","linear, all items",,0.8196,,0.844,0.0714,0.0127,0.0107,0.0149,0.0148,0.0114,0.0178,,,
+M1 LightGBM,ML ceiling,,,,0.8441,0.0711,,,,0.0149,0.0112,0.0183,,,
+M2 neural network (MLP),deep ceiling,,,,0.8432,0.0713,,,,0.014,0.0105,0.0174,,,
+M3 DeepSurv,deep ceiling,,0.8206,,0.8426,,0.0137,0.0116,0.0159,0.0133,0.0108,0.0161,,,
+Age and sex only,reference,,0.7847,,0.8026,0.076,-0.0222,,,-0.0267,,,,,

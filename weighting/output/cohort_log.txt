@@ -1,0 +1,7 @@
+SHARE FI assessments, waves 2/4/5/6/8/9: 332,837 (139,683 people)
+SHARE deaths: 18,654 with a date (end-of-life interviews); 21,758 people flagged deceased in a coverscreen
+SHARE: 366 deaths without a date imputed; 268 death dates earlier than the last interview alive (moved to that interview)
+SHARE baseline cohort: 124,293 people; 99,374 with follow-up; deaths 15,770; person-years 725,478; median follow-up 6.8 y
+SHARE 5-year status known: 72,549 (deaths 7,345)
+ELSA wave 1 FI: 11,004; matched to index file: 11,004
+ELSA with mortality status: 11,004; died ~4 y: 905; died ~10 y: 2,361

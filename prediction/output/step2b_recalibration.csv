@@ -1,0 +1,5 @@
+test,version,observed,predicted,calib_in_large,calib_slope,AUC,Brier
+internal (2011-13 baseline),as trained,0.1936,0.1944,-0.0008,1.0353,0.8444,0.1102
+internal (2011-13 baseline),recalibrated for the later period,0.1936,0.1521,0.0415,1.0159,0.8444,0.1129
+temporal (2015 baseline),as trained,0.1764,0.2311,-0.0547,0.9938,0.839,0.1105
+temporal (2015 baseline),recalibrated for the later period,0.1764,0.1836,-0.0073,0.9744,0.839,0.1061

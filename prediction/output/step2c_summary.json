@@ -1,0 +1,36 @@
+{
+ "cls": {
+  "AUC": {
+   "median": 0.8304,
+   "min": 0.7861,
+   "max": 0.8816,
+   "weighted_mean": 0.8364
+  },
+  "calib_in_large": {
+   "median": -0.0035,
+   "min": -0.071,
+   "max": 0.0748,
+   "weighted_mean": -0.0007
+  },
+  "calib_slope": {
+   "median": 0.9878,
+   "min": 0.8718,
+   "max": 1.173,
+   "weighted_mean": 1.0141
+  }
+ },
+ "reg": {
+  "MAE": {
+   "median": 0.0649,
+   "min": 0.0483,
+   "max": 0.0855,
+   "weighted_mean": 0.0662
+  },
+  "R2": {
+   "median": 0.4995,
+   "min": 0.437,
+   "max": 0.5898,
+   "weighted_mean": 0.5143
+  }
+ }
+}

@@ -1,0 +1,84 @@
+[  0.0 min] Loaded 180,653 rows; sets: {'train': 82127, 'unused': 44462, 'internal': 34996, 'temporal': 19068}; 88 input variables
+[  0.0 min] [cls] inverse-probability-of-censoring weights
+[  0.1 min] [cls] train 38,065 rows (28,720 people), internal test 16,116, temporal test 8,442; outcome mean train 0.191
+[  0.1 min] [cls] M1 elastic net: tuning
+[  0.2 min]     l1_ratio 0.0, C 0.01: CV AUC 0.8334
+[  0.3 min]     l1_ratio 0.0, C 0.1: CV AUC 0.8332
+[  0.4 min]     l1_ratio 0.0, C 1.0: CV AUC 0.8331
+[  0.6 min]     l1_ratio 0.5, C 0.01: CV AUC 0.8330
+[  0.7 min]     l1_ratio 0.5, C 0.1: CV AUC 0.8333
+[  0.9 min]     l1_ratio 0.5, C 1.0: CV AUC 0.8331
+[  1.1 min]     l1_ratio 1.0, C 0.01: CV AUC 0.8316
+[  1.2 min]     l1_ratio 1.0, C 0.1: CV AUC 0.8334
+[  1.3 min]     l1_ratio 1.0, C 1.0: CV AUC 0.8332
+[  1.8 min] [cls] M1 chosen: (0.8334360523897858, 1.0, 0.1)
+[  1.8 min] [cls] M2 LightGBM: random search, 3-fold grouped CV
+[  1.9 min]     config 1/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8322
+[  2.0 min]     config 2/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 63, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8251
+[  2.1 min]     config 3/16 {'subsample': 0.9, 'reg_lambda': 5, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8331
+[  2.2 min]     config 4/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 300, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8304
+[  2.3 min]     config 5/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8329
+[  2.6 min]     config 6/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.8}: CV AUC 0.8307
+[  2.7 min]     config 7/16 {'subsample': 0.9, 'reg_lambda': 0, 'num_leaves': 31, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.5}: CV AUC 0.8348
+[  2.9 min]     config 8/16 {'subsample': 0.9, 'reg_lambda': 0, 'num_leaves': 15, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.5}: CV AUC 0.8352
+[  2.9 min]     config 9/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 31, 'n_estimators': 300, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8321
+[  3.2 min]     config 10/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV AUC 0.8196
+[  3.4 min]     config 11/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 63, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8238
+[  3.5 min]     config 12/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8330
+[  3.7 min]     config 13/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 1000, 'min_child_samples': 200, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8308
+[  3.8 min]     config 14/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 31, 'n_estimators': 300, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8337
+[  3.9 min]     config 15/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 31, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.8}: CV AUC 0.8350
+[  4.2 min]     config 16/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 200, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV AUC 0.8205
+[  4.3 min] [cls] M3 neural network: tuning
+[  4.6 min]     layers (64, 32), alpha 0.001: CV 0.8257
+[  4.8 min]     layers (64, 32), alpha 0.01: CV 0.8259
+[  5.2 min]     layers (128, 64), alpha 0.001: CV 0.8256
+[  5.5 min]     layers (128, 64), alpha 0.01: CV 0.8260
+[  5.7 min] [cls] evaluating on the internal and temporal test sets (with bootstrap)
+[  6.0 min] [cls] done
+       test                        model        n  events     AUC  AUC_ipcw   Brier  calib_in_large  calib_slope  NB_10pct  NB_20pct  NB_30pct  gain_vs_ref  gain_lo  gain_hi
+0  internal  M0 reference (age, sex, FI)  16116.0  3120.0  0.8028    0.8012  0.1215         -0.0052       1.0253    0.1259    0.0864    0.0608          NaN      NaN      NaN
+1  internal               M1 elastic net  16116.0  3120.0  0.8378    0.8371  0.1121         -0.0020       1.0280    0.1338    0.0987    0.0724       0.0350   0.0304   0.0405
+2  internal                  M2 LightGBM  16116.0  3120.0  0.8444    0.8438  0.1102         -0.0008       1.0353    0.1357    0.0996    0.0745       0.0416   0.0369   0.0471
+3  internal            M3 neural network  16116.0  3120.0  0.8310    0.8301  0.1150          0.0120       0.9376    0.1323    0.0932    0.0666       0.0281   0.0226   0.0345
+4  internal  Treat everyone as high risk      NaN     NaN     NaN       NaN     NaN             NaN          NaN    0.1040   -0.0080   -0.1520          NaN      NaN      NaN
+5  temporal  M0 reference (age, sex, FI)   8442.0  1489.0  0.8029    0.8025  0.1155         -0.0178       1.0365    0.1088    0.0739    0.0506          NaN      NaN      NaN
+6  temporal               M1 elastic net   8442.0  1489.0  0.8278    0.8309  0.1147         -0.0565       0.9624    0.1138    0.0788    0.0519       0.0249   0.0178   0.0322
+7  temporal                  M2 LightGBM   8442.0  1489.0  0.8390    0.8408  0.1105         -0.0547       0.9938    0.1171    0.0806    0.0545       0.0362   0.0295   0.0430
+8  temporal            M3 neural network   8442.0  1489.0  0.8197    0.8217  0.1149         -0.0485       0.9322    0.1119    0.0755    0.0490       0.0168   0.0074   0.0251
+9  temporal  Treat everyone as high risk      NaN     NaN     NaN       NaN     NaN             NaN          NaN    0.0849   -0.0295   -0.1766          NaN      NaN      NaN
+[  6.0 min] [reg] inverse-probability-of-censoring weights
+[  6.1 min] [reg] train 40,072 rows (30,214 people), internal test 17,032, temporal test 8,943; outcome mean train 0.133
+[  6.1 min] [reg] M1 elastic net: tuning
+[  6.2 min] [reg] M1 chosen: ('cv', 1.0, 0.00037039501454387823)
+[  6.2 min] [reg] M2 LightGBM: random search, 3-fold grouped CV
+[  6.3 min]     config 1/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0669
+[  6.4 min]     config 2/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 63, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0679
+[  6.5 min]     config 3/16 {'subsample': 0.9, 'reg_lambda': 5, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0668
+[  6.6 min]     config 4/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 300, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0669
+[  6.7 min]     config 5/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0668
+[  7.0 min]     config 6/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.8}: CV -MAE -0.0670
+[  7.1 min]     config 7/16 {'subsample': 0.9, 'reg_lambda': 0, 'num_leaves': 31, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.5}: CV -MAE -0.0667
+[  7.3 min]     config 8/16 {'subsample': 0.9, 'reg_lambda': 0, 'num_leaves': 15, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.5}: CV -MAE -0.0667
+[  7.3 min]     config 9/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 31, 'n_estimators': 300, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0668
+[  7.6 min]     config 10/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.8}: CV -MAE -0.0684
+[  7.8 min]     config 11/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 63, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0680
+[  7.9 min]     config 12/16 {'subsample': 0.7, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 600, 'min_child_samples': 100, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0668
+[  8.1 min]     config 13/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 15, 'n_estimators': 1000, 'min_child_samples': 200, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0670
+[  8.1 min]     config 14/16 {'subsample': 0.7, 'reg_lambda': 5, 'num_leaves': 31, 'n_estimators': 300, 'min_child_samples': 50, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0668
+[  8.2 min]     config 15/16 {'subsample': 0.7, 'reg_lambda': 0, 'num_leaves': 31, 'n_estimators': 600, 'min_child_samples': 50, 'learning_rate': 0.02, 'colsample_bytree': 0.8}: CV -MAE -0.0666
+[  8.6 min]     config 16/16 {'subsample': 0.9, 'reg_lambda': 1, 'num_leaves': 63, 'n_estimators': 1000, 'min_child_samples': 200, 'learning_rate': 0.05, 'colsample_bytree': 0.5}: CV -MAE -0.0686
+[  8.6 min] [reg] M3 neural network: tuning
+[  9.1 min]     layers (64, 32), alpha 0.001: CV -0.0758
+[  9.7 min]     layers (64, 32), alpha 0.01: CV -0.0727
+[ 10.4 min]     layers (128, 64), alpha 0.001: CV -0.0778
+[ 11.3 min]     layers (128, 64), alpha 0.01: CV -0.0744
+[ 11.6 min] [reg] evaluating on the internal and temporal test sets (with bootstrap)
+Traceback (most recent call last):
+  File "D:\Database - portal\FrailDB\prediction\step2_models.py", line 237, in <module>
+    R, models, preds, it, tt = run(kind, A, feats)
+                               ^^^^^^^^^^^^^^^^^^^
+  File "D:\Database - portal\FrailDB\prediction\step2_models.py", line 226, in run
+    pickle.dump(dict(models=models, feats=feats, tuning=dict(enet=best, lgbm=best_g, mlp=best_n)), open(os.path.join(CACHE, f"step2_{kind}_models.pkl"), "wb"))
+TypeError: cannot pickle 'generator' object
+step 2 exited: 1

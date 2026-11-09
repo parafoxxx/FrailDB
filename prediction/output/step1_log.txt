@@ -1,0 +1,6 @@
+Deaths known: 21,758 people
+w2->w4: 34,841 baseline; FI at follow-up 17,493; died 868; lost 16,480; median 4.2 y; not frail at baseline 29,370; of whom frail-or-dead 2,085
+w4->w6: 54,662 baseline; FI at follow-up 31,729; died 3,184; lost 19,749; median 3.9 y; not frail at baseline 44,323; of whom frail-or-dead 4,568
+w5->w8: 62,461 baseline; FI at follow-up 25,375; died 5,941; lost 31,145; median 6.7 y; not frail at baseline 51,985; of whom frail-or-dead 5,830
+w6->w8: 63,530 baseline; FI at follow-up 29,882; died 4,345; lost 29,303; median 4.7 y; not frail at baseline 52,738; of whom frail-or-dead 5,118
+All windows: 215,494 rows, 107,624 people

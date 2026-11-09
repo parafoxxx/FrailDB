@@ -1,0 +1,42 @@
+{
+ "elsa": {
+  "n": 11004,
+  "deaths4": 905,
+  "deaths10": 2361
+ },
+ "loco": {
+  "countries": 22,
+  "weight_rank_corr_median": 0.996,
+  "weight_rank_corr_min": 0.979,
+  "dC_median": 0.0164,
+  "dC_min": -0.005,
+  "dC_max": 0.0599,
+  "countries_improved": 21
+ },
+ "groups": {
+  "weight_corr_with_overall": {
+   "women": 0.953,
+   "men": 0.945,
+   "age <70": 0.925,
+   "age 70+": 0.953
+  },
+  "women_vs_men": 0.823,
+  "young_vs_old": 0.809,
+  "interaction_tests": {
+   "sex": {
+    "LR_chi2": 133.3,
+    "df": 32,
+    "p": 2.5361928317807136e-14,
+    "C_without": 0.8173,
+    "C_with_interactions": 0.8179
+   },
+   "age 70+": {
+    "LR_chi2": 79.5,
+    "df": 32,
+    "p": 6.353669354301087e-06,
+    "C_without": 0.8151,
+    "C_with_interactions": 0.8154
+   }
+  }
+ }
+}

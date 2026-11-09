@@ -1,0 +1,17 @@
+{
+ "recalibration": {
+  "intercept": -0.3924,
+  "slope": 1.0197,
+  "n": 19921
+ },
+ "cls_group_share": {
+  "changeable": 22.4,
+  "fixed": 72.4,
+  "follow-up length": 5.2
+ },
+ "reg_group_share": {
+  "changeable": 14.8,
+  "fixed": 82.9,
+  "follow-up length": 2.3
+ }
+}

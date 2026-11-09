@@ -1,0 +1,23 @@
+outcome,model,predictors,AUC,dAUC_vs_equal,lo,hi
+dead4,S0 equal (Rockwood),alone,0.7189,0.0,0.0,0.0
+dead4,S0 equal (Rockwood),age+sex,0.8068,0.0,0.0,0.0
+dead4,S1 Cox weights,alone,0.7354,0.0165,0.0065,0.0262
+dead4,S1 Cox weights,age+sex,0.8198,0.013,0.0087,0.0167
+dead4,S1+ non-negative Cox weights,alone,0.7357,0.0168,0.0091,0.0236
+dead4,S1+ non-negative Cox weights,age+sex,0.8184,0.0116,0.0082,0.0148
+dead4,S2 cluster-balanced,alone,0.7081,-0.0108,-0.0186,-0.0026
+dead4,S2 cluster-balanced,age+sex,0.8017,-0.0051,-0.0087,-0.0014
+dead4,M1 LightGBM (SHARE-trained),age+sex,0.8228,0.016,0.0098,0.0223
+dead4,M2 neural network (SHARE-trained),age+sex,0.818,0.0112,0.005,0.0188
+dead4,Age and sex only,age+sex,0.7742,-0.0326,-0.0407,-0.0241
+dead10,S0 equal (Rockwood),alone,0.7058,0.0,0.0,0.0
+dead10,S0 equal (Rockwood),age+sex,0.8393,0.0,0.0,0.0
+dead10,S1 Cox weights,alone,0.7134,0.0076,0.001,0.0138
+dead10,S1 Cox weights,age+sex,0.8466,0.0072,0.0051,0.0093
+dead10,S1+ non-negative Cox weights,alone,0.7157,0.0099,0.0053,0.015
+dead10,S1+ non-negative Cox weights,age+sex,0.8457,0.0064,0.0047,0.0082
+dead10,S2 cluster-balanced,alone,0.697,-0.0088,-0.0142,-0.0029
+dead10,S2 cluster-balanced,age+sex,0.8358,-0.0036,-0.0054,-0.0017
+dead10,M1 LightGBM (SHARE-trained),age+sex,0.8418,0.0025,-0.0016,0.0064
+dead10,M2 neural network (SHARE-trained),age+sex,0.835,-0.0043,-0.0093,0.0009
+dead10,Age and sex only,age+sex,0.8194,-0.02,-0.0244,-0.0164

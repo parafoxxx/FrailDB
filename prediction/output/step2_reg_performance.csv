@@ -1,0 +1,11 @@
+test,model,n,MAE,RMSE,R2,R2_ipcw,gain_vs_ref,gain_lo,gain_hi
+internal,"M0 reference (age, sex, FI)",17032,0.0709,0.1013,0.4837,0.4895,,,
+internal,M1 elastic net,17032,0.0676,0.0973,0.5241,0.5289,0.0032,0.0029,0.0036
+internal,M2 LightGBM,17032,0.0665,0.0964,0.5328,0.538,0.0043,0.0039,0.0047
+internal,M3 neural network,17032,0.0719,0.1054,0.4412,0.4528,-0.001,-0.0017,-0.0003
+internal,No change (FI stays as now),17032,0.0713,0.1102,0.3889,,,,
+temporal,"M0 reference (age, sex, FI)",8943,0.0691,0.0984,0.5077,0.5093,,,
+temporal,M1 elastic net,8943,0.0681,0.0962,0.5293,0.5338,0.0009,0.0005,0.0015
+temporal,M2 LightGBM,8943,0.0662,0.0949,0.5417,0.5436,0.0028,0.0022,0.0034
+temporal,M3 neural network,8943,0.0744,0.1074,0.4134,0.4236,-0.0054,-0.0063,-0.0043
+temporal,No change (FI stays as now),8943,0.0674,0.1059,0.4295,,,,
