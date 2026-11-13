@@ -493,20 +493,34 @@ def levers(cohort, prep, out, cache):
 
 
 # ------------------------------------------------------------------ predictor bundle
+def _grade(E):
+    """clear = benefit significant in both analyses after Holm correction across all habits tested;
+    suggestive = nominally significant (p < 0.05) benefit in either analysis; else no evidence."""
+    import numpy as np
+    out = {}
+    for spec, g in E.groupby(E.spec.str.split(" ").str[0]):
+        g = g.sort_values("p"); k = len(g)
+        holm = np.maximum.accumulate(np.minimum(1, g.p.values * (k - np.arange(k))))
+        for lever, rr, p, h in zip(g.lever, g.RR, g.p, holm):
+            out.setdefault(lever, []).append((rr < 1 and h < 0.05, rr < 1 and p < 0.05))
+    return {k: "clear" if all(a for a, _ in v) else ("suggestive" if any(b for _, b in v) else "no evidence") for k, v in out.items()}
+
+
 def bundle(cohort, prep, A, feats, out, cache):
     M = prep["meta"]
     cls = pickle.load(open(os.path.join(cache, "step2_cls_models.pkl"), "rb"))
     reg = pickle.load(open(os.path.join(cache, "step2_reg_models.pkl"), "rb"))
     rec = json.load(open(os.path.join(out, "step2b_summary.json")))["recalibration"]
+    if M.get("recalibrate", True) is False: rec = dict(intercept=0.0, slope=1.0)   # model already calibrated: use as trained
     effects = {}
     ef = os.path.join(out, "step3_lever_effects.csv")
     if os.path.exists(ef):
         E = pd.read_csv(ef); E = E[E.outcome == "frail or dead"]
         pr = E[E.spec.str.startswith("primary")].set_index("lever"); se = E[E.spec.str.startswith("sensitivity")].set_index("lever")
+        grades = _grade(E)
         for k in pr.index:
             a, b = pr.loc[k], se.loc[k]
-            sig = lambda r: round(r.RR_hi, 2) < 1
-            grade = "clear" if sig(a) and sig(b) else ("suggestive" if sig(a) or sig(b) else "no evidence")
+            grade = grades[k]
             cons = a if abs(np.log(a.RR)) <= abs(np.log(b.RR)) else b
             effects[k] = dict(label=a.label, grade=grade, RR=float(cons.RR), RR_lo=float(cons.RR_lo), RR_hi=float(cons.RR_hi),
                               RR_primary=float(a.RR), RR_sensitivity=float(b.RR), n=int(a.n))

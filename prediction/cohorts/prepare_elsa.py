@@ -105,7 +105,7 @@ if __name__ == "__main__":
     lev = ["smoke_now", "smoke_ever", "drinks_week", "drink_days", "heavy_drink", "vigorous_freq", "moderate_freq", "light_freq",
            "vigorous_weekly", "inactive", "bmi", "loneliness", "lonely", "sleep_trouble", "social_any"]
     meta = dict(cohort="ELSA", years={int(k): float(v) for k, v in yr.items()}, windows=windows, temporal=temporal, triplets=triplets,
-                fixed=fixed, levers=lev, region="region", death_complete_wave=DCW, region_names=REGIONS, t1_health=["fi", "d_srh", "cesd", "pain"],
+                fixed=fixed, levers=lev, region="region", death_complete_wave=DCW, recalibrate=False, region_names=REGIONS, t1_health=["fi", "d_srh", "cesd", "pain"],
                 notes=["Deaths are recorded only up to wave 6 (2012) in the End User Licence files: the frail-or-dead model and the lever "
                        "analysis use windows ending by 2012 (later period = windows ending at wave 6); the frailty-score model uses all windows.",
                        "Frailty files for waves 2 and 11 are not on disk, so those waves are not used.",
