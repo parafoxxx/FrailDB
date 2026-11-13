@@ -1,0 +1,19 @@
+kind,region,n,observed,predicted,AUC,calib_in_large,calib_slope,MAE,R2
+cls,South East,12680,0.1179,0.1158,0.8598,0.0021,0.965,,
+cls,East of England,9647,0.1165,0.1246,0.8614,-0.0081,1.0251,,
+cls,South West,8773,0.1335,0.1289,0.8741,0.0045,1.0515,,
+cls,North West,8274,0.1441,0.1392,0.8558,0.0049,0.9443,,
+cls,West Midlands,7773,0.14,0.1417,0.8633,-0.0017,1.0253,,
+cls,Yorkshire and The Humber,7498,0.1388,0.1468,0.8481,-0.0079,0.9517,,
+cls,East Midlands,7490,0.1461,0.1346,0.8673,0.0115,1.0573,,
+cls,London,6268,0.1339,0.1391,0.8507,-0.0053,0.9199,,
+cls,North East,3989,0.1675,0.1659,0.8448,0.0016,0.9844,,
+reg,South East,13645,,,,,,0.0537,0.651
+reg,East of England,10759,,,,,,0.0566,0.6555
+reg,South West,9680,,,,,,0.0552,0.6662
+reg,North West,9416,,,,,,0.061,0.6636
+reg,West Midlands,8873,,,,,,0.0597,0.655
+reg,East Midlands,8799,,,,,,0.0622,0.6941
+reg,Yorkshire and The Humber,8684,,,,,,0.062,0.6463
+reg,London,7029,,,,,,0.0602,0.6577
+reg,North East,4939,,,,,,0.0651,0.6552

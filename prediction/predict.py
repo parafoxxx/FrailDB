@@ -90,6 +90,11 @@ def predict(B, person, country, years=5.0, top=5):
         if f.startswith("ctry_"): x[f] = float(f == f"ctry_{int(country)}")
     x = x.astype(float)
     out = {"fi_5y": round(float(np.clip(B["reg"].predict(x)[0], 0, 1)), 3)}
+    age = person.get("age")
+    if age is None or age < 50:
+        out["age_warning"] = "The model was built on people aged 50 and over; below 50 it treats the person like a 50-year-old, so the result is not valid."
+    elif age >= 90:
+        out["age_warning"] = "Few people aged 90+ were in the training data (about 1% of rows), so this prediction is less certain."
     frail_now = person.get("fi", 0) >= FRAIL
     if frail_now:
         out["risk_5y"] = None

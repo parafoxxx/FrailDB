@@ -1,0 +1,179 @@
+[  0.0 min] ELSA: 121,743 rows from 18,396 people; windows {'w1->w3': 11004, 'w1->w4': 11004, 'w3->w5': 8967, 'w3->w6': 8967, 'w4->w6': 10132, 'w4->w7': 10132, 'w5->w7': 9257, 'w5->w8': 9257, 'w6->w8': 9459, 'w6->w9': 9459, 'w7->w9': 8616, 'w8->w10': 7657, 'w9->w10': 7832}; sets {'train': 74519, 'internal': 31735, 'unused': 10805, 'temporal': 4684}; 73 inputs
+[  0.0 min] status by window: {"w1->w3": {"fi": 0.653, "lost": 0.264, "dead": 0.082}, "w1->w4": {"fi": 0.565, "lost": 0.305, "dead": 0.13}, "w3->w5": {"fi": 0.719, "lost": 0.208, "dead": 0.073}, "w3->w6": {"fi": 0.655, "lost": 0.238, "dead": 0.108}, "w4->w6": {"fi": 0.758, "lost": 0.183, "dead": 0.059}, "w4->w7": {"fi": 0.669, "lost": 0.273, "dead": 0.059}, "w5->w7": {"fi": 0.752, "lost": 0.228, "dead": 0.02}, "w5->w8": {"fi": 0.667, "lost": 0.313, "dead": 0.02}, "w6->w8": {"fi": 0.732, "lost": 0.268}, "w6->w9": {"fi": 0.649, "lost": 0.351}, "w7->w9": {"fi": 0.741, "lost": 0.259}, "w8->w10": {"fi": 0.566, "lost": 0.434}, "w9->w10": {"fi": 0.632, "lost": 0.368}}
+[  0.0 min] [cls] censoring weights
+[  0.0 min] [cls] train 45,100 rows (8,163 people), internal test 19,435, later-period test 2,390; outcome mean 0.136
+[  0.0 min] [cls] M1 elastic net: tuning
+[  0.2 min]     l1_ratio 0.0, C 0.01: CV AUC 0.8540
+[  0.3 min]     l1_ratio 0.0, C 0.1: CV AUC 0.8537
+[  0.5 min]     l1_ratio 0.0, C 1.0: CV AUC 0.8537
+[  0.9 min]     l1_ratio 0.5, C 0.01: CV AUC 0.8541
+[  1.1 min]     l1_ratio 0.5, C 0.1: CV AUC 0.8540
+[  1.3 min]     l1_ratio 0.5, C 1.0: CV AUC 0.8537
+[  1.6 min]     l1_ratio 1.0, C 0.01: CV AUC 0.8536
+[  1.8 min]     l1_ratio 1.0, C 0.1: CV AUC 0.8541
+[  2.0 min]     l1_ratio 1.0, C 1.0: CV AUC 0.8537
+[  2.6 min] [cls] M2 LightGBM: random search, 3-fold grouped CV
+[  2.6 min]     config 1/16: CV AUC 0.8506
+[  2.8 min]     config 2/16: CV AUC 0.8391
+[  2.9 min]     config 3/16: CV AUC 0.8505
+[  3.0 min]     config 4/16: CV AUC 0.8483
+[  3.1 min]     config 5/16: CV AUC 0.8518
+[  3.4 min]     config 6/16: CV AUC 0.8469
+[  3.6 min]     config 7/16: CV AUC 0.8548
+[  3.7 min]     config 8/16: CV AUC 0.8548
+[  3.8 min]     config 9/16: CV AUC 0.8496
+[  4.1 min]     config 10/16: CV AUC 0.8330
+[  4.3 min]     config 11/16: CV AUC 0.8403
+[  4.4 min]     config 12/16: CV AUC 0.8512
+[  4.6 min]     config 13/16: CV AUC 0.8461
+[  4.6 min]     config 14/16: CV AUC 0.8524
+[  4.7 min]     config 15/16: CV AUC 0.8539
+[  5.1 min]     config 16/16: CV AUC 0.8361
+[  5.1 min] [cls] M3 neural network: tuning
+[  5.7 min]     layers (64, 32), alpha 0.001: CV 0.8147
+[  6.0 min]     layers (64, 32), alpha 0.01: CV 0.8420
+[  6.9 min]     layers (128, 64), alpha 0.001: CV 0.7849
+[  7.7 min]     layers (128, 64), alpha 0.01: CV 0.7860
+[  8.0 min] [cls] evaluating
+       test                        model        n  events     AUC  AUC_ipcw   Brier  calib_in_large  calib_slope  NB_10pct  NB_20pct  NB_30pct  gain_vs_ref  gain_lo  gain_hi
+0  internal  M0 reference (age, sex, FI)  19435.0  2690.0  0.8277    0.8264  0.0923          0.0000       1.0356    0.0822    0.0547    0.0352          NaN      NaN      NaN
+1  internal               M1 elastic net  19435.0  2690.0  0.8561    0.8552  0.0875          0.0027       1.0637    0.0881    0.0625    0.0427       0.0284   0.0245   0.0328
+2  internal                  M2 LightGBM  19435.0  2690.0  0.8600    0.8589  0.0867          0.0029       0.9899    0.0890    0.0626    0.0442       0.0324   0.0270   0.0373
+3  internal            M3 neural network  19435.0  2690.0  0.8065    0.8038  0.1030          0.0126       0.5291    0.0731    0.0455    0.0273      -0.0212  -0.0286  -0.0141
+4  internal  Treat everyone as high risk      NaN     NaN     NaN       NaN     NaN             NaN          NaN    0.0427   -0.0770   -0.2308          NaN      NaN      NaN
+5  temporal  M0 reference (age, sex, FI)   2390.0   274.0  0.8410    0.8370  0.0794         -0.0162       1.1760    0.0651    0.0385    0.0261          NaN      NaN      NaN
+6  temporal               M1 elastic net   2390.0   274.0  0.8577    0.8530  0.0796          0.0239       1.1102    0.0652    0.0388    0.0262       0.0166   0.0056   0.0270
+7  temporal                  M2 LightGBM   2390.0   274.0  0.8625    0.8571  0.0786          0.0298       1.0262    0.0625    0.0403    0.0288       0.0215   0.0074   0.0390
+8  temporal            M3 neural network   2390.0   274.0  0.7992    0.8009  0.0911          0.0420       0.4739    0.0542    0.0303    0.0152      -0.0419  -0.0681  -0.0190
+9  temporal  Treat everyone as high risk      NaN     NaN     NaN       NaN     NaN             NaN          NaN    0.0163   -0.1067   -0.2648          NaN      NaN      NaN
+[  8.3 min] [reg] censoring weights
+[  8.4 min] [reg] train 50,860 rows (8,685 people), internal test 21,911, later-period test 2,778; outcome mean 0.138
+[  8.4 min] [reg] M1 elastic net: tuning
+[  8.5 min] [reg] M2 LightGBM: random search, 3-fold grouped CV
+[  8.6 min]     config 1/16: CV -MAE -0.0591
+[  8.8 min]     config 2/16: CV -MAE -0.0602
+[  8.9 min]     config 3/16: CV -MAE -0.0591
+[  9.0 min]     config 4/16: CV -MAE -0.0593
+[  9.1 min]     config 5/16: CV -MAE -0.0591
+[  9.5 min]     config 6/16: CV -MAE -0.0594
+[  9.6 min]     config 7/16: CV -MAE -0.0588
+[  9.8 min]     config 8/16: CV -MAE -0.0588
+[  9.9 min]     config 9/16: CV -MAE -0.0590
+[ 10.2 min]     config 10/16: CV -MAE -0.0607
+[ 10.4 min]     config 11/16: CV -MAE -0.0601
+[ 10.5 min]     config 12/16: CV -MAE -0.0590
+[ 10.7 min]     config 13/16: CV -MAE -0.0592
+[ 10.8 min]     config 14/16: CV -MAE -0.0590
+[ 10.9 min]     config 15/16: CV -MAE -0.0589
+[ 11.4 min]     config 16/16: CV -MAE -0.0608
+[ 11.5 min] [reg] M3 neural network: tuning
+[ 12.4 min]     layers (64, 32), alpha 0.001: CV -0.0666
+[ 13.2 min]     layers (64, 32), alpha 0.01: CV -0.0639
+[ 14.5 min]     layers (128, 64), alpha 0.001: CV -0.0713
+[ 16.2 min]     layers (128, 64), alpha 0.01: CV -0.0659
+[ 16.6 min] [reg] evaluating
+       test                        model      n     MAE    RMSE      R2  R2_ipcw  gain_vs_ref  gain_lo  gain_hi
+0  internal  M0 reference (age, sex, FI)  21911  0.0612  0.0883  0.6477   0.6580          NaN      NaN      NaN
+1  internal               M1 elastic net  21911  0.0592  0.0859  0.6665   0.6760       0.0019   0.0017   0.0022
+2  internal                  M2 LightGBM  21911  0.0589  0.0856  0.6688   0.6783       0.0022   0.0019   0.0025
+3  internal            M3 neural network  21911  0.0616  0.0893  0.6392   0.6493      -0.0005  -0.0009  -0.0001
+4  internal  No change (FI stays as now)  21911  0.0596  0.0936  0.6041      NaN          NaN      NaN      NaN
+5  temporal  M0 reference (age, sex, FI)   2778  0.0602  0.0902  0.6608   0.6637          NaN      NaN      NaN
+6  temporal               M1 elastic net   2778  0.0584  0.0881  0.6762   0.6823       0.0018   0.0011   0.0026
+7  temporal                  M2 LightGBM   2778  0.0585  0.0887  0.6714   0.6768       0.0017   0.0009   0.0024
+8  temporal            M3 neural network   2778  0.0612  0.0909  0.6555   0.6688      -0.0010  -0.0023   0.0002
+9  temporal  No change (FI stays as now)   2778  0.0625  0.0989  0.5916      NaN          NaN      NaN      NaN
+[ 16.6 min] recalibration on 5,683 rows: intercept 0.535, slope 1.046
+       test       version      n  observed  predicted  calib_in_large  calib_slope    AUC  Brier
+0  internal    as trained  19435     0.138      0.136           0.003        0.990  0.860  0.087
+1  internal  recalibrated  19435     0.138      0.179          -0.040        0.947  0.860  0.090
+2  temporal    as trained   2390     0.115      0.085           0.030        1.026  0.863  0.079
+3  temporal  recalibrated   2390     0.115      0.116          -0.001        0.981  0.863  0.077
+       test  cutoff      n  event_rate  accuracy  always_no  sensitivity  specificity    PPV    NPV
+0  internal     0.5  19435       0.138     0.882      0.862        0.302        0.975  0.661  0.897
+1  internal     0.3  19435       0.138     0.863      0.862        0.549        0.914  0.506  0.927
+2  internal     0.2  19435       0.138     0.826      0.862        0.688        0.849  0.422  0.944
+3  temporal     0.5   2390       0.115     0.900      0.885        0.303        0.977  0.634  0.915
+4  temporal     0.3   2390       0.115     0.877      0.885        0.493        0.927  0.466  0.934
+5  temporal     0.2   2390       0.115     0.845      0.885        0.609        0.876  0.388  0.945
+[ 16.7 min] cls: share of importance by group {'changeable': 22.2, 'fixed': 72.3, 'follow-up length': 5.5}
+           variable             group  mean_abs_shap  share_pct  direction
+7                fi             fixed          0.585     17.800        1.0
+0               age             fixed          0.456     13.867        1.0
+61    years_planned  follow-up length          0.180      5.462        1.0
+6   wealth_quintile             fixed          0.150      4.549       -1.0
+48      drinks_week        changeable          0.135      4.120       -1.0
+41           recall             fixed          0.131      3.995       -1.0
+46        smoke_now        changeable          0.116      3.522        1.0
+8             d_srh             fixed          0.108      3.288        1.0
+45             pain             fixed          0.087      2.652        1.0
+9    d_hypertension             fixed          0.086      2.626        1.0
+5   income_quintile             fixed          0.078      2.361       -1.0
+51    vigorous_freq        changeable          0.075      2.290        1.0
+40             cesd             fixed          0.068      2.054        1.0
+0      region (all)             fixed          0.064      1.946        0.0
+2         education             fixed          0.061      1.849       -1.0
+[ 16.8 min] reg: share of importance by group {'changeable': 9.5, 'fixed': 88.2, 'follow-up length': 2.3}
+                variable             group  mean_abs_shap  share_pct  direction
+7                     fi             fixed          0.048     28.632        1.0
+0                    age             fixed          0.011      6.734        1.0
+15           d_arthritis             fixed          0.010      5.627        1.0
+8                  d_srh             fixed          0.010      5.624        1.0
+32  d_mob_stairs_several             fixed          0.008      4.869        1.0
+9         d_hypertension             fixed          0.007      3.873        1.0
+45                  pain             fixed          0.005      2.812        1.0
+27            d_mob_lift             fixed          0.005      2.669        1.0
+24            d_mob_walk             fixed          0.004      2.277        1.0
+26           d_mob_stoop             fixed          0.004      2.272        1.0
+61         years_planned  follow-up length          0.004      2.263        1.0
+40                  cesd             fixed          0.004      2.217        1.0
+6        wealth_quintile             fixed          0.004      2.114       -1.0
+0           region (all)             fixed          0.003      1.703        0.0
+41                recall             fixed          0.003      1.574       -1.0
+[ 16.9 min] [cls] 1/11 South East (n=12,680): AUC 0.860, calib_in_large 0.002
+[ 17.0 min] [cls] 2/11 East of England (n=9,647): AUC 0.861, calib_in_large -0.008
+[ 17.1 min] [cls] 3/11 South West (n=8,773): AUC 0.874, calib_in_large 0.005
+[ 17.2 min] [cls] 4/11 North West (n=8,274): AUC 0.856, calib_in_large 0.005
+[ 17.3 min] [cls] 5/11 West Midlands (n=7,773): AUC 0.863, calib_in_large -0.002
+[ 17.4 min] [cls] 6/11 Yorkshire and The Humber (n=7,498): AUC 0.848, calib_in_large -0.008
+[ 17.5 min] [cls] 7/11 East Midlands (n=7,490): AUC 0.867, calib_in_large 0.011
+[ 17.6 min] [cls] 8/11 London (n=6,268): AUC 0.851, calib_in_large -0.005
+[ 17.7 min] [cls] 9/11 North East (n=3,989): AUC 0.845, calib_in_large 0.002
+[ 17.8 min] [reg] 1/11 South East (n=13,645): MAE 0.054, R2 0.651
+[ 17.9 min] [reg] 2/11 East of England (n=10,759): MAE 0.057, R2 0.655
+[ 18.0 min] [reg] 3/11 South West (n=9,680): MAE 0.055, R2 0.666
+[ 18.2 min] [reg] 4/11 North West (n=9,416): MAE 0.061, R2 0.664
+[ 18.3 min] [reg] 5/11 West Midlands (n=8,873): MAE 0.060, R2 0.655
+[ 18.4 min] [reg] 6/11 East Midlands (n=8,799): MAE 0.062, R2 0.694
+[ 18.5 min] [reg] 7/11 Yorkshire and The Humber (n=8,684): MAE 0.062, R2 0.646
+[ 18.6 min] [reg] 8/11 London (n=7,029): MAE 0.060, R2 0.658
+[ 18.8 min] [reg] 9/11 North East (n=4,939): MAE 0.065, R2 0.655
+[ 18.8 min] Built 44,922 person-triplets (11,591 people) {'w4->w5->w8': 8413, 'w5->w6->w8': 7952, 'w6->w7->w9': 7823, 'w7->w8->w10': 7178, 'w3->w4->w7': 7134, 'w8->w9->w10': 6422}; not frail at T0 37,264; left out as very ill 4,648
+[ 18.8 min] [quit_smoking] Stopped smoking (vs kept smoking): 3,480 eligible, 496 changed, lost 30.7%
+[ 19.0 min]     primary (T0 adjustment): 10.4% if changed vs 15.2% (crude 12.4% vs 13.5%); RD -4.8 [-15.1, +5.6], RR 0.69 [0.26, 1.85]
+[ 19.2 min]     sensitivity (+ health at T1): 10.5% if changed vs 15.2% (crude 12.4% vs 13.5%); RD -4.7 [-16.0, +6.6], RR 0.69 [0.24, 2.01]
+[ 19.2 min] [start_vigorous] Took up vigorous activity at least weekly: 20,228 eligible, 3,647 changed, lost 27.9%
+[ 19.6 min]     primary (T0 adjustment): 12.1% if changed vs 14.8% (crude 6.4% vs 13.3%); RD -2.7 [-4.5, -0.9], RR 0.82 [0.71, 0.94]
+[ 20.0 min]     sensitivity (+ health at T1): 13.0% if changed vs 14.8% (crude 6.4% vs 13.3%); RD -1.8 [-3.6, +0.0], RR 0.88 [0.76, 1.01]
+[ 20.0 min] [leave_inactivity] Inactive -> became at least moderately active: 3,646 eligible, 2,240 changed, lost 34.1%
+[ 20.2 min]     primary (T0 adjustment): 19.4% if changed vs 23.3% (crude 14.0% vs 24.1%); RD -3.9 [-8.0, +0.2], RR 0.83 [0.69, 1.00]
+[ 20.4 min]     sensitivity (+ health at T1): 19.7% if changed vs 23.1% (crude 14.0% vs 24.1%); RD -3.4 [-7.3, +0.5], RR 0.85 [0.71, 1.02]
+[ 20.4 min] [stay_active] Active -> stayed active (vs became inactive): 28,960 eligible, 26,334 changed, lost 24.4%
+[ 20.8 min]     primary (T0 adjustment): 10.0% if changed vs 12.4% (crude 7.8% vs 18.1%); RD -2.4 [-3.9, -0.9], RR 0.81 [0.71, 0.91]
+[ 21.3 min]     sensitivity (+ health at T1): 10.1% if changed vs 11.6% (crude 7.8% vs 18.1%); RD -1.4 [-2.8, +0.0], RR 0.88 [0.78, 0.99]
+[ 21.3 min] [cut_heavy_drinking] Heavy drinker (>14 drinks/wk) -> 14 or fewer: 2,878 eligible, 1,110 changed, lost 22.9%
+[ 21.5 min]     primary (T0 adjustment): 9.0% if changed vs 7.8% (crude 7.4% vs 6.6%); RD +1.3 [-1.6, +4.1], RR 1.16 [0.83, 1.63]
+[ 21.7 min]     sensitivity (+ health at T1): 9.7% if changed vs 8.0% (crude 7.4% vs 6.6%); RD +1.7 [-1.2, +4.6], RR 1.21 [0.87, 1.67]
+[ 21.7 min] [obese_lost_weight] Obese -> lost 5% or more of BMI: 0 eligible, 0 changed, lost 0.0%
+[ 21.7 min]     too few in one arm; skipped
+[ 21.7 min] [join_social] No social activities -> took part: 14,931 eligible, 2,063 changed, lost 25.1%
+[ 22.0 min]     primary (T0 adjustment): 12.2% if changed vs 10.9% (crude 8.0% vs 9.3%); RD +1.3 [-0.8, +3.3], RR 1.12 [0.94, 1.32]
+[ 22.2 min]     sensitivity (+ health at T1): 12.7% if changed vs 10.9% (crude 8.0% vs 9.3%); RD +1.8 [-0.2, +3.8], RR 1.16 [0.99, 1.36]
+[ 22.2 min] [less_lonely] Lonely -> not lonely: 6,877 eligible, 2,293 changed, lost 25.2%
+[ 22.5 min]     primary (T0 adjustment): 15.1% if changed vs 15.9% (crude 10.7% vs 14.9%); RD -0.9 [-3.2, +1.5], RR 0.95 [0.81, 1.10]
+[ 22.7 min]     sensitivity (+ health at T1): 15.5% if changed vs 15.8% (crude 10.7% vs 14.9%); RD -0.3 [-2.7, +2.1], RR 0.98 [0.84, 1.15]
+[ 22.7 min] [sleep_resolved] Sleep trouble -> resolved: 10,318 eligible, 4,395 changed, lost 25.1%
+[ 23.0 min]     primary (T0 adjustment): 12.6% if changed vs 14.7% (crude 10.3% vs 14.0%); RD -2.1 [-3.8, -0.4], RR 0.86 [0.76, 0.97]
+[ 23.3 min]     sensitivity (+ health at T1): 15.0% if changed vs 14.2% (crude 10.3% vs 14.0%); RD +0.9 [-1.9, +3.6], RR 1.06 [0.88, 1.28]
+[ 23.3 min] bundle saved: D:\Database - portal\FrailDB\prediction\..\.cache\prediction\frailty_predictor_elsa.pkl (3.6 MB); lever effects: quit_smoking no evidence RR 0.69, start_vigorous suggestive RR 0.88, leave_inactivity no evidence RR 0.85, stay_active clear RR 0.88, cut_heavy_drinking no evidence RR 1.16, join_social no evidence RR 1.12, less_lonely no evidence RR 0.98, sleep_resolved suggestive RR 1.06
+[ 23.3 min] ELSA: done
