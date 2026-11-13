@@ -85,13 +85,18 @@ def features(A, M):
     return feats
 
 
-def split(A):
+def split(A, dcw=None):
     rng = np.random.default_rng(SEED)
     people = np.sort(A.pid.unique())
     u = pd.Series(rng.random(len(people)), index=people)
     A["is_train_person"] = A.pid.map(u < 0.7)
     A["set"] = np.where(A.is_temporal, np.where(A.is_train_person, "unused", "temporal"),
                         np.where(A.is_train_person, "train", "internal"))
+    A["set_cls"] = A["set"]
+    if dcw is not None:   # deaths only recorded up to wave dcw: frail-or-dead uses windows ending by dcw, the last of them as the later-period test
+        tmp = A.wave_f == dcw
+        A["set_cls"] = np.where(A.wave_f > dcw, "excluded", np.where(tmp, np.where(A.is_train_person, "unused", "temporal"),
+                                                                       np.where(A.is_train_person, "train", "internal")))
     return A
 
 
@@ -148,7 +153,7 @@ def prepare_analysis(cohort):
     prep = load_prepared(cohort)
     A = build_windows(prep)
     feats = features(A, prep["meta"])
-    A = split(A)
+    A = split(A, prep["meta"].get("death_complete_wave"))
     A["obs_cls"] = A.status.isin(["fi", "dead"]); A["obs_reg"] = A.status == "fi"
     return prep, A, feats
 
@@ -157,13 +162,14 @@ def prepare_analysis(cohort):
 def run_models(cohort, kind, A, feats, out, cache):
     rng = np.random.default_rng(SEED)
     if kind == "cls":
-        mask, obs_col, ycol = (lambda g: g.at_risk == 1), "obs_cls", "frail_or_dead"
+        mask, obs_col, ycol = (lambda g: (g.at_risk == 1) & (g.set_cls != "excluded")), "obs_cls", "frail_or_dead"
     else:
         mask, obs_col, ycol = (lambda g: g.status != "dead"), "obs_reg", "fi_f"
+    sc = "set_cls" if kind == "cls" else "set"
     step(f"[{kind}] censoring weights")
     A["w_" + kind] = ipcw(A, feats, obs_col, mask)
     D = A[mask(A) & A[obs_col]].copy()
-    tr, it, tt = D[D.set == "train"], D[D.set == "internal"], D[D.set == "temporal"]
+    tr, it, tt = D[D[sc] == "train"], D[D[sc] == "internal"], D[D[sc] == "temporal"]
     X, y, w, gr = tr[feats], tr[ycol], tr["w_" + kind], tr.pid
     step(f"[{kind}] train {len(tr):,} rows ({tr.pid.nunique():,} people), internal test {len(it):,}, later-period test {len(tt):,}; "
          f"outcome mean {y.mean():.3f}")
@@ -267,8 +273,8 @@ def run_models(cohort, kind, A, feats, out, cache):
 def explain(cohort, prep, A, feats, out, cache):
     M = prep["meta"]; res = {}
     gbm = pickle.load(open(os.path.join(cache, "step2_cls_models.pkl"), "rb"))["models"]["M2 LightGBM"]
-    D = A[(A.at_risk == 1) & A.obs_cls]
-    rec, tt, it = D[D.set == "unused"], D[D.set == "temporal"], D[D.set == "internal"]
+    D = A[(A.at_risk == 1) & A.obs_cls & (A.set_cls != "excluded")]
+    rec, tt, it = D[D.set_cls == "unused"], D[D.set_cls == "temporal"], D[D.set_cls == "internal"]
     a, b = 0.0, 1.0
     if len(rec) > 200 and rec.frail_or_dead.nunique() == 2:
         cal = LogisticRegression(C=1e6).fit(logit(gbm.predict_proba(rec[feats])[:, 1]).reshape(-1, 1), rec.frail_or_dead)
@@ -329,7 +335,7 @@ def region_out(cohort, prep, A, feats, out, cache):
     rows = []
     for kind in ["cls", "reg"]:
         tun = pickle.load(open(os.path.join(cache, f"step2_{kind}_models.pkl"), "rb"))["tuning"]["lgbm"][1]
-        mask = (lambda g: g.at_risk == 1) if kind == "cls" else (lambda g: g.status != "dead")
+        mask = (lambda g: (g.at_risk == 1) & (g.set_cls != "excluded")) if kind == "cls" else (lambda g: g.status != "dead")
         obs, ycol = ("obs_cls", "frail_or_dead") if kind == "cls" else ("obs_reg", "fi_f")
         A["w"] = ipcw(A, feats, obs, mask)
         D = A[mask(A) & A[obs]]

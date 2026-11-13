@@ -1,13 +1,13 @@
 {
  "recalibration": {
-  "intercept": 0.5353,
-  "slope": 1.0459,
-  "n": 5683
+  "intercept": 0.1469,
+  "slope": 1.0409,
+  "n": 8595
  },
  "cls_group_share": {
-  "changeable": 22.2,
-  "fixed": 72.3,
-  "follow-up length": 5.5
+  "changeable": 17.4,
+  "fixed": 76.1,
+  "follow-up length": 6.5
  },
  "reg_group_share": {
   "changeable": 9.5,

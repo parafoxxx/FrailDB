@@ -32,6 +32,8 @@ T0 = time.time()
 def step(m): print(f"[{(time.time() - T0) / 60:5.1f} min] {m}", flush=True)
 RES = S.RES
 TRIPLETS = [(2, 4), (4, 5), (5, 6)]
+NOEXCL = os.environ.get("NOEXCL") == "1"      # robustness run: keep people who fell ill between T0 and T1
+TAG = "_noexclusion" if NOEXCL else ""
 MAJOR = ["d_cancer", "d_stroke", "d_heart", "d_lung", "d_dementia"]
 
 # lever contrasts: (key, label, eligible at T0, treated at T1, triplets allowed, carried-flag column at T1)
@@ -152,7 +154,7 @@ if __name__ == "__main__":
     step(f"Not frail at T0: {elig_all.sum():,}; excluded as very ill between T0 and T1: {(elig_all & D.very_ill).sum():,}")
     rows, sub = [], []
     for k, (key, label, el, tr, trips, carried) in enumerate(LEVERS):
-        m = elig_all & ~D.very_ill & el(D) & D.triplet.isin([f"w{a}->w{b}" for a, b in trips])
+        m = elig_all & (True if NOEXCL else ~D.very_ill) & el(D) & D.triplet.isin([f"w{a}->w{b}" for a, b in trips])
         d = D[m].copy()
         if carried: d = d[d[carried].fillna(0) == 0]
         lever_cols = {"quit_smoking": "smoke_now_1", "start_vigorous": "vigorous_freq_1", "leave_inactivity": "inactive_1", "stay_active": "inactive_1",
@@ -185,6 +187,6 @@ if __name__ == "__main__":
             step(f"    {spec}: risk {100 * r['risk_changed']:.1f}% if changed vs {100 * r['risk_not_changed']:.1f}% if not "
                  f"(crude {100 * crude1:.1f}% vs {100 * crude0:.1f}%); difference {100 * r['RD']:+.1f} points "
                  f"[{100 * r['RD_lo']:+.1f}, {100 * r['RD_hi']:+.1f}], RR {r['RR']:.2f} [{r['RR_lo']:.2f}, {r['RR_hi']:.2f}], E-value {r['E_value']:.2f}")
-        pd.DataFrame(rows).round(4).to_csv(os.path.join(RES, "step3_lever_effects.csv"), index=False)
-        pd.DataFrame(sub).round(4).to_csv(os.path.join(RES, "step3_lever_subgroups.csv"), index=False)
+        pd.DataFrame(rows).round(4).to_csv(os.path.join(RES, f"step3_lever_effects{TAG}.csv"), index=False)
+        pd.DataFrame(sub).round(4).to_csv(os.path.join(RES, f"step3_lever_subgroups{TAG}.csv"), index=False)
     step("Done")

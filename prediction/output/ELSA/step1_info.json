@@ -60,34 +60,14 @@
  ],
  "triplets": [
   [
+   "1",
+   "3",
+   "5"
+  ],
+  [
    "3",
    "4",
-   "7"
-  ],
-  [
-   "4",
-   "5",
-   "8"
-  ],
-  [
-   "5",
-   "6",
-   "8"
-  ],
-  [
-   "6",
-   "7",
-   "9"
-  ],
-  [
-   "7",
-   "8",
-   "10"
-  ],
-  [
-   "8",
-   "9",
-   "10"
+   "6"
   ]
  ],
  "fixed": [
@@ -157,6 +137,7 @@
  ],
  "n_features": 73,
  "notes": [
+  "Deaths are recorded only up to wave 6 (2012) in the End User Licence files: the frail-or-dead model and the lever analysis use windows ending by 2012 (later period = windows ending at wave 6); the frailty-score model uses all windows.",
   "Frailty files for waves 2 and 11 are not on disk, so those waves are not used.",
   "BMI is measured by nurses at waves 2, 4, 6, 8 and 9 only.",
   "Wave 10 (2021-23) follow-up spans the COVID-19 pandemic."

@@ -90,11 +90,14 @@ if __name__ == "__main__":
     last = max(waves)
     temporal = [p for p in pairs if p[1] == last]
     windows = [p for p in pairs if p[1] != last]
+    # deaths are recorded only up to wave 6 (2012) in the files available (later waves code 9: 'dk if alive or died'),
+    # so lever triplets must end by wave 6; the starting gap may be up to 4.5 years
+    DCW = 6
     triplets = []
     for i in range(len(waves) - 1):
         p, b = waves[i], waves[i + 1]
-        if yr[b] - yr[p] > 2.5: continue
-        fs = [f for f in waves if f > b and 3.5 <= yr[f] - yr[b] <= 6.5]
+        if yr[b] - yr[p] > 4.5: continue
+        fs = [f for f in waves if f > b and f <= DCW and 3.5 <= yr[f] - yr[b] <= 6.5]
         if fs: triplets.append((p, b, min(fs, key=lambda f: (abs(yr[f] - yr[b] - 5), f))))
     deficits = [c for c in P.columns if c.startswith("d_")]
     fixed = ["age", "female", "education", "partner", "hhsize", "income_quintile", "wealth_quintile", "fi"] + deficits + \
@@ -102,8 +105,10 @@ if __name__ == "__main__":
     lev = ["smoke_now", "smoke_ever", "drinks_week", "drink_days", "heavy_drink", "vigorous_freq", "moderate_freq", "light_freq",
            "vigorous_weekly", "inactive", "bmi", "loneliness", "lonely", "sleep_trouble", "social_any"]
     meta = dict(cohort="ELSA", years={int(k): float(v) for k, v in yr.items()}, windows=windows, temporal=temporal, triplets=triplets,
-                fixed=fixed, levers=lev, region="region", region_names=REGIONS, t1_health=["fi", "d_srh", "cesd", "pain"],
-                notes=["Frailty files for waves 2 and 11 are not on disk, so those waves are not used.",
+                fixed=fixed, levers=lev, region="region", death_complete_wave=DCW, region_names=REGIONS, t1_health=["fi", "d_srh", "cesd", "pain"],
+                notes=["Deaths are recorded only up to wave 6 (2012) in the End User Licence files: the frail-or-dead model and the lever "
+                       "analysis use windows ending by 2012 (later period = windows ending at wave 6); the frailty-score model uses all windows.",
+                       "Frailty files for waves 2 and 11 are not on disk, so those waves are not used.",
                        "BMI is measured by nurses at waves 2, 4, 6, 8 and 9 only.",
                        "Wave 10 (2021-23) follow-up spans the COVID-19 pandemic."])
     pickle.dump(dict(P=P, death=death, meta=meta), open(os.path.join(CACHE, "elsa_prepared.pkl"), "wb"))

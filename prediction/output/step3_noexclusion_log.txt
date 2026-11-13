@@ -1,0 +1,39 @@
+[  0.1 min] Built 97,189 person-triplets (57,585 people): {'w5->w6': 43557, 'w4->w5': 36139, 'w2->w4': 17493}
+[  0.1 min] Not frail at T0: 82,956; excluded as very ill between T0 and T1: 13,318
+[  0.1 min] [1/12] Stopped smoking (vs kept smoking): 9,047 eligible (7,536 people), 2,203 changed (24.4%), lost to follow-up 41.7%
+[  0.8 min]     primary (T0 adjustment): risk 26.2% if changed vs 25.1% if not (crude 25.0% vs 24.8%); difference +1.0 points [-2.2, +4.3], RR 1.04 [0.92, 1.18], E-value 1.25
+[  1.4 min]     sensitivity (+ health at T1): risk 25.1% if changed vs 25.4% if not (crude 25.0% vs 24.8%); difference -0.3 points [-3.5, +2.9], RR 0.99 [0.87, 1.12], E-value 1.12
+[  1.4 min] [2/12] Took up vigorous activity at least weekly (vs stayed below weekly): 36,826 eligible (27,519 people), 11,876 changed (32.2%), lost to follow-up 41.7%
+[  2.3 min]     primary (T0 adjustment): risk 24.9% if changed vs 31.3% if not (crude 17.9% vs 34.5%); difference -6.3 points [-7.6, -5.1], RR 0.80 [0.76, 0.84], E-value 1.82
+[  3.3 min]     sensitivity (+ health at T1): risk 27.8% if changed vs 30.4% if not (crude 17.9% vs 34.5%); difference -2.6 points [-3.8, -1.4], RR 0.91 [0.88, 0.95], E-value 1.41
+[  3.3 min] [3/12] Inactive -> became at least moderately active: 3,784 eligible (3,501 people), 2,618 changed (69.2%), lost to follow-up 42.2%
+[  3.6 min]     primary (T0 adjustment): risk 41.6% if changed vs 55.9% if not (crude 37.4% vs 64.6%); difference -14.2 points [-19.5, -9.0], RR 0.75 [0.67, 0.83], E-value 2.02
+[  3.9 min]     sensitivity (+ health at T1): risk 43.6% if changed vs 50.8% if not (crude 37.4% vs 64.6%); difference -7.2 points [-12.7, -1.8], RR 0.86 [0.77, 0.96], E-value 1.60
+[  3.9 min] [4/12] Active -> stayed active (vs became inactive): 78,894 eligible (48,957 people), 74,698 changed (94.7%), lost to follow-up 41.1%
+[  5.2 min]     primary (T0 adjustment): risk 19.9% if changed vs 34.8% if not (crude 18.4% vs 55.5%); difference -14.9 points [-17.1, -12.7], RR 0.57 [0.54, 0.61], E-value 2.89
+[  6.2 min]     sensitivity (+ health at T1): risk 20.4% if changed vs 25.3% if not (crude 18.4% vs 55.5%); difference -4.9 points [-6.7, -3.1], RR 0.81 [0.75, 0.87], E-value 1.78
+[  6.2 min] [5/12] Heavy drinker (>14 drinks/wk) -> cut to 14 or fewer: 3,847 eligible (3,400 people), 2,214 changed (57.6%), lost to follow-up 42.2%
+[  6.3 min]     primary (T0 adjustment): risk 22.1% if changed vs 26.9% if not (crude 22.6% vs 24.1%); difference -4.8 points [-8.9, -0.7], RR 0.82 [0.69, 0.97], E-value 1.73
+[  6.4 min]     sensitivity (+ health at T1): risk 22.4% if changed vs 26.9% if not (crude 22.6% vs 24.1%); difference -4.5 points [-8.3, -0.7], RR 0.83 [0.72, 0.97], E-value 1.69
+[  6.4 min] [6/12] Obese -> lost 5% or more of BMI: 14,778 eligible (10,459 people), 3,689 changed (25.0%), lost to follow-up 39.9%
+[  6.7 min]     primary (T0 adjustment): risk 27.9% if changed vs 27.4% if not (crude 32.3% vs 25.4%); difference +0.5 points [-1.6, +2.6], RR 1.02 [0.95, 1.10], E-value 1.16
+[  7.0 min]     sensitivity (+ health at T1): risk 27.6% if changed vs 27.3% if not (crude 32.3% vs 25.4%); difference +0.3 points [-1.8, +2.4], RR 1.01 [0.94, 1.09], E-value 1.11
+[  7.0 min] [7/12] Fruit/veg less than daily -> daily: 6,549 eligible (6,538 people), 3,687 changed (56.3%), lost to follow-up 45.4%
+[  7.1 min]     primary (T0 adjustment): risk 29.0% if changed vs 31.1% if not (crude 29.2% vs 33.0%); difference -2.2 points [-5.2, +0.8], RR 0.93 [0.84, 1.03], E-value 1.36
+[  7.3 min]     sensitivity (+ health at T1): risk 29.3% if changed vs 31.2% if not (crude 29.2% vs 33.0%); difference -2.0 points [-4.9, +0.9], RR 0.94 [0.85, 1.03], E-value 1.34
+[  7.3 min] [8/12] Meat/fish/poultry < 3 days/wk -> 3+ days/wk: 5,501 eligible (5,493 people), 3,071 changed (55.8%), lost to follow-up 47.2%
+[  7.4 min]     primary (T0 adjustment): risk 28.5% if changed vs 28.6% if not (crude 30.1% vs 26.0%); difference -0.2 points [-3.6, +3.2], RR 0.99 [0.88, 1.12], E-value 1.09
+[  7.6 min]     sensitivity (+ health at T1): risk 28.9% if changed vs 27.8% if not (crude 30.1% vs 26.0%); difference +1.1 points [-2.1, +4.3], RR 1.04 [0.93, 1.17], E-value 1.24
+[  7.6 min] [9/12] No social activities -> took part in at least one: 13,304 eligible (11,498 people), 8,863 changed (66.6%), lost to follow-up 39.5%
+[  7.8 min]     primary (T0 adjustment): risk 26.7% if changed vs 31.6% if not (crude 23.5% vs 34.7%); difference -4.9 points [-7.4, -2.5], RR 0.84 [0.78, 0.92], E-value 1.65
+[  8.1 min]     sensitivity (+ health at T1): risk 27.2% if changed vs 30.0% if not (crude 23.5% vs 34.7%); difference -2.9 points [-5.3, -0.4], RR 0.90 [0.83, 0.98], E-value 1.45
+[  8.1 min] [10/12] Lonely (score 6+) -> not lonely (5 or less): 2,864 eligible (2,864 people), 1,634 changed (57.1%), lost to follow-up 45.9%
+[  8.2 min]     primary (T0 adjustment): risk 27.5% if changed vs 33.8% if not (crude 26.0% vs 35.5%); difference -6.3 points [-11.5, -1.1], RR 0.81 [0.69, 0.96], E-value 1.76
+[  8.3 min]     sensitivity (+ health at T1): risk 28.9% if changed vs 32.6% if not (crude 26.0% vs 35.5%); difference -3.7 points [-8.8, +1.5], RR 0.89 [0.75, 1.05], E-value 1.50
+[  8.3 min] [11/12] Poor hearing, no aid -> started using a hearing aid: 11,335 eligible (9,161 people), 1,090 changed (9.6%), lost to follow-up 41.0%
+[  8.5 min]     primary (T0 adjustment): risk 31.5% if changed vs 29.9% if not (crude 34.1% vs 28.8%); difference +1.6 points [-3.5, +6.7], RR 1.05 [0.90, 1.24], E-value 1.29
+[  8.7 min]     sensitivity (+ health at T1): risk 29.3% if changed vs 29.8% if not (crude 34.1% vs 28.8%); difference -0.5 points [-5.0, +4.1], RR 0.98 [0.84, 1.15], E-value 1.15
+[  8.7 min] [12/12] Sleep trouble -> sleep trouble resolved: 25,213 eligible (19,496 people), 10,104 changed (40.1%), lost to follow-up 41.4%
+[  9.1 min]     primary (T0 adjustment): risk 24.5% if changed vs 25.9% if not (crude 22.2% vs 26.8%); difference -1.5 points [-2.8, -0.2], RR 0.94 [0.89, 0.99], E-value 1.31
+[  9.5 min]     sensitivity (+ health at T1): risk 26.7% if changed vs 24.5% if not (crude 22.2% vs 26.8%); difference +2.2 points [+0.5, +4.0], RR 1.09 [1.02, 1.17], E-value 1.41
+[  9.5 min] Done
